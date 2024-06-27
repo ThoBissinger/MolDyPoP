@@ -1,0 +1,114 @@
+\doxysection{computations.\+h}
+\hypertarget{computations_8h_source}{}\label{computations_8h_source}\mbox{\hyperlink{computations_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00018\ \textcolor{preprocessor}{\#ifndef\ COMPUTATIONS\_H}}
+\DoxyCodeLine{00019\ \textcolor{preprocessor}{\#define\ COMPUTATIONS\_H}}
+\DoxyCodeLine{00020\ \textcolor{preprocessor}{\#include<stdlib.h>}}
+\DoxyCodeLine{00021\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00022\ \textcolor{preprocessor}{\#include\ <complex>}}
+\DoxyCodeLine{00023\ \textcolor{preprocessor}{\#include<math.h>}}
+\DoxyCodeLine{00024\ \textcolor{preprocessor}{\#include\ <numeric>}}
+\DoxyCodeLine{00025\ \textcolor{preprocessor}{\#include\ <algorithm>}}
+\DoxyCodeLine{00026\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{topology_8h}{topology.h}}"{}}}
+\DoxyCodeLine{00027\ }
+\DoxyCodeLine{00028\ }
+\DoxyCodeLine{00034\ \textcolor{preprocessor}{\#ifndef\ M\_PI}}
+\DoxyCodeLine{00035\ \textcolor{preprocessor}{\ \ \ \ \#define\ M\_PI\ 3.14159265358979323846}}
+\DoxyCodeLine{00036\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00037\ }
+\DoxyCodeLine{00038\ }
+\DoxyCodeLine{00039\ }
+\DoxyCodeLine{00040\ }
+\DoxyCodeLine{00041\ \textcolor{comment}{//\ =======================================================================================================}}
+\DoxyCodeLine{00042\ \textcolor{comment}{//\ general\ functions}}
+\DoxyCodeLine{00043\ \textcolor{comment}{//\ =======================================================================================================}}
+\DoxyCodeLine{00045\ \textcolor{comment}{}\textcolor{keywordtype}{double}\ \mbox{\hyperlink{computations_8h_a89f0a0ce9ad1bab66ee9b0188b089a71}{mod}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\ val,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\ min,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\ max);}
+\DoxyCodeLine{00046\ }
+\DoxyCodeLine{00047\ \textcolor{comment}{//\ =======================================================================================================}}
+\DoxyCodeLine{00048\ \textcolor{comment}{//\ functions\ for\ std::vector}}
+\DoxyCodeLine{00049\ \textcolor{comment}{//\ =======================================================================================================}}
+\DoxyCodeLine{00051\ \textcolor{comment}{}\textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T,\ \textcolor{keyword}{typename}\ A>}
+\DoxyCodeLine{00052\ T\ \mbox{\hyperlink{computations_8h_ad65d7fe7506a4850c5db2eb184fccd79}{vector\_mean}}(std::vector<T,A>\ v);}
+\DoxyCodeLine{00053\ }
+\DoxyCodeLine{00055\ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T,\ \textcolor{keyword}{typename}\ A>}
+\DoxyCodeLine{00056\ T\ \mbox{\hyperlink{computations_8h_a3cc11c4d161010d97c3898fe6de5ab0e}{row\_mean}}(std::vector<T,A>\ v,\ \textcolor{keywordtype}{int}\ M,\ \textcolor{keywordtype}{int}\ N,\ \textcolor{keywordtype}{int}\ i);}
+\DoxyCodeLine{00057\ }
+\DoxyCodeLine{00059\ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T,\ \textcolor{keyword}{typename}\ A>}
+\DoxyCodeLine{00060\ T\ \mbox{\hyperlink{computations_8h_a536abf00bea1d4cc40f2fa5c8f33595e}{column\_mean}}(std::vector<T,A>\ v,\ \textcolor{keywordtype}{int}\ M,\ \textcolor{keywordtype}{int}\ N,\ \textcolor{keywordtype}{int}\ j);}
+\DoxyCodeLine{00061\ }
+\DoxyCodeLine{00063\ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T,\ \textcolor{keyword}{typename}\ A>}
+\DoxyCodeLine{00064\ T\ \mbox{\hyperlink{computations_8h_a26d15b0abd865238da8b2766aaca400f}{selective\_vector\_mean}}(std::vector<T,A>\ yvals,\ std::vector<double>\ xvals,\ \textcolor{keywordtype}{double}\ xsep\_min);}
+\DoxyCodeLine{00065\ }
+\DoxyCodeLine{00067\ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T,\ \textcolor{keyword}{typename}\ A>}
+\DoxyCodeLine{00068\ T\ \mbox{\hyperlink{computations_8h_a80932326f47c4a6d470fc7906a9c9d6d}{selective\_row\_mean}}(std::vector<T,A>\ yvals,\ std::vector<double>\ xvals,\ \textcolor{keywordtype}{double}\ xsep\_min,\ \textcolor{keywordtype}{int}\ M,\ \textcolor{keywordtype}{int}\ N,\ \textcolor{keywordtype}{int}\ i);}
+\DoxyCodeLine{00069\ }
+\DoxyCodeLine{00070\ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T,\ \textcolor{keyword}{typename}\ A>}
+\DoxyCodeLine{00071\ T\ \mbox{\hyperlink{computations_8h_a04b2acdd59d6bebef98156900a284fe8}{selective\_column\_mean}}(std::vector<T,A>\ yvals,\ std::vector<double>\ xvals,\ \textcolor{keywordtype}{double}\ xsep\_min,\ \textcolor{keywordtype}{int}\ M,\ \textcolor{keywordtype}{int}\ N,\ \textcolor{keywordtype}{int}\ j);\ }
+\DoxyCodeLine{00072\ }
+\DoxyCodeLine{00074\ }
+\DoxyCodeLine{00078\ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{computations_8h_ac23f83a9ed8d3a1d3415ccbf892b36c7}{vector\_variance}}(std::vector<double>\ v,\ \textcolor{keywordtype}{double}\&\ mean);}
+\DoxyCodeLine{00079\ }
+\DoxyCodeLine{00081\ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T,\ \textcolor{keyword}{typename}\ A>}
+\DoxyCodeLine{00082\ std::vector<T,A>\ \mbox{\hyperlink{computations_8h_a6a5517202db0c7ea6036fd4b2cd692d8}{vector\_scale}}(\textcolor{keyword}{const}\ std::vector<T,A>\&\ v,\ \textcolor{keywordtype}{double}\ a);}
+\DoxyCodeLine{00083\ }
+\DoxyCodeLine{00085\ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T,\ \textcolor{keyword}{typename}\ A>}
+\DoxyCodeLine{00086\ std::vector<T,A>\ \mbox{\hyperlink{computations_8h_a749d727a0caa0c3de43dae9d681c3ab1}{vector\_sum}}(\textcolor{keyword}{const}\ std::vector<T,A>\&\ v,\ \textcolor{keyword}{const}\ std::vector<T,A>\&\ w);}
+\DoxyCodeLine{00087\ }
+\DoxyCodeLine{00089\ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T,\ \textcolor{keyword}{typename}\ A>}
+\DoxyCodeLine{00090\ T\ \mbox{\hyperlink{computations_8h_a28c308a9c9279e804cb4740cf6d577ba}{vector\_inpr}}(\textcolor{keyword}{const}\ std::vector<T,A>\&\ v,\ \textcolor{keyword}{const}\ std::vector<T,A>\&\ w);}
+\DoxyCodeLine{00091\ }
+\DoxyCodeLine{00093\ std::complex<double>\ \mbox{\hyperlink{computations_8h_a28c308a9c9279e804cb4740cf6d577ba}{vector\_inpr}}(\textcolor{keyword}{const}\ std::vector<std::complex<double>\ >\&\ v,\ \textcolor{keyword}{const}\ std::vector<std::complex<double>\ >\&\ w);}
+\DoxyCodeLine{00094\ }
+\DoxyCodeLine{00096\ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T,\ \textcolor{keyword}{typename}\ A>}
+\DoxyCodeLine{00097\ std::vector<T,A>\ \mbox{\hyperlink{computations_8h_a974188426d99853ca26f6137c0d3c455}{vector\_pw\_mult}}(\textcolor{keyword}{const}\ std::vector<T,A>\&\ v,\ \textcolor{keyword}{const}\ std::vector<T,A>\&\ w);}
+\DoxyCodeLine{00098\ }
+\DoxyCodeLine{00100\ std::vector<std::complex<double>\ >\ \mbox{\hyperlink{computations_8h_a974188426d99853ca26f6137c0d3c455}{vector\_pw\_mult}}(\textcolor{keyword}{const}\ std::vector<std::complex<double>\ >\&\ v,\ \textcolor{keyword}{const}\ std::vector<std::complex<double>\ >\&\ w);}
+\DoxyCodeLine{00101\ }
+\DoxyCodeLine{00103\ std::vector<std::complex<double>\ >\ \mbox{\hyperlink{computations_8h_a974188426d99853ca26f6137c0d3c455}{vector\_pw\_mult}}(\textcolor{keyword}{const}\ std::vector<std::complex<double>\ >\&\ v\_1,\ \textcolor{keyword}{const}\ std::vector<std::complex<double>\ >\&\ v\_2,}
+\DoxyCodeLine{00104\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::vector<std::complex<double>\ >\&\ v\_3,\ \textcolor{keyword}{const}\ std::vector<std::complex<double>\ >\&\ v\_4);}
+\DoxyCodeLine{00105\ }
+\DoxyCodeLine{00107\ std::vector<double\ >\ \mbox{\hyperlink{computations_8h_a7feb2153e9a4162aa934de1cdc9dd643}{vector\_pw\_norm}}(\textcolor{keyword}{const}\ std::vector<std::complex<double>\ >\&\ v);}
+\DoxyCodeLine{00108\ }
+\DoxyCodeLine{00123\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{computations_8h_a43f522462aa3cafdc730f694d359fbfb}{matr\_index}}(\textcolor{keywordtype}{int}\ M,\ \textcolor{keywordtype}{int}\ N,\ \textcolor{keywordtype}{int}\ i,\ \textcolor{keywordtype}{int}\ j)\ \{\ \textcolor{keywordflow}{return}\ i\ *\ N\ +\ j;\ \};}
+\DoxyCodeLine{00124\ }
+\DoxyCodeLine{00125\ \textcolor{comment}{//\ =======================================================================================================}}
+\DoxyCodeLine{00126\ \textcolor{comment}{//\ functions\ for\ binning}}
+\DoxyCodeLine{00127\ \textcolor{comment}{//\ =======================================================================================================}}
+\DoxyCodeLine{00138\ \textcolor{comment}{}std::vector<double>\ \mbox{\hyperlink{computations_8h_a35ff1ed3ee230d7da8cd4596c3c82185}{log\_bin}}(\textcolor{keywordtype}{double}\ binmin,\ \textcolor{keywordtype}{double}\ binmax,\ \textcolor{keywordtype}{double}\ diffmin,\ \textcolor{keywordtype}{int}\ Nbins);\ }
+\DoxyCodeLine{00139\ }
+\DoxyCodeLine{00140\ }
+\DoxyCodeLine{00141\ }
+\DoxyCodeLine{00142\ }
+\DoxyCodeLine{00143\ \textcolor{comment}{//std::vector<double>\ lin\_log\_bin(double\ qmin,\ double\ qmax,\ double\ linsep,\ int\ Nlin,\ int\ Nlog);\ ///<\ Makes\ linear-\/logarithmic\ bin.}}
+\DoxyCodeLine{00144\ \textcolor{comment}{//\ /*!<}}
+\DoxyCodeLine{00145\ \textcolor{comment}{//\ *\ \(\backslash\)fn\ std::vector<double>\ lin\_log\_bin()}}
+\DoxyCodeLine{00146\ \textcolor{comment}{//\ *\ \(\backslash\)param\ qmin\ \ \ \ \ \ \ \ Minimum\ q\ (starting\ value)\ [double]}}
+\DoxyCodeLine{00147\ \textcolor{comment}{//\ *\ \(\backslash\)param\ qmax\ \ \ \ \ \ \ \ Maximum\ q\ (will\ not\ be\ exceeded,\ may\ not\ be\ reached)\ [double]}}
+\DoxyCodeLine{00148\ \textcolor{comment}{//\ *\ \(\backslash\)param\ linsep\ \ Separation\ for\ the\ linear\ part\ of\ the\ bin\ [double]}}
+\DoxyCodeLine{00149\ \textcolor{comment}{//\ *\ \(\backslash\)param\ Nlin\ \ \ \ \ \ \ \ number\ of\ linear\ points\ [int]}}
+\DoxyCodeLine{00150\ \textcolor{comment}{//\ *\ \(\backslash\)param\ Nlog\ \ \ \ \ \ \ \ number\ of\ logarithmic\ points.\ Due\ to\ rounding\ errors,\ the\ logarithmic\ length\ can\ be\ one\ shorter\ than\ Nlog.\ [int]}}
+\DoxyCodeLine{00151\ \textcolor{comment}{//\ *\ \(\backslash\)return\ \ \ \ \ \ \ \ \ \ \ \ Vector\ of\ bins\ (can\ be\ interpreted\ as\ left\ boundaries\ of\ bins\ or\ mid\ points).\ [std::vector<double>]}}
+\DoxyCodeLine{00152\ \textcolor{comment}{//\ */}}
+\DoxyCodeLine{00153\ }
+\DoxyCodeLine{00156\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{computations_8cpp_ae31e26d24ac315a90bc3a13a39e11ea5}{find\_bin}}(\textcolor{keyword}{const}\ std::vector<double>\&\ bin,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\&\ value);\ }
+\DoxyCodeLine{00165\ \textcolor{comment}{//\ =======================================================================================================}}
+\DoxyCodeLine{00166\ \textcolor{comment}{//\ =======================================================================================================}}
+\DoxyCodeLine{00167\ \textcolor{comment}{//\ Random\ functions}}
+\DoxyCodeLine{00168\ \textcolor{comment}{//\ =======================================================================================================}}
+\DoxyCodeLine{00169\ \textcolor{comment}{//\ =======================================================================================================}}
+\DoxyCodeLine{00171\ \textcolor{comment}{}\textcolor{keyword}{inline}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{computations_8h_ad7954e6a1b9ea073c7bc894dc5af85a9}{random\_int}}(\textcolor{keywordtype}{int}\ min,\ \textcolor{keywordtype}{int}\ max)\ \{\ \textcolor{keywordflow}{return}\ rand()\ \%\ (max\ -\/\ min)\ +\ min;\ \};}
+\DoxyCodeLine{00172\ }
+\DoxyCodeLine{00173\ }
+\DoxyCodeLine{00175\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{computations_8h_ae8857dcf75600277c0cbc79a687090ab}{random\_double}}(\textcolor{keywordtype}{double}\ min,\ \textcolor{keywordtype}{double}\ max)\ \{\ \textcolor{keywordflow}{return}\ min\ +\ (double)rand()\ /\ RAND\_MAX\ *\ (max\ -\/\ min);\ \};}
+\DoxyCodeLine{00177\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{computations_8h_ae8857dcf75600277c0cbc79a687090ab}{random\_double}}(\textcolor{keywordtype}{double}\ max)\ \{\ \textcolor{keywordflow}{return}\ (\textcolor{keywordtype}{double})rand()\ /\ RAND\_MAX\ *\ (max);\ \};}
+\DoxyCodeLine{00178\ }
+\DoxyCodeLine{00180\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{computations_8h_afda23d435e9691292647f33f43d1e266}{random\_boltzmann\_double}}(\textcolor{keywordtype}{double}\ kbT)\{\ \ \ \textcolor{keywordflow}{return}\ sqrt(kbT)*sqrt(-\/2*log(\mbox{\hyperlink{computations_8h_ae8857dcf75600277c0cbc79a687090ab}{random\_double}}(1)))*cos(2*\mbox{\hyperlink{computations_8h_ae71449b1cc6e6250b91f539153a7a0d3}{M\_PI}}*\mbox{\hyperlink{computations_8h_ae8857dcf75600277c0cbc79a687090ab}{random\_double}}(1));\ \};}
+\DoxyCodeLine{00181\ }
+\DoxyCodeLine{00183\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{computations_8h_ac2d5d6813a00a29ca76fca3d95c00bb9}{random\_angle}}()\ \{\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{computations_8h_ae8857dcf75600277c0cbc79a687090ab}{random\_double}}(-\/\mbox{\hyperlink{computations_8h_ae71449b1cc6e6250b91f539153a7a0d3}{M\_PI}},\ \mbox{\hyperlink{computations_8h_ae71449b1cc6e6250b91f539153a7a0d3}{M\_PI}});\ \};}
+\DoxyCodeLine{00185\ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{computations_8h_ac2d5d6813a00a29ca76fca3d95c00bb9}{random\_angle}}(\textcolor{keywordtype}{double}\ min,\ \textcolor{keywordtype}{double}\ max);}
+\DoxyCodeLine{00187\ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{computations_8h_ac2d5d6813a00a29ca76fca3d95c00bb9}{random\_angle}}(\textcolor{keywordtype}{double}\ max);}
+\DoxyCodeLine{00188\ }
+\DoxyCodeLine{00189\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

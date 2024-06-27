@@ -1,0 +1,54 @@
+\doxysection{neighbor\+\_\+list.\+h}
+\hypertarget{neighbor__list_8h_source}{}\label{neighbor__list_8h_source}\mbox{\hyperlink{neighbor__list_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00034\ \textcolor{preprocessor}{\#ifndef\ NEIGHBOR\_LIST\_H}}
+\DoxyCodeLine{00035\ \textcolor{preprocessor}{\#define\ NEIGHBOR\_LIST\_H}}
+\DoxyCodeLine{00036\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{topology_8h}{topology.h}}"{}}}
+\DoxyCodeLine{00037\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{partition_8h}{partition.h}}"{}}}
+\DoxyCodeLine{00038\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{group_8h}{group.h}}"{}}}
+\DoxyCodeLine{00039\ }
+\DoxyCodeLine{00040\ \textcolor{preprocessor}{\#include\ <fstream>}}
+\DoxyCodeLine{00041\ \textcolor{preprocessor}{\#include\ <list>}}
+\DoxyCodeLine{00042\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00043\ \textcolor{preprocessor}{\#include\ <algorithm>}}
+\DoxyCodeLine{00044\ }
+\DoxyCodeLine{00045\ }
+\DoxyCodeLine{00046\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classgroup}{group}}\ ;}
+\DoxyCodeLine{00047\ }
+\DoxyCodeLine{00048\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classneighbor__list}{neighbor\_list}}\ \{}
+\DoxyCodeLine{00049\ \ \ \ \ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00050\ }
+\DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classneighbor__list_ab9f9724ed5f237163fd062fd9e1bef0d}{N\_}}\ =\ 0;\ }
+\DoxyCodeLine{00052\ }
+\DoxyCodeLine{00053\ \ \ \ \ \ \ \ \ std::vector<int>\ \mbox{\hyperlink{classneighbor__list_a88363a6730f0e2241706684573cd75a1}{nb\_indices\_}};\ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00054\ \ \ \ \ \ \ \ \ std::vector<int>\ \mbox{\hyperlink{classneighbor__list_ad73b18224596502ae67500831997e162}{nb\_first\_}};\ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00055\ \ \ \ \ \ \ \ \ std::vector<double>\ \mbox{\hyperlink{classneighbor__list_a95a5d21cb26c0d3755af391e57e03e72}{nb\_dist\_}};\ \ \ \ \ \ \ }
+\DoxyCodeLine{00056\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00057\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ ==============================================================================================}}
+\DoxyCodeLine{00058\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Constructors,\ destructors.}}
+\DoxyCodeLine{00059\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ ==============================================================================================}}
+\DoxyCodeLine{00061\ \textcolor{comment}{}\ \ \ \ \ \ \ \ \mbox{\hyperlink{classneighbor__list_ae902abb210c883750e24590f1c5a019c}{neighbor\_list}}()\ \{\}\ ;}
+\DoxyCodeLine{00062\ }
+\DoxyCodeLine{00067\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classneighbor__list_ae902abb210c883750e24590f1c5a019c}{neighbor\_list}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classgroup}{group}}\&\ G);}
+\DoxyCodeLine{00068\ }
+\DoxyCodeLine{00069\ }
+\DoxyCodeLine{00070\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ ==============================================================================================}}
+\DoxyCodeLine{00071\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Clear\ function}}
+\DoxyCodeLine{00072\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ ==============================================================================================}}
+\DoxyCodeLine{00074\ \textcolor{comment}{}\ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classneighbor__list_af915217bb801a89e63363872b6c61b15}{clear}}();}
+\DoxyCodeLine{00075\ }
+\DoxyCodeLine{00076\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ ==============================================================================================}}
+\DoxyCodeLine{00077\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Get\ functions.}}
+\DoxyCodeLine{00078\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ ==============================================================================================}}
+\DoxyCodeLine{00080\ \textcolor{comment}{}\ \ \ \ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classneighbor__list_a8d738fdb92710a94cc3ed94a0761cc0a}{is\_empty}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classneighbor__list_ab9f9724ed5f237163fd062fd9e1bef0d}{N\_}}\ ==\ 0;\}\ ;}
+\DoxyCodeLine{00082\ \ \ \ \ \ \ \ \ std::vector<int>\ \mbox{\hyperlink{classneighbor__list_a4d4986ed53992256e57701973b7f6c48}{get\_neighbors}}(\textcolor{keywordtype}{int}\ i)\ \textcolor{keyword}{const}\ ;}
+\DoxyCodeLine{00084\ \ \ \ \ \ \ \ \ std::vector<double>\ \mbox{\hyperlink{classneighbor__list_ad2124b4d6c2cf8945b3812896b14d281}{get\_dist}}(\textcolor{keywordtype}{int}\ i)\ \textcolor{keyword}{const}\ ;}
+\DoxyCodeLine{00085\ }
+\DoxyCodeLine{00086\ }
+\DoxyCodeLine{00087\ }
+\DoxyCodeLine{00088\ \}\ ;}
+\DoxyCodeLine{00089\ }
+\DoxyCodeLine{00090\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

@@ -1,0 +1,119 @@
+\doxysection{integrator.\+h}
+\hypertarget{integrator_8h_source}{}\label{integrator_8h_source}\mbox{\hyperlink{integrator_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00023\ \textcolor{preprocessor}{\#ifndef\ INTEGRATOR\_H}}
+\DoxyCodeLine{00024\ \textcolor{preprocessor}{\#define\ INTEGRATOR\_H}}
+\DoxyCodeLine{00025\ }
+\DoxyCodeLine{00026\ }
+\DoxyCodeLine{00027\ \textcolor{preprocessor}{\#include\ <iostream>}}
+\DoxyCodeLine{00028\ \textcolor{preprocessor}{\#include\ <fstream>}}
+\DoxyCodeLine{00029\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00030\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{topology_8h}{topology.h}}"{}}}
+\DoxyCodeLine{00031\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{computations_8h}{computations.h}}"{}}}
+\DoxyCodeLine{00032\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{parameters_8h}{parameters.h}}"{}}}
+\DoxyCodeLine{00033\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{group_8h}{group.h}}"{}}}
+\DoxyCodeLine{00034\ }
+\DoxyCodeLine{00035\ }
+\DoxyCodeLine{00036\ \textcolor{preprocessor}{\#include\ <chrono>}}
+\DoxyCodeLine{00037\ }
+\DoxyCodeLine{00038\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classintegrator}{integrator}}\ \{}
+\DoxyCodeLine{00039\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00061\ \ \ \ \ std::string\ integrator\_type\_;}
+\DoxyCodeLine{00062\ }
+\DoxyCodeLine{00063\ \ \ \ \ \textcolor{keywordtype}{double}\ dt\_;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00064\ \ \ \ \ \textcolor{keyword}{const}\ std::vector<double>\ a\_\ \{1.0/2.0,\ 1.0/2.0,\ 1.0\};\ }
+\DoxyCodeLine{00065\ \ \ \ \ \textcolor{keyword}{const}\ std::vector<double>\ b\_\ \{1.0/6.0,\ 1.0/3.0,\ 1.0/3.0,\ 1.0/6.0\};\ }
+\DoxyCodeLine{00066\ }
+\DoxyCodeLine{00067\ }
+\DoxyCodeLine{00068\ \ \ \ \ \textcolor{keywordtype}{double}\ kT\_;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00069\ \ \ \ \ \textcolor{keywordtype}{double}\ kT\_te\_;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00070\ \ \ \ \ \textcolor{keywordtype}{double}\ kT\_r\_;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00071\ \ \ \ \ \textcolor{keywordtype}{double}\ activity\_;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00072\ }
+\DoxyCodeLine{00073\ \ \ \ \ \textcolor{keywordtype}{double}\ g\_;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00074\ \ \ \ \ \textcolor{keywordtype}{double}\ Q\_;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00075\ \ \ \ \ \textcolor{keywordtype}{double}\ H\_0\_;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00076\ \ \ \ \ \textcolor{keywordtype}{double}\ pi\_;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00077\ \ \ \ \ \textcolor{keywordtype}{double}\ eta\_;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00078\ \ \ \ \ \textcolor{keywordtype}{double}\ s\_;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00079\ \ \ \ \ \textcolor{keywordtype}{double}\ tau\_;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00080\ }
+\DoxyCodeLine{00081\ \ \ \ \ \textcolor{keywordtype}{double}\ gamma\_ld\_om\_;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00082\ \ \ \ \ \textcolor{keywordtype}{double}\ gamma\_ld\_p\_;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00083\ }
+\DoxyCodeLine{00084\ }
+\DoxyCodeLine{00085\ \ \ \ \ \textcolor{keywordtype}{double}\ mc\_steplength\_theta\_;\ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00086\ \ \ \ \ \textcolor{keywordtype}{double}\ mc\_steplength\_r\_;\ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00087\ }
+\DoxyCodeLine{00088\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00089\ \textcolor{comment}{//\ \ \ ===================================================================================================}}
+\DoxyCodeLine{00090\ \textcolor{comment}{//\ \ \ Constructors\ and\ intialization}}
+\DoxyCodeLine{00091\ \textcolor{comment}{//\ \ \ ===================================================================================================//\ \ /////////////////////////////}}
+\DoxyCodeLine{00092\ }
+\DoxyCodeLine{00094\ \mbox{\hyperlink{classintegrator_aae9bb494860d29d900949ed5b8a767b1}{integrator}}()\{\};}
+\DoxyCodeLine{00096\ \mbox{\hyperlink{classintegrator_aae9bb494860d29d900949ed5b8a767b1}{integrator}}(\textcolor{keywordtype}{double}\ dtin,\ std::string\ type);}
+\DoxyCodeLine{00098\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classintegrator_aeff81e0b8f6856c6018b97c0d1f822e1}{integrator\_eq}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classparameters}{parameters}}\&\ par);}
+\DoxyCodeLine{00100\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classintegrator_ae7dc0d82bbef307aa3ad9b92aaf80c26}{integrator\_sample}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classparameters}{parameters}}\&\ par);}
+\DoxyCodeLine{00101\ }
+\DoxyCodeLine{00108\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classintegrator_a05a8dddd60d92222388264f3b310741c}{initialize}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classparameters}{parameters}}\&\ par,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classgroup}{group}}\&\ G);}
+\DoxyCodeLine{00110\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classintegrator_afdbea2bce0b30af14c94d7ae7920e000}{initialize\_parameters}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classparameters}{parameters}}\&\ par);}
+\DoxyCodeLine{00111\ }
+\DoxyCodeLine{00112\ }
+\DoxyCodeLine{00113\ }
+\DoxyCodeLine{00114\ \textcolor{comment}{//\ \ \ ===================================================================================================}}
+\DoxyCodeLine{00115\ \textcolor{comment}{//\ \ \ Simple\ get-\/functions}}
+\DoxyCodeLine{00116\ \textcolor{comment}{//\ \ \ ===================================================================================================//\ \ /////////////////////////////}}
+\DoxyCodeLine{00118\ \textcolor{comment}{}\textcolor{keyword}{inline}\ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{classintegrator_af7f2be0dbf4f55113f7722c687928826}{get\_dt}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ dt\_;\ \}\ ;}
+\DoxyCodeLine{00120\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{classintegrator_a4c3afa9186202912032410920bddc0cc}{get\_H\_0}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ H\_0\_;\ \}\ ;}
+\DoxyCodeLine{00122\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{classintegrator_aaaaf959b555f39c21912038667da1831}{get\_pi}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ pi\_;\ \}\ ;}
+\DoxyCodeLine{00124\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{classintegrator_ad6056363c661142e9fec5d890b579c24}{get\_eta}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ eta\_;\ \}\ ;}
+\DoxyCodeLine{00126\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{classintegrator_aee5f4524580dcac7407bda879e3450cf}{get\_s}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ s\_;\ \}\ ;}
+\DoxyCodeLine{00127\ }
+\DoxyCodeLine{00128\ \textcolor{comment}{//\ \ \ ===================================================================================================}}
+\DoxyCodeLine{00129\ \textcolor{comment}{//\ \ \ Thermostats}}
+\DoxyCodeLine{00130\ \textcolor{comment}{//\ \ \ ===================================================================================================//\ \ /////////////////////////////}}
+\DoxyCodeLine{00132\ \textcolor{comment}{}\textcolor{keywordtype}{double}\ \mbox{\hyperlink{classintegrator_aeee961f383e4faf0ca3eb97f8acc96d6}{berendsen\_thermostat}}(\mbox{\hyperlink{classgroup}{group}}\&\ G,\ \textcolor{keywordtype}{double}\ T\_desired,\ \textcolor{keywordtype}{double}\ berendsen\_tau)\ ;}
+\DoxyCodeLine{00133\ }
+\DoxyCodeLine{00134\ \textcolor{comment}{//\ \ \ ===================================================================================================}}
+\DoxyCodeLine{00135\ \textcolor{comment}{//\ \ \ Solvers}}
+\DoxyCodeLine{00136\ \textcolor{comment}{//\ \ \ ===================================================================================================//\ \ /////////////////////////////}}
+\DoxyCodeLine{00146\ \textcolor{comment}{}\mbox{\hyperlink{classgroup}{group}}\ \mbox{\hyperlink{classintegrator_aff1d714450fde8d3cab0c74536753b82}{integrate}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classgroup}{group}}\&\ G,\ std::vector<double>\&\ momdot)\ ;}
+\DoxyCodeLine{00147\ }
+\DoxyCodeLine{00149\ \mbox{\hyperlink{classgroup}{group}}\ \mbox{\hyperlink{classintegrator_ac5eb99a370d935897c96f6b570e5593d}{vm\_rule}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classgroup}{group}}\&\ G)\ ;}
+\DoxyCodeLine{00150\ }
+\DoxyCodeLine{00152\ \mbox{\hyperlink{classgroup}{group}}\ \mbox{\hyperlink{classintegrator_a52797c3cf6bdaf3c44043616dff299ef}{rk4}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classgroup}{group}}\&\ G)\ ;}
+\DoxyCodeLine{00153\ }
+\DoxyCodeLine{00155\ \mbox{\hyperlink{classgroup}{group}}\ \mbox{\hyperlink{classintegrator_a9bb949ba41f3846ff11835dc652f27c5}{leapfrog}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classgroup}{group}}\&\ G,\ std::vector<double>\&\ momdot)\ ;}
+\DoxyCodeLine{00157\ \mbox{\hyperlink{classgroup}{group}}\ \mbox{\hyperlink{classintegrator_a514b407c1b32f03efc00e9499b6cfee1}{leapfrog\_active}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classgroup}{group}}\&\ G,\ std::vector<double>\&\ momdot,\ \textcolor{keywordtype}{double}\ activity)\ ;}
+\DoxyCodeLine{00158\ }
+\DoxyCodeLine{00159\ }
+\DoxyCodeLine{00160\ }
+\DoxyCodeLine{00165\ \mbox{\hyperlink{classgroup}{group}}\ \mbox{\hyperlink{classintegrator_ac214dd82bd1374c1494502d938cd505e}{np}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classgroup}{group}}\&\ G,\ \textcolor{keywordtype}{double}\ kT,\ \textcolor{keywordtype}{double}\&\ s,\ \textcolor{keywordtype}{double}\&\ pi,\ \textcolor{keywordtype}{double}\ Q,\ \textcolor{keywordtype}{double}\ H\_0)\ ;}
+\DoxyCodeLine{00166\ }
+\DoxyCodeLine{00171\ \mbox{\hyperlink{classgroup}{group}}\ \mbox{\hyperlink{classintegrator_a010233601351ae4b7e5c1fa65c3044a0}{nh}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classgroup}{group}}\&\ G)\ ;}
+\DoxyCodeLine{00172\ }
+\DoxyCodeLine{00177\ \textcolor{keyword}{inline}\ \mbox{\hyperlink{classgroup}{group}}\ \mbox{\hyperlink{classintegrator_ac214dd82bd1374c1494502d938cd505e}{np}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classgroup}{group}}\&\ G)\ ;}
+\DoxyCodeLine{00178\ }
+\DoxyCodeLine{00179\ }
+\DoxyCodeLine{00184\ \mbox{\hyperlink{classgroup}{group}}\ \mbox{\hyperlink{classintegrator_a953b71e395db7fb5761d2081e763d073}{langevin}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classgroup}{group}}\&\ G,\ std::vector<double>\&\ momdot)\ ;}
+\DoxyCodeLine{00185\ }
+\DoxyCodeLine{00190\ \mbox{\hyperlink{classgroup}{group}}\ \mbox{\hyperlink{classintegrator_aa33266c4afa61c4c1330716436db76f0}{langevin\_active}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classgroup}{group}}\&\ G,\ std::vector<double>\&\ momdot,\ \textcolor{keywordtype}{double}\ activityc\ )\ ;}
+\DoxyCodeLine{00191\ }
+\DoxyCodeLine{00192\ \textcolor{comment}{//\ TODO\ mc}}
+\DoxyCodeLine{00193\ \textcolor{comment}{//\ template<class\ GROUP>}}
+\DoxyCodeLine{00194\ \textcolor{comment}{//\ GROUP\ mc(const\ GROUP\&\ G)\ ;\ ///<\ Monte-\/Carlo\ integration\ solver\ (not\ working\ yet)}}
+\DoxyCodeLine{00195\ }
+\DoxyCodeLine{00196\ }
+\DoxyCodeLine{00198\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{classintegrator_afe4ca35e59a9d60c914afc61d3c7e222}{NoseHamiltonian}}(\mbox{\hyperlink{classgroup}{group}}\&\ G,\ \textcolor{keywordtype}{double}\ kT,\ \textcolor{keywordtype}{double}\ s\ ,\ \textcolor{keywordtype}{double}\ pi,\ \textcolor{keywordtype}{double}\ Q)\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00199\ \ \ \ \ \textcolor{keywordflow}{return}\ G.\mbox{\hyperlink{classgroup_a93b89d7f402d699ae1fbaeca09b894f1}{calc\_kinetic\_energy}}()\ /\ (s\ *\ s)\ +\ G.\mbox{\hyperlink{classgroup_a3a4be7da7f0f4e32ee66d64f05639ada}{calc\_interaction\_energy}}()\ +\ .5\ *\ pi\ *\ pi\ /\ Q\ +\ 2\ *\ G.\mbox{\hyperlink{classgroup_a0af365fff45f5342e94fee665b09fe38}{get\_N}}()\ *\ kT\ *\ std::log(s);}
+\DoxyCodeLine{00200\ \};}
+\DoxyCodeLine{00201\ }
+\DoxyCodeLine{00203\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classintegrator_ad185d28dffb76d2d230554bffdf633de}{add\_activity}}(\mbox{\hyperlink{classgroup}{group}}\&\ G,\ \textcolor{keywordtype}{double}\ activity)\ \textcolor{keyword}{const}\ ;}
+\DoxyCodeLine{00204\ }
+\DoxyCodeLine{00205\ }
+\DoxyCodeLine{00206\ }
+\DoxyCodeLine{00207\ \};}
+\DoxyCodeLine{00208\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ INTEGRATOR\_H\_\ */}\textcolor{preprocessor}{}}
+
+\end{DoxyCode}

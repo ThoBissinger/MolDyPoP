@@ -1,0 +1,34 @@
+\doxysection{neighbor\+\_\+list.\+h File Reference}
+\hypertarget{neighbor__list_8h}{}\label{neighbor__list_8h}\index{neighbor\_list.h@{neighbor\_list.h}}
+
+
+Header-\/file to class declaration of \doxylink{classneighbor__list}{neighbor\+\_\+list}. Introduces a data structure storing the neighbors to each particle. Useful when neighborhoods stay static.  
+
+
+{\ttfamily \#include \"{}topology.\+h\"{}}\newline
+{\ttfamily \#include \"{}partition.\+h\"{}}\newline
+{\ttfamily \#include \"{}group.\+h\"{}}\newline
+{\ttfamily \#include $<$fstream$>$}\newline
+{\ttfamily \#include $<$list$>$}\newline
+{\ttfamily \#include $<$vector$>$}\newline
+{\ttfamily \#include $<$algorithm$>$}\newline
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classneighbor__list}{neighbor\+\_\+list}}
+\begin{DoxyCompactList}\small\item\em Defines the \doxylink{classneighbor__list}{neighbor\+\_\+list} class. Can be used to extract all information about neighborhood in a group, that is the neighbor pairs and all the distances. Neighbors are those other particles within the cutoff radius or the nearest neighbors in case of a lattice system. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Header-\/file to class declaration of \doxylink{classneighbor__list}{neighbor\+\_\+list}. Introduces a data structure storing the neighbors to each particle. Useful when neighborhoods stay static. 
+
+Works especially well for disordered XY models and the like. Can also be used for lattice-\/based models, though the memory access for calls to the \doxylink{classneighbor__list}{neighbor\+\_\+list} may be more expensive than the straightforward modulo calculations associated with neighbor calculations in lattice-\/based simulations
+
+\begin{DoxyAuthor}{Author}
+Thomas Bissinger
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+Created\+: mid 2019 
+
+Last Updated\+: 2023-\/08-\/06 
+\end{DoxyDate}

@@ -1,0 +1,470 @@
+#! /bin/sh
+
+#  Sample script to submit a job to the SGE Queue System on grendel.
+#
+# 2006-08-15, Stefan Gerlach : updated to new configuration
+#
+# 2017-08-24, Thomas Bissinger : personalized version based on Sebastian Fritschi's version
+# 2023-08-21, Thomas Bissinger : final version 
+#
+##  usage:  qsub [-q grendel[xx].q] submit_sample
+##           (things between [...] are optional, xx=01,02,03,04.)
+#
+#  CAREFUL: the following 3 lines starting with "#$" are SPECIAL COMMENTS,
+#  which are understood by SGE. THEY MUST BE SET accordingly to your case.
+
+#$ -S /bin/sh
+
+# standard output (-o)  and error (-e) files: (modify them accordingly):
+
+#$ -o /data/scc/thobi/submit/log/
+#$ -e /data/scc/thobi/submit/log/
+
+####$ -t 1-1				##==== 	change to how many times you want to run your sim and with what ID - changes externally specified
+####$ -l h_rt=00:05:00			##==== 	runtime - these changes should be externally specified
+#$ -M thomas.2.bissinger@uni-konstanz.de		##==== 	mail adress
+
+#####$ -q scc				##====	q not specified. If jobs run for less than a day, they can be submitted to any queue.
+					##====	Only longer running jobs should be put to scc.
+# your path and files.
+#      make sure where "/" goes and where it does not (see below).
+#      make sure your executable is found under $thebinary:
+
+################################################################################
+## Initializing logs and paths.
+################################################################################
+PATH=$PATH:/home/user/thobi/bin # MAKE PERSONAL CHANGE HERE
+
+## Reads command line input
+mode=$1
+model=$2
+sim_id=$3
+T=$4
+sqrtN=$5
+
+## Sets paths and variables
+basedir=/data/scc/thobi/00_MolDyPop_Final/Example # MAKE PERSONAL CHANGE HERE
+stddir=$basedir/$sim_id""_data # MAKE PERSONAL CHANGE HERE
+eqdir=$basedir/eq_data
+sourcedir=$stddir
+scratchdir_base=$basedir/scratchdir
+logdir=$basedir/logs
+
+matlabdir=/data/scc/thobi/00_MolDyPop_Final/Example/Matlab # MAKE PERSONAL CHANGE HERE
+
+bindir=$basedir/bin
+logfile=$logdir/log_$JOB_ID.$SGE_TASK_ID".log"
+errlog=$logdir/errlog.log
+globallog=$logdir/submitlog.log;
+
+executable=$bindir/MolDyPoP
+login_path=$(pwd)
+
+workdir=$stddir/$model/sqrtN_$sqrtN/T_$T
+SGE_O_WORKDIR=$workdir/run_$SGE_TASK_ID
+scratchdir=$stddir/scratchdir/"$name"
+
+SGE_O_SHELL=/bin/sh
+
+## That just prints all the parameters to the .o-file
+echo "
+\$0:               $0
+\$1 (mode):        $mode
+\$2 (model):       $model
+\$3 (sim_id):      $sim_id
+\$4 (T):           $T
+\$5 (sqrtN):       $sqrtN
+
+
+login_path         $login_path
+SGE_ROOT           $SGE_ROOT
+SGE_BINARY_PATH    $SGE_BINARY_PATH
+SGE_CELL           $SGE_CELL
+SGE_JOB_POOL_DIR   $SGE_JOB_POOL_DIR
+SGE_O_HOME         $SGE_O_HOME
+SGE_O_HOST         $SGE_O_HOST
+SGE_O_LOGNAME      $SGE_O_LOGNAME
+SGE_O_MAIL         $SGE_O_MAIL
+SGE_O_PATH         $SGE_O_PATH
+SGE_O_SHELL        $SGE_O_SHELL
+SGE_O_TZ           $SGE_O_TZ
+SGE_O_WORKDIR      $SGE_O_WORKDIR
+SGE_STDERR_PATH    $SGE_STDERR_PATH
+SGE_STDOUT_PATH    $SGE_STDOUT_PATH
+SGE_TASK_ID        $SGE_TASK_ID
+" >> $logfile
+echo "
+\$0:               $0
+\$1 (mode):        $mode
+\$2 (model):       $model
+\$3 (sim_id):      $sim_id
+\$4 (T):           $T
+\$5 (sqrtN):       $sqrtN
+
+
+login_path         $login_path
+SGE_ROOT           $SGE_ROOT
+SGE_BINARY_PATH    $SGE_BINARY_PATH
+SGE_CELL           $SGE_CELL
+SGE_JOB_POOL_DIR   $SGE_JOB_POOL_DIR
+SGE_O_HOME         $SGE_O_HOME
+SGE_O_HOST         $SGE_O_HOST
+SGE_O_LOGNAME      $SGE_O_LOGNAME
+SGE_O_MAIL         $SGE_O_MAIL
+SGE_O_PATH         $SGE_O_PATH
+SGE_O_SHELL        $SGE_O_SHELL
+SGE_O_TZ           $SGE_O_TZ
+SGE_O_WORKDIR      $SGE_O_WORKDIR
+SGE_STDERR_PATH    $SGE_STDERR_PATH
+SGE_STDOUT_PATH    $SGE_STDOUT_PATH
+SGE_TASK_ID        $SGE_TASK_ID
+"
+
+
+
+################################################################################
+## Naming the job
+## SGE_TASK_ID is the run number.
+## Computations are performed in a scratchdir that is erased after the run.
+## Carful: If the run doesn't terminate properly (e.g. ended by user), the
+## scratchdir isn't deleted.
+################################################################################
+if [[ $SGE_TASK_ID == undefined ]]; then
+  name="job_$JOB_ID"
+  ranseed=$((1000*$SGE_TASK_ID)) # multiplying the job_id leads to too high numbers, overflow errors and bad random seeds in c++
+else
+  name="job_$JOB_ID"_"$SGE_TASK_ID"
+  ranseed=$((1000*$SGE_TASK_ID+$JOB_ID)) # multiplying the job_id leads to too high numbers, overflow errors and bad random seeds in c++
+fi
+
+outputdir=$stddir/$model/sqrtN_$sqrtN/T_$T/run_$SGE_TASK_ID/output
+eq_outputdir=$eqdir/$model/sqrtN_$sqrtN/T_.01/run_$SGE_TASK_ID/output
+
+
+
+
+################################################################################
+## Computation mode matlab.
+## Just runs the sampling data through matlab to create a .mat file from the .m
+## file
+################################################################################
+if [[ $mode == "matlab" ]]; then
+  if [[ $SGE_TASK_ID == undefined ]]; then
+    matlabpathbase=/home/user/thobi/Code/1911_XYModelBasedOnMHoefler/MatlabScripts/sim_analysis
+    scratchdir=$scratchdir_base/"$name"
+    mkdir $scratchdir
+    cd $scratchdir
+    matlabscript=$scratchdir/matlabscript
+    echo "$scratchdir $matlabscript.m $pathbase $SGE_O_WORKDIR $name"
+
+    if [[ $model == "mxy" ]]; then
+      pathbase=$workdir
+      dataset_id="integ_mxy"
+      dataset_id_eq="eq_mxy"
+      runmax=100
+      system_id='mxy';
+    elif [[ $model == "fmxy" ]]; then # Has to be adjusted for different model
+      pathbase=$workdir
+      dataset_id="dynamics_fmxy_LinearTime"
+      runmax=100
+      system_id='fmxy';
+    elif [[ $model == "xy" ]]; then # Has to be adjusted for different model
+      pathbase=$workdir
+      dataset_id="dynamics_xy_LinearTime"
+      runmax=100
+      system_id='xy';
+    fi
+    sampfile=sampling_output_$sim_id
+    collectfile=samp_$sim_id
+    sampfile_eq=eq_sampling_output_$sim_id
+    collectfile_eq=samp_eq
+
+
+
+    echo
+    echo '...Loading modules ...'
+    module load matlab
+    echo '...Module matlab loaded ...'
+
+    echo "
+    addpath(genpath('$matlabdir/readfunctions'));
+    addpath(genpath('$matlabdir/FitFuncs'));
+    addpath(genpath('$matlabdir/FourierTransform'));
+    addpath(genpath('$matlabdir/ScanningSnapshots'));
+    addpath(genpath('$matlabdir/StructureFactor'));
+
+
+    dataset_id='$dataset_id';
+    dataset_id_eq='$dataset_id_eq';
+    sim_id='integ';
+    system='$system_id';
+    pathbase='$pathbase';
+    runmax=$runmax;
+    sampfile='$sampfile';
+    sampfile_eq='$sampfile_eq';
+
+    sqrtN_vals=[16,32];
+    sqrtN=$sqrtN;
+    if ( strcmp(system,'fmxy') || strcmp(system,'mxy') )
+      L_vals=[9.25,18.5,37,74,148];
+      qmax=2*pi/.1;
+    else
+      L_vals=sqrtN_vals;
+      qmax=pi;
+    end
+    L = L_vals(find(sqrtN_vals==sqrtN));
+
+
+    collectfile='$collectfile';
+    collectfile_eq='$collectfile_eq';
+    collectfile_FFT='$collectfile""_FFT';
+    collectfile_Mhistogram='$collectfile""_Mhistogram';
+    collectfile_M_TimeEvolution='$collectfile""_M_TimeEvolution';
+
+    varnames=name_vector(dataset_id);
+    varnames_eq=name_vector(dataset_id_eq);
+
+    fprintf('dataset_id = %s\n', dataset_id)
+    fprintf('sim_id = %s\n', sim_id)
+    fprintf('system = %s\n', system)
+    fprintf('pathbase = %s\n', pathbase)
+    fprintf('runmax = %d\n', runmax)
+    fprintf('sampfile = %s\n', sampfile)
+    fprintf('collectfile = %s\n', collectfile)
+    fprintf('collectfile_FFT = %s\n', collectfile_FFT)
+    fprintf('collectfile_Mhistogram = %s\n', collectfile_Mhistogram)
+    fprintf('collectfile_M_TimeEvolution = %s\n', collectfile_M_TimeEvolution)
+
+
+    fprintf('Running collect_runs\n')
+    collect_runs(pathbase,runmax,sampfile,collectfile,varnames);
+
+    fprintf('Running collect_runs eq\n')
+    collect_runs(pathbase,runmax,sampfile_eq,collectfile_eq,varnames_eq);
+
+    % fprintf('\n\nRunning run_averaged_FFT\n')
+    % run_averaged_FFT(pathbase,sampfile,runmax,collectfile_FFT,0);
+
+    fprintf('\n\nRunning M_histogram\n')
+    M_histogram(pathbase,sampfile_eq,collectfile_Mhistogram,runmax);
+
+    fprintf('\n\nRunning M_TimeEvolution\n')
+    M_TimeEvolution(pathbase,sampfile_eq,collectfile_M_TimeEvolution,runmax);
+
+    fprintf('\n\nRunning calculate_gr\n')
+    collect_gr(pathbase,runmax,sim_id,system)
+
+    fprintf('\n\nRunning calculate_chi\n')
+    collect_chi(pathbase,runmax,sim_id,system,L,qmax)
+
+    % fprintf('\n\nRunning calculate_gr\n')
+    % collect_gr_SpinSCF(pathbase,runmax,sim_id,system,L,0.01,1e4)
+
+
+    exit;
+    return;" > $matlabscript.m
+    
+
+    echo ""
+    echo "Running matlab at $(date)"
+    matlab -batch "run $matlabscript"
+    echo "Matlab done at $(date)"
+    echo ""
+
+    echo "Exiting at $(date)"
+    exit
+  else
+    sleeptime=$(echo ".05 * $SGE_TASK_ID" | bc -l) # Can avoid program calls intersecting
+    sleep $sleeptime
+
+    scratchdir=$scratchdir_base/"$name"
+    echo "scratcdir        $scratchdir"
+    mkdir $scratchdir
+
+    echo '...Loading modules ...'
+    module load matlab
+    echo '...Module matlab loaded ...'
+
+
+
+    filename=sampling_output_$sim_id
+    if [[ -e $outputdir/$filename.m && ! -e $outputdir/$filename.mat ]]; then
+      echo "Creating $outputdir/$filename.mat file from $outputdir/$filename.m file"
+      echo "Copying $outputdir/$filename.m to $scratchdir"
+      cp $outputdir/$filename.m $scratchdir
+      cd $scratchdir
+      echo "Running matlab at $(date)"
+      matlab -batch "run $filename; save $filename;"
+      echo "Matlab done at $(date)"
+      echo "Moving $filename.mat to $outputdir"
+      mv $filename.mat $outputdir
+      rm -rf $scratchdir
+      echo "Moving and deletion complete"
+    else
+      if [[ ! -e $outputdir/$filename.m ]]; then
+        echo "$outputdir/$filename.m doesn't exist"
+      else
+        echo "$outputdir/$filename.mat already exists"
+      fi
+    fi
+    echo "Exiting at $(date)"
+    exit
+  fi
+fi
+
+scratchdir=$scratchdir_base/"$name"
+SGE_O_SHELL=/bin/sh
+if [[ $mode == submit ]]; then
+  exitvalue=$(grep -F "Exit value:" "$outputdir/data_$sim_id.out" | cut -d ' ' -f 3);
+  if [[ "$exitvalue" == "1" ]]; then
+# if [[ -e $outputdir/data_$sim_id.out  && ]]; then
+    echo "!! ERROR   Outputfile 'data_$sim_id.out' already existing. Exiting"
+    echo "$SGE_TASK_ID $JOB_ID $workdir     Outputfile 'data_$sim_id.out' already exists." >> $errlog
+    exit
+  fi
+fi
+
+################################################################################
+## Pre-computation messages. Log files.
+################################################################################
+thedate=`date`
+echo '...starting the job at ...'$thedate
+echo '...starting the job at ...'$thedate >> $logfile
+
+echo "scratch: $scratchdir, called from: $SGE_O_WORKDIR, $name"
+echo "scratch: $scratchdir, called from: $SGE_O_WORKDIR, $name" >> $logfile
+echo "scratch: $scratchdir, called from: $SGE_O_WORKDIR, $name" >> $globallog
+#echo "scratch: $scratchdir, called from: $SGE_O_WORKDIR, $name" > SGE_info.tmp
+
+################################################################################
+## Data transfer
+################################################################################
+## There should (typically) not be two computations running in a folder.
+## Therefore, each run creates a file submitcheck.log in the SGE_O_WORKDIR. The
+## file is deleted after the job is finished.
+if [[ -e $SGE_O_WORKDIR/submitcheck.log ]]; then
+  echo "! ERROR     submitcheck.log found in $SGE_O_WORKDIR (there is apparently already a job running in this directory)"
+  echo "!           No computation performed in mode $mode"
+  echo "! ERROR     submitcheck.log found in $SGE_O_WORKDIR" >> $logfile
+	exit
+## If there is already a data-output in the directory, usually there is no need
+## for running the job again. This may, however, be changed depending on the
+## mode variable (sometimes, data has to be corrected). Change accordingly by
+## moving this if block to the next code subsection
+elif [[ $mode == "submit" && -e $SGE_O_WORKDIR/output/data*.out ]]; then
+  echo "! ERROR     There is already data in the folder $SGE_O_WORKDIR"
+  echo "!           No computation performed in mode $mode"
+  echo "! ERROR     There is already data in the folder $SGE_O_WORKDIR" >> $logfile
+  exit
+fi
+
+## If SGE_O_WORKDIR does not exist, the program assumes that there probably
+## exists data for a first run in the directory workdir. The inputs should be
+## the same except for the random number seed, so they can just be copied.
+if [[ ! -e $SGE_O_WORKDIR ]]; then
+	if [[ -e $workdir/run_1 ]]; then
+		mkdir -p $SGE_O_WORKDIR/input
+		mkdir -p $SGE_O_WORKDIR/output
+		cp $workdir/run_1/input/* $SGE_O_WORKDIR/input
+		infile_change_option.sh "$SGE_O_WORKDIR/input/infile.in" "randomseed" "$ranseed"
+	else
+		echo "!!! workdir $SGE_O_WORKDIR does not exist. No computation performed!!!" >> $logfile
+		exit
+
+	fi
+fi
+
+mkdir -p $scratchdir
+cd $scratchdir
+mkdir input
+mkdir output
+cp -r $SGE_O_WORKDIR/input/* input
+# cp -r $SGE_O_WORKDIR/* .
+# rm -rf output/submitcheck.txt
+
+
+
+################################################################################
+## Final preparations
+################################################################################
+echo "...Computation mode is $mode ..."
+echo "...Computation mode is $mode ..." >> $logfile
+
+## Module loading.
+echo '...Loading modules ...'
+module load matlab
+echo '...Module matlab loaded ...'
+echo '...All modules loaded ...'
+
+## This stores all the relevant information to the usual output files. Also
+## prints to the file  $SGE_O_WORKDIR/submit_history.out, which contains data
+## for all jobs submitted from a folder.
+echo "$thedate $scratchdir $SGE_O_WORKDIR $name /data/scc/thobi/submit/log/submitscript_runs.o$JOB_ID"."$SGE_TASK_ID /data/scc/thobi/submit/log/submitscript_runs.e$JOB_ID"."$SGE_TASK_ID $mode" >> $SGE_O_WORKDIR/submit_history.out
+echo "$thedate $scratchdir $SGE_O_WORKDIR $name /data/scc/thobi/submit/log/submitscript_runs.o$JOB_ID"."$SGE_TASK_ID /data/scc/thobi/submit/log/submitscript_runs.e$JOB_ID"."$SGE_TASK_ID $mode" >> $SGE_O_WORKDIR/submitcheck.log
+echo "$thedate $scratchdir $SGE_O_WORKDIR $name /data/scc/thobi/submit/log/submitscript_runs.o$JOB_ID"."$SGE_TASK_ID /data/scc/thobi/submit/log/submitscript_runs.e$JOB_ID"."$SGE_TASK_ID $mode" >> $scratchdir/submitcheck.log
+
+
+
+inputdir=$scratchdir/input
+scratchoutdir=$scratchdir/output
+outputdir=$SGE_O_WORKDIR/output
+infile=$inputdir/infile.in
+if [[ $mode == "submit" || $mode == "rerun"  ]]; then
+	infile_change_option.sh "$infile" "mode" "integrate"
+	infile_change_option.sh "$infile" "job_id" "$sim_id"
+	infile_change_option.sh "$infile" "randomseed" "$ranseed"
+	infile_change_option.sh "$infile" "Tmax" "2e3"
+	if [[ "$sim_id" == "eq" ]]; then
+		infile_change_option.sh "$infile" "mode" "equilibrate"
+	elif [[ "$sim_id" == "integ" ]]; then
+		# eqfile=$eq_outputdir/$(grep -F "$T " $eq_outputdir/eq_snapshot_overview.out | cut -d " " -f 2 | cut -d "/" -f 2)
+		eqfile=$(ls $eq_outputdir/eq_snapshot_T_* | grep -F "$T""00")
+		infile_change_option.sh "$infile" "init_file" "$eqfile"
+		infile_change_option.sh "$infile" "init_mode" "file"
+	fi
+
+    ulimit -c unlimited
+    thedate=`date`
+    echo '...Running '$executable' at '$thedate ' ...'
+    ################################################################################
+    ## The actual sim.
+    ################################################################################
+    $executable
+    thedate=`date`
+    echo '... completed '$executable' at '$thedate ' ...'
+fi
+
+################################################################################
+## Converts output to matlab readable format
+################################################################################
+# When running this, check that matlab works properly, otherwise program will crash
+# at this point
+if [[ $(grep "averaging_times" "$scratchoutdir/sampling_output_$sim_id.m" ) ]]; then
+	matlab -batch "run $scratchoutdir/sampling_output_$sim_id.m; save $scratchoutdir/sampling_output_$sim_id; exit;"
+fi
+if [[ $(grep "averaging_times" "$scratchoutdir/eq_sampling_output_$sim_id.m" ) ]]; then
+	matlab -batch "run $scratchoutdir/eq_sampling_output_$sim_id.m; save $scratchoutdir/eq_sampling_output_$sim_id; exit;"
+fi
+
+
+
+################################################################################
+## Cleaning up
+## Copies input from scratchdir to destination (SGE_O_WORKDIR)
+################################################################################
+
+thedate=`date`
+echo '...the job is finished at ...'$thedate
+echo '...the job is finished at ...'$thedate >> $logfile
+
+mv $scratchdir/input/* $SGE_O_WORKDIR/input
+mv -n $scratchdir/output/* $SGE_O_WORKDIR/output/  ## Moves only files that do not exist yet (avoids copying large snapshot files over and over)
+mv $scratchdir/output/data* $SGE_O_WORKDIR/output/ ## Data output files are always moved
+mv $scratchdir/output/samp* $SGE_O_WORKDIR/output/ ## samp output files are always moved
+mv $scratchdir/output/eq* $SGE_O_WORKDIR/output/ ## equilibration output files are always moved
+rm -rf $SGE_O_WORKDIR/submitcheck.log
+cd -
+# rm -rf $scratchdir
+echo '...cleaning is finished at ...'$thedate
+echo '...cleaning is finished at ...'$thedate >> $logfile
+#rm -rf $workdir/output/submitcheck.log

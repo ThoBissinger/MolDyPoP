@@ -1,0 +1,160 @@
+\hypertarget{classtopology_1_1Vector2d}{}\section{topology\+:\+:Vector2d Class Reference}
+\label{classtopology_1_1Vector2d}\index{topology\+::\+Vector2d@{topology\+::\+Vector2d}}
+
+
+Mathematical 2d vectors. Can be added, multiplied by a scalar, norm computation is possible. There are print-\/to-\/file and print-\/to-\/command-\/line functions available. The vector can be accessed by the standard \char`\"{}\+V\+E\+C\mbox{[}$\,$\mbox{]}\char`\"{} command. Some additional functions are included to handle periodic boundary conditions in a box.  
+
+
+
+
+{\ttfamily \#include $<$topology.\+h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classtopology_1_1Vector2d_a8adf275719f6f76f566040dba99102be}\label{classtopology_1_1Vector2d_a8adf275719f6f76f566040dba99102be}} 
+\mbox{\hyperlink{classtopology_1_1Vector2d_a8adf275719f6f76f566040dba99102be}{Vector2d}} ()
+\begin{DoxyCompactList}\small\item\em Constructor without argument. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classtopology_1_1Vector2d_a6886f1eb4cd3190ea3b5848885677883}\label{classtopology_1_1Vector2d_a6886f1eb4cd3190ea3b5848885677883}} 
+\mbox{\hyperlink{classtopology_1_1Vector2d_a6886f1eb4cd3190ea3b5848885677883}{Vector2d}} (double $\ast$v)
+\begin{DoxyCompactList}\small\item\em Constructor from double array. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classtopology_1_1Vector2d_ac0ff78408ea0a2156586a7d4d2850a52}\label{classtopology_1_1Vector2d_ac0ff78408ea0a2156586a7d4d2850a52}} 
+\mbox{\hyperlink{classtopology_1_1Vector2d_ac0ff78408ea0a2156586a7d4d2850a52}{Vector2d}} (const double \&x)
+\begin{DoxyCompactList}\small\item\em Constructor from a double (same arguments). \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classtopology_1_1Vector2d_a5a82724dca240e6606be99c3e7f8f114}\label{classtopology_1_1Vector2d_a5a82724dca240e6606be99c3e7f8f114}} 
+\mbox{\hyperlink{classtopology_1_1Vector2d_a5a82724dca240e6606be99c3e7f8f114}{Vector2d}} (const int \&x)
+\begin{DoxyCompactList}\small\item\em Constructor from an int (same arguments). \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classtopology_1_1Vector2d_a1542f7c25d58a1f0f756703dc44d49ce}\label{classtopology_1_1Vector2d_a1542f7c25d58a1f0f756703dc44d49ce}} 
+\mbox{\hyperlink{classtopology_1_1Vector2d_a1542f7c25d58a1f0f756703dc44d49ce}{Vector2d}} (const double x, const double y)
+\begin{DoxyCompactList}\small\item\em Constructor from two doubles, x and y argument. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classtopology_1_1Vector2d_add78376beadec0692919ada648dacc26}\label{classtopology_1_1Vector2d_add78376beadec0692919ada648dacc26}} 
+\mbox{\hyperlink{classtopology_1_1Vector2d_add78376beadec0692919ada648dacc26}{Vector2d}} (const \mbox{\hyperlink{classtopology_1_1Vector2d}{Vector2d}} \&w)
+\begin{DoxyCompactList}\small\item\em Copy constructor from two doubles. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classtopology_1_1Vector2d_a7287b98091215d9debe3ad333507abf2}\label{classtopology_1_1Vector2d_a7287b98091215d9debe3ad333507abf2}} 
+void \mbox{\hyperlink{classtopology_1_1Vector2d_a7287b98091215d9debe3ad333507abf2}{print}} (std\+::ostream \&outfile) const
+\begin{DoxyCompactList}\small\item\em Print to file in xyz format. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classtopology_1_1Vector2d_a57cc1066f77af8e42d713ebee2705814}\label{classtopology_1_1Vector2d_a57cc1066f77af8e42d713ebee2705814}} 
+void \mbox{\hyperlink{classtopology_1_1Vector2d_a57cc1066f77af8e42d713ebee2705814}{print}} () const
+\begin{DoxyCompactList}\small\item\em Print to command line in xy format. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classtopology_1_1Vector2d_a451052a0c4ea5d514f614b46bd4b7069}\label{classtopology_1_1Vector2d_a451052a0c4ea5d514f614b46bd4b7069}} 
+void \mbox{\hyperlink{classtopology_1_1Vector2d_a451052a0c4ea5d514f614b46bd4b7069}{print\+\_\+xyz}} () const
+\begin{DoxyCompactList}\small\item\em Print to command line in xyz format. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classtopology_1_1Vector2d_a2bf593266241d05b8aa66ad86aaa32df}\label{classtopology_1_1Vector2d_a2bf593266241d05b8aa66ad86aaa32df}} 
+void \mbox{\hyperlink{classtopology_1_1Vector2d_a2bf593266241d05b8aa66ad86aaa32df}{print\+\_\+matlab}} (std\+::string name, std\+::ostream \&outfile) const
+\begin{DoxyCompactList}\small\item\em Print to command line in xyz format. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classtopology_1_1Vector2d_a71afcc108ac679d3187a362d8f83ee9f}\label{classtopology_1_1Vector2d_a71afcc108ac679d3187a362d8f83ee9f}} 
+const double $\ast$ \mbox{\hyperlink{classtopology_1_1Vector2d_a71afcc108ac679d3187a362d8f83ee9f}{getv\+\_\+}} () const
+\begin{DoxyCompactList}\small\item\em Return vector v\+\_\+. Probably unused due to \mbox{[}\mbox{]} operators. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classtopology_1_1Vector2d_ad601cbedb3fb038966d82c9a9fa0811a}\label{classtopology_1_1Vector2d_ad601cbedb3fb038966d82c9a9fa0811a}} 
+double {\bfseries get\+\_\+x} () const
+\item 
+\mbox{\Hypertarget{classtopology_1_1Vector2d_af01fdaa040a15d7643f9088d9b3755a2}\label{classtopology_1_1Vector2d_af01fdaa040a15d7643f9088d9b3755a2}} 
+double \mbox{\hyperlink{classtopology_1_1Vector2d_af01fdaa040a15d7643f9088d9b3755a2}{get\+\_\+y}} () const
+\begin{DoxyCompactList}\small\item\em Return x component. \end{DoxyCompactList}\item 
+const int \mbox{\hyperlink{classtopology_1_1Vector2d_a81f9259cef101add1652394d8aea044c}{size}} () const
+\begin{DoxyCompactList}\small\item\em Return y component. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classtopology_1_1Vector2d_a096846877b61869091ec646ecbca856d}\label{classtopology_1_1Vector2d_a096846877b61869091ec646ecbca856d}} 
+bool {\bfseries is\+\_\+zero} () const
+\item 
+\mbox{\Hypertarget{classtopology_1_1Vector2d_a99d4c796f7d8787c46f3af09bdb69778}\label{classtopology_1_1Vector2d_a99d4c796f7d8787c46f3af09bdb69778}} 
+double \& \mbox{\hyperlink{classtopology_1_1Vector2d_a99d4c796f7d8787c46f3af09bdb69778}{operator\mbox{[}$\,$\mbox{]}}} (int index)
+\begin{DoxyCompactList}\small\item\em Element access. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classtopology_1_1Vector2d_a2c02e59b157c7ba8f9a4b766227ec961}\label{classtopology_1_1Vector2d_a2c02e59b157c7ba8f9a4b766227ec961}} 
+const double \& \mbox{\hyperlink{classtopology_1_1Vector2d_a2c02e59b157c7ba8f9a4b766227ec961}{operator\mbox{[}$\,$\mbox{]}}} (int index) const
+\begin{DoxyCompactList}\small\item\em const element access. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classtopology_1_1Vector2d_a7dd9763bed5bcdddf0b18634a08c5207}\label{classtopology_1_1Vector2d_a7dd9763bed5bcdddf0b18634a08c5207}} 
+\mbox{\hyperlink{classtopology_1_1Vector2d}{Vector2d}} \& {\bfseries operator+=} (const \mbox{\hyperlink{classtopology_1_1Vector2d}{Vector2d}} \&w)
+\item 
+\mbox{\Hypertarget{classtopology_1_1Vector2d_a0e9fe2b0ee0213a8bac920daa32cbac7}\label{classtopology_1_1Vector2d_a0e9fe2b0ee0213a8bac920daa32cbac7}} 
+\mbox{\hyperlink{classtopology_1_1Vector2d}{Vector2d}} \& {\bfseries operator-\/=} (const \mbox{\hyperlink{classtopology_1_1Vector2d}{Vector2d}} \&w)
+\item 
+\mbox{\Hypertarget{classtopology_1_1Vector2d_ab1fbb127df5bca3e3a3e313042d11b8b}\label{classtopology_1_1Vector2d_ab1fbb127df5bca3e3a3e313042d11b8b}} 
+\mbox{\hyperlink{classtopology_1_1Vector2d}{Vector2d}} \& {\bfseries operator$\ast$=} (const double a)
+\item 
+\mbox{\Hypertarget{classtopology_1_1Vector2d_a8541de8d52f3ff9a764be0d25b530dd8}\label{classtopology_1_1Vector2d_a8541de8d52f3ff9a764be0d25b530dd8}} 
+\mbox{\hyperlink{classtopology_1_1Vector2d}{Vector2d}} \& {\bfseries operator$\ast$=} (const int a)
+\item 
+\mbox{\Hypertarget{classtopology_1_1Vector2d_abdef0e230c3e60f74f06b8210fc4aae2}\label{classtopology_1_1Vector2d_abdef0e230c3e60f74f06b8210fc4aae2}} 
+double {\bfseries operator$\ast$=} (const \mbox{\hyperlink{classtopology_1_1Vector2d}{Vector2d}} \&w)
+\item 
+\mbox{\Hypertarget{classtopology_1_1Vector2d_a54998e86122dbf26790b17162b778024}\label{classtopology_1_1Vector2d_a54998e86122dbf26790b17162b778024}} 
+\mbox{\hyperlink{classtopology_1_1Vector2d}{Vector2d}} \& {\bfseries operator/=} (const double a)
+\item 
+\mbox{\Hypertarget{classtopology_1_1Vector2d_a74ac4324c2daecba8ebd3b995dfdaf09}\label{classtopology_1_1Vector2d_a74ac4324c2daecba8ebd3b995dfdaf09}} 
+\mbox{\hyperlink{classtopology_1_1Vector2d}{Vector2d}} \& {\bfseries operator/=} (const int a)
+\item 
+\mbox{\Hypertarget{classtopology_1_1Vector2d_a1102eecb016c3a632a711f4d2721471e}\label{classtopology_1_1Vector2d_a1102eecb016c3a632a711f4d2721471e}} 
+\mbox{\hyperlink{classtopology_1_1Vector2d}{Vector2d}} {\bfseries operator-\/} () const
+\item 
+\mbox{\Hypertarget{classtopology_1_1Vector2d_a9d3418e85e9c079c5aed2c0042fa696b}\label{classtopology_1_1Vector2d_a9d3418e85e9c079c5aed2c0042fa696b}} 
+void \mbox{\hyperlink{classtopology_1_1Vector2d_a9d3418e85e9c079c5aed2c0042fa696b}{rotate}} (const double theta)
+\begin{DoxyCompactList}\small\item\em Rotates vector by angle theta. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classtopology_1_1Vector2d_a41391cc6bd8a179b5c9bd64be6302ffc}\label{classtopology_1_1Vector2d_a41391cc6bd8a179b5c9bd64be6302ffc}} 
+double \mbox{\hyperlink{classtopology_1_1Vector2d_a41391cc6bd8a179b5c9bd64be6302ffc}{norm2}} () const
+\begin{DoxyCompactList}\small\item\em Squared L2 norm of vector. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classtopology_1_1Vector2d_aa34fc52ec93f607a4a6b2033e4c6d2db}\label{classtopology_1_1Vector2d_aa34fc52ec93f607a4a6b2033e4c6d2db}} 
+void \mbox{\hyperlink{classtopology_1_1Vector2d_aa34fc52ec93f607a4a6b2033e4c6d2db}{normalized}} ()
+\begin{DoxyCompactList}\small\item\em Normalizes vector. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classtopology_1_1Vector2d_acbc60af5c9b08102b168e9606d01bbab}{periodic\+\_\+box}} (const \mbox{\hyperlink{classtopology_1_1Vector2d}{Vector2d}} \&minima, const \mbox{\hyperlink{classtopology_1_1Vector2d}{Vector2d}} \&maxima)
+\begin{DoxyCompactList}\small\item\em Periodic boundary conditions in box. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classtopology_1_1Vector2d_a5b1283e5509f49a556117c84e94a55ee}\label{classtopology_1_1Vector2d_a5b1283e5509f49a556117c84e94a55ee}} 
+void \mbox{\hyperlink{classtopology_1_1Vector2d_a5b1283e5509f49a556117c84e94a55ee}{periodic\+\_\+box}} (const \mbox{\hyperlink{classtopology_1_1Vector2d}{Vector2d}} \&maxima)
+\begin{DoxyCompactList}\small\item\em Periodic boundary conditions in box from 0 to maxima. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classtopology_1_1Vector2d}{Vector2d}} \mbox{\hyperlink{classtopology_1_1Vector2d_a7917561de0e6efc767aa16280cd560c6}{get\+\_\+boundary\+\_\+handler\+\_\+periodic\+\_\+box}} (const \mbox{\hyperlink{classtopology_1_1Vector2d}{Vector2d}} \&minima, const \mbox{\hyperlink{classtopology_1_1Vector2d}{Vector2d}} \&maxima, const double cutoff) const
+\begin{DoxyCompactList}\small\item\em Boundary handler within \mbox{[}minima, maxima\mbox{]}. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classtopology_1_1Vector2d_aa1813245ed47e874d451cc8e5919f9e1}\label{classtopology_1_1Vector2d_aa1813245ed47e874d451cc8e5919f9e1}} 
+\mbox{\hyperlink{classtopology_1_1Vector2d}{Vector2d}} \mbox{\hyperlink{classtopology_1_1Vector2d_aa1813245ed47e874d451cc8e5919f9e1}{get\+\_\+boundary\+\_\+handler\+\_\+periodic\+\_\+box}} (const \mbox{\hyperlink{classtopology_1_1Vector2d}{Vector2d}} \&maxima, const double cutoff) const
+\begin{DoxyCompactList}\small\item\em Boundary handler within \mbox{[}0,maxima\mbox{]}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classtopology_1_1Vector2d_a980c304d315f712778a8730a5ef3f546}\label{classtopology_1_1Vector2d_a980c304d315f712778a8730a5ef3f546}} 
+double \mbox{\hyperlink{classtopology_1_1Vector2d_a980c304d315f712778a8730a5ef3f546}{v\+\_\+}} \mbox{[}2\mbox{]}
+\begin{DoxyCompactList}\small\item\em The two components of the 2d vector. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Mathematical 2d vectors. Can be added, multiplied by a scalar, norm computation is possible. There are print-\/to-\/file and print-\/to-\/command-\/line functions available. The vector can be accessed by the standard \char`\"{}\+V\+E\+C\mbox{[}$\,$\mbox{]}\char`\"{} command. Some additional functions are included to handle periodic boundary conditions in a box. 
+
+\begin{DoxyAuthor}{Author}
+Thomas Bissinger 
+\end{DoxyAuthor}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classtopology_1_1Vector2d_a7917561de0e6efc767aa16280cd560c6}\label{classtopology_1_1Vector2d_a7917561de0e6efc767aa16280cd560c6}} 
+\index{topology\+::\+Vector2d@{topology\+::\+Vector2d}!get\+\_\+boundary\+\_\+handler\+\_\+periodic\+\_\+box@{get\+\_\+boundary\+\_\+handler\+\_\+periodic\+\_\+box}}
+\index{get\+\_\+boundary\+\_\+handler\+\_\+periodic\+\_\+box@{get\+\_\+boundary\+\_\+handler\+\_\+periodic\+\_\+box}!topology\+::\+Vector2d@{topology\+::\+Vector2d}}
+\subsubsection{\texorpdfstring{get\+\_\+boundary\+\_\+handler\+\_\+periodic\+\_\+box()}{get\_boundary\_handler\_periodic\_box()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classtopology_1_1Vector2d}{topology\+::\+Vector2d}} topology\+::\+Vector2d\+::get\+\_\+boundary\+\_\+handler\+\_\+periodic\+\_\+box (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classtopology_1_1Vector2d}{Vector2d}} \&}]{minima,  }\item[{const \mbox{\hyperlink{classtopology_1_1Vector2d}{Vector2d}} \&}]{maxima,  }\item[{const double}]{cutoff }\end{DoxyParamCaption}) const}
+
+
+
+Boundary handler within \mbox{[}minima, maxima\mbox{]}. 
+
+G\+E\+T\+\_\+\+B\+O\+U\+N\+D\+A\+R\+Y\+\_\+\+H\+A\+N\+D\+L\+E\+R\+\_\+\+P\+E\+R\+I\+O\+D\+I\+C\+\_\+\+B\+OX\+: A boundary handler is a \mbox{\hyperlink{classtopology_1_1Vector2d}{Vector2d}} that determines whether the vector is close to the boundary of a periodic box. If it is within the cutoff radius of the minimum (or 0) in one component, this component will read 0. If it is within the cutoff radius to the maximum, the component will read 1. If neither is the case, i.\+e. the vector does is well within the volume, the component reads 0. \mbox{\Hypertarget{classtopology_1_1Vector2d_acbc60af5c9b08102b168e9606d01bbab}\label{classtopology_1_1Vector2d_acbc60af5c9b08102b168e9606d01bbab}} 
+\index{topology\+::\+Vector2d@{topology\+::\+Vector2d}!periodic\+\_\+box@{periodic\+\_\+box}}
+\index{periodic\+\_\+box@{periodic\+\_\+box}!topology\+::\+Vector2d@{topology\+::\+Vector2d}}
+\subsubsection{\texorpdfstring{periodic\+\_\+box()}{periodic\_box()}}
+{\footnotesize\ttfamily void topology\+::\+Vector2d\+::periodic\+\_\+box (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classtopology_1_1Vector2d}{Vector2d}} \&}]{minima,  }\item[{const \mbox{\hyperlink{classtopology_1_1Vector2d}{Vector2d}} \&}]{maxima }\end{DoxyParamCaption})}
+
+
+
+Periodic boundary conditions in box. 
+
+P\+E\+R\+I\+O\+D\+I\+C\+\_\+\+B\+OX\+: Changes the vector according to periodic boundary conditions in a box. Can either take two \mbox{\hyperlink{classtopology_1_1Vector2d}{Vector2d}} arguments, indicating the minima and maxima of the box. If only one argument is provided, the minima are set to zero. \mbox{\Hypertarget{classtopology_1_1Vector2d_a81f9259cef101add1652394d8aea044c}\label{classtopology_1_1Vector2d_a81f9259cef101add1652394d8aea044c}} 
+\index{topology\+::\+Vector2d@{topology\+::\+Vector2d}!size@{size}}
+\index{size@{size}!topology\+::\+Vector2d@{topology\+::\+Vector2d}}
+\subsubsection{\texorpdfstring{size()}{size()}}
+{\footnotesize\ttfamily const int topology\+::\+Vector2d\+::size (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Return y component. 
+
+Returns size of the vector (i.\+e. 2). 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+topology.\+h\item 
+topology.\+cpp\end{DoxyCompactItemize}

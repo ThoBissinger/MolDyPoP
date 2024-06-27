@@ -1,0 +1,111 @@
+\doxysection{mxyparticle.\+h}
+\hypertarget{mxyparticle_8h_source}{}\label{mxyparticle_8h_source}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ MXYPARTICLE\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ MXYPARTICLE\_H}}
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include"{}topology.h"{}}}
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include"{}\mbox{\hyperlink{computations_8h}{computations.h}}"{}}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include<vector>}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include<fstream>}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include<iomanip>}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include<stdio.h>}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include<stdlib.h>}}
+\DoxyCodeLine{00021\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classmxyparticle}{mxyparticle}}\ \{}
+\DoxyCodeLine{00022\ \ \ \ \ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00023\ }
+\DoxyCodeLine{00025\ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{classmxyparticle_a8108b38a3cb7ccadeea0e5b8abf43240}{theta\_}}\ ;}
+\DoxyCodeLine{00026\ }
+\DoxyCodeLine{00028\ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{classmxyparticle_a9d37d2e88ebd5e857735c7bf5f64692b}{w\_}}\ ;}
+\DoxyCodeLine{00029\ }
+\DoxyCodeLine{00031\ \ \ \ \ \ \ \mbox{\hyperlink{classtopology_1_1_vector2d}{topology::Vector2d}}\ \mbox{\hyperlink{classmxyparticle_a12bb2e11ee29053f625dfba637485270}{r\_}};}
+\DoxyCodeLine{00032\ }
+\DoxyCodeLine{00034\ \ \ \ \ \mbox{\hyperlink{classtopology_1_1_vector2d}{topology::Vector2d}}\ \mbox{\hyperlink{classmxyparticle_a4ca193333253e1da9e16727d26fa56cb}{p\_}};}
+\DoxyCodeLine{00035\ }
+\DoxyCodeLine{00036\ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00038\ \ \ \ \ \ \ \mbox{\hyperlink{classmxyparticle_a185e63200ae5af3af457563ceb6251d6}{mxyparticle}}()\ \{\}\ ;}
+\DoxyCodeLine{00039\ \ \ \ \ \ \ \mbox{\hyperlink{classmxyparticle_a185e63200ae5af3af457563ceb6251d6}{mxyparticle}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\ theta,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\ w,}
+\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classtopology_1_1_vector2d}{topology::Vector2d}}\ r,\ \mbox{\hyperlink{classtopology_1_1_vector2d}{topology::Vector2d}}\ p)\ ;\ }
+\DoxyCodeLine{00041\ \ \ \ \ \ \ \mbox{\hyperlink{classmxyparticle_a185e63200ae5af3af457563ceb6251d6}{mxyparticle}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classmxyparticle}{mxyparticle}}\&\ mxypart)\ ;\ }
+\DoxyCodeLine{00042\ }
+\DoxyCodeLine{00043\ \ \ \ \ \ \ \textcolor{comment}{//\ =====================================================================}}
+\DoxyCodeLine{00044\ \ \ \ \ \ \ \textcolor{comment}{//\ Print\ functions\ to\ ofstream\ and\ to\ std::out}}
+\DoxyCodeLine{00045\ \textcolor{comment}{//\ \ \ \ \ \ void\ print(std::ofstream\ \&outputfile)\ const\ ;\ ///<\ Print\ position,\ momentum,\ angle\ and\ angular\ momentum\ to\ output\ file.}}
+\DoxyCodeLine{00046\ \textcolor{comment}{//\ \ \ \ \ \ void\ print\_theta(std::ofstream\ \&outputfile)\ const\ ;\ ///<\ Print\ angle\ to\ output\ file.}}
+\DoxyCodeLine{00047\ \textcolor{comment}{//\ \ \ \ \ \ void\ print\_w(std::ofstream\ \&outputfile)\ const\ ;\ ///<\ Print\ angular\ momentum\ to\ output\ file.}}
+\DoxyCodeLine{00048\ \textcolor{comment}{//}}
+\DoxyCodeLine{00049\ \textcolor{comment}{//}}
+\DoxyCodeLine{00050\ \textcolor{comment}{//\ \ \ \ \ \ void\ print()\ const\ ;\ ///<\ Print\ position\ and\ impulse\ to\ std::out.}}
+\DoxyCodeLine{00051\ \textcolor{comment}{//\ \ \ \ \ \ void\ print\_theta()\ const\ ;\ ///<\ Print\ angle\ to\ std::out.}}
+\DoxyCodeLine{00052\ \textcolor{comment}{//\ \ \ \ \ \ void\ print\_w()\ const\ ;\ ///<\ Print\ angular\ momentum\ to\ std::out.}}
+\DoxyCodeLine{00053\ \textcolor{comment}{//\ \ \ \ \ \ void\ print\_neighbors()\ const\ ;\ ///<\ Print\ neighbor\ indices\ to\ std::out.}}
+\DoxyCodeLine{00054\ }
+\DoxyCodeLine{00055\ \ \ \ \ \ \ \textcolor{comment}{//\ =====================================================================}}
+\DoxyCodeLine{00056\ \ \ \ \ \ \ \textcolor{comment}{//\ Element\ access.\ get\ and\ set\ functions\ for\ positions\ and\ momenta.}}
+\DoxyCodeLine{00057\ \ \ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{double}\ get\_theta()\textcolor{keyword}{\ const\ }\{\textcolor{keywordflow}{return}\ \mbox{\hyperlink{classmxyparticle_a8108b38a3cb7ccadeea0e5b8abf43240}{theta\_}};\};\ \ \ }
+\DoxyCodeLine{00058\ \ \ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{classmxyparticle_a8db2f3dca0d83465d23241e984f33971}{get\_w}}()\textcolor{keyword}{\ const\ }\{\textcolor{keywordflow}{return}\ \mbox{\hyperlink{classmxyparticle_a9d37d2e88ebd5e857735c7bf5f64692b}{w\_}};\};\ \ \ \ \ \ }
+\DoxyCodeLine{00059\ \ \ \ \ \ \ \textcolor{keyword}{inline}\ \mbox{\hyperlink{classtopology_1_1_vector2d}{topology::Vector2d}}\ \mbox{\hyperlink{classmxyparticle_a5eefe0178ac57ed58e42e13afd911d1b}{get\_r}}()\textcolor{keyword}{\ const\ }\{\textcolor{keywordflow}{return}\ \mbox{\hyperlink{classmxyparticle_a12bb2e11ee29053f625dfba637485270}{r\_}};\};\ \ \ \ \ \ }
+\DoxyCodeLine{00060\ \ \ \ \ \ \ \textcolor{keyword}{inline}\ \mbox{\hyperlink{classtopology_1_1_vector2d}{topology::Vector2d}}\ \mbox{\hyperlink{classmxyparticle_ac5f1fec0aa912c89927adcc0b284ff17}{get\_p}}()\textcolor{keyword}{\ const\ }\{\textcolor{keywordflow}{return}\ \mbox{\hyperlink{classmxyparticle_a4ca193333253e1da9e16727d26fa56cb}{p\_}};\};\ \ \ \ \ \ }
+\DoxyCodeLine{00061\ \ \ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{classmxyparticle_a8c0c4c6d822927465a08de834c723e02}{get\_space\_angular\_mom}}()\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00062\ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classmxyparticle_a12bb2e11ee29053f625dfba637485270}{r\_}}.get\_x()\ *\ \mbox{\hyperlink{classmxyparticle_a4ca193333253e1da9e16727d26fa56cb}{p\_}}.\mbox{\hyperlink{classtopology_1_1_vector2d_af01fdaa040a15d7643f9088d9b3755a2}{get\_y}}()\ -\/\ \mbox{\hyperlink{classmxyparticle_a12bb2e11ee29053f625dfba637485270}{r\_}}.\mbox{\hyperlink{classtopology_1_1_vector2d_af01fdaa040a15d7643f9088d9b3755a2}{get\_y}}()\ *\ \mbox{\hyperlink{classmxyparticle_a4ca193333253e1da9e16727d26fa56cb}{p\_}}.get\_x();}
+\DoxyCodeLine{00063\ \ \ \ \ \ \ \};}
+\DoxyCodeLine{00064\ }
+\DoxyCodeLine{00065\ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classmxyparticle_a56bfaba8bc358ecb882af886331ad398}{set\_theta}}(\textcolor{keywordtype}{double}\ new\_theta);\ \ }
+\DoxyCodeLine{00066\ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classmxyparticle_a411717f1193af9e1827e84e8aa79ab7a}{set\_w}}(\textcolor{keywordtype}{double}\ new\_w);\ \ }
+\DoxyCodeLine{00067\ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classmxyparticle_af2bab6ed757635b44910ad3173d5fc7e}{set\_r}}(\mbox{\hyperlink{classtopology_1_1_vector2d}{topology::Vector2d}}\ r);\ }
+\DoxyCodeLine{00068\ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classmxyparticle_aaffaa0c880dbf7d28e630969261baf23}{set\_p}}(\mbox{\hyperlink{classtopology_1_1_vector2d}{topology::Vector2d}}\ p);\ }
+\DoxyCodeLine{00069\ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classmxyparticle_a709e1492ff852dc40e0a2e8eed606f0e}{set\_temperature}}(\textcolor{keywordtype}{double}\ kT,\ \textcolor{keywordtype}{double}\ I,\ \textcolor{keywordtype}{double}\ m);\ \ }
+\DoxyCodeLine{00070\ \ \ \ \ \ \ }
+\DoxyCodeLine{00071\ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classmxyparticle_a381d04d0b9c408a3703101be14cc9e46}{set\_theta\_to\_interval}}();\ }
+\DoxyCodeLine{00072\ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classmxyparticle_a98ee4b0ce73200c6722d81cde7f27817}{set\_r\_to\_pbc}}(\mbox{\hyperlink{classtopology_1_1_vector2d}{topology::Vector2d}}\ box);\ }
+\DoxyCodeLine{00073\ }
+\DoxyCodeLine{00074\ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classmxyparticle_a2fb35eb405523bf3ee3214818a47b366}{scale\_w}}(\textcolor{keywordtype}{double}\ a);}
+\DoxyCodeLine{00075\ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classmxyparticle_ae613d2f250b8def997e1c0847927e632}{scale\_p}}(\textcolor{keywordtype}{double}\ a);}
+\DoxyCodeLine{00076\ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classmxyparticle_aa8eaf7553bb11a5cf7a06e31052b8789}{add\_to\_theta}}(\textcolor{keywordtype}{double}\ theta);}
+\DoxyCodeLine{00077\ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classmxyparticle_a1d566cd0aed6762b480aa7215b280de4}{add\_to\_w}}(\textcolor{keywordtype}{double}\ w);}
+\DoxyCodeLine{00078\ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classmxyparticle_a7f457935f04f1884696eb3a47c30700a}{add\_to\_r}}(\mbox{\hyperlink{classtopology_1_1_vector2d}{topology::Vector2d}}\ r);}
+\DoxyCodeLine{00079\ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classmxyparticle_a69763afefd97ffc8f46051ba107c39ba}{add\_to\_p}}(\mbox{\hyperlink{classtopology_1_1_vector2d}{topology::Vector2d}}\ p);}
+\DoxyCodeLine{00080\ \ \ \ \ \ \ \textcolor{comment}{//\ ===================================================================================================}}
+\DoxyCodeLine{00081\ }
+\DoxyCodeLine{00082\ }
+\DoxyCodeLine{00083\ \ \ \ \ \ \ \textcolor{comment}{//\ ===================================================================================================}}
+\DoxyCodeLine{00084\ \ \ \ \ \ \ \textcolor{comment}{//\ Initialization\ functions\ for\ particles\ for\ different\ lattices.\ kbT\ is\ the\ thermal\ energy\ of\ the\ w,}}
+\DoxyCodeLine{00085\ \ \ \ \ \ \ \textcolor{comment}{//\ index\ is\ the\ particle's\ index,\ N\ and\ sqrtN\ are\ the\ number\ of\ particles\ (a\ square\ number)\ and\ its}}
+\DoxyCodeLine{00086\ \ \ \ \ \ \ \textcolor{comment}{//\ square\ root}}
+\DoxyCodeLine{00087\ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ initialize(\textcolor{keywordtype}{double}\ kbT,\ \textcolor{keywordtype}{double}\ I,\ \textcolor{keywordtype}{double}\ m,\ \mbox{\hyperlink{classtopology_1_1_vector2d}{topology::Vector2d}}\ boxsize);}
+\DoxyCodeLine{00088\ \ \ \ \ \ \ \textcolor{comment}{//\ ===================================================================================================}}
+\DoxyCodeLine{00089\ }
+\DoxyCodeLine{00090\ \ \ \ \ \ \ }
+\DoxyCodeLine{00091\ }
+\DoxyCodeLine{00092\ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classmxyparticle_ac32802ed9f9ad605686049d3d514105a}{random\_mxyparticle}}(\textcolor{keywordtype}{double}\ kbT,\ \textcolor{keywordtype}{double}\ I,\ \textcolor{keywordtype}{double}\ m,\ \mbox{\hyperlink{classtopology_1_1_vector2d}{topology::Vector2d}}\ boxsize);}
+\DoxyCodeLine{00094\ }
+\DoxyCodeLine{00095\ }
+\DoxyCodeLine{00096\ }
+\DoxyCodeLine{00097\ \ \ \ \ \ \ \ \textcolor{comment}{//\ Operators\ for\ +*}}
+\DoxyCodeLine{00098\ \ \ \ \ \ \ \ \mbox{\hyperlink{classmxyparticle}{mxyparticle}}\&\ \mbox{\hyperlink{classmxyparticle_a13240fe96fb6dad093f9195a9875f751}{operator+=}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classmxyparticle}{mxyparticle}}\&\ p);\ }
+\DoxyCodeLine{00099\ \ \ \ \ \ \ \ \mbox{\hyperlink{classmxyparticle}{mxyparticle}}\&\ \mbox{\hyperlink{classmxyparticle_ad9e86111075a59b334f0b5e312d3b3a4}{operator*=}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\ a);\ }
+\DoxyCodeLine{00100\ \}\ ;}
+\DoxyCodeLine{00101\ }
+\DoxyCodeLine{00102\ }
+\DoxyCodeLine{00103\ \ \ \ \ \ \ \textcolor{comment}{//\ ===================================================================================================}}
+\DoxyCodeLine{00104\ \ \ \ \ \ \ \textcolor{comment}{//\ Initialization\ functions\ for\ particles\ for\ different\ lattices.}}
+\DoxyCodeLine{00105\ \ \ \ \ \ \ }
+\DoxyCodeLine{00106\ }
+\DoxyCodeLine{00107\ \ \ \ \ \ \ \textcolor{comment}{//\ ===================================================================================================}}
+\DoxyCodeLine{00108\ }
+\DoxyCodeLine{00109\ }
+\DoxyCodeLine{00110\ \textcolor{keyword}{inline}\ \mbox{\hyperlink{classmxyparticle}{mxyparticle}}\ random\_mxyparticle(\textcolor{keywordtype}{double}\ kbT,\ \textcolor{keywordtype}{double}\ I,\ \textcolor{keywordtype}{double}\ m,\ \mbox{\hyperlink{classtopology_1_1_vector2d}{topology::Vector2d}}\ boxsize)\ \{}
+\DoxyCodeLine{00111\ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classmxyparticle}{mxyparticle}}(\mbox{\hyperlink{computations_8h_ac2d5d6813a00a29ca76fca3d95c00bb9}{random\_angle}}(),\mbox{\hyperlink{computations_8h_afda23d435e9691292647f33f43d1e266}{random\_boltzmann\_double}}(I*kbT),}
+\DoxyCodeLine{00112\ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespacetopology_a6bf3c7bd607cb85008181c689b625649}{topology::random\_vector}}(boxsize),\ \mbox{\hyperlink{namespacetopology_af149afbfda7309c7141f10854e912db4}{topology::random\_gaussian\_vector}}(m*kbT));}
+\DoxyCodeLine{00113\ \};}
+\DoxyCodeLine{00114\ }
+\DoxyCodeLine{00115\ \textcolor{keyword}{inline}\ \mbox{\hyperlink{classmxyparticle}{mxyparticle}}\ mxyparticle\_zero()\ \{}
+\DoxyCodeLine{00116\ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classmxyparticle}{mxyparticle}}(0.0,\ 0.0,\ 0.0,\ 0.0);}
+\DoxyCodeLine{00117\ \};}
+\DoxyCodeLine{00118\ }
+\DoxyCodeLine{00119\ \mbox{\hyperlink{classmxyparticle}{mxyparticle}}\ operator+(\textcolor{keyword}{const}\ \mbox{\hyperlink{classmxyparticle}{mxyparticle}}\&\ p,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classmxyparticle}{mxyparticle}}\&\ p2);}
+\DoxyCodeLine{00120\ }
+\DoxyCodeLine{00121\ }
+\DoxyCodeLine{00122\ \mbox{\hyperlink{classmxyparticle}{mxyparticle}}\ operator*(\textcolor{keyword}{const}\ \mbox{\hyperlink{classmxyparticle}{mxyparticle}}\&\ p,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\ a);}
+\DoxyCodeLine{00123\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

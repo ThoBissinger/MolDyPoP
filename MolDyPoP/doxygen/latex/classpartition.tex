@@ -1,0 +1,530 @@
+\doxysection{partition Class Reference}
+\hypertarget{classpartition}{}\label{classpartition}\index{partition@{partition}}
+
+
+Defines the partition class. The simulation box is partitioned into cells. The indices of a vector of particles (used for initialization) are sorted according to the cell they belong to. Has functions for printing and computing average velocities in a neighborhood.  
+
+
+
+
+{\ttfamily \#include $<$partition.\+h$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classpartition_a84bdc6e3612b49c217d3af8709d9950c}{partition}} ()
+\begin{DoxyCompactList}\small\item\em Empty constructor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classpartition_af23f6efe9fb8553ad105b0c1cbd84e58}{partition}} (const int \&N, const double \&cutoff, const \mbox{\hyperlink{classtopology_1_1_vector2d}{topology\+::\+Vector2d}} \&L)
+\begin{DoxyCompactList}\small\item\em Standard constructor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classpartition_a2001d5ca72b2a0b2389cb1de1f5f72ef}{partition}} (const int \&N, const double \&cutoff, const \mbox{\hyperlink{classtopology_1_1_vector2d}{topology\+::\+Vector2d}} \&L, const std\+::vector$<$ \mbox{\hyperlink{classtopology_1_1_vector2d}{topology\+::\+Vector2d}} $>$ \&positions)
+\begin{DoxyCompactList}\small\item\em Standard constructor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classpartition_a462494343952d9aa3f655e88ad307869}{\texorpdfstring{$\sim$}{\string~}partition}} ()
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classpartition_a6cb82599e45a4b61380f265d35cda7f6}{clear}} ()
+\begin{DoxyCompactList}\small\item\em Clears all entries. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classpartition_a51558f8298d4f784778c08e1415e2bc0}{fill}} (const std\+::vector$<$ \mbox{\hyperlink{classtopology_1_1_vector2d}{topology\+::\+Vector2d}} $>$ \&positions)
+\begin{DoxyCompactList}\small\item\em Fills the partition. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classpartition_a92ae06eddd8fbfce504ff083bc366b9c}{get\+\_\+cellelem}} (int m) const
+\begin{DoxyCompactList}\small\item\em Returns int cellelem\+\_\+\mbox{[}m\mbox{]}. \end{DoxyCompactList}\item 
+std\+::vector$<$ int $>$ \mbox{\hyperlink{classpartition_a84b268598d837d11365b32098f0496b9}{get\+\_\+cellelem}} () const
+\begin{DoxyCompactList}\small\item\em Returns vector cellelem\+\_\+. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classpartition_a9a2245031d405cc22386ba59b51a198a}{get\+\_\+cellnum}} () const
+\begin{DoxyCompactList}\small\item\em Returns int cellnum\+\_\+. \end{DoxyCompactList}\item 
+std\+::vector$<$ int $>$ \mbox{\hyperlink{classpartition_a75a02c785e995ce904c308a0b4554d38}{get\+\_\+cellvec}} () const
+\begin{DoxyCompactList}\small\item\em Returns vector cellvec. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classpartition_a252ece38cc3e5d461375f2330820edc4}{print}} () const
+\begin{DoxyCompactList}\small\item\em Print partition (only for troubleshooting). \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classpartition_a6214a8a511adddff505fdc0c6c46c96f}{find\+\_\+cell}} (const \mbox{\hyperlink{classtopology_1_1_vector2d}{topology\+::\+Vector2d}} \&r) const
+\begin{DoxyCompactList}\small\item\em Returns the index of the cell containing r. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classpartition_a515391400b1c41cbbf96e15d1d93009f}{find\+\_\+first}} (int index) const
+\begin{DoxyCompactList}\small\item\em Returns index of the first element in cellvec\+\_\+ pertaining to the cell with index index. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classpartition_a8928f60e124c54de74acc2f7e3f6fe28}{neighbor\+\_\+cell}} (int index, int lr, int du) const
+\begin{DoxyCompactList}\small\item\em Returns index of neighboring cell to cell at index. Uses periodic boundary conditions. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classpartition_a1c48744f9ba92c6a52065e1b58cb5293}{neighbor\+\_\+cell}} (int index, int lr, int du, \mbox{\hyperlink{classtopology_1_1_vector2d}{topology\+::\+Vector2d}} \&shift) const
+\begin{DoxyCompactList}\small\item\em Returns index of neighboring cell to cell at index. Uses periodic boundary conditions. Contains a shift. \end{DoxyCompactList}\item 
+std\+::vector$<$ int $>$ \mbox{\hyperlink{classpartition_af4a0c9068fdb50d14fdf245820260af3}{nb\+\_\+cells\+\_\+all}} (int index, std\+::vector$<$ \mbox{\hyperlink{classtopology_1_1_vector2d}{topology\+::\+Vector2d}} $>$ \&shifts) const
+\begin{DoxyCompactList}\small\item\em Returns indices of all neighboring cells (including shifts) \end{DoxyCompactList}\item 
+std\+::vector$<$ int $>$ \mbox{\hyperlink{classpartition_a8b58fc3f63adc174bd2a26373a8d224c}{nb\+\_\+cells\+\_\+all}} (const \mbox{\hyperlink{classtopology_1_1_vector2d}{topology\+::\+Vector2d}} \&r, double cutoffsquared, std\+::vector$<$ \mbox{\hyperlink{classtopology_1_1_vector2d}{topology\+::\+Vector2d}} $>$ \&shifts) const
+\begin{DoxyCompactList}\small\item\em Returns indices of all neighboring cells (including shifts). Empty cells and cells out of reach of r are not included. \end{DoxyCompactList}\item 
+std\+::vector$<$ int $>$ \mbox{\hyperlink{classpartition_affbd8573230584e603d5468ee9af0f99}{nb\+\_\+cells\+\_\+ur}} (int index, std\+::vector$<$ \mbox{\hyperlink{classtopology_1_1_vector2d}{topology\+::\+Vector2d}} $>$ \&shifts) const
+\begin{DoxyCompactList}\small\item\em Returns indices the neighboring cells above and right of the cell and the cell itself (including shifts). Can be used to avoid double counting. \end{DoxyCompactList}\item 
+std\+::vector$<$ int $>$ \mbox{\hyperlink{classpartition_a6b38f40fca8d908499ef31621aaf76db}{nb\+\_\+cells\+\_\+ur}} (const \mbox{\hyperlink{classtopology_1_1_vector2d}{topology\+::\+Vector2d}} \&r, double cutoffsquared, std\+::vector$<$ \mbox{\hyperlink{classtopology_1_1_vector2d}{topology\+::\+Vector2d}} $>$ \&shifts) const
+\begin{DoxyCompactList}\small\item\em Returns indices the neighboring cells above and right of the cell and the cell itself (including shifts). Empty cells and cells out of reach of r are not included. Can be used to avoid double counting. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classtopology_1_1_vector2d}{topology\+::\+Vector2d}} \mbox{\hyperlink{classpartition_abdeae6d64e9fd2d897e1a8f12bba9004}{corner}} (int index, int lr, int ud) const
+\begin{DoxyCompactList}\small\item\em Get position of a corner of a cell. Which corner is determined by lr, ud. \end{DoxyCompactList}\item 
+std\+::vector$<$ int $>$ \mbox{\hyperlink{classpartition_a31ca932d9d0d564146b53222ecd5a028}{part\+\_\+in\+\_\+cell}} (int index) const
+\begin{DoxyCompactList}\small\item\em Returns a std\+::vector containing the indices of the particles in the box with index \textquotesingle{}index\textquotesingle{}. \end{DoxyCompactList}\item 
+std\+::vector$<$ int $>$ \mbox{\hyperlink{classpartition_a91e6d324b1ceba64a3230acb74488d3e}{nb\+\_\+in\+\_\+cell\+\_\+index}} (int index, const \mbox{\hyperlink{classtopology_1_1_vector2d}{topology\+::\+Vector2d}} \&r, double cutoffsquared, const std\+::vector$<$ \mbox{\hyperlink{classtopology_1_1_vector2d}{topology\+::\+Vector2d}} $>$ \&positions, std\+::vector$<$ double $>$ \&distances, const \mbox{\hyperlink{classtopology_1_1_vector2d}{topology\+::\+Vector2d}} shift=0) const
+\begin{DoxyCompactList}\small\item\em Returns the indices of the particles in a cell for all particles within a cutoff radius of r. \end{DoxyCompactList}\item 
+std\+::vector$<$ int $>$ \mbox{\hyperlink{classpartition_ae483486f45d3f0b4af19de5c44ad3a67}{nb\+\_\+in\+\_\+cell\+\_\+index\+\_\+above}} (int index, const \mbox{\hyperlink{classtopology_1_1_vector2d}{topology\+::\+Vector2d}} \&r, double cutoffsquared, const std\+::vector$<$ \mbox{\hyperlink{classtopology_1_1_vector2d}{topology\+::\+Vector2d}} $>$ \&positions, std\+::vector$<$ double $>$ \&distances, const \mbox{\hyperlink{classtopology_1_1_vector2d}{topology\+::\+Vector2d}} shift=0) const
+\begin{DoxyCompactList}\small\item\em Calculates only neighbors above particle (reduces computation time). \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classpartition_adc5cb780680e20f628f528e24c2a68c5}{cluster\+\_\+analysis}} (std\+::vector$<$ int $>$ \&cluster\+\_\+sizes, std\+::vector$<$ int $>$ \&cluster\+\_\+\+NoP, const int \&rho\+\_\+min) const
+\begin{DoxyCompactList}\small\item\em Returns a vector of cluster sizes and the corresponding vector of the number of particles (NoP) per cluster. The variable rho\+\_\+min determines the minimum number a cell has to contain to be considered part of a cluster. \end{DoxyCompactList}\item 
+std\+::vector$<$ int $>$ \mbox{\hyperlink{classpartition_a940c5c9c9273ae4e36973b723a5c049d}{cluster\+\_\+recursion}} (int current\+\_\+index, std\+::vector$<$ int $>$ indices, const int \&rho\+\_\+min) const
+\begin{DoxyCompactList}\small\item\em Recursive function, returns vector containing all the indices being part of a cluster. In principle, current\+\_\+index is not necessary, one could also use the last entry of indices. But it doesn\textquotesingle{}t disturb performance and is a little more readable. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{classpartition_a012e617129e83630e0b96ee9db05501e}{N\+\_\+}}
+\begin{DoxyCompactList}\small\item\em Size of the group. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classtopology_1_1_vector2d}{topology\+::\+Vector2d}} \mbox{\hyperlink{classpartition_aba95fa663a7ed0beef7c3b2d3572edd5}{L\+\_\+}}
+\begin{DoxyCompactList}\small\item\em Size of simulation box. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classtopology_1_1_vector2d}{topology\+::\+Vector2d}} \mbox{\hyperlink{classpartition_aa7ef9ece73f06d5a016057f571a8072a}{cellwidth\+\_\+}}
+\begin{DoxyCompactList}\small\item\em Width of a cell in the cell list. Typically the cutoff radius of the interaction. \end{DoxyCompactList}\item 
+std\+::vector$<$ int $>$ \mbox{\hyperlink{classpartition_ac239d2426c0176e21713adcd96076f86}{M\+\_\+}} = std\+::vector$<$int$>$(2)
+\begin{DoxyCompactList}\small\item\em Number of cells per dimension. Dim = d = 2. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classpartition_a5c07488276d1c962e5e4abafdb65406c}{cellnum\+\_\+}}
+\begin{DoxyCompactList}\small\item\em Total number of cells. \end{DoxyCompactList}\item 
+std\+::vector$<$ int $>$ \mbox{\hyperlink{classpartition_ad02cd6d63f434ff7043ce188f9784aed}{firsts\+\_\+}}
+\begin{DoxyCompactList}\small\item\em Indices of the first element pertaining to a cell. Dim = N\+\_\+;. \end{DoxyCompactList}\item 
+std\+::vector$<$ int $>$ \mbox{\hyperlink{classpartition_a6a784ac09035595f059405f2d1458ce7}{cellelem\+\_\+}}
+\begin{DoxyCompactList}\small\item\em Integers indicating the number of elements per cell. Dim = M\+\_\+\mbox{[}0\mbox{]} \texorpdfstring{$\ast$}{*} ... \texorpdfstring{$\ast$}{*} M\+\_\+\mbox{[}d\mbox{]};. \end{DoxyCompactList}\item 
+std\+::vector$<$ int $>$ \mbox{\hyperlink{classpartition_ac298b91a3d7bfef35b128b48c58a260b}{cellvec\+\_\+}}
+\begin{DoxyCompactList}\small\item\em Vector of particle indices. Dim = N\+\_\+. Easier to access than the list, and since it has to be accessed a lot, we save it here. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Defines the partition class. The simulation box is partitioned into cells. The indices of a vector of particles (used for initialization) are sorted according to the cell they belong to. Has functions for printing and computing average velocities in a neighborhood. 
+
+\begin{DoxyAuthor}{Author}
+Thomas Bissinger
+\end{DoxyAuthor}
+\begin{DoxyNote}{Note}
+A previous version of this class used pointers to the actual particles instead of their indices. This was changed due to memory access problems. The code is also simpler. On the other hand, one has to store the particle indices and combine the stored indices with the actual vector to access elements. Therefore, some functions need the original particle vector as a call-\/by-\/reference input.
+\end{DoxyNote}
+\begin{DoxyDate}{Date}
+Created\+: late 2017, presumably 
+
+Last Updated\+: 2023-\/08-\/06 
+\end{DoxyDate}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classpartition_a84bdc6e3612b49c217d3af8709d9950c}\label{classpartition_a84bdc6e3612b49c217d3af8709d9950c} 
+\index{partition@{partition}!partition@{partition}}
+\index{partition@{partition}!partition@{partition}}
+\doxysubsubsection{\texorpdfstring{partition()}{partition()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily partition\+::partition (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Empty constructor. 
+
+\Hypertarget{classpartition_af23f6efe9fb8553ad105b0c1cbd84e58}\label{classpartition_af23f6efe9fb8553ad105b0c1cbd84e58} 
+\index{partition@{partition}!partition@{partition}}
+\index{partition@{partition}!partition@{partition}}
+\doxysubsubsection{\texorpdfstring{partition()}{partition()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily partition\+::partition (\begin{DoxyParamCaption}\item[{const int \&}]{N,  }\item[{const double \&}]{cutoff,  }\item[{const \mbox{\hyperlink{classtopology_1_1_vector2d}{topology\+::\+Vector2d}} \&}]{L }\end{DoxyParamCaption})}
+
+
+
+Standard constructor. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em N} & Number of particles. \\
+\hline
+\mbox{\texttt{ in}}  & {\em cutoff} & Cutoff radius and width of cell. \\
+\hline
+\mbox{\texttt{ in}}  & {\em L} & Size of simulation box, \mbox{[}0, L\mbox{]}. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classpartition_a2001d5ca72b2a0b2389cb1de1f5f72ef}\label{classpartition_a2001d5ca72b2a0b2389cb1de1f5f72ef} 
+\index{partition@{partition}!partition@{partition}}
+\index{partition@{partition}!partition@{partition}}
+\doxysubsubsection{\texorpdfstring{partition()}{partition()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily partition\+::partition (\begin{DoxyParamCaption}\item[{const int \&}]{N,  }\item[{const double \&}]{cutoff,  }\item[{const \mbox{\hyperlink{classtopology_1_1_vector2d}{topology\+::\+Vector2d}} \&}]{L,  }\item[{const std\+::vector$<$ \mbox{\hyperlink{classtopology_1_1_vector2d}{topology\+::\+Vector2d}} $>$ \&}]{positions }\end{DoxyParamCaption})}
+
+
+
+Standard constructor. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em N} & Number of particles. \\
+\hline
+\mbox{\texttt{ in}}  & {\em cutoff} & Cutoff radius and width of cell. \\
+\hline
+\mbox{\texttt{ in}}  & {\em L} & Size of simulation box, \mbox{[}0, L\mbox{]}. \\
+\hline
+\mbox{\texttt{ in}}  & {\em positions} & Vector of positions to be sorted. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classpartition_a462494343952d9aa3f655e88ad307869}\label{classpartition_a462494343952d9aa3f655e88ad307869} 
+\index{partition@{partition}!````~partition@{\texorpdfstring{$\sim$}{\string~}partition}}
+\index{````~partition@{\texorpdfstring{$\sim$}{\string~}partition}!partition@{partition}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}partition()}{\string~partition()}}
+{\footnotesize\ttfamily partition\+::\texorpdfstring{$\sim$}{\string~}partition (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Destructor. 
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classpartition_a6cb82599e45a4b61380f265d35cda7f6}\label{classpartition_a6cb82599e45a4b61380f265d35cda7f6} 
+\index{partition@{partition}!clear@{clear}}
+\index{clear@{clear}!partition@{partition}}
+\doxysubsubsection{\texorpdfstring{clear()}{clear()}}
+{\footnotesize\ttfamily void partition\+::clear (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Clears all entries. 
+
+\Hypertarget{classpartition_adc5cb780680e20f628f528e24c2a68c5}\label{classpartition_adc5cb780680e20f628f528e24c2a68c5} 
+\index{partition@{partition}!cluster\_analysis@{cluster\_analysis}}
+\index{cluster\_analysis@{cluster\_analysis}!partition@{partition}}
+\doxysubsubsection{\texorpdfstring{cluster\_analysis()}{cluster\_analysis()}}
+{\footnotesize\ttfamily void partition\+::cluster\+\_\+analysis (\begin{DoxyParamCaption}\item[{std\+::vector$<$ int $>$ \&}]{cluster\+\_\+sizes,  }\item[{std\+::vector$<$ int $>$ \&}]{cluster\+\_\+\+NoP,  }\item[{const int \&}]{rho\+\_\+min }\end{DoxyParamCaption}) const}
+
+
+
+Returns a vector of cluster sizes and the corresponding vector of the number of particles (NoP) per cluster. The variable rho\+\_\+min determines the minimum number a cell has to contain to be considered part of a cluster. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em cluster\+\_\+sizes} & Stores size (number of pertaining cells) of each cluster. std\+::vector$<$int$>$ \\
+\hline
+\mbox{\texttt{ in}}  & {\em cluster\+\_\+\+NoP} & Stores the number of particles of each cluster. std\+::vector$<$int$>$ \\
+\hline
+\mbox{\texttt{ in}}  & {\em rho\+\_\+min} & Minimal density of cluster, i.\+e. minimal number of particles in a cell to be considered part of the cluster. int\\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Note}
+The function was originally implemented to check for large number fluctuations in Visek swarms. Hasn\textquotesingle{}t been used since preliminary tests in the early 2018s. Might be useful to someone, but not recommended for use by the author. Analyze particle clusters contained in the partition. 
+\end{DoxyNote}
+\Hypertarget{classpartition_a940c5c9c9273ae4e36973b723a5c049d}\label{classpartition_a940c5c9c9273ae4e36973b723a5c049d} 
+\index{partition@{partition}!cluster\_recursion@{cluster\_recursion}}
+\index{cluster\_recursion@{cluster\_recursion}!partition@{partition}}
+\doxysubsubsection{\texorpdfstring{cluster\_recursion()}{cluster\_recursion()}}
+{\footnotesize\ttfamily std\+::vector$<$ int $>$ partition\+::cluster\+\_\+recursion (\begin{DoxyParamCaption}\item[{int}]{current\+\_\+index,  }\item[{std\+::vector$<$ int $>$}]{indices,  }\item[{const int \&}]{rho\+\_\+min }\end{DoxyParamCaption}) const}
+
+
+
+Recursive function, returns vector containing all the indices being part of a cluster. In principle, current\+\_\+index is not necessary, one could also use the last entry of indices. But it doesn\textquotesingle{}t disturb performance and is a little more readable. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em current\+\_\+index} & Index that is currently being viewed. int \\
+\hline
+\mbox{\texttt{ in}}  & {\em indices} & Indices that are already part of the cluster. std\+::vector$<$int$>$ \\
+\hline
+\mbox{\texttt{ in}}  & {\em rho\+\_\+min} & Minimal density of cluster, i.\+e. minimal number of particles in a cell to be considered part of the cluster. int Recursive function, finds all cells being part of a cluster. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classpartition_abdeae6d64e9fd2d897e1a8f12bba9004}\label{classpartition_abdeae6d64e9fd2d897e1a8f12bba9004} 
+\index{partition@{partition}!corner@{corner}}
+\index{corner@{corner}!partition@{partition}}
+\doxysubsubsection{\texorpdfstring{corner()}{corner()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classtopology_1_1_vector2d}{topology\+::\+Vector2d}} partition\+::corner (\begin{DoxyParamCaption}\item[{int}]{index,  }\item[{int}]{lr,  }\item[{int}]{ud }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Get position of a corner of a cell. Which corner is determined by lr, ud. 
+
+\Hypertarget{classpartition_a51558f8298d4f784778c08e1415e2bc0}\label{classpartition_a51558f8298d4f784778c08e1415e2bc0} 
+\index{partition@{partition}!fill@{fill}}
+\index{fill@{fill}!partition@{partition}}
+\doxysubsubsection{\texorpdfstring{fill()}{fill()}}
+{\footnotesize\ttfamily void partition\+::fill (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ \mbox{\hyperlink{classtopology_1_1_vector2d}{topology\+::\+Vector2d}} $>$ \&}]{positions }\end{DoxyParamCaption})}
+
+
+
+Fills the partition. 
+
+Assigns each particle to a cell in the partition.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em positions} & Vector of positions to be sorted. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classpartition_a6214a8a511adddff505fdc0c6c46c96f}\label{classpartition_a6214a8a511adddff505fdc0c6c46c96f} 
+\index{partition@{partition}!find\_cell@{find\_cell}}
+\index{find\_cell@{find\_cell}!partition@{partition}}
+\doxysubsubsection{\texorpdfstring{find\_cell()}{find\_cell()}}
+{\footnotesize\ttfamily int partition\+::find\+\_\+cell (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classtopology_1_1_vector2d}{topology\+::\+Vector2d}} \&}]{r }\end{DoxyParamCaption}) const}
+
+
+
+Returns the index of the cell containing r. 
+
+\begin{DoxyWarning}{Warning}
+Has no error output if r is not in the simulation box. 
+\end{DoxyWarning}
+\Hypertarget{classpartition_a515391400b1c41cbbf96e15d1d93009f}\label{classpartition_a515391400b1c41cbbf96e15d1d93009f} 
+\index{partition@{partition}!find\_first@{find\_first}}
+\index{find\_first@{find\_first}!partition@{partition}}
+\doxysubsubsection{\texorpdfstring{find\_first()}{find\_first()}}
+{\footnotesize\ttfamily int partition\+::find\+\_\+first (\begin{DoxyParamCaption}\item[{int}]{index }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Returns index of the first element in cellvec\+\_\+ pertaining to the cell with index index. 
+
+\Hypertarget{classpartition_a84b268598d837d11365b32098f0496b9}\label{classpartition_a84b268598d837d11365b32098f0496b9} 
+\index{partition@{partition}!get\_cellelem@{get\_cellelem}}
+\index{get\_cellelem@{get\_cellelem}!partition@{partition}}
+\doxysubsubsection{\texorpdfstring{get\_cellelem()}{get\_cellelem()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily std\+::vector$<$ int $>$ partition\+::get\+\_\+cellelem (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Returns vector cellelem\+\_\+. 
+
+\Hypertarget{classpartition_a92ae06eddd8fbfce504ff083bc366b9c}\label{classpartition_a92ae06eddd8fbfce504ff083bc366b9c} 
+\index{partition@{partition}!get\_cellelem@{get\_cellelem}}
+\index{get\_cellelem@{get\_cellelem}!partition@{partition}}
+\doxysubsubsection{\texorpdfstring{get\_cellelem()}{get\_cellelem()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily int partition\+::get\+\_\+cellelem (\begin{DoxyParamCaption}\item[{int}]{m }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Returns int cellelem\+\_\+\mbox{[}m\mbox{]}. 
+
+\Hypertarget{classpartition_a9a2245031d405cc22386ba59b51a198a}\label{classpartition_a9a2245031d405cc22386ba59b51a198a} 
+\index{partition@{partition}!get\_cellnum@{get\_cellnum}}
+\index{get\_cellnum@{get\_cellnum}!partition@{partition}}
+\doxysubsubsection{\texorpdfstring{get\_cellnum()}{get\_cellnum()}}
+{\footnotesize\ttfamily int partition\+::get\+\_\+cellnum (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Returns int cellnum\+\_\+. 
+
+\Hypertarget{classpartition_a75a02c785e995ce904c308a0b4554d38}\label{classpartition_a75a02c785e995ce904c308a0b4554d38} 
+\index{partition@{partition}!get\_cellvec@{get\_cellvec}}
+\index{get\_cellvec@{get\_cellvec}!partition@{partition}}
+\doxysubsubsection{\texorpdfstring{get\_cellvec()}{get\_cellvec()}}
+{\footnotesize\ttfamily std\+::vector$<$ int $>$ partition\+::get\+\_\+cellvec (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Returns vector cellvec. 
+
+\Hypertarget{classpartition_a8b58fc3f63adc174bd2a26373a8d224c}\label{classpartition_a8b58fc3f63adc174bd2a26373a8d224c} 
+\index{partition@{partition}!nb\_cells\_all@{nb\_cells\_all}}
+\index{nb\_cells\_all@{nb\_cells\_all}!partition@{partition}}
+\doxysubsubsection{\texorpdfstring{nb\_cells\_all()}{nb\_cells\_all()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily std\+::vector$<$ int $>$ partition\+::nb\+\_\+cells\+\_\+all (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classtopology_1_1_vector2d}{topology\+::\+Vector2d}} \&}]{r,  }\item[{double}]{cutoffsquared,  }\item[{std\+::vector$<$ \mbox{\hyperlink{classtopology_1_1_vector2d}{topology\+::\+Vector2d}} $>$ \&}]{shifts }\end{DoxyParamCaption}) const}
+
+
+
+Returns indices of all neighboring cells (including shifts). Empty cells and cells out of reach of r are not included. 
+
+\Hypertarget{classpartition_af4a0c9068fdb50d14fdf245820260af3}\label{classpartition_af4a0c9068fdb50d14fdf245820260af3} 
+\index{partition@{partition}!nb\_cells\_all@{nb\_cells\_all}}
+\index{nb\_cells\_all@{nb\_cells\_all}!partition@{partition}}
+\doxysubsubsection{\texorpdfstring{nb\_cells\_all()}{nb\_cells\_all()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily std\+::vector$<$ int $>$ partition\+::nb\+\_\+cells\+\_\+all (\begin{DoxyParamCaption}\item[{int}]{index,  }\item[{std\+::vector$<$ \mbox{\hyperlink{classtopology_1_1_vector2d}{topology\+::\+Vector2d}} $>$ \&}]{shifts }\end{DoxyParamCaption}) const}
+
+
+
+Returns indices of all neighboring cells (including shifts) 
+
+These functions could be used if the old index is known. But the comparisons it saves are probably similarly expensive as the modulus calculations necessary to return to the original index and check whether the index is still accurate. \Hypertarget{classpartition_a6b38f40fca8d908499ef31621aaf76db}\label{classpartition_a6b38f40fca8d908499ef31621aaf76db} 
+\index{partition@{partition}!nb\_cells\_ur@{nb\_cells\_ur}}
+\index{nb\_cells\_ur@{nb\_cells\_ur}!partition@{partition}}
+\doxysubsubsection{\texorpdfstring{nb\_cells\_ur()}{nb\_cells\_ur()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily std\+::vector$<$ int $>$ partition\+::nb\+\_\+cells\+\_\+ur (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classtopology_1_1_vector2d}{topology\+::\+Vector2d}} \&}]{r,  }\item[{double}]{cutoffsquared,  }\item[{std\+::vector$<$ \mbox{\hyperlink{classtopology_1_1_vector2d}{topology\+::\+Vector2d}} $>$ \&}]{shifts }\end{DoxyParamCaption}) const}
+
+
+
+Returns indices the neighboring cells above and right of the cell and the cell itself (including shifts). Empty cells and cells out of reach of r are not included. Can be used to avoid double counting. 
+
+\Hypertarget{classpartition_affbd8573230584e603d5468ee9af0f99}\label{classpartition_affbd8573230584e603d5468ee9af0f99} 
+\index{partition@{partition}!nb\_cells\_ur@{nb\_cells\_ur}}
+\index{nb\_cells\_ur@{nb\_cells\_ur}!partition@{partition}}
+\doxysubsubsection{\texorpdfstring{nb\_cells\_ur()}{nb\_cells\_ur()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily std\+::vector$<$ int $>$ partition\+::nb\+\_\+cells\+\_\+ur (\begin{DoxyParamCaption}\item[{int}]{index,  }\item[{std\+::vector$<$ \mbox{\hyperlink{classtopology_1_1_vector2d}{topology\+::\+Vector2d}} $>$ \&}]{shifts }\end{DoxyParamCaption}) const}
+
+
+
+Returns indices the neighboring cells above and right of the cell and the cell itself (including shifts). Can be used to avoid double counting. 
+
+\Hypertarget{classpartition_a91e6d324b1ceba64a3230acb74488d3e}\label{classpartition_a91e6d324b1ceba64a3230acb74488d3e} 
+\index{partition@{partition}!nb\_in\_cell\_index@{nb\_in\_cell\_index}}
+\index{nb\_in\_cell\_index@{nb\_in\_cell\_index}!partition@{partition}}
+\doxysubsubsection{\texorpdfstring{nb\_in\_cell\_index()}{nb\_in\_cell\_index()}}
+{\footnotesize\ttfamily std\+::vector$<$ int $>$ partition\+::nb\+\_\+in\+\_\+cell\+\_\+index (\begin{DoxyParamCaption}\item[{int}]{index,  }\item[{const \mbox{\hyperlink{classtopology_1_1_vector2d}{topology\+::\+Vector2d}} \&}]{r,  }\item[{double}]{cutoffsquared,  }\item[{const std\+::vector$<$ \mbox{\hyperlink{classtopology_1_1_vector2d}{topology\+::\+Vector2d}} $>$ \&}]{positions,  }\item[{std\+::vector$<$ double $>$ \&}]{distances,  }\item[{const \mbox{\hyperlink{classtopology_1_1_vector2d}{topology\+::\+Vector2d}}}]{shift = {\ttfamily 0} }\end{DoxyParamCaption}) const}
+
+
+
+Returns the indices of the particles in a cell for all particles within a cutoff radius of r. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em index} & Cell index \\
+\hline
+\mbox{\texttt{ in}}  & {\em r} & Position of particle. \\
+\hline
+\mbox{\texttt{ in}}  & {\em cutoffsquared} & Square of the cutoff radius (square because no roots have to be taken). \\
+\hline
+\mbox{\texttt{ in}}  & {\em positions} & Vector of positions to be accessed. \\
+\hline
+\mbox{\texttt{ out}}  & {\em distances} & Stores the distances to all neighbors. Saves computation time. \\
+\hline
+\mbox{\texttt{ in}}  & {\em shift} & Shifts position of vector r. Optional, default is 0.\\
+\hline
+\end{DoxyParams}
+ATTENTION\+: The integer neighbors is not re-\/initialized, so the number of neighbors is added to the value that is already stored in neighbors. This simplifies calculations with more than one group, but one has to bear that in mind. \Hypertarget{classpartition_ae483486f45d3f0b4af19de5c44ad3a67}\label{classpartition_ae483486f45d3f0b4af19de5c44ad3a67} 
+\index{partition@{partition}!nb\_in\_cell\_index\_above@{nb\_in\_cell\_index\_above}}
+\index{nb\_in\_cell\_index\_above@{nb\_in\_cell\_index\_above}!partition@{partition}}
+\doxysubsubsection{\texorpdfstring{nb\_in\_cell\_index\_above()}{nb\_in\_cell\_index\_above()}}
+{\footnotesize\ttfamily std\+::vector$<$ int $>$ partition\+::nb\+\_\+in\+\_\+cell\+\_\+index\+\_\+above (\begin{DoxyParamCaption}\item[{int}]{index,  }\item[{const \mbox{\hyperlink{classtopology_1_1_vector2d}{topology\+::\+Vector2d}} \&}]{r,  }\item[{double}]{cutoffsquared,  }\item[{const std\+::vector$<$ \mbox{\hyperlink{classtopology_1_1_vector2d}{topology\+::\+Vector2d}} $>$ \&}]{positions,  }\item[{std\+::vector$<$ double $>$ \&}]{distances,  }\item[{const \mbox{\hyperlink{classtopology_1_1_vector2d}{topology\+::\+Vector2d}}}]{shift = {\ttfamily 0} }\end{DoxyParamCaption}) const}
+
+
+
+Calculates only neighbors above particle (reduces computation time). 
+
+\Hypertarget{classpartition_a8928f60e124c54de74acc2f7e3f6fe28}\label{classpartition_a8928f60e124c54de74acc2f7e3f6fe28} 
+\index{partition@{partition}!neighbor\_cell@{neighbor\_cell}}
+\index{neighbor\_cell@{neighbor\_cell}!partition@{partition}}
+\doxysubsubsection{\texorpdfstring{neighbor\_cell()}{neighbor\_cell()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily int partition\+::neighbor\+\_\+cell (\begin{DoxyParamCaption}\item[{int}]{index,  }\item[{int}]{lr,  }\item[{int}]{du }\end{DoxyParamCaption}) const}
+
+
+
+Returns index of neighboring cell to cell at index. Uses periodic boundary conditions. 
+
+lr and ur are used to describe where the neighboring cell is. E.\+g. a cell to the top left would correspond to lr = -\/1 (left) and ud = 1 (up). 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em index} & index of cell. \\
+\hline
+\mbox{\texttt{ in}}  & {\em lr} & neighboring cell position in left-\/right (x) direction. In \{-\/1,0,1\}. -\/1 is left. \\
+\hline
+\mbox{\texttt{ in}}  & {\em du} & neighboring cell position in down-\/up (y) direction. In \{-\/1,0,1\}. -\/1 is down. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classpartition_a1c48744f9ba92c6a52065e1b58cb5293}\label{classpartition_a1c48744f9ba92c6a52065e1b58cb5293} 
+\index{partition@{partition}!neighbor\_cell@{neighbor\_cell}}
+\index{neighbor\_cell@{neighbor\_cell}!partition@{partition}}
+\doxysubsubsection{\texorpdfstring{neighbor\_cell()}{neighbor\_cell()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily int partition\+::neighbor\+\_\+cell (\begin{DoxyParamCaption}\item[{int}]{index,  }\item[{int}]{lr,  }\item[{int}]{du,  }\item[{\mbox{\hyperlink{classtopology_1_1_vector2d}{topology\+::\+Vector2d}} \&}]{shift }\end{DoxyParamCaption}) const}
+
+
+
+Returns index of neighboring cell to cell at index. Uses periodic boundary conditions. Contains a shift. 
+
+lr and ur are used to describe where the neighboring cell is. E.\+g. a cell to the top left would correspond to lr = -\/1 (left) and ud = 1 (up). 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em index} & index of cell. \\
+\hline
+\mbox{\texttt{ in}}  & {\em lr} & neighboring cell position in left-\/right (x) direction. In \{-\/1,0,1\} = (left, center, right). \\
+\hline
+\mbox{\texttt{ in}}  & {\em du} & neighboring cell position in down-\/up (y) direction. In \{-\/1,0,1\} = (below, center, above). \\
+\hline
+\mbox{\texttt{ in,out}}  & {\em shift} & if the neighboring cell is on the other side of the periodic box, a nonzero shift is stored here. The shift is designed such that the cell at index is next to its neighboring cell if shift is subtracted from the positions of all particles in the cell at index. (Later function calls with r-\/shift) \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classpartition_a31ca932d9d0d564146b53222ecd5a028}\label{classpartition_a31ca932d9d0d564146b53222ecd5a028} 
+\index{partition@{partition}!part\_in\_cell@{part\_in\_cell}}
+\index{part\_in\_cell@{part\_in\_cell}!partition@{partition}}
+\doxysubsubsection{\texorpdfstring{part\_in\_cell()}{part\_in\_cell()}}
+{\footnotesize\ttfamily std\+::vector$<$ int $>$ partition\+::part\+\_\+in\+\_\+cell (\begin{DoxyParamCaption}\item[{int}]{index }\end{DoxyParamCaption}) const}
+
+
+
+Returns a std\+::vector containing the indices of the particles in the box with index \textquotesingle{}index\textquotesingle{}. 
+
+\Hypertarget{classpartition_a252ece38cc3e5d461375f2330820edc4}\label{classpartition_a252ece38cc3e5d461375f2330820edc4} 
+\index{partition@{partition}!print@{print}}
+\index{print@{print}!partition@{partition}}
+\doxysubsubsection{\texorpdfstring{print()}{print()}}
+{\footnotesize\ttfamily void partition\+::print (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Print partition (only for troubleshooting). 
+
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{classpartition_a6a784ac09035595f059405f2d1458ce7}\label{classpartition_a6a784ac09035595f059405f2d1458ce7} 
+\index{partition@{partition}!cellelem\_@{cellelem\_}}
+\index{cellelem\_@{cellelem\_}!partition@{partition}}
+\doxysubsubsection{\texorpdfstring{cellelem\_}{cellelem\_}}
+{\footnotesize\ttfamily std\+::vector$<$int$>$ partition\+::cellelem\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Integers indicating the number of elements per cell. Dim = M\+\_\+\mbox{[}0\mbox{]} \texorpdfstring{$\ast$}{*} ... \texorpdfstring{$\ast$}{*} M\+\_\+\mbox{[}d\mbox{]};. 
+
+\Hypertarget{classpartition_a5c07488276d1c962e5e4abafdb65406c}\label{classpartition_a5c07488276d1c962e5e4abafdb65406c} 
+\index{partition@{partition}!cellnum\_@{cellnum\_}}
+\index{cellnum\_@{cellnum\_}!partition@{partition}}
+\doxysubsubsection{\texorpdfstring{cellnum\_}{cellnum\_}}
+{\footnotesize\ttfamily int partition\+::cellnum\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Total number of cells. 
+
+\Hypertarget{classpartition_ac298b91a3d7bfef35b128b48c58a260b}\label{classpartition_ac298b91a3d7bfef35b128b48c58a260b} 
+\index{partition@{partition}!cellvec\_@{cellvec\_}}
+\index{cellvec\_@{cellvec\_}!partition@{partition}}
+\doxysubsubsection{\texorpdfstring{cellvec\_}{cellvec\_}}
+{\footnotesize\ttfamily std\+::vector$<$int$>$ partition\+::cellvec\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Vector of particle indices. Dim = N\+\_\+. Easier to access than the list, and since it has to be accessed a lot, we save it here. 
+
+\Hypertarget{classpartition_aa7ef9ece73f06d5a016057f571a8072a}\label{classpartition_aa7ef9ece73f06d5a016057f571a8072a} 
+\index{partition@{partition}!cellwidth\_@{cellwidth\_}}
+\index{cellwidth\_@{cellwidth\_}!partition@{partition}}
+\doxysubsubsection{\texorpdfstring{cellwidth\_}{cellwidth\_}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classtopology_1_1_vector2d}{topology\+::\+Vector2d}} partition\+::cellwidth\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Width of a cell in the cell list. Typically the cutoff radius of the interaction. 
+
+\Hypertarget{classpartition_ad02cd6d63f434ff7043ce188f9784aed}\label{classpartition_ad02cd6d63f434ff7043ce188f9784aed} 
+\index{partition@{partition}!firsts\_@{firsts\_}}
+\index{firsts\_@{firsts\_}!partition@{partition}}
+\doxysubsubsection{\texorpdfstring{firsts\_}{firsts\_}}
+{\footnotesize\ttfamily std\+::vector$<$int$>$ partition\+::firsts\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Indices of the first element pertaining to a cell. Dim = N\+\_\+;. 
+
+Set to the first element of the next cell if the cell is empty. \Hypertarget{classpartition_aba95fa663a7ed0beef7c3b2d3572edd5}\label{classpartition_aba95fa663a7ed0beef7c3b2d3572edd5} 
+\index{partition@{partition}!L\_@{L\_}}
+\index{L\_@{L\_}!partition@{partition}}
+\doxysubsubsection{\texorpdfstring{L\_}{L\_}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classtopology_1_1_vector2d}{topology\+::\+Vector2d}} partition\+::\+L\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Size of simulation box. 
+
+Box has to be at least twice the size of the cutoff radius, else particles can have double-\/interaction. This case is not an error caught by the simulation so far. Note that the simulation box is from 0 to L\+\_\+. \Hypertarget{classpartition_ac239d2426c0176e21713adcd96076f86}\label{classpartition_ac239d2426c0176e21713adcd96076f86} 
+\index{partition@{partition}!M\_@{M\_}}
+\index{M\_@{M\_}!partition@{partition}}
+\doxysubsubsection{\texorpdfstring{M\_}{M\_}}
+{\footnotesize\ttfamily std\+::vector$<$int$>$ partition\+::\+M\+\_\+ = std\+::vector$<$int$>$(2)\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Number of cells per dimension. Dim = d = 2. 
+
+\Hypertarget{classpartition_a012e617129e83630e0b96ee9db05501e}\label{classpartition_a012e617129e83630e0b96ee9db05501e} 
+\index{partition@{partition}!N\_@{N\_}}
+\index{N\_@{N\_}!partition@{partition}}
+\doxysubsubsection{\texorpdfstring{N\_}{N\_}}
+{\footnotesize\ttfamily int partition\+::\+N\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Size of the group. 
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{partition_8h}{partition.\+h}}\item 
+\mbox{\hyperlink{partition_8cpp}{partition.\+cpp}}\end{DoxyCompactItemize}

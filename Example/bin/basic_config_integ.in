@@ -1,0 +1,38 @@
+static = y
+
+vortices = y
+
+mxq = y
+myq = y
+eq = n
+wq = y
+rq = n
+jparq = y
+jperpq = y
+lq = n
+teq = n
+
+SCF = y
+TCF = y
+TransCoeff = n
+MemoryKernels = n
+
+refresh_q = n
+print_snapshots = n
+
+# Format: Variable = y/n. Spaces are important. Default value is n for no. (Actually, only setting "Var = y" changes that, all other entries are considered as no)
+# Possible variables
+#
+# static    				## Stores static quantities (E, W, M, ...)
+# vortices                              ## Stores number of vortices
+# mxq                                   ## Stores the $m_{x,q}$ (x-spin field fluctuation)
+# myq                                   ## Stores the $m_{y,q}$ (y-spin field fluctuation)
+# eq                                    ## Stores the $e_{q}$ (energy field fluctuation)
+# wq                                    ## Stores the $w_{q}$ (omega field fluctuation)
+# wq                                    ## Stores the $\theta_{q}$ (theta field fluctuation)
+# chimxq                                ## Stores the $\chi_{mx,q}$
+# chimyq                                ## Stores the $\chi_{my,q}$
+# chieq                                 ## Stores the $\chi_{w,q}$
+# chiwq                                 ## Stores the $\chi_{e,q}$
+# chiteq                                ## Stores the $\chi_{\theta,q}$
+# print_snapshots    					## Decides whether snapshots should be printed

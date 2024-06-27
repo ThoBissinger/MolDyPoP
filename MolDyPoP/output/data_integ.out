@@ -1,0 +1,194 @@
+==========================================================
+==================  Simulation data ======================
+==========================================================
+system:                   mxy
+mode:                     integrate
+job_id:                   _integ
+random seed:              1
+N:                        256
+sqrtN:                    16
+L:                        9.25
+kT:                       0.17
+m:                        1
+I:                        1
+J:                        1
+U:                        1
+cutoff:                   1
+m:                        1
+dt:                       0.01
+Tmax:                     10
+init_mode:                aligned
+init_file:                /data/scc/thobi/210715_LinearTimeSampling/mxy_3.00/sqrtN_16/T_.17/run_1/output/snapshot_Dynamics_final.out
+init_kT:                  -1
+init_random_displacement: 0
+init_random_angle:        0
+eq_mode:                  anneal
+eq_Tmax:                  10
+eq_breakcond:             time_hard
+eq_agreement_threshold:   0.01
+eq_av_time:               1
+tau_berendsen:            10
+eq_anneal_rate:           0.99
+eq_anneal_step:           1
+eq_brownian_kT_omega:     -1
+eq_brownian_kT_p:         -1
+eq_brownian_timestep:     0.5
+eq_sampswitch:            1
+eq_Nsamp:                 100
+eq_samp_time_sequence:    lin
+N_rbin:                   32
+N_qbin:                   32
+min_binwidth_r:           1
+qbin_type:                mult
+qmax:                     1.2
+min_binwidth_q:           0.15
+qsamps_per_bin:           20
+n_rsamps:                 500
+lattice_type:             s
+activity:                 0
+vm_v:                     0
+vm_eta:                   0.5
+eq_integrator_type:       langevin
+sample_integrator_type:   langevin
+ensemble:                 nve
+nhnp_pi:                  0
+nhnp_Q:                   -1
+nhnp_tau:                 0.009
+nh_eta:                   0
+mc_steplength_theta:      0.1
+brownian_kT_omega:        -1
+brownian_kT_p:            -1
+brownian_timestep:        1
+gamma_ld_p:               0
+gamma_ld_om:              0
+mc_steplength_r:          0.1
+sampling_time_sequence:   lin
+samplestart:              0
+samplestep:               1
+av_time_spacing:          1
+Nsamp:                    100
+print_snapshots:          0
+on_fly_sampling:          1
+snap_overview_file:       output/snapshot_integ_overview.out
+==========================================================
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////////
+++ Routine Initialization:
+++ initialized 
+ = Integrator initialized.
+
+ = 256 Particles in a periodic square box of length 9.25
+
+==========================================================
+================  Sampling variables =====================
+==========================================================
+static          :  1
+vortices        :  1
+mxq             :  0
+myq             :  0
+eq              :  0
+wq              :  0
+rq              :  0
+jparq           :  0
+jperpq          :  0
+lq              :  0
+teq             :  0
+SCF             :  1
+TCF             :  1
+TransCoeff      :  0
+MemoryKernels   :  0
+refresh_q       :  0
+print_snapshots :  0
+==========================================================
+
+==========================================================
+================  Sampling variables =====================
+==========================================================
+static          :  1
+vortices        :  0
+mxq             :  0
+myq             :  0
+eq              :  0
+wq              :  0
+rq              :  0
+jparq           :  0
+jperpq          :  0
+lq              :  0
+teq             :  0
+SCF             :  1
+TCF             :  1
+TransCoeff      :  0
+MemoryKernels   :  0
+refresh_q       :  0
+print_snapshots :  0
+==========================================================
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////////
+++ Routine equilibrate:
+++ initialized 
+/////////////////////////////////////////////////////////////////////////////////////////////////////////
+++ Routine equilibrate:
+++ initialized 
+  ++ eq_mode:                'anneal'
+  ++ Tmax:                   10
+  ++ Start time:             0
+  ++ anneal_rate:            0.99
+  ++ anneal_step:            1
+  ++ Break condition:        'time_hard'
+  ++ Agreement threshold:    0.01
+  ++ eq_samplingswitch:      1
+  ++ eq_samp_time_sequence:  lin
+  ++ eq_Nsamp:               100
+
+    ++ eq ++ 0 t  0  T  0.171427
+    ++ eq ++ 1 t  1  T  0.3317
+    ++ eq ++ 2 t  2  T  0.343732
+    ++ eq ++ 3 t  3.01  T  0.326508
+    ++ eq ++ 4 t  4.01  T  0.327188
+    ++ eq ++ 5 t  5.01  T  0.33857
+    ++ eq ++ 6 t  6.01  T  0.315364
+    ++ eq ++ 7 t  7.01  T  0.307466
+    ++ eq ++ 8 t  8.01  T  0.300212
+    ++ eq ++ 9 t  9.01  T  0.278425
+  O Equilibration not reached after t = 10.01
+++ Routine equilibrate:
+++ terminated 
+/////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+  + Time consumption diagnostics for equilibrate:
+  + Total time: 5.49868 s
+  + Integration time: 0.74301 s
+  + Sampling time: 4.71933 s
+  + Total time per particle per system second: 0.00214578 s
+++ Desired temperature not reached. 
+++ Terminating equilibration because eq_breakcond = 'time_hard' 
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////////
+++ Routine sample_nvt:
+++ initialized 
+  + Writing sampling data to output/sampling_output_integ.m
+
+    ++ 0: Sampling performed at t = 0
+    ++ 1: Sampling performed at t = 1
+    ++ 2: Sampling performed at t = 2
+    ++ 3: Sampling performed at t = 3.01
+    ++ 4: Sampling performed at t = 4.01
+    ++ 5: Sampling performed at t = 5.01
+    ++ 6: Sampling performed at t = 6.01
+    ++ 7: Sampling performed at t = 7.01
+    ++ 8: Sampling performed at t = 8.01
+    ++ 9: Sampling performed at t = 9.01
+    ++ 10: Sampling performed at t = 10.01
+    +  : Final snapshot printed at t = 10.01
+  + Time consumption diagnostics for sample_nvt:
+  + Total time: 7.33456 s
+  + Integration time: 0.973659 s
+  + Sampling time: 6.31728 s
+  + Printing time: 0.0034481 s
+  + Total time per particle per system second: 0.0028622 s
+++ Routine sample_nvt:
+++ terminated 
+/////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+Run complete! Time consumed: 12.8463 s
+Exit value: 1

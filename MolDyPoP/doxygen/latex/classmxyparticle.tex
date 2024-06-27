@@ -1,0 +1,118 @@
+\doxysection{mxyparticle Class Reference}
+\hypertarget{classmxyparticle}{}\label{classmxyparticle}\index{mxyparticle@{mxyparticle}}
+
+
+Defines MXY particles with orientation theta\+\_\+ and (spin) angular momentum w\+\_\+ as well as position r\+\_\+ and momenta p\+\_\+ (2d).  
+
+
+
+
+{\ttfamily \#include $<$mxyparticle.\+h$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classmxyparticle_a185e63200ae5af3af457563ceb6251d6}\label{classmxyparticle_a185e63200ae5af3af457563ceb6251d6} 
+{\bfseries mxyparticle} ()
+\begin{DoxyCompactList}\small\item\em Empty Constructor. \end{DoxyCompactList}\item 
+\Hypertarget{classmxyparticle_a4d3af6f96c301e32a545eb2cf4166c6e}\label{classmxyparticle_a4d3af6f96c301e32a545eb2cf4166c6e} 
+{\bfseries mxyparticle} (const double theta, const double w, \mbox{\hyperlink{classtopology_1_1_vector2d}{topology\+::\+Vector2d}} r, \mbox{\hyperlink{classtopology_1_1_vector2d}{topology\+::\+Vector2d}} p)
+\begin{DoxyCompactList}\small\item\em Constructor from two doubles, theta and w. \end{DoxyCompactList}\item 
+\Hypertarget{classmxyparticle_a7e5c8e4034d52b6ff6c7faa4f0a3748f}\label{classmxyparticle_a7e5c8e4034d52b6ff6c7faa4f0a3748f} 
+{\bfseries mxyparticle} (const \mbox{\hyperlink{classmxyparticle}{mxyparticle}} \&mxypart)
+\begin{DoxyCompactList}\small\item\em Copy constructor. \end{DoxyCompactList}\item 
+\Hypertarget{classmxyparticle_a69f908f0df94e313466107413cfc5588}\label{classmxyparticle_a69f908f0df94e313466107413cfc5588} 
+double {\bfseries get\+\_\+theta} () const
+\item 
+\Hypertarget{classmxyparticle_a8db2f3dca0d83465d23241e984f33971}\label{classmxyparticle_a8db2f3dca0d83465d23241e984f33971} 
+double {\bfseries get\+\_\+w} () const
+\begin{DoxyCompactList}\small\item\em Returns theta\+\_\+. \end{DoxyCompactList}\item 
+\Hypertarget{classmxyparticle_a5eefe0178ac57ed58e42e13afd911d1b}\label{classmxyparticle_a5eefe0178ac57ed58e42e13afd911d1b} 
+\mbox{\hyperlink{classtopology_1_1_vector2d}{topology\+::\+Vector2d}} {\bfseries get\+\_\+r} () const
+\begin{DoxyCompactList}\small\item\em Returns w\+\_\+. \end{DoxyCompactList}\item 
+\Hypertarget{classmxyparticle_ac5f1fec0aa912c89927adcc0b284ff17}\label{classmxyparticle_ac5f1fec0aa912c89927adcc0b284ff17} 
+\mbox{\hyperlink{classtopology_1_1_vector2d}{topology\+::\+Vector2d}} {\bfseries get\+\_\+p} () const
+\begin{DoxyCompactList}\small\item\em Returns r\+\_\+. \end{DoxyCompactList}\item 
+\Hypertarget{classmxyparticle_a8c0c4c6d822927465a08de834c723e02}\label{classmxyparticle_a8c0c4c6d822927465a08de834c723e02} 
+double {\bfseries get\+\_\+space\+\_\+angular\+\_\+mom} () const
+\begin{DoxyCompactList}\small\item\em Returns p\+\_\+. \end{DoxyCompactList}\item 
+\Hypertarget{classmxyparticle_a56bfaba8bc358ecb882af886331ad398}\label{classmxyparticle_a56bfaba8bc358ecb882af886331ad398} 
+void {\bfseries set\+\_\+theta} (double new\+\_\+theta)
+\begin{DoxyCompactList}\small\item\em Sets theta\+\_\+. \end{DoxyCompactList}\item 
+\Hypertarget{classmxyparticle_a411717f1193af9e1827e84e8aa79ab7a}\label{classmxyparticle_a411717f1193af9e1827e84e8aa79ab7a} 
+void {\bfseries set\+\_\+w} (double new\+\_\+w)
+\begin{DoxyCompactList}\small\item\em Sets w\+\_\+. \end{DoxyCompactList}\item 
+\Hypertarget{classmxyparticle_af2bab6ed757635b44910ad3173d5fc7e}\label{classmxyparticle_af2bab6ed757635b44910ad3173d5fc7e} 
+void {\bfseries set\+\_\+r} (\mbox{\hyperlink{classtopology_1_1_vector2d}{topology\+::\+Vector2d}} r)
+\begin{DoxyCompactList}\small\item\em Sets r\+\_\+. \end{DoxyCompactList}\item 
+\Hypertarget{classmxyparticle_aaffaa0c880dbf7d28e630969261baf23}\label{classmxyparticle_aaffaa0c880dbf7d28e630969261baf23} 
+void {\bfseries set\+\_\+p} (\mbox{\hyperlink{classtopology_1_1_vector2d}{topology\+::\+Vector2d}} p)
+\begin{DoxyCompactList}\small\item\em Sets p\+\_\+. \end{DoxyCompactList}\item 
+\Hypertarget{classmxyparticle_a709e1492ff852dc40e0a2e8eed606f0e}\label{classmxyparticle_a709e1492ff852dc40e0a2e8eed606f0e} 
+void {\bfseries set\+\_\+temperature} (double kT, double I, double m)
+\begin{DoxyCompactList}\small\item\em Sets w\+\_\+ and p\+\_\+ with values accurate to a Boltzmann distribution. \end{DoxyCompactList}\item 
+\Hypertarget{classmxyparticle_a381d04d0b9c408a3703101be14cc9e46}\label{classmxyparticle_a381d04d0b9c408a3703101be14cc9e46} 
+void {\bfseries set\+\_\+theta\+\_\+to\+\_\+interval} ()
+\begin{DoxyCompactList}\small\item\em Sets theta to be in the inveral (-\/pi, pi\mbox{]}. \end{DoxyCompactList}\item 
+\Hypertarget{classmxyparticle_a98ee4b0ce73200c6722d81cde7f27817}\label{classmxyparticle_a98ee4b0ce73200c6722d81cde7f27817} 
+void {\bfseries set\+\_\+r\+\_\+to\+\_\+pbc} (\mbox{\hyperlink{classtopology_1_1_vector2d}{topology\+::\+Vector2d}} box)
+\begin{DoxyCompactList}\small\item\em Changes r to agree with periodic boundary conditions (rectangular box). \end{DoxyCompactList}\item 
+\Hypertarget{classmxyparticle_a2fb35eb405523bf3ee3214818a47b366}\label{classmxyparticle_a2fb35eb405523bf3ee3214818a47b366} 
+void {\bfseries scale\+\_\+w} (double a)
+\begin{DoxyCompactList}\small\item\em Multiplies w\+\_\+ member variable by a (\texorpdfstring{$\ast$}{*}=) \end{DoxyCompactList}\item 
+\Hypertarget{classmxyparticle_ae613d2f250b8def997e1c0847927e632}\label{classmxyparticle_ae613d2f250b8def997e1c0847927e632} 
+void {\bfseries scale\+\_\+p} (double a)
+\begin{DoxyCompactList}\small\item\em Multiplies p\+\_\+ member variable by a (\texorpdfstring{$\ast$}{*}=) \end{DoxyCompactList}\item 
+\Hypertarget{classmxyparticle_aa8eaf7553bb11a5cf7a06e31052b8789}\label{classmxyparticle_aa8eaf7553bb11a5cf7a06e31052b8789} 
+void {\bfseries add\+\_\+to\+\_\+theta} (double theta)
+\begin{DoxyCompactList}\small\item\em Adds theta to theta\+\_\+ member variable (+=) \end{DoxyCompactList}\item 
+\Hypertarget{classmxyparticle_a1d566cd0aed6762b480aa7215b280de4}\label{classmxyparticle_a1d566cd0aed6762b480aa7215b280de4} 
+void {\bfseries add\+\_\+to\+\_\+w} (double w)
+\begin{DoxyCompactList}\small\item\em Adds w to w\+\_\+ member variable (+=) \end{DoxyCompactList}\item 
+\Hypertarget{classmxyparticle_a7f457935f04f1884696eb3a47c30700a}\label{classmxyparticle_a7f457935f04f1884696eb3a47c30700a} 
+void {\bfseries add\+\_\+to\+\_\+r} (\mbox{\hyperlink{classtopology_1_1_vector2d}{topology\+::\+Vector2d}} r)
+\begin{DoxyCompactList}\small\item\em Adds r to r\+\_\+ member variable (+=) \end{DoxyCompactList}\item 
+\Hypertarget{classmxyparticle_a69763afefd97ffc8f46051ba107c39ba}\label{classmxyparticle_a69763afefd97ffc8f46051ba107c39ba} 
+void {\bfseries add\+\_\+to\+\_\+p} (\mbox{\hyperlink{classtopology_1_1_vector2d}{topology\+::\+Vector2d}} p)
+\begin{DoxyCompactList}\small\item\em Adds p to p\+\_\+ member variable (+=) \end{DoxyCompactList}\item 
+\Hypertarget{classmxyparticle_a495bca78c07a6605400904122e9ae2e1}\label{classmxyparticle_a495bca78c07a6605400904122e9ae2e1} 
+void {\bfseries initialize} (double kbT, double I, double m, \mbox{\hyperlink{classtopology_1_1_vector2d}{topology\+::\+Vector2d}} boxsize)
+\item 
+\Hypertarget{classmxyparticle_ac32802ed9f9ad605686049d3d514105a}\label{classmxyparticle_ac32802ed9f9ad605686049d3d514105a} 
+void {\bfseries random\+\_\+mxyparticle} (double kbT, double I, double m, \mbox{\hyperlink{classtopology_1_1_vector2d}{topology\+::\+Vector2d}} boxsize)
+\begin{DoxyCompactList}\small\item\em Gives this particle random variable values according to Boltzmann statistics and an isotropic angle distribution. The inertia I has to be supplied to ensure the correct average. \end{DoxyCompactList}\item 
+\Hypertarget{classmxyparticle_a13240fe96fb6dad093f9195a9875f751}\label{classmxyparticle_a13240fe96fb6dad093f9195a9875f751} 
+\mbox{\hyperlink{classmxyparticle}{mxyparticle}} \& {\bfseries operator+=} (const \mbox{\hyperlink{classmxyparticle}{mxyparticle}} \&p)
+\begin{DoxyCompactList}\small\item\em Adding another particle (component-\/wise) \end{DoxyCompactList}\item 
+\Hypertarget{classmxyparticle_ad9e86111075a59b334f0b5e312d3b3a4}\label{classmxyparticle_ad9e86111075a59b334f0b5e312d3b3a4} 
+\mbox{\hyperlink{classmxyparticle}{mxyparticle}} \& {\bfseries operator\texorpdfstring{$\ast$}{*}=} (const double a)
+\begin{DoxyCompactList}\small\item\em Multyplying by scalar (component-\/wise) \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classmxyparticle_a8108b38a3cb7ccadeea0e5b8abf43240}\label{classmxyparticle_a8108b38a3cb7ccadeea0e5b8abf43240} 
+double {\bfseries theta\+\_\+}
+\begin{DoxyCompactList}\small\item\em angle theta associated to the particle \end{DoxyCompactList}\item 
+\Hypertarget{classmxyparticle_a9d37d2e88ebd5e857735c7bf5f64692b}\label{classmxyparticle_a9d37d2e88ebd5e857735c7bf5f64692b} 
+double {\bfseries w\+\_\+}
+\begin{DoxyCompactList}\small\item\em angular momentum omega associated to the particle \end{DoxyCompactList}\item 
+\Hypertarget{classmxyparticle_a12bb2e11ee29053f625dfba637485270}\label{classmxyparticle_a12bb2e11ee29053f625dfba637485270} 
+\mbox{\hyperlink{classtopology_1_1_vector2d}{topology\+::\+Vector2d}} {\bfseries r\+\_\+}
+\begin{DoxyCompactList}\small\item\em Position r of particle. \end{DoxyCompactList}\item 
+\Hypertarget{classmxyparticle_a4ca193333253e1da9e16727d26fa56cb}\label{classmxyparticle_a4ca193333253e1da9e16727d26fa56cb} 
+\mbox{\hyperlink{classtopology_1_1_vector2d}{topology\+::\+Vector2d}} {\bfseries p\+\_\+}
+\begin{DoxyCompactList}\small\item\em Momentum p\+\_\+ of particle. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Defines MXY particles with orientation theta\+\_\+ and (spin) angular momentum w\+\_\+ as well as position r\+\_\+ and momenta p\+\_\+ (2d). 
+
+\begin{DoxyAuthor}{Author}
+Thomas Bissinger 
+\end{DoxyAuthor}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+mxyparticle.\+h\item 
+mxyparticle.\+cpp\end{DoxyCompactItemize}

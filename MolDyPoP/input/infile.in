@@ -1,0 +1,162 @@
+# Basic input
+system = mxy
+mode = integ
+job_id = integ
+randomseed = 1
+# Group characteristics
+sqrtN = 16
+L = 9.25
+I = 1
+m = 1
+J = 1
+U = 1
+cutoff = 1
+kT = .17
+dt = .01
+lattice_type = s
+activity = 0
+vm_v = 0
+vm_eta = .5
+# initialization
+init_mode = aligned
+init_file = /data/scc/thobi/210715_LinearTimeSampling/mxy_3.00/sqrtN_16/T_.17/run_1/output/snapshot_Dynamics_final.out
+init_kT = -1
+init_random_displacement = 0
+init_random_angle = 0
+# equilibration
+eq_mode = anneal
+eq_integrator_type = langevin
+eq_Tmax = 10
+eq_breakcond = time_hard
+eq_agreement_threshold = 1e-2
+eq_av_time = 1
+tau_berendsen = 10
+eq_anneal_rate = .99
+eq_anneal_step = 1
+eq_brownian_kT_omega = -1
+eq_brownian_kT_p = -1
+eq_brownian_timestep = .50
+eq_Tprintstep = NAN
+eq_sampswitch = 1
+eq_Nsamp = 100
+eq_samp_time_sequence = lin
+# integration
+sample_integrator_type = langevin
+ensemble = nve
+nhnp_pi = 0
+nhnp_Q = -1
+nhnp_tau = 0.009
+nh_eta = 0
+np_s = 1
+mc_steplength_theta = 0.1
+mc_steplength_r = 0.1
+brownian_kT_omega = -1
+brownian_kT_p = -1
+brownian_timestep = 1.00
+gamma_ld_p = 0
+gamma_ld_om = 0
+# Sampling
+Tmax = 1e1
+N_rbin = 32
+min_binwidth_r = 1
+qbin_type = mult
+qmax = 1.2
+min_binwidth_q = .15
+N_qbin = 32
+qsamps_per_bin = 20
+n_rsamps = 500
+Nsamp = 100
+sampling_time_sequence = lin
+print_snapshots = 0
+on_fly_sampling = 1
+samplestart = 0
+samplestep = 1
+av_time_spacing = 1e0
+# file management
+snap_overview_file = output/snapshot_integ_overview.out
+stdoutfile = data.out
+output_folder = output
+
+
+# Format: Variable = Value. Spaces are important. Here given with default values.
+# Possible variables (with defaults)
+# system = xy                                           ## Type of system.
+                                                        ## Possible values:
+                                                         # "xy" - XY model,
+                                                         # "mxy" - mobile XY model,
+                                                         # "vm" - Vicsek model (todo),
+                                                         # "fvm" - forzen Vicsek model (todo).
+# mode = none                                           ## Run mode for the simulation.
+                                                        ## Possible values:
+                                                         # "none" - nothing is done,
+                                                         # "integrate" - integration with snapshots;
+                                                         # "integrate_cont" - integration starting with final snapshots;
+                                                         # "samp" - sampling of snapshots
+# job_id =                                              ## Job identifier. If specified, data will be stored in data_'job_id'.out etc. Otherwise, it is just the default data.out
+# randomseed = 0					## Random seed
+# sqrtN = 10						## sqrt of number of particles
+# N = 100						## Number of particles. Notice that the last specification of either sqrtN or N is definitive.
+#       	  					## N will be set by squaring.
+# J = 1							## Interaction strength
+# I = 1							## Spin inertia
+# cutoff = 1                                            ## cutoff length for interaction potential (default value 1)
+# m = 1							## Mass
+# kT = 1						## Temperature
+# Tmax = 100						## Runtime
+# dt = 0.01						## Time step width
+# N_rbin = 50						## Number of bins for the spatial correlation functions. Should be smaller than 1/2 * sqrtN
+# min_binwidth_r = 1					## Minimal width of r bins (should be around 1)
+# qbin_type = all                                       ## Type of qbin. 'all' uses all possible q values on the grid, 'mult' uses only integer multiples of 2pi/L [std::string]
+# min_binwidth_q = .015                                 ## Minimal width of q bins, in fractions of pi / L [double]
+# N_qbin = 50						## Number of bins for wave vector correlation functions
+# qmax = NaN                                            ## Maximum value for q in bin. Default is 2 pi [double]
+# qsamps_per_bin = 20					## Number of sampling values for q per bin
+# n_rsamps = 30                                         ## Number of (randomly chosen) r sampling points for the calculation of correlation functions in position space (like spin correlation functions or mean squared displacements etc.)
+# lattice_type = t					## Type of lattice, t is trigonal, s is square
+# activity = 0                                          ## Activity in the mobile XY model (stream velocity) [double]
+# vm_v = 0                                              ## Vicsek model streaming velocity. [double]
+# vm_eta = 0                                            ## Vicsek model noise strength (between 0 and 1, actual noise interval will be [-eta/2*Pi,eta/2 * Pi]). [double]
+# init_mode = random  	                        	## Initialization mode. Either from a random configuration ("random") or from file ("file"). In the latter case, "init_file" has to be specified
+# init_file = input/init_snap.in                        ## Initialization file. Only relevant if init_mode is set to "file"
+# init_kT = -1                                          ## Initialization temperature, temperature at which simulation should start. Has no effect when chosen negative.
+# init_random_displacement = 0                          ## Random particle displacement at initialization (for scaled initialization only)
+# init_random_angle = 0                                 ## Random angle displacement at initialization (for scaled initialization only)
+# eq_integrator_type = lf				## Integrator type during equilibration. 'rk4' for Runge-Kutta, 'lf' for leapfrog. (string)
+# sample_integrator_type = nh				## Integrator type during sampling. 'rk4' for Runge-Kutta, 'lf' for leapfrog, 'nh' for Nose-Hoover, 'np' for Nose-Poincare. (string)
+# nhnp_pi = 0                                           ## Nose-Hoover and Nose-Poincare pi value
+# nhnp_Q = 5e0                                          ## Nose-Hoover and Nose-Poincare Q value
+# nh_eta = 0                                            ## Nose-Hoover eta value
+# np_s = 1                                              ## Nose-Poincare s value (initial time scaling factor)
+# mc_steplength_theta = 0.1                             ## Maximal trial step length of MC algorithm for angle theta
+# brownian_kT_omega = -1                                ## Temperature for spin momentum thermostat in a Brownian dynamics simulation (applied when non-negative) [double]
+# brownian_kT_p = -1                                    ## Temperature for momentum thermostat in a Brownian dynamics simulation (applied when non-negative) [double]
+# brownian_timestep = 1.00                              ## Step length for Brownian timestep (in units of system time) [double]
+# gamma_ld_p = 0                                        ## Damping rate gamma of the Langevin dynamics. Associated to the linear angular momentum p. [double]
+# gamma_ld_om = 0                                       ## Damping rate gamma of the Langevin dynamics. Associated to the spin angular velocity omega. [double]
+# mc_steplength_r = 0.1                                 ## Maximal trial step length of MC algorithm for distance r
+# ensemble = nvt					## Ensemble used in simulation.
+# eq_mode = berendsen                                   ## equilibration mode. Possilbe values: 'berendsen' for berendsen thermostat, 'anneal' for annealing
+# eq_Tmax = 100                         		## Maximum equilibration time
+# eq_breakcond = "temperature"                          ## Break condition for equilibration. Default is "temperature" (breaking when desired temperature has settled in), alternative is "time" (breaking when equilibration time has passed, no checking of equilibration, but the equilibration process is continued if the desired temeprature is not reached), "time_hard" (breaks after eq_Tmax, no rerun if the desired temperature has not been reached). Option "any" also exists as a mix between "time" and "temperature". [std::string]
+# eq_agreement_threshold = 1e-2                         ## Temperature agreement threshold to check successful equilibration
+# eq_av_time = 0                                        ## Averaging time in equilibration (set to 0 for no averaging)
+# tau_berendsen = 1					## Berendsen Thermostat tau parameter
+# eq_anneal_rate = .999                                 ## Annealing rate
+# eq_anneal_step = 1e1                                  ## Annealing time step
+# eq_brownian_kT_p = -1                                 ## Temperature for momentum thermostat during equilibration in a Brownian dynamics simulation (applied when non-negative) [double]
+# eq_brownian_kT_omega = -1                             ## Temperature for spin momentum thermostat during equilibration in a Brownian dynamics simulation (applied when non-negative) [double]
+# eq_brownian_timestep = 1.00                           ## Step length for Brownian timestep during equilibration (in units of system time) [double]
+# eq_Tprintstep = NAN                                   ## Temperature print interval. Prints intermediate data when equilibration reaches T [double]
+# eq_sampswitch = 0                                     ## Switch controlling whether sampling data is stored in equilibration
+# eq_Nsamp = 100                                        ## Number of time samplings performed during equilibration. Only has an effect if eq_sampswitch = 1 [int]
+# eq_samp_time_sequence = lin                           ## Sampling time sequence. 'lin' or 'log' [std::string]
+# samplestep = 1					## Number of steps for sampling
+# av_time_spacing = 1e2                                 ## Minimum time spacing for average calculations in sampling
+# Nsamp = 30                            		## Number of samples computed in sampling. Overwrites samplestep. (int)
+# sampling_time_sequence = lin                          ## Specifies how sampling should be performed. Values are lin (linear sequence of sampling times) and log (logarithmic sequence of sampling times).
+# printoption = 2					## Options for printing.
+# print_snapshots = 1					## bool. Should snapshots be printed
+# on_fly_sampling = 0					## bool. Should sampling be done on-the-fly
+# snap_overview_file = output/snapshot_overview.out     ## File where the names of all snapshots are stored. Only relevant when run in sampling mode.
+# stdoutfile = data.out				        ## std output
+# output_folder = output				## Folder in which the output should be stored

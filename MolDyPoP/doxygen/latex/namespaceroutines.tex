@@ -1,0 +1,189 @@
+\doxysection{routines Namespace Reference}
+\hypertarget{namespaceroutines}{}\label{namespaceroutines}\index{routines@{routines}}
+
+
+Different calculation routines with xygroups and mxygroups. Carries out simulation tasks.  
+
+
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{namespaceroutines_a63e972d03fd84501a0665165b9581065}{integration}} (\mbox{\hyperlink{classparameters}{parameters}} par)
+\begin{DoxyCompactList}\small\item\em basic integration routine \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{namespaceroutines_a71defa885d0c270b5292358b3e37cc94}{sampling}} (\mbox{\hyperlink{classparameters}{parameters}} par)
+\begin{DoxyCompactList}\small\item\em basic sampling routine (no integration performed) \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{namespaceroutines_a24e7d503ba8c679913305b3a91ba960e}{equilibrate}} (\mbox{\hyperlink{classgroup}{group}} \&G, const \mbox{\hyperlink{classparameters}{parameters}} \&par, \mbox{\hyperlink{classsampler}{sampler}} \&samp, const double Tmax, double \&t, const std\+::string breakcond, std\+::ofstream \&stdoutfile)
+\begin{DoxyCompactList}\small\item\em equilibration routine \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{namespaceroutines_a7f686895e93d83adb3395cd8a9c48dba}{integrate\+\_\+snapshots}} (\mbox{\hyperlink{classgroup}{group}} \&G, const \mbox{\hyperlink{classparameters}{parameters}} \&par, \mbox{\hyperlink{classsampler}{sampler}} \&samp, std\+::ofstream \&stdoutfile)
+\begin{DoxyCompactList}\small\item\em integration routine (the one that does the work) \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{namespaceroutines_ab1615a431f421f491da7990921eee452}{initprint}} (std\+::string routine\+\_\+name, std\+::ofstream \&outfile)
+\begin{DoxyCompactList}\small\item\em Initial print of each routine. States the routine name. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{namespaceroutines_a4e88be0bc1546ce37586cf790c80af87}{terminateprint}} (std\+::string routine\+\_\+name, std\+::ofstream \&outfile)
+\begin{DoxyCompactList}\small\item\em Terminal print of each routine. States the routine name. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Different calculation routines with xygroups and mxygroups. Carries out simulation tasks. 
+
+\begin{DoxyAuthor}{Author}
+Thomas Bissinger 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+Created\+: 2019-\/12-\/11 
+
+Last Updated\+: 2023-\/08-\/06 
+\end{DoxyDate}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{namespaceroutines_a24e7d503ba8c679913305b3a91ba960e}\label{namespaceroutines_a24e7d503ba8c679913305b3a91ba960e} 
+\index{routines@{routines}!equilibrate@{equilibrate}}
+\index{equilibrate@{equilibrate}!routines@{routines}}
+\doxysubsubsection{\texorpdfstring{equilibrate()}{equilibrate()}}
+{\footnotesize\ttfamily int routines\+::equilibrate (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classgroup}{group}} \&}]{G,  }\item[{const \mbox{\hyperlink{classparameters}{parameters}} \&}]{par,  }\item[{\mbox{\hyperlink{classsampler}{sampler}} \&}]{samp,  }\item[{const double}]{Tmax,  }\item[{double \&}]{t,  }\item[{const std\+::string}]{breakcond,  }\item[{std\+::ofstream \&}]{stdoutfile }\end{DoxyParamCaption})}
+
+
+
+equilibration routine 
+
+Takes in a group and integrates it until Tmax (or another break condition is met), then returns whether or not the group is equilibrated then.
+
+Reads data from snapshot files provided in a list file and performs sampling on it. Proceeds as follows\+:
+
+
+\begin{DoxyEnumerate}
+\item Preliminary stuff (opening files, initial print)
+\item Performs time integration (depending on which integrator chosen)
+\item After a time set in par, the integration checks for equlibration and decides whether or not to continue equlibrating
+\item Cleanup, final prints
+\end{DoxyEnumerate}
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in,out}}  & {\em G} & The group that should be equilibrated \\
+\hline
+\mbox{\texttt{ in}}  & {\em par} & A set of simulation parameters \\
+\hline
+\mbox{\texttt{ in,out}}  & {\em samp} & The sampler in which equilibration data should be stored (careful, will be reset during run -\/ TODO!) \\
+\hline
+\mbox{\texttt{ in}}  & {\em Tmax} & Maximum equilibration time \\
+\hline
+\mbox{\texttt{ in}}  & {\em t} & Current time \\
+\hline
+\mbox{\texttt{ in}}  & {\em breakcond} & Break condition. The following values can be taken\+: \hypertarget{index_multi_row}{}
+{\begin{tabularx}{\linewidth}{|*{2}{>{\raggedright\arraybackslash}X|}}\caption{Values of fluctname}\label{index_multi_row}\\
+\hline
+\cellcolor{\tableheadbgcolor}\textbf{ breakcond value }&\cellcolor{\tableheadbgcolor}\textbf{ meaning }\\\cline{1-2}
+\"{}time\"{} &Wait until Tmax. After that, another equilibration check is performed and the routine may be called again. \\\cline{1-2}
+\"{}time\+\_\+hard\"{} &Wait until Tmax. No further equilibration performed. \\\cline{1-2}
+\"{}temperature\"{} &Breaks if the desired temperature is reached and maintained for a certain amount of time. \\\cline{1-2}
+\"{}any\"{} &Any of the above. \\\cline{1-2}
+\end{tabularx}}
+\\
+\hline
+\mbox{\texttt{ in}}  & {\em stdoutfile} & File to which output is to be printed. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{namespaceroutines_ab1615a431f421f491da7990921eee452}\label{namespaceroutines_ab1615a431f421f491da7990921eee452} 
+\index{routines@{routines}!initprint@{initprint}}
+\index{initprint@{initprint}!routines@{routines}}
+\doxysubsubsection{\texorpdfstring{initprint()}{initprint()}}
+{\footnotesize\ttfamily void routines\+::initprint (\begin{DoxyParamCaption}\item[{std\+::string}]{routine\+\_\+name,  }\item[{std\+::ofstream \&}]{outfile }\end{DoxyParamCaption})}
+
+
+
+Initial print of each routine. States the routine name. 
+
+\Hypertarget{namespaceroutines_a7f686895e93d83adb3395cd8a9c48dba}\label{namespaceroutines_a7f686895e93d83adb3395cd8a9c48dba} 
+\index{routines@{routines}!integrate\_snapshots@{integrate\_snapshots}}
+\index{integrate\_snapshots@{integrate\_snapshots}!routines@{routines}}
+\doxysubsubsection{\texorpdfstring{integrate\_snapshots()}{integrate\_snapshots()}}
+{\footnotesize\ttfamily void routines\+::integrate\+\_\+snapshots (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classgroup}{group}} \&}]{G,  }\item[{const \mbox{\hyperlink{classparameters}{parameters}} \&}]{par,  }\item[{\mbox{\hyperlink{classsampler}{sampler}} \&}]{samp,  }\item[{std\+::ofstream \&}]{stdoutfile }\end{DoxyParamCaption})}
+
+
+
+integration routine (the one that does the work) 
+
+Takes in a group and integrates it until par.\+Tmax(). May store snapshots or perform sampling on the fly, depending on parameters. Many details depend on the parameters chosen and can be checked in the declaration of \doxylink{parameters_8h}{parameters.\+h}
+
+Proceeds as follows\+:
+
+
+\begin{DoxyEnumerate}
+\item Preliminary stuff (opening files, initial print)
+\item Initializes group (setting positions to lattice, initializing partition, drawing random velocities etc.)
+\item Performs time integration (depending on which integrator chosen)
+\item During integration, samples and stores data
+\item Cleanup, final prints -\/ no print of sampled data, that is done in the routine integration that typically calls for this function
+\end{DoxyEnumerate}
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in,out}}  & {\em G} & The group that should be equilibrated \\
+\hline
+\mbox{\texttt{ in}}  & {\em par} & A set of simulation parameters \\
+\hline
+\mbox{\texttt{ in,out}}  & {\em samp} & The sampler in which the run data will be stored \\
+\hline
+\mbox{\texttt{ in}}  & {\em stdoutfile} & File to which output is to be printed. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{namespaceroutines_a63e972d03fd84501a0665165b9581065}\label{namespaceroutines_a63e972d03fd84501a0665165b9581065} 
+\index{routines@{routines}!integration@{integration}}
+\index{integration@{integration}!routines@{routines}}
+\doxysubsubsection{\texorpdfstring{integration()}{integration()}}
+{\footnotesize\ttfamily int routines\+::integration (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classparameters}{parameters}}}]{par }\end{DoxyParamCaption})}
+
+
+
+basic integration routine 
+
+Proceeds as follows\+:
+
+
+\begin{DoxyEnumerate}
+\item Preliminary stuff (opening files, initial print)
+\item Initializes all relevant objects (group, integrator, sampler)
+\item Performs an equilibration run (typically with check to temperature, depends on switch)
+\item Performs an integration run (used for sampling)
+\item Cleanup, final prints
+\end{DoxyEnumerate}
+
+\begin{DoxyNote}{Note}
+The routine equilibrate and the routine integrate\+\_\+snapshots are used within this routine.
+
+Equilibration is not really managed in an elegant way. It is recommended to check manually whether data has been equilbrated and to use a fixed equilibration time. 
+\end{DoxyNote}
+\Hypertarget{namespaceroutines_a71defa885d0c270b5292358b3e37cc94}\label{namespaceroutines_a71defa885d0c270b5292358b3e37cc94} 
+\index{routines@{routines}!sampling@{sampling}}
+\index{sampling@{sampling}!routines@{routines}}
+\doxysubsubsection{\texorpdfstring{sampling()}{sampling()}}
+{\footnotesize\ttfamily int routines\+::sampling (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classparameters}{parameters}}}]{par }\end{DoxyParamCaption})}
+
+
+
+basic sampling routine (no integration performed) 
+
+Reads data from snapshot files provided in a list file and performs sampling on it. Proceeds as follows\+:
+
+
+\begin{DoxyEnumerate}
+\item Preliminary stuff (opening files, initial print)
+\item Initializes all relevant objects (group and sampler)
+\item For each time step in the list file, reads out the group and performs sampling on the group at that time instant.
+\item Cleanup, final prints
+\end{DoxyEnumerate}
+
+\begin{DoxyNote}{Note}
+This routine can only be used when snapshots are stored during another integration/sampling run. Useful for explorative investigations, but large numbers of snapshots should not be stored for a large sample and it is recommended to perform on-\/fly sampling. 
+\end{DoxyNote}
+\Hypertarget{namespaceroutines_a4e88be0bc1546ce37586cf790c80af87}\label{namespaceroutines_a4e88be0bc1546ce37586cf790c80af87} 
+\index{routines@{routines}!terminateprint@{terminateprint}}
+\index{terminateprint@{terminateprint}!routines@{routines}}
+\doxysubsubsection{\texorpdfstring{terminateprint()}{terminateprint()}}
+{\footnotesize\ttfamily void routines\+::terminateprint (\begin{DoxyParamCaption}\item[{std\+::string}]{routine\+\_\+name,  }\item[{std\+::ofstream \&}]{outfile }\end{DoxyParamCaption})}
+
+
+
+Terminal print of each routine. States the routine name. 
+

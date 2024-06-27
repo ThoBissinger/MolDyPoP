@@ -1,0 +1,211 @@
+\doxysection{topology.\+h}
+\hypertarget{topology_8h_source}{}\label{topology_8h_source}\mbox{\hyperlink{topology_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ TOPOLOGY\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ TOPOLOGY\_H}}
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include<stdlib.h>}}
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <iostream>}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <fstream>}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <iomanip>}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include<vector>}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include<array>}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include"{}math.h"{}}}
+\DoxyCodeLine{00011\ }
+\DoxyCodeLine{00036\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespacetopology}{topology}}}
+\DoxyCodeLine{00037\ \{}
+\DoxyCodeLine{00038\ }
+\DoxyCodeLine{00052\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classtopology_1_1_vector2d}{Vector2d}}\{}
+\DoxyCodeLine{00053\ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00054\ \ \ \ \ std::array<double,2>\ \mbox{\hyperlink{classtopology_1_1_vector2d_aa047a9abfda41d0afe43ade0cc57199a}{v\_}};\ \ }
+\DoxyCodeLine{00055\ }
+\DoxyCodeLine{00056\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00057\ \ \ \ \ \textcolor{comment}{//\ \ \ ===================================================================================================}}
+\DoxyCodeLine{00058\ \ \ \ \ \textcolor{comment}{//\ \ \ Constructors}}
+\DoxyCodeLine{00059\ \ \ \ \ \textcolor{comment}{//\ \ \ ===================================================================================================}}
+\DoxyCodeLine{00060\ \ \ \ \ \mbox{\hyperlink{classtopology_1_1_vector2d_a8adf275719f6f76f566040dba99102be}{Vector2d}}();\ }
+\DoxyCodeLine{00061\ \ \ \ \ \mbox{\hyperlink{classtopology_1_1_vector2d_a6886f1eb4cd3190ea3b5848885677883}{Vector2d}}(\textcolor{keywordtype}{double}*\ v);\ }
+\DoxyCodeLine{00062\ \ \ \ \ \mbox{\hyperlink{classtopology_1_1_vector2d_a8adf275719f6f76f566040dba99102be}{Vector2d}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\&\ x);\ }
+\DoxyCodeLine{00063\ \ \ \ \ \mbox{\hyperlink{classtopology_1_1_vector2d_a8adf275719f6f76f566040dba99102be}{Vector2d}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\&\ x);\ }
+\DoxyCodeLine{00064\ \ \ \ \ \mbox{\hyperlink{classtopology_1_1_vector2d_a8adf275719f6f76f566040dba99102be}{Vector2d}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\ x,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\ y);\ }
+\DoxyCodeLine{00065\ }
+\DoxyCodeLine{00066\ \ \ \ \ \mbox{\hyperlink{classtopology_1_1_vector2d_a8adf275719f6f76f566040dba99102be}{Vector2d}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classtopology_1_1_vector2d}{Vector2d}}\&\ w);\ }
+\DoxyCodeLine{00067\ }
+\DoxyCodeLine{00068\ \ \ \ \ \textcolor{comment}{//\ \ \ ===================================================================================================}}
+\DoxyCodeLine{00069\ \ \ \ \ \textcolor{comment}{//\ \ \ Print\ functions}}
+\DoxyCodeLine{00070\ \ \ \ \ \textcolor{comment}{//\ \ \ ===================================================================================================}}
+\DoxyCodeLine{00072\ \textcolor{comment}{}\ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classtopology_1_1_vector2d_a57cc1066f77af8e42d713ebee2705814}{print}}(std::ostream\ \&outfile)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00074\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classtopology_1_1_vector2d_a57cc1066f77af8e42d713ebee2705814}{print}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00076\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classtopology_1_1_vector2d_a451052a0c4ea5d514f614b46bd4b7069}{print\_xyz}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00078\ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{classtopology_1_1_vector2d_ad601cbedb3fb038966d82c9a9fa0811a}{get\_x}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classtopology_1_1_vector2d_aa047a9abfda41d0afe43ade0cc57199a}{v\_}}[0];\ \};}
+\DoxyCodeLine{00080\ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{classtopology_1_1_vector2d_af01fdaa040a15d7643f9088d9b3755a2}{get\_y}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classtopology_1_1_vector2d_aa047a9abfda41d0afe43ade0cc57199a}{v\_}}[1];\ \};}
+\DoxyCodeLine{00081\ }
+\DoxyCodeLine{00082\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classtopology_1_1_vector2d_adf924974fac6098a8a3d5f1a8976b876}{set\_x}}(\textcolor{keywordtype}{double}\ x);\ }
+\DoxyCodeLine{00083\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classtopology_1_1_vector2d_a3fa5ee75d7f1670aca0ecff637bf13de}{set\_y}}(\textcolor{keywordtype}{double}\ y);\ }
+\DoxyCodeLine{00084\ }
+\DoxyCodeLine{00086\ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classtopology_1_1_vector2d_a81f9259cef101add1652394d8aea044c}{size}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ 2;\ \}}
+\DoxyCodeLine{00088\ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classtopology_1_1_vector2d_a096846877b61869091ec646ecbca856d}{is\_zero}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ (\ \mbox{\hyperlink{classtopology_1_1_vector2d_aa047a9abfda41d0afe43ade0cc57199a}{v\_}}[0]\ ==\ 0\ \&\&\ \mbox{\hyperlink{classtopology_1_1_vector2d_aa047a9abfda41d0afe43ade0cc57199a}{v\_}}[1]\ ==\ 0\ );\ \};}
+\DoxyCodeLine{00089\ }
+\DoxyCodeLine{00090\ \ \ \ \ \textcolor{comment}{//\ \ \ ===================================================================================================}}
+\DoxyCodeLine{00091\ \ \ \ \ \textcolor{comment}{//\ \ \ Pointers\ to\ element}}
+\DoxyCodeLine{00092\ \ \ \ \ \textcolor{comment}{//\ \ \ ===================================================================================================}}
+\DoxyCodeLine{00093\ \ \ \ \ \textcolor{keywordtype}{double}\&\ \mbox{\hyperlink{classtopology_1_1_vector2d_a99d4c796f7d8787c46f3af09bdb69778}{operator[]}}(\textcolor{keywordtype}{int}\ index);\ }
+\DoxyCodeLine{00094\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\&\ \mbox{\hyperlink{classtopology_1_1_vector2d_a99d4c796f7d8787c46f3af09bdb69778}{operator[]}}(\textcolor{keywordtype}{int}\ index)\ \textcolor{keyword}{const};\ }
+\DoxyCodeLine{00095\ }
+\DoxyCodeLine{00096\ \ \ \ \ \textcolor{comment}{//\ \ \ ===================================================================================================}}
+\DoxyCodeLine{00097\ \ \ \ \ \textcolor{comment}{//\ \ \ Arithmetic\ operations}}
+\DoxyCodeLine{00098\ \ \ \ \ \textcolor{comment}{//\ \ \ ===================================================================================================}}
+\DoxyCodeLine{00099\ \ \ \ \ \mbox{\hyperlink{classtopology_1_1_vector2d}{Vector2d}}\&\ \mbox{\hyperlink{classtopology_1_1_vector2d_a7dd9763bed5bcdddf0b18634a08c5207}{operator+=}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classtopology_1_1_vector2d}{Vector2d}}\&\ w);\ \ }
+\DoxyCodeLine{00100\ \ \ \ \ \mbox{\hyperlink{classtopology_1_1_vector2d}{Vector2d}}\&\ \mbox{\hyperlink{classtopology_1_1_vector2d_a0e9fe2b0ee0213a8bac920daa32cbac7}{operator-\/=}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classtopology_1_1_vector2d}{Vector2d}}\&\ w);\ \ }
+\DoxyCodeLine{00101\ \ \ \ \ \mbox{\hyperlink{classtopology_1_1_vector2d}{Vector2d}}\&\ \mbox{\hyperlink{classtopology_1_1_vector2d_ab1fbb127df5bca3e3a3e313042d11b8b}{operator*=}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\ a);\ \ \ \ \ }
+\DoxyCodeLine{00102\ \ \ \ \ \mbox{\hyperlink{classtopology_1_1_vector2d}{Vector2d}}\&\ \mbox{\hyperlink{classtopology_1_1_vector2d_ab1fbb127df5bca3e3a3e313042d11b8b}{operator*=}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ a);\ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00103\ \ \ \ \ \textcolor{comment}{//\ double\ operator*=(const\ Vector2d\&\ w);\ \ \ \ ///<\ Scalar\ product\ (not\ recommended\ for\ use)}}
+\DoxyCodeLine{00104\ \ \ \ \ \mbox{\hyperlink{classtopology_1_1_vector2d}{Vector2d}}\&\ \mbox{\hyperlink{classtopology_1_1_vector2d_a54998e86122dbf26790b17162b778024}{operator/=}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\ a);\ \ \ \ \ }
+\DoxyCodeLine{00105\ \ \ \ \ \mbox{\hyperlink{classtopology_1_1_vector2d}{Vector2d}}\&\ \mbox{\hyperlink{classtopology_1_1_vector2d_a54998e86122dbf26790b17162b778024}{operator/=}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ a);\ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00106\ \ \ \ \ \mbox{\hyperlink{classtopology_1_1_vector2d}{Vector2d}}\ \mbox{\hyperlink{classtopology_1_1_vector2d_a1102eecb016c3a632a711f4d2721471e}{operator-\/}}()\ \textcolor{keyword}{const};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00107\ }
+\DoxyCodeLine{00108\ \ \ \ \ \textcolor{comment}{//\ \ \ ===================================================================================================}}
+\DoxyCodeLine{00109\ \ \ \ \ \textcolor{comment}{//\ \ \ Rotation,\ norms,\ angles,\ normalization}}
+\DoxyCodeLine{00110\ \ \ \ \ \textcolor{comment}{//\ \ \ ===================================================================================================}}
+\DoxyCodeLine{00112\ \textcolor{comment}{}\ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classtopology_1_1_vector2d_a9d3418e85e9c079c5aed2c0042fa696b}{rotate}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\ theta);}
+\DoxyCodeLine{00113\ }
+\DoxyCodeLine{00115\ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{classtopology_1_1_vector2d_a41391cc6bd8a179b5c9bd64be6302ffc}{norm2}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classtopology_1_1_vector2d_aa047a9abfda41d0afe43ade0cc57199a}{v\_}}[0]\ *\ \mbox{\hyperlink{classtopology_1_1_vector2d_aa047a9abfda41d0afe43ade0cc57199a}{v\_}}[0]\ +\ \mbox{\hyperlink{classtopology_1_1_vector2d_aa047a9abfda41d0afe43ade0cc57199a}{v\_}}[1]\ *\ \mbox{\hyperlink{classtopology_1_1_vector2d_aa047a9abfda41d0afe43ade0cc57199a}{v\_}}[1];\ \}}
+\DoxyCodeLine{00116\ }
+\DoxyCodeLine{00118\ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{classtopology_1_1_vector2d_af02b9e3abfc3d9c524bf0a06c5dc1198}{angle}}()\ \{\ \textcolor{keywordflow}{return}\ std::atan2(this-\/>v\_[1],this-\/>v\_[0]);\ \};}
+\DoxyCodeLine{00119\ }
+\DoxyCodeLine{00121\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classtopology_1_1_vector2d_aa34fc52ec93f607a4a6b2033e4c6d2db}{normalized}}();}
+\DoxyCodeLine{00122\ }
+\DoxyCodeLine{00123\ \ \ \ \ \textcolor{comment}{//\ \ \ ===================================================================================================}}
+\DoxyCodeLine{00124\ \ \ \ \ \textcolor{comment}{//\ \ \ Boundary\ conditions\ handling}}
+\DoxyCodeLine{00125\ \ \ \ \ \textcolor{comment}{//\ \ \ ===================================================================================================}}
+\DoxyCodeLine{00126\ }
+\DoxyCodeLine{00128\ }
+\DoxyCodeLine{00132\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classtopology_1_1_vector2d_acbc60af5c9b08102b168e9606d01bbab}{periodic\_box}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classtopology_1_1_vector2d}{Vector2d}}\&\ minima,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classtopology_1_1_vector2d}{Vector2d}}\&\ maxima);}
+\DoxyCodeLine{00134\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classtopology_1_1_vector2d_acbc60af5c9b08102b168e9606d01bbab}{periodic\_box}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classtopology_1_1_vector2d}{Vector2d}}\&\ maxima);}
+\DoxyCodeLine{00135\ }
+\DoxyCodeLine{00137\ \ \ \ \ \mbox{\hyperlink{classtopology_1_1_vector2d}{Vector2d}}\ \mbox{\hyperlink{classtopology_1_1_vector2d_aa1813245ed47e874d451cc8e5919f9e1}{get\_boundary\_handler\_periodic\_box}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classtopology_1_1_vector2d}{Vector2d}}\&\ maxima,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\ cutoff)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00138\ }
+\DoxyCodeLine{00140\ }
+\DoxyCodeLine{00146\ \ \ \ \ \mbox{\hyperlink{classtopology_1_1_vector2d}{Vector2d}}\ \mbox{\hyperlink{classtopology_1_1_vector2d_aa1813245ed47e874d451cc8e5919f9e1}{get\_boundary\_handler\_periodic\_box}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classtopology_1_1_vector2d}{Vector2d}}\&\ minima,\textcolor{keyword}{const}\ \mbox{\hyperlink{classtopology_1_1_vector2d}{Vector2d}}\&\ maxima,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\ cutoff)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00147\ }
+\DoxyCodeLine{00148\ \};}
+\DoxyCodeLine{00149\ }
+\DoxyCodeLine{00150\ \textcolor{comment}{//\ \ \ ===================================================================================================}}
+\DoxyCodeLine{00151\ \textcolor{comment}{//\ \ \ Typical\ linear\ and\ algebraic\ operations.}}
+\DoxyCodeLine{00152\ \textcolor{comment}{//\ \ \ ===================================================================================================}}
+\DoxyCodeLine{00153\ Vector2d\ \mbox{\hyperlink{namespacetopology_a31ab7089cb11d4d899ffbf2eb4b6b0e3}{operator+}}(\textcolor{keyword}{const}\ Vector2d\&\ v,\ \textcolor{keyword}{const}\ Vector2d\&\ w);\ }
+\DoxyCodeLine{00154\ Vector2d\ \mbox{\hyperlink{namespacetopology_af707a0bda87670d0dcaa0e4213c3c372}{operator-\/}}(\textcolor{keyword}{const}\ Vector2d\&\ v,\ \textcolor{keyword}{const}\ Vector2d\&\ w);\ }
+\DoxyCodeLine{00155\ Vector2d\ \mbox{\hyperlink{namespacetopology_a928e7e8d5f93470befc5e1794449f759}{operator*}}(\textcolor{keyword}{const}\ Vector2d\&\ v,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\ a);\ }
+\DoxyCodeLine{00156\ Vector2d\ \mbox{\hyperlink{namespacetopology_a928e7e8d5f93470befc5e1794449f759}{operator*}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\ a,\ \textcolor{keyword}{const}\ Vector2d\&\ v);\ }
+\DoxyCodeLine{00157\ Vector2d\ \mbox{\hyperlink{namespacetopology_a928e7e8d5f93470befc5e1794449f759}{operator*}}(\textcolor{keyword}{const}\ Vector2d\&\ v,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ a);\ }
+\DoxyCodeLine{00158\ Vector2d\ \mbox{\hyperlink{namespacetopology_a928e7e8d5f93470befc5e1794449f759}{operator*}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ a,\ \textcolor{keyword}{const}\ Vector2d\&\ v);\ }
+\DoxyCodeLine{00159\ Vector2d\ \mbox{\hyperlink{namespacetopology_ab2883a0ea9faeb984402f960636f5175}{operator/}}(\textcolor{keyword}{const}\ Vector2d\&\ v,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\ a);\ }
+\DoxyCodeLine{00160\ Vector2d\ \mbox{\hyperlink{namespacetopology_ab2883a0ea9faeb984402f960636f5175}{operator/}}(\textcolor{keyword}{const}\ Vector2d\&\ v,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ a);\ }
+\DoxyCodeLine{00161\ }
+\DoxyCodeLine{00162\ }
+\DoxyCodeLine{00163\ \textcolor{comment}{//\ \ \ ===================================================================================================}}
+\DoxyCodeLine{00164\ \textcolor{comment}{//\ \ \ Norms,\ rotations,\ distances}}
+\DoxyCodeLine{00165\ \textcolor{comment}{//\ \ \ ===================================================================================================}}
+\DoxyCodeLine{00167\ \textcolor{comment}{}\textcolor{keyword}{inline}\ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{namespacetopology_a657dfb7335d4dddbcc80cfa464b8f110}{norm2}}(\mbox{\hyperlink{classtopology_1_1_vector2d}{Vector2d}}\ v)\ \{}
+\DoxyCodeLine{00168\ \ \ \textcolor{keywordflow}{return}\ v.\mbox{\hyperlink{classtopology_1_1_vector2d_a41391cc6bd8a179b5c9bd64be6302ffc}{norm2}}();}
+\DoxyCodeLine{00169\ \}}
+\DoxyCodeLine{00170\ }
+\DoxyCodeLine{00172\ \textcolor{keyword}{inline}\ \mbox{\hyperlink{classtopology_1_1_vector2d}{Vector2d}}\ \mbox{\hyperlink{namespacetopology_aa072ffdc9ac93daaec0762415f2acafa}{normalized}}(\mbox{\hyperlink{classtopology_1_1_vector2d}{Vector2d}}\ v)\ \{}
+\DoxyCodeLine{00173\ \ \ \textcolor{keywordflow}{return}\ v/sqrt(v.\mbox{\hyperlink{classtopology_1_1_vector2d_a41391cc6bd8a179b5c9bd64be6302ffc}{norm2}}());}
+\DoxyCodeLine{00174\ \}}
+\DoxyCodeLine{00175\ }
+\DoxyCodeLine{00177\ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{namespacetopology_a19d901a7c87cb202c6b44e2838978db6}{periodic\_distance\_squared}}(\textcolor{keyword}{const}\ Vector2d\&\ v,\ \textcolor{keyword}{const}\ Vector2d\&\ w,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\&\ L);}
+\DoxyCodeLine{00179\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{namespacetopology_aea6caa260bf7d12da48ed542cdb4d222}{periodic\_distance}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classtopology_1_1_vector2d}{Vector2d}}\&\ v,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classtopology_1_1_vector2d}{Vector2d}}\&\ w,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\&\ L)\ \{\ \textcolor{keywordflow}{return}\ std::sqrt(\mbox{\hyperlink{namespacetopology_a19d901a7c87cb202c6b44e2838978db6}{periodic\_distance\_squared}}(v,w,L));\ \};}
+\DoxyCodeLine{00181\ Vector2d\ \mbox{\hyperlink{namespacetopology_acb61cc88383472479100bdd9369b76d2}{periodic\_distance\_vector}}(\textcolor{keyword}{const}\ Vector2d\&\ v,\ \textcolor{keyword}{const}\ Vector2d\&\ w,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\&\ L);}
+\DoxyCodeLine{00182\ }
+\DoxyCodeLine{00184\ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{namespacetopology_a19d901a7c87cb202c6b44e2838978db6}{periodic\_distance\_squared}}(\textcolor{keyword}{const}\ Vector2d\&\ v,\ \textcolor{keyword}{const}\ Vector2d\&\ w,\ \textcolor{keyword}{const}\ Vector2d\&\ L);}
+\DoxyCodeLine{00186\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{namespacetopology_aea6caa260bf7d12da48ed542cdb4d222}{periodic\_distance}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classtopology_1_1_vector2d}{Vector2d}}\&\ v,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classtopology_1_1_vector2d}{Vector2d}}\&\ w,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classtopology_1_1_vector2d}{Vector2d}}\&\ L)\ \{\ \textcolor{keywordflow}{return}\ std::sqrt(\mbox{\hyperlink{namespacetopology_a19d901a7c87cb202c6b44e2838978db6}{periodic\_distance\_squared}}(v,w,L));\ \};}
+\DoxyCodeLine{00188\ Vector2d\ \mbox{\hyperlink{namespacetopology_acb61cc88383472479100bdd9369b76d2}{periodic\_distance\_vector}}(\textcolor{keyword}{const}\ Vector2d\&\ v,\ \textcolor{keyword}{const}\ Vector2d\&\ w,\ \textcolor{keyword}{const}\ Vector2d\&\ L);}
+\DoxyCodeLine{00189\ }
+\DoxyCodeLine{00191\ \textcolor{keyword}{inline}\ \mbox{\hyperlink{classtopology_1_1_vector2d}{Vector2d}}\ \mbox{\hyperlink{namespacetopology_ab624380b0985194ab7c42af724b28ee3}{rotate}}(\mbox{\hyperlink{classtopology_1_1_vector2d}{Vector2d}}\ v,\ \textcolor{keywordtype}{double}\ theta)\ \{}
+\DoxyCodeLine{00192\ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classtopology_1_1_vector2d}{Vector2d}}(cos(theta)*v.\mbox{\hyperlink{classtopology_1_1_vector2d_ad601cbedb3fb038966d82c9a9fa0811a}{get\_x}}()-\/sin(theta)*v.\mbox{\hyperlink{classtopology_1_1_vector2d_af01fdaa040a15d7643f9088d9b3755a2}{get\_y}}(),}
+\DoxyCodeLine{00193\ \ \ \ \ \ \ \ \ \ \ sin(theta)*v.\mbox{\hyperlink{classtopology_1_1_vector2d_ad601cbedb3fb038966d82c9a9fa0811a}{get\_x}}()+cos(theta)*v.\mbox{\hyperlink{classtopology_1_1_vector2d_af01fdaa040a15d7643f9088d9b3755a2}{get\_y}}());}
+\DoxyCodeLine{00194\ \}}
+\DoxyCodeLine{00195\ }
+\DoxyCodeLine{00197\ \textcolor{keyword}{inline}\ \mbox{\hyperlink{classtopology_1_1_vector2d}{Vector2d}}\ \mbox{\hyperlink{namespacetopology_a2b43e267df9df7a8478bc59054973c10}{rotate\_orthogonal}}(\mbox{\hyperlink{classtopology_1_1_vector2d}{Vector2d}}\ v)\ \{}
+\DoxyCodeLine{00198\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classtopology_1_1_vector2d}{Vector2d}}(-\/v.\mbox{\hyperlink{classtopology_1_1_vector2d_af01fdaa040a15d7643f9088d9b3755a2}{get\_y}}(),v.\mbox{\hyperlink{classtopology_1_1_vector2d_ad601cbedb3fb038966d82c9a9fa0811a}{get\_x}}());}
+\DoxyCodeLine{00199\ \}}
+\DoxyCodeLine{00200\ }
+\DoxyCodeLine{00202\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{namespacetopology_a9856d6a0e13d1f04ba8a934952bbaf06}{innerproduct}}(\mbox{\hyperlink{classtopology_1_1_vector2d}{Vector2d}}\ v,\ \mbox{\hyperlink{classtopology_1_1_vector2d}{Vector2d}}\ w)\ \{}
+\DoxyCodeLine{00203\ \ \ \textcolor{keywordflow}{return}\ v.\mbox{\hyperlink{classtopology_1_1_vector2d_ad601cbedb3fb038966d82c9a9fa0811a}{get\_x}}()\ *\ w.\mbox{\hyperlink{classtopology_1_1_vector2d_ad601cbedb3fb038966d82c9a9fa0811a}{get\_x}}()\ +\ v.\mbox{\hyperlink{classtopology_1_1_vector2d_af01fdaa040a15d7643f9088d9b3755a2}{get\_y}}()\ *\ w.\mbox{\hyperlink{classtopology_1_1_vector2d_af01fdaa040a15d7643f9088d9b3755a2}{get\_y}}();}
+\DoxyCodeLine{00204\ \}}
+\DoxyCodeLine{00205\ }
+\DoxyCodeLine{00207\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{namespacetopology_a1577a283adde527f3ec61d2442142742}{parallel\_projection}}(\mbox{\hyperlink{classtopology_1_1_vector2d}{Vector2d}}\ v,\ \mbox{\hyperlink{classtopology_1_1_vector2d}{Vector2d}}\ w)\ \{}
+\DoxyCodeLine{00208\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{namespacetopology_a9856d6a0e13d1f04ba8a934952bbaf06}{innerproduct}}(v,\mbox{\hyperlink{namespacetopology_aa072ffdc9ac93daaec0762415f2acafa}{normalized}}(w));}
+\DoxyCodeLine{00209\ \}}
+\DoxyCodeLine{00210\ }
+\DoxyCodeLine{00212\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{namespacetopology_a99676f17f3b8c17027b68aecc352ab2d}{orthogonal\_projection}}(\mbox{\hyperlink{classtopology_1_1_vector2d}{Vector2d}}\ v,\ \mbox{\hyperlink{classtopology_1_1_vector2d}{Vector2d}}\ w)\ \{}
+\DoxyCodeLine{00213\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{namespacetopology_a1577a283adde527f3ec61d2442142742}{parallel\_projection}}(v,\mbox{\hyperlink{namespacetopology_a2b43e267df9df7a8478bc59054973c10}{rotate\_orthogonal}}(w));}
+\DoxyCodeLine{00214\ \}}
+\DoxyCodeLine{00216\ Vector2d\ \mbox{\hyperlink{namespacetopology_a6bf3c7bd607cb85008181c689b625649}{random\_vector}}(\textcolor{keyword}{const}\ Vector2d\&\ minima,\ \textcolor{keyword}{const}\ Vector2d\&\ maxima);}
+\DoxyCodeLine{00218\ Vector2d\ \mbox{\hyperlink{namespacetopology_a6bf3c7bd607cb85008181c689b625649}{random\_vector}}(\textcolor{keyword}{const}\ Vector2d\&\ maxima);}
+\DoxyCodeLine{00220\ Vector2d\ \mbox{\hyperlink{namespacetopology_af149afbfda7309c7141f10854e912db4}{random\_gaussian\_vector}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\&\ sigma\_squared);}
+\DoxyCodeLine{00221\ }
+\DoxyCodeLine{00222\ }
+\DoxyCodeLine{00224\ Vector2d\ \mbox{\hyperlink{namespacetopology_a7dc21bf5b7020f2b15fd6f658256f304}{nearest\_gridvec}}(Vector2d\ v,\ \textcolor{keywordtype}{double}\ gridsep);}
+\DoxyCodeLine{00226\ Vector2d\ \mbox{\hyperlink{namespacetopology_a7dc21bf5b7020f2b15fd6f658256f304}{nearest\_gridvec}}(Vector2d\ v,\ Vector2d\ gridseps);}
+\DoxyCodeLine{00228\ std::vector<Vector2d>\ \mbox{\hyperlink{namespacetopology_a5299d85f035a827704c9dd9e07fda009}{qvalues\_within\_radius}}(\textcolor{keywordtype}{double}\ qmin,\ \textcolor{keywordtype}{double}\ qmax,\ Vector2d\ gridseps,\ \textcolor{keywordtype}{int}\ qsamps\_per\_bin);}
+\DoxyCodeLine{00229\ }
+\DoxyCodeLine{00231\ Vector2d\ \mbox{\hyperlink{namespacetopology_a441f29a38f3d710e443bef63aa871a1c}{random\_vector\_first\_quadrant}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\ length);}
+\DoxyCodeLine{00232\ }
+\DoxyCodeLine{00234\ Vector2d\ \mbox{\hyperlink{namespacetopology_aba69abf1144ea2f4fb34dba4e60abf32}{random\_vector\_sector}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\ length,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\ thetamin,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\ thetamax);}
+\DoxyCodeLine{00235\ }
+\DoxyCodeLine{00236\ }
+\DoxyCodeLine{00238\ Vector2d\ \mbox{\hyperlink{namespacetopology_a6e8106cfa482fa982bd073b95a4d1fd7}{random\_velocity}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\ r);}
+\DoxyCodeLine{00239\ }
+\DoxyCodeLine{00241\ Vector2d\ \mbox{\hyperlink{namespacetopology_a70b283f098f3b8d52da232ba9b795afe}{vector\_from\_angle}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\ angle,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\ r);}
+\DoxyCodeLine{00242\ }
+\DoxyCodeLine{00244\ \textcolor{keyword}{inline}\ \mbox{\hyperlink{classtopology_1_1_vector2d}{Vector2d}}\ \mbox{\hyperlink{namespacetopology_a70b283f098f3b8d52da232ba9b795afe}{vector\_from\_angle}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\ angle)\ \{\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{namespacetopology_a70b283f098f3b8d52da232ba9b795afe}{vector\_from\_angle}}(angle,1.0);\ \};}
+\DoxyCodeLine{00245\ }
+\DoxyCodeLine{00247\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{namespacetopology_a120dbbfc6a9b8b3ca6c2b10ed5d68470}{angle\_from\_vector}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classtopology_1_1_vector2d}{topology::Vector2d}}\&\ v)\ \{\ \textcolor{keywordflow}{return}\ std::atan2(v.\mbox{\hyperlink{classtopology_1_1_vector2d_af01fdaa040a15d7643f9088d9b3755a2}{get\_y}}(),v.\mbox{\hyperlink{classtopology_1_1_vector2d_ad601cbedb3fb038966d82c9a9fa0811a}{get\_x}}());\ \};}
+\DoxyCodeLine{00248\ }
+\DoxyCodeLine{00250\ \textcolor{keyword}{inline}\ \mbox{\hyperlink{classtopology_1_1_vector2d}{Vector2d}}\ \mbox{\hyperlink{namespacetopology_a31246a235ae3b4e85f946198681aa04a}{spin}}(\textcolor{keywordtype}{double}\ theta)\ \{\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classtopology_1_1_vector2d}{Vector2d}}(cos(theta),\ sin(theta));\ \};}
+\DoxyCodeLine{00252\ \textcolor{keyword}{inline}\ \mbox{\hyperlink{classtopology_1_1_vector2d}{Vector2d}}\ \mbox{\hyperlink{namespacetopology_ad91a5285a23329a2fd5aba884141d668}{orthospin}}(\textcolor{keywordtype}{double}\ theta)\ \{\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classtopology_1_1_vector2d}{Vector2d}}(-\/sin(theta),\ cos(theta));\ \};}
+\DoxyCodeLine{00253\ }
+\DoxyCodeLine{00254\ Vector2d\ \mbox{\hyperlink{namespacetopology_a050f165f9ef2adee133585d5bb896262}{vector\_on\_squarelattice}}(\textcolor{keywordtype}{int}\ index,\ \textcolor{keywordtype}{int}\ Nx,\ \textcolor{keywordtype}{int}\ Ny,\ \textcolor{keywordtype}{double}\ spacing);\ }
+\DoxyCodeLine{00255\ Vector2d\ \mbox{\hyperlink{namespacetopology_aef3146b83bcdadca71f6f5a63cacf280}{vector\_on\_trigonallattice}}(\textcolor{keywordtype}{int}\ index,\ \textcolor{keywordtype}{int}\ Nx,\ \textcolor{keywordtype}{int}\ Ny,\ \textcolor{keywordtype}{double}\ spacing);\ }
+\DoxyCodeLine{00256\ }
+\DoxyCodeLine{00257\ }
+\DoxyCodeLine{00259\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{namespacetopology_ae26b317ec2829511d03e23de259b540a}{print\_matlab}}(\textcolor{keyword}{const}\ std::vector<Vector2d>\&\ v,\ std::string\ name,\ std::ostream\ \&outfile);}
+\DoxyCodeLine{00260\ }
+\DoxyCodeLine{00261\ }
+\DoxyCodeLine{00262\ \textcolor{comment}{//\ =============================================================================================================================}}
+\DoxyCodeLine{00263\ }
+\DoxyCodeLine{00279\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classtopology_1_1angle2d}{angle2d}}\ \{}
+\DoxyCodeLine{00280\ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00282\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{classtopology_1_1angle2d_af90c50798a959e6f1313c3d3ce02f82c}{theta\_}};}
+\DoxyCodeLine{00283\ }
+\DoxyCodeLine{00284\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00286\ \ \ \ \ \mbox{\hyperlink{classtopology_1_1angle2d_a82f8590bbcf2bbebd51579ab4ba985f3}{angle2d}}()\ \{\}\ ;}
+\DoxyCodeLine{00288\ \ \ \ \ \mbox{\hyperlink{classtopology_1_1angle2d_a82f8590bbcf2bbebd51579ab4ba985f3}{angle2d}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\&\ x);}
+\DoxyCodeLine{00290\ \ \ \ \ \mbox{\hyperlink{classtopology_1_1angle2d_a82f8590bbcf2bbebd51579ab4ba985f3}{angle2d}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classtopology_1_1angle2d}{angle2d}}\&\ w);}
+\DoxyCodeLine{00291\ }
+\DoxyCodeLine{00293\ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keyword}{operator}\ double()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classtopology_1_1angle2d_af90c50798a959e6f1313c3d3ce02f82c}{theta\_}}\ ;\}}
+\DoxyCodeLine{00295\ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keyword}{operator}\ \mbox{\hyperlink{classtopology_1_1_vector2d}{Vector2d}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classtopology_1_1_vector2d}{Vector2d}}(cos(\mbox{\hyperlink{classtopology_1_1angle2d_af90c50798a959e6f1313c3d3ce02f82c}{theta\_}}),\ sin(\mbox{\hyperlink{classtopology_1_1angle2d_af90c50798a959e6f1313c3d3ce02f82c}{theta\_}}))\ ;\}}
+\DoxyCodeLine{00296\ }
+\DoxyCodeLine{00298\ \ \ \ \ \textcolor{keyword}{inline}\ \mbox{\hyperlink{classtopology_1_1_vector2d}{Vector2d}}\ \mbox{\hyperlink{classtopology_1_1angle2d_a0b69662ee9284cd43fcafafebc065085}{spin}}()\ \{\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classtopology_1_1_vector2d}{Vector2d}}(cos(\mbox{\hyperlink{classtopology_1_1angle2d_af90c50798a959e6f1313c3d3ce02f82c}{theta\_}}),\ sin(\mbox{\hyperlink{classtopology_1_1angle2d_af90c50798a959e6f1313c3d3ce02f82c}{theta\_}}));\ \};}
+\DoxyCodeLine{00300\ \ \ \ \ \textcolor{keyword}{inline}\ \mbox{\hyperlink{classtopology_1_1_vector2d}{Vector2d}}\ \mbox{\hyperlink{classtopology_1_1angle2d_a89995cf771f9c48228378aa70b7a9281}{orthospin}}()\ \{\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classtopology_1_1_vector2d}{Vector2d}}(-\/sin(\mbox{\hyperlink{classtopology_1_1angle2d_af90c50798a959e6f1313c3d3ce02f82c}{theta\_}}),\ cos(\mbox{\hyperlink{classtopology_1_1angle2d_af90c50798a959e6f1313c3d3ce02f82c}{theta\_}}));\ \};}
+\DoxyCodeLine{00301\ }
+\DoxyCodeLine{00303\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classtopology_1_1angle2d_ae000324f54e8ef0f5dab20c2c18c2d52}{boundary}}();}
+\DoxyCodeLine{00304\ }
+\DoxyCodeLine{00306\ \ \ \ \ \mbox{\hyperlink{classtopology_1_1angle2d}{angle2d}}\&\ \mbox{\hyperlink{classtopology_1_1angle2d_a914bf269bb38bac3247f196509ba55d5}{operator+=}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\&\ a);}
+\DoxyCodeLine{00308\ \ \ \ \ \mbox{\hyperlink{classtopology_1_1angle2d}{angle2d}}\&\ \mbox{\hyperlink{classtopology_1_1angle2d_ac5f92d60f208ff463d2e92d120717c06}{operator-\/=}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\&\ a);}
+\DoxyCodeLine{00310\ \ \ \ \ \mbox{\hyperlink{classtopology_1_1angle2d}{angle2d}}\&\ \mbox{\hyperlink{classtopology_1_1angle2d_ab63c112007302aca5ecd03a0b76bfdb3}{operator*=}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\ a);}
+\DoxyCodeLine{00312\ \ \ \ \ \mbox{\hyperlink{classtopology_1_1angle2d}{angle2d}}\&\ \mbox{\hyperlink{classtopology_1_1angle2d_a7540f824d01c4b3006c62ec1bd57e0e5}{operator/=}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\ a);}
+\DoxyCodeLine{00314\ \ \ \ \ \mbox{\hyperlink{classtopology_1_1angle2d}{angle2d}}\ \mbox{\hyperlink{classtopology_1_1angle2d_a8a5bf9bbf43a9adbe1ea06d8b451e908}{operator-\/}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00315\ \};}
+\DoxyCodeLine{00316\ }
+\DoxyCodeLine{00318\ angle2d\ \mbox{\hyperlink{namespacetopology_a31ab7089cb11d4d899ffbf2eb4b6b0e3}{operator+}}(\textcolor{keyword}{const}\ angle2d\&\ v,\ \textcolor{keyword}{const}\ angle2d\&\ a);}
+\DoxyCodeLine{00320\ angle2d\ \mbox{\hyperlink{namespacetopology_af707a0bda87670d0dcaa0e4213c3c372}{operator-\/}}(\textcolor{keyword}{const}\ angle2d\&\ v,\ \textcolor{keyword}{const}\ angle2d\&\ w);}
+\DoxyCodeLine{00322\ angle2d\ \mbox{\hyperlink{namespacetopology_a928e7e8d5f93470befc5e1794449f759}{operator*}}(\textcolor{keyword}{const}\ angle2d\&\ v,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\ a);}
+\DoxyCodeLine{00324\ angle2d\ \mbox{\hyperlink{namespacetopology_a928e7e8d5f93470befc5e1794449f759}{operator*}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\ a,\ \textcolor{keyword}{const}\ angle2d\&\ v);}
+\DoxyCodeLine{00326\ angle2d\ \mbox{\hyperlink{namespacetopology_ab2883a0ea9faeb984402f960636f5175}{operator/}}(\textcolor{keyword}{const}\ angle2d\&\ v,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\ a);}
+\DoxyCodeLine{00327\ \}}
+\DoxyCodeLine{00328\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

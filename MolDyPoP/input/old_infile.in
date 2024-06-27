@@ -1,0 +1,128 @@
+# Basic input
+system = xy
+mode = equilibrate
+job_id = eq
+randomseed = 1
+# Group characteristics
+sqrtN = 64
+L = 17.2
+I = 1
+m = 1
+J = 1
+U = 1
+cutoff = 1
+kT = 2.60
+dt = 0.01
+lattice_type = t
+# initialization
+init_mode = scale
+init_file = input/init_snap.in
+init_kT = 2.02
+init_random_displacement = .02
+init_random_angle = .1
+# equilibration
+eq_mode = anneal
+eq_integrator_type = lf
+eq_Tmax = 1e2
+eq_agreement_threshold = 1e-2
+eq_av_time = 1e1
+tau_berendsen = 1e3
+eq_anneal_rate = .999
+eq_anneal_step = .5
+eq_sampswitch = 1
+eq_Nsamp = 100
+eq_samp_time_sequence = lin
+# integration
+sample_integrator_type = lf
+ensemble = nve
+nhnp_pi = 0
+nhnp_Q = -1
+nhnp_tau = 0.009
+nh_eta = 0
+np_s = 1
+mc_steplength_theta = 0.1
+mc_steplength_r = 0.1
+# Sampling
+Tmax = 5.1e2
+N_rbin = 32
+min_binwidth_r = 1
+N_qbin = 32
+qsamps_per_bin = 20
+n_rsamps = 100
+Nsamp = 400
+sampling_time_sequence = log
+print_snapshots = 0
+on_fly_sampling = 1
+samplestart = 1e2
+samplestep = 20
+av_time_spacing = 1e1
+# file management
+snap_overview_file = output/snapshot_integ_overview.out
+stdoutfile = data.out
+
+
+# Format: Variable = Value. Spaces are important. Here given with default values.
+# Possible variables (with defaults)
+# system = xy                                           ## Type of system.
+                                                        ## Possible values:
+                                                         # "xy" - XY model,
+                                                         # "mxy" - mobile XY model,
+                                                         # "vm" - Vicsek model (todo),
+                                                         # "fvm" - forzen Vicsek model (todo).
+# mode = none                                           ## Run mode for the simulation.
+                                                        ## Possible values:
+                                                         # "none" - nothing is done,
+                                                         # "integrate" - integration with snapshots;
+                                                         # "integrate_cont" - integration starting with final snapshots;
+                                                         # "samp" - sampling of snapshots
+# job_id =                                              ## Job identifier. If specified, data will be stored in data_'job_id'.out etc. Otherwise, it is just the default data.out
+# randomseed = 0					## Random seed
+# sqrtN = 10						## sqrt of number of particles
+# N = 100						## Number of particles. Notice that the last specification of either sqrtN or N is definitive. 
+#       	  					## N will be set by squaring.
+# J = 1							## Interaction strength
+# I = 1							## Spin inertia
+# cutoff = 1                                            ## cutoff length for interaction potential (default value 1)
+# m = 1							## Mass
+# kT = 1						## Temperature
+# Tmax = 100						## Runtime 
+# dt = 0.01						## Time step width
+# N_rbin = 50						## Number of bins for the spatial correlation functions. Should be smaller than 1/2 * sqrtN
+# min_binwidth_r = 1					## Minimal width of r bins (should be around 1)
+# N_qbin = 50						## Number of bins for wave vector correlation functions
+# qsamps_per_bin = 20					## Number of sampling values for q per bin
+# n_rsamps = 30                                         ## Number of (randomly chosen) r sampling points for the calculation of correlation functions in position space (like spin correlation functions or mean squared displacements etc.)
+# lattice_type = t					## Type of lattice, t is trigonal, s is square
+# init_mode = random  	                        	## Initialization mode. Either from a random configuration ("random") or from file ("file"). In the latter case, "init_file" has to be specified
+# init_file = input/init_snap.in                        ## Initialization file. Only relevant if init_mode is set to "file"
+# init_kT = -1                                          ## Initialization temperature, temperature at which simulation should start. Has no effect when chosen negative.
+# init_random_displacement = 0                          ## Random particle displacement at initialization (for scaled initialization only)
+# init_random_angle = 0                                 ## Random angle displacement at initialization (for scaled initialization only)
+# eq_integrator_type = lf				## Integrator type during equilibration. 'rk4' for Runge-Kutta, 'lf' for leapfrog. (string)
+# sample_integrator_type = nh				## Integrator type during sampling. 'rk4' for Runge-Kutta, 'lf' for leapfrog, 'nh' for Nose-Hoover, 'np' for Nose-Poincare. (string)
+# nhnp_pi = 0                                           ## Nose-Hoover and Nose-Poincare pi value
+# nhnp_Q = 5e0                                          ## Nose-Hoover and Nose-Poincare Q value
+# nh_eta = 0                                            ## Nose-Hoover eta value
+# np_s = 1                                              ## Nose-Poincare s value (initial time scaling factor)
+# mc_steplength_theta = 0.1                             ## Maximal trial step length of MC algorithm for angle theta
+# mc_steplength_r = 0.1                                 ## Maximal trial step length of MC algorithm for distance r
+# ensemble = nvt					## Ensemble used in simulation.
+# eq_mode = berendsen                                   ## equilibration mode. Possilbe values: 'berendsen' for berendsen thermostat, 'anneal' for annealing
+# eq_Tmax = 100                         		## Maximum equilibration time
+# eq_agreement_threshold = 1e-2                         ## Temperature agreement threshold to check successful equilibration
+# eq_av_time = 0                                        ## Averaging time in equilibration (set to 0 for no averaging)
+# tau_berendsen = 1					## Berendsen Thermostat tau parameter
+# eq_anneal_rate = .999                                 ## Annealing rate
+# eq_anneal_step = 1e1                                  ## Annealing time step
+# eq_sampswitch = 0                                     ## Switch controlling whether sampling data is stored in equilibration
+# eq_Nsamp = 100                                        ## Number of time samplings performed during equilibration. Only has an effect if eq_sampswitch = 1 [int]
+# eq_samp_time_sequence = lin                           ## Sampling time sequence. 'lin' or 'log' [std::string]
+# samplestep = 1					## Number of steps for sampling
+# av_time_spacing = 1e2                                 ## Minimum time spacing for average calculations in sampling
+# Nsamp = 30                            		## Number of samples computed in sampling. Overwrites samplestep. (int)
+# sampling_time_sequence = lin                          ## Specifies how sampling should be performed. Values are lin (linear sequence of sampling times) and log (logarithmic sequence of sampling times).
+# printoption = 2					## Options for printing.
+# print_snapshots = 1					## bool. Should snapshots be printed
+# on_fly_sampling = 0					## bool. Should sampling be done on-the-fly
+# snap_overview_file = output/snapshot_overview.out     ## File where the names of all snapshots are stored. Only relevant when run in sampling mode.
+# stdoutfile = data.out				        ## std output

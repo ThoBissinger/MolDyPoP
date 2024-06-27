@@ -1,0 +1,111 @@
+\doxysection{xyparticle.\+h}
+\hypertarget{xyparticle_8h_source}{}\label{xyparticle_8h_source}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ XYPARTICLE\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ XYPARTICLE\_H}}
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include"{}topology.h"{}}}
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include"{}\mbox{\hyperlink{computations_8h}{computations.h}}"{}}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include<vector>}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include<fstream>}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include<iomanip>}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include<stdio.h>}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include<stdlib.h>}}
+\DoxyCodeLine{00022\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classxyparticle}{xyparticle}}\ \{}
+\DoxyCodeLine{00023\ \ \ \ \ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00024\ }
+\DoxyCodeLine{00026\ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{classxyparticle_a470adaf9d366c45da72585f7ed3610ac}{theta\_}}\ ;}
+\DoxyCodeLine{00027\ }
+\DoxyCodeLine{00029\ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{classxyparticle_a16352a4b966ee066fc3437d843111510}{w\_}}\ ;}
+\DoxyCodeLine{00030\ }
+\DoxyCodeLine{00032\ \ \ \ \ \ \ std::vector<int>\ \mbox{\hyperlink{classxyparticle_a3cce08fa0f3d09dc22375c09ac0e3baa}{neighbors\_}};}
+\DoxyCodeLine{00033\ }
+\DoxyCodeLine{00034\ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00036\ \ \ \ \ \ \ \mbox{\hyperlink{classxyparticle_a86da65af91852a4ab4d70e73275d378a}{xyparticle}}()\ \{\}\ ;}
+\DoxyCodeLine{00037\ \ \ \ \ \ \ \mbox{\hyperlink{classxyparticle_a86da65af91852a4ab4d70e73275d378a}{xyparticle}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\ theta,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\ w)\ ;\ }
+\DoxyCodeLine{00038\ \ \ \ \ \ \ \mbox{\hyperlink{classxyparticle_a86da65af91852a4ab4d70e73275d378a}{xyparticle}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classxyparticle}{xyparticle}}\&\ xypart)\ ;\ }
+\DoxyCodeLine{00039\ }
+\DoxyCodeLine{00040\ \ \ \ \ \ \ \textcolor{comment}{//\ =====================================================================}}
+\DoxyCodeLine{00041\ \ \ \ \ \ \ \textcolor{comment}{//\ Print\ functions\ to\ ofstream\ and\ to\ std::out}}
+\DoxyCodeLine{00042\ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classxyparticle_a2f38a60dac6538020fee706391c0c813}{print}}(std::ofstream\ \&outputfile)\ \textcolor{keyword}{const}\ ;\ }
+\DoxyCodeLine{00043\ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classxyparticle_a5b9356fa02dff476f861ede88ce3b89d}{print\_theta}}(std::ofstream\ \&outputfile)\ \textcolor{keyword}{const}\ ;\ }
+\DoxyCodeLine{00044\ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classxyparticle_a724a422f0ea37e77a4807bc2d41f3a54}{print\_w}}(std::ofstream\ \&outputfile)\ \textcolor{keyword}{const}\ ;\ }
+\DoxyCodeLine{00045\ }
+\DoxyCodeLine{00046\ }
+\DoxyCodeLine{00047\ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classxyparticle_a2f38a60dac6538020fee706391c0c813}{print}}()\ \textcolor{keyword}{const}\ ;\ }
+\DoxyCodeLine{00048\ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classxyparticle_a5b9356fa02dff476f861ede88ce3b89d}{print\_theta}}()\ \textcolor{keyword}{const}\ ;\ }
+\DoxyCodeLine{00049\ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classxyparticle_a724a422f0ea37e77a4807bc2d41f3a54}{print\_w}}()\ \textcolor{keyword}{const}\ ;\ }
+\DoxyCodeLine{00050\ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classxyparticle_a3c795e110efaaecf3145d306404e53f1}{print\_neighbors}}()\ \textcolor{keyword}{const}\ ;\ }
+\DoxyCodeLine{00051\ }
+\DoxyCodeLine{00052\ \ \ \ \ \ \ \textcolor{comment}{//\ =====================================================================}}
+\DoxyCodeLine{00053\ \ \ \ \ \ \ \textcolor{comment}{//\ Element\ access.\ get\ and\ set\ functions\ for\ position\ and\ impulse.}}
+\DoxyCodeLine{00054\ }
+\DoxyCodeLine{00055\ \ \ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{double}\ get\_theta()\textcolor{keyword}{\ const\ }\{\textcolor{keywordflow}{return}\ \mbox{\hyperlink{classxyparticle_a470adaf9d366c45da72585f7ed3610ac}{theta\_}};\};\ \ \ }
+\DoxyCodeLine{00056\ \ \ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{classxyparticle_a3a92c648afad2c9f342188d3706cdc50}{get\_w}}()\textcolor{keyword}{\ const\ }\{\textcolor{keywordflow}{return}\ \mbox{\hyperlink{classxyparticle_a16352a4b966ee066fc3437d843111510}{w\_}};\};\ \ \ \ \ \ }
+\DoxyCodeLine{00057\ \ \ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classxyparticle_a18846168b74d8c91d0804af2266b7a50}{get\_neighbor}}(\textcolor{keywordtype}{int}\ i)\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classxyparticle_a3cce08fa0f3d09dc22375c09ac0e3baa}{neighbors\_}}[i];\};}
+\DoxyCodeLine{00058\ \ \ \ \ \ \ \textcolor{keyword}{inline}\ std::vector<int>\ get\_neighbors()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classxyparticle_a3cce08fa0f3d09dc22375c09ac0e3baa}{neighbors\_}};\};}
+\DoxyCodeLine{00059\ \textcolor{comment}{//\ \ \ \ \ \ std::vector<int>\ get\_neighbors()\ const;\ ///<\ Return\ neighbors.\ Not\ inline\ because\ there\ may\ be\ handling\ problems\ with\ vectors.}}
+\DoxyCodeLine{00060\ }
+\DoxyCodeLine{00061\ }
+\DoxyCodeLine{00062\ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classxyparticle_a838eb3d3e51b5fb5236d5cbce41568d9}{set\_theta}}(\textcolor{keywordtype}{double}\ new\_theta);\ \ }
+\DoxyCodeLine{00063\ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classxyparticle_ac1a05310863907e873e7921925019a13}{set\_w}}(\textcolor{keywordtype}{double}\ new\_w);\ \ }
+\DoxyCodeLine{00064\ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classxyparticle_a5449874400dd23ec499f2476b3b8a5ae}{set\_particle}}(\textcolor{keywordtype}{double}\ new\_theta,\ \textcolor{keywordtype}{double}\ new\_w);\ }
+\DoxyCodeLine{00065\ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classxyparticle_a80d51ca1e5d728bf9552a5c1a9b25d10}{push\_neighbor}}(\textcolor{keywordtype}{int}\ index);\ }
+\DoxyCodeLine{00066\ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classxyparticle_aa13eff47afb9447abc6c6128442f1d61}{set\_temperature}}(\textcolor{keywordtype}{double}\ kT);\ \ }
+\DoxyCodeLine{00067\ \ \ \ \ \ \ }
+\DoxyCodeLine{00068\ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classxyparticle_ae23a080d9ba02ee48ae84db87ea9fff4}{set\_theta\_to\_interval}}();\ }
+\DoxyCodeLine{00069\ }
+\DoxyCodeLine{00070\ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classxyparticle_ad788ef012dfced06422ae59430b1d518}{scale\_w}}(\textcolor{keywordtype}{double}\ a);}
+\DoxyCodeLine{00071\ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classxyparticle_ac468bf5577b504f8b89f1a8204234ce0}{add\_to\_theta}}(\textcolor{keywordtype}{double}\ theta);}
+\DoxyCodeLine{00072\ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classxyparticle_a9de10d78960faedb32c6243128c9d78f}{add\_to\_w}}(\textcolor{keywordtype}{double}\ w);}
+\DoxyCodeLine{00073\ \ \ \ \ \ \ \textcolor{comment}{//\ ===================================================================================================}}
+\DoxyCodeLine{00074\ \ \ \ \ \ \ \textcolor{comment}{//\ Topological\ access\ and\ neighborhood.\ There\ are\ no\ functions\ here\ for\ now,\ neighborhood\ is\ managed}}
+\DoxyCodeLine{00075\ \ \ \ \ \ \ \textcolor{comment}{//\ by\ the\ group.\ Could\ be\ changed.}}
+\DoxyCodeLine{00076\ }
+\DoxyCodeLine{00077\ \ \ \ \ \ \ \textcolor{comment}{//\ ===================================================================================================}}
+\DoxyCodeLine{00078\ }
+\DoxyCodeLine{00079\ \ \ \ \ \ \ \textcolor{comment}{//\ ===================================================================================================}}
+\DoxyCodeLine{00080\ \ \ \ \ \ \ \textcolor{comment}{//\ Neighbor\ determination\ functions\ for\ particles\ for\ different\ lattices.}}
+\DoxyCodeLine{00081\ \ \ \ \ \ \ \textcolor{comment}{//\ index\ is\ the\ particle's\ index,\ N\ and\ sqrtN\ are\ the\ number\ of\ particles\ (a\ square\ number)\ and\ its}}
+\DoxyCodeLine{00082\ \ \ \ \ \ \ \textcolor{comment}{//\ square\ root.\ For\ each\ function,\ there\ is\ one\ that\ computes\ only\ half\ of\ the\ neighbors.\ Due\ to\ symmetry,}}
+\DoxyCodeLine{00083\ \ \ \ \ \ \ \textcolor{comment}{//\ those\ are\ enough\ in\ most\ cases.}}
+\DoxyCodeLine{00084\ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classxyparticle_aeaf0c3272b05e261fa8373f30e1b3ae1}{set\_neighbors\_squarelattice}}(\textcolor{keywordtype}{int}\ index,\ \textcolor{keywordtype}{int}\ N,\ \textcolor{keywordtype}{int}\ sqrtN);\ }
+\DoxyCodeLine{00085\ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classxyparticle_aba1ef1373e23c3f62c9c8ad675b092e9}{set\_neighbors\_squarelattice\_half}}(\textcolor{keywordtype}{int}\ index,\ \textcolor{keywordtype}{int}\ N,\ \textcolor{keywordtype}{int}\ sqrtN);\ }
+\DoxyCodeLine{00086\ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classxyparticle_ab60190d75288b0ed2135a48284114ee1}{set\_neighbors\_trigonallattice}}(\textcolor{keywordtype}{int}\ index,\ \textcolor{keywordtype}{int}\ N,\ \textcolor{keywordtype}{int}\ sqrtN);\ }
+\DoxyCodeLine{00087\ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classxyparticle_a97037df0df0a4d8f65e0990e9d88bef1}{set\_neighbors\_trigonallattice\_half}}(\textcolor{keywordtype}{int}\ index,\ \textcolor{keywordtype}{int}\ N,\ \textcolor{keywordtype}{int}\ sqrtN);\ }
+\DoxyCodeLine{00088\ }
+\DoxyCodeLine{00089\ \ \ \ \ \ \ \textcolor{comment}{//\ ===================================================================================================}}
+\DoxyCodeLine{00090\ }
+\DoxyCodeLine{00091\ \ \ \ \ \ \ }
+\DoxyCodeLine{00092\ }
+\DoxyCodeLine{00093\ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classxyparticle_ac487e3835dc063c658faf3bcefc5b503}{random\_xyparticle}}(\textcolor{keywordtype}{double}\ kbT,\ \textcolor{keywordtype}{double}\ I);}
+\DoxyCodeLine{00095\ }
+\DoxyCodeLine{00096\ }
+\DoxyCodeLine{00097\ }
+\DoxyCodeLine{00098\ \ \ \ \ \ \ \ \textcolor{comment}{//\ Operators\ for\ +*}}
+\DoxyCodeLine{00099\ \ \ \ \ \ \ \ \mbox{\hyperlink{classxyparticle}{xyparticle}}\&\ \mbox{\hyperlink{classxyparticle_a22e3a1defdc9dd068da403177ad20f0d}{operator+=}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classxyparticle}{xyparticle}}\&\ p);\ }
+\DoxyCodeLine{00100\ \ \ \ \ \ \ \ \mbox{\hyperlink{classxyparticle}{xyparticle}}\&\ \mbox{\hyperlink{classxyparticle_a0d9a45c66d8079614640f7c5bb8de7eb}{operator*=}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\ a);\ }
+\DoxyCodeLine{00101\ \}\ ;}
+\DoxyCodeLine{00102\ }
+\DoxyCodeLine{00103\ }
+\DoxyCodeLine{00104\ \ \ \ \ \ \ \textcolor{comment}{//\ ===================================================================================================}}
+\DoxyCodeLine{00105\ \ \ \ \ \ \ \textcolor{comment}{//\ Initialization\ functions\ for\ particles\ for\ different\ lattices.}}
+\DoxyCodeLine{00106\ \ \ \ \ \ \ }
+\DoxyCodeLine{00107\ }
+\DoxyCodeLine{00108\ \ \ \ \ \ \ \textcolor{comment}{//\ ===================================================================================================}}
+\DoxyCodeLine{00109\ }
+\DoxyCodeLine{00110\ }
+\DoxyCodeLine{00111\ \textcolor{keyword}{inline}\ \mbox{\hyperlink{classxyparticle}{xyparticle}}\ random\_xyparticle(\textcolor{keywordtype}{double}\ kbT)\ \{\ }
+\DoxyCodeLine{00112\ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classxyparticle}{xyparticle}}(\mbox{\hyperlink{computations_8h_ac2d5d6813a00a29ca76fca3d95c00bb9}{random\_angle}}(),\mbox{\hyperlink{computations_8h_afda23d435e9691292647f33f43d1e266}{random\_boltzmann\_double}}(kbT));\ }
+\DoxyCodeLine{00113\ \};}
+\DoxyCodeLine{00114\ }
+\DoxyCodeLine{00115\ \textcolor{keyword}{inline}\ \mbox{\hyperlink{classxyparticle}{xyparticle}}\ xyparticle\_zero()\ \{}
+\DoxyCodeLine{00116\ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classxyparticle}{xyparticle}}(0.0,\ 0.0);}
+\DoxyCodeLine{00117\ \};}
+\DoxyCodeLine{00118\ }
+\DoxyCodeLine{00119\ \mbox{\hyperlink{classxyparticle}{xyparticle}}\ operator+(\textcolor{keyword}{const}\ \mbox{\hyperlink{classxyparticle}{xyparticle}}\&\ p,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classxyparticle}{xyparticle}}\&\ p2);}
+\DoxyCodeLine{00120\ }
+\DoxyCodeLine{00121\ }
+\DoxyCodeLine{00122\ \mbox{\hyperlink{classxyparticle}{xyparticle}}\ operator*(\textcolor{keyword}{const}\ \mbox{\hyperlink{classxyparticle}{xyparticle}}\&\ p,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\ a);}
+\DoxyCodeLine{00123\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

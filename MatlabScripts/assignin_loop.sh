@@ -1,0 +1,73 @@
+#!/bin/bash
+# VARNAMES=$(cat $1 | cut -d '=' -f 1)
+VARNAMES=(N 
+Tmax
+averaging_times 
+rbin 
+qbin 
+H 
+H_2 
+W 
+W_2 
+M
+M_2 
+M_4 
+absM 
+Theta 
+temperature 
+abs_vortices 
+signed_vortices 
+mxq 
+myq 
+eq 
+wq 
+chimxq 
+chimyq 
+chieq 
+chiwq 
+SCF_Spin 
+SCF_anglediff 
+TCF_times 
+ACF_Spin 
+ACF_anglediff 
+gxx 
+gxy 
+gxw 
+gxe 
+gyy 
+gyw
+gye 
+gww 
+gwe 
+gee 
+H_av 
+H_2_av 
+H_var 
+W_av 
+W_2_av 
+W_var 
+M_av 
+M_2_av 
+M_4_av 
+M_var 
+Binder_cum 
+absM_av 
+Theta_av 
+temperature_av 
+abs_vortices_av 
+signed_vortices_av 
+mxq_av 
+myq_av 
+eq_av 
+wq_av 
+chimxq_av 
+chimyq_av 
+chieq_av 
+chiwq_av 
+SCF_Spin_av 
+SCF_anglediff_av )
+# echo ${VARNAMES[@]}
+for V in ${VARNAMES[@]}; do
+ #  echo "assignin('base','$V""_cur',$V)"
+ #  echo "$V""_(i,:) = $V""_cur;"
+done

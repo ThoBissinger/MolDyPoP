@@ -1,0 +1,121 @@
+\doxysection{topology.\+h File Reference}
+\hypertarget{topology_8h}{}\label{topology_8h}\index{topology.h@{topology.h}}
+
+
+Header-\/\+File to declaration of namespace topology. Defines classes Vector2d and angle2d (the latter redundant).  
+
+
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include $<$fstream$>$}\newline
+{\ttfamily \#include $<$iomanip$>$}\newline
+{\ttfamily \#include $<$vector$>$}\newline
+{\ttfamily \#include $<$array$>$}\newline
+{\ttfamily \#include \"{}math.\+h\"{}}\newline
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classtopology_1_1_vector2d}{topology\+::\+Vector2d}}
+\begin{DoxyCompactList}\small\item\em Mathematical 2d vectors. Can be added, multiplied by a scalar, norm computation is possible. There are print-\/to-\/file and print-\/to-\/command-\/line functions available. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classtopology_1_1angle2d}{topology\+::angle2d}}
+\begin{DoxyCompactList}\small\item\em A (double-\/valued) angle in 2d space with the possibility of identifying it with its corresponding \doxylink{classtopology_1_1_vector2d}{Vector2d} unit vector. In the current state of the simulation, this is redundant. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+namespace \mbox{\hyperlink{namespacetopology}{topology}}
+\begin{DoxyCompactList}\small\item\em Contains the vector classes and vector functions and operations. So far, only the class \doxylink{classtopology_1_1_vector2d}{Vector2d} is used in further routines and fully implemented. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classtopology_1_1_vector2d}{Vector2d}} \mbox{\hyperlink{namespacetopology_a31ab7089cb11d4d899ffbf2eb4b6b0e3}{topology\+::operator+}} (const \mbox{\hyperlink{classtopology_1_1_vector2d}{Vector2d}} \&v, const \mbox{\hyperlink{classtopology_1_1_vector2d}{Vector2d}} \&w)
+\item 
+\mbox{\hyperlink{classtopology_1_1_vector2d}{Vector2d}} \mbox{\hyperlink{namespacetopology_af707a0bda87670d0dcaa0e4213c3c372}{topology\+::operator-\/}} (const \mbox{\hyperlink{classtopology_1_1_vector2d}{Vector2d}} \&v, const \mbox{\hyperlink{classtopology_1_1_vector2d}{Vector2d}} \&w)
+\item 
+\mbox{\hyperlink{classtopology_1_1_vector2d}{Vector2d}} \mbox{\hyperlink{namespacetopology_a928e7e8d5f93470befc5e1794449f759}{topology\+::operator\texorpdfstring{$\ast$}{*}}} (const \mbox{\hyperlink{classtopology_1_1_vector2d}{Vector2d}} \&v, const double a)
+\begin{DoxyCompactList}\small\item\em scalar \texorpdfstring{$\ast$}{*} operator \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classtopology_1_1_vector2d}{Vector2d}} \mbox{\hyperlink{namespacetopology_a0dc0cbcf3f23e99b5b20465ee100f02a}{topology\+::operator\texorpdfstring{$\ast$}{*}}} (const double a, const \mbox{\hyperlink{classtopology_1_1_vector2d}{Vector2d}} \&v)
+\begin{DoxyCompactList}\small\item\em scalar \texorpdfstring{$\ast$}{*} operator \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classtopology_1_1_vector2d}{Vector2d}} \mbox{\hyperlink{namespacetopology_a97331673e7d78a23159001adbec5b466}{topology\+::operator\texorpdfstring{$\ast$}{*}}} (const \mbox{\hyperlink{classtopology_1_1_vector2d}{Vector2d}} \&v, const int a)
+\begin{DoxyCompactList}\small\item\em scalar \texorpdfstring{$\ast$}{*} operator \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classtopology_1_1_vector2d}{Vector2d}} \mbox{\hyperlink{namespacetopology_a51caecb9c42adfabc49dfc6b99693833}{topology\+::operator\texorpdfstring{$\ast$}{*}}} (const int a, const \mbox{\hyperlink{classtopology_1_1_vector2d}{Vector2d}} \&v)
+\begin{DoxyCompactList}\small\item\em scalar \texorpdfstring{$\ast$}{*} operator \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classtopology_1_1_vector2d}{Vector2d}} \mbox{\hyperlink{namespacetopology_ab2883a0ea9faeb984402f960636f5175}{topology\+::operator/}} (const \mbox{\hyperlink{classtopology_1_1_vector2d}{Vector2d}} \&v, const double a)
+\begin{DoxyCompactList}\small\item\em scalar / operator \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classtopology_1_1_vector2d}{Vector2d}} \mbox{\hyperlink{namespacetopology_ac0c00b96aad42eadc041c045b42a63e6}{topology\+::operator/}} (const \mbox{\hyperlink{classtopology_1_1_vector2d}{Vector2d}} \&v, const int a)
+\begin{DoxyCompactList}\small\item\em scalar / operator \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{namespacetopology_a657dfb7335d4dddbcc80cfa464b8f110}{topology\+::norm2}} (\mbox{\hyperlink{classtopology_1_1_vector2d}{Vector2d}} v)
+\begin{DoxyCompactList}\small\item\em Returns the L2 norm of a vector. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classtopology_1_1_vector2d}{Vector2d}} \mbox{\hyperlink{namespacetopology_aa072ffdc9ac93daaec0762415f2acafa}{topology\+::normalized}} (\mbox{\hyperlink{classtopology_1_1_vector2d}{Vector2d}} v)
+\begin{DoxyCompactList}\small\item\em Normalizes a vector. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{namespacetopology_a19d901a7c87cb202c6b44e2838978db6}{topology\+::periodic\+\_\+distance\+\_\+squared}} (const \mbox{\hyperlink{classtopology_1_1_vector2d}{Vector2d}} \&v, const \mbox{\hyperlink{classtopology_1_1_vector2d}{Vector2d}} \&w, const double \&L)
+\begin{DoxyCompactList}\small\item\em Returns squared distance \texorpdfstring{$\vert$}{|}w -\/ v\texorpdfstring{$\vert$}{|}\texorpdfstring{$^\wedge$}{\string^}2 considering periodic boundaries (square box, length L). Squared function faster to calculate. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{namespacetopology_aea6caa260bf7d12da48ed542cdb4d222}{topology\+::periodic\+\_\+distance}} (const \mbox{\hyperlink{classtopology_1_1_vector2d}{Vector2d}} \&v, const \mbox{\hyperlink{classtopology_1_1_vector2d}{Vector2d}} \&w, const double \&L)
+\begin{DoxyCompactList}\small\item\em Returns distance \texorpdfstring{$\vert$}{|}w -\/ v\texorpdfstring{$\vert$}{|} considering periodic boundaries (square box, length L). Taking sqrt takes more time than returning the squared quantity by dist\+\_\+periodic\+\_\+squared. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classtopology_1_1_vector2d}{Vector2d}} \mbox{\hyperlink{namespacetopology_acb61cc88383472479100bdd9369b76d2}{topology\+::periodic\+\_\+distance\+\_\+vector}} (const \mbox{\hyperlink{classtopology_1_1_vector2d}{Vector2d}} \&v, const \mbox{\hyperlink{classtopology_1_1_vector2d}{Vector2d}} \&w, const double \&L)
+\begin{DoxyCompactList}\small\item\em Returns distance vector w -\/ v considering periodic boundaries (square box, length L). \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{namespacetopology_a08f27e9d9e2770a444c9065add8f156d}{topology\+::periodic\+\_\+distance\+\_\+squared}} (const \mbox{\hyperlink{classtopology_1_1_vector2d}{Vector2d}} \&v, const \mbox{\hyperlink{classtopology_1_1_vector2d}{Vector2d}} \&w, const \mbox{\hyperlink{classtopology_1_1_vector2d}{Vector2d}} \&L)
+\begin{DoxyCompactList}\small\item\em Returns squared distance \texorpdfstring{$\vert$}{|}w -\/ v\texorpdfstring{$\vert$}{|}\texorpdfstring{$^\wedge$}{\string^}2 considering periodic boundaries (rectangular box, widths stored in L). Squared function faster to calculate. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{namespacetopology_a1135f2dfa7dc1202ebb8e30d1619d3b3}{topology\+::periodic\+\_\+distance}} (const \mbox{\hyperlink{classtopology_1_1_vector2d}{Vector2d}} \&v, const \mbox{\hyperlink{classtopology_1_1_vector2d}{Vector2d}} \&w, const \mbox{\hyperlink{classtopology_1_1_vector2d}{Vector2d}} \&L)
+\begin{DoxyCompactList}\small\item\em Returns squared distance \texorpdfstring{$\vert$}{|}w -\/ v\texorpdfstring{$\vert$}{|} considering periodic boundaries (rectangular box, widths stored in L). Taking sqrt takes more time than returning the squared quantity by dist\+\_\+periodic\+\_\+squared. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classtopology_1_1_vector2d}{Vector2d}} \mbox{\hyperlink{namespacetopology_a21959ac574a4058ceb8d1e2470abf053}{topology\+::periodic\+\_\+distance\+\_\+vector}} (const \mbox{\hyperlink{classtopology_1_1_vector2d}{Vector2d}} \&v, const \mbox{\hyperlink{classtopology_1_1_vector2d}{Vector2d}} \&w, const \mbox{\hyperlink{classtopology_1_1_vector2d}{Vector2d}} \&L)
+\begin{DoxyCompactList}\small\item\em Returns distance vector w -\/ v considering periodic boundaries (rectangular box, widths stored in L). \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classtopology_1_1_vector2d}{Vector2d}} \mbox{\hyperlink{namespacetopology_ab624380b0985194ab7c42af724b28ee3}{topology\+::rotate}} (\mbox{\hyperlink{classtopology_1_1_vector2d}{Vector2d}} v, double theta)
+\begin{DoxyCompactList}\small\item\em Rotates a vector. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classtopology_1_1_vector2d}{Vector2d}} \mbox{\hyperlink{namespacetopology_a2b43e267df9df7a8478bc59054973c10}{topology\+::rotate\+\_\+orthogonal}} (\mbox{\hyperlink{classtopology_1_1_vector2d}{Vector2d}} v)
+\begin{DoxyCompactList}\small\item\em Rotates 90 degrees. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{namespacetopology_a9856d6a0e13d1f04ba8a934952bbaf06}{topology\+::innerproduct}} (\mbox{\hyperlink{classtopology_1_1_vector2d}{Vector2d}} v, \mbox{\hyperlink{classtopology_1_1_vector2d}{Vector2d}} w)
+\begin{DoxyCompactList}\small\item\em Inner product. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{namespacetopology_a1577a283adde527f3ec61d2442142742}{topology\+::parallel\+\_\+projection}} (\mbox{\hyperlink{classtopology_1_1_vector2d}{Vector2d}} v, \mbox{\hyperlink{classtopology_1_1_vector2d}{Vector2d}} w)
+\begin{DoxyCompactList}\small\item\em Parallel projection. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{namespacetopology_a99676f17f3b8c17027b68aecc352ab2d}{topology\+::orthogonal\+\_\+projection}} (\mbox{\hyperlink{classtopology_1_1_vector2d}{Vector2d}} v, \mbox{\hyperlink{classtopology_1_1_vector2d}{Vector2d}} w)
+\begin{DoxyCompactList}\small\item\em Parallel projection. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classtopology_1_1_vector2d}{Vector2d}} \mbox{\hyperlink{namespacetopology_a6bf3c7bd607cb85008181c689b625649}{topology\+::random\+\_\+vector}} (const \mbox{\hyperlink{classtopology_1_1_vector2d}{Vector2d}} \&minima, const \mbox{\hyperlink{classtopology_1_1_vector2d}{Vector2d}} \&maxima)
+\begin{DoxyCompactList}\small\item\em Returns a random vector within a volume \mbox{[}minima, maxima\mbox{]}. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classtopology_1_1_vector2d}{Vector2d}} \mbox{\hyperlink{namespacetopology_a9c6e621c6342bde64d11006e5db0d62b}{topology\+::random\+\_\+vector}} (const \mbox{\hyperlink{classtopology_1_1_vector2d}{Vector2d}} \&maxima)
+\begin{DoxyCompactList}\small\item\em Returns a random vector within a volume \mbox{[}0,maxima\mbox{]}. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classtopology_1_1_vector2d}{Vector2d}} \mbox{\hyperlink{namespacetopology_af149afbfda7309c7141f10854e912db4}{topology\+::random\+\_\+gaussian\+\_\+vector}} (const double \&sigma\+\_\+squared)
+\begin{DoxyCompactList}\small\item\em Returns a random vector with Gaussian distribution in each component. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classtopology_1_1_vector2d}{Vector2d}} \mbox{\hyperlink{namespacetopology_a7dc21bf5b7020f2b15fd6f658256f304}{topology\+::nearest\+\_\+gridvec}} (\mbox{\hyperlink{classtopology_1_1_vector2d}{Vector2d}} v, double gridsep)
+\begin{DoxyCompactList}\small\item\em Returns nearest neighbor to 2D-\/\+Vector v on grid of grid point separation gridsep. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classtopology_1_1_vector2d}{Vector2d}} \mbox{\hyperlink{namespacetopology_af2984f46f1eaf0be7e033bde56500fb9}{topology\+::nearest\+\_\+gridvec}} (\mbox{\hyperlink{classtopology_1_1_vector2d}{Vector2d}} v, \mbox{\hyperlink{classtopology_1_1_vector2d}{Vector2d}} gridseps)
+\begin{DoxyCompactList}\small\item\em Returns nearest neighbor to 2D-\/\+Vector v on grid of anisotropic grid point separation gridsep. \end{DoxyCompactList}\item 
+std\+::vector$<$ \mbox{\hyperlink{classtopology_1_1_vector2d}{Vector2d}} $>$ \mbox{\hyperlink{namespacetopology_a5299d85f035a827704c9dd9e07fda009}{topology\+::qvalues\+\_\+within\+\_\+radius}} (double qmin, double qmax, \mbox{\hyperlink{classtopology_1_1_vector2d}{Vector2d}} gridseps, int qsamps\+\_\+per\+\_\+bin)
+\begin{DoxyCompactList}\small\item\em Creates a std\+::vector containing qsamps\+\_\+per\+\_\+bin 2D-\/vectors that lie on a grid with modulus between qmin and qmax. No vector appears double. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classtopology_1_1_vector2d}{Vector2d}} \mbox{\hyperlink{namespacetopology_a441f29a38f3d710e443bef63aa871a1c}{topology\+::random\+\_\+vector\+\_\+first\+\_\+quadrant}} (const double length)
+\begin{DoxyCompactList}\small\item\em Returns a random vector in the first quadrant. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classtopology_1_1_vector2d}{Vector2d}} \mbox{\hyperlink{namespacetopology_aba69abf1144ea2f4fb34dba4e60abf32}{topology\+::random\+\_\+vector\+\_\+sector}} (const double length, const double thetamin, const double thetamax)
+\begin{DoxyCompactList}\small\item\em Returns a random vector within a sector given by thetamin, thetamax. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classtopology_1_1_vector2d}{Vector2d}} \mbox{\hyperlink{namespacetopology_a6e8106cfa482fa982bd073b95a4d1fd7}{topology\+::random\+\_\+velocity}} (const double r)
+\begin{DoxyCompactList}\small\item\em Returns a random vector on a sphere surface of radius r. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classtopology_1_1_vector2d}{Vector2d}} \mbox{\hyperlink{namespacetopology_a70b283f098f3b8d52da232ba9b795afe}{topology\+::vector\+\_\+from\+\_\+angle}} (const double angle, const double r)
+\begin{DoxyCompactList}\small\item\em Returns a vector of length r and orientation angle. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classtopology_1_1_vector2d}{Vector2d}} \mbox{\hyperlink{namespacetopology_aee5f29703baef0a11e21b996a202fc6d}{topology\+::vector\+\_\+from\+\_\+angle}} (const double angle)
+\begin{DoxyCompactList}\small\item\em Returns a vector of unit length and orientation angle. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{namespacetopology_a120dbbfc6a9b8b3ca6c2b10ed5d68470}{topology\+::angle\+\_\+from\+\_\+vector}} (const \mbox{\hyperlink{classtopology_1_1_vector2d}{topology\+::\+Vector2d}} \&v)
+\begin{DoxyCompactList}\small\item\em Returns the orientation angle of a vector. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classtopology_1_1_vector2d}{Vector2d}} \mbox{\hyperlink{namespacetopology_a31246a235ae3b4e85f946198681aa04a}{topology\+::spin}} (double theta)
+\begin{DoxyCompactList}\small\item\em Returns a spin vector, i.\+e. unit vector, with given angle to x-\/axis. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classtopology_1_1_vector2d}{Vector2d}} \mbox{\hyperlink{namespacetopology_ad91a5285a23329a2fd5aba884141d668}{topology\+::orthospin}} (double theta)
+\begin{DoxyCompactList}\small\item\em Returns an orthogonal spin vector, i.\+e. a unit vector rotated 90\texorpdfstring{$^\wedge$}{\string^}° counterclockwise from the vector of spin(theta) \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classtopology_1_1_vector2d}{Vector2d}} \mbox{\hyperlink{namespacetopology_a050f165f9ef2adee133585d5bb896262}{topology\+::vector\+\_\+on\+\_\+squarelattice}} (int index, int Nx, int Ny, double spacing)
+\begin{DoxyCompactList}\small\item\em Index-\/dependent position vector for spin at index, square lattice. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classtopology_1_1_vector2d}{Vector2d}} \mbox{\hyperlink{namespacetopology_aef3146b83bcdadca71f6f5a63cacf280}{topology\+::vector\+\_\+on\+\_\+trigonallattice}} (int index, int Nx, int Ny, double spacing)
+\begin{DoxyCompactList}\small\item\em Index-\/dependent position vector for spin at index, trigonal lattice. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{namespacetopology_ae26b317ec2829511d03e23de259b540a}{topology\+::print\+\_\+matlab}} (const std\+::vector$<$ \mbox{\hyperlink{classtopology_1_1_vector2d}{Vector2d}} $>$ \&v, std\+::string name, std\+::ostream \&outfile)
+\begin{DoxyCompactList}\small\item\em Prints a list of vectors to in matlab-\/readable form. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classtopology_1_1angle2d}{angle2d}} \mbox{\hyperlink{namespacetopology_ad13e384b335f2e87e1156841473bacd4}{topology\+::operator+}} (const \mbox{\hyperlink{classtopology_1_1angle2d}{angle2d}} \&v, const \mbox{\hyperlink{classtopology_1_1angle2d}{angle2d}} \&a)
+\begin{DoxyCompactList}\small\item\em Addition operator. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classtopology_1_1angle2d}{angle2d}} \mbox{\hyperlink{namespacetopology_ac7cd605d90280ec221b9ae19cfce5df2}{topology\+::operator-\/}} (const \mbox{\hyperlink{classtopology_1_1angle2d}{angle2d}} \&v, const \mbox{\hyperlink{classtopology_1_1angle2d}{angle2d}} \&w)
+\begin{DoxyCompactList}\small\item\em Subtraction operator. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classtopology_1_1angle2d}{angle2d}} \mbox{\hyperlink{namespacetopology_ab7cbdf479b151350b90fa7a6841ce6df}{topology\+::operator\texorpdfstring{$\ast$}{*}}} (const \mbox{\hyperlink{classtopology_1_1angle2d}{angle2d}} \&v, const double a)
+\begin{DoxyCompactList}\small\item\em Multiplication operator (double, right) \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classtopology_1_1angle2d}{angle2d}} \mbox{\hyperlink{namespacetopology_aea0a64cb8640665211f87527253902ff}{topology\+::operator\texorpdfstring{$\ast$}{*}}} (const double a, const \mbox{\hyperlink{classtopology_1_1angle2d}{angle2d}} \&v)
+\begin{DoxyCompactList}\small\item\em Multiplication operator (double, left) \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classtopology_1_1angle2d}{angle2d}} \mbox{\hyperlink{namespacetopology_a756107d462818004625ded4780b0f596}{topology\+::operator/}} (const \mbox{\hyperlink{classtopology_1_1angle2d}{angle2d}} \&v, const double a)
+\begin{DoxyCompactList}\small\item\em Division operator (double) \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Header-\/\+File to declaration of namespace topology. Defines classes Vector2d and angle2d (the latter redundant). 
+
+Provides features for handling spatial vectors both for position and spin vectors. 

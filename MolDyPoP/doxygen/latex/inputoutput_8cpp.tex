@@ -1,0 +1,143 @@
+\doxysection{inputoutput.\+cpp File Reference}
+\hypertarget{inputoutput_8cpp}{}\label{inputoutput_8cpp}\index{inputoutput.cpp@{inputoutput.cpp}}
+
+
+Implements the routines declared in \doxylink{inputoutput_8h}{inputoutput.\+h}.  
+
+
+{\ttfamily \#include \"{}inputoutput.\+h\"{}}\newline
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{inputoutput_8cpp_a813c63e2b9ca66bd8b9f8b8f5492add7}{print\+\_\+stdvector}} (std\+::vector$<$ double $>$ vec, std\+::ostream \&outfile)
+\begin{DoxyCompactList}\small\item\em Prints a std\+::vector (doubles) to an outflow-\/stream. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{inputoutput_8cpp_ad9c9675e8fe4ff83e8ff51b121a2e239}{print\+\_\+stdvector}} (std\+::vector$<$ double $>$ vec, std\+::ostream \&outfile, std\+::string startstring, std\+::string endstring)
+\begin{DoxyCompactList}\small\item\em Prints a std\+::vector (doubles) to an outflow-\/stream. Includes prefix and suffix. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{inputoutput_8cpp_a475ef41059c0d7e46344f2c3dd02c4f3}{print\+\_\+stdvector}} (std\+::vector$<$ double $>$ vec, std\+::ostream \&outfile, std\+::string startstring, std\+::string endstring, int index\+\_\+start, int index\+\_\+end, int stepskip)
+\begin{DoxyCompactList}\small\item\em Prints a std\+::vector (doubles) to an outflow-\/stream. Includes prefix and suffix. The entries to be printed can be chosen manually. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{inputoutput_8cpp_a987e360bddf693c1192d08e9443ea4aa}{print\+\_\+stdvector}} (std\+::vector$<$ int $>$ vec, std\+::ostream \&outfile, std\+::string startstring, std\+::string endstring)
+\begin{DoxyCompactList}\small\item\em Prints a std\+::vector (integers) to an outflow-\/stream. Includes prefix and suffix. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{inputoutput_8cpp_af1d8ee9ee46e8572c2ff81c2a292b725}{print\+\_\+stdvector}} (std\+::vector$<$ std\+::complex$<$ double $>$ $>$ vec, std\+::ostream \&outfile, std\+::string startstring, std\+::string endstring, int index\+\_\+start, int index\+\_\+end, int stepskip)
+\begin{DoxyCompactList}\small\item\em Prints a std\+::vector (complex numbers) to an outflow-\/stream. Includes prefix and suffix. The entries to be printed can be chosen manually. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Implements the routines declared in \doxylink{inputoutput_8h}{inputoutput.\+h}. 
+
+Detailed description can be found in \doxylink{inputoutput_8h}{inputoutput.\+h}.
+
+\begin{DoxyAuthor}{Author}
+Thomas Bissinger
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+Created\+: mid-\/2017 
+
+Last Update\+: 23-\/08-\/02 
+\end{DoxyDate}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{inputoutput_8cpp_a813c63e2b9ca66bd8b9f8b8f5492add7}\label{inputoutput_8cpp_a813c63e2b9ca66bd8b9f8b8f5492add7} 
+\index{inputoutput.cpp@{inputoutput.cpp}!print\_stdvector@{print\_stdvector}}
+\index{print\_stdvector@{print\_stdvector}!inputoutput.cpp@{inputoutput.cpp}}
+\doxysubsubsection{\texorpdfstring{print\_stdvector()}{print\_stdvector()}\hspace{0.1cm}{\footnotesize\ttfamily [1/5]}}
+{\footnotesize\ttfamily void print\+\_\+stdvector (\begin{DoxyParamCaption}\item[{std\+::vector$<$ double $>$}]{vec,  }\item[{std\+::ostream \&}]{outfile }\end{DoxyParamCaption})}
+
+
+
+Prints a std\+::vector (doubles) to an outflow-\/stream. 
+
+The result is comma-\/separated. \Hypertarget{inputoutput_8cpp_ad9c9675e8fe4ff83e8ff51b121a2e239}\label{inputoutput_8cpp_ad9c9675e8fe4ff83e8ff51b121a2e239} 
+\index{inputoutput.cpp@{inputoutput.cpp}!print\_stdvector@{print\_stdvector}}
+\index{print\_stdvector@{print\_stdvector}!inputoutput.cpp@{inputoutput.cpp}}
+\doxysubsubsection{\texorpdfstring{print\_stdvector()}{print\_stdvector()}\hspace{0.1cm}{\footnotesize\ttfamily [2/5]}}
+{\footnotesize\ttfamily void print\+\_\+stdvector (\begin{DoxyParamCaption}\item[{std\+::vector$<$ double $>$}]{vec,  }\item[{std\+::ostream \&}]{outfile,  }\item[{std\+::string}]{startstring,  }\item[{std\+::string}]{endstring }\end{DoxyParamCaption})}
+
+
+
+Prints a std\+::vector (doubles) to an outflow-\/stream. Includes prefix and suffix. 
+
+The result is comma-\/separated. The startstring and endstring can be used to specify a format of the vector. \Hypertarget{inputoutput_8cpp_a475ef41059c0d7e46344f2c3dd02c4f3}\label{inputoutput_8cpp_a475ef41059c0d7e46344f2c3dd02c4f3} 
+\index{inputoutput.cpp@{inputoutput.cpp}!print\_stdvector@{print\_stdvector}}
+\index{print\_stdvector@{print\_stdvector}!inputoutput.cpp@{inputoutput.cpp}}
+\doxysubsubsection{\texorpdfstring{print\_stdvector()}{print\_stdvector()}\hspace{0.1cm}{\footnotesize\ttfamily [3/5]}}
+{\footnotesize\ttfamily void print\+\_\+stdvector (\begin{DoxyParamCaption}\item[{std\+::vector$<$ double $>$}]{vec,  }\item[{std\+::ostream \&}]{outfile,  }\item[{std\+::string}]{startstring,  }\item[{std\+::string}]{endstring,  }\item[{int}]{index\+\_\+start,  }\item[{int}]{index\+\_\+end,  }\item[{int}]{stepskip }\end{DoxyParamCaption})}
+
+
+
+Prints a std\+::vector (doubles) to an outflow-\/stream. Includes prefix and suffix. The entries to be printed can be chosen manually. 
+
+Does not put a line-\/break at the end (if desired, include in endstring).
+
+Does not check for errors -- e.\+g. a negative index\+\_\+start will not be caught.
+
+The result is comma-\/separated. The startstring and endstring can be used to specify a format of the vector. Output for the vector $v = (v_1,\ldots,v_N)$ is of the form\+:
+
+\"{}startstring\"{} + \"{}\textbackslash{}iline 54  \textbackslash{}\+\_\+form\#70@\+\_\+fakenl\"{} + \"{}endstring\"{}
+
+if $\texttt{index_end} \neq \texttt{index_estart}+ n \cdot\texttt{stepskip}$ for some $n$, the next-\/lowest value is chosen with an $n$ such that $\texttt{index_estart}+ n \cdot\texttt{stepskip} < \texttt{index_end} < \texttt{index_estart}+ (n+1) \cdot\texttt{stepskip}$.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em vec} & The vector to be printed.\\
+\hline
+\mbox{\texttt{ in}}  & {\em outfile} & The stream to the output file\\
+\hline
+\mbox{\texttt{ in}}  & {\em startstring} & String placed before the vector entries are printed.\\
+\hline
+\mbox{\texttt{ in}}  & {\em endstring} & String placed behind the printed vector entries.\\
+\hline
+\mbox{\texttt{ in}}  & {\em index\+\_\+start} & First index to be printed.\\
+\hline
+\mbox{\texttt{ in}}  & {\em index\+\_\+end} & Last index to be printed.\\
+\hline
+\mbox{\texttt{ in}}  & {\em stepskip} & Separation between entries to be printed. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{inputoutput_8cpp_a987e360bddf693c1192d08e9443ea4aa}\label{inputoutput_8cpp_a987e360bddf693c1192d08e9443ea4aa} 
+\index{inputoutput.cpp@{inputoutput.cpp}!print\_stdvector@{print\_stdvector}}
+\index{print\_stdvector@{print\_stdvector}!inputoutput.cpp@{inputoutput.cpp}}
+\doxysubsubsection{\texorpdfstring{print\_stdvector()}{print\_stdvector()}\hspace{0.1cm}{\footnotesize\ttfamily [4/5]}}
+{\footnotesize\ttfamily void print\+\_\+stdvector (\begin{DoxyParamCaption}\item[{std\+::vector$<$ int $>$}]{vec,  }\item[{std\+::ostream \&}]{outfile,  }\item[{std\+::string}]{startstring,  }\item[{std\+::string}]{endstring }\end{DoxyParamCaption})}
+
+
+
+Prints a std\+::vector (integers) to an outflow-\/stream. Includes prefix and suffix. 
+
+The result is comma-\/separated. The startstring and endstring can be used to specify a format of the vector. \Hypertarget{inputoutput_8cpp_af1d8ee9ee46e8572c2ff81c2a292b725}\label{inputoutput_8cpp_af1d8ee9ee46e8572c2ff81c2a292b725} 
+\index{inputoutput.cpp@{inputoutput.cpp}!print\_stdvector@{print\_stdvector}}
+\index{print\_stdvector@{print\_stdvector}!inputoutput.cpp@{inputoutput.cpp}}
+\doxysubsubsection{\texorpdfstring{print\_stdvector()}{print\_stdvector()}\hspace{0.1cm}{\footnotesize\ttfamily [5/5]}}
+{\footnotesize\ttfamily void print\+\_\+stdvector (\begin{DoxyParamCaption}\item[{std\+::vector$<$ std\+::complex$<$ double $>$ $>$}]{vec,  }\item[{std\+::ostream \&}]{outfile,  }\item[{std\+::string}]{startstring,  }\item[{std\+::string}]{endstring,  }\item[{int}]{index\+\_\+start,  }\item[{int}]{index\+\_\+end,  }\item[{int}]{stepskip }\end{DoxyParamCaption})}
+
+
+
+Prints a std\+::vector (complex numbers) to an outflow-\/stream. Includes prefix and suffix. The entries to be printed can be chosen manually. 
+
+Does not put a line-\/break at the end (if desired, include in endstring).
+
+Does not check for errors -- e.\+g. a negative index\+\_\+start will not be caught.
+
+The result is comma-\/separated. The startstring and endstring can be used to specify a format of the vector. Output for the vector $v = (v_1,\ldots,v_N)$ is of the form\+:
+
+\"{}startstring\"{} + \"{}\textbackslash{}iline 88  \textbackslash{}\+\_\+form\#70@\+\_\+fakenl\"{} + \"{}endstring\"{}
+
+if $\texttt{index_end} \neq \texttt{index_estart}+ n \cdot\texttt{stepskip}$ for some $n$, the next-\/lowest value is chosen with an $n$ such that $\texttt{index_estart}+ n \cdot\texttt{stepskip} < \texttt{index_end} < \texttt{index_estart}+ (n+1) \cdot\texttt{stepskip}$.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em vec} & The vector to be printed.\\
+\hline
+\mbox{\texttt{ in}}  & {\em outfile} & The stream to the output file\\
+\hline
+\mbox{\texttt{ in}}  & {\em startstring} & String placed before the vector entries are printed.\\
+\hline
+\mbox{\texttt{ in}}  & {\em endstring} & String placed behind the printed vector entries.\\
+\hline
+\mbox{\texttt{ in}}  & {\em index\+\_\+start} & First index to be printed.\\
+\hline
+\mbox{\texttt{ in}}  & {\em index\+\_\+end} & Last index to be printed.\\
+\hline
+\mbox{\texttt{ in}}  & {\em stepskip} & Separation between entries to be printed. \\
+\hline
+\end{DoxyParams}

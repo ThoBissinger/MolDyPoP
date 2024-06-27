@@ -1,0 +1,112 @@
+\doxysection{partition.\+h}
+\hypertarget{partition_8h_source}{}\label{partition_8h_source}\mbox{\hyperlink{partition_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00034\ \textcolor{preprocessor}{\#ifndef\ PARTITION\_H}}
+\DoxyCodeLine{00035\ \textcolor{preprocessor}{\#define\ PARTITION\_H}}
+\DoxyCodeLine{00036\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{topology_8h}{topology.h}}"{}}}
+\DoxyCodeLine{00037\ \textcolor{preprocessor}{\#include\ <fstream>}}
+\DoxyCodeLine{00038\ \textcolor{preprocessor}{\#include\ <list>}}
+\DoxyCodeLine{00039\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00040\ \textcolor{preprocessor}{\#include\ <algorithm>}}
+\DoxyCodeLine{00041\ }
+\DoxyCodeLine{00042\ }
+\DoxyCodeLine{00043\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classpartition}{partition}}\ \{}
+\DoxyCodeLine{00044\ \ \ \ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00045\ }
+\DoxyCodeLine{00046\ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classpartition_a012e617129e83630e0b96ee9db05501e}{N\_}};\ }
+\DoxyCodeLine{00047\ }
+\DoxyCodeLine{00054\ \ \ \ \ \ \ \mbox{\hyperlink{classtopology_1_1_vector2d}{topology::Vector2d}}\ \mbox{\hyperlink{classpartition_aba95fa663a7ed0beef7c3b2d3572edd5}{L\_}};}
+\DoxyCodeLine{00055\ }
+\DoxyCodeLine{00056\ \ \ \ \ \ \ \mbox{\hyperlink{classtopology_1_1_vector2d}{topology::Vector2d}}\ \mbox{\hyperlink{classpartition_aa7ef9ece73f06d5a016057f571a8072a}{cellwidth\_}};\ }
+\DoxyCodeLine{00057\ }
+\DoxyCodeLine{00058\ \ \ \ \ \ \ }
+\DoxyCodeLine{00059\ \ \ \ \ \ \ std::vector<int>\ \mbox{\hyperlink{classpartition_ac239d2426c0176e21713adcd96076f86}{M\_}}\ =\ std::vector<int>(2);\ }
+\DoxyCodeLine{00060\ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classpartition_a5c07488276d1c962e5e4abafdb65406c}{cellnum\_}};\ }
+\DoxyCodeLine{00065\ \ \ \ \ \ \ std::vector<int>\ \mbox{\hyperlink{classpartition_ad02cd6d63f434ff7043ce188f9784aed}{firsts\_}};}
+\DoxyCodeLine{00066\ }
+\DoxyCodeLine{00067\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00069\ \ \ \ \ \ \ std::vector<int>\ \mbox{\hyperlink{classpartition_a6a784ac09035595f059405f2d1458ce7}{cellelem\_}};\ }
+\DoxyCodeLine{00070\ }
+\DoxyCodeLine{00072\ \ \ \ \ \ \ std::vector<int>\ \mbox{\hyperlink{classpartition_ac298b91a3d7bfef35b128b48c58a260b}{cellvec\_}};}
+\DoxyCodeLine{00073\ }
+\DoxyCodeLine{00074\ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00075\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ \ \ ===================================================================================================}}
+\DoxyCodeLine{00076\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ \ \ Constructors,\ destructors.}}
+\DoxyCodeLine{00077\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ \ \ ===================================================================================================}}
+\DoxyCodeLine{00079\ \textcolor{comment}{}\ \ \ \ \ \ \ \ \mbox{\hyperlink{classpartition_a84bdc6e3612b49c217d3af8709d9950c}{partition}}()\ :\ \mbox{\hyperlink{classpartition_a012e617129e83630e0b96ee9db05501e}{N\_}}(0),\ \mbox{\hyperlink{classpartition_aba95fa663a7ed0beef7c3b2d3572edd5}{L\_}}(0.0),\ \mbox{\hyperlink{classpartition_a5c07488276d1c962e5e4abafdb65406c}{cellnum\_}}(0)\ \{\ \mbox{\hyperlink{classpartition_a6cb82599e45a4b61380f265d35cda7f6}{clear}}();\ \}\ ;}
+\DoxyCodeLine{00080\ }
+\DoxyCodeLine{00081\ }
+\DoxyCodeLine{00088\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classpartition_a84bdc6e3612b49c217d3af8709d9950c}{partition}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\&\ N,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\&\ cutoff,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classtopology_1_1_vector2d}{topology::Vector2d}}\&\ L);}
+\DoxyCodeLine{00089\ }
+\DoxyCodeLine{00097\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classpartition_a84bdc6e3612b49c217d3af8709d9950c}{partition}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\&\ N,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\&\ cutoff,}
+\DoxyCodeLine{00098\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{classtopology_1_1_vector2d}{topology::Vector2d}}\&\ L,}
+\DoxyCodeLine{00099\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::vector<topology::Vector2d>\&\ positions);}
+\DoxyCodeLine{00100\ }
+\DoxyCodeLine{00101\ }
+\DoxyCodeLine{00102\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classpartition_a462494343952d9aa3f655e88ad307869}{\string~partition}}();\ }
+\DoxyCodeLine{00103\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classpartition_a6cb82599e45a4b61380f265d35cda7f6}{clear}}();\ }
+\DoxyCodeLine{00104\ }
+\DoxyCodeLine{00111\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classpartition_a51558f8298d4f784778c08e1415e2bc0}{fill}}(\textcolor{keyword}{const}\ std::vector<topology::Vector2d>\&\ positions);}
+\DoxyCodeLine{00112\ }
+\DoxyCodeLine{00113\ }
+\DoxyCodeLine{00114\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ \ \ ===================================================================================================}}
+\DoxyCodeLine{00115\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ \ \ get-\/functions}}
+\DoxyCodeLine{00116\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ \ \ ===================================================================================================}}
+\DoxyCodeLine{00118\ \textcolor{comment}{}\ \ \ \ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classpartition_a92ae06eddd8fbfce504ff083bc366b9c}{get\_cellelem}}(\textcolor{keywordtype}{int}\ m)\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classpartition_a6a784ac09035595f059405f2d1458ce7}{cellelem\_}}[m];\};}
+\DoxyCodeLine{00120\ \ \ \ \ \ \ \ \ \textcolor{keyword}{inline}\ std::vector<int>\ \mbox{\hyperlink{classpartition_a84b268598d837d11365b32098f0496b9}{get\_cellelem}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classpartition_a6a784ac09035595f059405f2d1458ce7}{cellelem\_}};\};}
+\DoxyCodeLine{00122\ \ \ \ \ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classpartition_a9a2245031d405cc22386ba59b51a198a}{get\_cellnum}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classpartition_a5c07488276d1c962e5e4abafdb65406c}{cellnum\_}};\};}
+\DoxyCodeLine{00124\ \ \ \ \ \ \ \ \ \textcolor{keyword}{inline}\ std::vector<int>\ \mbox{\hyperlink{classpartition_a75a02c785e995ce904c308a0b4554d38}{get\_cellvec}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classpartition_ac298b91a3d7bfef35b128b48c58a260b}{cellvec\_}};\};}
+\DoxyCodeLine{00125\ }
+\DoxyCodeLine{00126\ }
+\DoxyCodeLine{00127\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ \ \ ===================================================================================================}}
+\DoxyCodeLine{00128\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ \ \ print-\/function}}
+\DoxyCodeLine{00129\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ \ \ ===================================================================================================}}
+\DoxyCodeLine{00130\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classpartition_a252ece38cc3e5d461375f2330820edc4}{print}}()\ \textcolor{keyword}{const}\ ;\ }
+\DoxyCodeLine{00131\ \ \ \ \ }
+\DoxyCodeLine{00132\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ \ \ ===================================================================================================}}
+\DoxyCodeLine{00133\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ \ \ finding\ cells\ corresponding\ to\ a\ coordinate}}
+\DoxyCodeLine{00134\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ \ \ ===================================================================================================}}
+\DoxyCodeLine{00139\ \textcolor{comment}{}\ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classpartition_a6214a8a511adddff505fdc0c6c46c96f}{find\_cell}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classtopology_1_1_vector2d}{topology::Vector2d}}\&\ r)\ \textcolor{keyword}{const}\ ;}
+\DoxyCodeLine{00141\ \ \ \ \ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classpartition_a515391400b1c41cbbf96e15d1d93009f}{find\_first}}(\textcolor{keywordtype}{int}\ index)\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classpartition_ad02cd6d63f434ff7043ce188f9784aed}{firsts\_}}[index];\};}
+\DoxyCodeLine{00142\ }
+\DoxyCodeLine{00143\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ \ \ ===================================================================================================}}
+\DoxyCodeLine{00144\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ \ \ finding\ adjacent\ cells}}
+\DoxyCodeLine{00145\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ \ \ ===================================================================================================}}
+\DoxyCodeLine{00154\ \textcolor{comment}{}\ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classpartition_a8928f60e124c54de74acc2f7e3f6fe28}{neighbor\_cell}}(\textcolor{keywordtype}{int}\ index,\ \textcolor{keywordtype}{int}\ lr,\ \textcolor{keywordtype}{int}\ du)\ \textcolor{keyword}{const}\ ;}
+\DoxyCodeLine{00155\ }
+\DoxyCodeLine{00167\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classpartition_a8928f60e124c54de74acc2f7e3f6fe28}{neighbor\_cell}}(\textcolor{keywordtype}{int}\ index,\ \textcolor{keywordtype}{int}\ lr,\ \textcolor{keywordtype}{int}\ du,\ \mbox{\hyperlink{classtopology_1_1_vector2d}{topology::Vector2d}}\&\ shift)\ \textcolor{keyword}{const}\ ;}
+\DoxyCodeLine{00174\ \ \ \ \ \ \ \ \ std::vector<int>\ \mbox{\hyperlink{classpartition_af4a0c9068fdb50d14fdf245820260af3}{nb\_cells\_all}}(\textcolor{keywordtype}{int}\ index,\ std::vector<topology::Vector2d>\&\ shifts)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00176\ \ \ \ \ \ \ \ \ std::vector<int>\ \mbox{\hyperlink{classpartition_af4a0c9068fdb50d14fdf245820260af3}{nb\_cells\_all}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classtopology_1_1_vector2d}{topology::Vector2d}}\&\ r,\ \textcolor{keywordtype}{double}\ cutoffsquared,\ std::vector<topology::Vector2d>\&\ shifts)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00178\ \ \ \ \ \ \ \ \ std::vector<int>\ \mbox{\hyperlink{classpartition_affbd8573230584e603d5468ee9af0f99}{nb\_cells\_ur}}(\textcolor{keywordtype}{int}\ index,\ std::vector<topology::Vector2d>\&\ shifts)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00180\ \ \ \ \ \ \ \ \ std::vector<int>\ \mbox{\hyperlink{classpartition_affbd8573230584e603d5468ee9af0f99}{nb\_cells\_ur}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classtopology_1_1_vector2d}{topology::Vector2d}}\&\ r,\ \textcolor{keywordtype}{double}\ cutoffsquared,\ std::vector<topology::Vector2d>\&\ shifts)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00181\ }
+\DoxyCodeLine{00182\ }
+\DoxyCodeLine{00184\ \ \ \ \ \ \ \ \ \textcolor{keyword}{inline}\ \mbox{\hyperlink{classtopology_1_1_vector2d}{topology::Vector2d}}\ \mbox{\hyperlink{classpartition_abdeae6d64e9fd2d897e1a8f12bba9004}{corner}}(\textcolor{keywordtype}{int}\ index,\ \textcolor{keywordtype}{int}\ lr,\ \textcolor{keywordtype}{int}\ ud)\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classtopology_1_1_vector2d}{topology::Vector2d}}(\mbox{\hyperlink{classpartition_aa7ef9ece73f06d5a016057f571a8072a}{cellwidth\_}}.\mbox{\hyperlink{classtopology_1_1_vector2d_ad601cbedb3fb038966d82c9a9fa0811a}{get\_x}}()\ *\ ((index\ \%\ \mbox{\hyperlink{classpartition_ac239d2426c0176e21713adcd96076f86}{M\_}}[0])+(\ 1\ +\ lr\ )/2),\ \mbox{\hyperlink{classpartition_aa7ef9ece73f06d5a016057f571a8072a}{cellwidth\_}}.\mbox{\hyperlink{classtopology_1_1_vector2d_af01fdaa040a15d7643f9088d9b3755a2}{get\_y}}()\ *\ (floor((\textcolor{keywordtype}{double})(index)/\mbox{\hyperlink{classpartition_ac239d2426c0176e21713adcd96076f86}{M\_}}[0])+(\ 1\ +\ ud\ )/2));\ \};}
+\DoxyCodeLine{00185\ }
+\DoxyCodeLine{00187\ \ \ \ \ \ \ \ \ std::vector<int>\ \mbox{\hyperlink{classpartition_a31ca932d9d0d564146b53222ecd5a028}{part\_in\_cell}}(\textcolor{keywordtype}{int}\ index)\ \textcolor{keyword}{const}\ ;}
+\DoxyCodeLine{00188\ }
+\DoxyCodeLine{00202\ \ \ \ \ \ \ \ \ std::vector<int>\ \mbox{\hyperlink{classpartition_a91e6d324b1ceba64a3230acb74488d3e}{nb\_in\_cell\_index}}(\textcolor{keywordtype}{int}\ index,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classtopology_1_1_vector2d}{topology::Vector2d}}\&\ r,\ \textcolor{keywordtype}{double}\ cutoffsquared,}
+\DoxyCodeLine{00203\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::vector<topology::Vector2d\ >\&\ positions,\ std::vector<double>\&\ distances,}
+\DoxyCodeLine{00204\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{classtopology_1_1_vector2d}{topology::Vector2d}}\ shift\ =\ 0)\ \textcolor{keyword}{const}\ ;}
+\DoxyCodeLine{00205\ }
+\DoxyCodeLine{00206\ \ \ \ \ \ \ \ \ std::vector<int>\ \mbox{\hyperlink{classpartition_ae483486f45d3f0b4af19de5c44ad3a67}{nb\_in\_cell\_index\_above}}(\textcolor{keywordtype}{int}\ index,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classtopology_1_1_vector2d}{topology::Vector2d}}\&\ r,\ \textcolor{keywordtype}{double}\ cutoffsquared,}
+\DoxyCodeLine{00207\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::vector<topology::Vector2d\ >\&\ positions,\ std::vector<double>\&\ distances,}
+\DoxyCodeLine{00208\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{classtopology_1_1_vector2d}{topology::Vector2d}}\ shift\ =\ 0)\ \textcolor{keyword}{const}\ ;\ }
+\DoxyCodeLine{00209\ }
+\DoxyCodeLine{00210\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ \ \ ===================================================================================================}}
+\DoxyCodeLine{00211\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ \ \ Cluster\ analysis\ functions\ (haven't\ been\ used\ in\ a\ while,)}}
+\DoxyCodeLine{00212\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ \ \ ===================================================================================================}}
+\DoxyCodeLine{00226\ \textcolor{comment}{}\ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classpartition_adc5cb780680e20f628f528e24c2a68c5}{cluster\_analysis}}(std::vector<int>\&\ cluster\_sizes,\ std::vector<int>\&\ cluster\_NoP,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\&\ rho\_min)\ \textcolor{keyword}{const}\ ;}
+\DoxyCodeLine{00228\ }
+\DoxyCodeLine{00238\ \ \ \ \ \ \ \ \ std::vector<int>\ \mbox{\hyperlink{classpartition_a940c5c9c9273ae4e36973b723a5c049d}{cluster\_recursion}}(\textcolor{keywordtype}{int}\ current\_index,\ std::vector<int>\ indices,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\&\ rho\_min)\ \textcolor{keyword}{const}\ ;}
+\DoxyCodeLine{00240\ }
+\DoxyCodeLine{00241\ \ \ \ \ \ \ \ \ \textcolor{comment}{//==================================================================================================================================}}
+\DoxyCodeLine{00242\ }
+\DoxyCodeLine{00243\ }
+\DoxyCodeLine{00244\ \}\ ;}
+\DoxyCodeLine{00245\ }
+\DoxyCodeLine{00246\ }
+\DoxyCodeLine{00247\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

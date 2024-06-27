@@ -1,0 +1,95 @@
+\chapter{Mol\+Dy\+PoP Main page}
+\hypertarget{index}{}\label{index}\index{MolDyPoP Main page@{MolDyPoP Main page}}
+\hypertarget{index_intro_sec}{}\doxysection{\texorpdfstring{Introduction}{Introduction}}\label{index_intro_sec}
+Welcome to Mol\+Dy\+PoP, the simulation environment for Molecular Dynamics for Polar Particles. You will find a full documentation of the Mol\+Dy\+PoP package on these pages. Additionally, there is a quick tutorial on how to set yourself up for a simulation run.
+
+If you truly wish to understand the code, you will have to be able to dig a little bit. The core Mol\+Dy\+PoP package is written in C++ and this documentation provides you with an exhaustive explanation of what the individual C++ files are meant to do, and how the classes and namespaces work.
+
+However, calls to Mol\+Dy\+PoP typically happen via the console and you will need to submit Mol\+Dy\+PoP calculations to the SCC cluster, which in itself is not part of the C++ routine and requires knowledge of some shell coding. Some basic scripts that may be of value to you have been compiled here -\/ to properly understand them requires an understanding of the bash-\/shell.
+
+Finally, the results produced in Mol\+Dy\+PoP runs are MATLAB-\/executable files. The MATLAB-\/scripts I used in data analysis are therefore also provided here.
+
+Note that neither the bash nor the MATLAB scripts are fully commented for use, the commenting effort has been focused on giving a proper explanation of the workings of Mol\+Dy\+PoP. I will give quick explanations of what the other scripts do, and with some digging in bash and experimenting with MATLAB syntax you should be able to understand those scripts fairly quickly.\hypertarget{index_struct_sec}{}\doxysection{\texorpdfstring{Structure}{Structure}}\label{index_struct_sec}
+You will find four folders in this implementation.
+
+
+\begin{DoxyEnumerate}
+\item A folder \"{}\+Mol\+Dy\+Po\+P\"{}. Contains the Mol\+Dy\+PoP C++ code and its documentation.
+\item A folder \"{}bin\"{}. Contains binary files and shell scripts that may be useful.
+\item A folder \"{}\+Example\"{}. This folder contains a fully set up calculation that can be executed to obtain results (see below). It contains some useful scripts.
+\item A folder \"{}\+Matlab\+Scripts\"{}. Contains various MATLAB scritps, some of which will be explained below. The others may be of interest. A selection of relevant MATLAB scripts is contained in the Folder Example/\+Matlab \hypertarget{index_multi_row}{}
+\tabulinesep=1mm
+\begin{longtabu}spread 0pt [c]{*{2}{|X[-1]}|}
+\caption{Folders}\label{index_multi_row}\\
+\hline
+\cellcolor{\tableheadbgcolor}\textbf{ Folder name }&\cellcolor{\tableheadbgcolor}\textbf{ Content }\\\cline{1-2}
+\endfirsthead
+\hline
+\endfoot
+\hline
+\cellcolor{\tableheadbgcolor}\textbf{ Folder name }&\cellcolor{\tableheadbgcolor}\textbf{ Content }\\\cline{1-2}
+\endhead
+Mol\+Dy\+PoP &Contains the Mol\+Dy\+PoP C++ code and its documentation. \\\cline{1-2}
+bin &Contains binary files and shell scripts that may be useful. \\\cline{1-2}
+Example &Contains a fully set up calculation that can be executed to obtain results (see below). It contains some useful scripts. \\\cline{1-2}
+Matlab\+Scripts &Contains various MATLAB scritps, some of which will be explained below. The others may be of interest. A selection of relevant MATLAB scripts is contained in the Folder Example/\+Matlab \\\cline{1-2}
+\end{longtabu}
+
+\end{DoxyEnumerate}\hypertarget{index_Example}{}\doxysection{\texorpdfstring{The Example Code}{The Example Code}}\label{index_Example}
+Here\textquotesingle{}s a quick guide on how to get started with the example code.
+
+
+\begin{DoxyEnumerate}
+\item Go to the folder Example. There are five subfolders\+: \hypertarget{index_multi_row}{}
+\tabulinesep=1mm
+\begin{longtabu}spread 0pt [c]{*{2}{|X[-1]}|}
+\caption{Folders}\label{index_multi_row}\\
+\hline
+\cellcolor{\tableheadbgcolor}\textbf{ Folder name }&\cellcolor{\tableheadbgcolor}\textbf{ Content }\\\cline{1-2}
+\endfirsthead
+\hline
+\endfoot
+\hline
+\cellcolor{\tableheadbgcolor}\textbf{ Folder name }&\cellcolor{\tableheadbgcolor}\textbf{ Content }\\\cline{1-2}
+\endhead
+bin &Contains scripts and executables and further data required for running simulations \\\cline{1-2}
+Matlab &Contains Matlab scripts required for simulation and simulation analysis \\\cline{1-2}
+logs &Stores log files \\\cline{1-2}
+scratchdir &Will contain all scratch files \\\cline{1-2}
+eq\+\_\+data &Will store data for equilibration \\\cline{1-2}
+integ\+\_\+data &Will store data for integration simulation runs \\\cline{1-2}
+\end{longtabu}
+All folders except for bin and Matlab should be empty at this point.
+\item Go to the bin-\/\+Folder. Relevant files here\+: \hypertarget{index_multi_row}{}
+\tabulinesep=1mm
+\begin{longtabu}spread 0pt [c]{*{2}{|X[-1]}|}
+\caption{Folders}\label{index_multi_row}\\
+\hline
+\cellcolor{\tableheadbgcolor}\textbf{ Folder name }&\cellcolor{\tableheadbgcolor}\textbf{ Content }\\\cline{1-2}
+\endfirsthead
+\hline
+\endfoot
+\hline
+\cellcolor{\tableheadbgcolor}\textbf{ Folder name }&\cellcolor{\tableheadbgcolor}\textbf{ Content }\\\cline{1-2}
+\endhead
+Mol\+Dy\+PoP &Mol\+Dy\+PoP executable \\\cline{1-2}
+job\+\_\+loop.\+sh &This file does most of the work with the folder architecture. \\\cline{1-2}
+submitscript\+\_\+runs &Will be submitted to the scc-\/\+Cluster, manages everything that happens on the cluster. \\\cline{1-2}
+basic\+\_\+\texorpdfstring{$\ast$}{*} &Files that form the basis for calculation inputs. They are used by job\+\_\+loop.\+sh and submitscript\+\_\+runs. \\\cline{1-2}
+\end{longtabu}
+Both job\+\_\+loop.\+sh and submitscript\+\_\+runs are written in bash.
+\item Browse through job\+\_\+loop.\+sh to understand how it works. Adjust the variables for the folder architecture in job\+\_\+loop.\+sh. Do the same for submitsript\+\_\+runs (the script is a bit more complicated and less commented. Make sure you understand where files go. You also should carefully read and adjust the first few commented lines -- a line starting with \#\$ will be read in SCC. These first lines determine where the output and error files for the calculations go).
+\item Run \"{}./job\+\_\+loop.\+sh create eq mxy\"{}. This will create a folder structure and input files in the eq\+\_\+data folder. It will create files for different system sizes and different temperature values for the mxy model.
+\item Run \"{}./job\+\_\+loop.\+sh submit eq mxy\"{}. This submits jobs to the scc-\/cluster. Now, the scc will calculate equilibrated data. (The maximum system size is set to N = (64)\texorpdfstring{$^\wedge$}{\string^}2 = 4048 particles -- this may be a bit large, computations will take rather long. If you want smaller system sizes or faster calculations, you can play around with the parameters in job\+\_\+loop.\+sh). Attention\+: From experiene, some of the jobs will not be executed correctly (I claim it\textquotesingle{}s the scc, but I might be biased). If a job did not terminate successfully, you can either resubmit with the command \"{}./job\+\_\+loop.\+sh submit eq mxy\"{}. This will restart calculations that have not been properly started, will not start calculations in folders where there are still calculations running -\/ however if a job ends abruptly (without a possibility of cleaning up), there is no failsafe for that. You can also directly resubmit jobs by using \"{}./job\+\_\+loop.\+sh submit\+\_\+individual eq mxy\"{}. This may however temper with currently running scripts. If only singular files did not work properly, you can also consider running them on your local machine by using \"{}./job\+\_\+loop.\+sh run\+\_\+local eq mxy\"{}.
+\item Now, after some time you should have fully equilibrated data. Then, you can call \"{}./job\+\_\+loop.\+sh create integ mxy\"{}. This will create a folder structure and input files in the integ\+\_\+data folder. It will create files for different system sizes and different temperature values for the mxy model.
+\item Finally, a call of \"{}./job\+\_\+loop.\+sh submit integ mxy\"{} is in order. This will submit the sampling runs to the cluster. These generate data. Again, you may need to use the tips above if not all calculations run properly.
+\item You can now call \"{}./job\+\_\+loop.\+sh matlab integ mxy\"{} and \"{}./job\+\_\+loop.\+sh matlab eq mxy\"{} in order to run matlab scripts that extract and collect data. These will for example be stored in files such as \"{}integ\+\_\+data/sqrt\+N\+\_\+16/\+T\+\_\+.\+13/samp\+\_\+integ.\+mat\"{}.
+\item If all data is created correctly, you can now use two simple plot scripts by going to the folder \"{}\+Matlab/\+Plots\"{}. There, the magnetization can be plotted in \"{}\+Plot\+\_\+\+Magnetization.\+m\"{} and in \"{}\+Plot\+\_\+\+TCF.\+m\"{}
+\end{DoxyEnumerate}\hypertarget{index_Further}{}\doxysection{\texorpdfstring{Further Introduction}{Further Introduction}}\label{index_Further}
+You can now play around with the example code. It is not optimized to run fast, it does not feature anything but the MXY model.
+
+Also, you can check more of the data sets created.
+
+To understand what you are actually doing, I recommend starting by looking at job\+\_\+loop.\+sh. Then you can check the inner workings of submitscript\+\_\+runs. You may also be interested in understanding more about the meaning of specific input values. Short summaries may be found at the bottom of basic\+\_\+infile.\+in, but a better overview can be found in this Mol\+Dy\+PoP documentation in the documentation of the class definition of parameters in \doxylink{parameters_8h}{parameters.\+h}. To understand the output values, look at the documentation in \doxylink{sampler_8h}{sampler.\+h}. Finally, to understand more about the MATLAB code, you may want to look at the MATLAB code created in submitscript\+\_\+runs and the files related to it.
+
+Enjoy your time. 

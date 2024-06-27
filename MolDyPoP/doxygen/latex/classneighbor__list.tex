@@ -1,0 +1,165 @@
+\doxysection{neighbor\+\_\+list Class Reference}
+\hypertarget{classneighbor__list}{}\label{classneighbor__list}\index{neighbor\_list@{neighbor\_list}}
+
+
+Defines the \doxylink{classneighbor__list}{neighbor\+\_\+list} class. Can be used to extract all information about neighborhood in a group, that is the neighbor pairs and all the distances. Neighbors are those other particles within the cutoff radius or the nearest neighbors in case of a lattice system.  
+
+
+
+
+{\ttfamily \#include $<$neighbor\+\_\+list.\+h$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classneighbor__list_ae902abb210c883750e24590f1c5a019c}{neighbor\+\_\+list}} ()
+\begin{DoxyCompactList}\small\item\em Empty constructor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classneighbor__list_a15d90b9e496d5665c620e95270246f76}{neighbor\+\_\+list}} (const \mbox{\hyperlink{classgroup}{group}} \&G)
+\begin{DoxyCompactList}\small\item\em Standard constructor. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classneighbor__list_af915217bb801a89e63363872b6c61b15}{clear}} ()
+\begin{DoxyCompactList}\small\item\em Clears the \doxylink{classneighbor__list}{neighbor\+\_\+list}. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classneighbor__list_a8d738fdb92710a94cc3ed94a0761cc0a}{is\+\_\+empty}} () const
+\begin{DoxyCompactList}\small\item\em Returns whether or not the \doxylink{classneighbor__list}{neighbor\+\_\+list} is empty. \end{DoxyCompactList}\item 
+std\+::vector$<$ int $>$ \mbox{\hyperlink{classneighbor__list_a4d4986ed53992256e57701973b7f6c48}{get\+\_\+neighbors}} (int i) const
+\begin{DoxyCompactList}\small\item\em Returns all neighbors of particle i (elements of nb\+\_\+indices\+\_\+) \end{DoxyCompactList}\item 
+std\+::vector$<$ double $>$ \mbox{\hyperlink{classneighbor__list_ad2124b4d6c2cf8945b3812896b14d281}{get\+\_\+dist}} (int i) const
+\begin{DoxyCompactList}\small\item\em Returns all distances between neighbors and particle i (elements of nb\+\_\+dist\+\_\+) \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{classneighbor__list_ab9f9724ed5f237163fd062fd9e1bef0d}{N\+\_\+}} = 0
+\begin{DoxyCompactList}\small\item\em Number of particles. \end{DoxyCompactList}\item 
+std\+::vector$<$ int $>$ \mbox{\hyperlink{classneighbor__list_a88363a6730f0e2241706684573cd75a1}{nb\+\_\+indices\+\_\+}}
+\begin{DoxyCompactList}\small\item\em Indices of neighbors. Only efficient for systems with fixed neighbors. \end{DoxyCompactList}\item 
+std\+::vector$<$ int $>$ \mbox{\hyperlink{classneighbor__list_ad73b18224596502ae67500831997e162}{nb\+\_\+first\+\_\+}}
+\begin{DoxyCompactList}\small\item\em Index of first neighbor of each particle. Helpful when accessing nb\+\_\+indices. \end{DoxyCompactList}\item 
+std\+::vector$<$ double $>$ \mbox{\hyperlink{classneighbor__list_a95a5d21cb26c0d3755af391e57e03e72}{nb\+\_\+dist\+\_\+}}
+\begin{DoxyCompactList}\small\item\em Distances to neighbors. Only efficient for systems with fixed neighbors. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Defines the \doxylink{classneighbor__list}{neighbor\+\_\+list} class. Can be used to extract all information about neighborhood in a group, that is the neighbor pairs and all the distances. Neighbors are those other particles within the cutoff radius or the nearest neighbors in case of a lattice system. 
+
+\begin{DoxyAuthor}{Author}
+Thomas Bissinger 
+\end{DoxyAuthor}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classneighbor__list_ae902abb210c883750e24590f1c5a019c}\label{classneighbor__list_ae902abb210c883750e24590f1c5a019c} 
+\index{neighbor\_list@{neighbor\_list}!neighbor\_list@{neighbor\_list}}
+\index{neighbor\_list@{neighbor\_list}!neighbor\_list@{neighbor\_list}}
+\doxysubsubsection{\texorpdfstring{neighbor\_list()}{neighbor\_list()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily neighbor\+\_\+list\+::neighbor\+\_\+list (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Empty constructor. 
+
+\Hypertarget{classneighbor__list_a15d90b9e496d5665c620e95270246f76}\label{classneighbor__list_a15d90b9e496d5665c620e95270246f76} 
+\index{neighbor\_list@{neighbor\_list}!neighbor\_list@{neighbor\_list}}
+\index{neighbor\_list@{neighbor\_list}!neighbor\_list@{neighbor\_list}}
+\doxysubsubsection{\texorpdfstring{neighbor\_list()}{neighbor\_list()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily neighbor\+\_\+list\+::neighbor\+\_\+list (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classgroup}{group}} \&}]{G }\end{DoxyParamCaption})}
+
+
+
+Standard constructor. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em group} & the group based on which the \doxylink{classneighbor__list}{neighbor\+\_\+list} has to be intialized. WARNING\+: Off-\/lattice systems need a full partition. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classneighbor__list_af915217bb801a89e63363872b6c61b15}\label{classneighbor__list_af915217bb801a89e63363872b6c61b15} 
+\index{neighbor\_list@{neighbor\_list}!clear@{clear}}
+\index{clear@{clear}!neighbor\_list@{neighbor\_list}}
+\doxysubsubsection{\texorpdfstring{clear()}{clear()}}
+{\footnotesize\ttfamily void neighbor\+\_\+list\+::clear (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Clears the \doxylink{classneighbor__list}{neighbor\+\_\+list}. 
+
+\Hypertarget{classneighbor__list_ad2124b4d6c2cf8945b3812896b14d281}\label{classneighbor__list_ad2124b4d6c2cf8945b3812896b14d281} 
+\index{neighbor\_list@{neighbor\_list}!get\_dist@{get\_dist}}
+\index{get\_dist@{get\_dist}!neighbor\_list@{neighbor\_list}}
+\doxysubsubsection{\texorpdfstring{get\_dist()}{get\_dist()}}
+{\footnotesize\ttfamily std\+::vector$<$ double $>$ neighbor\+\_\+list\+::get\+\_\+dist (\begin{DoxyParamCaption}\item[{int}]{i }\end{DoxyParamCaption}) const}
+
+
+
+Returns all distances between neighbors and particle i (elements of nb\+\_\+dist\+\_\+) 
+
+\Hypertarget{classneighbor__list_a4d4986ed53992256e57701973b7f6c48}\label{classneighbor__list_a4d4986ed53992256e57701973b7f6c48} 
+\index{neighbor\_list@{neighbor\_list}!get\_neighbors@{get\_neighbors}}
+\index{get\_neighbors@{get\_neighbors}!neighbor\_list@{neighbor\_list}}
+\doxysubsubsection{\texorpdfstring{get\_neighbors()}{get\_neighbors()}}
+{\footnotesize\ttfamily std\+::vector$<$ int $>$ neighbor\+\_\+list\+::get\+\_\+neighbors (\begin{DoxyParamCaption}\item[{int}]{i }\end{DoxyParamCaption}) const}
+
+
+
+Returns all neighbors of particle i (elements of nb\+\_\+indices\+\_\+) 
+
+\Hypertarget{classneighbor__list_a8d738fdb92710a94cc3ed94a0761cc0a}\label{classneighbor__list_a8d738fdb92710a94cc3ed94a0761cc0a} 
+\index{neighbor\_list@{neighbor\_list}!is\_empty@{is\_empty}}
+\index{is\_empty@{is\_empty}!neighbor\_list@{neighbor\_list}}
+\doxysubsubsection{\texorpdfstring{is\_empty()}{is\_empty()}}
+{\footnotesize\ttfamily bool neighbor\+\_\+list\+::is\+\_\+empty (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Returns whether or not the \doxylink{classneighbor__list}{neighbor\+\_\+list} is empty. 
+
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{classneighbor__list_ab9f9724ed5f237163fd062fd9e1bef0d}\label{classneighbor__list_ab9f9724ed5f237163fd062fd9e1bef0d} 
+\index{neighbor\_list@{neighbor\_list}!N\_@{N\_}}
+\index{N\_@{N\_}!neighbor\_list@{neighbor\_list}}
+\doxysubsubsection{\texorpdfstring{N\_}{N\_}}
+{\footnotesize\ttfamily int neighbor\+\_\+list\+::\+N\+\_\+ = 0\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Number of particles. 
+
+\Hypertarget{classneighbor__list_a95a5d21cb26c0d3755af391e57e03e72}\label{classneighbor__list_a95a5d21cb26c0d3755af391e57e03e72} 
+\index{neighbor\_list@{neighbor\_list}!nb\_dist\_@{nb\_dist\_}}
+\index{nb\_dist\_@{nb\_dist\_}!neighbor\_list@{neighbor\_list}}
+\doxysubsubsection{\texorpdfstring{nb\_dist\_}{nb\_dist\_}}
+{\footnotesize\ttfamily std\+::vector$<$double$>$ neighbor\+\_\+list\+::nb\+\_\+dist\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Distances to neighbors. Only efficient for systems with fixed neighbors. 
+
+\Hypertarget{classneighbor__list_ad73b18224596502ae67500831997e162}\label{classneighbor__list_ad73b18224596502ae67500831997e162} 
+\index{neighbor\_list@{neighbor\_list}!nb\_first\_@{nb\_first\_}}
+\index{nb\_first\_@{nb\_first\_}!neighbor\_list@{neighbor\_list}}
+\doxysubsubsection{\texorpdfstring{nb\_first\_}{nb\_first\_}}
+{\footnotesize\ttfamily std\+::vector$<$int$>$ neighbor\+\_\+list\+::nb\+\_\+first\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Index of first neighbor of each particle. Helpful when accessing nb\+\_\+indices. 
+
+\Hypertarget{classneighbor__list_a88363a6730f0e2241706684573cd75a1}\label{classneighbor__list_a88363a6730f0e2241706684573cd75a1} 
+\index{neighbor\_list@{neighbor\_list}!nb\_indices\_@{nb\_indices\_}}
+\index{nb\_indices\_@{nb\_indices\_}!neighbor\_list@{neighbor\_list}}
+\doxysubsubsection{\texorpdfstring{nb\_indices\_}{nb\_indices\_}}
+{\footnotesize\ttfamily std\+::vector$<$int$>$ neighbor\+\_\+list\+::nb\+\_\+indices\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Indices of neighbors. Only efficient for systems with fixed neighbors. 
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{neighbor__list_8h}{neighbor\+\_\+list.\+h}}\item 
+\mbox{\hyperlink{neighbor__list_8cpp}{neighbor\+\_\+list.\+cpp}}\end{DoxyCompactItemize}

@@ -1,0 +1,2100 @@
+\doxysection{parameters Class Reference}
+\hypertarget{classparameters}{}\label{classparameters}\index{parameters@{parameters}}
+
+
+Contains the run parameters of a simulation.  
+
+
+
+
+{\ttfamily \#include $<$parameters.\+h$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classparameters_a2e2af680388704e90c6c0ceb0edc6cd5}{parameters}} ()
+\begin{DoxyCompactList}\small\item\em Empty constructor. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classparameters_a2c4c191fcd8040c9c881b4a4e1d91a56}{read\+\_\+from\+\_\+file}} (std\+::ifstream \&infile)
+\begin{DoxyCompactList}\small\item\em Reads parameters from an infile. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classparameters_a0b4ec8e07bf864f3bea46440436617d0}{correct\+\_\+values}} (std\+::ofstream \&stdoutfile)
+\begin{DoxyCompactList}\small\item\em Corrects potentially wrong input. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classparameters_a1dc2565b66c0491d26cc7942b79da77a}{initialize\+\_\+bins}} ()
+\begin{DoxyCompactList}\small\item\em Initializes both bins. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classparameters_aea5b9ff5d340c3cf008a7545a7622e80}{initialize\+\_\+qbin}} ()
+\begin{DoxyCompactList}\small\item\em Initializes the qbin. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classparameters_ab7511f9db963519240c57458fdfb56b4}{initialize\+\_\+rbin}} (int \mbox{\hyperlink{classparameters_a7708ee3b34492e3e0a3f34cb80a75383}{N\+\_\+rbin}})
+\begin{DoxyCompactList}\small\item\em Initializes the rbin. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classparameters_a040053c54e66523f551cdae236aef817}{scale\+\_\+tau}} (double scale\+\_\+factor)
+\begin{DoxyCompactList}\small\item\em tau\+\_\+berendsen can be scaled with this. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classparameters_ae4cfc32b2c108e118c57476908466761}{system}} () const
+\item 
+std\+::string \mbox{\hyperlink{classparameters_a2be3d4d2c3182187a92c1e87808d3a74}{mode}} () const
+\begin{DoxyCompactList}\small\item\em Returns system\+\_\+. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classparameters_a7ddbbfabbb02e7578ff98aaef927b9a5}{job\+\_\+id}} () const
+\begin{DoxyCompactList}\small\item\em Returns mode\+\_\+. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classparameters_aed79daf3ec11597698ee76567cc7c0ce}{outfilename}} () const
+\begin{DoxyCompactList}\small\item\em Returns job\+\_\+id\+\_\+. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classparameters_ad42387778390a6d70f0f41eabfa2e599}{N}} () const
+\begin{DoxyCompactList}\small\item\em Returns outfilename\+\_\+. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classparameters_a66f1255b9cf26121ea0f4e14d164a283}{sqrtN}} () const
+\begin{DoxyCompactList}\small\item\em Returns N\+\_\+. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{classparameters_a86122bf090f8417a9f6d08d996f59595}{dof}} () const
+\begin{DoxyCompactList}\small\item\em Returns sqrt\+N\+\_\+. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{classparameters_a83f176658e11c693f9f051cad0936f10}{L}} () const
+\begin{DoxyCompactList}\small\item\em Returns dof\+\_\+. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{classparameters_a7c11dc73666401bb81f063682294e983}{dt}} () const
+\begin{DoxyCompactList}\small\item\em Returns L\+\_\+. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{classparameters_a830521cd863f0e63040d3f9c8e5b57c2}{Tmax}} () const
+\begin{DoxyCompactList}\small\item\em Returns dt\+\_\+. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{classparameters_a01746cd7f66bec6e404fb668843d6df5}{samplestart}} () const
+\begin{DoxyCompactList}\small\item\em Returns Tmax\+\_\+. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{classparameters_aee63eea9daab44a05841bc3e9c2a6217}{samplestep}} () const
+\begin{DoxyCompactList}\small\item\em Returns samplestart\+\_\+. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{classparameters_a9521e27487f0804b6123c302b51a1dac}{av\+\_\+time\+\_\+spacing}} () const
+\begin{DoxyCompactList}\small\item\em Returns samplestep\+\_\+. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classparameters_a602971413cfd02c1334dac6211f06fa1}{Nsamp}} () const
+\begin{DoxyCompactList}\small\item\em Returns av\+\_\+time\+\_\+spacing\+\_\+. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classparameters_a439205c1edbc7e9204bc0d9b996e55b4}{randomseed}} () const
+\begin{DoxyCompactList}\small\item\em Returns Nsamp\+\_\+. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{classparameters_abd1cd055e7bb235bf8041fc8b13cd55a}{kT}} () const
+\begin{DoxyCompactList}\small\item\em Returns randomseed\+\_\+. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{classparameters_a06ba8837aa76fa9370b6316854527a98}{I}} () const
+\begin{DoxyCompactList}\small\item\em Returns k\+T\+\_\+. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{classparameters_af26d78c09f39a5b52d1ef12e59e856ed}{m}} () const
+\begin{DoxyCompactList}\small\item\em Returns I\+\_\+. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{classparameters_a7a1537a5bf32922775de1e63f478ee51}{J}} () const
+\begin{DoxyCompactList}\small\item\em Returns m\+\_\+. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{classparameters_a389f75e6ab3f71c9453385147f555893}{U}} () const
+\begin{DoxyCompactList}\small\item\em Returns J\+\_\+. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{classparameters_ac9605d796f7d24d28ba9e4cb6b964204}{cutoff}} () const
+\begin{DoxyCompactList}\small\item\em Returns U\+\_\+. \end{DoxyCompactList}\item 
+char \mbox{\hyperlink{classparameters_a8941157a7b79550000fddd88b774214f}{lattice\+\_\+type}} () const
+\begin{DoxyCompactList}\small\item\em Returns cutoff\+\_\+. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{classparameters_a5c88007b39ab8c7adb5b2033ea6425df}{activity}} () const
+\begin{DoxyCompactList}\small\item\em Returns lattice\+\_\+type\+\_\+. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{classparameters_a7a3b2dd5a57b7987a02dda707f807978}{vm\+\_\+v}} () const
+\begin{DoxyCompactList}\small\item\em Returns activity\+\_\+. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{classparameters_ae619d13e99dda3ca14406adb89d090a9}{vm\+\_\+eta}} () const
+\begin{DoxyCompactList}\small\item\em Returns vm\+\_\+v\+\_\+. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classparameters_a0386734816e4b1b3f1730be3b55a0c7d}{init\+\_\+mode}} () const
+\begin{DoxyCompactList}\small\item\em Returns vm\+\_\+eta\+\_\+. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classparameters_a151d73faa46f13beeb3f2bd41ccefb2a}{init\+\_\+file}} () const
+\begin{DoxyCompactList}\small\item\em Returns init\+\_\+mode\+\_\+. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{classparameters_aac7e14960ab24ed16836dc7fc52ac71d}{init\+\_\+kT}} () const
+\begin{DoxyCompactList}\small\item\em Returns init\+\_\+file\+\_\+. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{classparameters_a7ca9f2f3d3c207e32fc5df5b89f68c00}{init\+\_\+random\+\_\+displacement}} () const
+\begin{DoxyCompactList}\small\item\em Returns init\+\_\+k\+T\+\_\+. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{classparameters_ab80173bb9d56185ee6ba447827065e6b}{init\+\_\+random\+\_\+angle}} () const
+\begin{DoxyCompactList}\small\item\em Returns init\+\_\+random\+\_\+displacement\+\_\+. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classparameters_acfae2be7e92aae0bdbf86f610d9e045f}{eq\+\_\+mode}} () const
+\begin{DoxyCompactList}\small\item\em Returns init\+\_\+random\+\_\+angle\+\_\+. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classparameters_a5b306478afa6ae59f16cada930a63360}{eq\+\_\+integrator\+\_\+type}} () const
+\begin{DoxyCompactList}\small\item\em Returns eq\+\_\+mode\+\_\+. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{classparameters_a46a524e5fb6dd2883d895b87c5bc9184}{eq\+\_\+\+Tmax}} () const
+\begin{DoxyCompactList}\small\item\em Returns eq\+\_\+integrator\+\_\+type\+\_\+. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classparameters_a4fbca332e13db323aca09f6ac0b2621f}{eq\+\_\+breakcond}} () const
+\begin{DoxyCompactList}\small\item\em Returns eq\+\_\+\+Tmax\+\_\+. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{classparameters_a60c0b9fca0ba9167066f6e25d468bdc3}{eq\+\_\+agreement\+\_\+threshold}} () const
+\begin{DoxyCompactList}\small\item\em Returns eq\+\_\+breakcond\+\_\+. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{classparameters_a7a30f62bb674783dfde0d013b6740b45}{eq\+\_\+av\+\_\+time}} () const
+\begin{DoxyCompactList}\small\item\em Returns eq\+\_\+agreement\+\_\+threshold\+\_\+. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{classparameters_ad7a8ac042321c9453e91a20a7185f2d6}{tau\+\_\+berendsen}} () const
+\begin{DoxyCompactList}\small\item\em Returns eq\+\_\+av\+\_\+time\+\_\+. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{classparameters_a44e705dcc8d11fd447e14fd278e8a4a1}{eq\+\_\+anneal\+\_\+rate}} () const
+\begin{DoxyCompactList}\small\item\em Returns tau\+\_\+berendsen\+\_\+. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{classparameters_ac84600076bd2940d511a61f5e657247b}{eq\+\_\+anneal\+\_\+step}} () const
+\begin{DoxyCompactList}\small\item\em Returns eq\+\_\+anneal\+\_\+rate\+\_\+. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{classparameters_a3f2803b10eea23ebe70e778dc9e69fb4}{eq\+\_\+\+Tprintstep}} () const
+\begin{DoxyCompactList}\small\item\em Returns eq\+\_\+anneal\+\_\+step\+\_\+. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{classparameters_a9da25a839142a9c37a739a884d9c580c}{eq\+\_\+brownian\+\_\+k\+T\+\_\+p}} () const
+\begin{DoxyCompactList}\small\item\em Returns eq\+\_\+\+Tprintstep\+\_\+. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{classparameters_ad78328fcdfeb01e30911d37ba4aee66f}{eq\+\_\+brownian\+\_\+timestep}} () const
+\begin{DoxyCompactList}\small\item\em Returns eq\+\_\+brownian\+\_\+k\+T\+\_\+p\+\_\+. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{classparameters_a1448e965386febd780b20da8ab7b93fb}{eq\+\_\+brownian\+\_\+k\+T\+\_\+omega}} () const
+\begin{DoxyCompactList}\small\item\em Returns eq\+\_\+brownian\+\_\+timestep\+\_\+. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classparameters_a9006bb55370d5ab4823408c4910df979}{eq\+\_\+sampswitch}} () const
+\begin{DoxyCompactList}\small\item\em Returns eq\+\_\+brownian\+\_\+k\+T\+\_\+omega\+\_\+. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classparameters_aaccfc303992479c3a7c14eec892ddfaf}{eq\+\_\+\+Nsamp}} () const
+\begin{DoxyCompactList}\small\item\em Returns eq\+\_\+sampswitch\+\_\+. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classparameters_a3326f4c3f8c706bc6aa760fd2c9ef8d1}{eq\+\_\+samp\+\_\+time\+\_\+sequence}} () const
+\begin{DoxyCompactList}\small\item\em Returns eq\+\_\+\+Nsamp\+\_\+. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classparameters_acc0065c00e661c7e0f8a67e7289fd14d}{sample\+\_\+integrator\+\_\+type}} () const
+\begin{DoxyCompactList}\small\item\em Returns eq\+\_\+samp\+\_\+time\+\_\+sequence\+\_\+. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classparameters_a26abd536aeab54e09a6aed66b8861035}{ensemble}} () const
+\begin{DoxyCompactList}\small\item\em Returns sample\+\_\+integrator\+\_\+type\+\_\+. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{classparameters_a73cc866982356245040912ed5d3027c3}{nhnp\+\_\+pi}} () const
+\begin{DoxyCompactList}\small\item\em Returns ensemble\+\_\+. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{classparameters_ab08fa669c250813555bb312b1c147edb}{nhnp\+\_\+Q}} () const
+\begin{DoxyCompactList}\small\item\em Returns nhnp\+\_\+pi\+\_\+. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{classparameters_a430a569355e127371af2feb12794ed25}{nhnp\+\_\+tau}} () const
+\begin{DoxyCompactList}\small\item\em Returns nhnp\+\_\+\+Q\+\_\+. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{classparameters_a914d802bb85d8999dbcbb3b7d7be1c3d}{nh\+\_\+eta}} () const
+\begin{DoxyCompactList}\small\item\em Returns nhnp\+\_\+tau\+\_\+. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{classparameters_aea6ff06e600ec899e0c0aac2d250554d}{np\+\_\+s}} () const
+\begin{DoxyCompactList}\small\item\em Returns nh\+\_\+eta\+\_\+. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{classparameters_a85602fc18e5754228c3bf45dfe637a68}{mc\+\_\+steplength\+\_\+theta}} () const
+\begin{DoxyCompactList}\small\item\em Returns np\+\_\+s\+\_\+. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{classparameters_a6e6705401db3880e8243b127dd1f2bbb}{brownian\+\_\+k\+T\+\_\+omega}} () const
+\begin{DoxyCompactList}\small\item\em Returns mc\+\_\+steplength\+\_\+theta\+\_\+. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{classparameters_ae2e3537bca456e9ff5d2e3952eba3d78}{brownian\+\_\+k\+T\+\_\+p}} () const
+\begin{DoxyCompactList}\small\item\em Returns brownian\+\_\+k\+T\+\_\+omega\+\_\+. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{classparameters_a3e49cf980993dccb7c418660ef2efc43}{brownian\+\_\+timestep}} () const
+\begin{DoxyCompactList}\small\item\em Returns brownian\+\_\+k\+T\+\_\+p\+\_\+. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{classparameters_a99da558dd955f5c41641718c87dbac11}{gamma\+\_\+ld\+\_\+om}} () const
+\begin{DoxyCompactList}\small\item\em Returns brownian\+\_\+timestep\+\_\+. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{classparameters_ad681cf25537eea7818ffe8826e7701c9}{gamma\+\_\+ld\+\_\+p}} () const
+\begin{DoxyCompactList}\small\item\em Returns gamma\+\_\+ld\+\_\+om\+\_\+. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{classparameters_ac6fd0083259d5053afea24290e9ed095}{mc\+\_\+steplength\+\_\+r}} () const
+\begin{DoxyCompactList}\small\item\em Returns gamma\+\_\+ld\+\_\+p\+\_\+. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classparameters_a15d1cfad43e7f45268daef2216533e27}{sampling\+\_\+time\+\_\+sequence}} () const
+\begin{DoxyCompactList}\small\item\em Returns mc\+\_\+steplength\+\_\+r\+\_\+. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classparameters_a7708ee3b34492e3e0a3f34cb80a75383}{N\+\_\+rbin}} () const
+\begin{DoxyCompactList}\small\item\em Returns sampling\+\_\+time\+\_\+sequence\+\_\+. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classparameters_af9e6a7f95ccf915721ce5cc881c0fdcc}{N\+\_\+qbin}} () const
+\begin{DoxyCompactList}\small\item\em Returns N\+\_\+rbin\+\_\+. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{classparameters_a71a47fa156f50b814d581e63f5c47ac4}{min\+\_\+binwidth\+\_\+r}} () const
+\begin{DoxyCompactList}\small\item\em Returns N\+\_\+qbin\+\_\+. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classparameters_a33e40210473cf7ccb10b105418f26ef4}{qbin\+\_\+type}} () const
+\begin{DoxyCompactList}\small\item\em Returns min\+\_\+binwidth\+\_\+r\+\_\+. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{classparameters_acdfe9a0a0f06ef569aa4c4ec9bb779ff}{qmax}} () const
+\begin{DoxyCompactList}\small\item\em Returns qbin\+\_\+type\+\_\+. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{classparameters_a671dc230acc49418eb98bd3dd4fe4390}{min\+\_\+binwidth\+\_\+q}} () const
+\begin{DoxyCompactList}\small\item\em Returns qmax\+\_\+. \end{DoxyCompactList}\item 
+std\+::vector$<$ double $>$ \mbox{\hyperlink{classparameters_ad309f0d5730fff8386ab1cb528d9151a}{rbin}} () const
+\begin{DoxyCompactList}\small\item\em Returns min\+\_\+binwidth\+\_\+q\+\_\+. \end{DoxyCompactList}\item 
+std\+::vector$<$ double $>$ \mbox{\hyperlink{classparameters_aa5abb5b9948594ea48b5d024a32cc1ba}{qbin}} () const
+\begin{DoxyCompactList}\small\item\em Returns rbin\+\_\+. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classparameters_adea1c9443f242d79c38c0f61d2adf2ba}{qsamps\+\_\+per\+\_\+bin}} () const
+\begin{DoxyCompactList}\small\item\em Returns qbin\+\_\+. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classparameters_aebf35929b06ddac2e0919d8a171ca8a8}{n\+\_\+rsamps}} () const
+\begin{DoxyCompactList}\small\item\em Returns qsamps\+\_\+per\+\_\+bin\+\_\+. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{classparameters_ab8f106d34b1b9d4bd2ec836509f9f7f0}{qfullmax}} () const
+\begin{DoxyCompactList}\small\item\em Returns n\+\_\+rsamps\+\_\+. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classparameters_a4373e953b2f0db1cd873864cd36be999}{print\+\_\+snapshots}} () const
+\begin{DoxyCompactList}\small\item\em Returns qfullmax\+\_\+. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classparameters_a9bee200a2260cb82c8224c14efd03543}{on\+\_\+fly\+\_\+sampling}} () const
+\begin{DoxyCompactList}\small\item\em Returns print\+\_\+snapshots\+\_\+. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classparameters_adb65117a6fa645ceb1e1dfc84de4fbab}{snap\+\_\+overview\+\_\+file}} () const
+\begin{DoxyCompactList}\small\item\em Returns on\+\_\+fly\+\_\+sampling\+\_\+. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classparameters_ad266d6565a1700413444a7509114db7c}{output\+\_\+folder}} () const
+\begin{DoxyCompactList}\small\item\em Returns snap\+\_\+overview\+\_\+file\+\_\+. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::string \mbox{\hyperlink{classparameters_afab29243e80692ecf01257d1344dd591}{system\+\_\+}} = \"{}xy\"{}
+\begin{DoxyCompactList}\small\item\em Type of system. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classparameters_a018e2592eb51543ad1c0e6eec4a42715}{mode\+\_\+}} = \"{}none\"{}
+\begin{DoxyCompactList}\small\item\em Run mode for the simulation. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classparameters_ac0163b99356ad025e6155a0955138993}{init\+\_\+mode\+\_\+}} = \"{}random\"{}
+\begin{DoxyCompactList}\small\item\em Initialization mode. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classparameters_aabe87c0360c84be2b1932cd075d6badb}{init\+\_\+file\+\_\+}} = \"{}input/init\+\_\+snap.\+in\"{}
+\begin{DoxyCompactList}\small\item\em Path to initialization file. Only relevant if init\+\_\+mode is set to \"{}file\"{}. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{classparameters_a508c760464a660695a04f395f6db1a71}{init\+\_\+k\+T\+\_\+}} = -\/1
+\begin{DoxyCompactList}\small\item\em Initialization temperature, temperature at which simulation should start. Has no effect when chosen negative. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{classparameters_ad6ac0ccb8f890d5e2063cfefd171d138}{init\+\_\+random\+\_\+displacement\+\_\+}} = 0
+\begin{DoxyCompactList}\small\item\em Random particle displacement at initialization (for scaled initialization only) \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{classparameters_a0cccf1e9a855044746a190df6f2baa52}{init\+\_\+random\+\_\+angle\+\_\+}} = 0
+\begin{DoxyCompactList}\small\item\em Random angle displacement at initialization (for scaled initialization only) \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classparameters_aca8744dd6fdd02666582c0417d22a2da}{job\+\_\+id\+\_\+}} = \"{}\"{}
+\begin{DoxyCompactList}\small\item\em Job identifier. If specified, data will be stored in data\+\_\+\textquotesingle{}job\+\_\+id\textquotesingle{}.out etc. Otherwise, it is just the default data.\+out. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classparameters_a1288200f6b11854d834d114c2d4e8f60}{outfilename\+\_\+}} = \"{}output/data.\+out\"{}
+\begin{DoxyCompactList}\small\item\em Name of outfile. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classparameters_ad80ef8a2ade769b9b02686b3bd720543}{N\+\_\+}} = 256
+\begin{DoxyCompactList}\small\item\em Number of particles. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classparameters_aa100a3b8e40b0b997f233eca58c177e2}{sqrt\+N\+\_\+}} = 16
+\begin{DoxyCompactList}\small\item\em Square root of the number of particles. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{classparameters_acaecfda49511eedbf07e965e0582a12e}{dof\+\_\+}}
+\begin{DoxyCompactList}\small\item\em Degrees of freedom. Calculated automatically from N\+\_\+ and the system\+\_\+. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{classparameters_a33c2d02a125bfd9b0458702efe14fbaf}{L\+\_\+}} = 16
+\begin{DoxyCompactList}\small\item\em Length of simulation box. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{classparameters_a8e793a66a79f1fb730be8b6db1637d3b}{dt\+\_\+}} = 0.\+01
+\begin{DoxyCompactList}\small\item\em Integration time step. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{classparameters_a42bd1bf96200c774d5496d5e6ef468f7}{Tmax\+\_\+}} = 100
+\begin{DoxyCompactList}\small\item\em Runtime for sampling. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{classparameters_a4e344964dd1f78872df4cebe6b9925f5}{samplestart\+\_\+}} = 0
+\begin{DoxyCompactList}\small\item\em Time at which sampling starts in the integration run. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{classparameters_a06a9fcb99a4231bce279dcd2df925f79}{samplestep\+\_\+}} = 1
+\begin{DoxyCompactList}\small\item\em Time separation of two samples. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{classparameters_a0a9f400ec6ad0a3a5da54a73a27358ae}{av\+\_\+time\+\_\+spacing\+\_\+}} = 1e2
+\begin{DoxyCompactList}\small\item\em Minimum time spacing for average calculations in sampling. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classparameters_aabb242a434c62d9b93376b5af09ea1c1}{Nsamp\+\_\+}} = 30
+\begin{DoxyCompactList}\small\item\em Number of samples computed in sampling. Overwrites samplestep. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classparameters_a1889476e2ce6a01052810a42c2ec9653}{randomseed\+\_\+}} = 1
+\begin{DoxyCompactList}\small\item\em Random seed. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{classparameters_aa603ae7d77dad093b738ef61a4625f1d}{k\+T\+\_\+}} = .\+89
+\begin{DoxyCompactList}\small\item\em Temperature (units of energy) \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{classparameters_ae8118f1ad70cd3f4ac63d8e94acd9dd9}{I\+\_\+}} = 1
+\begin{DoxyCompactList}\small\item\em Spin inertia. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{classparameters_a431659a3bfd9b988aa35a7b453e30ecf}{m\+\_\+}} = 1
+\begin{DoxyCompactList}\small\item\em Mass. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{classparameters_a213b714562dfccc8527cc3e9197065d9}{J\+\_\+}} = 1
+\begin{DoxyCompactList}\small\item\em Spin interaction strength. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{classparameters_a60de5af461085c8172ee45275854fd9f}{U\+\_\+}} = 1
+\begin{DoxyCompactList}\small\item\em Spatial interaction strength. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{classparameters_a3d5e45ae852897573234a531ff8b8f0f}{cutoff\+\_\+}} = 1
+\begin{DoxyCompactList}\small\item\em Cutoff length for interaction potential (default value 1) \end{DoxyCompactList}\item 
+char \mbox{\hyperlink{classparameters_a1edfa853220a3d6bc6d9629b3d39b108}{lattice\+\_\+type\+\_\+}} = \textquotesingle{}s\textquotesingle{}
+\begin{DoxyCompactList}\small\item\em In static system\+: Type of lattice. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{classparameters_ab8ddfe88bc28f2163549eac53fcb1c89}{activity\+\_\+}} = 0
+\begin{DoxyCompactList}\small\item\em Activity in the mobile XY model (stream velocity) \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{classparameters_a281de29854ecde439610c3e29a8fa88a}{vm\+\_\+v\+\_\+}} = 0
+\begin{DoxyCompactList}\small\item\em Vicsek model streaming velocity. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{classparameters_a63d1c862e84f81baed624960cca9bfbc}{vm\+\_\+eta\+\_\+}} = 0
+\begin{DoxyCompactList}\small\item\em Vicsek model noise strength (between 0 and 1, actual noise interval will be \mbox{[}-\/eta/2\texorpdfstring{$\ast$}{*}\+Pi,eta/2 \texorpdfstring{$\ast$}{*} Pi\mbox{]}). \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classparameters_a1460e23a4111380baf8a2b697062366f}{eq\+\_\+integrator\+\_\+type\+\_\+}}
+\begin{DoxyCompactList}\small\item\em Integrator used for equilibration. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classparameters_a8355efadfd4415ea311b5fdf256fab87}{eq\+\_\+mode\+\_\+}} = \"{}anneal\"{}
+\begin{DoxyCompactList}\small\item\em Equilibration mode. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classparameters_a3ea72ec3591bcb0d363fd4e7ae81ce60}{eq\+\_\+breakcond\+\_\+}} = \"{}temperature\"{}
+\begin{DoxyCompactList}\small\item\em Break condition for equilibration. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{classparameters_ae906797de8c974192b5ce790f51e85e7}{eq\+\_\+\+Tmax\+\_\+}} = 100
+\begin{DoxyCompactList}\small\item\em Maximum equilibration time. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{classparameters_a98df0dc6b6fc6245a220f083898f2e38}{eq\+\_\+agreement\+\_\+threshold\+\_\+}} = 1e-\/2
+\begin{DoxyCompactList}\small\item\em Temperature agreement threshold to check successful equilibration. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{classparameters_a826a80245c9863a5930306ffdff51f5c}{eq\+\_\+av\+\_\+time\+\_\+}} = 0
+\begin{DoxyCompactList}\small\item\em Averaging time in equilibration (set to 0 for no averaging) \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{classparameters_a311e7acbb764d87269ccfb575ca99866}{tau\+\_\+berendsen\+\_\+}}
+\begin{DoxyCompactList}\small\item\em tau coefficient of the Berendsen thermostat \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{classparameters_a185dc82f67f4832c8bc3edaec93cfef8}{eq\+\_\+anneal\+\_\+rate\+\_\+}} = .\+999
+\begin{DoxyCompactList}\small\item\em Annealing rate. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{classparameters_ad9b0655343ec98525b3664ee31a67334}{eq\+\_\+anneal\+\_\+step\+\_\+}} = 1e1
+\begin{DoxyCompactList}\small\item\em Annealing time step. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{classparameters_a090c4ecd634c07cdc3ba4238e7953137}{eq\+\_\+\+Tprintstep\+\_\+}} = std\+::numeric\+\_\+limits$<$double$>$\+::quiet\+\_\+\+NaN()
+\begin{DoxyCompactList}\small\item\em Temperature print interval. Prints intermediate data when equilibration reaches T. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{classparameters_a0fe9843765567e08e2f63e778ddf86eb}{eq\+\_\+brownian\+\_\+k\+T\+\_\+omega\+\_\+}} = -\/1
+\begin{DoxyCompactList}\small\item\em Temperature for spin momentum thermostat during equilibration in a Brownian dynamics simulation (applied when non-\/negative) \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{classparameters_ae6e36acde2c287bd1f9c9946fda072a9}{eq\+\_\+brownian\+\_\+k\+T\+\_\+p\+\_\+}} = -\/1
+\begin{DoxyCompactList}\small\item\em Temperature for momentum thermostat during equilibration in a Brownian dynamics simulation (applied when non-\/negative) \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{classparameters_afa72496d2e21ec036898b07d73d74f91}{eq\+\_\+brownian\+\_\+timestep\+\_\+}} = 1.\+00
+\begin{DoxyCompactList}\small\item\em Step length for Brownian timestep during equilibration (in units of system time) \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classparameters_abafdf3fcdba2d495ad3e231d20d015e6}{eq\+\_\+sampswitch\+\_\+}} = 0
+\begin{DoxyCompactList}\small\item\em switch controlling whether sampling data is stored in equilibration \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classparameters_a2951e8180f126c5755a68e9bbcf39552}{eq\+\_\+\+Nsamp\+\_\+}} = 100
+\begin{DoxyCompactList}\small\item\em Number of time samplings performed during equilibration. Only has an effect if eq\+\_\+sampswitch = 1. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classparameters_a6b2aa767f1aade9d4c5693d4ff50dce0}{eq\+\_\+samp\+\_\+time\+\_\+sequence\+\_\+}} = \"{}lin\"{}
+\begin{DoxyCompactList}\small\item\em Sampling time sequence. \textquotesingle{}lin\textquotesingle{} or \textquotesingle{}log\textquotesingle{}. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classparameters_a898e2e7576f79889513caa253e3b8772}{sample\+\_\+integrator\+\_\+type\+\_\+}}
+\begin{DoxyCompactList}\small\item\em Integrator used for sampling. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classparameters_ab4dc9ce73baec957696ffb15a07cbdc2}{ensemble\+\_\+}}
+\begin{DoxyCompactList}\small\item\em Desired ensemble. \"{}nvt\"{} only works with certain integrators. \"{}nve\"{} is good standard. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{classparameters_aa2bdb8e902da99412b0d3f4312dc6ccf}{nhnp\+\_\+pi\+\_\+}} = 0
+\begin{DoxyCompactList}\small\item\em Nose-\/\+Hoover or Nose-\/\+Poincare pi value. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{classparameters_af4f54e521f4d8c9619103e96f4b63fc1}{nhnp\+\_\+\+Q\+\_\+}} = -\/1
+\begin{DoxyCompactList}\small\item\em Nose-\/\+Hoover or Nose-\/\+Poincare Q value. Default value negative, only used if positive. Method using nhnp\+\_\+tau is more recommended. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{classparameters_a596b01c43ae6fcf3275ba1d50d3e3f56}{nhnp\+\_\+tau\+\_\+}} = 0.\+01
+\begin{DoxyCompactList}\small\item\em Nose-\/\+Hoover or Nose-\/\+Poincare tau value (time scale that determines Q by Q = g \texorpdfstring{$\ast$}{*} kT \texorpdfstring{$\ast$}{*} tau\texorpdfstring{$^\wedge$}{\string^}2). Order of a microscopic collision time. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{classparameters_a09a40b2d6f46663fdff853a1500ae381}{nh\+\_\+eta\+\_\+}} = 0
+\begin{DoxyCompactList}\small\item\em Nose-\/\+Hoover eta value. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{classparameters_aa646f01abe92914908e63afa473b10c4}{np\+\_\+s\+\_\+}} = 1
+\begin{DoxyCompactList}\small\item\em Nose-\/\+Poincare s value (initial time scaling factor) \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{classparameters_a65398ff132a26a52b995460c9d931bef}{mc\+\_\+steplength\+\_\+theta\+\_\+}} = 0.\+1
+\begin{DoxyCompactList}\small\item\em Maximal trial step length of MC algorithm for angle theta. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{classparameters_a1a0cbbc21ca22c692804f69911b19dd4}{brownian\+\_\+k\+T\+\_\+omega\+\_\+}} = -\/1
+\begin{DoxyCompactList}\small\item\em Temperature for spin momentum thermostat in a Brownian dynamics simulation (applied when non-\/negative) \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{classparameters_af1ddf4c61f7ad809ccbcb5f6db4d7615}{brownian\+\_\+k\+T\+\_\+p\+\_\+}} = -\/1
+\begin{DoxyCompactList}\small\item\em Temperature for momentum thermostat in a Brownian dynamics simulation (applied when non-\/negative) \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{classparameters_a80696d0ce3842e140a7a556b6419289e}{brownian\+\_\+timestep\+\_\+}} = 1.\+00
+\begin{DoxyCompactList}\small\item\em Step length for Brownian timestep (in units of system time) \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{classparameters_a4dddb0e91f31e6f2b23af511bfa55ba2}{gamma\+\_\+ld\+\_\+p\+\_\+}} = 0
+\begin{DoxyCompactList}\small\item\em Damping rate gamma of the Langevin dynamics. Associated to the linear angular momentum p. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{classparameters_ac906a004b1a2510600369623836822e6}{gamma\+\_\+ld\+\_\+om\+\_\+}} = 0
+\begin{DoxyCompactList}\small\item\em Damping rate gamma of the Langevin dynamics. Associated to the spin angular velocity omega. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{classparameters_a775b34a6309237d01ffa8a863e567bf6}{mc\+\_\+steplength\+\_\+r\+\_\+}} = 0.\+1
+\begin{DoxyCompactList}\small\item\em Maximal trial step length of MC algorithm for distance r. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classparameters_a7a5d88abdb2af19d9002a3297b3b9c22}{sampling\+\_\+time\+\_\+sequence\+\_\+}} = \"{}lin\"{}
+\begin{DoxyCompactList}\small\item\em Specifies how sampling should be performed. Values are lin (linear sequence of sampling times) and log (logarithmic sequence of sampling times). \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classparameters_a56f6646869881a58700f6e0c50987711}{N\+\_\+rbin\+\_\+}}
+\begin{DoxyCompactList}\small\item\em Number of bins for r values. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{classparameters_a4afa5906f32bc64177f0e30a00c0d78d}{min\+\_\+binwidth\+\_\+r\+\_\+}}
+\begin{DoxyCompactList}\small\item\em Minimal width of r bins (should be around 1) \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classparameters_aac22fb6d4b76e271067a8db178622637}{qbin\+\_\+type\+\_\+}} = \"{}mult\"{}
+\begin{DoxyCompactList}\small\item\em Type of qbin. \"{}all\"{} uses all possible q values on the grid, \"{}mult\"{} uses only integer multiples of $2\pi/L$ (recommended) \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{classparameters_a4a1cdf57bef2b5c1bb8b5a1fd5f56f69}{qmax\+\_\+}} = 2 \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{computations_8h_ae71449b1cc6e6250b91f539153a7a0d3}{M\+\_\+\+PI}}
+\begin{DoxyCompactList}\small\item\em Maximum value for q in bin. Default is $2\pi$ (used when qbin\+\_\+type = \textquotesingle{}all\textquotesingle{}) \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{classparameters_af912d994a887f92a17258e033b78da55}{min\+\_\+binwidth\+\_\+q\+\_\+}} = .\+015
+\begin{DoxyCompactList}\small\item\em Minimal width of q bins, in fractions of 2pi / L. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classparameters_a7eee79e9e0b08b44ac1137169f7921da}{N\+\_\+qbin\+\_\+}}
+\begin{DoxyCompactList}\small\item\em Number of bins for q values (used when qbin\+\_\+type = \textquotesingle{}mult\textquotesingle{}) \end{DoxyCompactList}\item 
+std\+::vector$<$ double $>$ \mbox{\hyperlink{classparameters_adaf1a3472aa526796f16c107be66b595}{rbin\+\_\+}}
+\begin{DoxyCompactList}\small\item\em Binning values for the vector r. Set internally. \end{DoxyCompactList}\item 
+std\+::vector$<$ double $>$ \mbox{\hyperlink{classparameters_a864a8023a8133dc597af4488ba29e1b0}{qbin\+\_\+}}
+\begin{DoxyCompactList}\small\item\em Binning values for the vector q. Set internally. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{classparameters_a170fdaa985a56b5b06bdbe464beb91ff}{qfullmax\+\_\+}}
+\begin{DoxyCompactList}\small\item\em q value for full coverage (everything beyond is randomly sampled) \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classparameters_ae2322b85571e8d7cf34de18feb550a41}{qsamps\+\_\+per\+\_\+bin\+\_\+}}
+\begin{DoxyCompactList}\small\item\em Number of q samples on a circle. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classparameters_a79b41ce2de9e69ac76d0876fb0e95977}{n\+\_\+rsamps\+\_\+}} = 30
+\begin{DoxyCompactList}\small\item\em Number of (randomly chosen) r sampling points for the calculation of correlation functions in position space (like spin correlation functions or mean squared displacements etc.) \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classparameters_aed5da03ed556c22e8bd48f7df8a91aa4}{print\+\_\+snapshots\+\_\+}} = false
+\begin{DoxyCompactList}\small\item\em Specifies if snapshots should be printed. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classparameters_a3defde8a5d2747e34d2fd244bd52f1c0}{on\+\_\+fly\+\_\+sampling\+\_\+}} = true
+\begin{DoxyCompactList}\small\item\em Specifies if sampling should be performed on-\/the-\/fly. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classparameters_a39db7aef6795af8d0c2cad926bed7005}{output\+\_\+folder\+\_\+}} = \"{}output\"{}
+\begin{DoxyCompactList}\small\item\em Path to output folder. Added by David Stadler. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classparameters_a5d7c1a80d12ed0be47fb5ca32f6b063d}{snap\+\_\+overview\+\_\+file\+\_\+}} = \"{}output/snapshot\+\_\+overview.\+out\"{}
+\begin{DoxyCompactList}\small\item\em File where the names of all snapshots are stored. Only relevant when run in sampling mode. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Contains the run parameters of a simulation. 
+
+\begin{DoxyAuthor}{Author}
+Thomas Bissinger
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+Created\+: 2019-\/04-\/12 
+
+Last Updated\+: 2023-\/08-\/02 
+\end{DoxyDate}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classparameters_a2e2af680388704e90c6c0ceb0edc6cd5}\label{classparameters_a2e2af680388704e90c6c0ceb0edc6cd5} 
+\index{parameters@{parameters}!parameters@{parameters}}
+\index{parameters@{parameters}!parameters@{parameters}}
+\doxysubsubsection{\texorpdfstring{parameters()}{parameters()}}
+{\footnotesize\ttfamily parameters\+::parameters (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Empty constructor. 
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classparameters_a5c88007b39ab8c7adb5b2033ea6425df}\label{classparameters_a5c88007b39ab8c7adb5b2033ea6425df} 
+\index{parameters@{parameters}!activity@{activity}}
+\index{activity@{activity}!parameters@{parameters}}
+\doxysubsubsection{\texorpdfstring{activity()}{activity()}}
+{\footnotesize\ttfamily double parameters\+::activity (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Returns lattice\+\_\+type\+\_\+. 
+
+\Hypertarget{classparameters_a9521e27487f0804b6123c302b51a1dac}\label{classparameters_a9521e27487f0804b6123c302b51a1dac} 
+\index{parameters@{parameters}!av\_time\_spacing@{av\_time\_spacing}}
+\index{av\_time\_spacing@{av\_time\_spacing}!parameters@{parameters}}
+\doxysubsubsection{\texorpdfstring{av\_time\_spacing()}{av\_time\_spacing()}}
+{\footnotesize\ttfamily double parameters\+::av\+\_\+time\+\_\+spacing (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Returns samplestep\+\_\+. 
+
+\Hypertarget{classparameters_a6e6705401db3880e8243b127dd1f2bbb}\label{classparameters_a6e6705401db3880e8243b127dd1f2bbb} 
+\index{parameters@{parameters}!brownian\_kT\_omega@{brownian\_kT\_omega}}
+\index{brownian\_kT\_omega@{brownian\_kT\_omega}!parameters@{parameters}}
+\doxysubsubsection{\texorpdfstring{brownian\_kT\_omega()}{brownian\_kT\_omega()}}
+{\footnotesize\ttfamily double parameters\+::brownian\+\_\+k\+T\+\_\+omega (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Returns mc\+\_\+steplength\+\_\+theta\+\_\+. 
+
+\Hypertarget{classparameters_ae2e3537bca456e9ff5d2e3952eba3d78}\label{classparameters_ae2e3537bca456e9ff5d2e3952eba3d78} 
+\index{parameters@{parameters}!brownian\_kT\_p@{brownian\_kT\_p}}
+\index{brownian\_kT\_p@{brownian\_kT\_p}!parameters@{parameters}}
+\doxysubsubsection{\texorpdfstring{brownian\_kT\_p()}{brownian\_kT\_p()}}
+{\footnotesize\ttfamily double parameters\+::brownian\+\_\+k\+T\+\_\+p (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Returns brownian\+\_\+k\+T\+\_\+omega\+\_\+. 
+
+\Hypertarget{classparameters_a3e49cf980993dccb7c418660ef2efc43}\label{classparameters_a3e49cf980993dccb7c418660ef2efc43} 
+\index{parameters@{parameters}!brownian\_timestep@{brownian\_timestep}}
+\index{brownian\_timestep@{brownian\_timestep}!parameters@{parameters}}
+\doxysubsubsection{\texorpdfstring{brownian\_timestep()}{brownian\_timestep()}}
+{\footnotesize\ttfamily double parameters\+::brownian\+\_\+timestep (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Returns brownian\+\_\+k\+T\+\_\+p\+\_\+. 
+
+\Hypertarget{classparameters_a0b4ec8e07bf864f3bea46440436617d0}\label{classparameters_a0b4ec8e07bf864f3bea46440436617d0} 
+\index{parameters@{parameters}!correct\_values@{correct\_values}}
+\index{correct\_values@{correct\_values}!parameters@{parameters}}
+\doxysubsubsection{\texorpdfstring{correct\_values()}{correct\_values()}}
+{\footnotesize\ttfamily int parameters\+::correct\+\_\+values (\begin{DoxyParamCaption}\item[{std\+::ofstream \&}]{stdoutfile }\end{DoxyParamCaption})}
+
+
+
+Corrects potentially wrong input. 
+
+\Hypertarget{classparameters_ac9605d796f7d24d28ba9e4cb6b964204}\label{classparameters_ac9605d796f7d24d28ba9e4cb6b964204} 
+\index{parameters@{parameters}!cutoff@{cutoff}}
+\index{cutoff@{cutoff}!parameters@{parameters}}
+\doxysubsubsection{\texorpdfstring{cutoff()}{cutoff()}}
+{\footnotesize\ttfamily double parameters\+::cutoff (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Returns U\+\_\+. 
+
+\Hypertarget{classparameters_a86122bf090f8417a9f6d08d996f59595}\label{classparameters_a86122bf090f8417a9f6d08d996f59595} 
+\index{parameters@{parameters}!dof@{dof}}
+\index{dof@{dof}!parameters@{parameters}}
+\doxysubsubsection{\texorpdfstring{dof()}{dof()}}
+{\footnotesize\ttfamily double parameters\+::dof (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Returns sqrt\+N\+\_\+. 
+
+\Hypertarget{classparameters_a7c11dc73666401bb81f063682294e983}\label{classparameters_a7c11dc73666401bb81f063682294e983} 
+\index{parameters@{parameters}!dt@{dt}}
+\index{dt@{dt}!parameters@{parameters}}
+\doxysubsubsection{\texorpdfstring{dt()}{dt()}}
+{\footnotesize\ttfamily double parameters\+::dt (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Returns L\+\_\+. 
+
+\Hypertarget{classparameters_a26abd536aeab54e09a6aed66b8861035}\label{classparameters_a26abd536aeab54e09a6aed66b8861035} 
+\index{parameters@{parameters}!ensemble@{ensemble}}
+\index{ensemble@{ensemble}!parameters@{parameters}}
+\doxysubsubsection{\texorpdfstring{ensemble()}{ensemble()}}
+{\footnotesize\ttfamily std\+::string parameters\+::ensemble (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Returns sample\+\_\+integrator\+\_\+type\+\_\+. 
+
+\Hypertarget{classparameters_a60c0b9fca0ba9167066f6e25d468bdc3}\label{classparameters_a60c0b9fca0ba9167066f6e25d468bdc3} 
+\index{parameters@{parameters}!eq\_agreement\_threshold@{eq\_agreement\_threshold}}
+\index{eq\_agreement\_threshold@{eq\_agreement\_threshold}!parameters@{parameters}}
+\doxysubsubsection{\texorpdfstring{eq\_agreement\_threshold()}{eq\_agreement\_threshold()}}
+{\footnotesize\ttfamily double parameters\+::eq\+\_\+agreement\+\_\+threshold (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Returns eq\+\_\+breakcond\+\_\+. 
+
+\Hypertarget{classparameters_a44e705dcc8d11fd447e14fd278e8a4a1}\label{classparameters_a44e705dcc8d11fd447e14fd278e8a4a1} 
+\index{parameters@{parameters}!eq\_anneal\_rate@{eq\_anneal\_rate}}
+\index{eq\_anneal\_rate@{eq\_anneal\_rate}!parameters@{parameters}}
+\doxysubsubsection{\texorpdfstring{eq\_anneal\_rate()}{eq\_anneal\_rate()}}
+{\footnotesize\ttfamily double parameters\+::eq\+\_\+anneal\+\_\+rate (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Returns tau\+\_\+berendsen\+\_\+. 
+
+\Hypertarget{classparameters_ac84600076bd2940d511a61f5e657247b}\label{classparameters_ac84600076bd2940d511a61f5e657247b} 
+\index{parameters@{parameters}!eq\_anneal\_step@{eq\_anneal\_step}}
+\index{eq\_anneal\_step@{eq\_anneal\_step}!parameters@{parameters}}
+\doxysubsubsection{\texorpdfstring{eq\_anneal\_step()}{eq\_anneal\_step()}}
+{\footnotesize\ttfamily double parameters\+::eq\+\_\+anneal\+\_\+step (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Returns eq\+\_\+anneal\+\_\+rate\+\_\+. 
+
+\Hypertarget{classparameters_a7a30f62bb674783dfde0d013b6740b45}\label{classparameters_a7a30f62bb674783dfde0d013b6740b45} 
+\index{parameters@{parameters}!eq\_av\_time@{eq\_av\_time}}
+\index{eq\_av\_time@{eq\_av\_time}!parameters@{parameters}}
+\doxysubsubsection{\texorpdfstring{eq\_av\_time()}{eq\_av\_time()}}
+{\footnotesize\ttfamily double parameters\+::eq\+\_\+av\+\_\+time (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Returns eq\+\_\+agreement\+\_\+threshold\+\_\+. 
+
+\Hypertarget{classparameters_a4fbca332e13db323aca09f6ac0b2621f}\label{classparameters_a4fbca332e13db323aca09f6ac0b2621f} 
+\index{parameters@{parameters}!eq\_breakcond@{eq\_breakcond}}
+\index{eq\_breakcond@{eq\_breakcond}!parameters@{parameters}}
+\doxysubsubsection{\texorpdfstring{eq\_breakcond()}{eq\_breakcond()}}
+{\footnotesize\ttfamily std\+::string parameters\+::eq\+\_\+breakcond (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Returns eq\+\_\+\+Tmax\+\_\+. 
+
+\Hypertarget{classparameters_a1448e965386febd780b20da8ab7b93fb}\label{classparameters_a1448e965386febd780b20da8ab7b93fb} 
+\index{parameters@{parameters}!eq\_brownian\_kT\_omega@{eq\_brownian\_kT\_omega}}
+\index{eq\_brownian\_kT\_omega@{eq\_brownian\_kT\_omega}!parameters@{parameters}}
+\doxysubsubsection{\texorpdfstring{eq\_brownian\_kT\_omega()}{eq\_brownian\_kT\_omega()}}
+{\footnotesize\ttfamily double parameters\+::eq\+\_\+brownian\+\_\+k\+T\+\_\+omega (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Returns eq\+\_\+brownian\+\_\+timestep\+\_\+. 
+
+\Hypertarget{classparameters_a9da25a839142a9c37a739a884d9c580c}\label{classparameters_a9da25a839142a9c37a739a884d9c580c} 
+\index{parameters@{parameters}!eq\_brownian\_kT\_p@{eq\_brownian\_kT\_p}}
+\index{eq\_brownian\_kT\_p@{eq\_brownian\_kT\_p}!parameters@{parameters}}
+\doxysubsubsection{\texorpdfstring{eq\_brownian\_kT\_p()}{eq\_brownian\_kT\_p()}}
+{\footnotesize\ttfamily double parameters\+::eq\+\_\+brownian\+\_\+k\+T\+\_\+p (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Returns eq\+\_\+\+Tprintstep\+\_\+. 
+
+\Hypertarget{classparameters_ad78328fcdfeb01e30911d37ba4aee66f}\label{classparameters_ad78328fcdfeb01e30911d37ba4aee66f} 
+\index{parameters@{parameters}!eq\_brownian\_timestep@{eq\_brownian\_timestep}}
+\index{eq\_brownian\_timestep@{eq\_brownian\_timestep}!parameters@{parameters}}
+\doxysubsubsection{\texorpdfstring{eq\_brownian\_timestep()}{eq\_brownian\_timestep()}}
+{\footnotesize\ttfamily double parameters\+::eq\+\_\+brownian\+\_\+timestep (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Returns eq\+\_\+brownian\+\_\+k\+T\+\_\+p\+\_\+. 
+
+\Hypertarget{classparameters_a5b306478afa6ae59f16cada930a63360}\label{classparameters_a5b306478afa6ae59f16cada930a63360} 
+\index{parameters@{parameters}!eq\_integrator\_type@{eq\_integrator\_type}}
+\index{eq\_integrator\_type@{eq\_integrator\_type}!parameters@{parameters}}
+\doxysubsubsection{\texorpdfstring{eq\_integrator\_type()}{eq\_integrator\_type()}}
+{\footnotesize\ttfamily std\+::string parameters\+::eq\+\_\+integrator\+\_\+type (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Returns eq\+\_\+mode\+\_\+. 
+
+\Hypertarget{classparameters_acfae2be7e92aae0bdbf86f610d9e045f}\label{classparameters_acfae2be7e92aae0bdbf86f610d9e045f} 
+\index{parameters@{parameters}!eq\_mode@{eq\_mode}}
+\index{eq\_mode@{eq\_mode}!parameters@{parameters}}
+\doxysubsubsection{\texorpdfstring{eq\_mode()}{eq\_mode()}}
+{\footnotesize\ttfamily std\+::string parameters\+::eq\+\_\+mode (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Returns init\+\_\+random\+\_\+angle\+\_\+. 
+
+\Hypertarget{classparameters_aaccfc303992479c3a7c14eec892ddfaf}\label{classparameters_aaccfc303992479c3a7c14eec892ddfaf} 
+\index{parameters@{parameters}!eq\_Nsamp@{eq\_Nsamp}}
+\index{eq\_Nsamp@{eq\_Nsamp}!parameters@{parameters}}
+\doxysubsubsection{\texorpdfstring{eq\_Nsamp()}{eq\_Nsamp()}}
+{\footnotesize\ttfamily int parameters\+::eq\+\_\+\+Nsamp (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Returns eq\+\_\+sampswitch\+\_\+. 
+
+\Hypertarget{classparameters_a3326f4c3f8c706bc6aa760fd2c9ef8d1}\label{classparameters_a3326f4c3f8c706bc6aa760fd2c9ef8d1} 
+\index{parameters@{parameters}!eq\_samp\_time\_sequence@{eq\_samp\_time\_sequence}}
+\index{eq\_samp\_time\_sequence@{eq\_samp\_time\_sequence}!parameters@{parameters}}
+\doxysubsubsection{\texorpdfstring{eq\_samp\_time\_sequence()}{eq\_samp\_time\_sequence()}}
+{\footnotesize\ttfamily std\+::string parameters\+::eq\+\_\+samp\+\_\+time\+\_\+sequence (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Returns eq\+\_\+\+Nsamp\+\_\+. 
+
+\Hypertarget{classparameters_a9006bb55370d5ab4823408c4910df979}\label{classparameters_a9006bb55370d5ab4823408c4910df979} 
+\index{parameters@{parameters}!eq\_sampswitch@{eq\_sampswitch}}
+\index{eq\_sampswitch@{eq\_sampswitch}!parameters@{parameters}}
+\doxysubsubsection{\texorpdfstring{eq\_sampswitch()}{eq\_sampswitch()}}
+{\footnotesize\ttfamily bool parameters\+::eq\+\_\+sampswitch (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Returns eq\+\_\+brownian\+\_\+k\+T\+\_\+omega\+\_\+. 
+
+\Hypertarget{classparameters_a46a524e5fb6dd2883d895b87c5bc9184}\label{classparameters_a46a524e5fb6dd2883d895b87c5bc9184} 
+\index{parameters@{parameters}!eq\_Tmax@{eq\_Tmax}}
+\index{eq\_Tmax@{eq\_Tmax}!parameters@{parameters}}
+\doxysubsubsection{\texorpdfstring{eq\_Tmax()}{eq\_Tmax()}}
+{\footnotesize\ttfamily double parameters\+::eq\+\_\+\+Tmax (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Returns eq\+\_\+integrator\+\_\+type\+\_\+. 
+
+\Hypertarget{classparameters_a3f2803b10eea23ebe70e778dc9e69fb4}\label{classparameters_a3f2803b10eea23ebe70e778dc9e69fb4} 
+\index{parameters@{parameters}!eq\_Tprintstep@{eq\_Tprintstep}}
+\index{eq\_Tprintstep@{eq\_Tprintstep}!parameters@{parameters}}
+\doxysubsubsection{\texorpdfstring{eq\_Tprintstep()}{eq\_Tprintstep()}}
+{\footnotesize\ttfamily double parameters\+::eq\+\_\+\+Tprintstep (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Returns eq\+\_\+anneal\+\_\+step\+\_\+. 
+
+\Hypertarget{classparameters_a99da558dd955f5c41641718c87dbac11}\label{classparameters_a99da558dd955f5c41641718c87dbac11} 
+\index{parameters@{parameters}!gamma\_ld\_om@{gamma\_ld\_om}}
+\index{gamma\_ld\_om@{gamma\_ld\_om}!parameters@{parameters}}
+\doxysubsubsection{\texorpdfstring{gamma\_ld\_om()}{gamma\_ld\_om()}}
+{\footnotesize\ttfamily double parameters\+::gamma\+\_\+ld\+\_\+om (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Returns brownian\+\_\+timestep\+\_\+. 
+
+\Hypertarget{classparameters_ad681cf25537eea7818ffe8826e7701c9}\label{classparameters_ad681cf25537eea7818ffe8826e7701c9} 
+\index{parameters@{parameters}!gamma\_ld\_p@{gamma\_ld\_p}}
+\index{gamma\_ld\_p@{gamma\_ld\_p}!parameters@{parameters}}
+\doxysubsubsection{\texorpdfstring{gamma\_ld\_p()}{gamma\_ld\_p()}}
+{\footnotesize\ttfamily double parameters\+::gamma\+\_\+ld\+\_\+p (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Returns gamma\+\_\+ld\+\_\+om\+\_\+. 
+
+\Hypertarget{classparameters_a06ba8837aa76fa9370b6316854527a98}\label{classparameters_a06ba8837aa76fa9370b6316854527a98} 
+\index{parameters@{parameters}!I@{I}}
+\index{I@{I}!parameters@{parameters}}
+\doxysubsubsection{\texorpdfstring{I()}{I()}}
+{\footnotesize\ttfamily double parameters\+::I (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Returns k\+T\+\_\+. 
+
+\Hypertarget{classparameters_a151d73faa46f13beeb3f2bd41ccefb2a}\label{classparameters_a151d73faa46f13beeb3f2bd41ccefb2a} 
+\index{parameters@{parameters}!init\_file@{init\_file}}
+\index{init\_file@{init\_file}!parameters@{parameters}}
+\doxysubsubsection{\texorpdfstring{init\_file()}{init\_file()}}
+{\footnotesize\ttfamily std\+::string parameters\+::init\+\_\+file (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Returns init\+\_\+mode\+\_\+. 
+
+\Hypertarget{classparameters_aac7e14960ab24ed16836dc7fc52ac71d}\label{classparameters_aac7e14960ab24ed16836dc7fc52ac71d} 
+\index{parameters@{parameters}!init\_kT@{init\_kT}}
+\index{init\_kT@{init\_kT}!parameters@{parameters}}
+\doxysubsubsection{\texorpdfstring{init\_kT()}{init\_kT()}}
+{\footnotesize\ttfamily double parameters\+::init\+\_\+kT (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Returns init\+\_\+file\+\_\+. 
+
+\Hypertarget{classparameters_a0386734816e4b1b3f1730be3b55a0c7d}\label{classparameters_a0386734816e4b1b3f1730be3b55a0c7d} 
+\index{parameters@{parameters}!init\_mode@{init\_mode}}
+\index{init\_mode@{init\_mode}!parameters@{parameters}}
+\doxysubsubsection{\texorpdfstring{init\_mode()}{init\_mode()}}
+{\footnotesize\ttfamily std\+::string parameters\+::init\+\_\+mode (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Returns vm\+\_\+eta\+\_\+. 
+
+\Hypertarget{classparameters_ab80173bb9d56185ee6ba447827065e6b}\label{classparameters_ab80173bb9d56185ee6ba447827065e6b} 
+\index{parameters@{parameters}!init\_random\_angle@{init\_random\_angle}}
+\index{init\_random\_angle@{init\_random\_angle}!parameters@{parameters}}
+\doxysubsubsection{\texorpdfstring{init\_random\_angle()}{init\_random\_angle()}}
+{\footnotesize\ttfamily double parameters\+::init\+\_\+random\+\_\+angle (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Returns init\+\_\+random\+\_\+displacement\+\_\+. 
+
+\Hypertarget{classparameters_a7ca9f2f3d3c207e32fc5df5b89f68c00}\label{classparameters_a7ca9f2f3d3c207e32fc5df5b89f68c00} 
+\index{parameters@{parameters}!init\_random\_displacement@{init\_random\_displacement}}
+\index{init\_random\_displacement@{init\_random\_displacement}!parameters@{parameters}}
+\doxysubsubsection{\texorpdfstring{init\_random\_displacement()}{init\_random\_displacement()}}
+{\footnotesize\ttfamily double parameters\+::init\+\_\+random\+\_\+displacement (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Returns init\+\_\+k\+T\+\_\+. 
+
+\Hypertarget{classparameters_a1dc2565b66c0491d26cc7942b79da77a}\label{classparameters_a1dc2565b66c0491d26cc7942b79da77a} 
+\index{parameters@{parameters}!initialize\_bins@{initialize\_bins}}
+\index{initialize\_bins@{initialize\_bins}!parameters@{parameters}}
+\doxysubsubsection{\texorpdfstring{initialize\_bins()}{initialize\_bins()}}
+{\footnotesize\ttfamily void parameters\+::initialize\+\_\+bins (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Initializes both bins. 
+
+\Hypertarget{classparameters_aea5b9ff5d340c3cf008a7545a7622e80}\label{classparameters_aea5b9ff5d340c3cf008a7545a7622e80} 
+\index{parameters@{parameters}!initialize\_qbin@{initialize\_qbin}}
+\index{initialize\_qbin@{initialize\_qbin}!parameters@{parameters}}
+\doxysubsubsection{\texorpdfstring{initialize\_qbin()}{initialize\_qbin()}}
+{\footnotesize\ttfamily void parameters\+::initialize\+\_\+qbin (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Initializes the qbin. 
+
+Also initializes qfullmax\+\_\+ so that the first bin that is randomly selected contains more than 1.\+5 \texorpdfstring{$\ast$}{*} qsamps\+\_\+per\+\_\+bin\+\_\+ q-\/values. \Hypertarget{classparameters_ab7511f9db963519240c57458fdfb56b4}\label{classparameters_ab7511f9db963519240c57458fdfb56b4} 
+\index{parameters@{parameters}!initialize\_rbin@{initialize\_rbin}}
+\index{initialize\_rbin@{initialize\_rbin}!parameters@{parameters}}
+\doxysubsubsection{\texorpdfstring{initialize\_rbin()}{initialize\_rbin()}}
+{\footnotesize\ttfamily void parameters\+::initialize\+\_\+rbin (\begin{DoxyParamCaption}\item[{int}]{N\+\_\+rbin }\end{DoxyParamCaption})}
+
+
+
+Initializes the rbin. 
+
+\Hypertarget{classparameters_a7a1537a5bf32922775de1e63f478ee51}\label{classparameters_a7a1537a5bf32922775de1e63f478ee51} 
+\index{parameters@{parameters}!J@{J}}
+\index{J@{J}!parameters@{parameters}}
+\doxysubsubsection{\texorpdfstring{J()}{J()}}
+{\footnotesize\ttfamily double parameters\+::J (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Returns m\+\_\+. 
+
+\Hypertarget{classparameters_a7ddbbfabbb02e7578ff98aaef927b9a5}\label{classparameters_a7ddbbfabbb02e7578ff98aaef927b9a5} 
+\index{parameters@{parameters}!job\_id@{job\_id}}
+\index{job\_id@{job\_id}!parameters@{parameters}}
+\doxysubsubsection{\texorpdfstring{job\_id()}{job\_id()}}
+{\footnotesize\ttfamily std\+::string parameters\+::job\+\_\+id (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Returns mode\+\_\+. 
+
+\Hypertarget{classparameters_abd1cd055e7bb235bf8041fc8b13cd55a}\label{classparameters_abd1cd055e7bb235bf8041fc8b13cd55a} 
+\index{parameters@{parameters}!kT@{kT}}
+\index{kT@{kT}!parameters@{parameters}}
+\doxysubsubsection{\texorpdfstring{kT()}{kT()}}
+{\footnotesize\ttfamily double parameters\+::kT (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Returns randomseed\+\_\+. 
+
+\Hypertarget{classparameters_a83f176658e11c693f9f051cad0936f10}\label{classparameters_a83f176658e11c693f9f051cad0936f10} 
+\index{parameters@{parameters}!L@{L}}
+\index{L@{L}!parameters@{parameters}}
+\doxysubsubsection{\texorpdfstring{L()}{L()}}
+{\footnotesize\ttfamily double parameters\+::L (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Returns dof\+\_\+. 
+
+\Hypertarget{classparameters_a8941157a7b79550000fddd88b774214f}\label{classparameters_a8941157a7b79550000fddd88b774214f} 
+\index{parameters@{parameters}!lattice\_type@{lattice\_type}}
+\index{lattice\_type@{lattice\_type}!parameters@{parameters}}
+\doxysubsubsection{\texorpdfstring{lattice\_type()}{lattice\_type()}}
+{\footnotesize\ttfamily char parameters\+::lattice\+\_\+type (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Returns cutoff\+\_\+. 
+
+\Hypertarget{classparameters_af26d78c09f39a5b52d1ef12e59e856ed}\label{classparameters_af26d78c09f39a5b52d1ef12e59e856ed} 
+\index{parameters@{parameters}!m@{m}}
+\index{m@{m}!parameters@{parameters}}
+\doxysubsubsection{\texorpdfstring{m()}{m()}}
+{\footnotesize\ttfamily double parameters\+::m (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Returns I\+\_\+. 
+
+\Hypertarget{classparameters_ac6fd0083259d5053afea24290e9ed095}\label{classparameters_ac6fd0083259d5053afea24290e9ed095} 
+\index{parameters@{parameters}!mc\_steplength\_r@{mc\_steplength\_r}}
+\index{mc\_steplength\_r@{mc\_steplength\_r}!parameters@{parameters}}
+\doxysubsubsection{\texorpdfstring{mc\_steplength\_r()}{mc\_steplength\_r()}}
+{\footnotesize\ttfamily double parameters\+::mc\+\_\+steplength\+\_\+r (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Returns gamma\+\_\+ld\+\_\+p\+\_\+. 
+
+\Hypertarget{classparameters_a85602fc18e5754228c3bf45dfe637a68}\label{classparameters_a85602fc18e5754228c3bf45dfe637a68} 
+\index{parameters@{parameters}!mc\_steplength\_theta@{mc\_steplength\_theta}}
+\index{mc\_steplength\_theta@{mc\_steplength\_theta}!parameters@{parameters}}
+\doxysubsubsection{\texorpdfstring{mc\_steplength\_theta()}{mc\_steplength\_theta()}}
+{\footnotesize\ttfamily double parameters\+::mc\+\_\+steplength\+\_\+theta (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Returns np\+\_\+s\+\_\+. 
+
+\Hypertarget{classparameters_a671dc230acc49418eb98bd3dd4fe4390}\label{classparameters_a671dc230acc49418eb98bd3dd4fe4390} 
+\index{parameters@{parameters}!min\_binwidth\_q@{min\_binwidth\_q}}
+\index{min\_binwidth\_q@{min\_binwidth\_q}!parameters@{parameters}}
+\doxysubsubsection{\texorpdfstring{min\_binwidth\_q()}{min\_binwidth\_q()}}
+{\footnotesize\ttfamily double parameters\+::min\+\_\+binwidth\+\_\+q (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Returns qmax\+\_\+. 
+
+\Hypertarget{classparameters_a71a47fa156f50b814d581e63f5c47ac4}\label{classparameters_a71a47fa156f50b814d581e63f5c47ac4} 
+\index{parameters@{parameters}!min\_binwidth\_r@{min\_binwidth\_r}}
+\index{min\_binwidth\_r@{min\_binwidth\_r}!parameters@{parameters}}
+\doxysubsubsection{\texorpdfstring{min\_binwidth\_r()}{min\_binwidth\_r()}}
+{\footnotesize\ttfamily double parameters\+::min\+\_\+binwidth\+\_\+r (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Returns N\+\_\+qbin\+\_\+. 
+
+\Hypertarget{classparameters_a2be3d4d2c3182187a92c1e87808d3a74}\label{classparameters_a2be3d4d2c3182187a92c1e87808d3a74} 
+\index{parameters@{parameters}!mode@{mode}}
+\index{mode@{mode}!parameters@{parameters}}
+\doxysubsubsection{\texorpdfstring{mode()}{mode()}}
+{\footnotesize\ttfamily std\+::string parameters\+::mode (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Returns system\+\_\+. 
+
+\Hypertarget{classparameters_ad42387778390a6d70f0f41eabfa2e599}\label{classparameters_ad42387778390a6d70f0f41eabfa2e599} 
+\index{parameters@{parameters}!N@{N}}
+\index{N@{N}!parameters@{parameters}}
+\doxysubsubsection{\texorpdfstring{N()}{N()}}
+{\footnotesize\ttfamily int parameters\+::N (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Returns outfilename\+\_\+. 
+
+\Hypertarget{classparameters_af9e6a7f95ccf915721ce5cc881c0fdcc}\label{classparameters_af9e6a7f95ccf915721ce5cc881c0fdcc} 
+\index{parameters@{parameters}!N\_qbin@{N\_qbin}}
+\index{N\_qbin@{N\_qbin}!parameters@{parameters}}
+\doxysubsubsection{\texorpdfstring{N\_qbin()}{N\_qbin()}}
+{\footnotesize\ttfamily int parameters\+::\+N\+\_\+qbin (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Returns N\+\_\+rbin\+\_\+. 
+
+\Hypertarget{classparameters_a7708ee3b34492e3e0a3f34cb80a75383}\label{classparameters_a7708ee3b34492e3e0a3f34cb80a75383} 
+\index{parameters@{parameters}!N\_rbin@{N\_rbin}}
+\index{N\_rbin@{N\_rbin}!parameters@{parameters}}
+\doxysubsubsection{\texorpdfstring{N\_rbin()}{N\_rbin()}}
+{\footnotesize\ttfamily int parameters\+::\+N\+\_\+rbin (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Returns sampling\+\_\+time\+\_\+sequence\+\_\+. 
+
+\Hypertarget{classparameters_aebf35929b06ddac2e0919d8a171ca8a8}\label{classparameters_aebf35929b06ddac2e0919d8a171ca8a8} 
+\index{parameters@{parameters}!n\_rsamps@{n\_rsamps}}
+\index{n\_rsamps@{n\_rsamps}!parameters@{parameters}}
+\doxysubsubsection{\texorpdfstring{n\_rsamps()}{n\_rsamps()}}
+{\footnotesize\ttfamily int parameters\+::n\+\_\+rsamps (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Returns qsamps\+\_\+per\+\_\+bin\+\_\+. 
+
+\Hypertarget{classparameters_a914d802bb85d8999dbcbb3b7d7be1c3d}\label{classparameters_a914d802bb85d8999dbcbb3b7d7be1c3d} 
+\index{parameters@{parameters}!nh\_eta@{nh\_eta}}
+\index{nh\_eta@{nh\_eta}!parameters@{parameters}}
+\doxysubsubsection{\texorpdfstring{nh\_eta()}{nh\_eta()}}
+{\footnotesize\ttfamily double parameters\+::nh\+\_\+eta (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Returns nhnp\+\_\+tau\+\_\+. 
+
+\Hypertarget{classparameters_a73cc866982356245040912ed5d3027c3}\label{classparameters_a73cc866982356245040912ed5d3027c3} 
+\index{parameters@{parameters}!nhnp\_pi@{nhnp\_pi}}
+\index{nhnp\_pi@{nhnp\_pi}!parameters@{parameters}}
+\doxysubsubsection{\texorpdfstring{nhnp\_pi()}{nhnp\_pi()}}
+{\footnotesize\ttfamily double parameters\+::nhnp\+\_\+pi (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Returns ensemble\+\_\+. 
+
+\Hypertarget{classparameters_ab08fa669c250813555bb312b1c147edb}\label{classparameters_ab08fa669c250813555bb312b1c147edb} 
+\index{parameters@{parameters}!nhnp\_Q@{nhnp\_Q}}
+\index{nhnp\_Q@{nhnp\_Q}!parameters@{parameters}}
+\doxysubsubsection{\texorpdfstring{nhnp\_Q()}{nhnp\_Q()}}
+{\footnotesize\ttfamily double parameters\+::nhnp\+\_\+Q (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Returns nhnp\+\_\+pi\+\_\+. 
+
+\Hypertarget{classparameters_a430a569355e127371af2feb12794ed25}\label{classparameters_a430a569355e127371af2feb12794ed25} 
+\index{parameters@{parameters}!nhnp\_tau@{nhnp\_tau}}
+\index{nhnp\_tau@{nhnp\_tau}!parameters@{parameters}}
+\doxysubsubsection{\texorpdfstring{nhnp\_tau()}{nhnp\_tau()}}
+{\footnotesize\ttfamily double parameters\+::nhnp\+\_\+tau (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Returns nhnp\+\_\+\+Q\+\_\+. 
+
+\Hypertarget{classparameters_aea6ff06e600ec899e0c0aac2d250554d}\label{classparameters_aea6ff06e600ec899e0c0aac2d250554d} 
+\index{parameters@{parameters}!np\_s@{np\_s}}
+\index{np\_s@{np\_s}!parameters@{parameters}}
+\doxysubsubsection{\texorpdfstring{np\_s()}{np\_s()}}
+{\footnotesize\ttfamily double parameters\+::np\+\_\+s (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Returns nh\+\_\+eta\+\_\+. 
+
+\Hypertarget{classparameters_a602971413cfd02c1334dac6211f06fa1}\label{classparameters_a602971413cfd02c1334dac6211f06fa1} 
+\index{parameters@{parameters}!Nsamp@{Nsamp}}
+\index{Nsamp@{Nsamp}!parameters@{parameters}}
+\doxysubsubsection{\texorpdfstring{Nsamp()}{Nsamp()}}
+{\footnotesize\ttfamily int parameters\+::\+Nsamp (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Returns av\+\_\+time\+\_\+spacing\+\_\+. 
+
+\Hypertarget{classparameters_a9bee200a2260cb82c8224c14efd03543}\label{classparameters_a9bee200a2260cb82c8224c14efd03543} 
+\index{parameters@{parameters}!on\_fly\_sampling@{on\_fly\_sampling}}
+\index{on\_fly\_sampling@{on\_fly\_sampling}!parameters@{parameters}}
+\doxysubsubsection{\texorpdfstring{on\_fly\_sampling()}{on\_fly\_sampling()}}
+{\footnotesize\ttfamily bool parameters\+::on\+\_\+fly\+\_\+sampling (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Returns print\+\_\+snapshots\+\_\+. 
+
+\Hypertarget{classparameters_aed79daf3ec11597698ee76567cc7c0ce}\label{classparameters_aed79daf3ec11597698ee76567cc7c0ce} 
+\index{parameters@{parameters}!outfilename@{outfilename}}
+\index{outfilename@{outfilename}!parameters@{parameters}}
+\doxysubsubsection{\texorpdfstring{outfilename()}{outfilename()}}
+{\footnotesize\ttfamily std\+::string parameters\+::outfilename (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Returns job\+\_\+id\+\_\+. 
+
+\Hypertarget{classparameters_ad266d6565a1700413444a7509114db7c}\label{classparameters_ad266d6565a1700413444a7509114db7c} 
+\index{parameters@{parameters}!output\_folder@{output\_folder}}
+\index{output\_folder@{output\_folder}!parameters@{parameters}}
+\doxysubsubsection{\texorpdfstring{output\_folder()}{output\_folder()}}
+{\footnotesize\ttfamily std\+::string parameters\+::output\+\_\+folder (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Returns snap\+\_\+overview\+\_\+file\+\_\+. 
+
+\Hypertarget{classparameters_a4373e953b2f0db1cd873864cd36be999}\label{classparameters_a4373e953b2f0db1cd873864cd36be999} 
+\index{parameters@{parameters}!print\_snapshots@{print\_snapshots}}
+\index{print\_snapshots@{print\_snapshots}!parameters@{parameters}}
+\doxysubsubsection{\texorpdfstring{print\_snapshots()}{print\_snapshots()}}
+{\footnotesize\ttfamily bool parameters\+::print\+\_\+snapshots (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Returns qfullmax\+\_\+. 
+
+\Hypertarget{classparameters_aa5abb5b9948594ea48b5d024a32cc1ba}\label{classparameters_aa5abb5b9948594ea48b5d024a32cc1ba} 
+\index{parameters@{parameters}!qbin@{qbin}}
+\index{qbin@{qbin}!parameters@{parameters}}
+\doxysubsubsection{\texorpdfstring{qbin()}{qbin()}}
+{\footnotesize\ttfamily std\+::vector$<$ double $>$ parameters\+::qbin (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Returns rbin\+\_\+. 
+
+\Hypertarget{classparameters_a33e40210473cf7ccb10b105418f26ef4}\label{classparameters_a33e40210473cf7ccb10b105418f26ef4} 
+\index{parameters@{parameters}!qbin\_type@{qbin\_type}}
+\index{qbin\_type@{qbin\_type}!parameters@{parameters}}
+\doxysubsubsection{\texorpdfstring{qbin\_type()}{qbin\_type()}}
+{\footnotesize\ttfamily std\+::string parameters\+::qbin\+\_\+type (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Returns min\+\_\+binwidth\+\_\+r\+\_\+. 
+
+\Hypertarget{classparameters_ab8f106d34b1b9d4bd2ec836509f9f7f0}\label{classparameters_ab8f106d34b1b9d4bd2ec836509f9f7f0} 
+\index{parameters@{parameters}!qfullmax@{qfullmax}}
+\index{qfullmax@{qfullmax}!parameters@{parameters}}
+\doxysubsubsection{\texorpdfstring{qfullmax()}{qfullmax()}}
+{\footnotesize\ttfamily double parameters\+::qfullmax (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Returns n\+\_\+rsamps\+\_\+. 
+
+\Hypertarget{classparameters_acdfe9a0a0f06ef569aa4c4ec9bb779ff}\label{classparameters_acdfe9a0a0f06ef569aa4c4ec9bb779ff} 
+\index{parameters@{parameters}!qmax@{qmax}}
+\index{qmax@{qmax}!parameters@{parameters}}
+\doxysubsubsection{\texorpdfstring{qmax()}{qmax()}}
+{\footnotesize\ttfamily double parameters\+::qmax (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Returns qbin\+\_\+type\+\_\+. 
+
+\Hypertarget{classparameters_adea1c9443f242d79c38c0f61d2adf2ba}\label{classparameters_adea1c9443f242d79c38c0f61d2adf2ba} 
+\index{parameters@{parameters}!qsamps\_per\_bin@{qsamps\_per\_bin}}
+\index{qsamps\_per\_bin@{qsamps\_per\_bin}!parameters@{parameters}}
+\doxysubsubsection{\texorpdfstring{qsamps\_per\_bin()}{qsamps\_per\_bin()}}
+{\footnotesize\ttfamily int parameters\+::qsamps\+\_\+per\+\_\+bin (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Returns qbin\+\_\+. 
+
+\Hypertarget{classparameters_a439205c1edbc7e9204bc0d9b996e55b4}\label{classparameters_a439205c1edbc7e9204bc0d9b996e55b4} 
+\index{parameters@{parameters}!randomseed@{randomseed}}
+\index{randomseed@{randomseed}!parameters@{parameters}}
+\doxysubsubsection{\texorpdfstring{randomseed()}{randomseed()}}
+{\footnotesize\ttfamily int parameters\+::randomseed (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Returns Nsamp\+\_\+. 
+
+\Hypertarget{classparameters_ad309f0d5730fff8386ab1cb528d9151a}\label{classparameters_ad309f0d5730fff8386ab1cb528d9151a} 
+\index{parameters@{parameters}!rbin@{rbin}}
+\index{rbin@{rbin}!parameters@{parameters}}
+\doxysubsubsection{\texorpdfstring{rbin()}{rbin()}}
+{\footnotesize\ttfamily std\+::vector$<$ double $>$ parameters\+::rbin (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Returns min\+\_\+binwidth\+\_\+q\+\_\+. 
+
+\Hypertarget{classparameters_a2c4c191fcd8040c9c881b4a4e1d91a56}\label{classparameters_a2c4c191fcd8040c9c881b4a4e1d91a56} 
+\index{parameters@{parameters}!read\_from\_file@{read\_from\_file}}
+\index{read\_from\_file@{read\_from\_file}!parameters@{parameters}}
+\doxysubsubsection{\texorpdfstring{read\_from\_file()}{read\_from\_file()}}
+{\footnotesize\ttfamily int parameters\+::read\+\_\+from\+\_\+file (\begin{DoxyParamCaption}\item[{std\+::ifstream \&}]{infile }\end{DoxyParamCaption})}
+
+
+
+Reads parameters from an infile. 
+
+\Hypertarget{classparameters_acc0065c00e661c7e0f8a67e7289fd14d}\label{classparameters_acc0065c00e661c7e0f8a67e7289fd14d} 
+\index{parameters@{parameters}!sample\_integrator\_type@{sample\_integrator\_type}}
+\index{sample\_integrator\_type@{sample\_integrator\_type}!parameters@{parameters}}
+\doxysubsubsection{\texorpdfstring{sample\_integrator\_type()}{sample\_integrator\_type()}}
+{\footnotesize\ttfamily std\+::string parameters\+::sample\+\_\+integrator\+\_\+type (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Returns eq\+\_\+samp\+\_\+time\+\_\+sequence\+\_\+. 
+
+\Hypertarget{classparameters_a01746cd7f66bec6e404fb668843d6df5}\label{classparameters_a01746cd7f66bec6e404fb668843d6df5} 
+\index{parameters@{parameters}!samplestart@{samplestart}}
+\index{samplestart@{samplestart}!parameters@{parameters}}
+\doxysubsubsection{\texorpdfstring{samplestart()}{samplestart()}}
+{\footnotesize\ttfamily double parameters\+::samplestart (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Returns Tmax\+\_\+. 
+
+\Hypertarget{classparameters_aee63eea9daab44a05841bc3e9c2a6217}\label{classparameters_aee63eea9daab44a05841bc3e9c2a6217} 
+\index{parameters@{parameters}!samplestep@{samplestep}}
+\index{samplestep@{samplestep}!parameters@{parameters}}
+\doxysubsubsection{\texorpdfstring{samplestep()}{samplestep()}}
+{\footnotesize\ttfamily double parameters\+::samplestep (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Returns samplestart\+\_\+. 
+
+\Hypertarget{classparameters_a15d1cfad43e7f45268daef2216533e27}\label{classparameters_a15d1cfad43e7f45268daef2216533e27} 
+\index{parameters@{parameters}!sampling\_time\_sequence@{sampling\_time\_sequence}}
+\index{sampling\_time\_sequence@{sampling\_time\_sequence}!parameters@{parameters}}
+\doxysubsubsection{\texorpdfstring{sampling\_time\_sequence()}{sampling\_time\_sequence()}}
+{\footnotesize\ttfamily std\+::string parameters\+::sampling\+\_\+time\+\_\+sequence (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Returns mc\+\_\+steplength\+\_\+r\+\_\+. 
+
+\Hypertarget{classparameters_a040053c54e66523f551cdae236aef817}\label{classparameters_a040053c54e66523f551cdae236aef817} 
+\index{parameters@{parameters}!scale\_tau@{scale\_tau}}
+\index{scale\_tau@{scale\_tau}!parameters@{parameters}}
+\doxysubsubsection{\texorpdfstring{scale\_tau()}{scale\_tau()}}
+{\footnotesize\ttfamily void parameters\+::scale\+\_\+tau (\begin{DoxyParamCaption}\item[{double}]{scale\+\_\+factor }\end{DoxyParamCaption})}
+
+
+
+tau\+\_\+berendsen can be scaled with this. 
+
+\Hypertarget{classparameters_adb65117a6fa645ceb1e1dfc84de4fbab}\label{classparameters_adb65117a6fa645ceb1e1dfc84de4fbab} 
+\index{parameters@{parameters}!snap\_overview\_file@{snap\_overview\_file}}
+\index{snap\_overview\_file@{snap\_overview\_file}!parameters@{parameters}}
+\doxysubsubsection{\texorpdfstring{snap\_overview\_file()}{snap\_overview\_file()}}
+{\footnotesize\ttfamily std\+::string parameters\+::snap\+\_\+overview\+\_\+file (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Returns on\+\_\+fly\+\_\+sampling\+\_\+. 
+
+\Hypertarget{classparameters_a66f1255b9cf26121ea0f4e14d164a283}\label{classparameters_a66f1255b9cf26121ea0f4e14d164a283} 
+\index{parameters@{parameters}!sqrtN@{sqrtN}}
+\index{sqrtN@{sqrtN}!parameters@{parameters}}
+\doxysubsubsection{\texorpdfstring{sqrtN()}{sqrtN()}}
+{\footnotesize\ttfamily int parameters\+::sqrtN (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Returns N\+\_\+. 
+
+\Hypertarget{classparameters_ae4cfc32b2c108e118c57476908466761}\label{classparameters_ae4cfc32b2c108e118c57476908466761} 
+\index{parameters@{parameters}!system@{system}}
+\index{system@{system}!parameters@{parameters}}
+\doxysubsubsection{\texorpdfstring{system()}{system()}}
+{\footnotesize\ttfamily std\+::string parameters\+::system (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classparameters_ad7a8ac042321c9453e91a20a7185f2d6}\label{classparameters_ad7a8ac042321c9453e91a20a7185f2d6} 
+\index{parameters@{parameters}!tau\_berendsen@{tau\_berendsen}}
+\index{tau\_berendsen@{tau\_berendsen}!parameters@{parameters}}
+\doxysubsubsection{\texorpdfstring{tau\_berendsen()}{tau\_berendsen()}}
+{\footnotesize\ttfamily double parameters\+::tau\+\_\+berendsen (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Returns eq\+\_\+av\+\_\+time\+\_\+. 
+
+\Hypertarget{classparameters_a830521cd863f0e63040d3f9c8e5b57c2}\label{classparameters_a830521cd863f0e63040d3f9c8e5b57c2} 
+\index{parameters@{parameters}!Tmax@{Tmax}}
+\index{Tmax@{Tmax}!parameters@{parameters}}
+\doxysubsubsection{\texorpdfstring{Tmax()}{Tmax()}}
+{\footnotesize\ttfamily double parameters\+::\+Tmax (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Returns dt\+\_\+. 
+
+\Hypertarget{classparameters_a389f75e6ab3f71c9453385147f555893}\label{classparameters_a389f75e6ab3f71c9453385147f555893} 
+\index{parameters@{parameters}!U@{U}}
+\index{U@{U}!parameters@{parameters}}
+\doxysubsubsection{\texorpdfstring{U()}{U()}}
+{\footnotesize\ttfamily double parameters\+::U (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Returns J\+\_\+. 
+
+\Hypertarget{classparameters_ae619d13e99dda3ca14406adb89d090a9}\label{classparameters_ae619d13e99dda3ca14406adb89d090a9} 
+\index{parameters@{parameters}!vm\_eta@{vm\_eta}}
+\index{vm\_eta@{vm\_eta}!parameters@{parameters}}
+\doxysubsubsection{\texorpdfstring{vm\_eta()}{vm\_eta()}}
+{\footnotesize\ttfamily double parameters\+::vm\+\_\+eta (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Returns vm\+\_\+v\+\_\+. 
+
+\Hypertarget{classparameters_a7a3b2dd5a57b7987a02dda707f807978}\label{classparameters_a7a3b2dd5a57b7987a02dda707f807978} 
+\index{parameters@{parameters}!vm\_v@{vm\_v}}
+\index{vm\_v@{vm\_v}!parameters@{parameters}}
+\doxysubsubsection{\texorpdfstring{vm\_v()}{vm\_v()}}
+{\footnotesize\ttfamily double parameters\+::vm\+\_\+v (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Returns activity\+\_\+. 
+
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{classparameters_ab8ddfe88bc28f2163549eac53fcb1c89}\label{classparameters_ab8ddfe88bc28f2163549eac53fcb1c89} 
+\index{parameters@{parameters}!activity\_@{activity\_}}
+\index{activity\_@{activity\_}!parameters@{parameters}}
+\doxysubsubsection{\texorpdfstring{activity\_}{activity\_}}
+{\footnotesize\ttfamily double parameters\+::activity\+\_\+ = 0\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Activity in the mobile XY model (stream velocity) 
+
+\Hypertarget{classparameters_a0a9f400ec6ad0a3a5da54a73a27358ae}\label{classparameters_a0a9f400ec6ad0a3a5da54a73a27358ae} 
+\index{parameters@{parameters}!av\_time\_spacing\_@{av\_time\_spacing\_}}
+\index{av\_time\_spacing\_@{av\_time\_spacing\_}!parameters@{parameters}}
+\doxysubsubsection{\texorpdfstring{av\_time\_spacing\_}{av\_time\_spacing\_}}
+{\footnotesize\ttfamily double parameters\+::av\+\_\+time\+\_\+spacing\+\_\+ = 1e2\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Minimum time spacing for average calculations in sampling. 
+
+\Hypertarget{classparameters_a1a0cbbc21ca22c692804f69911b19dd4}\label{classparameters_a1a0cbbc21ca22c692804f69911b19dd4} 
+\index{parameters@{parameters}!brownian\_kT\_omega\_@{brownian\_kT\_omega\_}}
+\index{brownian\_kT\_omega\_@{brownian\_kT\_omega\_}!parameters@{parameters}}
+\doxysubsubsection{\texorpdfstring{brownian\_kT\_omega\_}{brownian\_kT\_omega\_}}
+{\footnotesize\ttfamily double parameters\+::brownian\+\_\+k\+T\+\_\+omega\+\_\+ = -\/1\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Temperature for spin momentum thermostat in a Brownian dynamics simulation (applied when non-\/negative) 
+
+\Hypertarget{classparameters_af1ddf4c61f7ad809ccbcb5f6db4d7615}\label{classparameters_af1ddf4c61f7ad809ccbcb5f6db4d7615} 
+\index{parameters@{parameters}!brownian\_kT\_p\_@{brownian\_kT\_p\_}}
+\index{brownian\_kT\_p\_@{brownian\_kT\_p\_}!parameters@{parameters}}
+\doxysubsubsection{\texorpdfstring{brownian\_kT\_p\_}{brownian\_kT\_p\_}}
+{\footnotesize\ttfamily double parameters\+::brownian\+\_\+k\+T\+\_\+p\+\_\+ = -\/1\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Temperature for momentum thermostat in a Brownian dynamics simulation (applied when non-\/negative) 
+
+\Hypertarget{classparameters_a80696d0ce3842e140a7a556b6419289e}\label{classparameters_a80696d0ce3842e140a7a556b6419289e} 
+\index{parameters@{parameters}!brownian\_timestep\_@{brownian\_timestep\_}}
+\index{brownian\_timestep\_@{brownian\_timestep\_}!parameters@{parameters}}
+\doxysubsubsection{\texorpdfstring{brownian\_timestep\_}{brownian\_timestep\_}}
+{\footnotesize\ttfamily double parameters\+::brownian\+\_\+timestep\+\_\+ = 1.\+00\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Step length for Brownian timestep (in units of system time) 
+
+\Hypertarget{classparameters_a3d5e45ae852897573234a531ff8b8f0f}\label{classparameters_a3d5e45ae852897573234a531ff8b8f0f} 
+\index{parameters@{parameters}!cutoff\_@{cutoff\_}}
+\index{cutoff\_@{cutoff\_}!parameters@{parameters}}
+\doxysubsubsection{\texorpdfstring{cutoff\_}{cutoff\_}}
+{\footnotesize\ttfamily double parameters\+::cutoff\+\_\+ = 1\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Cutoff length for interaction potential (default value 1) 
+
+\Hypertarget{classparameters_acaecfda49511eedbf07e965e0582a12e}\label{classparameters_acaecfda49511eedbf07e965e0582a12e} 
+\index{parameters@{parameters}!dof\_@{dof\_}}
+\index{dof\_@{dof\_}!parameters@{parameters}}
+\doxysubsubsection{\texorpdfstring{dof\_}{dof\_}}
+{\footnotesize\ttfamily double parameters\+::dof\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Degrees of freedom. Calculated automatically from N\+\_\+ and the system\+\_\+. 
+
+\Hypertarget{classparameters_a8e793a66a79f1fb730be8b6db1637d3b}\label{classparameters_a8e793a66a79f1fb730be8b6db1637d3b} 
+\index{parameters@{parameters}!dt\_@{dt\_}}
+\index{dt\_@{dt\_}!parameters@{parameters}}
+\doxysubsubsection{\texorpdfstring{dt\_}{dt\_}}
+{\footnotesize\ttfamily double parameters\+::dt\+\_\+ = 0.\+01\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Integration time step. 
+
+\Hypertarget{classparameters_ab4dc9ce73baec957696ffb15a07cbdc2}\label{classparameters_ab4dc9ce73baec957696ffb15a07cbdc2} 
+\index{parameters@{parameters}!ensemble\_@{ensemble\_}}
+\index{ensemble\_@{ensemble\_}!parameters@{parameters}}
+\doxysubsubsection{\texorpdfstring{ensemble\_}{ensemble\_}}
+{\footnotesize\ttfamily std\+::string parameters\+::ensemble\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Desired ensemble. \"{}nvt\"{} only works with certain integrators. \"{}nve\"{} is good standard. 
+
+\Hypertarget{classparameters_a98df0dc6b6fc6245a220f083898f2e38}\label{classparameters_a98df0dc6b6fc6245a220f083898f2e38} 
+\index{parameters@{parameters}!eq\_agreement\_threshold\_@{eq\_agreement\_threshold\_}}
+\index{eq\_agreement\_threshold\_@{eq\_agreement\_threshold\_}!parameters@{parameters}}
+\doxysubsubsection{\texorpdfstring{eq\_agreement\_threshold\_}{eq\_agreement\_threshold\_}}
+{\footnotesize\ttfamily double parameters\+::eq\+\_\+agreement\+\_\+threshold\+\_\+ = 1e-\/2\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Temperature agreement threshold to check successful equilibration. 
+
+\Hypertarget{classparameters_a185dc82f67f4832c8bc3edaec93cfef8}\label{classparameters_a185dc82f67f4832c8bc3edaec93cfef8} 
+\index{parameters@{parameters}!eq\_anneal\_rate\_@{eq\_anneal\_rate\_}}
+\index{eq\_anneal\_rate\_@{eq\_anneal\_rate\_}!parameters@{parameters}}
+\doxysubsubsection{\texorpdfstring{eq\_anneal\_rate\_}{eq\_anneal\_rate\_}}
+{\footnotesize\ttfamily double parameters\+::eq\+\_\+anneal\+\_\+rate\+\_\+ = .\+999\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Annealing rate. 
+
+\Hypertarget{classparameters_ad9b0655343ec98525b3664ee31a67334}\label{classparameters_ad9b0655343ec98525b3664ee31a67334} 
+\index{parameters@{parameters}!eq\_anneal\_step\_@{eq\_anneal\_step\_}}
+\index{eq\_anneal\_step\_@{eq\_anneal\_step\_}!parameters@{parameters}}
+\doxysubsubsection{\texorpdfstring{eq\_anneal\_step\_}{eq\_anneal\_step\_}}
+{\footnotesize\ttfamily double parameters\+::eq\+\_\+anneal\+\_\+step\+\_\+ = 1e1\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Annealing time step. 
+
+\Hypertarget{classparameters_a826a80245c9863a5930306ffdff51f5c}\label{classparameters_a826a80245c9863a5930306ffdff51f5c} 
+\index{parameters@{parameters}!eq\_av\_time\_@{eq\_av\_time\_}}
+\index{eq\_av\_time\_@{eq\_av\_time\_}!parameters@{parameters}}
+\doxysubsubsection{\texorpdfstring{eq\_av\_time\_}{eq\_av\_time\_}}
+{\footnotesize\ttfamily double parameters\+::eq\+\_\+av\+\_\+time\+\_\+ = 0\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Averaging time in equilibration (set to 0 for no averaging) 
+
+\Hypertarget{classparameters_a3ea72ec3591bcb0d363fd4e7ae81ce60}\label{classparameters_a3ea72ec3591bcb0d363fd4e7ae81ce60} 
+\index{parameters@{parameters}!eq\_breakcond\_@{eq\_breakcond\_}}
+\index{eq\_breakcond\_@{eq\_breakcond\_}!parameters@{parameters}}
+\doxysubsubsection{\texorpdfstring{eq\_breakcond\_}{eq\_breakcond\_}}
+{\footnotesize\ttfamily std\+::string parameters\+::eq\+\_\+breakcond\+\_\+ = \"{}temperature\"{}\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Break condition for equilibration. 
+
+Possible values\+: \hypertarget{index_multi_row}{}
+\tabulinesep=1mm
+\begin{longtabu}spread 0pt [c]{*{2}{|X[-1]}|}
+\caption{Values of eq\+\_\+breakcond\+\_\+}\label{index_multi_row}\\
+\hline
+\cellcolor{\tableheadbgcolor}\textbf{ eq\+\_\+breakcond\+\_\+ value }&\cellcolor{\tableheadbgcolor}\textbf{ break condition }\\\cline{1-2}
+\endfirsthead
+\hline
+\endfoot
+\hline
+\cellcolor{\tableheadbgcolor}\textbf{ eq\+\_\+breakcond\+\_\+ value }&\cellcolor{\tableheadbgcolor}\textbf{ break condition }\\\cline{1-2}
+\endhead
+\"{}temperature\"{} &breaks when the desired temperature has been maintained for a certain time (default) \\\cline{1-2}
+\"{}time\"{} &breaks when an equilibration time has passed and checks temperature, continues equilibration if temperature is not reached \\\cline{1-2}
+\"{}time\+\_\+hard\"{} &breaks when an equilibration time has passed, regardless of temperature \\\cline{1-2}
+\"{}any\"{} &breaks if the time or the temperature condition is met \\\cline{1-2}
+\end{longtabu}
+\Hypertarget{classparameters_a0fe9843765567e08e2f63e778ddf86eb}\label{classparameters_a0fe9843765567e08e2f63e778ddf86eb} 
+\index{parameters@{parameters}!eq\_brownian\_kT\_omega\_@{eq\_brownian\_kT\_omega\_}}
+\index{eq\_brownian\_kT\_omega\_@{eq\_brownian\_kT\_omega\_}!parameters@{parameters}}
+\doxysubsubsection{\texorpdfstring{eq\_brownian\_kT\_omega\_}{eq\_brownian\_kT\_omega\_}}
+{\footnotesize\ttfamily double parameters\+::eq\+\_\+brownian\+\_\+k\+T\+\_\+omega\+\_\+ = -\/1\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Temperature for spin momentum thermostat during equilibration in a Brownian dynamics simulation (applied when non-\/negative) 
+
+\Hypertarget{classparameters_ae6e36acde2c287bd1f9c9946fda072a9}\label{classparameters_ae6e36acde2c287bd1f9c9946fda072a9} 
+\index{parameters@{parameters}!eq\_brownian\_kT\_p\_@{eq\_brownian\_kT\_p\_}}
+\index{eq\_brownian\_kT\_p\_@{eq\_brownian\_kT\_p\_}!parameters@{parameters}}
+\doxysubsubsection{\texorpdfstring{eq\_brownian\_kT\_p\_}{eq\_brownian\_kT\_p\_}}
+{\footnotesize\ttfamily double parameters\+::eq\+\_\+brownian\+\_\+k\+T\+\_\+p\+\_\+ = -\/1\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Temperature for momentum thermostat during equilibration in a Brownian dynamics simulation (applied when non-\/negative) 
+
+\Hypertarget{classparameters_afa72496d2e21ec036898b07d73d74f91}\label{classparameters_afa72496d2e21ec036898b07d73d74f91} 
+\index{parameters@{parameters}!eq\_brownian\_timestep\_@{eq\_brownian\_timestep\_}}
+\index{eq\_brownian\_timestep\_@{eq\_brownian\_timestep\_}!parameters@{parameters}}
+\doxysubsubsection{\texorpdfstring{eq\_brownian\_timestep\_}{eq\_brownian\_timestep\_}}
+{\footnotesize\ttfamily double parameters\+::eq\+\_\+brownian\+\_\+timestep\+\_\+ = 1.\+00\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Step length for Brownian timestep during equilibration (in units of system time) 
+
+\Hypertarget{classparameters_a1460e23a4111380baf8a2b697062366f}\label{classparameters_a1460e23a4111380baf8a2b697062366f} 
+\index{parameters@{parameters}!eq\_integrator\_type\_@{eq\_integrator\_type\_}}
+\index{eq\_integrator\_type\_@{eq\_integrator\_type\_}!parameters@{parameters}}
+\doxysubsubsection{\texorpdfstring{eq\_integrator\_type\_}{eq\_integrator\_type\_}}
+{\footnotesize\ttfamily std\+::string parameters\+::eq\+\_\+integrator\+\_\+type\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Integrator used for equilibration. 
+
+Possible values\+: \hypertarget{index_multi_row}{}
+\tabulinesep=1mm
+\begin{longtabu}spread 0pt [c]{*{2}{|X[-1]}|}
+\caption{Values of eq\+\_\+integrator\+\_\+type\+\_\+}\label{index_multi_row}\\
+\hline
+\cellcolor{\tableheadbgcolor}\textbf{ eq\+\_\+integrator\+\_\+type\+\_\+ value }&\cellcolor{\tableheadbgcolor}\textbf{ integrator used }\\\cline{1-2}
+\endfirsthead
+\hline
+\endfoot
+\hline
+\cellcolor{\tableheadbgcolor}\textbf{ eq\+\_\+integrator\+\_\+type\+\_\+ value }&\cellcolor{\tableheadbgcolor}\textbf{ integrator used }\\\cline{1-2}
+\endhead
+\"{}lf\"{} &leap-\/frog scheme \\\cline{1-2}
+\"{}rk4\"{} &4th order Runge-\/\+Kutta scheme \\\cline{1-2}
+\"{}langevin\"{} &Langevin-\/thermostatted time-\/evolution (stochastic, not tested) \\\cline{1-2}
+\"{}nh\"{} &Nosé-\/\+Hoover thermostatted integrator (not extensively tested) \\\cline{1-2}
+\"{}np\"{} &Nosé-\/\+Poincaré thermostatted integrator (possibly bugged, not extensively tested) \\\cline{1-2}
+\"{}mc\"{} &Monte-\/\+Carlo integration\+: Has not been implemented yet \\\cline{1-2}
+\end{longtabu}
+
+
+TODO\+: Langevin dynamics uses same parameters as sampling integrator. Potentially different parameters for equilibration may be implemented
+
+TODO\+: Monte Carlo does not work yet. \Hypertarget{classparameters_a8355efadfd4415ea311b5fdf256fab87}\label{classparameters_a8355efadfd4415ea311b5fdf256fab87} 
+\index{parameters@{parameters}!eq\_mode\_@{eq\_mode\_}}
+\index{eq\_mode\_@{eq\_mode\_}!parameters@{parameters}}
+\doxysubsubsection{\texorpdfstring{eq\_mode\_}{eq\_mode\_}}
+{\footnotesize\ttfamily std\+::string parameters\+::eq\+\_\+mode\+\_\+ = \"{}anneal\"{}\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Equilibration mode. 
+
+Possible values\+: \hypertarget{index_multi_row}{}
+\tabulinesep=1mm
+\begin{longtabu}spread 0pt [c]{*{2}{|X[-1]}|}
+\caption{Values of eq\+\_\+mode\+\_\+}\label{index_multi_row}\\
+\hline
+\cellcolor{\tableheadbgcolor}\textbf{ eq\+\_\+mode\+\_\+ value }&\cellcolor{\tableheadbgcolor}\textbf{ mode of equilibration }\\\cline{1-2}
+\endfirsthead
+\hline
+\endfoot
+\hline
+\cellcolor{\tableheadbgcolor}\textbf{ eq\+\_\+mode\+\_\+ value }&\cellcolor{\tableheadbgcolor}\textbf{ mode of equilibration }\\\cline{1-2}
+\endhead
+\"{}anneal\"{} &reaches the desired temperature with simulated annealing (default) \\\cline{1-2}
+\"{}berendsen\"{} &reaches the desired temperature with Berendsen thermostat \\\cline{1-2}
+\"{}brownian\"{} &reaches the desired temperature by repeatedly setting it (hard Brownian thermostat) \\\cline{1-2}
+\end{longtabu}
+
+
+TODO\+: Add options for Langevin thermostat.
+
+TODO\+: Equilibrate without temperature, keep energy fixed. \Hypertarget{classparameters_a2951e8180f126c5755a68e9bbcf39552}\label{classparameters_a2951e8180f126c5755a68e9bbcf39552} 
+\index{parameters@{parameters}!eq\_Nsamp\_@{eq\_Nsamp\_}}
+\index{eq\_Nsamp\_@{eq\_Nsamp\_}!parameters@{parameters}}
+\doxysubsubsection{\texorpdfstring{eq\_Nsamp\_}{eq\_Nsamp\_}}
+{\footnotesize\ttfamily int parameters\+::eq\+\_\+\+Nsamp\+\_\+ = 100\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Number of time samplings performed during equilibration. Only has an effect if eq\+\_\+sampswitch = 1. 
+
+\Hypertarget{classparameters_a6b2aa767f1aade9d4c5693d4ff50dce0}\label{classparameters_a6b2aa767f1aade9d4c5693d4ff50dce0} 
+\index{parameters@{parameters}!eq\_samp\_time\_sequence\_@{eq\_samp\_time\_sequence\_}}
+\index{eq\_samp\_time\_sequence\_@{eq\_samp\_time\_sequence\_}!parameters@{parameters}}
+\doxysubsubsection{\texorpdfstring{eq\_samp\_time\_sequence\_}{eq\_samp\_time\_sequence\_}}
+{\footnotesize\ttfamily std\+::string parameters\+::eq\+\_\+samp\+\_\+time\+\_\+sequence\+\_\+ = \"{}lin\"{}\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Sampling time sequence. \textquotesingle{}lin\textquotesingle{} or \textquotesingle{}log\textquotesingle{}. 
+
+\Hypertarget{classparameters_abafdf3fcdba2d495ad3e231d20d015e6}\label{classparameters_abafdf3fcdba2d495ad3e231d20d015e6} 
+\index{parameters@{parameters}!eq\_sampswitch\_@{eq\_sampswitch\_}}
+\index{eq\_sampswitch\_@{eq\_sampswitch\_}!parameters@{parameters}}
+\doxysubsubsection{\texorpdfstring{eq\_sampswitch\_}{eq\_sampswitch\_}}
+{\footnotesize\ttfamily bool parameters\+::eq\+\_\+sampswitch\+\_\+ = 0\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+switch controlling whether sampling data is stored in equilibration 
+
+\Hypertarget{classparameters_ae906797de8c974192b5ce790f51e85e7}\label{classparameters_ae906797de8c974192b5ce790f51e85e7} 
+\index{parameters@{parameters}!eq\_Tmax\_@{eq\_Tmax\_}}
+\index{eq\_Tmax\_@{eq\_Tmax\_}!parameters@{parameters}}
+\doxysubsubsection{\texorpdfstring{eq\_Tmax\_}{eq\_Tmax\_}}
+{\footnotesize\ttfamily double parameters\+::eq\+\_\+\+Tmax\+\_\+ = 100\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Maximum equilibration time. 
+
+\Hypertarget{classparameters_a090c4ecd634c07cdc3ba4238e7953137}\label{classparameters_a090c4ecd634c07cdc3ba4238e7953137} 
+\index{parameters@{parameters}!eq\_Tprintstep\_@{eq\_Tprintstep\_}}
+\index{eq\_Tprintstep\_@{eq\_Tprintstep\_}!parameters@{parameters}}
+\doxysubsubsection{\texorpdfstring{eq\_Tprintstep\_}{eq\_Tprintstep\_}}
+{\footnotesize\ttfamily double parameters\+::eq\+\_\+\+Tprintstep\+\_\+ = std\+::numeric\+\_\+limits$<$double$>$\+::quiet\+\_\+\+NaN()\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Temperature print interval. Prints intermediate data when equilibration reaches T. 
+
+\Hypertarget{classparameters_ac906a004b1a2510600369623836822e6}\label{classparameters_ac906a004b1a2510600369623836822e6} 
+\index{parameters@{parameters}!gamma\_ld\_om\_@{gamma\_ld\_om\_}}
+\index{gamma\_ld\_om\_@{gamma\_ld\_om\_}!parameters@{parameters}}
+\doxysubsubsection{\texorpdfstring{gamma\_ld\_om\_}{gamma\_ld\_om\_}}
+{\footnotesize\ttfamily double parameters\+::gamma\+\_\+ld\+\_\+om\+\_\+ = 0\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Damping rate gamma of the Langevin dynamics. Associated to the spin angular velocity omega. 
+
+\Hypertarget{classparameters_a4dddb0e91f31e6f2b23af511bfa55ba2}\label{classparameters_a4dddb0e91f31e6f2b23af511bfa55ba2} 
+\index{parameters@{parameters}!gamma\_ld\_p\_@{gamma\_ld\_p\_}}
+\index{gamma\_ld\_p\_@{gamma\_ld\_p\_}!parameters@{parameters}}
+\doxysubsubsection{\texorpdfstring{gamma\_ld\_p\_}{gamma\_ld\_p\_}}
+{\footnotesize\ttfamily double parameters\+::gamma\+\_\+ld\+\_\+p\+\_\+ = 0\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Damping rate gamma of the Langevin dynamics. Associated to the linear angular momentum p. 
+
+\Hypertarget{classparameters_ae8118f1ad70cd3f4ac63d8e94acd9dd9}\label{classparameters_ae8118f1ad70cd3f4ac63d8e94acd9dd9} 
+\index{parameters@{parameters}!I\_@{I\_}}
+\index{I\_@{I\_}!parameters@{parameters}}
+\doxysubsubsection{\texorpdfstring{I\_}{I\_}}
+{\footnotesize\ttfamily double parameters\+::\+I\+\_\+ = 1\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Spin inertia. 
+
+\Hypertarget{classparameters_aabe87c0360c84be2b1932cd075d6badb}\label{classparameters_aabe87c0360c84be2b1932cd075d6badb} 
+\index{parameters@{parameters}!init\_file\_@{init\_file\_}}
+\index{init\_file\_@{init\_file\_}!parameters@{parameters}}
+\doxysubsubsection{\texorpdfstring{init\_file\_}{init\_file\_}}
+{\footnotesize\ttfamily std\+::string parameters\+::init\+\_\+file\+\_\+ = \"{}input/init\+\_\+snap.\+in\"{}\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Path to initialization file. Only relevant if init\+\_\+mode is set to \"{}file\"{}. 
+
+\Hypertarget{classparameters_a508c760464a660695a04f395f6db1a71}\label{classparameters_a508c760464a660695a04f395f6db1a71} 
+\index{parameters@{parameters}!init\_kT\_@{init\_kT\_}}
+\index{init\_kT\_@{init\_kT\_}!parameters@{parameters}}
+\doxysubsubsection{\texorpdfstring{init\_kT\_}{init\_kT\_}}
+{\footnotesize\ttfamily double parameters\+::init\+\_\+k\+T\+\_\+ = -\/1\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Initialization temperature, temperature at which simulation should start. Has no effect when chosen negative. 
+
+\Hypertarget{classparameters_ac0163b99356ad025e6155a0955138993}\label{classparameters_ac0163b99356ad025e6155a0955138993} 
+\index{parameters@{parameters}!init\_mode\_@{init\_mode\_}}
+\index{init\_mode\_@{init\_mode\_}!parameters@{parameters}}
+\doxysubsubsection{\texorpdfstring{init\_mode\_}{init\_mode\_}}
+{\footnotesize\ttfamily std\+::string parameters\+::init\+\_\+mode\+\_\+ = \"{}random\"{}\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Initialization mode. 
+
+Possible values\+: \hypertarget{index_multi_row}{}
+\tabulinesep=1mm
+\begin{longtabu}spread 0pt [c]{*{2}{|X[-1]}|}
+\caption{Values of init\+\_\+mode}\label{index_multi_row}\\
+\hline
+\cellcolor{\tableheadbgcolor}\textbf{ init\+\_\+mode value }&\cellcolor{\tableheadbgcolor}\textbf{ initialization }\\\cline{1-2}
+\endfirsthead
+\hline
+\endfoot
+\hline
+\cellcolor{\tableheadbgcolor}\textbf{ init\+\_\+mode value }&\cellcolor{\tableheadbgcolor}\textbf{ initialization }\\\cline{1-2}
+\endhead
+\"{}random\"{} &all particles placed and oriented randomly \\\cline{1-2}
+\"{}aligned\"{} &particles placed randomly, but oriented along some random direction \\\cline{1-2}
+\"{}file\"{} &reads initial configuration from file \\\cline{1-2}
+\end{longtabu}
+
+
+For initialization from file, the path has to be specified in the parameter init\+\_\+file\+\_\+ \Hypertarget{classparameters_a0cccf1e9a855044746a190df6f2baa52}\label{classparameters_a0cccf1e9a855044746a190df6f2baa52} 
+\index{parameters@{parameters}!init\_random\_angle\_@{init\_random\_angle\_}}
+\index{init\_random\_angle\_@{init\_random\_angle\_}!parameters@{parameters}}
+\doxysubsubsection{\texorpdfstring{init\_random\_angle\_}{init\_random\_angle\_}}
+{\footnotesize\ttfamily double parameters\+::init\+\_\+random\+\_\+angle\+\_\+ = 0\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Random angle displacement at initialization (for scaled initialization only) 
+
+\Hypertarget{classparameters_ad6ac0ccb8f890d5e2063cfefd171d138}\label{classparameters_ad6ac0ccb8f890d5e2063cfefd171d138} 
+\index{parameters@{parameters}!init\_random\_displacement\_@{init\_random\_displacement\_}}
+\index{init\_random\_displacement\_@{init\_random\_displacement\_}!parameters@{parameters}}
+\doxysubsubsection{\texorpdfstring{init\_random\_displacement\_}{init\_random\_displacement\_}}
+{\footnotesize\ttfamily double parameters\+::init\+\_\+random\+\_\+displacement\+\_\+ = 0\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Random particle displacement at initialization (for scaled initialization only) 
+
+\Hypertarget{classparameters_a213b714562dfccc8527cc3e9197065d9}\label{classparameters_a213b714562dfccc8527cc3e9197065d9} 
+\index{parameters@{parameters}!J\_@{J\_}}
+\index{J\_@{J\_}!parameters@{parameters}}
+\doxysubsubsection{\texorpdfstring{J\_}{J\_}}
+{\footnotesize\ttfamily double parameters\+::\+J\+\_\+ = 1\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Spin interaction strength. 
+
+\Hypertarget{classparameters_aca8744dd6fdd02666582c0417d22a2da}\label{classparameters_aca8744dd6fdd02666582c0417d22a2da} 
+\index{parameters@{parameters}!job\_id\_@{job\_id\_}}
+\index{job\_id\_@{job\_id\_}!parameters@{parameters}}
+\doxysubsubsection{\texorpdfstring{job\_id\_}{job\_id\_}}
+{\footnotesize\ttfamily std\+::string parameters\+::job\+\_\+id\+\_\+ = \"{}\"{}\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Job identifier. If specified, data will be stored in data\+\_\+\textquotesingle{}job\+\_\+id\textquotesingle{}.out etc. Otherwise, it is just the default data.\+out. 
+
+\Hypertarget{classparameters_aa603ae7d77dad093b738ef61a4625f1d}\label{classparameters_aa603ae7d77dad093b738ef61a4625f1d} 
+\index{parameters@{parameters}!kT\_@{kT\_}}
+\index{kT\_@{kT\_}!parameters@{parameters}}
+\doxysubsubsection{\texorpdfstring{kT\_}{kT\_}}
+{\footnotesize\ttfamily double parameters\+::k\+T\+\_\+ = .\+89\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Temperature (units of energy) 
+
+\Hypertarget{classparameters_a33c2d02a125bfd9b0458702efe14fbaf}\label{classparameters_a33c2d02a125bfd9b0458702efe14fbaf} 
+\index{parameters@{parameters}!L\_@{L\_}}
+\index{L\_@{L\_}!parameters@{parameters}}
+\doxysubsubsection{\texorpdfstring{L\_}{L\_}}
+{\footnotesize\ttfamily double parameters\+::\+L\+\_\+ = 16\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Length of simulation box. 
+
+\Hypertarget{classparameters_a1edfa853220a3d6bc6d9629b3d39b108}\label{classparameters_a1edfa853220a3d6bc6d9629b3d39b108} 
+\index{parameters@{parameters}!lattice\_type\_@{lattice\_type\_}}
+\index{lattice\_type\_@{lattice\_type\_}!parameters@{parameters}}
+\doxysubsubsection{\texorpdfstring{lattice\_type\_}{lattice\_type\_}}
+{\footnotesize\ttfamily char parameters\+::lattice\+\_\+type\+\_\+ = \textquotesingle{}s\textquotesingle{}\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+In static system\+: Type of lattice. 
+
+Possible values\+: \hypertarget{index_multi_row}{}
+\tabulinesep=1mm
+\begin{longtabu}spread 0pt [c]{*{2}{|X[-1]}|}
+\caption{Values of lattice\+\_\+type}\label{index_multi_row}\\
+\hline
+\cellcolor{\tableheadbgcolor}\textbf{ lattice\+\_\+typ value }&\cellcolor{\tableheadbgcolor}\textbf{ lattice }\\\cline{1-2}
+\endfirsthead
+\hline
+\endfoot
+\hline
+\cellcolor{\tableheadbgcolor}\textbf{ lattice\+\_\+typ value }&\cellcolor{\tableheadbgcolor}\textbf{ lattice }\\\cline{1-2}
+\endhead
+\textquotesingle{}s\textquotesingle{} &square lattice (default) \\\cline{1-2}
+\textquotesingle{}t\textquotesingle{} &trigonal lattice \\\cline{1-2}
+\end{longtabu}
+\Hypertarget{classparameters_a431659a3bfd9b988aa35a7b453e30ecf}\label{classparameters_a431659a3bfd9b988aa35a7b453e30ecf} 
+\index{parameters@{parameters}!m\_@{m\_}}
+\index{m\_@{m\_}!parameters@{parameters}}
+\doxysubsubsection{\texorpdfstring{m\_}{m\_}}
+{\footnotesize\ttfamily double parameters\+::m\+\_\+ = 1\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Mass. 
+
+\Hypertarget{classparameters_a775b34a6309237d01ffa8a863e567bf6}\label{classparameters_a775b34a6309237d01ffa8a863e567bf6} 
+\index{parameters@{parameters}!mc\_steplength\_r\_@{mc\_steplength\_r\_}}
+\index{mc\_steplength\_r\_@{mc\_steplength\_r\_}!parameters@{parameters}}
+\doxysubsubsection{\texorpdfstring{mc\_steplength\_r\_}{mc\_steplength\_r\_}}
+{\footnotesize\ttfamily double parameters\+::mc\+\_\+steplength\+\_\+r\+\_\+ = 0.\+1\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Maximal trial step length of MC algorithm for distance r. 
+
+\Hypertarget{classparameters_a65398ff132a26a52b995460c9d931bef}\label{classparameters_a65398ff132a26a52b995460c9d931bef} 
+\index{parameters@{parameters}!mc\_steplength\_theta\_@{mc\_steplength\_theta\_}}
+\index{mc\_steplength\_theta\_@{mc\_steplength\_theta\_}!parameters@{parameters}}
+\doxysubsubsection{\texorpdfstring{mc\_steplength\_theta\_}{mc\_steplength\_theta\_}}
+{\footnotesize\ttfamily double parameters\+::mc\+\_\+steplength\+\_\+theta\+\_\+ = 0.\+1\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Maximal trial step length of MC algorithm for angle theta. 
+
+\Hypertarget{classparameters_af912d994a887f92a17258e033b78da55}\label{classparameters_af912d994a887f92a17258e033b78da55} 
+\index{parameters@{parameters}!min\_binwidth\_q\_@{min\_binwidth\_q\_}}
+\index{min\_binwidth\_q\_@{min\_binwidth\_q\_}!parameters@{parameters}}
+\doxysubsubsection{\texorpdfstring{min\_binwidth\_q\_}{min\_binwidth\_q\_}}
+{\footnotesize\ttfamily double parameters\+::min\+\_\+binwidth\+\_\+q\+\_\+ = .\+015\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Minimal width of q bins, in fractions of 2pi / L. 
+
+\Hypertarget{classparameters_a4afa5906f32bc64177f0e30a00c0d78d}\label{classparameters_a4afa5906f32bc64177f0e30a00c0d78d} 
+\index{parameters@{parameters}!min\_binwidth\_r\_@{min\_binwidth\_r\_}}
+\index{min\_binwidth\_r\_@{min\_binwidth\_r\_}!parameters@{parameters}}
+\doxysubsubsection{\texorpdfstring{min\_binwidth\_r\_}{min\_binwidth\_r\_}}
+{\footnotesize\ttfamily double parameters\+::min\+\_\+binwidth\+\_\+r\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Minimal width of r bins (should be around 1) 
+
+\Hypertarget{classparameters_a018e2592eb51543ad1c0e6eec4a42715}\label{classparameters_a018e2592eb51543ad1c0e6eec4a42715} 
+\index{parameters@{parameters}!mode\_@{mode\_}}
+\index{mode\_@{mode\_}!parameters@{parameters}}
+\doxysubsubsection{\texorpdfstring{mode\_}{mode\_}}
+{\footnotesize\ttfamily std\+::string parameters\+::mode\+\_\+ = \"{}none\"{}\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Run mode for the simulation. 
+
+Possible values\+: \hypertarget{index_multi_row}{}
+\tabulinesep=1mm
+\begin{longtabu}spread 0pt [c]{*{2}{|X[-1]}|}
+\caption{Values of mode}\label{index_multi_row}\\
+\hline
+\cellcolor{\tableheadbgcolor}\textbf{ mode value }&\cellcolor{\tableheadbgcolor}\textbf{ What happens during run? }\\\cline{1-2}
+\endfirsthead
+\hline
+\endfoot
+\hline
+\cellcolor{\tableheadbgcolor}\textbf{ mode value }&\cellcolor{\tableheadbgcolor}\textbf{ What happens during run? }\\\cline{1-2}
+\endhead
+\"{}none\"{} &does nothing \\\cline{1-2}
+\"{}test\"{} &like non, unless user specified. See \doxylink{main_8cpp}{main.\+cpp} \\\cline{1-2}
+\"{}integrate\"{} &performs time integration, possibly with storing \\\cline{1-2}
+\"{}integrate\+\_\+cont\"{} &picks up an aborted integration and continues (relevant in older version, not recommended) \\\cline{1-2}
+\"{}samp\"{} &samples a list of stored snapshots (has to be provided) \\\cline{1-2}
+\"{}equilibrate\"{} &similar to integrate, but performs equilibration run only \\\cline{1-2}
+\end{longtabu}
+\Hypertarget{classparameters_ad80ef8a2ade769b9b02686b3bd720543}\label{classparameters_ad80ef8a2ade769b9b02686b3bd720543} 
+\index{parameters@{parameters}!N\_@{N\_}}
+\index{N\_@{N\_}!parameters@{parameters}}
+\doxysubsubsection{\texorpdfstring{N\_}{N\_}}
+{\footnotesize\ttfamily int parameters\+::\+N\+\_\+ = 256\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Number of particles. 
+
+\Hypertarget{classparameters_a7eee79e9e0b08b44ac1137169f7921da}\label{classparameters_a7eee79e9e0b08b44ac1137169f7921da} 
+\index{parameters@{parameters}!N\_qbin\_@{N\_qbin\_}}
+\index{N\_qbin\_@{N\_qbin\_}!parameters@{parameters}}
+\doxysubsubsection{\texorpdfstring{N\_qbin\_}{N\_qbin\_}}
+{\footnotesize\ttfamily int parameters\+::\+N\+\_\+qbin\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Number of bins for q values (used when qbin\+\_\+type = \textquotesingle{}mult\textquotesingle{}) 
+
+\Hypertarget{classparameters_a56f6646869881a58700f6e0c50987711}\label{classparameters_a56f6646869881a58700f6e0c50987711} 
+\index{parameters@{parameters}!N\_rbin\_@{N\_rbin\_}}
+\index{N\_rbin\_@{N\_rbin\_}!parameters@{parameters}}
+\doxysubsubsection{\texorpdfstring{N\_rbin\_}{N\_rbin\_}}
+{\footnotesize\ttfamily int parameters\+::\+N\+\_\+rbin\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Number of bins for r values. 
+
+\Hypertarget{classparameters_a79b41ce2de9e69ac76d0876fb0e95977}\label{classparameters_a79b41ce2de9e69ac76d0876fb0e95977} 
+\index{parameters@{parameters}!n\_rsamps\_@{n\_rsamps\_}}
+\index{n\_rsamps\_@{n\_rsamps\_}!parameters@{parameters}}
+\doxysubsubsection{\texorpdfstring{n\_rsamps\_}{n\_rsamps\_}}
+{\footnotesize\ttfamily int parameters\+::n\+\_\+rsamps\+\_\+ = 30\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Number of (randomly chosen) r sampling points for the calculation of correlation functions in position space (like spin correlation functions or mean squared displacements etc.) 
+
+\Hypertarget{classparameters_a09a40b2d6f46663fdff853a1500ae381}\label{classparameters_a09a40b2d6f46663fdff853a1500ae381} 
+\index{parameters@{parameters}!nh\_eta\_@{nh\_eta\_}}
+\index{nh\_eta\_@{nh\_eta\_}!parameters@{parameters}}
+\doxysubsubsection{\texorpdfstring{nh\_eta\_}{nh\_eta\_}}
+{\footnotesize\ttfamily double parameters\+::nh\+\_\+eta\+\_\+ = 0\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Nose-\/\+Hoover eta value. 
+
+\Hypertarget{classparameters_aa2bdb8e902da99412b0d3f4312dc6ccf}\label{classparameters_aa2bdb8e902da99412b0d3f4312dc6ccf} 
+\index{parameters@{parameters}!nhnp\_pi\_@{nhnp\_pi\_}}
+\index{nhnp\_pi\_@{nhnp\_pi\_}!parameters@{parameters}}
+\doxysubsubsection{\texorpdfstring{nhnp\_pi\_}{nhnp\_pi\_}}
+{\footnotesize\ttfamily double parameters\+::nhnp\+\_\+pi\+\_\+ = 0\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Nose-\/\+Hoover or Nose-\/\+Poincare pi value. 
+
+\Hypertarget{classparameters_af4f54e521f4d8c9619103e96f4b63fc1}\label{classparameters_af4f54e521f4d8c9619103e96f4b63fc1} 
+\index{parameters@{parameters}!nhnp\_Q\_@{nhnp\_Q\_}}
+\index{nhnp\_Q\_@{nhnp\_Q\_}!parameters@{parameters}}
+\doxysubsubsection{\texorpdfstring{nhnp\_Q\_}{nhnp\_Q\_}}
+{\footnotesize\ttfamily double parameters\+::nhnp\+\_\+\+Q\+\_\+ = -\/1\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Nose-\/\+Hoover or Nose-\/\+Poincare Q value. Default value negative, only used if positive. Method using nhnp\+\_\+tau is more recommended. 
+
+\Hypertarget{classparameters_a596b01c43ae6fcf3275ba1d50d3e3f56}\label{classparameters_a596b01c43ae6fcf3275ba1d50d3e3f56} 
+\index{parameters@{parameters}!nhnp\_tau\_@{nhnp\_tau\_}}
+\index{nhnp\_tau\_@{nhnp\_tau\_}!parameters@{parameters}}
+\doxysubsubsection{\texorpdfstring{nhnp\_tau\_}{nhnp\_tau\_}}
+{\footnotesize\ttfamily double parameters\+::nhnp\+\_\+tau\+\_\+ = 0.\+01\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Nose-\/\+Hoover or Nose-\/\+Poincare tau value (time scale that determines Q by Q = g \texorpdfstring{$\ast$}{*} kT \texorpdfstring{$\ast$}{*} tau\texorpdfstring{$^\wedge$}{\string^}2). Order of a microscopic collision time. 
+
+\Hypertarget{classparameters_aa646f01abe92914908e63afa473b10c4}\label{classparameters_aa646f01abe92914908e63afa473b10c4} 
+\index{parameters@{parameters}!np\_s\_@{np\_s\_}}
+\index{np\_s\_@{np\_s\_}!parameters@{parameters}}
+\doxysubsubsection{\texorpdfstring{np\_s\_}{np\_s\_}}
+{\footnotesize\ttfamily double parameters\+::np\+\_\+s\+\_\+ = 1\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Nose-\/\+Poincare s value (initial time scaling factor) 
+
+\Hypertarget{classparameters_aabb242a434c62d9b93376b5af09ea1c1}\label{classparameters_aabb242a434c62d9b93376b5af09ea1c1} 
+\index{parameters@{parameters}!Nsamp\_@{Nsamp\_}}
+\index{Nsamp\_@{Nsamp\_}!parameters@{parameters}}
+\doxysubsubsection{\texorpdfstring{Nsamp\_}{Nsamp\_}}
+{\footnotesize\ttfamily int parameters\+::\+Nsamp\+\_\+ = 30\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Number of samples computed in sampling. Overwrites samplestep. 
+
+\Hypertarget{classparameters_a3defde8a5d2747e34d2fd244bd52f1c0}\label{classparameters_a3defde8a5d2747e34d2fd244bd52f1c0} 
+\index{parameters@{parameters}!on\_fly\_sampling\_@{on\_fly\_sampling\_}}
+\index{on\_fly\_sampling\_@{on\_fly\_sampling\_}!parameters@{parameters}}
+\doxysubsubsection{\texorpdfstring{on\_fly\_sampling\_}{on\_fly\_sampling\_}}
+{\footnotesize\ttfamily bool parameters\+::on\+\_\+fly\+\_\+sampling\+\_\+ = true\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Specifies if sampling should be performed on-\/the-\/fly. 
+
+\Hypertarget{classparameters_a1288200f6b11854d834d114c2d4e8f60}\label{classparameters_a1288200f6b11854d834d114c2d4e8f60} 
+\index{parameters@{parameters}!outfilename\_@{outfilename\_}}
+\index{outfilename\_@{outfilename\_}!parameters@{parameters}}
+\doxysubsubsection{\texorpdfstring{outfilename\_}{outfilename\_}}
+{\footnotesize\ttfamily std\+::string parameters\+::outfilename\+\_\+ = \"{}output/data.\+out\"{}\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Name of outfile. 
+
+\Hypertarget{classparameters_a39db7aef6795af8d0c2cad926bed7005}\label{classparameters_a39db7aef6795af8d0c2cad926bed7005} 
+\index{parameters@{parameters}!output\_folder\_@{output\_folder\_}}
+\index{output\_folder\_@{output\_folder\_}!parameters@{parameters}}
+\doxysubsubsection{\texorpdfstring{output\_folder\_}{output\_folder\_}}
+{\footnotesize\ttfamily std\+::string parameters\+::output\+\_\+folder\+\_\+ = \"{}output\"{}\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Path to output folder. Added by David Stadler. 
+
+\Hypertarget{classparameters_aed5da03ed556c22e8bd48f7df8a91aa4}\label{classparameters_aed5da03ed556c22e8bd48f7df8a91aa4} 
+\index{parameters@{parameters}!print\_snapshots\_@{print\_snapshots\_}}
+\index{print\_snapshots\_@{print\_snapshots\_}!parameters@{parameters}}
+\doxysubsubsection{\texorpdfstring{print\_snapshots\_}{print\_snapshots\_}}
+{\footnotesize\ttfamily bool parameters\+::print\+\_\+snapshots\+\_\+ = false\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Specifies if snapshots should be printed. 
+
+\Hypertarget{classparameters_a864a8023a8133dc597af4488ba29e1b0}\label{classparameters_a864a8023a8133dc597af4488ba29e1b0} 
+\index{parameters@{parameters}!qbin\_@{qbin\_}}
+\index{qbin\_@{qbin\_}!parameters@{parameters}}
+\doxysubsubsection{\texorpdfstring{qbin\_}{qbin\_}}
+{\footnotesize\ttfamily std\+::vector$<$double$>$ parameters\+::qbin\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Binning values for the vector q. Set internally. 
+
+\Hypertarget{classparameters_aac22fb6d4b76e271067a8db178622637}\label{classparameters_aac22fb6d4b76e271067a8db178622637} 
+\index{parameters@{parameters}!qbin\_type\_@{qbin\_type\_}}
+\index{qbin\_type\_@{qbin\_type\_}!parameters@{parameters}}
+\doxysubsubsection{\texorpdfstring{qbin\_type\_}{qbin\_type\_}}
+{\footnotesize\ttfamily std\+::string parameters\+::qbin\+\_\+type\+\_\+ = \"{}mult\"{}\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Type of qbin. \"{}all\"{} uses all possible q values on the grid, \"{}mult\"{} uses only integer multiples of $2\pi/L$ (recommended) 
+
+\Hypertarget{classparameters_a170fdaa985a56b5b06bdbe464beb91ff}\label{classparameters_a170fdaa985a56b5b06bdbe464beb91ff} 
+\index{parameters@{parameters}!qfullmax\_@{qfullmax\_}}
+\index{qfullmax\_@{qfullmax\_}!parameters@{parameters}}
+\doxysubsubsection{\texorpdfstring{qfullmax\_}{qfullmax\_}}
+{\footnotesize\ttfamily double parameters\+::qfullmax\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+q value for full coverage (everything beyond is randomly sampled) 
+
+\Hypertarget{classparameters_a4a1cdf57bef2b5c1bb8b5a1fd5f56f69}\label{classparameters_a4a1cdf57bef2b5c1bb8b5a1fd5f56f69} 
+\index{parameters@{parameters}!qmax\_@{qmax\_}}
+\index{qmax\_@{qmax\_}!parameters@{parameters}}
+\doxysubsubsection{\texorpdfstring{qmax\_}{qmax\_}}
+{\footnotesize\ttfamily double parameters\+::qmax\+\_\+ = 2 \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{computations_8h_ae71449b1cc6e6250b91f539153a7a0d3}{M\+\_\+\+PI}}\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Maximum value for q in bin. Default is $2\pi$ (used when qbin\+\_\+type = \textquotesingle{}all\textquotesingle{}) 
+
+\Hypertarget{classparameters_ae2322b85571e8d7cf34de18feb550a41}\label{classparameters_ae2322b85571e8d7cf34de18feb550a41} 
+\index{parameters@{parameters}!qsamps\_per\_bin\_@{qsamps\_per\_bin\_}}
+\index{qsamps\_per\_bin\_@{qsamps\_per\_bin\_}!parameters@{parameters}}
+\doxysubsubsection{\texorpdfstring{qsamps\_per\_bin\_}{qsamps\_per\_bin\_}}
+{\footnotesize\ttfamily int parameters\+::qsamps\+\_\+per\+\_\+bin\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Number of q samples on a circle. 
+
+\Hypertarget{classparameters_a1889476e2ce6a01052810a42c2ec9653}\label{classparameters_a1889476e2ce6a01052810a42c2ec9653} 
+\index{parameters@{parameters}!randomseed\_@{randomseed\_}}
+\index{randomseed\_@{randomseed\_}!parameters@{parameters}}
+\doxysubsubsection{\texorpdfstring{randomseed\_}{randomseed\_}}
+{\footnotesize\ttfamily int parameters\+::randomseed\+\_\+ = 1\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Random seed. 
+
+\Hypertarget{classparameters_adaf1a3472aa526796f16c107be66b595}\label{classparameters_adaf1a3472aa526796f16c107be66b595} 
+\index{parameters@{parameters}!rbin\_@{rbin\_}}
+\index{rbin\_@{rbin\_}!parameters@{parameters}}
+\doxysubsubsection{\texorpdfstring{rbin\_}{rbin\_}}
+{\footnotesize\ttfamily std\+::vector$<$double$>$ parameters\+::rbin\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Binning values for the vector r. Set internally. 
+
+\Hypertarget{classparameters_a898e2e7576f79889513caa253e3b8772}\label{classparameters_a898e2e7576f79889513caa253e3b8772} 
+\index{parameters@{parameters}!sample\_integrator\_type\_@{sample\_integrator\_type\_}}
+\index{sample\_integrator\_type\_@{sample\_integrator\_type\_}!parameters@{parameters}}
+\doxysubsubsection{\texorpdfstring{sample\_integrator\_type\_}{sample\_integrator\_type\_}}
+{\footnotesize\ttfamily std\+::string parameters\+::sample\+\_\+integrator\+\_\+type\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Integrator used for sampling. 
+
+Possible values\+: \hypertarget{index_multi_row}{}
+\tabulinesep=1mm
+\begin{longtabu}spread 0pt [c]{*{2}{|X[-1]}|}
+\caption{Values of eq\+\_\+integrator\+\_\+type\+\_\+}\label{index_multi_row}\\
+\hline
+\cellcolor{\tableheadbgcolor}\textbf{ eq\+\_\+integrator\+\_\+type\+\_\+ value }&\cellcolor{\tableheadbgcolor}\textbf{ integrator used }\\\cline{1-2}
+\endfirsthead
+\hline
+\endfoot
+\hline
+\cellcolor{\tableheadbgcolor}\textbf{ eq\+\_\+integrator\+\_\+type\+\_\+ value }&\cellcolor{\tableheadbgcolor}\textbf{ integrator used }\\\cline{1-2}
+\endhead
+\"{}lf\"{} &leap-\/frog scheme \\\cline{1-2}
+\"{}rk4\"{} &4th order Runge-\/\+Kutta scheme \\\cline{1-2}
+\"{}langevin\"{} &Langevin-\/thermostatted time-\/evolution (stochastic, not tested) \\\cline{1-2}
+\"{}nh\"{} &Nosé-\/\+Hoover thermostatted integrator (not extensively tested) \\\cline{1-2}
+\"{}np\"{} &Nosé-\/\+Poincaré thermostatted integrator (possibly bugged, not extensively tested) \\\cline{1-2}
+\"{}mc\"{} &Monte-\/\+Carlo integration\+: Has not been implemented yet \\\cline{1-2}
+\end{longtabu}
+
+
+TODO\+: Monte Carlo does not work yet. \Hypertarget{classparameters_a4e344964dd1f78872df4cebe6b9925f5}\label{classparameters_a4e344964dd1f78872df4cebe6b9925f5} 
+\index{parameters@{parameters}!samplestart\_@{samplestart\_}}
+\index{samplestart\_@{samplestart\_}!parameters@{parameters}}
+\doxysubsubsection{\texorpdfstring{samplestart\_}{samplestart\_}}
+{\footnotesize\ttfamily double parameters\+::samplestart\+\_\+ = 0\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Time at which sampling starts in the integration run. 
+
+\Hypertarget{classparameters_a06a9fcb99a4231bce279dcd2df925f79}\label{classparameters_a06a9fcb99a4231bce279dcd2df925f79} 
+\index{parameters@{parameters}!samplestep\_@{samplestep\_}}
+\index{samplestep\_@{samplestep\_}!parameters@{parameters}}
+\doxysubsubsection{\texorpdfstring{samplestep\_}{samplestep\_}}
+{\footnotesize\ttfamily double parameters\+::samplestep\+\_\+ = 1\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Time separation of two samples. 
+
+\Hypertarget{classparameters_a7a5d88abdb2af19d9002a3297b3b9c22}\label{classparameters_a7a5d88abdb2af19d9002a3297b3b9c22} 
+\index{parameters@{parameters}!sampling\_time\_sequence\_@{sampling\_time\_sequence\_}}
+\index{sampling\_time\_sequence\_@{sampling\_time\_sequence\_}!parameters@{parameters}}
+\doxysubsubsection{\texorpdfstring{sampling\_time\_sequence\_}{sampling\_time\_sequence\_}}
+{\footnotesize\ttfamily std\+::string parameters\+::sampling\+\_\+time\+\_\+sequence\+\_\+ = \"{}lin\"{}\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Specifies how sampling should be performed. Values are lin (linear sequence of sampling times) and log (logarithmic sequence of sampling times). 
+
+\Hypertarget{classparameters_a5d7c1a80d12ed0be47fb5ca32f6b063d}\label{classparameters_a5d7c1a80d12ed0be47fb5ca32f6b063d} 
+\index{parameters@{parameters}!snap\_overview\_file\_@{snap\_overview\_file\_}}
+\index{snap\_overview\_file\_@{snap\_overview\_file\_}!parameters@{parameters}}
+\doxysubsubsection{\texorpdfstring{snap\_overview\_file\_}{snap\_overview\_file\_}}
+{\footnotesize\ttfamily std\+::string parameters\+::snap\+\_\+overview\+\_\+file\+\_\+ = \"{}output/snapshot\+\_\+overview.\+out\"{}\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+File where the names of all snapshots are stored. Only relevant when run in sampling mode. 
+
+\Hypertarget{classparameters_aa100a3b8e40b0b997f233eca58c177e2}\label{classparameters_aa100a3b8e40b0b997f233eca58c177e2} 
+\index{parameters@{parameters}!sqrtN\_@{sqrtN\_}}
+\index{sqrtN\_@{sqrtN\_}!parameters@{parameters}}
+\doxysubsubsection{\texorpdfstring{sqrtN\_}{sqrtN\_}}
+{\footnotesize\ttfamily int parameters\+::sqrt\+N\+\_\+ = 16\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Square root of the number of particles. 
+
+\Hypertarget{classparameters_afab29243e80692ecf01257d1344dd591}\label{classparameters_afab29243e80692ecf01257d1344dd591} 
+\index{parameters@{parameters}!system\_@{system\_}}
+\index{system\_@{system\_}!parameters@{parameters}}
+\doxysubsubsection{\texorpdfstring{system\_}{system\_}}
+{\footnotesize\ttfamily std\+::string parameters\+::system\+\_\+ = \"{}xy\"{}\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Type of system. 
+
+Possible values\+: \hypertarget{index_multi_row}{}
+\tabulinesep=1mm
+\begin{longtabu}spread 0pt [c]{*{2}{|X[-1]}|}
+\caption{Values of system }\label{index_multi_row}\\
+\hline
+\cellcolor{\tableheadbgcolor}\textbf{ system value }&\cellcolor{\tableheadbgcolor}\textbf{ System chosen }\\\cline{1-2}
+\endfirsthead
+\hline
+\endfoot
+\hline
+\cellcolor{\tableheadbgcolor}\textbf{ system value }&\cellcolor{\tableheadbgcolor}\textbf{ System chosen }\\\cline{1-2}
+\endhead
+\"{}xy\"{} &XY model \\\cline{1-2}
+\"{}mxy\"{} &mobile XY (MXY) model \\\cline{1-2}
+\"{}fmxy\"{} &disordered XY (DXY) model / frozen mobile XY model \\\cline{1-2}
+\"{}vm\"{} &Vicsek model (not fully tested) \\\cline{1-2}
+\"{}fvm\"{} &frozen Vicsek model (not fully tested) \\\cline{1-2}
+\end{longtabu}
+\Hypertarget{classparameters_a311e7acbb764d87269ccfb575ca99866}\label{classparameters_a311e7acbb764d87269ccfb575ca99866} 
+\index{parameters@{parameters}!tau\_berendsen\_@{tau\_berendsen\_}}
+\index{tau\_berendsen\_@{tau\_berendsen\_}!parameters@{parameters}}
+\doxysubsubsection{\texorpdfstring{tau\_berendsen\_}{tau\_berendsen\_}}
+{\footnotesize\ttfamily double parameters\+::tau\+\_\+berendsen\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+tau coefficient of the Berendsen thermostat 
+
+\Hypertarget{classparameters_a42bd1bf96200c774d5496d5e6ef468f7}\label{classparameters_a42bd1bf96200c774d5496d5e6ef468f7} 
+\index{parameters@{parameters}!Tmax\_@{Tmax\_}}
+\index{Tmax\_@{Tmax\_}!parameters@{parameters}}
+\doxysubsubsection{\texorpdfstring{Tmax\_}{Tmax\_}}
+{\footnotesize\ttfamily double parameters\+::\+Tmax\+\_\+ = 100\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Runtime for sampling. 
+
+\Hypertarget{classparameters_a60de5af461085c8172ee45275854fd9f}\label{classparameters_a60de5af461085c8172ee45275854fd9f} 
+\index{parameters@{parameters}!U\_@{U\_}}
+\index{U\_@{U\_}!parameters@{parameters}}
+\doxysubsubsection{\texorpdfstring{U\_}{U\_}}
+{\footnotesize\ttfamily double parameters\+::\+U\+\_\+ = 1\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Spatial interaction strength. 
+
+\Hypertarget{classparameters_a63d1c862e84f81baed624960cca9bfbc}\label{classparameters_a63d1c862e84f81baed624960cca9bfbc} 
+\index{parameters@{parameters}!vm\_eta\_@{vm\_eta\_}}
+\index{vm\_eta\_@{vm\_eta\_}!parameters@{parameters}}
+\doxysubsubsection{\texorpdfstring{vm\_eta\_}{vm\_eta\_}}
+{\footnotesize\ttfamily double parameters\+::vm\+\_\+eta\+\_\+ = 0\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Vicsek model noise strength (between 0 and 1, actual noise interval will be \mbox{[}-\/eta/2\texorpdfstring{$\ast$}{*}\+Pi,eta/2 \texorpdfstring{$\ast$}{*} Pi\mbox{]}). 
+
+\Hypertarget{classparameters_a281de29854ecde439610c3e29a8fa88a}\label{classparameters_a281de29854ecde439610c3e29a8fa88a} 
+\index{parameters@{parameters}!vm\_v\_@{vm\_v\_}}
+\index{vm\_v\_@{vm\_v\_}!parameters@{parameters}}
+\doxysubsubsection{\texorpdfstring{vm\_v\_}{vm\_v\_}}
+{\footnotesize\ttfamily double parameters\+::vm\+\_\+v\+\_\+ = 0\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Vicsek model streaming velocity. 
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{parameters_8h}{parameters.\+h}}\item 
+\mbox{\hyperlink{parameters_8cpp}{parameters.\+cpp}}\end{DoxyCompactItemize}

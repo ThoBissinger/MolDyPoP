@@ -1,0 +1,411 @@
+\doxysection{group.\+h}
+\hypertarget{group_8h_source}{}\label{group_8h_source}\mbox{\hyperlink{group_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00045\ \textcolor{preprocessor}{\#ifndef\ GROUP\_H\_}}
+\DoxyCodeLine{00046\ \textcolor{preprocessor}{\#define\ GROUP\_H\_}}
+\DoxyCodeLine{00047\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{computations_8h}{computations.h}}"{}}}
+\DoxyCodeLine{00048\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{topology_8h}{topology.h}}"{}}}
+\DoxyCodeLine{00049\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{partition_8h}{partition.h}}"{}}}
+\DoxyCodeLine{00050\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{neighbor__list_8h}{neighbor\_list.h}}"{}}}
+\DoxyCodeLine{00051\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{parameters_8h}{parameters.h}}"{}}}
+\DoxyCodeLine{00052\ }
+\DoxyCodeLine{00053\ \textcolor{preprocessor}{\#include\ <fstream>}}
+\DoxyCodeLine{00054\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00055\ \textcolor{preprocessor}{\#include\ <algorithm>}}
+\DoxyCodeLine{00056\ \textcolor{preprocessor}{\#include\ <math.h>}}
+\DoxyCodeLine{00057\ \textcolor{preprocessor}{\#include\ <stdio.h>}}
+\DoxyCodeLine{00058\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00059\ \textcolor{preprocessor}{\#include\ <stdlib.h>}}
+\DoxyCodeLine{00060\ \textcolor{preprocessor}{\#include\ <complex>}}
+\DoxyCodeLine{00061\ \textcolor{preprocessor}{\#include\ <random>}}
+\DoxyCodeLine{00062\ }
+\DoxyCodeLine{00063\ }
+\DoxyCodeLine{00064\ \textcolor{keyword}{using\ namespace\ }std::complex\_literals;\ \textcolor{comment}{//\ makes\ 1i\ the\ complex\ unit.}}
+\DoxyCodeLine{00065\ }
+\DoxyCodeLine{00066\ \textcolor{comment}{//\ Forward\ declaration\ because\ of\ interdependencies\ between\ classes.}}
+\DoxyCodeLine{00067\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classneighbor__list}{neighbor\_list}};}
+\DoxyCodeLine{00068\ }
+\DoxyCodeLine{00069\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classgroup}{group}}\ \{}
+\DoxyCodeLine{00070\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00071\ \ \ \ \ \mbox{\hyperlink{classgroup_ad9d5836aea085e5b55ecb077d15a6189}{group}}()\ \{\};}
+\DoxyCodeLine{00072\ \ \ \ \ \textcolor{comment}{//\ \ \ ===================================================================================================}}
+\DoxyCodeLine{00073\ \ \ \ \ \textcolor{comment}{//\ \ \ Constructors:}}
+\DoxyCodeLine{00074\ \ \ \ \ \textcolor{comment}{//\ \ \ ===================================================================================================}}
+\DoxyCodeLine{00075\ \ \ \ \ \mbox{\hyperlink{classgroup_ad9d5836aea085e5b55ecb077d15a6189}{group}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classparameters}{parameters}}\&\ par);\ }
+\DoxyCodeLine{00076\ }
+\DoxyCodeLine{00077\ \ \ \ \ \mbox{\hyperlink{classgroup_ad9d5836aea085e5b55ecb077d15a6189}{group}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ N,\ \textcolor{keyword}{const}\ std::string\ group\_type);\ }
+\DoxyCodeLine{00078\ \ \ \ \ \textcolor{comment}{//\ \ \ ===================================================================================================}}
+\DoxyCodeLine{00079\ }
+\DoxyCodeLine{00080\ \ \ \ \ \textcolor{comment}{//\ \ \ ===================================================================================================}}
+\DoxyCodeLine{00081\ \ \ \ \ \textcolor{comment}{//\ \ \ Clearing,\ initialization,\ partition\ handling}}
+\DoxyCodeLine{00082\ \ \ \ \ \textcolor{comment}{//\ \ \ ===================================================================================================}}
+\DoxyCodeLine{00084\ \textcolor{comment}{}\ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classgroup_a9a05c6a033e70fc0bee898b55af1eb2d}{clear}}();}
+\DoxyCodeLine{00085\ }
+\DoxyCodeLine{00087\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classgroup_a7c5201fa5923681c881093cac8ba27f2}{initialize}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classparameters}{parameters}}\&\ par);}
+\DoxyCodeLine{00089\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classgroup_a19ea7b028ce3882369b633f818baeb79}{initialize\_random}}(\textcolor{keywordtype}{double}\ kbT\ =\ 0);}
+\DoxyCodeLine{00091\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classgroup_a382d6fd08520e962a201f12d12784d96}{randomize\_particles}}(\textcolor{keywordtype}{double}\ kbT\ =\ 0);}
+\DoxyCodeLine{00093\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classgroup_a0636f5f5df62b94d68b16d0783ba9db8}{mom\_to\_zero}}();}
+\DoxyCodeLine{00095\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classgroup_a7314ed0367730dd255506ef24e044d9f}{r\_to\_squarelattice}}();}
+\DoxyCodeLine{00097\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classgroup_a048b170c8a1a823912103a846ac1e100}{r\_to\_trigonallattice}}();}
+\DoxyCodeLine{00099\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classgroup_a8af680389fbe26cb2b6f98ba03b5628b}{r\_to\_lattice}}();}
+\DoxyCodeLine{00101\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classgroup_a1cde85b83583a5335dd4b422b690ab88}{initialize\_zero}}();}
+\DoxyCodeLine{00103\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classgroup_a2cd4f3e5a31ec3a4f19e7fe0655b2316}{fill\_partition}}();}
+\DoxyCodeLine{00104\ \ \ \ \ \textcolor{comment}{//\ \ \ ===================================================================================================}}
+\DoxyCodeLine{00105\ }
+\DoxyCodeLine{00106\ \ \ \ \ \textcolor{comment}{//\ \ \ ===================================================================================================}}
+\DoxyCodeLine{00107\ \ \ \ \ \textcolor{comment}{//\ \ \ Reading\ and\ copying\ from\ other\ groups}}
+\DoxyCodeLine{00108\ \ \ \ \ \textcolor{comment}{//\ \ \ ===================================================================================================}}
+\DoxyCodeLine{00110\ \textcolor{comment}{}\ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classgroup_af4ee4dd785e2ba8a4167d8e82744cc68}{read\_from\_snapshot}}(std::string\ snapshotname);}
+\DoxyCodeLine{00111\ }
+\DoxyCodeLine{00113\ }
+\DoxyCodeLine{00115\ \ \ \ \ \textcolor{comment}{//\ TODO\ Works\ for\ MXY\ model,\ still\ problems\ with\ lattice\ models.}}
+\DoxyCodeLine{00116\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classgroup_ae039bc5e8e6d4c72cdc4883b7bebfe44}{scale\_from\_subgroup}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classgroup}{group}}\&\ G);}
+\DoxyCodeLine{00117\ }
+\DoxyCodeLine{00118\ }
+\DoxyCodeLine{00119\ }
+\DoxyCodeLine{00124\ \ \ \ \ \textcolor{comment}{//\ TODO\ Works\ for\ MXY\ model,\ still\ problems\ with\ lattice\ models.}}
+\DoxyCodeLine{00125\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classgroup_ae039bc5e8e6d4c72cdc4883b7bebfe44}{scale\_from\_subgroup}}(std::string\ snapshotname);}
+\DoxyCodeLine{00127\ \ \ \ \ \textcolor{comment}{//\ \ \ ===================================================================================================}}
+\DoxyCodeLine{00128\ }
+\DoxyCodeLine{00129\ \ \ \ \ \textcolor{comment}{//\ \ \ ===================================================================================================}}
+\DoxyCodeLine{00130\ \ \ \ \ \textcolor{comment}{//\ \ \ Printing\ functions}}
+\DoxyCodeLine{00131\ \ \ \ \ \textcolor{comment}{//\ \ \ ===================================================================================================}}
+\DoxyCodeLine{00133\ \textcolor{comment}{}\ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classgroup_a245820fd75c41adc4bde3d49064d4763}{print\_group}}(std::ofstream\ \&outputfile)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00135\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classgroup_a86c12b188ea422afd8c14fdfd7ac8614}{print\_r}}(std::ofstream\ \&outputfile)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00136\ }
+\DoxyCodeLine{00137\ \ \ \ \ \textcolor{comment}{//\ \ \ ===================================================================================================}}
+\DoxyCodeLine{00138\ \ \ \ \ \textcolor{comment}{//\ \ \ Extracting\ information}}
+\DoxyCodeLine{00139\ \ \ \ \ \textcolor{comment}{//\ \ \ ===================================================================================================}}
+\DoxyCodeLine{00141\ \textcolor{comment}{}\ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classgroup_a0af365fff45f5342e94fee665b09fe38}{get\_N}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classgroup_a0902e9bfec3a71e48d68db8f367d2228}{N\_}};\ \};}
+\DoxyCodeLine{00143\ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classgroup_ac79ce6a5e76f29bd75c1c533fa22059e}{size}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classgroup_a0902e9bfec3a71e48d68db8f367d2228}{N\_}};\ \};}
+\DoxyCodeLine{00145\ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classgroup_a720506c44b273c3f667101135cc4ec0f}{get\_sqrtN}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classgroup_ad5664d0f4bbf27f9f8cad68d333691e8}{sqrtN\_}};\ \};}
+\DoxyCodeLine{00147\ \ \ \ \ \textcolor{keyword}{inline}\ \mbox{\hyperlink{classtopology_1_1_vector2d}{topology::Vector2d}}\ \mbox{\hyperlink{classgroup_a809cb802277ce088d2dbc7ccb1531f4b}{get\_L}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classgroup_a1fd5c592e393b150d715cf06cdcc3373}{L\_}};\ \};}
+\DoxyCodeLine{00149\ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{classgroup_a08b7dfd53858616e08da206455e6df5d}{get\_boxsize}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ std::min(\mbox{\hyperlink{classgroup_a1fd5c592e393b150d715cf06cdcc3373}{L\_}}.\mbox{\hyperlink{classtopology_1_1_vector2d_ad601cbedb3fb038966d82c9a9fa0811a}{get\_x}}(),\mbox{\hyperlink{classgroup_a1fd5c592e393b150d715cf06cdcc3373}{L\_}}.\mbox{\hyperlink{classtopology_1_1_vector2d_af01fdaa040a15d7643f9088d9b3755a2}{get\_y}}());\ \};}
+\DoxyCodeLine{00151\ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{classgroup_a7bde066b964a18a6866268119665d2db}{get\_volume}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classgroup_a1fd5c592e393b150d715cf06cdcc3373}{L\_}}.\mbox{\hyperlink{classtopology_1_1_vector2d_ad601cbedb3fb038966d82c9a9fa0811a}{get\_x}}()\ *\ \mbox{\hyperlink{classgroup_a1fd5c592e393b150d715cf06cdcc3373}{L\_}}.\mbox{\hyperlink{classtopology_1_1_vector2d_af01fdaa040a15d7643f9088d9b3755a2}{get\_y}}()\ ;\ \};}
+\DoxyCodeLine{00153\ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{classgroup_aff2998a96bff57f7b721de7ceef1141f}{get\_density}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classgroup_a0902e9bfec3a71e48d68db8f367d2228}{N\_}}\ /\ \mbox{\hyperlink{classgroup_a7bde066b964a18a6866268119665d2db}{get\_volume}}();\ \};}
+\DoxyCodeLine{00155\ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{classgroup_af959f8b307677c95e4b3271f5d6abead}{get\_I}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classgroup_a5e224ee273f6971cf0a76756c6c583f1}{I\_}};\ \};}
+\DoxyCodeLine{00157\ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{classgroup_ae6ba547117763b24a0d341fa258fcfd7}{get\_J}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classgroup_a75137f8b271d5b73c441c88fabfe59d3}{J\_}};\ \};}
+\DoxyCodeLine{00159\ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{classgroup_a614dc2b2a83fa117ee37b0186b99aae5}{get\_m}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classgroup_a1a8b39fe4396923de757fa3071ec2f82}{m\_}};\ \};}
+\DoxyCodeLine{00161\ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{classgroup_a77bd98604ac648bbac5198554cf50a79}{get\_cutoff}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classgroup_a2c50b38ea116d7b21b34445836e85ee0}{cutoff\_}};\ \};}
+\DoxyCodeLine{00163\ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{classgroup_a830fc560e181d89475bee4743e7f64ff}{get\_vm\_v}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classgroup_ac960a4b811c77a828eff4f542d00d243}{vm\_v\_}};\ \};}
+\DoxyCodeLine{00165\ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{classgroup_a33626d82a7a15069d7263b95a78ca879}{get\_vm\_eta}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classgroup_a47795c0f0f247447e23a541045e8116b}{vm\_eta\_}};\ \};}
+\DoxyCodeLine{00167\ \ \ \ \ \textcolor{keyword}{inline}\ std::string\ \mbox{\hyperlink{classgroup_a18cf499bb765b4424803af9c9d3345e7}{get\_group\_type}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classgroup_abba72880d78720291cdd5267f96cebbf}{group\_type\_}};\ \};}
+\DoxyCodeLine{00168\ }
+\DoxyCodeLine{00170\ \ \ \ \ \textcolor{keyword}{inline}\ std::vector<double>\ \mbox{\hyperlink{classgroup_a2012999a47b966f17c0cfff96a61ce69}{get\_theta}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classgroup_a44fc1d0e59c1401e62f98e0a4852b731}{theta\_}};\ \};}
+\DoxyCodeLine{00172\ \ \ \ \ \textcolor{keyword}{inline}\ std::vector<double>\ \mbox{\hyperlink{classgroup_a04807e043673e16cc7dd41bc6a702e1c}{get\_w}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classgroup_a90512f77b5ad86c99a1b565078eaf537}{w\_}};\ \};}
+\DoxyCodeLine{00174\ \ \ \ \ \textcolor{keyword}{inline}\ std::vector<topology::Vector2d>\ \mbox{\hyperlink{classgroup_afe6b300a0569a60ed251d53f696ba403}{get\_r}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classgroup_acbb3793a619f6fbf6f160d4a9a2f5487}{r\_}};\ \};}
+\DoxyCodeLine{00176\ \ \ \ \ \textcolor{keyword}{inline}\ std::vector<topology::Vector2d>\ \mbox{\hyperlink{classgroup_ad288525b31316ed5142d1ef6ab4c5115}{get\_p}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classgroup_a542a5c2dad5b7980cc0cfbf19a3b4ba6}{p\_}};\ \};}
+\DoxyCodeLine{00177\ }
+\DoxyCodeLine{00179\ \ \ \ \ std::vector<double>\ \mbox{\hyperlink{classgroup_ad8b7b1e77febb8a2afd245304358009e}{get\_coord}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00181\ \ \ \ \ std::vector<double>\ \mbox{\hyperlink{classgroup_ae360d6121e189e51b55e529f9a074c07}{get\_mom}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00182\ }
+\DoxyCodeLine{00184\ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{classgroup_a7d976ade405763f16dc7c3af8ea45e6f}{get\_theta}}(\textcolor{keywordtype}{int}\ i)\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classgroup_a44fc1d0e59c1401e62f98e0a4852b731}{theta\_}}[i];\ \};}
+\DoxyCodeLine{00186\ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{classgroup_aa3e9c6c12977ede28d24ddd636f87eaa}{get\_w}}(\textcolor{keywordtype}{int}\ i)\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classgroup_a90512f77b5ad86c99a1b565078eaf537}{w\_}}[i];\ \};}
+\DoxyCodeLine{00188\ \ \ \ \ \textcolor{keyword}{inline}\ \mbox{\hyperlink{classtopology_1_1_vector2d}{topology::Vector2d}}\ \mbox{\hyperlink{classgroup_a30b3c2277645a89660dcd569fd88128f}{get\_r}}(\textcolor{keywordtype}{int}\ i)\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classgroup_acbb3793a619f6fbf6f160d4a9a2f5487}{r\_}}[i];\ \};}
+\DoxyCodeLine{00190\ \ \ \ \ \textcolor{keyword}{inline}\ \mbox{\hyperlink{classtopology_1_1_vector2d}{topology::Vector2d}}\ \mbox{\hyperlink{classgroup_a0cdc0f913566c1551ec6c2a48ce7ea84}{get\_p}}(\textcolor{keywordtype}{int}\ i)\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classgroup_a542a5c2dad5b7980cc0cfbf19a3b4ba6}{p\_}}[i];\ \};}
+\DoxyCodeLine{00191\ }
+\DoxyCodeLine{00192\ }
+\DoxyCodeLine{00194\ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{classgroup_a67f44a5b6756ace3cb9189b43048b4d2}{J\_pot}}(\textcolor{keywordtype}{double}\ dist)\textcolor{keyword}{\ const\ }\{\ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classgroup_a75137f8b271d5b73c441c88fabfe59d3}{J\_}}\ *\ std::pow(1\ -\/\ dist,\ 2);\ \};}
+\DoxyCodeLine{00196\ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{classgroup_a55e9bf8a5f8b9f1ee0b378f0ca2cfae0}{U\_pot}}(\textcolor{keywordtype}{double}\ dist)\textcolor{keyword}{\ const\ }\{\ \ \textcolor{keywordflow}{return}\ 4\ *\ \mbox{\hyperlink{classgroup_aeeaa72dd4e321200f4a9433fb3777098}{U\_}}\ *\ std::pow(1\ -\/\ dist,\ 2);\ \};}
+\DoxyCodeLine{00198\ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{classgroup_a0eb41a26ccb0d9ff0a675b2cf93c9e07}{J\_pot\_prime}}(\textcolor{keywordtype}{double}\ dist)\textcolor{keyword}{\ const\ }\{\ \ \textcolor{keywordflow}{return}\ 2\ *\ \mbox{\hyperlink{classgroup_a75137f8b271d5b73c441c88fabfe59d3}{J\_}}\ *\ (dist\ -\/\ 1);\ \};}
+\DoxyCodeLine{00200\ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{classgroup_a869674c0af745152011e6d628430dec2}{U\_pot\_prime}}(\textcolor{keywordtype}{double}\ dist)\textcolor{keyword}{\ const\ }\{\ \ \textcolor{keywordflow}{return}\ 8\ *\ \mbox{\hyperlink{classgroup_aeeaa72dd4e321200f4a9433fb3777098}{U\_}}\ *\ (dist\ -\/\ 1);\ \ \};}
+\DoxyCodeLine{00202\ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{classgroup_ab3a2b18c61a0d5d6b49d82e2ee968a14}{J\_pot\_primeprime}}(\textcolor{keywordtype}{double}\ dist)\textcolor{keyword}{\ const\ }\{\ \ \textcolor{keywordflow}{return}\ 2\ *\ \mbox{\hyperlink{classgroup_a75137f8b271d5b73c441c88fabfe59d3}{J\_}}\ ;\ \};}
+\DoxyCodeLine{00204\ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{classgroup_a76800935f2839e0e3f22b4910412ebec}{U\_pot\_primeprime}}(\textcolor{keywordtype}{double}\ dist)\textcolor{keyword}{\ const\ }\{\ \ \textcolor{keywordflow}{return}\ 8\ *\ \mbox{\hyperlink{classgroup_aeeaa72dd4e321200f4a9433fb3777098}{U\_}}\ ;\ \ \};}
+\DoxyCodeLine{00205\ }
+\DoxyCodeLine{00206\ }
+\DoxyCodeLine{00207\ \ \ \ \ \textcolor{comment}{//\ \ \ ===================================================================================================}}
+\DoxyCodeLine{00208\ \ \ \ \ \textcolor{comment}{//\ \ \ Neighborhood\ determination}}
+\DoxyCodeLine{00209\ \ \ \ \ \textcolor{comment}{//\ \ \ ===================================================================================================}}
+\DoxyCodeLine{00211\ \textcolor{comment}{}}
+\DoxyCodeLine{00218\ \ \ \ \ std::vector<int>\ \mbox{\hyperlink{classgroup_a8e09f2d17d963087ef510ea37ff7d17b}{get\_neighbors}}(\textcolor{keywordtype}{int}\ i,\ std::string\ cellselect,\ std::vector<double>\&\ distances\ )\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00220\ \ \ \ \ \textcolor{keyword}{inline}\ std::vector<int>\ \mbox{\hyperlink{classgroup_a8f64beec448f2ed67848f5886250c966}{get\_neighbors}}(\textcolor{keywordtype}{int}\ i,\ std::vector<double>\&\ distances\ )\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00221\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classgroup_a8e09f2d17d963087ef510ea37ff7d17b}{get\_neighbors}}(i,\ \mbox{\hyperlink{classgroup_a03237769d3d2a8f936de6683f58d6810}{nb\_rule\_}},\ distances\ );}
+\DoxyCodeLine{00222\ \ \ \ \ \};}
+\DoxyCodeLine{00223\ }
+\DoxyCodeLine{00225\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classgroup_a2fc0be012241fcee2de13909bdfb1e3e}{generate\_neighbor\_list}}();}
+\DoxyCodeLine{00226\ \ \ \ \ \textcolor{comment}{//\ \ \ ===================================================================================================}}
+\DoxyCodeLine{00227\ }
+\DoxyCodeLine{00228\ \ \ \ \ \textcolor{comment}{//\ \ \ ===================================================================================================}}
+\DoxyCodeLine{00229\ \ \ \ \ \textcolor{comment}{//\ \ \ Calculating\ differences}}
+\DoxyCodeLine{00230\ \ \ \ \ \textcolor{comment}{//\ \ \ ===================================================================================================}}
+\DoxyCodeLine{00232\ \textcolor{comment}{}\ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{classgroup_a278395747b1e8982e081e3af5fedcb75}{theta\_diff}}(\textcolor{keywordtype}{int}\ i,\ \textcolor{keywordtype}{int}\ j)\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classgroup_a2012999a47b966f17c0cfff96a61ce69}{get\_theta}}(j)\ -\/\ \mbox{\hyperlink{classgroup_a2012999a47b966f17c0cfff96a61ce69}{get\_theta}}(i);\ \};}
+\DoxyCodeLine{00234\ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{classgroup_a9a39ffd1d945d3b2e29644cd8071c8d3}{periodic\_distance\_squared}}(\textcolor{keywordtype}{int}\ i,\ \textcolor{keywordtype}{int}\ j)\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00235\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{namespacetopology_a19d901a7c87cb202c6b44e2838978db6}{topology::periodic\_distance\_squared}}(\mbox{\hyperlink{classgroup_afe6b300a0569a60ed251d53f696ba403}{get\_r}}(j),\ \mbox{\hyperlink{classgroup_afe6b300a0569a60ed251d53f696ba403}{get\_r}}(i),\ \mbox{\hyperlink{classgroup_a1fd5c592e393b150d715cf06cdcc3373}{L\_}});}
+\DoxyCodeLine{00236\ \ \ \ \ \};}
+\DoxyCodeLine{00238\ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{classgroup_a83cf3a22bf14d9583457f4a570095487}{periodic\_distance}}(\textcolor{keywordtype}{int}\ i,\ \textcolor{keywordtype}{int}\ j)\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ std::sqrt(\mbox{\hyperlink{classgroup_a9a39ffd1d945d3b2e29644cd8071c8d3}{periodic\_distance\_squared}}(i,j));\ \};}
+\DoxyCodeLine{00240\ \ \ \ \ \textcolor{keyword}{inline}\ \mbox{\hyperlink{classtopology_1_1_vector2d}{topology::Vector2d}}\ \mbox{\hyperlink{classgroup_ad2ac63201784cc0fe10ffec2f43dd502}{periodic\_distance\_vector}}(\textcolor{keywordtype}{int}\ i,\ \textcolor{keywordtype}{int}\ j)\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00241\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{namespacetopology_acb61cc88383472479100bdd9369b76d2}{topology::periodic\_distance\_vector}}(\mbox{\hyperlink{classgroup_afe6b300a0569a60ed251d53f696ba403}{get\_r}}(i),\ \mbox{\hyperlink{classgroup_afe6b300a0569a60ed251d53f696ba403}{get\_r}}(j),\ \mbox{\hyperlink{classgroup_a1fd5c592e393b150d715cf06cdcc3373}{L\_}});}
+\DoxyCodeLine{00242\ \ \ \ \ \};}
+\DoxyCodeLine{00243\ }
+\DoxyCodeLine{00244\ \ \ \ \ \textcolor{comment}{//\ \ \ ===================================================================================================}}
+\DoxyCodeLine{00245\ \ \ \ \ \textcolor{comment}{//\ \ \ Setting\ and\ scaling\ values}}
+\DoxyCodeLine{00246\ \ \ \ \ \textcolor{comment}{//\ \ \ ===================================================================================================}}
+\DoxyCodeLine{00247\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classgroup_a25ed6c689c762a5fa345526e66909285}{set\_theta}}(\textcolor{keywordtype}{double}\ theta,\ \textcolor{keywordtype}{int}\ i)\ ;\ \ \ \ \ \ }
+\DoxyCodeLine{00248\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classgroup_a1e06c0e58acfe9fef37b437065b06622}{set\_w}}(\textcolor{keywordtype}{double}\ w,\ \textcolor{keywordtype}{int}\ i)\ ;\ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00249\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classgroup_adefa6aaedd0b7a04c87d660df2c86caf}{set\_r}}(\mbox{\hyperlink{classtopology_1_1_vector2d}{topology::Vector2d}}\ r,\ \textcolor{keywordtype}{int}\ i)\ ;\ \ \ \ }
+\DoxyCodeLine{00250\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classgroup_a8989ee6be64dcfd8439978741da017ac}{set\_rx}}(\textcolor{keywordtype}{double}\ x,\ \textcolor{keywordtype}{int}\ i)\ ;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00251\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classgroup_ae4443ab413d8a0fcd9ca2c52b04089c1}{set\_ry}}(\textcolor{keywordtype}{double}\ y,\ \textcolor{keywordtype}{int}\ i)\ ;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00252\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classgroup_a5441456cc9c95980636aedc16743147e}{set\_p}}(\mbox{\hyperlink{classtopology_1_1_vector2d}{topology::Vector2d}}\ p,\ \textcolor{keywordtype}{int}\ i)\ ;\ \ \ \ }
+\DoxyCodeLine{00253\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classgroup_affd5de6e37800528eb15b3a842ebff48}{set\_px}}(\textcolor{keywordtype}{double}\ px,\ \textcolor{keywordtype}{int}\ i)\ ;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00254\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classgroup_a249e0347dea0c41c4ef85fbd3b8002fd}{set\_py}}(\textcolor{keywordtype}{double}\ py,\ \textcolor{keywordtype}{int}\ i)\ ;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00255\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classgroup_a0d77c81ca4c869328301d258a2f2db97}{set\_particle}}(\textcolor{keywordtype}{double}\ theta,\ \textcolor{keywordtype}{double}\ w,\ \mbox{\hyperlink{classtopology_1_1_vector2d}{topology::Vector2d}}\ r,\ \mbox{\hyperlink{classtopology_1_1_vector2d}{topology::Vector2d}}\ p,\textcolor{keywordtype}{int}\ i)\ ;}
+\DoxyCodeLine{00257\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classgroup_af36d997bcec7a468eb5077cbcf447562}{set\_all\_w}}(\textcolor{keywordtype}{double}\ w);\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00258\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classgroup_add61103bd8a398fe988671e776cc65d3}{set\_all\_p}}(\mbox{\hyperlink{classtopology_1_1_vector2d}{topology::Vector2d}}\ p);\ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00259\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classgroup_afb305b904e93b3324b722955eaf3f0ab}{set\_all\_theta}}(\textcolor{keywordtype}{double}\ theta);\ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00260\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classgroup_abccd24c6d129a82f51cab1efd36985dc}{set\_temperature}}(\textcolor{keywordtype}{double}\ kT,\ \textcolor{keywordtype}{int}\ i);\ \ \ \ \ \ }
+\DoxyCodeLine{00261\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classgroup_abccd24c6d129a82f51cab1efd36985dc}{set\_temperature}}(\textcolor{keywordtype}{double}\ kT);\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00262\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classgroup_a8495317d9d70b03975790d3fa24175c1}{set\_temperature\_p}}(\textcolor{keywordtype}{double}\ kT,\ \textcolor{keywordtype}{int}\ i);\ \ }
+\DoxyCodeLine{00263\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classgroup_a8495317d9d70b03975790d3fa24175c1}{set\_temperature\_p}}(\textcolor{keywordtype}{double}\ kT);\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00264\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classgroup_a7f055b391a13687261ebe5d217acecc6}{set\_temperature\_w}}(\textcolor{keywordtype}{double}\ kT,\ \textcolor{keywordtype}{int}\ i);\ \ }
+\DoxyCodeLine{00265\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classgroup_a7f055b391a13687261ebe5d217acecc6}{set\_temperature\_w}}(\textcolor{keywordtype}{double}\ kT);\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00266\ }
+\DoxyCodeLine{00267\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classgroup_a92f337867f35fa669ef32e0f19f9dcae}{scale\_mom}}(\textcolor{keywordtype}{double}\ a);\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00268\ \ \ \ \ \textcolor{comment}{//\ \ \ ===================================================================================================}}
+\DoxyCodeLine{00269\ }
+\DoxyCodeLine{00270\ \ \ \ \ \textcolor{comment}{//\ \ \ ===================================================================================================}}
+\DoxyCodeLine{00271\ \ \ \ \ \textcolor{comment}{//\ \ \ Adding\ to\ variables}}
+\DoxyCodeLine{00272\ \ \ \ \ \textcolor{comment}{//\ \ \ ===================================================================================================}}
+\DoxyCodeLine{00273\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classgroup_a1adc9e9f819e6d3c5b42c66c8f039b09}{add\_to\_theta}}(\textcolor{keyword}{const}\ std::vector<double>\&\ theta,\ \textcolor{keywordtype}{double}\ factor\ =\ 1);\ }
+\DoxyCodeLine{00274\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classgroup_aa1a55666191d6773ef379565e9d3af3d}{add\_to\_r}}(\textcolor{keyword}{const}\ std::vector<topology::Vector2d>\&\ r,\ \textcolor{keywordtype}{double}\ factor\ =\ 1);\ }
+\DoxyCodeLine{00275\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classgroup_aa1a55666191d6773ef379565e9d3af3d}{add\_to\_r}}(\textcolor{keyword}{const}\ std::vector<double>\&\ r,\ \textcolor{keywordtype}{double}\ factor\ =\ 1);\ }
+\DoxyCodeLine{00276\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classgroup_a9dc6a672cd4ece35b5f640ec2ea8d608}{add\_to\_coord}}(\textcolor{keyword}{const}\ std::vector<double>\&\ coord,\ \textcolor{keywordtype}{double}\ factor\ =\ 1);\ }
+\DoxyCodeLine{00277\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classgroup_a5eccd34052a84901037bd3a3bc6c6b48}{add\_to\_coord\_inertialscaling}}(\textcolor{keyword}{const}\ std::vector<double>\&\ coord,\ \textcolor{keywordtype}{double}\ factor\ =\ 1);\ }
+\DoxyCodeLine{00278\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classgroup_af224e8ccdd5cb0270cffb74e5d29d1eb}{add\_to\_w}}(\textcolor{keyword}{const}\ std::vector<double>\&\ w,\ \textcolor{keywordtype}{double}\ factor\ =\ 1);\ }
+\DoxyCodeLine{00279\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classgroup_a4c02d72519fadd3bd3426206e40502f4}{add\_to\_p}}(\textcolor{keyword}{const}\ std::vector<topology::Vector2d>\&\ p,\ \textcolor{keywordtype}{double}\ factor\ =\ 1);\ }
+\DoxyCodeLine{00280\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classgroup_a4c02d72519fadd3bd3426206e40502f4}{add\_to\_p}}(\textcolor{keyword}{const}\ std::vector<double>\&\ p,\ \textcolor{keywordtype}{double}\ factor\ =\ 1);\ }
+\DoxyCodeLine{00281\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classgroup_a951317bf5136ec8a0b2692550ad8e491}{add\_to\_mom}}(\textcolor{keyword}{const}\ std::vector<double>\&\ mom,\ \textcolor{keywordtype}{double}\ factor\ =\ 1);\ }
+\DoxyCodeLine{00282\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classgroup_ac4349a3a0eee77c0a54b8d31fab867ea}{add\_random\_angle}}(\textcolor{keywordtype}{double}\ angmax);\ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00283\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classgroup_ab3a441f450ac0f0ffdd385afe8f2b933}{add\_random\_displacement}}(\textcolor{keywordtype}{double}\ rmax);\ \ \ \ \ \ \ }
+\DoxyCodeLine{00284\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classgroup_ab399b20229d30669f7135bdcf50571d8}{stream\_along\_spin}}(\textcolor{keywordtype}{double}\ v);\ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00285\ }
+\DoxyCodeLine{00286\ \ \ \ \ \textcolor{comment}{//\ \ \ ===================================================================================================}}
+\DoxyCodeLine{00287\ \ \ \ \ \textcolor{comment}{//\ \ Peridic\ boundary\ handling}}
+\DoxyCodeLine{00288\ \ \ \ \ \textcolor{comment}{//\ \ \ ===================================================================================================}}
+\DoxyCodeLine{00289\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classgroup_af3fad0714000a544b77925ea7df44bbc}{set\_theta\_to\_interval}}();\ }
+\DoxyCodeLine{00290\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classgroup_ae522a68e6bef63d88b00676da526d0d8}{set\_r\_to\_pbc}}();\ }
+\DoxyCodeLine{00291\ \ \ \ \ \textcolor{comment}{//\ \ \ ===================================================================================================}}
+\DoxyCodeLine{00292\ }
+\DoxyCodeLine{00293\ \ \ \ \ \textcolor{comment}{//\ \ \ ===================================================================================================}}
+\DoxyCodeLine{00294\ \ \ \ \ \textcolor{comment}{//\ \ Summing\ over\ particles}}
+\DoxyCodeLine{00295\ \ \ \ \ \textcolor{comment}{//\ \ \ ===================================================================================================}}
+\DoxyCodeLine{00297\ \textcolor{comment}{}\ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{classgroup_a49290bb9d0172ccc094c7bd2c0809db1}{sum\_w}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00299\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{classgroup_af503088a31633fa02d12a5e3747bf741}{sum\_w\_squared}}()\ \textcolor{keyword}{const}\ ;}
+\DoxyCodeLine{00301\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{classgroup_a046fab9e71ff6a756d1ef405f1e9af0b}{sum\_w\_4}}()\ \textcolor{keyword}{const}\ ;}
+\DoxyCodeLine{00303\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{classgroup_a51c3c0f31c8529456ae27f19a8572ec2}{sum\_theta}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00305\ \ \ \ \ \mbox{\hyperlink{classtopology_1_1_vector2d}{topology::Vector2d}}\ \mbox{\hyperlink{classgroup_a19d9795ec171a048475c9d5770bc4a50}{sum\_s}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00307\ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{classgroup_a2c5591c152957f544ca88f3d728dd408}{sum\_s\_squared}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{namespacetopology_a657dfb7335d4dddbcc80cfa464b8f110}{topology::norm2}}(\mbox{\hyperlink{classgroup_a19d9795ec171a048475c9d5770bc4a50}{sum\_s}}());\ \};}
+\DoxyCodeLine{00309\ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{classgroup_a224b157d47ccae2095d7599e94fee0cf}{sum\_s\_4}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ std::pow(\mbox{\hyperlink{classgroup_a2c5591c152957f544ca88f3d728dd408}{sum\_s\_squared}}(),2);\ \};}
+\DoxyCodeLine{00311\ \ \ \ \ \mbox{\hyperlink{classtopology_1_1_vector2d}{topology::Vector2d}}\ \mbox{\hyperlink{classgroup_aab1c1c3b62fc05dceb53e0c445c17d1c}{sum\_p}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00313\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{classgroup_aad244abed9cd7f87eaf339dd05e1343a}{sum\_p\_squared}}()\ \textcolor{keyword}{const}\ ;}
+\DoxyCodeLine{00315\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{classgroup_ae8c5249e354de1d6388d3c3a2b92890c}{sum\_p\_4}}()\ \textcolor{keyword}{const}\ ;}
+\DoxyCodeLine{00317\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{classgroup_a4b7c50f6a58e005e4224b06bdd3866bf}{sum\_e\_squared}}()\ \textcolor{keyword}{const}\ ;}
+\DoxyCodeLine{00319\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{classgroup_a503ead15968b11cd41ff36e0b2873d0f}{sum\_ekin\_squared}}()\ \textcolor{keyword}{const}\ ;}
+\DoxyCodeLine{00321\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{classgroup_a0385b0d7559127fbfdc5b28b0ee18f1c}{sum\_eint\_squared}}()\ \textcolor{keyword}{const}\ ;}
+\DoxyCodeLine{00322\ \ \ \ \ \textcolor{comment}{//\ \ \ ===================================================================================================}}
+\DoxyCodeLine{00323\ }
+\DoxyCodeLine{00324\ \ \ \ \ \textcolor{comment}{//\ \ \ ===================================================================================================}}
+\DoxyCodeLine{00325\ \ \ \ \ \textcolor{comment}{//\ \ Calculation\ of\ physical\ properties}}
+\DoxyCodeLine{00326\ \ \ \ \ \textcolor{comment}{//\ \ \ ===================================================================================================}}
+\DoxyCodeLine{00328\ \textcolor{comment}{}\ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{classgroup_a3114842264203a2c14c1c16feea2d417}{binder\_cumulant}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ 1\ -\/\ \mbox{\hyperlink{classgroup_a0902e9bfec3a71e48d68db8f367d2228}{N\_}}\ *\ \mbox{\hyperlink{classgroup_a224b157d47ccae2095d7599e94fee0cf}{sum\_s\_4}}()\ /\ (\ 3.0\ *\ std::pow(\mbox{\hyperlink{classgroup_a2c5591c152957f544ca88f3d728dd408}{sum\_s\_squared}}(),\ 2.0)\ )\ ;\ \}\ ;}
+\DoxyCodeLine{00330\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{classgroup_a3a4be7da7f0f4e32ee66d64f05639ada}{calc\_interaction\_energy}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00332\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{classgroup_a3a4be7da7f0f4e32ee66d64f05639ada}{calc\_interaction\_energy}}(\textcolor{keywordtype}{int}\ i)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00334\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{classgroup_a93b89d7f402d699ae1fbaeca09b894f1}{calc\_kinetic\_energy}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00336\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{classgroup_a93b89d7f402d699ae1fbaeca09b894f1}{calc\_kinetic\_energy}}(\textcolor{keywordtype}{int}\ i)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00338\ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{classgroup_ade654ed5c479fa2f7637c41dc12d6f15}{calc\_energy}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classgroup_a3a4be7da7f0f4e32ee66d64f05639ada}{calc\_interaction\_energy}}()\ +\ \mbox{\hyperlink{classgroup_a93b89d7f402d699ae1fbaeca09b894f1}{calc\_kinetic\_energy}}();\ \};}
+\DoxyCodeLine{00340\ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{classgroup_aee18071ecd1eaa245ac097382f89b0b8}{calc\_energy}}(\textcolor{keywordtype}{int}\ i)\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classgroup_a93b89d7f402d699ae1fbaeca09b894f1}{calc\_kinetic\_energy}}(i)\ +\ \mbox{\hyperlink{classgroup_a3a4be7da7f0f4e32ee66d64f05639ada}{calc\_interaction\_energy}}(i);\ \};}
+\DoxyCodeLine{00342\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{classgroup_ab7f8951239c09090c26639828494a93b}{calc\_temperature}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00344\ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{classgroup_a6d75ec867ad5dd9086b0a76a274150c8}{calc\_temperature\_w}}()\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00345\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ (\mbox{\hyperlink{classgroup_af503088a31633fa02d12a5e3747bf741}{sum\_w\_squared}}()\ -\/\ pow(\mbox{\hyperlink{classgroup_a49290bb9d0172ccc094c7bd2c0809db1}{sum\_w}}(),\ 2.0)/(\mbox{\hyperlink{classgroup_a0902e9bfec3a71e48d68db8f367d2228}{N\_}}\ *\ \mbox{\hyperlink{classgroup_a5e224ee273f6971cf0a76756c6c583f1}{I\_}})\ )/(\mbox{\hyperlink{classgroup_a0902e9bfec3a71e48d68db8f367d2228}{N\_}});}
+\DoxyCodeLine{00346\ \ \ \ \ \};}
+\DoxyCodeLine{00348\ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{classgroup_a03fdfcbbf43dcd0313997740b879c2b5}{calc\_temperature\_p}}()\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00349\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ (\mbox{\hyperlink{classgroup_aad244abed9cd7f87eaf339dd05e1343a}{sum\_p\_squared}}()\ -\/\ \mbox{\hyperlink{namespacetopology_a657dfb7335d4dddbcc80cfa464b8f110}{topology::norm2}}(\mbox{\hyperlink{classgroup_aab1c1c3b62fc05dceb53e0c445c17d1c}{sum\_p}}())/(2\ *\ \mbox{\hyperlink{classgroup_a0902e9bfec3a71e48d68db8f367d2228}{N\_}}\ *\ \mbox{\hyperlink{classgroup_a1a8b39fe4396923de757fa3071ec2f82}{m\_}}))/(2\ *\ \mbox{\hyperlink{classgroup_a0902e9bfec3a71e48d68db8f367d2228}{N\_}});}
+\DoxyCodeLine{00350\ \ \ \ \ \};}
+\DoxyCodeLine{00351\ }
+\DoxyCodeLine{00353\ \ \ \ \ std::vector<int>\ \mbox{\hyperlink{classgroup_a0ac60bdc2adb8efbfae4753fa2b94e1d}{plaquette}}(\textcolor{keywordtype}{int}\ i)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00355\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{classgroup_a05568e37fd285c9d3db91e72cbbaf1e5}{calc\_vorticity}}(\textcolor{keywordtype}{int}\ index)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00357\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{classgroup_a1cb763408196d3f624462cdd50299160}{calc\_vortexdensity\_unsigned}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00359\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{classgroup_a44bcc7bf737e4a51f604491546d2000b}{calc\_vortexdensity\_signed}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00361\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{classgroup_a72a5b9635814dd9c3f13cde050957405}{calc\_space\_angular\_mom}}()\ \textcolor{keyword}{const}\ ;}
+\DoxyCodeLine{00363\ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{classgroup_ab78f20d5babe58f96031c23dbea95844}{calc\_space\_angular\_mom}}(\textcolor{keywordtype}{int}\ i)\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classgroup_acbb3793a619f6fbf6f160d4a9a2f5487}{r\_}}[i].get\_x()\ *\ \mbox{\hyperlink{classgroup_a542a5c2dad5b7980cc0cfbf19a3b4ba6}{p\_}}[i].get\_y()\ -\/\ \mbox{\hyperlink{classgroup_acbb3793a619f6fbf6f160d4a9a2f5487}{r\_}}[i].get\_y()\ *\ \mbox{\hyperlink{classgroup_a542a5c2dad5b7980cc0cfbf19a3b4ba6}{p\_}}[i].get\_x();\ \};}
+\DoxyCodeLine{00365\ }
+\DoxyCodeLine{00371\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{classgroup_a7918e895717ed9b4825aa70ad2c9ad15}{calc\_neighbor\_mean}}(\textcolor{keywordtype}{double}\ te\_pow,\ \textcolor{keywordtype}{double}\ r\_pow,\ \textcolor{keywordtype}{double}\ cos\_pow,\ \textcolor{keywordtype}{double}\ sin\_pow,\ \textcolor{keywordtype}{double}\ J\_pow,\ \textcolor{keywordtype}{double}\ Up\_pow,\ \textcolor{keywordtype}{double}\ Upp\_pow)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00372\ }
+\DoxyCodeLine{00374\ \ \ \ \ std::vector<double>\ \mbox{\hyperlink{classgroup_a72b9e36213857ea0b2cf44752d0ca077}{calc\_helicity}}(\textcolor{keywordtype}{double}\ beta)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00375\ }
+\DoxyCodeLine{00376\ \ \ \ \ \textcolor{comment}{//\ \ ===================================================================================================}}
+\DoxyCodeLine{00377\ \ \ \ \ \textcolor{comment}{//\ \ Functions\ implemented\ by\ Mathias\ Hoefler.\ Redundant\ and\ with\ old\ group\ structure}}
+\DoxyCodeLine{00378\ \ \ \ \ \textcolor{comment}{//\ \ ===================================================================================================}}
+\DoxyCodeLine{00379\ \ \ \ \ \textcolor{comment}{//\ \ double\ ang\_MSD(xygroup\ \&initial)\ const;}}
+\DoxyCodeLine{00380\ \ \ \ \ \textcolor{comment}{//\ \ double\ ang\_MSD\_nonsat(const\ xygroup\ \&initial)\ const;}}
+\DoxyCodeLine{00381\ \ \ \ \ \textcolor{comment}{//\ \ double\ spin\_autocorrelation(const\ xygroup\ \&corr\_G)\ const;}}
+\DoxyCodeLine{00382\ }
+\DoxyCodeLine{00383\ }
+\DoxyCodeLine{00384\ \ \ \ \ \textcolor{comment}{//\ ======================================================================================================}}
+\DoxyCodeLine{00385\ \ \ \ \ \textcolor{comment}{//\ Calculation\ of\ field\ fluctuations}}
+\DoxyCodeLine{00386\ \ \ \ \ \textcolor{comment}{//\ ======================================================================================================}}
+\DoxyCodeLine{00388\ \textcolor{comment}{}\ \ \ \ \textcolor{keyword}{inline}\ std::complex<double>\ \mbox{\hyperlink{classgroup_a659cc51e831f8d1661c06c9997ca56c6}{calc\_eiqr}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classtopology_1_1_vector2d}{topology::Vector2d}}\ q,\ \textcolor{keywordtype}{int}\ i)\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00389\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ std::complex<double>(std::cos(\mbox{\hyperlink{namespacetopology_a9856d6a0e13d1f04ba8a934952bbaf06}{topology::innerproduct}}(q,\mbox{\hyperlink{classgroup_afe6b300a0569a60ed251d53f696ba403}{get\_r}}(i))),}
+\DoxyCodeLine{00390\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::sin(\mbox{\hyperlink{namespacetopology_a9856d6a0e13d1f04ba8a934952bbaf06}{topology::innerproduct}}(q,\mbox{\hyperlink{classgroup_afe6b300a0569a60ed251d53f696ba403}{get\_r}}(i))));}
+\DoxyCodeLine{00391\ \ \ \ \ \};}
+\DoxyCodeLine{00393\ \ \ \ \ std::complex<double>\ \mbox{\hyperlink{classgroup_a4f857cb3c2706998ae4f19e522297fd9}{calc\_mxq}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classtopology_1_1_vector2d}{topology::Vector2d}}\ q,\ \textcolor{keywordtype}{double}\ Mx\_0)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00395\ \ \ \ \ std::complex<double>\ \mbox{\hyperlink{classgroup_a80e571e014722e2aa44fa52e15f2e24e}{calc\_myq}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classtopology_1_1_vector2d}{topology::Vector2d}}\ q,\ \textcolor{keywordtype}{double}\ My\_0)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00397\ \ \ \ \ std::complex<double>\ \mbox{\hyperlink{classgroup_adbefb8517df13e29f18f97a5576a72a5}{calc\_wq}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classtopology_1_1_vector2d}{topology::Vector2d}}\ q,\ \textcolor{keywordtype}{double}\ W\_0)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00399\ \ \ \ \ std::complex<double>\ \mbox{\hyperlink{classgroup_a4a1aacbfee5f6c7c303fd54afa9637c7}{calc\_eq}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classtopology_1_1_vector2d}{topology::Vector2d}}\ q,\ \textcolor{keywordtype}{double}\ E\_0)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00401\ \ \ \ \ std::complex<double>\ \mbox{\hyperlink{classgroup_ac6bdf3edcf8676059bc5fb0b2d761ce0}{calc\_teq}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classtopology_1_1_vector2d}{topology::Vector2d}}\ q,\ \textcolor{keywordtype}{double}\ Te\_0)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00403\ \ \ \ \ std::complex<double>\ \mbox{\hyperlink{classgroup_ae1789f66f507ed05dbc84b1f3331a4be}{calc\_rq}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classtopology_1_1_vector2d}{topology::Vector2d}}\ q)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00405\ \ \ \ \ std::vector<std::complex<double>\ >\ \mbox{\hyperlink{classgroup_a570ebbe5db9eb12267985d724b7b9b22}{calc\_jq}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classtopology_1_1_vector2d}{topology::Vector2d}}\ q,\ \mbox{\hyperlink{classtopology_1_1_vector2d}{topology::Vector2d}}\ J\_0)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00407\ \ \ \ \ std::complex<double>\ \mbox{\hyperlink{classgroup_ac17cd8d0b2c4ffac7e6a5c1027bfcc95}{calc\_jqpar}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classtopology_1_1_vector2d}{topology::Vector2d}}\ q,\ \mbox{\hyperlink{classtopology_1_1_vector2d}{topology::Vector2d}}\ J\_0)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00409\ \ \ \ \ std::complex<double>\ \mbox{\hyperlink{classgroup_afd3874e3abc2733663ceb07f2c1dd465}{calc\_jqperp}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classtopology_1_1_vector2d}{topology::Vector2d}}\ q,\ \mbox{\hyperlink{classtopology_1_1_vector2d}{topology::Vector2d}}\ J\_0)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00411\ \ \ \ \ std::complex<double>\ \mbox{\hyperlink{classgroup_a9478386c54ff4f2528fef370390fd5db}{calc\_lq}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classtopology_1_1_vector2d}{topology::Vector2d}}\ q,\ \textcolor{keywordtype}{double}\ L\_0)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00412\ }
+\DoxyCodeLine{00414\ }
+\DoxyCodeLine{00416\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{classgroup_ac815d41c4492553f0748846df521f5da}{calc\_fieldfluct\_average}}(std::string\ fluctname,\ \mbox{\hyperlink{classtopology_1_1_vector2d}{topology::Vector2d}}\ q\ =\ 0)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00418\ }
+\DoxyCodeLine{00420\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{classgroup_ac3073bfec2b6adb914cf5f26e5c0de32}{calc\_one\_particle\_density}}(\textcolor{keywordtype}{int}\ index,\ std::string\ fluctname,\ \mbox{\hyperlink{classtopology_1_1_vector2d}{topology::Vector2d}}\ q\ =\ 0)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00422\ }
+\DoxyCodeLine{00451\ \ \ \ \ std::vector<std::complex<double>\ >\ \mbox{\hyperlink{classgroup_a82e650581e00e2fa5f4eddde45180fd9}{calc\_fieldfluct}}(\textcolor{keyword}{const}\ std::vector<topology::Vector2d>\ qvals,\ std::string\ fluctname)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00453\ \ \ \ \ std::vector<std::complex<double>\ >\ \mbox{\hyperlink{classgroup_a3b13aa6835031fc76780148ab9cc4434}{calc\_fieldfluct\_convolution}}(\textcolor{keyword}{const}\ std::vector<topology::Vector2d>\ qvals,\ std::string\ fluctname\_1,\ std::string\ fluctname\_2)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00454\ }
+\DoxyCodeLine{00455\ \ \ \ \ \textcolor{comment}{//\ ======================================================================================================}}
+\DoxyCodeLine{00456\ \ \ \ \ \textcolor{comment}{//\ Functions\ to\ calculate\ transport\ coefficients.\ These\ do\ not\ work\ properly}}
+\DoxyCodeLine{00457\ \ \ \ \ \textcolor{comment}{//\ ======================================================================================================}}
+\DoxyCodeLine{00459\ \textcolor{comment}{}\ \ \ \ \mbox{\hyperlink{classtopology_1_1_vector2d}{topology::Vector2d}}\ \mbox{\hyperlink{classgroup_a0a683c6fefe6132e6b4685d4099c23b3}{calc\_tau}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00461\ \ \ \ \ \mbox{\hyperlink{classtopology_1_1_vector2d}{topology::Vector2d}}\ \mbox{\hyperlink{classgroup_a2f819a6f9ebdb8d49f7f77c659fbc94d}{calc\_je}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00463\ \ \ \ \ \mbox{\hyperlink{classtopology_1_1_vector2d}{topology::Vector2d}}\ \mbox{\hyperlink{classgroup_a542808253fe680dd21ed20716d90bfc3}{calc\_current}}(std::string\ currentname)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00464\ }
+\DoxyCodeLine{00465\ \ \ \ \ \textcolor{comment}{//\ \ \ ===================================================================================================}}
+\DoxyCodeLine{00466\ \ \ \ \ \textcolor{comment}{//\ \ \ Static\ correlation\ functions}}
+\DoxyCodeLine{00467\ \ \ \ \ \textcolor{comment}{//\ \ \ ===================================================================================================}}
+\DoxyCodeLine{00469\ \textcolor{comment}{}}
+\DoxyCodeLine{00479\ \ \ \ \ std::vector<double>\ \mbox{\hyperlink{classgroup_adceefccfc1a29c7428974ebce0f9ecef}{calc\_SCF\_S\_individual}}(\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ index,\ \textcolor{keyword}{const}\ std::vector<double>\ rbin,\ std::vector<int>\&\ counts)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00480\ }
+\DoxyCodeLine{00482\ }
+\DoxyCodeLine{00492\ \ \ \ \ std::vector<double>\ \mbox{\hyperlink{classgroup_a82e24fe33ee6468dfcf7289c71124ef7}{calc\_SCF\_S\_oriented\_individual}}(\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ index,\ \textcolor{keyword}{const}\ std::vector<double>\ rbin,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\&\ orientation\_angle,\ std::vector<int>\&\ counts)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00493\ }
+\DoxyCodeLine{00495\ }
+\DoxyCodeLine{00503\ \ \ \ \ std::vector<double>\ \mbox{\hyperlink{classgroup_ad19944292752c21dfe3419c15bf3b8f3}{calc\_SCF\_g\_individual}}(\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ index,\ \textcolor{keyword}{const}\ std::vector<double>\ rbin)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00504\ }
+\DoxyCodeLine{00506\ }
+\DoxyCodeLine{00513\ \ \ \ \ std::vector<double>\ \mbox{\hyperlink{classgroup_ad55bd73ba599cbed393926a61f499a46}{calc\_SCF\_g}}(\ \textcolor{keyword}{const}\ std::vector<double>\ rbin,\ \textcolor{keywordtype}{int}\ number\_of\_points)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00514\ }
+\DoxyCodeLine{00516\ }
+\DoxyCodeLine{00526\ \ \ \ \ std::vector<double>\ \mbox{\hyperlink{classgroup_a4dacb625fe5f1435cc7e4eeb77dae77f}{calc\_SCF\_anglediff\_individual}}(\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ index,\ \textcolor{keyword}{const}\ std::vector<double>\ rbin,\ std::vector<int>\&\ counts)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00527\ }
+\DoxyCodeLine{00529\ }
+\DoxyCodeLine{00539\ \ \ \ \ std::vector<double>\ \mbox{\hyperlink{classgroup_aadc8981b3862eef09f21febd56042f6a}{calc\_SCF\_E\_individual}}(\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ index,\ \textcolor{keyword}{const}\ std::vector<double>\ rbin,\ std::vector<int>\&\ counts)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00540\ }
+\DoxyCodeLine{00542\ }
+\DoxyCodeLine{00545\ \ \ \ \ std::vector<double>\ \mbox{\hyperlink{classgroup_a96a49b24c17de671412d332e96acf3ba}{calc\_SCF\_Ekin\_individual}}(\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ index,\ \textcolor{keyword}{const}\ std::vector<double>\ rbin,\ std::vector<int>\&\ counts)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00546\ }
+\DoxyCodeLine{00548\ }
+\DoxyCodeLine{00558\ \ \ \ \ std::vector<double>\ \mbox{\hyperlink{classgroup_a8e7eff1e7b38c8c9b170422d5f5a158c}{calc\_SCF\_Eint\_individual}}(\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ index,\ \textcolor{keyword}{const}\ std::vector<double>\ rbin,\ std::vector<int>\&\ counts)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00559\ }
+\DoxyCodeLine{00561\ }
+\DoxyCodeLine{00564\ \ \ \ \ std::vector<double>\ \mbox{\hyperlink{classgroup_a91b0fc82c16c8c5dfc77ae079fe577af}{calc\_SCF\_P\_individual}}(\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ index,\ \textcolor{keyword}{const}\ std::vector<double>\ rbin,\ std::vector<int>\&\ counts)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00566\ }
+\DoxyCodeLine{00576\ \ \ \ \ std::vector<double>\ \mbox{\hyperlink{classgroup_ae912c98c7c9dd2f937dcf7433052448f}{calc\_SCF\_W\_individual}}(\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ index,\ \textcolor{keyword}{const}\ std::vector<double>\ rbin,\ std::vector<int>\&\ counts)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00577\ }
+\DoxyCodeLine{00579\ }
+\DoxyCodeLine{00616\ \ \ \ \ std::vector<double>\ \mbox{\hyperlink{classgroup_aa86f4574a2829525d00468c9eb6981a0}{calc\_SCF\_averaged}}(\ \textcolor{keyword}{const}\ std::vector<double>\ rbin,\ \textcolor{keywordtype}{int}\ number\_of\_points,\ \textcolor{keyword}{const}\ std::string\ name)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00617\ }
+\DoxyCodeLine{00618\ }
+\DoxyCodeLine{00619\ \ \ \ \ \textcolor{comment}{//\ \ \ ===================================================================================================}}
+\DoxyCodeLine{00620\ \ \ \ \ \textcolor{comment}{//\ \ \ Time\ correlation\ functions}}
+\DoxyCodeLine{00621\ \ \ \ \ \textcolor{comment}{//\ \ \ ===================================================================================================}}
+\DoxyCodeLine{00623\ \textcolor{comment}{}}
+\DoxyCodeLine{00628\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{classgroup_a32348ae34fde015c4573e29a9418ea40}{calc\_ACF\_S}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classgroup}{group}}\&\ G\_initial)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00629\ }
+\DoxyCodeLine{00631\ }
+\DoxyCodeLine{00637\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{classgroup_a8e65f260fd3890a6da740e95be012103}{calc\_ACF\_anglediff}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classgroup}{group}}\&\ G\_initial)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00638\ }
+\DoxyCodeLine{00640\ }
+\DoxyCodeLine{00684\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{classgroup_a2713c59d11edc237520da530ea6aab13}{calc\_ACF\_sp}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classgroup}{group}}\&\ G\_initial,\ \textcolor{keyword}{const}\ std::string\ name)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00685\ }
+\DoxyCodeLine{00687\ }
+\DoxyCodeLine{00731\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{classgroup_a89bd90c457c1675a5365dcd7351798dd}{calc\_ACF\_q0}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classgroup}{group}}\&\ G\_initial,\ \textcolor{keyword}{const}\ std::string\ name)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00732\ }
+\DoxyCodeLine{00733\ }
+\DoxyCodeLine{00735\ }
+\DoxyCodeLine{00757\ \ \ \ \ std::vector<std::complex<double>\ >\ \mbox{\hyperlink{classgroup_af6edf3a06534225562427fab80486a83}{calc\_TCF}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classgroup}{group}}\&\ G\_initial,\ std::vector<topology::Vector2d>\ qvals,}
+\DoxyCodeLine{00758\ \ \ \ \ \ \ \ \ \ \ \ \ std::string\ fluctname\_initial,\ std::string\ fluctname\_current)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00759\ }
+\DoxyCodeLine{00760\ }
+\DoxyCodeLine{00761\ \ \ \ \ \textcolor{comment}{//\ ======================================================================================================}}
+\DoxyCodeLine{00762\ \ \ \ \ \textcolor{comment}{//\ Calculation\ of\ time\ derivatives\ and\ coordinate\ differences}}
+\DoxyCodeLine{00763\ \ \ \ \ \textcolor{comment}{//\ ======================================================================================================}}
+\DoxyCodeLine{00765\ \textcolor{comment}{}\ \ \ \ std::vector<double>\ \mbox{\hyperlink{classgroup_a737b1562e521a90ceb6dd9630162a01d}{time\_derivative\_theta}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00767\ \ \ \ \ std::vector<double>\ \mbox{\hyperlink{classgroup_a982bd50ec79efd6e0d8a687b302e356e}{time\_derivative\_w}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00769\ \ \ \ \ std::vector<double>\ \mbox{\hyperlink{classgroup_ad9df3ca3f2cf67926b44db61a5218af0}{time\_derivative\_r}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00771\ \ \ \ \ std::vector<double>\ \mbox{\hyperlink{classgroup_a400e7b2bf08f4480fb9a047003f2541e}{time\_derivative\_p}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00772\ }
+\DoxyCodeLine{00774\ \ \ \ \ std::vector<double>\ \mbox{\hyperlink{classgroup_a879ba3c38c405b39cdf3a404518019d5}{time\_derivative\_coord}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00776\ \ \ \ \ std::vector<double>\ \mbox{\hyperlink{classgroup_a33234f8ffb4027528c50dedac6bec20a}{time\_derivative\_mom}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00778\ \ \ \ \ \mbox{\hyperlink{classgroup}{group}}\ \mbox{\hyperlink{classgroup_a9696e88dfbee235e456180afa2a73e14}{time\_derivative}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00779\ }
+\DoxyCodeLine{00781\ \ \ \ \ std::vector<double>\ \mbox{\hyperlink{classgroup_a316a74bbcdad5160b6a106d869a9d84d}{coord\_diff}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classgroup}{group}}\&\ G)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00783\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classgroup_a28fc1d3cc5bb465208b95e965ae2c45d}{accumulative\_MSD}}(std::vector<double>\&\ MSD,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classgroup}{group}}\&\ last\_G)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00784\ }
+\DoxyCodeLine{00785\ }
+\DoxyCodeLine{00786\ \ \ \ \ \textcolor{comment}{//\ \ \ ===================================================================================================}}
+\DoxyCodeLine{00787\ \ \ \ \ \textcolor{comment}{//\ \ \ Addition\ operator\ of\ groups\ and\ multiplication\ operator\ of\ a\ group\ by\ a\ double\ value}}
+\DoxyCodeLine{00788\ \ \ \ \ \textcolor{comment}{//\ \ \ ===================================================================================================}}
+\DoxyCodeLine{00790\ \textcolor{comment}{}\ \ \ \ \mbox{\hyperlink{classgroup}{group}}\&\ \mbox{\hyperlink{classgroup_a2dda93b15acd8592e527157f461b2d17}{operator+=}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classgroup}{group}}\&\ G);}
+\DoxyCodeLine{00792\ \ \ \ \ \mbox{\hyperlink{classgroup}{group}}\&\ \mbox{\hyperlink{classgroup_adac1e7cbd401a8e1cb89aec29d022909}{operator*=}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\ a);}
+\DoxyCodeLine{00793\ }
+\DoxyCodeLine{00794\ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00795\ }
+\DoxyCodeLine{00797\ \ \ \ \ std::string\ \mbox{\hyperlink{classgroup_abba72880d78720291cdd5267f96cebbf}{group\_type\_}};}
+\DoxyCodeLine{00798\ }
+\DoxyCodeLine{00800\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classgroup_a0902e9bfec3a71e48d68db8f367d2228}{N\_}};}
+\DoxyCodeLine{00802\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classgroup_ad5664d0f4bbf27f9f8cad68d333691e8}{sqrtN\_}};}
+\DoxyCodeLine{00803\ }
+\DoxyCodeLine{00805\ \ \ \ \ \mbox{\hyperlink{classtopology_1_1_vector2d}{topology::Vector2d}}\ \mbox{\hyperlink{classgroup_a1fd5c592e393b150d715cf06cdcc3373}{L\_}};}
+\DoxyCodeLine{00806\ }
+\DoxyCodeLine{00808\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{classgroup_a5e224ee273f6971cf0a76756c6c583f1}{I\_}}\ =\ 1;}
+\DoxyCodeLine{00810\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{classgroup_a1a8b39fe4396923de757fa3071ec2f82}{m\_}}\ =\ 1;}
+\DoxyCodeLine{00811\ }
+\DoxyCodeLine{00813\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{classgroup_a75137f8b271d5b73c441c88fabfe59d3}{J\_}}\ =\ 1;}
+\DoxyCodeLine{00815\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{classgroup_aeeaa72dd4e321200f4a9433fb3777098}{U\_}}\ =\ 1;}
+\DoxyCodeLine{00816\ }
+\DoxyCodeLine{00818\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{classgroup_a2c50b38ea116d7b21b34445836e85ee0}{cutoff\_}}\ =\ 1;}
+\DoxyCodeLine{00819\ }
+\DoxyCodeLine{00820\ \ \ \ \ std::vector<topology::Vector2d>\ \mbox{\hyperlink{classgroup_acbb3793a619f6fbf6f160d4a9a2f5487}{r\_}};\ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00821\ \ \ \ \ std::vector<topology::Vector2d>\ \mbox{\hyperlink{classgroup_a542a5c2dad5b7980cc0cfbf19a3b4ba6}{p\_}};\ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00822\ \ \ \ \ std::vector<double>\ \mbox{\hyperlink{classgroup_a44fc1d0e59c1401e62f98e0a4852b731}{theta\_}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00823\ \ \ \ \ std::vector<double>\ \mbox{\hyperlink{classgroup_a90512f77b5ad86c99a1b565078eaf537}{w\_}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00824\ }
+\DoxyCodeLine{00826\ \ \ \ \ \mbox{\hyperlink{classpartition}{partition}}\ \mbox{\hyperlink{classgroup_a187afae51fc68fd66b5c230d404cea0a}{partition\_}};}
+\DoxyCodeLine{00827\ }
+\DoxyCodeLine{00828\ }
+\DoxyCodeLine{00829\ \ \ \ \ std::string\ \mbox{\hyperlink{classgroup_a03237769d3d2a8f936de6683f58d6810}{nb\_rule\_}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00830\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{classgroup_a15a89f93f15ae6e305944194244efc46}{nb\_mult\_factor\_}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00831\ }
+\DoxyCodeLine{00832\ \ \ \ \ \mbox{\hyperlink{classneighbor__list}{neighbor\_list}}*\ \mbox{\hyperlink{classgroup_adf1af218f4fdaee805c20012d4305ab1}{nb\_list\_}};\ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00833\ }
+\DoxyCodeLine{00835\ \ \ \ \ \textcolor{keywordtype}{char}\ \mbox{\hyperlink{classgroup_a290ee2d978475279ecb2ee7b673d637f}{lattice\_type\_}};}
+\DoxyCodeLine{00836\ }
+\DoxyCodeLine{00838\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{classgroup_a47795c0f0f247447e23a541045e8116b}{vm\_eta\_}};}
+\DoxyCodeLine{00839\ }
+\DoxyCodeLine{00841\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{classgroup_ac960a4b811c77a828eff4f542d00d243}{vm\_v\_}};}
+\DoxyCodeLine{00842\ }
+\DoxyCodeLine{00843\ }
+\DoxyCodeLine{00844\ }
+\DoxyCodeLine{00845\ \};}
+\DoxyCodeLine{00846\ }
+\DoxyCodeLine{00848\ \textcolor{keyword}{inline}\ \mbox{\hyperlink{classgroup}{group}}\ \mbox{\hyperlink{group_8h_a0ec18bf2393a796d176135d32dce9aa2}{operator+}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classgroup}{group}}\&\ G,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classgroup}{group}}\&\ G2)\{}
+\DoxyCodeLine{00849\ \ \ \ \ \textcolor{keywordflow}{return}\ \ \mbox{\hyperlink{classgroup}{group}}(G)\ +=\ G2;}
+\DoxyCodeLine{00850\ \};}
+\DoxyCodeLine{00851\ }
+\DoxyCodeLine{00852\ }
+\DoxyCodeLine{00854\ \textcolor{keyword}{inline}\ \mbox{\hyperlink{classgroup}{group}}\ \mbox{\hyperlink{group_8h_ad037ad171f952545b8350e41eb488c14}{operator*}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classgroup}{group}}\&\ G,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\ a)\{}
+\DoxyCodeLine{00855\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classgroup}{group}}(G)\ *=\ a;}
+\DoxyCodeLine{00856\ \};}
+\DoxyCodeLine{00857\ }
+\DoxyCodeLine{00859\ \textcolor{keyword}{inline}\ \mbox{\hyperlink{classgroup}{group}}\ \mbox{\hyperlink{group_8h_ad037ad171f952545b8350e41eb488c14}{operator*}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\ a,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classgroup}{group}}\&\ G)\{}
+\DoxyCodeLine{00860\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classgroup}{group}}(G)\ *=\ a;}
+\DoxyCodeLine{00861\ \};}
+\DoxyCodeLine{00862\ }
+\DoxyCodeLine{00863\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ GROUP\_H\_\ */}\textcolor{preprocessor}{}}
+
+\end{DoxyCode}

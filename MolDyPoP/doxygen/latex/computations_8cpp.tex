@@ -1,0 +1,566 @@
+\doxysection{computations.\+cpp File Reference}
+\hypertarget{computations_8cpp}{}\label{computations_8cpp}\index{computations.cpp@{computations.cpp}}
+
+
+cpp-\/\+File to \doxylink{computations_8h}{computations.\+h}, implementation of the functions.  
+
+
+{\ttfamily \#include \"{}computations.\+h\"{}}\newline
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+double \mbox{\hyperlink{computations_8cpp_a07941a00221a9de2c6f7fc3209d41f9e}{mod}} (double val, const double min, const double max)
+\begin{DoxyCompactList}\small\item\em Modulus function between min and max. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename T , typename A $>$ }\\T \mbox{\hyperlink{computations_8cpp_ad65d7fe7506a4850c5db2eb184fccd79}{vector\+\_\+mean}} (std\+::vector$<$ T, A $>$ v)
+\begin{DoxyCompactList}\small\item\em Calculates mean of vector. Template, instantiated with double, int and std\+::complex$<$double$>$ in \doxylink{computations_8cpp}{computations.\+cpp}. \end{DoxyCompactList}\item 
+template double \mbox{\hyperlink{computations_8cpp_ad259902e7bc0411d0f6bb014c7d1a543}{vector\+\_\+mean}} (std\+::vector$<$ double, std\+::allocator$<$ double $>$ $>$ v)
+\item 
+template int \mbox{\hyperlink{computations_8cpp_a652bbd11d55a5bf58b445bcf535a24d2}{vector\+\_\+mean}} (std\+::vector$<$ int, std\+::allocator$<$ int $>$ $>$ v)
+\item 
+template std\+::complex$<$ double $>$ \mbox{\hyperlink{computations_8cpp_a9362cb3db247c7cdacc65af2f92664d7}{vector\+\_\+mean}} (std\+::vector$<$ std\+::complex$<$ double $>$, std\+::allocator$<$ std\+::complex$<$ double $>$ $>$ $>$ v)
+\item 
+template \mbox{\hyperlink{classtopology_1_1_vector2d}{topology\+::\+Vector2d}} \mbox{\hyperlink{computations_8cpp_acb078020444254ee60f18a086bc7b05d}{vector\+\_\+mean}} (std\+::vector$<$ \mbox{\hyperlink{classtopology_1_1_vector2d}{topology\+::\+Vector2d}}, std\+::allocator$<$ \mbox{\hyperlink{classtopology_1_1_vector2d}{topology\+::\+Vector2d}} $>$ $>$ v)
+\item 
+{\footnotesize template$<$typename T , typename A $>$ }\\T \mbox{\hyperlink{computations_8cpp_a3cc11c4d161010d97c3898fe6de5ab0e}{row\+\_\+mean}} (std\+::vector$<$ T, A $>$ v, int M, int N, int i)
+\begin{DoxyCompactList}\small\item\em Calculates mean of row of matrix (vector is M matrix rows of length N together). Template, instantiated with double, int and std\+::complex$<$double$>$ in \doxylink{computations_8cpp}{computations.\+cpp}. \end{DoxyCompactList}\item 
+template double \mbox{\hyperlink{computations_8cpp_a8112b1932838247b9476bf543c9b6c1d}{row\+\_\+mean}} (std\+::vector$<$ double, std\+::allocator$<$ double $>$ $>$ v, int M, int N, int i)
+\item 
+template int \mbox{\hyperlink{computations_8cpp_a6a2c099517140226a06a3623b23868da}{row\+\_\+mean}} (std\+::vector$<$ int, std\+::allocator$<$ int $>$ $>$ v, int M, int N, int i)
+\item 
+template std\+::complex$<$ double $>$ \mbox{\hyperlink{computations_8cpp_ab4f6044b6c0d334a47c3a5a9fa29c432}{row\+\_\+mean}} (std\+::vector$<$ std\+::complex$<$ double $>$, std\+::allocator$<$ std\+::complex$<$ double $>$ $>$ $>$ v, int M, int N, int i)
+\item 
+template \mbox{\hyperlink{classtopology_1_1_vector2d}{topology\+::\+Vector2d}} \mbox{\hyperlink{computations_8cpp_a2c66648df7d806e46082ea01ff96cb59}{row\+\_\+mean}} (std\+::vector$<$ \mbox{\hyperlink{classtopology_1_1_vector2d}{topology\+::\+Vector2d}}, std\+::allocator$<$ \mbox{\hyperlink{classtopology_1_1_vector2d}{topology\+::\+Vector2d}} $>$ $>$ v, int M, int N, int i)
+\item 
+{\footnotesize template$<$typename T , typename A $>$ }\\T \mbox{\hyperlink{computations_8cpp_a536abf00bea1d4cc40f2fa5c8f33595e}{column\+\_\+mean}} (std\+::vector$<$ T, A $>$ v, int M, int N, int j)
+\begin{DoxyCompactList}\small\item\em Calculates mean of column of matrix (vector is M matrix rows of length N together). Template, instantiated with double, int and std\+::complex$<$double$>$ in \doxylink{computations_8cpp}{computations.\+cpp}. \end{DoxyCompactList}\item 
+template double \mbox{\hyperlink{computations_8cpp_acec8db1f8f2a309b66628644f8d1d5f6}{column\+\_\+mean}} (std\+::vector$<$ double, std\+::allocator$<$ double $>$ $>$ v, int M, int N, int j)
+\item 
+template int \mbox{\hyperlink{computations_8cpp_a14ab8f0184d20dc06cb872a689951b86}{column\+\_\+mean}} (std\+::vector$<$ int, std\+::allocator$<$ int $>$ $>$ v, int M, int N, int j)
+\item 
+template std\+::complex$<$ double $>$ \mbox{\hyperlink{computations_8cpp_aeb8d7a06035a80915d31c4e3618e2725}{column\+\_\+mean}} (std\+::vector$<$ std\+::complex$<$ double $>$, std\+::allocator$<$ std\+::complex$<$ double $>$ $>$ $>$ v, int M, int N, int j)
+\item 
+template \mbox{\hyperlink{classtopology_1_1_vector2d}{topology\+::\+Vector2d}} \mbox{\hyperlink{computations_8cpp_a9be09759d1762028aa7afb51f8c12559}{column\+\_\+mean}} (std\+::vector$<$ \mbox{\hyperlink{classtopology_1_1_vector2d}{topology\+::\+Vector2d}}, std\+::allocator$<$ \mbox{\hyperlink{classtopology_1_1_vector2d}{topology\+::\+Vector2d}} $>$ $>$ v, int M, int N, int j)
+\item 
+{\footnotesize template$<$typename T , typename A $>$ }\\T \mbox{\hyperlink{computations_8cpp_a26d15b0abd865238da8b2766aaca400f}{selective\+\_\+vector\+\_\+mean}} (std\+::vector$<$ T, A $>$ yvals, std\+::vector$<$ double $>$ xvals, double xsep\+\_\+min)
+\begin{DoxyCompactList}\small\item\em Calculates mean of vector, but only for entries that are at least xsep\+\_\+min apart. \end{DoxyCompactList}\item 
+template double \mbox{\hyperlink{computations_8cpp_aa0f78ae66da2f945b70ac95d59cf6bc6}{selective\+\_\+vector\+\_\+mean}} (std\+::vector$<$ double, std\+::allocator$<$ double $>$ $>$ yvals, std\+::vector$<$ double $>$ xvals, double xsep\+\_\+min)
+\item 
+template int \mbox{\hyperlink{computations_8cpp_aea99260e558c1d77d808fac418db0888}{selective\+\_\+vector\+\_\+mean}} (std\+::vector$<$ int, std\+::allocator$<$ int $>$ $>$ yvals, std\+::vector$<$ double $>$ xvals, double xsep\+\_\+min)
+\item 
+template std\+::complex$<$ double $>$ \mbox{\hyperlink{computations_8cpp_aa8b7cb0dfffa627d7029a9ede6c9de5d}{selective\+\_\+vector\+\_\+mean}} (std\+::vector$<$ std\+::complex$<$ double $>$, std\+::allocator$<$ std\+::complex$<$ double $>$ $>$ $>$ yvals, std\+::vector$<$ double $>$ xvals, double xsep\+\_\+min)
+\item 
+template \mbox{\hyperlink{classtopology_1_1_vector2d}{topology\+::\+Vector2d}} \mbox{\hyperlink{computations_8cpp_a0856176e30a106b0e5f028e75d05c234}{selective\+\_\+vector\+\_\+mean}} (std\+::vector$<$ \mbox{\hyperlink{classtopology_1_1_vector2d}{topology\+::\+Vector2d}}, std\+::allocator$<$ \mbox{\hyperlink{classtopology_1_1_vector2d}{topology\+::\+Vector2d}} $>$ $>$ yvals, std\+::vector$<$ double $>$ xvals, double xsep\+\_\+min)
+\item 
+{\footnotesize template$<$typename T , typename A $>$ }\\T \mbox{\hyperlink{computations_8cpp_a80932326f47c4a6d470fc7906a9c9d6d}{selective\+\_\+row\+\_\+mean}} (std\+::vector$<$ T, A $>$ yvals, std\+::vector$<$ double $>$ xvals, double xsep\+\_\+min, int M, int N, int i)
+\begin{DoxyCompactList}\small\item\em Calculates row mean of vector, but only for entries that are at least xsep\+\_\+min apart. \end{DoxyCompactList}\item 
+template double \mbox{\hyperlink{computations_8cpp_aa6c80067a40c6ec4d8f1f9baeb69bfbf}{selective\+\_\+row\+\_\+mean}} (std\+::vector$<$ double, std\+::allocator$<$ double $>$ $>$ yvals, std\+::vector$<$ double $>$ xvals, double xsep\+\_\+min, int M, int N, int i)
+\item 
+template int \mbox{\hyperlink{computations_8cpp_a45aa99c6a6357b7b7821e59b00d07f2a}{selective\+\_\+row\+\_\+mean}} (std\+::vector$<$ int, std\+::allocator$<$ int $>$ $>$ yvals, std\+::vector$<$ double $>$ xvals, double xsep\+\_\+min, int M, int N, int i)
+\item 
+template std\+::complex$<$ double $>$ \mbox{\hyperlink{computations_8cpp_af703089b7bb9f95ac8dd26f661123140}{selective\+\_\+row\+\_\+mean}} (std\+::vector$<$ std\+::complex$<$ double $>$, std\+::allocator$<$ std\+::complex$<$ double $>$ $>$ $>$ yvals, std\+::vector$<$ double $>$ xvals, double xsep\+\_\+min, int M, int N, int i)
+\item 
+template \mbox{\hyperlink{classtopology_1_1_vector2d}{topology\+::\+Vector2d}} \mbox{\hyperlink{computations_8cpp_acd4e6e0bf01342708ed8e98ed1b1ef77}{selective\+\_\+row\+\_\+mean}} (std\+::vector$<$ \mbox{\hyperlink{classtopology_1_1_vector2d}{topology\+::\+Vector2d}}, std\+::allocator$<$ \mbox{\hyperlink{classtopology_1_1_vector2d}{topology\+::\+Vector2d}} $>$ $>$ yvals, std\+::vector$<$ double $>$ xvals, double xsep\+\_\+min, int M, int N, int i)
+\item 
+{\footnotesize template$<$typename T , typename A $>$ }\\T \mbox{\hyperlink{computations_8cpp_a04b2acdd59d6bebef98156900a284fe8}{selective\+\_\+column\+\_\+mean}} (std\+::vector$<$ T, A $>$ yvals, std\+::vector$<$ double $>$ xvals, double xsep\+\_\+min, int M, int N, int j)
+\begin{DoxyCompactList}\small\item\em Calculates column mean of vector, but only for entries that are at least xsep\+\_\+min apart. \end{DoxyCompactList}\item 
+template double \mbox{\hyperlink{computations_8cpp_aa7f29bba09302ff18b7cc49d538598f0}{selective\+\_\+column\+\_\+mean}} (std\+::vector$<$ double, std\+::allocator$<$ double $>$ $>$ yvals, std\+::vector$<$ double $>$ xvals, double xsep\+\_\+min, int M, int N, int j)
+\item 
+template int \mbox{\hyperlink{computations_8cpp_ae7e81537016163b4188dcf7872b60f94}{selective\+\_\+column\+\_\+mean}} (std\+::vector$<$ int, std\+::allocator$<$ int $>$ $>$ yvals, std\+::vector$<$ double $>$ xvals, double xsep\+\_\+min, int M, int N, int j)
+\item 
+template std\+::complex$<$ double $>$ \mbox{\hyperlink{computations_8cpp_a6b637e13cdef6b0ea20368093be14a55}{selective\+\_\+column\+\_\+mean}} (std\+::vector$<$ std\+::complex$<$ double $>$, std\+::allocator$<$ std\+::complex$<$ double $>$ $>$ $>$ yvals, std\+::vector$<$ double $>$ xvals, double xsep\+\_\+min, int M, int N, int j)
+\item 
+template \mbox{\hyperlink{classtopology_1_1_vector2d}{topology\+::\+Vector2d}} \mbox{\hyperlink{computations_8cpp_ab5029d7076c8003237ae1744ee567979}{selective\+\_\+column\+\_\+mean}} (std\+::vector$<$ \mbox{\hyperlink{classtopology_1_1_vector2d}{topology\+::\+Vector2d}}, std\+::allocator$<$ \mbox{\hyperlink{classtopology_1_1_vector2d}{topology\+::\+Vector2d}} $>$ $>$ yvals, std\+::vector$<$ double $>$ xvals, double xsep\+\_\+min, int M, int N, int j)
+\item 
+double \mbox{\hyperlink{computations_8cpp_ac23f83a9ed8d3a1d3415ccbf892b36c7}{vector\+\_\+variance}} (std\+::vector$<$ double $>$ v, double \&mean)
+\begin{DoxyCompactList}\small\item\em Calculates variance of vector, also stores mean. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename T , typename A $>$ }\\std\+::vector$<$ T, A $>$ \mbox{\hyperlink{computations_8cpp_a6a5517202db0c7ea6036fd4b2cd692d8}{vector\+\_\+scale}} (const std\+::vector$<$ T, A $>$ \&v, double a)
+\begin{DoxyCompactList}\small\item\em Scales vector by factor a. \end{DoxyCompactList}\item 
+template std\+::vector$<$ double, std\+::allocator$<$ double $>$ $>$ \mbox{\hyperlink{computations_8cpp_ada45ff604cde20a5d4c74911141e34fc}{vector\+\_\+scale}} (const std\+::vector$<$ double, std\+::allocator$<$ double $>$ $>$ \&v, double a)
+\item 
+template std\+::vector$<$ int, std\+::allocator$<$ int $>$ $>$ \mbox{\hyperlink{computations_8cpp_abc57c1c7896ffcd84dd45e6d6727d283}{vector\+\_\+scale}} (const std\+::vector$<$ int, std\+::allocator$<$ int $>$ $>$ \&v, double a)
+\item 
+template std\+::vector$<$ std\+::complex$<$ double $>$, std\+::allocator$<$ std\+::complex$<$ double $>$ $>$ $>$ \mbox{\hyperlink{computations_8cpp_aa09f4f7f18af1e4f49c0a17cde1e004f}{vector\+\_\+scale}} (const std\+::vector$<$ std\+::complex$<$ double $>$, std\+::allocator$<$ std\+::complex$<$ double $>$ $>$ $>$ \&v, double a)
+\item 
+template std\+::vector$<$ \mbox{\hyperlink{classtopology_1_1_vector2d}{topology\+::\+Vector2d}}, std\+::allocator$<$ \mbox{\hyperlink{classtopology_1_1_vector2d}{topology\+::\+Vector2d}} $>$ $>$ \mbox{\hyperlink{computations_8cpp_a0513a4ad13fbfafc7f88832b4ca89edf}{vector\+\_\+scale}} (const std\+::vector$<$ \mbox{\hyperlink{classtopology_1_1_vector2d}{topology\+::\+Vector2d}}, std\+::allocator$<$ \mbox{\hyperlink{classtopology_1_1_vector2d}{topology\+::\+Vector2d}} $>$ $>$ \&v, double a)
+\item 
+{\footnotesize template$<$typename T , typename A $>$ }\\std\+::vector$<$ T, A $>$ \mbox{\hyperlink{computations_8cpp_a749d727a0caa0c3de43dae9d681c3ab1}{vector\+\_\+sum}} (const std\+::vector$<$ T, A $>$ \&v, const std\+::vector$<$ T, A $>$ \&w)
+\begin{DoxyCompactList}\small\item\em Adds two vectors v and w. \end{DoxyCompactList}\item 
+template std\+::vector$<$ double, std\+::allocator$<$ double $>$ $>$ \mbox{\hyperlink{computations_8cpp_afbf3a01d8f2cab16998d97b2afa65604}{vector\+\_\+sum}} (const std\+::vector$<$ double, std\+::allocator$<$ double $>$ $>$ \&v, const std\+::vector$<$ double, std\+::allocator$<$ double $>$ $>$ \&w)
+\item 
+template std\+::vector$<$ int, std\+::allocator$<$ int $>$ $>$ \mbox{\hyperlink{computations_8cpp_a2329f9a20014af010dcfdfca0b4cbe71}{vector\+\_\+sum}} (const std\+::vector$<$ int, std\+::allocator$<$ int $>$ $>$ \&v, const std\+::vector$<$ int, std\+::allocator$<$ int $>$ $>$ \&w)
+\item 
+template std\+::vector$<$ std\+::complex$<$ double $>$, std\+::allocator$<$ std\+::complex$<$ double $>$ $>$ $>$ \mbox{\hyperlink{computations_8cpp_a5c9038d8a4bf85674106cd9678d3a4ed}{vector\+\_\+sum}} (const std\+::vector$<$ std\+::complex$<$ double $>$, std\+::allocator$<$ std\+::complex$<$ double $>$ $>$ $>$ \&v, const std\+::vector$<$ std\+::complex$<$ double $>$, std\+::allocator$<$ std\+::complex$<$ double $>$ $>$ $>$ \&w)
+\item 
+template std\+::vector$<$ \mbox{\hyperlink{classtopology_1_1_vector2d}{topology\+::\+Vector2d}}, std\+::allocator$<$ \mbox{\hyperlink{classtopology_1_1_vector2d}{topology\+::\+Vector2d}} $>$ $>$ \mbox{\hyperlink{computations_8cpp_af16ca55451e6852326c3733f906c217a}{vector\+\_\+sum}} (const std\+::vector$<$ \mbox{\hyperlink{classtopology_1_1_vector2d}{topology\+::\+Vector2d}}, std\+::allocator$<$ \mbox{\hyperlink{classtopology_1_1_vector2d}{topology\+::\+Vector2d}} $>$ $>$ \&v, const std\+::vector$<$ \mbox{\hyperlink{classtopology_1_1_vector2d}{topology\+::\+Vector2d}}, std\+::allocator$<$ \mbox{\hyperlink{classtopology_1_1_vector2d}{topology\+::\+Vector2d}} $>$ $>$ \&w)
+\item 
+{\footnotesize template$<$typename T , typename A $>$ }\\T \mbox{\hyperlink{computations_8cpp_a28c308a9c9279e804cb4740cf6d577ba}{vector\+\_\+inpr}} (const std\+::vector$<$ T, A $>$ \&v, const std\+::vector$<$ T, A $>$ \&w)
+\begin{DoxyCompactList}\small\item\em Inner product of two vectors v and w. \end{DoxyCompactList}\item 
+template double \mbox{\hyperlink{computations_8cpp_abc3932fa9e04f1c9353801c21aa9565b}{vector\+\_\+inpr}} (const std\+::vector$<$ double, std\+::allocator$<$ double $>$ $>$ \&v, const std\+::vector$<$ double, std\+::allocator$<$ double $>$ $>$ \&w)
+\item 
+template int \mbox{\hyperlink{computations_8cpp_ab026ab2eeef42ab0d416b0675c356212}{vector\+\_\+inpr}} (const std\+::vector$<$ int, std\+::allocator$<$ int $>$ $>$ \&v, const std\+::vector$<$ int, std\+::allocator$<$ int $>$ $>$ \&w)
+\item 
+std\+::complex$<$ double $>$ \mbox{\hyperlink{computations_8cpp_ae8ee132a1440c57eb0ac2847fb7ab573}{vector\+\_\+inpr}} (const std\+::vector$<$ std\+::complex$<$ double $>$ $>$ \&v, const std\+::vector$<$ std\+::complex$<$ double $>$ $>$ \&w)
+\begin{DoxyCompactList}\small\item\em Inner product of two complex vectors v and w, where the complex conjugate of the components of v is used. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename T , typename A $>$ }\\std\+::vector$<$ T, A $>$ \mbox{\hyperlink{computations_8cpp_a974188426d99853ca26f6137c0d3c455}{vector\+\_\+pw\+\_\+mult}} (const std\+::vector$<$ T, A $>$ \&v, const std\+::vector$<$ T, A $>$ \&w)
+\begin{DoxyCompactList}\small\item\em Pointwise multiplication of two vectors v and w. \end{DoxyCompactList}\item 
+template std\+::vector$<$ double, std\+::allocator$<$ double $>$ $>$ \mbox{\hyperlink{computations_8cpp_ae9700ce870f2b9307895a65c0f61de7d}{vector\+\_\+pw\+\_\+mult}} (const std\+::vector$<$ double, std\+::allocator$<$ double $>$ $>$ \&v, const std\+::vector$<$ double, std\+::allocator$<$ double $>$ $>$ \&w)
+\item 
+template std\+::vector$<$ int, std\+::allocator$<$ int $>$ $>$ \mbox{\hyperlink{computations_8cpp_abee7c4668ce9718d6f38980fea9501fe}{vector\+\_\+pw\+\_\+mult}} (const std\+::vector$<$ int, std\+::allocator$<$ int $>$ $>$ \&v, const std\+::vector$<$ int, std\+::allocator$<$ int $>$ $>$ \&w)
+\item 
+std\+::vector$<$ std\+::complex$<$ double $>$ $>$ \mbox{\hyperlink{computations_8cpp_a46fb751900d9c96a525b5d247d569e34}{vector\+\_\+pw\+\_\+mult}} (const std\+::vector$<$ std\+::complex$<$ double $>$ $>$ \&v, const std\+::vector$<$ std\+::complex$<$ double $>$ $>$ \&w)
+\begin{DoxyCompactList}\small\item\em Pointwise multiplication of two complex vectors v and w, where the complex conjugate of the components of v is used. \end{DoxyCompactList}\item 
+std\+::vector$<$ std\+::complex$<$ double $>$ $>$ \mbox{\hyperlink{computations_8cpp_acbd242db903113d1b61b6152f97e436d}{vector\+\_\+pw\+\_\+mult}} (const std\+::vector$<$ std\+::complex$<$ double $>$ $>$ \&v\+\_\+1, const std\+::vector$<$ std\+::complex$<$ double $>$ $>$ \&v\+\_\+2, const std\+::vector$<$ std\+::complex$<$ double $>$ $>$ \&v\+\_\+3, const std\+::vector$<$ std\+::complex$<$ double $>$ $>$ \&v\+\_\+4)
+\begin{DoxyCompactList}\small\item\em Pointwise multiplication of four complex vectors v and w, where the complex conjugate of the components of v\+\_\+1 and v\+\_\+2 is used. \end{DoxyCompactList}\item 
+std\+::vector$<$ double $>$ \mbox{\hyperlink{computations_8cpp_a7feb2153e9a4162aa934de1cdc9dd643}{vector\+\_\+pw\+\_\+norm}} (const std\+::vector$<$ std\+::complex$<$ double $>$ $>$ \&v)
+\begin{DoxyCompactList}\small\item\em Pointwise norm value of a complex vector v, i.\+e. sum v\mbox{[}i\mbox{]}\texorpdfstring{$^\wedge$}{\string^}\texorpdfstring{$\ast$}{*} v\mbox{[}i\mbox{]}. \end{DoxyCompactList}\item 
+std\+::vector$<$ double $>$ \mbox{\hyperlink{computations_8cpp_a35ff1ed3ee230d7da8cd4596c3c82185}{log\+\_\+bin}} (double binmin, double binmax, double diffmin, int Nbins)
+\begin{DoxyCompactList}\small\item\em Makes logarithmic bin. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{computations_8cpp_ae31e26d24ac315a90bc3a13a39e11ea5}{find\+\_\+bin}} (const std\+::vector$<$ double $>$ \&bin, const double \&value)
+\item 
+double \mbox{\hyperlink{computations_8cpp_a1fd3c6a3ef85f4edad3a45af14f586a6}{random\+\_\+angle}} (double min, double max)
+\begin{DoxyCompactList}\small\item\em functions for random angle, designed such that only -\/pi\+:pi is allowed (automatical limits when values are not allowed) \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{computations_8cpp_a9130bf2c2986a16712d8ec6b8e703b0c}{random\+\_\+angle}} (double max)
+\begin{DoxyCompactList}\small\item\em Random angle between -\/max and max (or -\/max and 0 if max is negative.) \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+cpp-\/\+File to \doxylink{computations_8h}{computations.\+h}, implementation of the functions. 
+
+For more details, see \doxylink{computations_8h}{computations.\+h}.
+
+\begin{DoxyAuthor}{Author}
+Thomas Bissinger
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+Created\+: mid-\/2017 
+
+Last Update\+: 23-\/08-\/02 
+\end{DoxyDate}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{computations_8cpp_acec8db1f8f2a309b66628644f8d1d5f6}\label{computations_8cpp_acec8db1f8f2a309b66628644f8d1d5f6} 
+\index{computations.cpp@{computations.cpp}!column\_mean@{column\_mean}}
+\index{column\_mean@{column\_mean}!computations.cpp@{computations.cpp}}
+\doxysubsubsection{\texorpdfstring{column\_mean()}{column\_mean()}\hspace{0.1cm}{\footnotesize\ttfamily [1/5]}}
+{\footnotesize\ttfamily template double column\+\_\+mean (\begin{DoxyParamCaption}\item[{std\+::vector$<$ double, std\+::allocator$<$ double $>$ $>$}]{v,  }\item[{int}]{M,  }\item[{int}]{N,  }\item[{int}]{j }\end{DoxyParamCaption})}
+
+\Hypertarget{computations_8cpp_a14ab8f0184d20dc06cb872a689951b86}\label{computations_8cpp_a14ab8f0184d20dc06cb872a689951b86} 
+\index{computations.cpp@{computations.cpp}!column\_mean@{column\_mean}}
+\index{column\_mean@{column\_mean}!computations.cpp@{computations.cpp}}
+\doxysubsubsection{\texorpdfstring{column\_mean()}{column\_mean()}\hspace{0.1cm}{\footnotesize\ttfamily [2/5]}}
+{\footnotesize\ttfamily template int column\+\_\+mean (\begin{DoxyParamCaption}\item[{std\+::vector$<$ int, std\+::allocator$<$ int $>$ $>$}]{v,  }\item[{int}]{M,  }\item[{int}]{N,  }\item[{int}]{j }\end{DoxyParamCaption})}
+
+\Hypertarget{computations_8cpp_aeb8d7a06035a80915d31c4e3618e2725}\label{computations_8cpp_aeb8d7a06035a80915d31c4e3618e2725} 
+\index{computations.cpp@{computations.cpp}!column\_mean@{column\_mean}}
+\index{column\_mean@{column\_mean}!computations.cpp@{computations.cpp}}
+\doxysubsubsection{\texorpdfstring{column\_mean()}{column\_mean()}\hspace{0.1cm}{\footnotesize\ttfamily [3/5]}}
+{\footnotesize\ttfamily template std\+::complex$<$ double $>$ column\+\_\+mean (\begin{DoxyParamCaption}\item[{std\+::vector$<$ std\+::complex$<$ double $>$, std\+::allocator$<$ std\+::complex$<$ double $>$ $>$ $>$}]{v,  }\item[{int}]{M,  }\item[{int}]{N,  }\item[{int}]{j }\end{DoxyParamCaption})}
+
+\Hypertarget{computations_8cpp_a536abf00bea1d4cc40f2fa5c8f33595e}\label{computations_8cpp_a536abf00bea1d4cc40f2fa5c8f33595e} 
+\index{computations.cpp@{computations.cpp}!column\_mean@{column\_mean}}
+\index{column\_mean@{column\_mean}!computations.cpp@{computations.cpp}}
+\doxysubsubsection{\texorpdfstring{column\_mean()}{column\_mean()}\hspace{0.1cm}{\footnotesize\ttfamily [4/5]}}
+{\footnotesize\ttfamily template$<$typename T , typename A $>$ \\
+T column\+\_\+mean (\begin{DoxyParamCaption}\item[{std\+::vector$<$ T, A $>$}]{v,  }\item[{int}]{M,  }\item[{int}]{N,  }\item[{int}]{j }\end{DoxyParamCaption})}
+
+
+
+Calculates mean of column of matrix (vector is M matrix rows of length N together). Template, instantiated with double, int and std\+::complex$<$double$>$ in \doxylink{computations_8cpp}{computations.\+cpp}. 
+
+\Hypertarget{computations_8cpp_a9be09759d1762028aa7afb51f8c12559}\label{computations_8cpp_a9be09759d1762028aa7afb51f8c12559} 
+\index{computations.cpp@{computations.cpp}!column\_mean@{column\_mean}}
+\index{column\_mean@{column\_mean}!computations.cpp@{computations.cpp}}
+\doxysubsubsection{\texorpdfstring{column\_mean()}{column\_mean()}\hspace{0.1cm}{\footnotesize\ttfamily [5/5]}}
+{\footnotesize\ttfamily template \mbox{\hyperlink{classtopology_1_1_vector2d}{topology\+::\+Vector2d}} column\+\_\+mean (\begin{DoxyParamCaption}\item[{std\+::vector$<$ \mbox{\hyperlink{classtopology_1_1_vector2d}{topology\+::\+Vector2d}}, std\+::allocator$<$ \mbox{\hyperlink{classtopology_1_1_vector2d}{topology\+::\+Vector2d}} $>$ $>$}]{v,  }\item[{int}]{M,  }\item[{int}]{N,  }\item[{int}]{j }\end{DoxyParamCaption})}
+
+\Hypertarget{computations_8cpp_ae31e26d24ac315a90bc3a13a39e11ea5}\label{computations_8cpp_ae31e26d24ac315a90bc3a13a39e11ea5} 
+\index{computations.cpp@{computations.cpp}!find\_bin@{find\_bin}}
+\index{find\_bin@{find\_bin}!computations.cpp@{computations.cpp}}
+\doxysubsubsection{\texorpdfstring{find\_bin()}{find\_bin()}}
+{\footnotesize\ttfamily int find\+\_\+bin (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ double $>$ \&}]{bin,  }\item[{const double \&}]{value }\end{DoxyParamCaption})}
+
+\Hypertarget{computations_8cpp_a35ff1ed3ee230d7da8cd4596c3c82185}\label{computations_8cpp_a35ff1ed3ee230d7da8cd4596c3c82185} 
+\index{computations.cpp@{computations.cpp}!log\_bin@{log\_bin}}
+\index{log\_bin@{log\_bin}!computations.cpp@{computations.cpp}}
+\doxysubsubsection{\texorpdfstring{log\_bin()}{log\_bin()}}
+{\footnotesize\ttfamily std\+::vector$<$ double $>$ log\+\_\+bin (\begin{DoxyParamCaption}\item[{double}]{binmin,  }\item[{double}]{binmax,  }\item[{double}]{diffmin,  }\item[{int}]{Nbins }\end{DoxyParamCaption})}
+
+
+
+Makes logarithmic bin. 
+
+\Hypertarget{computations_8cpp_a07941a00221a9de2c6f7fc3209d41f9e}\label{computations_8cpp_a07941a00221a9de2c6f7fc3209d41f9e} 
+\index{computations.cpp@{computations.cpp}!mod@{mod}}
+\index{mod@{mod}!computations.cpp@{computations.cpp}}
+\doxysubsubsection{\texorpdfstring{mod()}{mod()}}
+{\footnotesize\ttfamily double mod (\begin{DoxyParamCaption}\item[{double}]{val,  }\item[{const double}]{min,  }\item[{const double}]{max }\end{DoxyParamCaption})}
+
+
+
+Modulus function between min and max. 
+
+\Hypertarget{computations_8cpp_a9130bf2c2986a16712d8ec6b8e703b0c}\label{computations_8cpp_a9130bf2c2986a16712d8ec6b8e703b0c} 
+\index{computations.cpp@{computations.cpp}!random\_angle@{random\_angle}}
+\index{random\_angle@{random\_angle}!computations.cpp@{computations.cpp}}
+\doxysubsubsection{\texorpdfstring{random\_angle()}{random\_angle()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily double random\+\_\+angle (\begin{DoxyParamCaption}\item[{double}]{max }\end{DoxyParamCaption})}
+
+
+
+Random angle between -\/max and max (or -\/max and 0 if max is negative.) 
+
+\Hypertarget{computations_8cpp_a1fd3c6a3ef85f4edad3a45af14f586a6}\label{computations_8cpp_a1fd3c6a3ef85f4edad3a45af14f586a6} 
+\index{computations.cpp@{computations.cpp}!random\_angle@{random\_angle}}
+\index{random\_angle@{random\_angle}!computations.cpp@{computations.cpp}}
+\doxysubsubsection{\texorpdfstring{random\_angle()}{random\_angle()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily double random\+\_\+angle (\begin{DoxyParamCaption}\item[{double}]{min,  }\item[{double}]{max }\end{DoxyParamCaption})}
+
+
+
+functions for random angle, designed such that only -\/pi\+:pi is allowed (automatical limits when values are not allowed) 
+
+\Hypertarget{computations_8cpp_a8112b1932838247b9476bf543c9b6c1d}\label{computations_8cpp_a8112b1932838247b9476bf543c9b6c1d} 
+\index{computations.cpp@{computations.cpp}!row\_mean@{row\_mean}}
+\index{row\_mean@{row\_mean}!computations.cpp@{computations.cpp}}
+\doxysubsubsection{\texorpdfstring{row\_mean()}{row\_mean()}\hspace{0.1cm}{\footnotesize\ttfamily [1/5]}}
+{\footnotesize\ttfamily template double row\+\_\+mean (\begin{DoxyParamCaption}\item[{std\+::vector$<$ double, std\+::allocator$<$ double $>$ $>$}]{v,  }\item[{int}]{M,  }\item[{int}]{N,  }\item[{int}]{i }\end{DoxyParamCaption})}
+
+\Hypertarget{computations_8cpp_a6a2c099517140226a06a3623b23868da}\label{computations_8cpp_a6a2c099517140226a06a3623b23868da} 
+\index{computations.cpp@{computations.cpp}!row\_mean@{row\_mean}}
+\index{row\_mean@{row\_mean}!computations.cpp@{computations.cpp}}
+\doxysubsubsection{\texorpdfstring{row\_mean()}{row\_mean()}\hspace{0.1cm}{\footnotesize\ttfamily [2/5]}}
+{\footnotesize\ttfamily template int row\+\_\+mean (\begin{DoxyParamCaption}\item[{std\+::vector$<$ int, std\+::allocator$<$ int $>$ $>$}]{v,  }\item[{int}]{M,  }\item[{int}]{N,  }\item[{int}]{i }\end{DoxyParamCaption})}
+
+\Hypertarget{computations_8cpp_ab4f6044b6c0d334a47c3a5a9fa29c432}\label{computations_8cpp_ab4f6044b6c0d334a47c3a5a9fa29c432} 
+\index{computations.cpp@{computations.cpp}!row\_mean@{row\_mean}}
+\index{row\_mean@{row\_mean}!computations.cpp@{computations.cpp}}
+\doxysubsubsection{\texorpdfstring{row\_mean()}{row\_mean()}\hspace{0.1cm}{\footnotesize\ttfamily [3/5]}}
+{\footnotesize\ttfamily template std\+::complex$<$ double $>$ row\+\_\+mean (\begin{DoxyParamCaption}\item[{std\+::vector$<$ std\+::complex$<$ double $>$, std\+::allocator$<$ std\+::complex$<$ double $>$ $>$ $>$}]{v,  }\item[{int}]{M,  }\item[{int}]{N,  }\item[{int}]{i }\end{DoxyParamCaption})}
+
+\Hypertarget{computations_8cpp_a3cc11c4d161010d97c3898fe6de5ab0e}\label{computations_8cpp_a3cc11c4d161010d97c3898fe6de5ab0e} 
+\index{computations.cpp@{computations.cpp}!row\_mean@{row\_mean}}
+\index{row\_mean@{row\_mean}!computations.cpp@{computations.cpp}}
+\doxysubsubsection{\texorpdfstring{row\_mean()}{row\_mean()}\hspace{0.1cm}{\footnotesize\ttfamily [4/5]}}
+{\footnotesize\ttfamily template$<$typename T , typename A $>$ \\
+T row\+\_\+mean (\begin{DoxyParamCaption}\item[{std\+::vector$<$ T, A $>$}]{v,  }\item[{int}]{M,  }\item[{int}]{N,  }\item[{int}]{i }\end{DoxyParamCaption})}
+
+
+
+Calculates mean of row of matrix (vector is M matrix rows of length N together). Template, instantiated with double, int and std\+::complex$<$double$>$ in \doxylink{computations_8cpp}{computations.\+cpp}. 
+
+\Hypertarget{computations_8cpp_a2c66648df7d806e46082ea01ff96cb59}\label{computations_8cpp_a2c66648df7d806e46082ea01ff96cb59} 
+\index{computations.cpp@{computations.cpp}!row\_mean@{row\_mean}}
+\index{row\_mean@{row\_mean}!computations.cpp@{computations.cpp}}
+\doxysubsubsection{\texorpdfstring{row\_mean()}{row\_mean()}\hspace{0.1cm}{\footnotesize\ttfamily [5/5]}}
+{\footnotesize\ttfamily template \mbox{\hyperlink{classtopology_1_1_vector2d}{topology\+::\+Vector2d}} row\+\_\+mean (\begin{DoxyParamCaption}\item[{std\+::vector$<$ \mbox{\hyperlink{classtopology_1_1_vector2d}{topology\+::\+Vector2d}}, std\+::allocator$<$ \mbox{\hyperlink{classtopology_1_1_vector2d}{topology\+::\+Vector2d}} $>$ $>$}]{v,  }\item[{int}]{M,  }\item[{int}]{N,  }\item[{int}]{i }\end{DoxyParamCaption})}
+
+\Hypertarget{computations_8cpp_aa7f29bba09302ff18b7cc49d538598f0}\label{computations_8cpp_aa7f29bba09302ff18b7cc49d538598f0} 
+\index{computations.cpp@{computations.cpp}!selective\_column\_mean@{selective\_column\_mean}}
+\index{selective\_column\_mean@{selective\_column\_mean}!computations.cpp@{computations.cpp}}
+\doxysubsubsection{\texorpdfstring{selective\_column\_mean()}{selective\_column\_mean()}\hspace{0.1cm}{\footnotesize\ttfamily [1/5]}}
+{\footnotesize\ttfamily template double selective\+\_\+column\+\_\+mean (\begin{DoxyParamCaption}\item[{std\+::vector$<$ double, std\+::allocator$<$ double $>$ $>$}]{yvals,  }\item[{std\+::vector$<$ double $>$}]{xvals,  }\item[{double}]{xsep\+\_\+min,  }\item[{int}]{M,  }\item[{int}]{N,  }\item[{int}]{j }\end{DoxyParamCaption})}
+
+\Hypertarget{computations_8cpp_ae7e81537016163b4188dcf7872b60f94}\label{computations_8cpp_ae7e81537016163b4188dcf7872b60f94} 
+\index{computations.cpp@{computations.cpp}!selective\_column\_mean@{selective\_column\_mean}}
+\index{selective\_column\_mean@{selective\_column\_mean}!computations.cpp@{computations.cpp}}
+\doxysubsubsection{\texorpdfstring{selective\_column\_mean()}{selective\_column\_mean()}\hspace{0.1cm}{\footnotesize\ttfamily [2/5]}}
+{\footnotesize\ttfamily template int selective\+\_\+column\+\_\+mean (\begin{DoxyParamCaption}\item[{std\+::vector$<$ int, std\+::allocator$<$ int $>$ $>$}]{yvals,  }\item[{std\+::vector$<$ double $>$}]{xvals,  }\item[{double}]{xsep\+\_\+min,  }\item[{int}]{M,  }\item[{int}]{N,  }\item[{int}]{j }\end{DoxyParamCaption})}
+
+\Hypertarget{computations_8cpp_a6b637e13cdef6b0ea20368093be14a55}\label{computations_8cpp_a6b637e13cdef6b0ea20368093be14a55} 
+\index{computations.cpp@{computations.cpp}!selective\_column\_mean@{selective\_column\_mean}}
+\index{selective\_column\_mean@{selective\_column\_mean}!computations.cpp@{computations.cpp}}
+\doxysubsubsection{\texorpdfstring{selective\_column\_mean()}{selective\_column\_mean()}\hspace{0.1cm}{\footnotesize\ttfamily [3/5]}}
+{\footnotesize\ttfamily template std\+::complex$<$ double $>$ selective\+\_\+column\+\_\+mean (\begin{DoxyParamCaption}\item[{std\+::vector$<$ std\+::complex$<$ double $>$, std\+::allocator$<$ std\+::complex$<$ double $>$ $>$ $>$}]{yvals,  }\item[{std\+::vector$<$ double $>$}]{xvals,  }\item[{double}]{xsep\+\_\+min,  }\item[{int}]{M,  }\item[{int}]{N,  }\item[{int}]{j }\end{DoxyParamCaption})}
+
+\Hypertarget{computations_8cpp_a04b2acdd59d6bebef98156900a284fe8}\label{computations_8cpp_a04b2acdd59d6bebef98156900a284fe8} 
+\index{computations.cpp@{computations.cpp}!selective\_column\_mean@{selective\_column\_mean}}
+\index{selective\_column\_mean@{selective\_column\_mean}!computations.cpp@{computations.cpp}}
+\doxysubsubsection{\texorpdfstring{selective\_column\_mean()}{selective\_column\_mean()}\hspace{0.1cm}{\footnotesize\ttfamily [4/5]}}
+{\footnotesize\ttfamily template$<$typename T , typename A $>$ \\
+T selective\+\_\+column\+\_\+mean (\begin{DoxyParamCaption}\item[{std\+::vector$<$ T, A $>$}]{yvals,  }\item[{std\+::vector$<$ double $>$}]{xvals,  }\item[{double}]{xsep\+\_\+min,  }\item[{int}]{M,  }\item[{int}]{N,  }\item[{int}]{j }\end{DoxyParamCaption})}
+
+
+
+Calculates column mean of vector, but only for entries that are at least xsep\+\_\+min apart. 
+
+\Hypertarget{computations_8cpp_ab5029d7076c8003237ae1744ee567979}\label{computations_8cpp_ab5029d7076c8003237ae1744ee567979} 
+\index{computations.cpp@{computations.cpp}!selective\_column\_mean@{selective\_column\_mean}}
+\index{selective\_column\_mean@{selective\_column\_mean}!computations.cpp@{computations.cpp}}
+\doxysubsubsection{\texorpdfstring{selective\_column\_mean()}{selective\_column\_mean()}\hspace{0.1cm}{\footnotesize\ttfamily [5/5]}}
+{\footnotesize\ttfamily template \mbox{\hyperlink{classtopology_1_1_vector2d}{topology\+::\+Vector2d}} selective\+\_\+column\+\_\+mean (\begin{DoxyParamCaption}\item[{std\+::vector$<$ \mbox{\hyperlink{classtopology_1_1_vector2d}{topology\+::\+Vector2d}}, std\+::allocator$<$ \mbox{\hyperlink{classtopology_1_1_vector2d}{topology\+::\+Vector2d}} $>$ $>$}]{yvals,  }\item[{std\+::vector$<$ double $>$}]{xvals,  }\item[{double}]{xsep\+\_\+min,  }\item[{int}]{M,  }\item[{int}]{N,  }\item[{int}]{j }\end{DoxyParamCaption})}
+
+\Hypertarget{computations_8cpp_aa6c80067a40c6ec4d8f1f9baeb69bfbf}\label{computations_8cpp_aa6c80067a40c6ec4d8f1f9baeb69bfbf} 
+\index{computations.cpp@{computations.cpp}!selective\_row\_mean@{selective\_row\_mean}}
+\index{selective\_row\_mean@{selective\_row\_mean}!computations.cpp@{computations.cpp}}
+\doxysubsubsection{\texorpdfstring{selective\_row\_mean()}{selective\_row\_mean()}\hspace{0.1cm}{\footnotesize\ttfamily [1/5]}}
+{\footnotesize\ttfamily template double selective\+\_\+row\+\_\+mean (\begin{DoxyParamCaption}\item[{std\+::vector$<$ double, std\+::allocator$<$ double $>$ $>$}]{yvals,  }\item[{std\+::vector$<$ double $>$}]{xvals,  }\item[{double}]{xsep\+\_\+min,  }\item[{int}]{M,  }\item[{int}]{N,  }\item[{int}]{i }\end{DoxyParamCaption})}
+
+\Hypertarget{computations_8cpp_a45aa99c6a6357b7b7821e59b00d07f2a}\label{computations_8cpp_a45aa99c6a6357b7b7821e59b00d07f2a} 
+\index{computations.cpp@{computations.cpp}!selective\_row\_mean@{selective\_row\_mean}}
+\index{selective\_row\_mean@{selective\_row\_mean}!computations.cpp@{computations.cpp}}
+\doxysubsubsection{\texorpdfstring{selective\_row\_mean()}{selective\_row\_mean()}\hspace{0.1cm}{\footnotesize\ttfamily [2/5]}}
+{\footnotesize\ttfamily template int selective\+\_\+row\+\_\+mean (\begin{DoxyParamCaption}\item[{std\+::vector$<$ int, std\+::allocator$<$ int $>$ $>$}]{yvals,  }\item[{std\+::vector$<$ double $>$}]{xvals,  }\item[{double}]{xsep\+\_\+min,  }\item[{int}]{M,  }\item[{int}]{N,  }\item[{int}]{i }\end{DoxyParamCaption})}
+
+\Hypertarget{computations_8cpp_af703089b7bb9f95ac8dd26f661123140}\label{computations_8cpp_af703089b7bb9f95ac8dd26f661123140} 
+\index{computations.cpp@{computations.cpp}!selective\_row\_mean@{selective\_row\_mean}}
+\index{selective\_row\_mean@{selective\_row\_mean}!computations.cpp@{computations.cpp}}
+\doxysubsubsection{\texorpdfstring{selective\_row\_mean()}{selective\_row\_mean()}\hspace{0.1cm}{\footnotesize\ttfamily [3/5]}}
+{\footnotesize\ttfamily template std\+::complex$<$ double $>$ selective\+\_\+row\+\_\+mean (\begin{DoxyParamCaption}\item[{std\+::vector$<$ std\+::complex$<$ double $>$, std\+::allocator$<$ std\+::complex$<$ double $>$ $>$ $>$}]{yvals,  }\item[{std\+::vector$<$ double $>$}]{xvals,  }\item[{double}]{xsep\+\_\+min,  }\item[{int}]{M,  }\item[{int}]{N,  }\item[{int}]{i }\end{DoxyParamCaption})}
+
+\Hypertarget{computations_8cpp_a80932326f47c4a6d470fc7906a9c9d6d}\label{computations_8cpp_a80932326f47c4a6d470fc7906a9c9d6d} 
+\index{computations.cpp@{computations.cpp}!selective\_row\_mean@{selective\_row\_mean}}
+\index{selective\_row\_mean@{selective\_row\_mean}!computations.cpp@{computations.cpp}}
+\doxysubsubsection{\texorpdfstring{selective\_row\_mean()}{selective\_row\_mean()}\hspace{0.1cm}{\footnotesize\ttfamily [4/5]}}
+{\footnotesize\ttfamily template$<$typename T , typename A $>$ \\
+T selective\+\_\+row\+\_\+mean (\begin{DoxyParamCaption}\item[{std\+::vector$<$ T, A $>$}]{yvals,  }\item[{std\+::vector$<$ double $>$}]{xvals,  }\item[{double}]{xsep\+\_\+min,  }\item[{int}]{M,  }\item[{int}]{N,  }\item[{int}]{i }\end{DoxyParamCaption})}
+
+
+
+Calculates row mean of vector, but only for entries that are at least xsep\+\_\+min apart. 
+
+\Hypertarget{computations_8cpp_acd4e6e0bf01342708ed8e98ed1b1ef77}\label{computations_8cpp_acd4e6e0bf01342708ed8e98ed1b1ef77} 
+\index{computations.cpp@{computations.cpp}!selective\_row\_mean@{selective\_row\_mean}}
+\index{selective\_row\_mean@{selective\_row\_mean}!computations.cpp@{computations.cpp}}
+\doxysubsubsection{\texorpdfstring{selective\_row\_mean()}{selective\_row\_mean()}\hspace{0.1cm}{\footnotesize\ttfamily [5/5]}}
+{\footnotesize\ttfamily template \mbox{\hyperlink{classtopology_1_1_vector2d}{topology\+::\+Vector2d}} selective\+\_\+row\+\_\+mean (\begin{DoxyParamCaption}\item[{std\+::vector$<$ \mbox{\hyperlink{classtopology_1_1_vector2d}{topology\+::\+Vector2d}}, std\+::allocator$<$ \mbox{\hyperlink{classtopology_1_1_vector2d}{topology\+::\+Vector2d}} $>$ $>$}]{yvals,  }\item[{std\+::vector$<$ double $>$}]{xvals,  }\item[{double}]{xsep\+\_\+min,  }\item[{int}]{M,  }\item[{int}]{N,  }\item[{int}]{i }\end{DoxyParamCaption})}
+
+\Hypertarget{computations_8cpp_aa0f78ae66da2f945b70ac95d59cf6bc6}\label{computations_8cpp_aa0f78ae66da2f945b70ac95d59cf6bc6} 
+\index{computations.cpp@{computations.cpp}!selective\_vector\_mean@{selective\_vector\_mean}}
+\index{selective\_vector\_mean@{selective\_vector\_mean}!computations.cpp@{computations.cpp}}
+\doxysubsubsection{\texorpdfstring{selective\_vector\_mean()}{selective\_vector\_mean()}\hspace{0.1cm}{\footnotesize\ttfamily [1/5]}}
+{\footnotesize\ttfamily template double selective\+\_\+vector\+\_\+mean (\begin{DoxyParamCaption}\item[{std\+::vector$<$ double, std\+::allocator$<$ double $>$ $>$}]{yvals,  }\item[{std\+::vector$<$ double $>$}]{xvals,  }\item[{double}]{xsep\+\_\+min }\end{DoxyParamCaption})}
+
+\Hypertarget{computations_8cpp_aea99260e558c1d77d808fac418db0888}\label{computations_8cpp_aea99260e558c1d77d808fac418db0888} 
+\index{computations.cpp@{computations.cpp}!selective\_vector\_mean@{selective\_vector\_mean}}
+\index{selective\_vector\_mean@{selective\_vector\_mean}!computations.cpp@{computations.cpp}}
+\doxysubsubsection{\texorpdfstring{selective\_vector\_mean()}{selective\_vector\_mean()}\hspace{0.1cm}{\footnotesize\ttfamily [2/5]}}
+{\footnotesize\ttfamily template int selective\+\_\+vector\+\_\+mean (\begin{DoxyParamCaption}\item[{std\+::vector$<$ int, std\+::allocator$<$ int $>$ $>$}]{yvals,  }\item[{std\+::vector$<$ double $>$}]{xvals,  }\item[{double}]{xsep\+\_\+min }\end{DoxyParamCaption})}
+
+\Hypertarget{computations_8cpp_aa8b7cb0dfffa627d7029a9ede6c9de5d}\label{computations_8cpp_aa8b7cb0dfffa627d7029a9ede6c9de5d} 
+\index{computations.cpp@{computations.cpp}!selective\_vector\_mean@{selective\_vector\_mean}}
+\index{selective\_vector\_mean@{selective\_vector\_mean}!computations.cpp@{computations.cpp}}
+\doxysubsubsection{\texorpdfstring{selective\_vector\_mean()}{selective\_vector\_mean()}\hspace{0.1cm}{\footnotesize\ttfamily [3/5]}}
+{\footnotesize\ttfamily template std\+::complex$<$ double $>$ selective\+\_\+vector\+\_\+mean (\begin{DoxyParamCaption}\item[{std\+::vector$<$ std\+::complex$<$ double $>$, std\+::allocator$<$ std\+::complex$<$ double $>$ $>$ $>$}]{yvals,  }\item[{std\+::vector$<$ double $>$}]{xvals,  }\item[{double}]{xsep\+\_\+min }\end{DoxyParamCaption})}
+
+\Hypertarget{computations_8cpp_a26d15b0abd865238da8b2766aaca400f}\label{computations_8cpp_a26d15b0abd865238da8b2766aaca400f} 
+\index{computations.cpp@{computations.cpp}!selective\_vector\_mean@{selective\_vector\_mean}}
+\index{selective\_vector\_mean@{selective\_vector\_mean}!computations.cpp@{computations.cpp}}
+\doxysubsubsection{\texorpdfstring{selective\_vector\_mean()}{selective\_vector\_mean()}\hspace{0.1cm}{\footnotesize\ttfamily [4/5]}}
+{\footnotesize\ttfamily template$<$typename T , typename A $>$ \\
+T selective\+\_\+vector\+\_\+mean (\begin{DoxyParamCaption}\item[{std\+::vector$<$ T, A $>$}]{yvals,  }\item[{std\+::vector$<$ double $>$}]{xvals,  }\item[{double}]{xsep\+\_\+min }\end{DoxyParamCaption})}
+
+
+
+Calculates mean of vector, but only for entries that are at least xsep\+\_\+min apart. 
+
+\Hypertarget{computations_8cpp_a0856176e30a106b0e5f028e75d05c234}\label{computations_8cpp_a0856176e30a106b0e5f028e75d05c234} 
+\index{computations.cpp@{computations.cpp}!selective\_vector\_mean@{selective\_vector\_mean}}
+\index{selective\_vector\_mean@{selective\_vector\_mean}!computations.cpp@{computations.cpp}}
+\doxysubsubsection{\texorpdfstring{selective\_vector\_mean()}{selective\_vector\_mean()}\hspace{0.1cm}{\footnotesize\ttfamily [5/5]}}
+{\footnotesize\ttfamily template \mbox{\hyperlink{classtopology_1_1_vector2d}{topology\+::\+Vector2d}} selective\+\_\+vector\+\_\+mean (\begin{DoxyParamCaption}\item[{std\+::vector$<$ \mbox{\hyperlink{classtopology_1_1_vector2d}{topology\+::\+Vector2d}}, std\+::allocator$<$ \mbox{\hyperlink{classtopology_1_1_vector2d}{topology\+::\+Vector2d}} $>$ $>$}]{yvals,  }\item[{std\+::vector$<$ double $>$}]{xvals,  }\item[{double}]{xsep\+\_\+min }\end{DoxyParamCaption})}
+
+\Hypertarget{computations_8cpp_abc3932fa9e04f1c9353801c21aa9565b}\label{computations_8cpp_abc3932fa9e04f1c9353801c21aa9565b} 
+\index{computations.cpp@{computations.cpp}!vector\_inpr@{vector\_inpr}}
+\index{vector\_inpr@{vector\_inpr}!computations.cpp@{computations.cpp}}
+\doxysubsubsection{\texorpdfstring{vector\_inpr()}{vector\_inpr()}\hspace{0.1cm}{\footnotesize\ttfamily [1/4]}}
+{\footnotesize\ttfamily template double vector\+\_\+inpr (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ double, std\+::allocator$<$ double $>$ $>$ \&}]{v,  }\item[{const std\+::vector$<$ double, std\+::allocator$<$ double $>$ $>$ \&}]{w }\end{DoxyParamCaption})}
+
+\Hypertarget{computations_8cpp_ab026ab2eeef42ab0d416b0675c356212}\label{computations_8cpp_ab026ab2eeef42ab0d416b0675c356212} 
+\index{computations.cpp@{computations.cpp}!vector\_inpr@{vector\_inpr}}
+\index{vector\_inpr@{vector\_inpr}!computations.cpp@{computations.cpp}}
+\doxysubsubsection{\texorpdfstring{vector\_inpr()}{vector\_inpr()}\hspace{0.1cm}{\footnotesize\ttfamily [2/4]}}
+{\footnotesize\ttfamily template int vector\+\_\+inpr (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ int, std\+::allocator$<$ int $>$ $>$ \&}]{v,  }\item[{const std\+::vector$<$ int, std\+::allocator$<$ int $>$ $>$ \&}]{w }\end{DoxyParamCaption})}
+
+\Hypertarget{computations_8cpp_ae8ee132a1440c57eb0ac2847fb7ab573}\label{computations_8cpp_ae8ee132a1440c57eb0ac2847fb7ab573} 
+\index{computations.cpp@{computations.cpp}!vector\_inpr@{vector\_inpr}}
+\index{vector\_inpr@{vector\_inpr}!computations.cpp@{computations.cpp}}
+\doxysubsubsection{\texorpdfstring{vector\_inpr()}{vector\_inpr()}\hspace{0.1cm}{\footnotesize\ttfamily [3/4]}}
+{\footnotesize\ttfamily std\+::complex$<$ double $>$ vector\+\_\+inpr (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ std\+::complex$<$ double $>$ $>$ \&}]{v,  }\item[{const std\+::vector$<$ std\+::complex$<$ double $>$ $>$ \&}]{w }\end{DoxyParamCaption})}
+
+
+
+Inner product of two complex vectors v and w, where the complex conjugate of the components of v is used. 
+
+\Hypertarget{computations_8cpp_a28c308a9c9279e804cb4740cf6d577ba}\label{computations_8cpp_a28c308a9c9279e804cb4740cf6d577ba} 
+\index{computations.cpp@{computations.cpp}!vector\_inpr@{vector\_inpr}}
+\index{vector\_inpr@{vector\_inpr}!computations.cpp@{computations.cpp}}
+\doxysubsubsection{\texorpdfstring{vector\_inpr()}{vector\_inpr()}\hspace{0.1cm}{\footnotesize\ttfamily [4/4]}}
+{\footnotesize\ttfamily template$<$typename T , typename A $>$ \\
+T vector\+\_\+inpr (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ T, A $>$ \&}]{v,  }\item[{const std\+::vector$<$ T, A $>$ \&}]{w }\end{DoxyParamCaption})}
+
+
+
+Inner product of two vectors v and w. 
+
+\Hypertarget{computations_8cpp_ad259902e7bc0411d0f6bb014c7d1a543}\label{computations_8cpp_ad259902e7bc0411d0f6bb014c7d1a543} 
+\index{computations.cpp@{computations.cpp}!vector\_mean@{vector\_mean}}
+\index{vector\_mean@{vector\_mean}!computations.cpp@{computations.cpp}}
+\doxysubsubsection{\texorpdfstring{vector\_mean()}{vector\_mean()}\hspace{0.1cm}{\footnotesize\ttfamily [1/5]}}
+{\footnotesize\ttfamily template double vector\+\_\+mean (\begin{DoxyParamCaption}\item[{std\+::vector$<$ double, std\+::allocator$<$ double $>$ $>$}]{v }\end{DoxyParamCaption})}
+
+\Hypertarget{computations_8cpp_a652bbd11d55a5bf58b445bcf535a24d2}\label{computations_8cpp_a652bbd11d55a5bf58b445bcf535a24d2} 
+\index{computations.cpp@{computations.cpp}!vector\_mean@{vector\_mean}}
+\index{vector\_mean@{vector\_mean}!computations.cpp@{computations.cpp}}
+\doxysubsubsection{\texorpdfstring{vector\_mean()}{vector\_mean()}\hspace{0.1cm}{\footnotesize\ttfamily [2/5]}}
+{\footnotesize\ttfamily template int vector\+\_\+mean (\begin{DoxyParamCaption}\item[{std\+::vector$<$ int, std\+::allocator$<$ int $>$ $>$}]{v }\end{DoxyParamCaption})}
+
+\Hypertarget{computations_8cpp_a9362cb3db247c7cdacc65af2f92664d7}\label{computations_8cpp_a9362cb3db247c7cdacc65af2f92664d7} 
+\index{computations.cpp@{computations.cpp}!vector\_mean@{vector\_mean}}
+\index{vector\_mean@{vector\_mean}!computations.cpp@{computations.cpp}}
+\doxysubsubsection{\texorpdfstring{vector\_mean()}{vector\_mean()}\hspace{0.1cm}{\footnotesize\ttfamily [3/5]}}
+{\footnotesize\ttfamily template std\+::complex$<$ double $>$ vector\+\_\+mean (\begin{DoxyParamCaption}\item[{std\+::vector$<$ std\+::complex$<$ double $>$, std\+::allocator$<$ std\+::complex$<$ double $>$ $>$ $>$}]{v }\end{DoxyParamCaption})}
+
+\Hypertarget{computations_8cpp_ad65d7fe7506a4850c5db2eb184fccd79}\label{computations_8cpp_ad65d7fe7506a4850c5db2eb184fccd79} 
+\index{computations.cpp@{computations.cpp}!vector\_mean@{vector\_mean}}
+\index{vector\_mean@{vector\_mean}!computations.cpp@{computations.cpp}}
+\doxysubsubsection{\texorpdfstring{vector\_mean()}{vector\_mean()}\hspace{0.1cm}{\footnotesize\ttfamily [4/5]}}
+{\footnotesize\ttfamily template$<$typename T , typename A $>$ \\
+T vector\+\_\+mean (\begin{DoxyParamCaption}\item[{std\+::vector$<$ T, A $>$}]{v }\end{DoxyParamCaption})}
+
+
+
+Calculates mean of vector. Template, instantiated with double, int and std\+::complex$<$double$>$ in \doxylink{computations_8cpp}{computations.\+cpp}. 
+
+\Hypertarget{computations_8cpp_acb078020444254ee60f18a086bc7b05d}\label{computations_8cpp_acb078020444254ee60f18a086bc7b05d} 
+\index{computations.cpp@{computations.cpp}!vector\_mean@{vector\_mean}}
+\index{vector\_mean@{vector\_mean}!computations.cpp@{computations.cpp}}
+\doxysubsubsection{\texorpdfstring{vector\_mean()}{vector\_mean()}\hspace{0.1cm}{\footnotesize\ttfamily [5/5]}}
+{\footnotesize\ttfamily template \mbox{\hyperlink{classtopology_1_1_vector2d}{topology\+::\+Vector2d}} vector\+\_\+mean (\begin{DoxyParamCaption}\item[{std\+::vector$<$ \mbox{\hyperlink{classtopology_1_1_vector2d}{topology\+::\+Vector2d}}, std\+::allocator$<$ \mbox{\hyperlink{classtopology_1_1_vector2d}{topology\+::\+Vector2d}} $>$ $>$}]{v }\end{DoxyParamCaption})}
+
+\Hypertarget{computations_8cpp_ae9700ce870f2b9307895a65c0f61de7d}\label{computations_8cpp_ae9700ce870f2b9307895a65c0f61de7d} 
+\index{computations.cpp@{computations.cpp}!vector\_pw\_mult@{vector\_pw\_mult}}
+\index{vector\_pw\_mult@{vector\_pw\_mult}!computations.cpp@{computations.cpp}}
+\doxysubsubsection{\texorpdfstring{vector\_pw\_mult()}{vector\_pw\_mult()}\hspace{0.1cm}{\footnotesize\ttfamily [1/5]}}
+{\footnotesize\ttfamily template std\+::vector$<$ double, std\+::allocator$<$ double $>$ $>$ vector\+\_\+pw\+\_\+mult (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ double, std\+::allocator$<$ double $>$ $>$ \&}]{v,  }\item[{const std\+::vector$<$ double, std\+::allocator$<$ double $>$ $>$ \&}]{w }\end{DoxyParamCaption})}
+
+\Hypertarget{computations_8cpp_abee7c4668ce9718d6f38980fea9501fe}\label{computations_8cpp_abee7c4668ce9718d6f38980fea9501fe} 
+\index{computations.cpp@{computations.cpp}!vector\_pw\_mult@{vector\_pw\_mult}}
+\index{vector\_pw\_mult@{vector\_pw\_mult}!computations.cpp@{computations.cpp}}
+\doxysubsubsection{\texorpdfstring{vector\_pw\_mult()}{vector\_pw\_mult()}\hspace{0.1cm}{\footnotesize\ttfamily [2/5]}}
+{\footnotesize\ttfamily template std\+::vector$<$ int, std\+::allocator$<$ int $>$ $>$ vector\+\_\+pw\+\_\+mult (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ int, std\+::allocator$<$ int $>$ $>$ \&}]{v,  }\item[{const std\+::vector$<$ int, std\+::allocator$<$ int $>$ $>$ \&}]{w }\end{DoxyParamCaption})}
+
+\Hypertarget{computations_8cpp_a46fb751900d9c96a525b5d247d569e34}\label{computations_8cpp_a46fb751900d9c96a525b5d247d569e34} 
+\index{computations.cpp@{computations.cpp}!vector\_pw\_mult@{vector\_pw\_mult}}
+\index{vector\_pw\_mult@{vector\_pw\_mult}!computations.cpp@{computations.cpp}}
+\doxysubsubsection{\texorpdfstring{vector\_pw\_mult()}{vector\_pw\_mult()}\hspace{0.1cm}{\footnotesize\ttfamily [3/5]}}
+{\footnotesize\ttfamily std\+::vector$<$ std\+::complex$<$ double $>$ $>$ vector\+\_\+pw\+\_\+mult (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ std\+::complex$<$ double $>$ $>$ \&}]{v,  }\item[{const std\+::vector$<$ std\+::complex$<$ double $>$ $>$ \&}]{w }\end{DoxyParamCaption})}
+
+
+
+Pointwise multiplication of two complex vectors v and w, where the complex conjugate of the components of v is used. 
+
+\Hypertarget{computations_8cpp_acbd242db903113d1b61b6152f97e436d}\label{computations_8cpp_acbd242db903113d1b61b6152f97e436d} 
+\index{computations.cpp@{computations.cpp}!vector\_pw\_mult@{vector\_pw\_mult}}
+\index{vector\_pw\_mult@{vector\_pw\_mult}!computations.cpp@{computations.cpp}}
+\doxysubsubsection{\texorpdfstring{vector\_pw\_mult()}{vector\_pw\_mult()}\hspace{0.1cm}{\footnotesize\ttfamily [4/5]}}
+{\footnotesize\ttfamily std\+::vector$<$ std\+::complex$<$ double $>$ $>$ vector\+\_\+pw\+\_\+mult (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ std\+::complex$<$ double $>$ $>$ \&}]{v\+\_\+1,  }\item[{const std\+::vector$<$ std\+::complex$<$ double $>$ $>$ \&}]{v\+\_\+2,  }\item[{const std\+::vector$<$ std\+::complex$<$ double $>$ $>$ \&}]{v\+\_\+3,  }\item[{const std\+::vector$<$ std\+::complex$<$ double $>$ $>$ \&}]{v\+\_\+4 }\end{DoxyParamCaption})}
+
+
+
+Pointwise multiplication of four complex vectors v and w, where the complex conjugate of the components of v\+\_\+1 and v\+\_\+2 is used. 
+
+\Hypertarget{computations_8cpp_a974188426d99853ca26f6137c0d3c455}\label{computations_8cpp_a974188426d99853ca26f6137c0d3c455} 
+\index{computations.cpp@{computations.cpp}!vector\_pw\_mult@{vector\_pw\_mult}}
+\index{vector\_pw\_mult@{vector\_pw\_mult}!computations.cpp@{computations.cpp}}
+\doxysubsubsection{\texorpdfstring{vector\_pw\_mult()}{vector\_pw\_mult()}\hspace{0.1cm}{\footnotesize\ttfamily [5/5]}}
+{\footnotesize\ttfamily template$<$typename T , typename A $>$ \\
+std\+::vector$<$ T, A $>$ vector\+\_\+pw\+\_\+mult (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ T, A $>$ \&}]{v,  }\item[{const std\+::vector$<$ T, A $>$ \&}]{w }\end{DoxyParamCaption})}
+
+
+
+Pointwise multiplication of two vectors v and w. 
+
+\Hypertarget{computations_8cpp_a7feb2153e9a4162aa934de1cdc9dd643}\label{computations_8cpp_a7feb2153e9a4162aa934de1cdc9dd643} 
+\index{computations.cpp@{computations.cpp}!vector\_pw\_norm@{vector\_pw\_norm}}
+\index{vector\_pw\_norm@{vector\_pw\_norm}!computations.cpp@{computations.cpp}}
+\doxysubsubsection{\texorpdfstring{vector\_pw\_norm()}{vector\_pw\_norm()}}
+{\footnotesize\ttfamily std\+::vector$<$ double $>$ vector\+\_\+pw\+\_\+norm (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ std\+::complex$<$ double $>$ $>$ \&}]{v }\end{DoxyParamCaption})}
+
+
+
+Pointwise norm value of a complex vector v, i.\+e. sum v\mbox{[}i\mbox{]}\texorpdfstring{$^\wedge$}{\string^}\texorpdfstring{$\ast$}{*} v\mbox{[}i\mbox{]}. 
+
+\Hypertarget{computations_8cpp_ada45ff604cde20a5d4c74911141e34fc}\label{computations_8cpp_ada45ff604cde20a5d4c74911141e34fc} 
+\index{computations.cpp@{computations.cpp}!vector\_scale@{vector\_scale}}
+\index{vector\_scale@{vector\_scale}!computations.cpp@{computations.cpp}}
+\doxysubsubsection{\texorpdfstring{vector\_scale()}{vector\_scale()}\hspace{0.1cm}{\footnotesize\ttfamily [1/5]}}
+{\footnotesize\ttfamily template std\+::vector$<$ double, std\+::allocator$<$ double $>$ $>$ vector\+\_\+scale (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ double, std\+::allocator$<$ double $>$ $>$ \&}]{v,  }\item[{double}]{a }\end{DoxyParamCaption})}
+
+\Hypertarget{computations_8cpp_abc57c1c7896ffcd84dd45e6d6727d283}\label{computations_8cpp_abc57c1c7896ffcd84dd45e6d6727d283} 
+\index{computations.cpp@{computations.cpp}!vector\_scale@{vector\_scale}}
+\index{vector\_scale@{vector\_scale}!computations.cpp@{computations.cpp}}
+\doxysubsubsection{\texorpdfstring{vector\_scale()}{vector\_scale()}\hspace{0.1cm}{\footnotesize\ttfamily [2/5]}}
+{\footnotesize\ttfamily template std\+::vector$<$ int, std\+::allocator$<$ int $>$ $>$ vector\+\_\+scale (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ int, std\+::allocator$<$ int $>$ $>$ \&}]{v,  }\item[{double}]{a }\end{DoxyParamCaption})}
+
+\Hypertarget{computations_8cpp_aa09f4f7f18af1e4f49c0a17cde1e004f}\label{computations_8cpp_aa09f4f7f18af1e4f49c0a17cde1e004f} 
+\index{computations.cpp@{computations.cpp}!vector\_scale@{vector\_scale}}
+\index{vector\_scale@{vector\_scale}!computations.cpp@{computations.cpp}}
+\doxysubsubsection{\texorpdfstring{vector\_scale()}{vector\_scale()}\hspace{0.1cm}{\footnotesize\ttfamily [3/5]}}
+{\footnotesize\ttfamily template std\+::vector$<$ std\+::complex$<$ double $>$, std\+::allocator$<$ std\+::complex$<$ double $>$ $>$ $>$ vector\+\_\+scale (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ std\+::complex$<$ double $>$, std\+::allocator$<$ std\+::complex$<$ double $>$ $>$ $>$ \&}]{v,  }\item[{double}]{a }\end{DoxyParamCaption})}
+
+\Hypertarget{computations_8cpp_a6a5517202db0c7ea6036fd4b2cd692d8}\label{computations_8cpp_a6a5517202db0c7ea6036fd4b2cd692d8} 
+\index{computations.cpp@{computations.cpp}!vector\_scale@{vector\_scale}}
+\index{vector\_scale@{vector\_scale}!computations.cpp@{computations.cpp}}
+\doxysubsubsection{\texorpdfstring{vector\_scale()}{vector\_scale()}\hspace{0.1cm}{\footnotesize\ttfamily [4/5]}}
+{\footnotesize\ttfamily template$<$typename T , typename A $>$ \\
+std\+::vector$<$ T, A $>$ vector\+\_\+scale (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ T, A $>$ \&}]{v,  }\item[{double}]{a }\end{DoxyParamCaption})}
+
+
+
+Scales vector by factor a. 
+
+\Hypertarget{computations_8cpp_a0513a4ad13fbfafc7f88832b4ca89edf}\label{computations_8cpp_a0513a4ad13fbfafc7f88832b4ca89edf} 
+\index{computations.cpp@{computations.cpp}!vector\_scale@{vector\_scale}}
+\index{vector\_scale@{vector\_scale}!computations.cpp@{computations.cpp}}
+\doxysubsubsection{\texorpdfstring{vector\_scale()}{vector\_scale()}\hspace{0.1cm}{\footnotesize\ttfamily [5/5]}}
+{\footnotesize\ttfamily template std\+::vector$<$ \mbox{\hyperlink{classtopology_1_1_vector2d}{topology\+::\+Vector2d}}, std\+::allocator$<$ \mbox{\hyperlink{classtopology_1_1_vector2d}{topology\+::\+Vector2d}} $>$ $>$ vector\+\_\+scale (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ \mbox{\hyperlink{classtopology_1_1_vector2d}{topology\+::\+Vector2d}}, std\+::allocator$<$ \mbox{\hyperlink{classtopology_1_1_vector2d}{topology\+::\+Vector2d}} $>$ $>$ \&}]{v,  }\item[{double}]{a }\end{DoxyParamCaption})}
+
+\Hypertarget{computations_8cpp_afbf3a01d8f2cab16998d97b2afa65604}\label{computations_8cpp_afbf3a01d8f2cab16998d97b2afa65604} 
+\index{computations.cpp@{computations.cpp}!vector\_sum@{vector\_sum}}
+\index{vector\_sum@{vector\_sum}!computations.cpp@{computations.cpp}}
+\doxysubsubsection{\texorpdfstring{vector\_sum()}{vector\_sum()}\hspace{0.1cm}{\footnotesize\ttfamily [1/5]}}
+{\footnotesize\ttfamily template std\+::vector$<$ double, std\+::allocator$<$ double $>$ $>$ vector\+\_\+sum (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ double, std\+::allocator$<$ double $>$ $>$ \&}]{v,  }\item[{const std\+::vector$<$ double, std\+::allocator$<$ double $>$ $>$ \&}]{w }\end{DoxyParamCaption})}
+
+\Hypertarget{computations_8cpp_a2329f9a20014af010dcfdfca0b4cbe71}\label{computations_8cpp_a2329f9a20014af010dcfdfca0b4cbe71} 
+\index{computations.cpp@{computations.cpp}!vector\_sum@{vector\_sum}}
+\index{vector\_sum@{vector\_sum}!computations.cpp@{computations.cpp}}
+\doxysubsubsection{\texorpdfstring{vector\_sum()}{vector\_sum()}\hspace{0.1cm}{\footnotesize\ttfamily [2/5]}}
+{\footnotesize\ttfamily template std\+::vector$<$ int, std\+::allocator$<$ int $>$ $>$ vector\+\_\+sum (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ int, std\+::allocator$<$ int $>$ $>$ \&}]{v,  }\item[{const std\+::vector$<$ int, std\+::allocator$<$ int $>$ $>$ \&}]{w }\end{DoxyParamCaption})}
+
+\Hypertarget{computations_8cpp_a5c9038d8a4bf85674106cd9678d3a4ed}\label{computations_8cpp_a5c9038d8a4bf85674106cd9678d3a4ed} 
+\index{computations.cpp@{computations.cpp}!vector\_sum@{vector\_sum}}
+\index{vector\_sum@{vector\_sum}!computations.cpp@{computations.cpp}}
+\doxysubsubsection{\texorpdfstring{vector\_sum()}{vector\_sum()}\hspace{0.1cm}{\footnotesize\ttfamily [3/5]}}
+{\footnotesize\ttfamily template std\+::vector$<$ std\+::complex$<$ double $>$, std\+::allocator$<$ std\+::complex$<$ double $>$ $>$ $>$ vector\+\_\+sum (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ std\+::complex$<$ double $>$, std\+::allocator$<$ std\+::complex$<$ double $>$ $>$ $>$ \&}]{v,  }\item[{const std\+::vector$<$ std\+::complex$<$ double $>$, std\+::allocator$<$ std\+::complex$<$ double $>$ $>$ $>$ \&}]{w }\end{DoxyParamCaption})}
+
+\Hypertarget{computations_8cpp_a749d727a0caa0c3de43dae9d681c3ab1}\label{computations_8cpp_a749d727a0caa0c3de43dae9d681c3ab1} 
+\index{computations.cpp@{computations.cpp}!vector\_sum@{vector\_sum}}
+\index{vector\_sum@{vector\_sum}!computations.cpp@{computations.cpp}}
+\doxysubsubsection{\texorpdfstring{vector\_sum()}{vector\_sum()}\hspace{0.1cm}{\footnotesize\ttfamily [4/5]}}
+{\footnotesize\ttfamily template$<$typename T , typename A $>$ \\
+std\+::vector$<$ T, A $>$ vector\+\_\+sum (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ T, A $>$ \&}]{v,  }\item[{const std\+::vector$<$ T, A $>$ \&}]{w }\end{DoxyParamCaption})}
+
+
+
+Adds two vectors v and w. 
+
+\Hypertarget{computations_8cpp_af16ca55451e6852326c3733f906c217a}\label{computations_8cpp_af16ca55451e6852326c3733f906c217a} 
+\index{computations.cpp@{computations.cpp}!vector\_sum@{vector\_sum}}
+\index{vector\_sum@{vector\_sum}!computations.cpp@{computations.cpp}}
+\doxysubsubsection{\texorpdfstring{vector\_sum()}{vector\_sum()}\hspace{0.1cm}{\footnotesize\ttfamily [5/5]}}
+{\footnotesize\ttfamily template std\+::vector$<$ \mbox{\hyperlink{classtopology_1_1_vector2d}{topology\+::\+Vector2d}}, std\+::allocator$<$ \mbox{\hyperlink{classtopology_1_1_vector2d}{topology\+::\+Vector2d}} $>$ $>$ vector\+\_\+sum (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ \mbox{\hyperlink{classtopology_1_1_vector2d}{topology\+::\+Vector2d}}, std\+::allocator$<$ \mbox{\hyperlink{classtopology_1_1_vector2d}{topology\+::\+Vector2d}} $>$ $>$ \&}]{v,  }\item[{const std\+::vector$<$ \mbox{\hyperlink{classtopology_1_1_vector2d}{topology\+::\+Vector2d}}, std\+::allocator$<$ \mbox{\hyperlink{classtopology_1_1_vector2d}{topology\+::\+Vector2d}} $>$ $>$ \&}]{w }\end{DoxyParamCaption})}
+
+\Hypertarget{computations_8cpp_ac23f83a9ed8d3a1d3415ccbf892b36c7}\label{computations_8cpp_ac23f83a9ed8d3a1d3415ccbf892b36c7} 
+\index{computations.cpp@{computations.cpp}!vector\_variance@{vector\_variance}}
+\index{vector\_variance@{vector\_variance}!computations.cpp@{computations.cpp}}
+\doxysubsubsection{\texorpdfstring{vector\_variance()}{vector\_variance()}}
+{\footnotesize\ttfamily double vector\+\_\+variance (\begin{DoxyParamCaption}\item[{std\+::vector$<$ double $>$}]{v,  }\item[{double \&}]{mean }\end{DoxyParamCaption})}
+
+
+
+Calculates variance of vector, also stores mean. 
+
+Does not make much sense to use templates here, since the variance of an int vector is not much use and the variance of std\+::complex would require complex conjugation. 

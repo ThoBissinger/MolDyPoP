@@ -1,0 +1,32 @@
+\doxysection{partition.\+h File Reference}
+\hypertarget{partition_8h}{}\label{partition_8h}\index{partition.h@{partition.h}}
+
+
+Header-\/file to class declaration of partition. Introduces the partition, a cell list data structure that greatly facilitates neighbor calculation.  
+
+
+{\ttfamily \#include \"{}topology.\+h\"{}}\newline
+{\ttfamily \#include $<$fstream$>$}\newline
+{\ttfamily \#include $<$list$>$}\newline
+{\ttfamily \#include $<$vector$>$}\newline
+{\ttfamily \#include $<$algorithm$>$}\newline
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classpartition}{partition}}
+\begin{DoxyCompactList}\small\item\em Defines the partition class. The simulation box is partitioned into cells. The indices of a vector of particles (used for initialization) are sorted according to the cell they belong to. Has functions for printing and computing average velocities in a neighborhood. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Header-\/file to class declaration of partition. Introduces the partition, a cell list data structure that greatly facilitates neighbor calculation. 
+
+The partition is the preferred method for neighborhood calculation. The class \doxylink{classneighbor__list}{neighbor\+\_\+list} is an alternative, but not recommended when neighborhoods change dynamically in each time step.
+
+\begin{DoxyAuthor}{Author}
+Thomas Bissinger
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+Created\+: late 2017 
+
+Last Updated\+: 2023-\/08-\/06 
+\end{DoxyDate}

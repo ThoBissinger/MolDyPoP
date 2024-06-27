@@ -1,0 +1,329 @@
+\doxysection{integrator Class Reference}
+\hypertarget{classintegrator}{}\label{classintegrator}\index{integrator@{integrator}}
+
+
+Defines various integration methods for groups. Also includes thermostats. Integrators include\+: fourth order Runge-\/\+Kutta (rk4) and Leapfrog (lf)  
+
+
+
+
+{\ttfamily \#include $<$integrator.\+h$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classintegrator_aae9bb494860d29d900949ed5b8a767b1}{integrator}} ()
+\begin{DoxyCompactList}\small\item\em Empty constructor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classintegrator_ae3bc223c211da05f5e848e254124fcb7}{integrator}} (double dtin, std\+::string type)
+\begin{DoxyCompactList}\small\item\em Constructor with given time steps. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classintegrator_aeff81e0b8f6856c6018b97c0d1f822e1}{integrator\+\_\+eq}} (const \mbox{\hyperlink{classparameters}{parameters}} \&par)
+\begin{DoxyCompactList}\small\item\em Sets integrator for equilibration run. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classintegrator_ae7dc0d82bbef307aa3ad9b92aaf80c26}{integrator\+\_\+sample}} (const \mbox{\hyperlink{classparameters}{parameters}} \&par)
+\begin{DoxyCompactList}\small\item\em Sets integrator for sampling run. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classintegrator_a05a8dddd60d92222388264f3b310741c}{initialize}} (const \mbox{\hyperlink{classparameters}{parameters}} \&par, const \mbox{\hyperlink{classgroup}{group}} \&G)
+\begin{DoxyCompactList}\small\item\em Initializes integrator from given parameters and a given group. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classintegrator_afdbea2bce0b30af14c94d7ae7920e000}{initialize\+\_\+parameters}} (const \mbox{\hyperlink{classparameters}{parameters}} \&par)
+\begin{DoxyCompactList}\small\item\em Initializes integrator from given parameters. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{classintegrator_af7f2be0dbf4f55113f7722c687928826}{get\+\_\+dt}} () const
+\begin{DoxyCompactList}\small\item\em Returns dt. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{classintegrator_a4c3afa9186202912032410920bddc0cc}{get\+\_\+\+H\+\_\+0}} () const
+\begin{DoxyCompactList}\small\item\em Returns H\+\_\+0\+\_\+. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{classintegrator_aaaaf959b555f39c21912038667da1831}{get\+\_\+pi}} () const
+\begin{DoxyCompactList}\small\item\em Returns pi\+\_\+. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{classintegrator_ad6056363c661142e9fec5d890b579c24}{get\+\_\+eta}} () const
+\begin{DoxyCompactList}\small\item\em Returns eta\+\_\+. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{classintegrator_aee5f4524580dcac7407bda879e3450cf}{get\+\_\+s}} () const
+\begin{DoxyCompactList}\small\item\em Returns s\+\_\+. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{classintegrator_aeee961f383e4faf0ca3eb97f8acc96d6}{berendsen\+\_\+thermostat}} (\mbox{\hyperlink{classgroup}{group}} \&G, double T\+\_\+desired, double berendsen\+\_\+tau)
+\begin{DoxyCompactList}\small\item\em Implements the Berendsen thermostat. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classgroup}{group}} \mbox{\hyperlink{classintegrator_aff1d714450fde8d3cab0c74536753b82}{integrate}} (const \mbox{\hyperlink{classgroup}{group}} \&G, std\+::vector$<$ double $>$ \&momdot)
+\begin{DoxyCompactList}\small\item\em Performs an integration time step. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classgroup}{group}} \mbox{\hyperlink{classintegrator_ac5eb99a370d935897c96f6b570e5593d}{vm\+\_\+rule}} (const \mbox{\hyperlink{classgroup}{group}} \&G)
+\begin{DoxyCompactList}\small\item\em Implements Vicsek model time-\/evolution rules. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classgroup}{group}} \mbox{\hyperlink{classintegrator_a52797c3cf6bdaf3c44043616dff299ef}{rk4}} (const \mbox{\hyperlink{classgroup}{group}} \&G)
+\begin{DoxyCompactList}\small\item\em Implements the fourth-\/order Runge-\/\+Kutta method. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classgroup}{group}} \mbox{\hyperlink{classintegrator_a9bb949ba41f3846ff11835dc652f27c5}{leapfrog}} (const \mbox{\hyperlink{classgroup}{group}} \&G, std\+::vector$<$ double $>$ \&momdot)
+\begin{DoxyCompactList}\small\item\em Implements leapfrog solver. Can get initial momdot for reduced computation time. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classgroup}{group}} \mbox{\hyperlink{classintegrator_a514b407c1b32f03efc00e9499b6cfee1}{leapfrog\+\_\+active}} (const \mbox{\hyperlink{classgroup}{group}} \&G, std\+::vector$<$ double $>$ \&momdot, double activity)
+\begin{DoxyCompactList}\small\item\em Implements leapfrog solver with added activity. Can get initial momdot for reduced computation time. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classgroup}{group}} \mbox{\hyperlink{classintegrator_ac214dd82bd1374c1494502d938cd505e}{np}} (const \mbox{\hyperlink{classgroup}{group}} \&G, double kT, double \&s, double \&pi, double Q, double H\+\_\+0)
+\begin{DoxyCompactList}\small\item\em Nosé-\/\+Poincare integration solved via velocity Verlet. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classgroup}{group}} \mbox{\hyperlink{classintegrator_a010233601351ae4b7e5c1fa65c3044a0}{nh}} (const \mbox{\hyperlink{classgroup}{group}} \&G)
+\begin{DoxyCompactList}\small\item\em Nosé-\/\+Hoover integration solved via velocity Verlet. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classgroup}{group}} \mbox{\hyperlink{classintegrator_a2b3a5787e09449b95097931d1a1404ed}{np}} (const \mbox{\hyperlink{classgroup}{group}} \&G)
+\begin{DoxyCompactList}\small\item\em Nosé-\/\+Poincare integration solved via velocity Verlet. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classgroup}{group}} \mbox{\hyperlink{classintegrator_a953b71e395db7fb5761d2081e763d073}{langevin}} (const \mbox{\hyperlink{classgroup}{group}} \&G, std\+::vector$<$ double $>$ \&momdot)
+\begin{DoxyCompactList}\small\item\em Langevin dynamics solver. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classgroup}{group}} \mbox{\hyperlink{classintegrator_aa33266c4afa61c4c1330716436db76f0}{langevin\+\_\+active}} (const \mbox{\hyperlink{classgroup}{group}} \&G, std\+::vector$<$ double $>$ \&momdot, double activityc)
+\begin{DoxyCompactList}\small\item\em Langevin dynamics solver including active motion of particles along spin. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{classintegrator_afe4ca35e59a9d60c914afc61d3c7e222}{Nose\+Hamiltonian}} (\mbox{\hyperlink{classgroup}{group}} \&G, double kT, double s, double pi, double Q) const
+\begin{DoxyCompactList}\small\item\em The Hamiltonian for Nosé-\/\+Hoover and Nosé-\/\+Poincaré schemes. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classintegrator_ad185d28dffb76d2d230554bffdf633de}{add\+\_\+activity}} (\mbox{\hyperlink{classgroup}{group}} \&G, double activity) const
+\begin{DoxyCompactList}\small\item\em Adds activity by moving the particles along spin direction times activity times dt. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Defines various integration methods for groups. Also includes thermostats. Integrators include\+: fourth order Runge-\/\+Kutta (rk4) and Leapfrog (lf) 
+
+\begin{DoxyAuthor}{Author}
+Thomas Bissinger, RK4 implementation by Mathias Hoefler
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+Created\+: 2019-\/04-\/12 
+
+Last Updated\+: 2023-\/08-\/06 
+\end{DoxyDate}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classintegrator_aae9bb494860d29d900949ed5b8a767b1}\label{classintegrator_aae9bb494860d29d900949ed5b8a767b1} 
+\index{integrator@{integrator}!integrator@{integrator}}
+\index{integrator@{integrator}!integrator@{integrator}}
+\doxysubsubsection{\texorpdfstring{integrator()}{integrator()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily integrator\+::integrator (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Empty constructor. 
+
+\Hypertarget{classintegrator_ae3bc223c211da05f5e848e254124fcb7}\label{classintegrator_ae3bc223c211da05f5e848e254124fcb7} 
+\index{integrator@{integrator}!integrator@{integrator}}
+\index{integrator@{integrator}!integrator@{integrator}}
+\doxysubsubsection{\texorpdfstring{integrator()}{integrator()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily integrator\+::integrator (\begin{DoxyParamCaption}\item[{double}]{dtin,  }\item[{std\+::string}]{type }\end{DoxyParamCaption})}
+
+
+
+Constructor with given time steps. 
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classintegrator_ad185d28dffb76d2d230554bffdf633de}\label{classintegrator_ad185d28dffb76d2d230554bffdf633de} 
+\index{integrator@{integrator}!add\_activity@{add\_activity}}
+\index{add\_activity@{add\_activity}!integrator@{integrator}}
+\doxysubsubsection{\texorpdfstring{add\_activity()}{add\_activity()}}
+{\footnotesize\ttfamily void integrator\+::add\+\_\+activity (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classgroup}{group}} \&}]{G,  }\item[{double}]{activity }\end{DoxyParamCaption}) const}
+
+
+
+Adds activity by moving the particles along spin direction times activity times dt. 
+
+\Hypertarget{classintegrator_aeee961f383e4faf0ca3eb97f8acc96d6}\label{classintegrator_aeee961f383e4faf0ca3eb97f8acc96d6} 
+\index{integrator@{integrator}!berendsen\_thermostat@{berendsen\_thermostat}}
+\index{berendsen\_thermostat@{berendsen\_thermostat}!integrator@{integrator}}
+\doxysubsubsection{\texorpdfstring{berendsen\_thermostat()}{berendsen\_thermostat()}}
+{\footnotesize\ttfamily double integrator\+::berendsen\+\_\+thermostat (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classgroup}{group}} \&}]{G,  }\item[{double}]{T\+\_\+desired,  }\item[{double}]{berendsen\+\_\+tau }\end{DoxyParamCaption})}
+
+
+
+Implements the Berendsen thermostat. 
+
+\Hypertarget{classintegrator_af7f2be0dbf4f55113f7722c687928826}\label{classintegrator_af7f2be0dbf4f55113f7722c687928826} 
+\index{integrator@{integrator}!get\_dt@{get\_dt}}
+\index{get\_dt@{get\_dt}!integrator@{integrator}}
+\doxysubsubsection{\texorpdfstring{get\_dt()}{get\_dt()}}
+{\footnotesize\ttfamily double integrator\+::get\+\_\+dt (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Returns dt. 
+
+\Hypertarget{classintegrator_ad6056363c661142e9fec5d890b579c24}\label{classintegrator_ad6056363c661142e9fec5d890b579c24} 
+\index{integrator@{integrator}!get\_eta@{get\_eta}}
+\index{get\_eta@{get\_eta}!integrator@{integrator}}
+\doxysubsubsection{\texorpdfstring{get\_eta()}{get\_eta()}}
+{\footnotesize\ttfamily double integrator\+::get\+\_\+eta (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Returns eta\+\_\+. 
+
+\Hypertarget{classintegrator_a4c3afa9186202912032410920bddc0cc}\label{classintegrator_a4c3afa9186202912032410920bddc0cc} 
+\index{integrator@{integrator}!get\_H\_0@{get\_H\_0}}
+\index{get\_H\_0@{get\_H\_0}!integrator@{integrator}}
+\doxysubsubsection{\texorpdfstring{get\_H\_0()}{get\_H\_0()}}
+{\footnotesize\ttfamily double integrator\+::get\+\_\+\+H\+\_\+0 (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Returns H\+\_\+0\+\_\+. 
+
+\Hypertarget{classintegrator_aaaaf959b555f39c21912038667da1831}\label{classintegrator_aaaaf959b555f39c21912038667da1831} 
+\index{integrator@{integrator}!get\_pi@{get\_pi}}
+\index{get\_pi@{get\_pi}!integrator@{integrator}}
+\doxysubsubsection{\texorpdfstring{get\_pi()}{get\_pi()}}
+{\footnotesize\ttfamily double integrator\+::get\+\_\+pi (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Returns pi\+\_\+. 
+
+\Hypertarget{classintegrator_aee5f4524580dcac7407bda879e3450cf}\label{classintegrator_aee5f4524580dcac7407bda879e3450cf} 
+\index{integrator@{integrator}!get\_s@{get\_s}}
+\index{get\_s@{get\_s}!integrator@{integrator}}
+\doxysubsubsection{\texorpdfstring{get\_s()}{get\_s()}}
+{\footnotesize\ttfamily double integrator\+::get\+\_\+s (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Returns s\+\_\+. 
+
+\Hypertarget{classintegrator_a05a8dddd60d92222388264f3b310741c}\label{classintegrator_a05a8dddd60d92222388264f3b310741c} 
+\index{integrator@{integrator}!initialize@{initialize}}
+\index{initialize@{initialize}!integrator@{integrator}}
+\doxysubsubsection{\texorpdfstring{initialize()}{initialize()}}
+{\footnotesize\ttfamily void integrator\+::initialize (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classparameters}{parameters}} \&}]{par,  }\item[{const \mbox{\hyperlink{classgroup}{group}} \&}]{G }\end{DoxyParamCaption})}
+
+
+
+Initializes integrator from given parameters and a given group. 
+
+The group is needed to initialize some further values like the reference energy H\+\_\+0 in a Nosé-\/\+Poincaré scheme. Makes a call to initialize\+\_\+parameters for the parameter readout. \Hypertarget{classintegrator_afdbea2bce0b30af14c94d7ae7920e000}\label{classintegrator_afdbea2bce0b30af14c94d7ae7920e000} 
+\index{integrator@{integrator}!initialize\_parameters@{initialize\_parameters}}
+\index{initialize\_parameters@{initialize\_parameters}!integrator@{integrator}}
+\doxysubsubsection{\texorpdfstring{initialize\_parameters()}{initialize\_parameters()}}
+{\footnotesize\ttfamily void integrator\+::initialize\+\_\+parameters (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classparameters}{parameters}} \&}]{par }\end{DoxyParamCaption})}
+
+
+
+Initializes integrator from given parameters. 
+
+\Hypertarget{classintegrator_aff1d714450fde8d3cab0c74536753b82}\label{classintegrator_aff1d714450fde8d3cab0c74536753b82} 
+\index{integrator@{integrator}!integrate@{integrate}}
+\index{integrate@{integrate}!integrator@{integrator}}
+\doxysubsubsection{\texorpdfstring{integrate()}{integrate()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classgroup}{group}} integrator\+::integrate (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classgroup}{group}} \&}]{G,  }\item[{std\+::vector$<$ double $>$ \&}]{momdot }\end{DoxyParamCaption})}
+
+
+
+Performs an integration time step. 
+
+Depending on integrator\+\_\+type\+\_\+, different solvers are called applied. For details, see also definition of integrator\+\_\+type\+\_\+.
+
+Not every method requires a variable momdot, yet some make use of a staggered time grid or the velocity at a previous time step, these need momdot. \Hypertarget{classintegrator_aeff81e0b8f6856c6018b97c0d1f822e1}\label{classintegrator_aeff81e0b8f6856c6018b97c0d1f822e1} 
+\index{integrator@{integrator}!integrator\_eq@{integrator\_eq}}
+\index{integrator\_eq@{integrator\_eq}!integrator@{integrator}}
+\doxysubsubsection{\texorpdfstring{integrator\_eq()}{integrator\_eq()}}
+{\footnotesize\ttfamily void integrator\+::integrator\+\_\+eq (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classparameters}{parameters}} \&}]{par }\end{DoxyParamCaption})}
+
+
+
+Sets integrator for equilibration run. 
+
+\Hypertarget{classintegrator_ae7dc0d82bbef307aa3ad9b92aaf80c26}\label{classintegrator_ae7dc0d82bbef307aa3ad9b92aaf80c26} 
+\index{integrator@{integrator}!integrator\_sample@{integrator\_sample}}
+\index{integrator\_sample@{integrator\_sample}!integrator@{integrator}}
+\doxysubsubsection{\texorpdfstring{integrator\_sample()}{integrator\_sample()}}
+{\footnotesize\ttfamily void integrator\+::integrator\+\_\+sample (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classparameters}{parameters}} \&}]{par }\end{DoxyParamCaption})}
+
+
+
+Sets integrator for sampling run. 
+
+\Hypertarget{classintegrator_a953b71e395db7fb5761d2081e763d073}\label{classintegrator_a953b71e395db7fb5761d2081e763d073} 
+\index{integrator@{integrator}!langevin@{langevin}}
+\index{langevin@{langevin}!integrator@{integrator}}
+\doxysubsubsection{\texorpdfstring{langevin()}{langevin()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classgroup}{group}} integrator\+::langevin (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classgroup}{group}} \&}]{G,  }\item[{std\+::vector$<$ double $>$ \&}]{momdot }\end{DoxyParamCaption})}
+
+
+
+Langevin dynamics solver. 
+
+Can get initial momdot for reduced computation time. Details in Allen and Tildesley, \"{}\+Computer Simulation of Liquids\"{}, Chapter 12 \Hypertarget{classintegrator_aa33266c4afa61c4c1330716436db76f0}\label{classintegrator_aa33266c4afa61c4c1330716436db76f0} 
+\index{integrator@{integrator}!langevin\_active@{langevin\_active}}
+\index{langevin\_active@{langevin\_active}!integrator@{integrator}}
+\doxysubsubsection{\texorpdfstring{langevin\_active()}{langevin\_active()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classgroup}{group}} integrator\+::langevin\+\_\+active (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classgroup}{group}} \&}]{G,  }\item[{std\+::vector$<$ double $>$ \&}]{momdot,  }\item[{double}]{activityc }\end{DoxyParamCaption})}
+
+
+
+Langevin dynamics solver including active motion of particles along spin. 
+
+Can get initial momdot for reduced computation time. Details in Allen and Tildesley, \"{}\+Computer Simulation of Liquids\"{}, Chapter 12 \Hypertarget{classintegrator_a9bb949ba41f3846ff11835dc652f27c5}\label{classintegrator_a9bb949ba41f3846ff11835dc652f27c5} 
+\index{integrator@{integrator}!leapfrog@{leapfrog}}
+\index{leapfrog@{leapfrog}!integrator@{integrator}}
+\doxysubsubsection{\texorpdfstring{leapfrog()}{leapfrog()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classgroup}{group}} integrator\+::leapfrog (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classgroup}{group}} \&}]{G,  }\item[{std\+::vector$<$ double $>$ \&}]{momdot }\end{DoxyParamCaption})}
+
+
+
+Implements leapfrog solver. Can get initial momdot for reduced computation time. 
+
+\Hypertarget{classintegrator_a514b407c1b32f03efc00e9499b6cfee1}\label{classintegrator_a514b407c1b32f03efc00e9499b6cfee1} 
+\index{integrator@{integrator}!leapfrog\_active@{leapfrog\_active}}
+\index{leapfrog\_active@{leapfrog\_active}!integrator@{integrator}}
+\doxysubsubsection{\texorpdfstring{leapfrog\_active()}{leapfrog\_active()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classgroup}{group}} integrator\+::leapfrog\+\_\+active (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classgroup}{group}} \&}]{G,  }\item[{std\+::vector$<$ double $>$ \&}]{momdot,  }\item[{double}]{activity }\end{DoxyParamCaption})}
+
+
+
+Implements leapfrog solver with added activity. Can get initial momdot for reduced computation time. 
+
+\Hypertarget{classintegrator_a010233601351ae4b7e5c1fa65c3044a0}\label{classintegrator_a010233601351ae4b7e5c1fa65c3044a0} 
+\index{integrator@{integrator}!nh@{nh}}
+\index{nh@{nh}!integrator@{integrator}}
+\doxysubsubsection{\texorpdfstring{nh()}{nh()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classgroup}{group}} integrator\+::nh (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classgroup}{group}} \&}]{G }\end{DoxyParamCaption})}
+
+
+
+Nosé-\/\+Hoover integration solved via velocity Verlet. 
+
+For some details, see \href{https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2577381/}{\texttt{ https\+://www.\+ncbi.\+nlm.\+nih.\+gov/pmc/articles/\+PMC2577381/}}, jchemphys 2008 128(24), Kleinerman et al., eq (6-\/17) \Hypertarget{classintegrator_afe4ca35e59a9d60c914afc61d3c7e222}\label{classintegrator_afe4ca35e59a9d60c914afc61d3c7e222} 
+\index{integrator@{integrator}!NoseHamiltonian@{NoseHamiltonian}}
+\index{NoseHamiltonian@{NoseHamiltonian}!integrator@{integrator}}
+\doxysubsubsection{\texorpdfstring{NoseHamiltonian()}{NoseHamiltonian()}}
+{\footnotesize\ttfamily double integrator\+::\+Nose\+Hamiltonian (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classgroup}{group}} \&}]{G,  }\item[{double}]{kT,  }\item[{double}]{s,  }\item[{double}]{pi,  }\item[{double}]{Q }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+The Hamiltonian for Nosé-\/\+Hoover and Nosé-\/\+Poincaré schemes. 
+
+\Hypertarget{classintegrator_a2b3a5787e09449b95097931d1a1404ed}\label{classintegrator_a2b3a5787e09449b95097931d1a1404ed} 
+\index{integrator@{integrator}!np@{np}}
+\index{np@{np}!integrator@{integrator}}
+\doxysubsubsection{\texorpdfstring{np()}{np()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classgroup}{group}} integrator\+::np (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classgroup}{group}} \&}]{G }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Nosé-\/\+Poincare integration solved via velocity Verlet. 
+
+For some details, see \href{https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2577381/}{\texttt{ https\+://www.\+ncbi.\+nlm.\+nih.\+gov/pmc/articles/\+PMC2577381/}}, jchemphys 2008 128(24), Kleinerman et al., eq (21-\/28) \Hypertarget{classintegrator_ac214dd82bd1374c1494502d938cd505e}\label{classintegrator_ac214dd82bd1374c1494502d938cd505e} 
+\index{integrator@{integrator}!np@{np}}
+\index{np@{np}!integrator@{integrator}}
+\doxysubsubsection{\texorpdfstring{np()}{np()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classgroup}{group}} integrator\+::np (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classgroup}{group}} \&}]{G,  }\item[{double}]{kT,  }\item[{double \&}]{s,  }\item[{double \&}]{pi,  }\item[{double}]{Q,  }\item[{double}]{H\+\_\+0 }\end{DoxyParamCaption})}
+
+
+
+Nosé-\/\+Poincare integration solved via velocity Verlet. 
+
+For some details, see \href{https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2577381/}{\texttt{ https\+://www.\+ncbi.\+nlm.\+nih.\+gov/pmc/articles/\+PMC2577381/}}, jchemphys 2008 128(24), Kleinerman et al., eq (21-\/28) \Hypertarget{classintegrator_a52797c3cf6bdaf3c44043616dff299ef}\label{classintegrator_a52797c3cf6bdaf3c44043616dff299ef} 
+\index{integrator@{integrator}!rk4@{rk4}}
+\index{rk4@{rk4}!integrator@{integrator}}
+\doxysubsubsection{\texorpdfstring{rk4()}{rk4()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classgroup}{group}} integrator\+::rk4 (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classgroup}{group}} \&}]{G }\end{DoxyParamCaption})}
+
+
+
+Implements the fourth-\/order Runge-\/\+Kutta method. 
+
+\Hypertarget{classintegrator_ac5eb99a370d935897c96f6b570e5593d}\label{classintegrator_ac5eb99a370d935897c96f6b570e5593d} 
+\index{integrator@{integrator}!vm\_rule@{vm\_rule}}
+\index{vm\_rule@{vm\_rule}!integrator@{integrator}}
+\doxysubsubsection{\texorpdfstring{vm\_rule()}{vm\_rule()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classgroup}{group}} integrator\+::vm\+\_\+rule (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classgroup}{group}} \&}]{G }\end{DoxyParamCaption})}
+
+
+
+Implements Vicsek model time-\/evolution rules. 
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{integrator_8h}{integrator.\+h}}\item 
+\mbox{\hyperlink{integrator_8cpp}{integrator.\+cpp}}\end{DoxyCompactItemize}

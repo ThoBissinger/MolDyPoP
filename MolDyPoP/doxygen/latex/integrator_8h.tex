@@ -1,0 +1,33 @@
+\doxysection{integrator.\+h File Reference}
+\hypertarget{integrator_8h}{}\label{integrator_8h}\index{integrator.h@{integrator.h}}
+
+
+Header-\/file to class declaration of integrator. Introduces the integrator, the data structure associated with discrete time evolution. Incorporates multiple ODE solvers, deterministic as well as stochastic.  
+
+
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include $<$fstream$>$}\newline
+{\ttfamily \#include $<$vector$>$}\newline
+{\ttfamily \#include \"{}topology.\+h\"{}}\newline
+{\ttfamily \#include \"{}computations.\+h\"{}}\newline
+{\ttfamily \#include \"{}parameters.\+h\"{}}\newline
+{\ttfamily \#include \"{}group.\+h\"{}}\newline
+{\ttfamily \#include $<$chrono$>$}\newline
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classintegrator}{integrator}}
+\begin{DoxyCompactList}\small\item\em Defines various integration methods for groups. Also includes thermostats. Integrators include\+: fourth order Runge-\/\+Kutta (rk4) and Leapfrog (lf) \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Header-\/file to class declaration of integrator. Introduces the integrator, the data structure associated with discrete time evolution. Incorporates multiple ODE solvers, deterministic as well as stochastic. 
+
+\begin{DoxyAuthor}{Author}
+Thomas Bissinger, with contributions by Mathias Höfler
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+Created\+: 2019-\/04-\/12 
+
+Last Updated\+: 2023-\/08-\/06 
+\end{DoxyDate}

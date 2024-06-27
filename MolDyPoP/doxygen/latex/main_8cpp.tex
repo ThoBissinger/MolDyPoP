@@ -1,0 +1,70 @@
+\doxysection{main.\+cpp File Reference}
+\hypertarget{main_8cpp}{}\label{main_8cpp}\index{main.cpp@{main.cpp}}
+
+
+Main-\/file. Every computation starts here.  
+
+
+{\ttfamily \#include \"{}computations.\+h\"{}}\newline
+{\ttfamily \#include \"{}partition.\+h\"{}}\newline
+{\ttfamily \#include \"{}inputoutput.\+h\"{}}\newline
+{\ttfamily \#include \"{}topology.\+h\"{}}\newline
+{\ttfamily \#include \"{}routines.\+h\"{}}\newline
+{\ttfamily \#include \"{}integrator.\+h\"{}}\newline
+{\ttfamily \#include \"{}parameters.\+h\"{}}\newline
+{\ttfamily \#include \"{}sampler.\+h\"{}}\newline
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include $<$cmath$>$}\newline
+{\ttfamily \#include \"{}math.\+h\"{}}\newline
+{\ttfamily \#include $<$chrono$>$}\newline
+{\ttfamily \#include $<$fstream$>$}\newline
+{\ttfamily \#include $<$list$>$}\newline
+{\ttfamily \#include $<$vector$>$}\newline
+{\ttfamily \#include $<$ctime$>$}\newline
+{\ttfamily \#include $<$complex$>$}\newline
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{main_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}{main}} ()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Main-\/file. Every computation starts here. 
+
+The main-\/\+File progresses as follows\+:
+
+
+\begin{DoxyEnumerate}
+\item Read the file at input/infile.\+in (called infile for short)
+\item Initialize parameter class object par
+\item Read the infile into par. In case of input errors, abort the run. Return value is the error code thrown by the read function.
+\item Depending on the value of the input parameter mode, choose
+\begin{DoxyItemize}
+\item mode = none. Do nothing.
+\item mode = test. User-\/specified tests can be performed.
+\item mode = integrate, mode=integrate\+\_\+cont, mode=equilibrate. Run specific integration routines from the routines namespace.
+\item mode = samp. Run specific sampling routines from the routines namespace.
+\end{DoxyItemize}
+\item End the run, return value is the return value of the routine performed.
+\end{DoxyEnumerate}
+
+\begin{DoxyAuthor}{Author}
+Thomas Bissinger
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+Created\+: Mid-\/\+February 2017 
+
+Last updated\+: 23-\/08-\/01 
+\end{DoxyDate}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{main_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}\label{main_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4} 
+\index{main.cpp@{main.cpp}!main@{main}}
+\index{main@{main}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily int main (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+

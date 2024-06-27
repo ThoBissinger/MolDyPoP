@@ -1,0 +1,78 @@
+\doxysection{group.\+h File Reference}
+\hypertarget{group_8h}{}\label{group_8h}\index{group.h@{group.h}}
+
+
+Header-\/\+File to class declaration of group. Introduces the group, the central data structure.  
+
+
+{\ttfamily \#include \"{}computations.\+h\"{}}\newline
+{\ttfamily \#include \"{}topology.\+h\"{}}\newline
+{\ttfamily \#include \"{}partition.\+h\"{}}\newline
+{\ttfamily \#include \"{}neighbor\+\_\+list.\+h\"{}}\newline
+{\ttfamily \#include \"{}parameters.\+h\"{}}\newline
+{\ttfamily \#include $<$fstream$>$}\newline
+{\ttfamily \#include $<$vector$>$}\newline
+{\ttfamily \#include $<$algorithm$>$}\newline
+{\ttfamily \#include $<$math.\+h$>$}\newline
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$string$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include $<$complex$>$}\newline
+{\ttfamily \#include $<$random$>$}\newline
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classgroup}{group}}
+\begin{DoxyCompactList}\small\item\em A group of polar particles. Stores vectors with particle positions, velocities, spin orientations and spin rotation velocity, as well as further group properties. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classgroup}{group}} \mbox{\hyperlink{group_8h_a0ec18bf2393a796d176135d32dce9aa2}{operator+}} (const \mbox{\hyperlink{classgroup}{group}} \&G, const \mbox{\hyperlink{classgroup}{group}} \&G2)
+\begin{DoxyCompactList}\small\item\em Addition operator. Adds all particle entries of two groups. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classgroup}{group}} \mbox{\hyperlink{group_8h_ad037ad171f952545b8350e41eb488c14}{operator\texorpdfstring{$\ast$}{*}}} (const \mbox{\hyperlink{classgroup}{group}} \&G, const double a)
+\begin{DoxyCompactList}\small\item\em Right multiplication operator, multiplies all group elements by a scalar. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classgroup}{group}} \mbox{\hyperlink{group_8h_aa42499762f58f6b99d0332e0ad16c2a8}{operator\texorpdfstring{$\ast$}{*}}} (const double a, const \mbox{\hyperlink{classgroup}{group}} \&G)
+\begin{DoxyCompactList}\small\item\em Left multiplication operator, multiplies all group elements by a scalar. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Header-\/\+File to class declaration of group. Introduces the group, the central data structure. 
+
+\begin{DoxyDate}{Date}
+Created\+: 2020-\/02-\/29 (full rewrite) 
+
+Last Updated\+: 2023-\/07-\/23 
+\end{DoxyDate}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{group_8h_aa42499762f58f6b99d0332e0ad16c2a8}\label{group_8h_aa42499762f58f6b99d0332e0ad16c2a8} 
+\index{group.h@{group.h}!operator\texorpdfstring{$\ast$}{*}@{operator\texorpdfstring{$\ast$}{*}}}
+\index{operator\texorpdfstring{$\ast$}{*}@{operator\texorpdfstring{$\ast$}{*}}!group.h@{group.h}}
+\doxysubsubsection{\texorpdfstring{operator\texorpdfstring{$\ast$}{*}()}{operator*()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classgroup}{group}} operator\texorpdfstring{$\ast$}{*} (\begin{DoxyParamCaption}\item[{const double}]{a,  }\item[{const \mbox{\hyperlink{classgroup}{group}} \&}]{G }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Left multiplication operator, multiplies all group elements by a scalar. 
+
+\Hypertarget{group_8h_ad037ad171f952545b8350e41eb488c14}\label{group_8h_ad037ad171f952545b8350e41eb488c14} 
+\index{group.h@{group.h}!operator\texorpdfstring{$\ast$}{*}@{operator\texorpdfstring{$\ast$}{*}}}
+\index{operator\texorpdfstring{$\ast$}{*}@{operator\texorpdfstring{$\ast$}{*}}!group.h@{group.h}}
+\doxysubsubsection{\texorpdfstring{operator\texorpdfstring{$\ast$}{*}()}{operator*()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classgroup}{group}} operator\texorpdfstring{$\ast$}{*} (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classgroup}{group}} \&}]{G,  }\item[{const double}]{a }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Right multiplication operator, multiplies all group elements by a scalar. 
+
+\Hypertarget{group_8h_a0ec18bf2393a796d176135d32dce9aa2}\label{group_8h_a0ec18bf2393a796d176135d32dce9aa2} 
+\index{group.h@{group.h}!operator+@{operator+}}
+\index{operator+@{operator+}!group.h@{group.h}}
+\doxysubsubsection{\texorpdfstring{operator+()}{operator+()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classgroup}{group}} operator+ (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classgroup}{group}} \&}]{G,  }\item[{const \mbox{\hyperlink{classgroup}{group}} \&}]{G2 }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Addition operator. Adds all particle entries of two groups. 
+

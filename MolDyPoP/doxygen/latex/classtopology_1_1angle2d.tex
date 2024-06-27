@@ -1,0 +1,211 @@
+\doxysection{topology\+::angle2d Class Reference}
+\hypertarget{classtopology_1_1angle2d}{}\label{classtopology_1_1angle2d}\index{topology::angle2d@{topology::angle2d}}
+
+
+A (double-\/valued) angle in 2d space with the possibility of identifying it with its corresponding \doxylink{classtopology_1_1_vector2d}{Vector2d} unit vector. In the current state of the simulation, this is redundant.  
+
+
+
+
+{\ttfamily \#include $<$topology.\+h$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classtopology_1_1angle2d_a82f8590bbcf2bbebd51579ab4ba985f3}{angle2d}} ()
+\begin{DoxyCompactList}\small\item\em Constructor without argument. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classtopology_1_1angle2d_aaf31f8a452e36f3f281d5b7b0fcc2cb9}{angle2d}} (const double \&x)
+\begin{DoxyCompactList}\small\item\em Constructor from a double. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classtopology_1_1angle2d_a42efb10d8997033bd6399d3f43b7153b}{angle2d}} (const \mbox{\hyperlink{classtopology_1_1angle2d}{angle2d}} \&w)
+\begin{DoxyCompactList}\small\item\em Copy constructor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classtopology_1_1angle2d_abf74685e107387d184be232872e70971}{operator double}} () const
+\item 
+\mbox{\hyperlink{classtopology_1_1angle2d_af28c14f943b4655a03a153bd9f853290}{operator Vector2d}} () const
+\begin{DoxyCompactList}\small\item\em Conversion to \doxylink{classtopology_1_1_vector2d}{Vector2d} -\/ creates a unit vector with angle theta\+\_\+ to x-\/axis. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classtopology_1_1_vector2d}{Vector2d}} \mbox{\hyperlink{classtopology_1_1angle2d_a0b69662ee9284cd43fcafafebc065085}{spin}} ()
+\begin{DoxyCompactList}\small\item\em Returns a spin vector, i.\+e. unit vector, with given angle to x-\/axis. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classtopology_1_1_vector2d}{Vector2d}} \mbox{\hyperlink{classtopology_1_1angle2d_a89995cf771f9c48228378aa70b7a9281}{orthospin}} ()
+\begin{DoxyCompactList}\small\item\em Returns an orthogonal spin vector, i.\+e. a unit vector rotated 90\texorpdfstring{$^\wedge$}{\string^}° counterclockwise from the vector of spin(theta) \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classtopology_1_1angle2d_ae000324f54e8ef0f5dab20c2c18c2d52}{boundary}} ()
+\begin{DoxyCompactList}\small\item\em Resets the angle to be within (-\/pi, pi\mbox{]}. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classtopology_1_1angle2d}{angle2d}} \& \mbox{\hyperlink{classtopology_1_1angle2d_a914bf269bb38bac3247f196509ba55d5}{operator+=}} (const double \&a)
+\begin{DoxyCompactList}\small\item\em Addition by double. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classtopology_1_1angle2d}{angle2d}} \& \mbox{\hyperlink{classtopology_1_1angle2d_ac5f92d60f208ff463d2e92d120717c06}{operator-\/=}} (const double \&a)
+\begin{DoxyCompactList}\small\item\em Subtraction of double. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classtopology_1_1angle2d}{angle2d}} \& \mbox{\hyperlink{classtopology_1_1angle2d_ab63c112007302aca5ecd03a0b76bfdb3}{operator\texorpdfstring{$\ast$}{*}=}} (const double a)
+\begin{DoxyCompactList}\small\item\em Multiplication by double. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classtopology_1_1angle2d}{angle2d}} \& \mbox{\hyperlink{classtopology_1_1angle2d_a7540f824d01c4b3006c62ec1bd57e0e5}{operator/=}} (const double a)
+\begin{DoxyCompactList}\small\item\em Division by double. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classtopology_1_1angle2d}{angle2d}} \mbox{\hyperlink{classtopology_1_1angle2d_a8a5bf9bbf43a9adbe1ea06d8b451e908}{operator-\/}} () const
+\begin{DoxyCompactList}\small\item\em Unary additive inversion. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+double \mbox{\hyperlink{classtopology_1_1angle2d_af90c50798a959e6f1313c3d3ce02f82c}{theta\+\_\+}}
+\begin{DoxyCompactList}\small\item\em Angle theta, to be interpreted as an angle with respect to the x-\/axis in a 2d xy-\/plane. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+A (double-\/valued) angle in 2d space with the possibility of identifying it with its corresponding \doxylink{classtopology_1_1_vector2d}{Vector2d} unit vector. In the current state of the simulation, this is redundant. 
+
+Mostly incomplete and unnecessary. The idea was to have a specialized double-\/like class that can easily be converted to \doxylink{classtopology_1_1_vector2d}{Vector2d} and back for simplified calcultion. But the spin and orthospin functions defined for double -\/\texorpdfstring{$>$}{>} \doxylink{classtopology_1_1_vector2d}{Vector2d} actually do the trick perfectly fine. Leaving this here for someone feeling a bit freaky.
+
+\begin{DoxyAuthor}{Author}
+Thomas Bissinger
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+Created\+: a somewhat uneventful weekend in late 2019 
+
+Last Updated\+: 2023-\/08-\/01 
+\end{DoxyDate}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classtopology_1_1angle2d_a82f8590bbcf2bbebd51579ab4ba985f3}\label{classtopology_1_1angle2d_a82f8590bbcf2bbebd51579ab4ba985f3} 
+\index{topology::angle2d@{topology::angle2d}!angle2d@{angle2d}}
+\index{angle2d@{angle2d}!topology::angle2d@{topology::angle2d}}
+\doxysubsubsection{\texorpdfstring{angle2d()}{angle2d()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily topology\+::angle2d\+::angle2d (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Constructor without argument. 
+
+\Hypertarget{classtopology_1_1angle2d_aaf31f8a452e36f3f281d5b7b0fcc2cb9}\label{classtopology_1_1angle2d_aaf31f8a452e36f3f281d5b7b0fcc2cb9} 
+\index{topology::angle2d@{topology::angle2d}!angle2d@{angle2d}}
+\index{angle2d@{angle2d}!topology::angle2d@{topology::angle2d}}
+\doxysubsubsection{\texorpdfstring{angle2d()}{angle2d()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily topology\+::angle2d\+::angle2d (\begin{DoxyParamCaption}\item[{const double \&}]{x }\end{DoxyParamCaption})}
+
+
+
+Constructor from a double. 
+
+\Hypertarget{classtopology_1_1angle2d_a42efb10d8997033bd6399d3f43b7153b}\label{classtopology_1_1angle2d_a42efb10d8997033bd6399d3f43b7153b} 
+\index{topology::angle2d@{topology::angle2d}!angle2d@{angle2d}}
+\index{angle2d@{angle2d}!topology::angle2d@{topology::angle2d}}
+\doxysubsubsection{\texorpdfstring{angle2d()}{angle2d()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily topology\+::angle2d\+::angle2d (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classtopology_1_1angle2d}{angle2d}} \&}]{w }\end{DoxyParamCaption})}
+
+
+
+Copy constructor. 
+
+Conversion to double. 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classtopology_1_1angle2d_ae000324f54e8ef0f5dab20c2c18c2d52}\label{classtopology_1_1angle2d_ae000324f54e8ef0f5dab20c2c18c2d52} 
+\index{topology::angle2d@{topology::angle2d}!boundary@{boundary}}
+\index{boundary@{boundary}!topology::angle2d@{topology::angle2d}}
+\doxysubsubsection{\texorpdfstring{boundary()}{boundary()}}
+{\footnotesize\ttfamily void topology\+::angle2d\+::boundary (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Resets the angle to be within (-\/pi, pi\mbox{]}. 
+
+\Hypertarget{classtopology_1_1angle2d_abf74685e107387d184be232872e70971}\label{classtopology_1_1angle2d_abf74685e107387d184be232872e70971} 
+\index{topology::angle2d@{topology::angle2d}!operator double@{operator double}}
+\index{operator double@{operator double}!topology::angle2d@{topology::angle2d}}
+\doxysubsubsection{\texorpdfstring{operator double()}{operator double()}}
+{\footnotesize\ttfamily topology\+::angle2d\+::operator double (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classtopology_1_1angle2d_af28c14f943b4655a03a153bd9f853290}\label{classtopology_1_1angle2d_af28c14f943b4655a03a153bd9f853290} 
+\index{topology::angle2d@{topology::angle2d}!operator Vector2d@{operator Vector2d}}
+\index{operator Vector2d@{operator Vector2d}!topology::angle2d@{topology::angle2d}}
+\doxysubsubsection{\texorpdfstring{operator Vector2d()}{operator Vector2d()}}
+{\footnotesize\ttfamily topology\+::angle2d\+::operator \mbox{\hyperlink{classtopology_1_1_vector2d}{Vector2d}} (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Conversion to \doxylink{classtopology_1_1_vector2d}{Vector2d} -\/ creates a unit vector with angle theta\+\_\+ to x-\/axis. 
+
+\Hypertarget{classtopology_1_1angle2d_ab63c112007302aca5ecd03a0b76bfdb3}\label{classtopology_1_1angle2d_ab63c112007302aca5ecd03a0b76bfdb3} 
+\index{topology::angle2d@{topology::angle2d}!operator\texorpdfstring{$\ast$}{*}=@{operator\texorpdfstring{$\ast$}{*}=}}
+\index{operator\texorpdfstring{$\ast$}{*}=@{operator\texorpdfstring{$\ast$}{*}=}!topology::angle2d@{topology::angle2d}}
+\doxysubsubsection{\texorpdfstring{operator\texorpdfstring{$\ast$}{*}=()}{operator*=()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classtopology_1_1angle2d}{topology\+::angle2d}} \& topology\+::angle2d\+::operator\texorpdfstring{$\ast$}{*}= (\begin{DoxyParamCaption}\item[{const double}]{a }\end{DoxyParamCaption})}
+
+
+
+Multiplication by double. 
+
+\Hypertarget{classtopology_1_1angle2d_a914bf269bb38bac3247f196509ba55d5}\label{classtopology_1_1angle2d_a914bf269bb38bac3247f196509ba55d5} 
+\index{topology::angle2d@{topology::angle2d}!operator+=@{operator+=}}
+\index{operator+=@{operator+=}!topology::angle2d@{topology::angle2d}}
+\doxysubsubsection{\texorpdfstring{operator+=()}{operator+=()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classtopology_1_1angle2d}{topology\+::angle2d}} \& topology\+::angle2d\+::operator+= (\begin{DoxyParamCaption}\item[{const double \&}]{a }\end{DoxyParamCaption})}
+
+
+
+Addition by double. 
+
+\Hypertarget{classtopology_1_1angle2d_a8a5bf9bbf43a9adbe1ea06d8b451e908}\label{classtopology_1_1angle2d_a8a5bf9bbf43a9adbe1ea06d8b451e908} 
+\index{topology::angle2d@{topology::angle2d}!operator-\/@{operator-\/}}
+\index{operator-\/@{operator-\/}!topology::angle2d@{topology::angle2d}}
+\doxysubsubsection{\texorpdfstring{operator-\/()}{operator-()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classtopology_1_1angle2d}{topology\+::angle2d}} topology\+::angle2d\+::operator-\/ (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Unary additive inversion. 
+
+\Hypertarget{classtopology_1_1angle2d_ac5f92d60f208ff463d2e92d120717c06}\label{classtopology_1_1angle2d_ac5f92d60f208ff463d2e92d120717c06} 
+\index{topology::angle2d@{topology::angle2d}!operator-\/=@{operator-\/=}}
+\index{operator-\/=@{operator-\/=}!topology::angle2d@{topology::angle2d}}
+\doxysubsubsection{\texorpdfstring{operator-\/=()}{operator-=()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classtopology_1_1angle2d}{topology\+::angle2d}} \& topology\+::angle2d\+::operator-\/= (\begin{DoxyParamCaption}\item[{const double \&}]{a }\end{DoxyParamCaption})}
+
+
+
+Subtraction of double. 
+
+\Hypertarget{classtopology_1_1angle2d_a7540f824d01c4b3006c62ec1bd57e0e5}\label{classtopology_1_1angle2d_a7540f824d01c4b3006c62ec1bd57e0e5} 
+\index{topology::angle2d@{topology::angle2d}!operator/=@{operator/=}}
+\index{operator/=@{operator/=}!topology::angle2d@{topology::angle2d}}
+\doxysubsubsection{\texorpdfstring{operator/=()}{operator/=()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classtopology_1_1angle2d}{topology\+::angle2d}} \& topology\+::angle2d\+::operator/= (\begin{DoxyParamCaption}\item[{const double}]{a }\end{DoxyParamCaption})}
+
+
+
+Division by double. 
+
+\Hypertarget{classtopology_1_1angle2d_a89995cf771f9c48228378aa70b7a9281}\label{classtopology_1_1angle2d_a89995cf771f9c48228378aa70b7a9281} 
+\index{topology::angle2d@{topology::angle2d}!orthospin@{orthospin}}
+\index{orthospin@{orthospin}!topology::angle2d@{topology::angle2d}}
+\doxysubsubsection{\texorpdfstring{orthospin()}{orthospin()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classtopology_1_1_vector2d}{Vector2d}} topology\+::angle2d\+::orthospin (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Returns an orthogonal spin vector, i.\+e. a unit vector rotated 90\texorpdfstring{$^\wedge$}{\string^}° counterclockwise from the vector of spin(theta) 
+
+\Hypertarget{classtopology_1_1angle2d_a0b69662ee9284cd43fcafafebc065085}\label{classtopology_1_1angle2d_a0b69662ee9284cd43fcafafebc065085} 
+\index{topology::angle2d@{topology::angle2d}!spin@{spin}}
+\index{spin@{spin}!topology::angle2d@{topology::angle2d}}
+\doxysubsubsection{\texorpdfstring{spin()}{spin()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classtopology_1_1_vector2d}{Vector2d}} topology\+::angle2d\+::spin (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Returns a spin vector, i.\+e. unit vector, with given angle to x-\/axis. 
+
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{classtopology_1_1angle2d_af90c50798a959e6f1313c3d3ce02f82c}\label{classtopology_1_1angle2d_af90c50798a959e6f1313c3d3ce02f82c} 
+\index{topology::angle2d@{topology::angle2d}!theta\_@{theta\_}}
+\index{theta\_@{theta\_}!topology::angle2d@{topology::angle2d}}
+\doxysubsubsection{\texorpdfstring{theta\_}{theta\_}}
+{\footnotesize\ttfamily double topology\+::angle2d\+::theta\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Angle theta, to be interpreted as an angle with respect to the x-\/axis in a 2d xy-\/plane. 
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{topology_8h}{topology.\+h}}\item 
+\mbox{\hyperlink{topology_8cpp}{topology.\+cpp}}\end{DoxyCompactItemize}

@@ -1,0 +1,2777 @@
+\doxysection{sampler Class Reference}
+\hypertarget{classsampler}{}\label{classsampler}\index{sampler@{sampler}}
+
+
+Stores and handles all data sampling performed during a run or in a later diagnostic.  
+
+
+
+
+{\ttfamily \#include $<$sampler.\+h$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classsampler_aa1bbeea976b4e825adc47279b9b352a2}{sampler}} ()
+\begin{DoxyCompactList}\small\item\em Empty constructor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classsampler_ade7b5b63f4c0f22150df32321994586b}{sampler}} (\mbox{\hyperlink{classparameters}{parameters}} par)
+\begin{DoxyCompactList}\small\item\em Constructor. Assigns par\+\_\+ to par. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classsampler_a4a8e4c05b80ab3547f403f9aa35772bc}{sampler}} (\mbox{\hyperlink{classparameters}{parameters}} par, std\+::vector$<$ \mbox{\hyperlink{classtopology_1_1_vector2d}{topology\+::\+Vector2d}} $>$ qvals)
+\begin{DoxyCompactList}\small\item\em Constructor. Assigns par\+\_\+ to par and qvals\+\_\+ to qvals. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classsampler_a6dcbe1d08774a4a3603ada0346552f26}{set\+\_\+parameters}} (\mbox{\hyperlink{classparameters}{parameters}} par)
+\begin{DoxyCompactList}\small\item\em Sets parameter member variable. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classsampler_a1af9bdcbbb5e532f75a4d29b8d7e1762}{set\+\_\+qvals}} (std\+::vector$<$ \mbox{\hyperlink{classtopology_1_1_vector2d}{topology\+::\+Vector2d}} $>$ qvals)
+\begin{DoxyCompactList}\small\item\em Sets qvals (redundant) \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classsampler_a318d8fb6fc264eea38ea8efeddaabca2}{switches\+\_\+from\+\_\+vector}} (const std\+::vector$<$ bool $>$ \&boolvec)
+\begin{DoxyCompactList}\small\item\em Reads switches from vector. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classsampler_a706da605c056e6b9497393fa1a749748}{switches\+\_\+from\+\_\+file}} (std\+::ifstream \&infile, std\+::ofstream \&stdoutfile)
+\begin{DoxyCompactList}\small\item\em Reads switches from file. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classsampler_a874293c54a88be45095de5a3bc90d54a}{all\+\_\+switches\+\_\+on}} ()
+\begin{DoxyCompactList}\small\item\em Turns all switches on. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classsampler_a191a27283279b0180718828d1cdaba6f}{all\+\_\+switches\+\_\+off}} ()
+\begin{DoxyCompactList}\small\item\em Turns all switches off. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classsampler_a84f84775c16c484f488632bc750d8b51}{print\+\_\+snapshots\+\_\+on}} ()
+\begin{DoxyCompactList}\small\item\em Turns print\+\_\+snaphshots\+\_\+ switch on. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classsampler_a11c1bd34c323e5e330ddaf7973b0fe61}{print\+\_\+snapshots\+\_\+off}} ()
+\begin{DoxyCompactList}\small\item\em Turns print\+\_\+snaphshots\+\_\+ switch off. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classsampler_a873aace4fd391e8d28a9bd62e3c51671}{check\+\_\+on\+\_\+fly\+\_\+sampling}} ()
+\begin{DoxyCompactList}\small\item\em Turns all switches off if on\+\_\+fly\+\_\+sampling is off. \end{DoxyCompactList}\item 
+std\+::vector$<$ bool $>$ \mbox{\hyperlink{classsampler_a874a381d14cef9684eea34495b8818e6}{get\+\_\+switches}} () const
+\begin{DoxyCompactList}\small\item\em Returns vector of sample switches. Is for checking. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classsampler_a639df19947fddc57758b447da2b2927f}{print\+\_\+snapshots}} () const
+\item 
+std\+::vector$<$ \mbox{\hyperlink{classtopology_1_1_vector2d}{topology\+::\+Vector2d}} $>$ \mbox{\hyperlink{classsampler_afd13722acfa25d78403b71afbd151565}{get\+\_\+qvals}} () const
+\item 
+void \mbox{\hyperlink{classsampler_a43d77ee4c689b9e78c8d7a80a96a9c1f}{refresh\+\_\+qvals}} (const \mbox{\hyperlink{classtopology_1_1_vector2d}{topology\+::\+Vector2d}} \&boxsize)
+\begin{DoxyCompactList}\small\item\em Chooses new values for q (not recommended, relic of old implementation of qbin) \end{DoxyCompactList}\item 
+std\+::vector$<$ double $>$ \mbox{\hyperlink{classsampler_a115d3f2d721ee28c3bd3fa7152284b33}{bin\+\_\+qvals\+\_\+to\+\_\+q}} (std\+::vector$<$ double $>$ vals) const
+\begin{DoxyCompactList}\small\item\em Sorts the qvals at which correlations were computed into a bin (double input) \end{DoxyCompactList}\item 
+std\+::vector$<$ std\+::complex$<$ double $>$ $>$ \mbox{\hyperlink{classsampler_afcd41c2f4dc623f43c90e6f18c5c8fd3}{bin\+\_\+qvals\+\_\+to\+\_\+q}} (std\+::vector$<$ std\+::complex$<$ double $>$ $>$ vals) const
+\begin{DoxyCompactList}\small\item\em Sorts the qvals at which correlations were computed into a bin (complex input) \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{classsampler_af81becd8c4f841612ae10c3ff9ac14ee}{get\+\_\+last\+\_\+temperature}} ()
+\begin{DoxyCompactList}\small\item\em Returns last temperature that was calculated. Careful, no check if calcultaion was performed. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classsampler_abdc8d87c40ad62687c64255626b12d28}{sample\+\_\+\+MSD}} (const std\+::vector$<$ double $>$ \&MSD)
+\begin{DoxyCompactList}\small\item\em Samples MSD. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classsampler_ac01cec04619fa58a6c0abdb32bb3d3f8}{sample}} (const \mbox{\hyperlink{classgroup}{group}} \&G, const \mbox{\hyperlink{classgroup}{group}} \&G\+\_\+new, double t)
+\begin{DoxyCompactList}\small\item\em Samples all static properties and dynamic properties according to switches. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classsampler_aa846410b088cc9cf90071f1210cae78c}{sample\+\_\+static}} (const \mbox{\hyperlink{classgroup}{group}} \&G, double t)
+\begin{DoxyCompactList}\small\item\em Samples all static properties that have an activated sample switch. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classsampler_a03e1035aaafccf4f0ff6fd93348a25a4}{sample\+\_\+\+TCF}} (const \mbox{\hyperlink{classgroup}{group}} \&G\+\_\+initial, const \mbox{\hyperlink{classgroup}{group}} \&G\+\_\+new, const double t)
+\begin{DoxyCompactList}\small\item\em Samples all time correlation functions that have an activated sample switch. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classsampler_a3972c3a46fde8d0884c0bcd08687e5b0}{sample\+\_\+snapshots}} (const \mbox{\hyperlink{classgroup}{group}} \&G, const double t, std\+::string snapfile\+\_\+name, std\+::ofstream \&outfile)
+\begin{DoxyCompactList}\small\item\em Samples (i.\+e. stores) a snapshot to a file. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classsampler_a10df72744327c486d3368eba20c9921c}{average}} ()
+\begin{DoxyCompactList}\small\item\em appends averages to the last entry of each nonempty sampling vector \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classsampler_a76d501041c8615678b0a4af85413ee18}{print\+\_\+matlab}} (std\+::ofstream \&outfile)
+\begin{DoxyCompactList}\small\item\em Prints in a format that can be directly read in from matlab. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classsampler_a9407ede6f388b4f5c0d6a7782fbb59e3}{print\+\_\+averages\+\_\+matlab}} (std\+::ofstream \&outfile)
+\begin{DoxyCompactList}\small\item\em Prints averages in a format that can be directly read in from matlab. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classparameters}{parameters}} \mbox{\hyperlink{classsampler_aa007d18a034dc14e46dd840d1a665f09}{par\+\_\+}}
+\begin{DoxyCompactList}\small\item\em Simulation parameters. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classsampler_a151708b9bc29e5d2d186b3de031a0624}{Number\+Of\+Switches\+\_\+}} = 15
+\begin{DoxyCompactList}\small\item\em Total number of switches. Could be useful. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classsampler_aecda51d087cf0d5b8c1ed441f0e3114b}{nsamp\+\_\+}} = 0
+\begin{DoxyCompactList}\small\item\em Number of samples (for time averages later on) \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classsampler_af9bd5ebdf8cc9d5165abb6584ed6cb07}{nsnap\+\_\+}} = 0
+\begin{DoxyCompactList}\small\item\em Number of snapshots. \end{DoxyCompactList}\item 
+std\+::vector$<$ double $>$ \mbox{\hyperlink{classsampler_afa9905cd14c18b1b06a01ecc495c57b6}{averaging\+\_\+times\+\_\+}}
+\begin{DoxyCompactList}\small\item\em Stores sampling times (for averaging) \end{DoxyCompactList}\item 
+std\+::vector$<$ double $>$ \mbox{\hyperlink{classsampler_ac8b378df612210286630ad2a883d408a}{TCF\+\_\+times\+\_\+}}
+\begin{DoxyCompactList}\small\item\em Stores sampling times (for time correlation function) \end{DoxyCompactList}\item 
+std\+::vector$<$ double $>$ \mbox{\hyperlink{classsampler_a42b3aac7edbeb3d610061c789f65350f}{H\+\_\+}}
+\begin{DoxyCompactList}\small\item\em Stores energies. \end{DoxyCompactList}\item 
+std\+::vector$<$ double $>$ \mbox{\hyperlink{classsampler_aec5e3e24f8e61691b1f173c627369e91}{H\+\_\+2\+\_\+}}
+\begin{DoxyCompactList}\small\item\em Stores individual energies squared (\texorpdfstring{$<$}{<}e\+\_\+i\texorpdfstring{$^\wedge$}{\string^}2\texorpdfstring{$>$}{>}) \end{DoxyCompactList}\item 
+std\+::vector$<$ double $>$ \mbox{\hyperlink{classsampler_ad6d51d29e8f1a652b32201b5dbd6ce74}{Hkin\+\_\+2\+\_\+}}
+\begin{DoxyCompactList}\small\item\em Stores individual kinetic energies squared. \end{DoxyCompactList}\item 
+std\+::vector$<$ double $>$ \mbox{\hyperlink{classsampler_a611165c9a3fe2b17e99144872418dffb}{Hint\+\_\+2\+\_\+}}
+\begin{DoxyCompactList}\small\item\em Stores individual interaction energies squared. \end{DoxyCompactList}\item 
+std\+::vector$<$ double $>$ \mbox{\hyperlink{classsampler_a4892fdc232839a57b960e7f42753d76b}{W\+\_\+}}
+\begin{DoxyCompactList}\small\item\em Stores momenta. \end{DoxyCompactList}\item 
+std\+::vector$<$ double $>$ \mbox{\hyperlink{classsampler_a42834720f7916672b9e658fb73df52e6}{W\+\_\+2\+\_\+}}
+\begin{DoxyCompactList}\small\item\em Stores momenta squared. \end{DoxyCompactList}\item 
+std\+::vector$<$ \mbox{\hyperlink{classtopology_1_1_vector2d}{topology\+::\+Vector2d}} $>$ \mbox{\hyperlink{classsampler_aa0424ef9226bec3550f58c9235ded20a}{M\+\_\+}}
+\begin{DoxyCompactList}\small\item\em Stores magnetizations. \end{DoxyCompactList}\item 
+std\+::vector$<$ double $>$ \mbox{\hyperlink{classsampler_acba577c2fca72a6a8fb38469f24d67cc}{M\+\_\+2\+\_\+}}
+\begin{DoxyCompactList}\small\item\em Stores magnetizations squared. \end{DoxyCompactList}\item 
+std\+::vector$<$ double $>$ \mbox{\hyperlink{classsampler_ac0f64bebaee4a327f970c58b54e04b74}{M\+\_\+4\+\_\+}}
+\begin{DoxyCompactList}\small\item\em Stores magnetizations to the fourth power. \end{DoxyCompactList}\item 
+std\+::vector$<$ double $>$ \mbox{\hyperlink{classsampler_a284a97e75d51467e5598b2ac82f9f359}{abs\+M\+\_\+}}
+\begin{DoxyCompactList}\small\item\em Stores absolute magnetizations. \end{DoxyCompactList}\item 
+std\+::vector$<$ double $>$ \mbox{\hyperlink{classsampler_a1e28fc2aa596c9ef746aaacb2d296061}{M\+\_\+angle\+\_\+}}
+\begin{DoxyCompactList}\small\item\em Stores angle of the magnetization (with respect to the spin x-\/axis) \end{DoxyCompactList}\item 
+std\+::vector$<$ double $>$ \mbox{\hyperlink{classsampler_a22d78d07c99c7f044e459eee803b1866}{Theta\+\_\+}}
+\begin{DoxyCompactList}\small\item\em Stores mean theta (with respect to the spin x-\/axis) \end{DoxyCompactList}\item 
+std\+::vector$<$ double $>$ \mbox{\hyperlink{classsampler_a23c18cd669d907b30bdfe241d671271e}{Theta\+\_\+2\+\_\+}}
+\begin{DoxyCompactList}\small\item\em Stores mean theta\texorpdfstring{$^\wedge$}{\string^}2 (with respect to the spin x-\/axis) \end{DoxyCompactList}\item 
+std\+::vector$<$ double $>$ \mbox{\hyperlink{classsampler_a58a0e6021446a50ed3ae2d465c982787}{Theta\+\_\+4\+\_\+}}
+\begin{DoxyCompactList}\small\item\em Stores mean theta\texorpdfstring{$^\wedge$}{\string^}4 (with respect to the spin x-\/axis) \end{DoxyCompactList}\item 
+std\+::vector$<$ double $>$ \mbox{\hyperlink{classsampler_a07d79935c67a797d539e1154a78ffada}{Theta\+\_\+rel\+\_\+to\+\_\+\+M\+\_\+}}
+\begin{DoxyCompactList}\small\item\em Stores mean theta relative to orientation of magnetization. \end{DoxyCompactList}\item 
+std\+::vector$<$ double $>$ \mbox{\hyperlink{classsampler_af1aea83760c2e43b746d9b3c50f0c917}{Theta\+\_\+rel\+\_\+to\+\_\+\+M\+\_\+2\+\_\+}}
+\begin{DoxyCompactList}\small\item\em Stores mean theta\texorpdfstring{$^\wedge$}{\string^}2 relative to orientation of magnetization. \end{DoxyCompactList}\item 
+std\+::vector$<$ double $>$ \mbox{\hyperlink{classsampler_a933784c7b6043b0b69fbe12b79f72924}{Theta\+\_\+rel\+\_\+to\+\_\+\+M\+\_\+4\+\_\+}}
+\begin{DoxyCompactList}\small\item\em Stores mean theta\texorpdfstring{$^\wedge$}{\string^}2 relative to orientation of magnetization. \end{DoxyCompactList}\item 
+std\+::vector$<$ double $>$ \mbox{\hyperlink{classsampler_a60215fd2a7eaa4bea54615e7a25a7558}{temperature\+\_\+}}
+\begin{DoxyCompactList}\small\item\em Stores temperature. \end{DoxyCompactList}\item 
+std\+::vector$<$ double $>$ \mbox{\hyperlink{classsampler_af02b85e647212f86d1f05658c06ecc90}{temperature\+\_\+squared\+\_\+}}
+\begin{DoxyCompactList}\small\item\em Stores temperature squared. \end{DoxyCompactList}\item 
+std\+::vector$<$ double $>$ \mbox{\hyperlink{classsampler_aaedff39ce5f699d75083decbbf048a92}{temperature\+\_\+omega\+\_\+}}
+\begin{DoxyCompactList}\small\item\em Stores spin momentum temperature. \end{DoxyCompactList}\item 
+std\+::vector$<$ double $>$ \mbox{\hyperlink{classsampler_a0f44fd6dbdf0b61bbf1ab0a03a69e7e0}{temperature\+\_\+omega\+\_\+squared\+\_\+}}
+\begin{DoxyCompactList}\small\item\em Stores spin momentum temperature squared. \end{DoxyCompactList}\item 
+std\+::vector$<$ double $>$ \mbox{\hyperlink{classsampler_a473b1e44bf89b238ad29a8d8c41d7482}{temperature\+\_\+p\+\_\+}}
+\begin{DoxyCompactList}\small\item\em Stores linear momentum temperature. \end{DoxyCompactList}\item 
+std\+::vector$<$ double $>$ \mbox{\hyperlink{classsampler_a8db91c2566736f53ebac582704c73079}{temperature\+\_\+p\+\_\+squared\+\_\+}}
+\begin{DoxyCompactList}\small\item\em Stores linear momentum temperature squared. \end{DoxyCompactList}\item 
+std\+::vector$<$ \mbox{\hyperlink{classtopology_1_1_vector2d}{topology\+::\+Vector2d}} $>$ \mbox{\hyperlink{classsampler_ae6d2f848c6c2cab03c0554aca0a9861d}{P\+\_\+}}
+\begin{DoxyCompactList}\small\item\em Stores momentum components. \end{DoxyCompactList}\item 
+std\+::vector$<$ double $>$ \mbox{\hyperlink{classsampler_a15f8ebce1699e8341846cbc6255daf75}{P\+\_\+2\+\_\+}}
+\begin{DoxyCompactList}\small\item\em Stores momentum squared. \end{DoxyCompactList}\item 
+std\+::vector$<$ double $>$ \mbox{\hyperlink{classsampler_aa723e3f58fe166838e3bf02a9e5d02f8}{P\+\_\+4\+\_\+}}
+\begin{DoxyCompactList}\small\item\em Stores momentum to the fourth power. \end{DoxyCompactList}\item 
+std\+::vector$<$ double $>$ \mbox{\hyperlink{classsampler_a5b4cf79f6a1acdf9f43d082f9608140e}{H\+\_\+x\+\_\+}}
+\begin{DoxyCompactList}\small\item\em H\+\_\+x as defined for the derivation of the helicity Upsilon. \end{DoxyCompactList}\item 
+std\+::vector$<$ double $>$ \mbox{\hyperlink{classsampler_a6a2f7ea5c8a51277e3800b2436776d75}{H\+\_\+y\+\_\+}}
+\begin{DoxyCompactList}\small\item\em H\+\_\+y as defined for the derivation of the helicity Upsilon. \end{DoxyCompactList}\item 
+std\+::vector$<$ double $>$ \mbox{\hyperlink{classsampler_a2bb68f8e5428fdaa8af7d6b6d292e85a}{I\+\_\+x\+\_\+}}
+\begin{DoxyCompactList}\small\item\em I\+\_\+x as defined for the derivation of the helicity Upsilon. \end{DoxyCompactList}\item 
+std\+::vector$<$ double $>$ \mbox{\hyperlink{classsampler_abd5e87ac547885b3958e524af18cf028}{I\+\_\+y\+\_\+}}
+\begin{DoxyCompactList}\small\item\em I\+\_\+y as defined for the derivation of the helicity Upsilon. \end{DoxyCompactList}\item 
+std\+::vector$<$ double $>$ \mbox{\hyperlink{classsampler_a9597ef1b2d4bf65ea45d634c83cbeba6}{I\+\_\+x\+\_\+2\+\_\+}}
+\begin{DoxyCompactList}\small\item\em I\+\_\+x\texorpdfstring{$^\wedge$}{\string^}2 as defined for the derivation of the helicity Upsilon. \end{DoxyCompactList}\item 
+std\+::vector$<$ double $>$ \mbox{\hyperlink{classsampler_a009571b9a71586424fae8c6a8e8ea547}{I\+\_\+y\+\_\+2\+\_\+}}
+\begin{DoxyCompactList}\small\item\em I\+\_\+y\texorpdfstring{$^\wedge$}{\string^}2 as defined for the derivation of the helicity Upsilon. \end{DoxyCompactList}\item 
+std\+::vector$<$ double $>$ \mbox{\hyperlink{classsampler_abcf700f2d16f10dfa1e86f596bcddf42}{Upsilon\+\_\+}}
+\begin{DoxyCompactList}\small\item\em Helicity Upsilon. \end{DoxyCompactList}\item 
+std\+::vector$<$ double $>$ \mbox{\hyperlink{classsampler_ad33f9a6d97e7638940c7ba39bd779d17}{abs\+\_\+vortices\+\_\+}}
+\begin{DoxyCompactList}\small\item\em Stores total vortex density. \end{DoxyCompactList}\item 
+std\+::vector$<$ double $>$ \mbox{\hyperlink{classsampler_aeda7d78138db64f954d76781b7ac2d3e}{signed\+\_\+vortices\+\_\+}}
+\begin{DoxyCompactList}\small\item\em Stores total signed vortex density (i.\+e. positive minus negative density). \end{DoxyCompactList}\item 
+std\+::vector$<$ double $>$ \mbox{\hyperlink{classsampler_ad26b1151f9a5379d6efc599c86459064}{coordination\+\_\+number\+\_\+}}
+\begin{DoxyCompactList}\small\item\em Coordination number in mobile model (avg. number of neighbors in interaction radius) \end{DoxyCompactList}\item 
+std\+::vector$<$ \mbox{\hyperlink{classtopology_1_1_vector2d}{topology\+::\+Vector2d}} $>$ \mbox{\hyperlink{classsampler_a21575c84076dfe052d51801e8e87dcd6}{qvals\+\_\+}}
+\begin{DoxyCompactList}\small\item\em Values of q for evaluation of field fluctuations (changes over sampling process) \end{DoxyCompactList}\item 
+std\+::vector$<$ std\+::complex$<$ double $>$ $>$ \mbox{\hyperlink{classsampler_a2b3ceb7dfb823274ffcc75a044c35e4d}{mxq\+\_\+}}
+\begin{DoxyCompactList}\small\item\em Stores the $m_{x,q}$ (x-\/spin field fluctuation) \end{DoxyCompactList}\item 
+std\+::vector$<$ std\+::complex$<$ double $>$ $>$ \mbox{\hyperlink{classsampler_aee2ab8ab7f0abdd762a92f3bc98dea8d}{myq\+\_\+}}
+\begin{DoxyCompactList}\small\item\em Stores the $m_{y,q}$ (y-\/spin field fluctuation) \end{DoxyCompactList}\item 
+std\+::vector$<$ std\+::complex$<$ double $>$ $>$ \mbox{\hyperlink{classsampler_aec10d26cc2bd7c1fe9137a628d2e2dee}{mparq\+\_\+}}
+\begin{DoxyCompactList}\small\item\em Stores the $m_{\parallel,q}$ (spin field fluctuation parallel to spontaneous M) \end{DoxyCompactList}\item 
+std\+::vector$<$ std\+::complex$<$ double $>$ $>$ \mbox{\hyperlink{classsampler_af09c4952bbf2d0c4375f5e240460314b}{mperpq\+\_\+}}
+\begin{DoxyCompactList}\small\item\em Stores the $m_{\perp,q}$ (spin field fluctuation perpendicular to spontaneous M) \end{DoxyCompactList}\item 
+std\+::vector$<$ std\+::complex$<$ double $>$ $>$ \mbox{\hyperlink{classsampler_a2b23521ad5ca63184118c96a3e486729}{eq\+\_\+}}
+\begin{DoxyCompactList}\small\item\em Stores the $e_{q}$ (energy field fluctuation) \end{DoxyCompactList}\item 
+std\+::vector$<$ std\+::complex$<$ double $>$ $>$ \mbox{\hyperlink{classsampler_ab2f84280b5d387efb72394f72210b62e}{wq\+\_\+}}
+\begin{DoxyCompactList}\small\item\em Stores the $w_{q}$ (omega field fluctuation) \end{DoxyCompactList}\item 
+std\+::vector$<$ std\+::complex$<$ double $>$ $>$ \mbox{\hyperlink{classsampler_aa373b7529dcae63bb16a1c851a2faa09}{teq\+\_\+}}
+\begin{DoxyCompactList}\small\item\em Stores the $\theta_{q}$ (theta field fluctuation) \end{DoxyCompactList}\item 
+std\+::vector$<$ std\+::complex$<$ double $>$ $>$ \mbox{\hyperlink{classsampler_aa0a7775237b44a8c97394cf4b049ef3a}{rq\+\_\+}}
+\begin{DoxyCompactList}\small\item\em Stores the $\rho_{q}$ (density field fluctuation) \end{DoxyCompactList}\item 
+std\+::vector$<$ std\+::complex$<$ double $>$ $>$ \mbox{\hyperlink{classsampler_a71bd99e9c98b17f4e786895c07a66efe}{jparq\+\_\+}}
+\begin{DoxyCompactList}\small\item\em Stores the $j_{\parallel,q}$ (parallel momentum field fluctuation) \end{DoxyCompactList}\item 
+std\+::vector$<$ std\+::complex$<$ double $>$ $>$ \mbox{\hyperlink{classsampler_a8e883419a607509daa7b19b72d747eba}{jperpq\+\_\+}}
+\begin{DoxyCompactList}\small\item\em Stores the $j_{\perp,q}$ (perpendicular momentum field fluctuation) \end{DoxyCompactList}\item 
+std\+::vector$<$ std\+::complex$<$ double $>$ $>$ \mbox{\hyperlink{classsampler_ade84f6012fb0406596576d4aea79b4c5}{lq\+\_\+}}
+\begin{DoxyCompactList}\small\item\em Stores the $l_{q}$ (spatial angular momentum field fluctuation) \end{DoxyCompactList}\item 
+std\+::vector$<$ std\+::complex$<$ double $>$ $>$ \mbox{\hyperlink{classsampler_a97a9adfea8abf16c778560543304426d}{mxq\+\_\+cur\+\_\+}}
+\begin{DoxyCompactList}\small\item\em Stores the $m_{x,q}$ at the current time (avoids repeated computation, which is costly) \end{DoxyCompactList}\item 
+std\+::vector$<$ std\+::complex$<$ double $>$ $>$ \mbox{\hyperlink{classsampler_a87328f4ee3a92b7ca4d2c924f97c7134}{myq\+\_\+cur\+\_\+}}
+\begin{DoxyCompactList}\small\item\em Stores the $m_{y,q}$ at the current time (avoids repeated computation, which is costly) \end{DoxyCompactList}\item 
+std\+::vector$<$ std\+::complex$<$ double $>$ $>$ \mbox{\hyperlink{classsampler_af7e2b9b50329ec5f10987906b8f6c381}{mparq\+\_\+cur\+\_\+}}
+\begin{DoxyCompactList}\small\item\em Stores the $m_{\parallel,q}$ at the current time (avoids repeated computation, which is costly) \end{DoxyCompactList}\item 
+std\+::vector$<$ std\+::complex$<$ double $>$ $>$ \mbox{\hyperlink{classsampler_aebac5a0861b1844e92a055a159373add}{mperpq\+\_\+cur\+\_\+}}
+\begin{DoxyCompactList}\small\item\em Stores the $m_{\perp,q}$ at the current time (avoids repeated computation, which is costly) \end{DoxyCompactList}\item 
+std\+::vector$<$ std\+::complex$<$ double $>$ $>$ \mbox{\hyperlink{classsampler_a98dec99fb63106ddbef08aab1743dfdc}{eq\+\_\+cur\+\_\+}}
+\begin{DoxyCompactList}\small\item\em Stores the $e_{q}$ at the current time (avoids repeated computation, which is costly) \end{DoxyCompactList}\item 
+std\+::vector$<$ std\+::complex$<$ double $>$ $>$ \mbox{\hyperlink{classsampler_a54500f3c96bb4099d3f59e5f524f4707}{wq\+\_\+cur\+\_\+}}
+\begin{DoxyCompactList}\small\item\em Stores the $w_{q}$ at the current time (avoids repeated computation, which is costly) \end{DoxyCompactList}\item 
+std\+::vector$<$ std\+::complex$<$ double $>$ $>$ \mbox{\hyperlink{classsampler_a4a17711e32c231200a601ca7a3d6e53e}{teq\+\_\+cur\+\_\+}}
+\begin{DoxyCompactList}\small\item\em Stores the $\theta_{q}$ at the current time (avoids repeated computation, which is costly) \end{DoxyCompactList}\item 
+std\+::vector$<$ std\+::complex$<$ double $>$ $>$ \mbox{\hyperlink{classsampler_a7a84bde2278495dac1b9bc5c0c3445b9}{rq\+\_\+cur\+\_\+}}
+\begin{DoxyCompactList}\small\item\em Stores the $\rho_{q}$ at the current time. \end{DoxyCompactList}\item 
+std\+::vector$<$ std\+::complex$<$ double $>$ $>$ \mbox{\hyperlink{classsampler_a00d0867ec5b5c15b1d00dce7e4cceaa4}{jparq\+\_\+cur\+\_\+}}
+\begin{DoxyCompactList}\small\item\em Stores the $j_{\parallel,q}$ at the current time. \end{DoxyCompactList}\item 
+std\+::vector$<$ std\+::complex$<$ double $>$ $>$ \mbox{\hyperlink{classsampler_a6f0c528c7add0af870d08d53682bc42b}{jperpq\+\_\+cur\+\_\+}}
+\begin{DoxyCompactList}\small\item\em Stores the $j_{\perp,q}$ at the current time. \end{DoxyCompactList}\item 
+std\+::vector$<$ std\+::complex$<$ double $>$ $>$ \mbox{\hyperlink{classsampler_afca551ad1bf33d84ab2cbfe4215fd440}{lq\+\_\+cur\+\_\+}}
+\begin{DoxyCompactList}\small\item\em Stores the $l_{q}$ at the current time. \end{DoxyCompactList}\item 
+std\+::vector$<$ std\+::complex$<$ double $>$ $>$ \mbox{\hyperlink{classsampler_ae8b422198079c0bf3f30f65208f3ac3a}{convol\+\_\+wmx\+\_\+cur\+\_\+}}
+\begin{DoxyCompactList}\small\item\em Stores the convolution $w_{q} \star m_{x,q}$. \end{DoxyCompactList}\item 
+std\+::vector$<$ std\+::complex$<$ double $>$ $>$ \mbox{\hyperlink{classsampler_a358e7000017234583011f4e417cb36ed}{convol\+\_\+wmy\+\_\+cur\+\_\+}}
+\begin{DoxyCompactList}\small\item\em Stores the convolution $w_{q} \star m_{y,q}$. \end{DoxyCompactList}\item 
+std\+::vector$<$ std\+::complex$<$ double $>$ $>$ \mbox{\hyperlink{classsampler_a07da41942c9c2f75aa9281b2fe25de26}{convol\+\_\+jparmx\+\_\+cur\+\_\+}}
+\begin{DoxyCompactList}\small\item\em Stores the convolution $j_{L,q} \star m_{x,q}$. \end{DoxyCompactList}\item 
+std\+::vector$<$ std\+::complex$<$ double $>$ $>$ \mbox{\hyperlink{classsampler_a343f9cb9655701fab33b1c2bd26851af}{convol\+\_\+jparmy\+\_\+cur\+\_\+}}
+\begin{DoxyCompactList}\small\item\em Stores the convolution $j_{L,q} \star m_{y,q}$. \end{DoxyCompactList}\item 
+std\+::vector$<$ std\+::complex$<$ double $>$ $>$ \mbox{\hyperlink{classsampler_a6e7ddcabf07f1c574fe3790aa2bc1028}{mxq\+\_\+initial\+\_\+}}
+\begin{DoxyCompactList}\small\item\em Stores the $m_{x,q}$ at the initial time (avoids repeated computation, only usable if q is not refreshed) \end{DoxyCompactList}\item 
+std\+::vector$<$ std\+::complex$<$ double $>$ $>$ \mbox{\hyperlink{classsampler_a3e5db3d57c3580b8fd3aff8ee2dea164}{myq\+\_\+initial\+\_\+}}
+\begin{DoxyCompactList}\small\item\em Stores the $m_{y,q}$ at the initial time (avoids repeated computation, only usable if q is not refreshed) \end{DoxyCompactList}\item 
+std\+::vector$<$ std\+::complex$<$ double $>$ $>$ \mbox{\hyperlink{classsampler_af45316ab1bb53fc1b2f6430da7f82b62}{mparq\+\_\+initial\+\_\+}}
+\begin{DoxyCompactList}\small\item\em Stores the $m_{\parallel,q}$ at the initial time (avoids repeated computation, only usable if q is not refreshed) \end{DoxyCompactList}\item 
+std\+::vector$<$ std\+::complex$<$ double $>$ $>$ \mbox{\hyperlink{classsampler_a37360abe50090fe9470a4d45c3cdf8cc}{mperpq\+\_\+initial\+\_\+}}
+\begin{DoxyCompactList}\small\item\em Stores the $m_{\perp,q}$ at the initial time (avoids repeated computation, only usable if q is not refreshed) \end{DoxyCompactList}\item 
+std\+::vector$<$ std\+::complex$<$ double $>$ $>$ \mbox{\hyperlink{classsampler_a3cae2f9d73a32abd8dd466dbeb7bcbdd}{eq\+\_\+initial\+\_\+}}
+\begin{DoxyCompactList}\small\item\em Stores the $e_{q}$ at the initial time (avoids repeated computation, only usable if q is not refreshed) \end{DoxyCompactList}\item 
+std\+::vector$<$ std\+::complex$<$ double $>$ $>$ \mbox{\hyperlink{classsampler_abacde55f0468eef970a2974bf51a0f8f}{wq\+\_\+initial\+\_\+}}
+\begin{DoxyCompactList}\small\item\em Stores the $w_{q}$ at the initial time (avoids repeated computation, only usable if q is not refreshed) \end{DoxyCompactList}\item 
+std\+::vector$<$ std\+::complex$<$ double $>$ $>$ \mbox{\hyperlink{classsampler_a630136b731302c406efefd2ba633febf}{teq\+\_\+initial\+\_\+}}
+\begin{DoxyCompactList}\small\item\em Stores the $\theta_{q}$ at the initial time (avoids repeated computation, only usable if q is not refreshed) \end{DoxyCompactList}\item 
+std\+::vector$<$ std\+::complex$<$ double $>$ $>$ \mbox{\hyperlink{classsampler_a16ffe546425372aeb1cf9d1f5252619b}{rq\+\_\+initial\+\_\+}}
+\begin{DoxyCompactList}\small\item\em Stores the $\rho_{q}$ at the initial time (avoids repeated computation, only usable if q is not refreshed) \end{DoxyCompactList}\item 
+std\+::vector$<$ std\+::complex$<$ double $>$ $>$ \mbox{\hyperlink{classsampler_a58765341382c0f23800489b2109a6162}{jparq\+\_\+initial\+\_\+}}
+\begin{DoxyCompactList}\small\item\em Stores the $j_{\parallel,q}$ at the initial time (avoids repeated computation, only usable if q is not refreshed) \end{DoxyCompactList}\item 
+std\+::vector$<$ std\+::complex$<$ double $>$ $>$ \mbox{\hyperlink{classsampler_acd263065e80b7adaeaa2ce6036603785}{jperpq\+\_\+initial\+\_\+}}
+\begin{DoxyCompactList}\small\item\em Stores the $j_{\perp,q}$ at the initial time (avoids repeated computation, only usable if q is not refreshed) \end{DoxyCompactList}\item 
+std\+::vector$<$ std\+::complex$<$ double $>$ $>$ \mbox{\hyperlink{classsampler_a0ffa69d6f5efeaa507bf19bc5231a053}{lq\+\_\+initial\+\_\+}}
+\begin{DoxyCompactList}\small\item\em Stores the $l_{q}$ at the initial time (avoids repeated computation, only usable if q is not refreshed) \end{DoxyCompactList}\item 
+std\+::vector$<$ std\+::complex$<$ double $>$ $>$ \mbox{\hyperlink{classsampler_acd7185f1c045ccce284a527b6d5123e9}{convol\+\_\+wmx\+\_\+initial\+\_\+}}
+\begin{DoxyCompactList}\small\item\em Stores the convolution $w_{q} \star m_{x,q}$ at the initial time. \end{DoxyCompactList}\item 
+std\+::vector$<$ std\+::complex$<$ double $>$ $>$ \mbox{\hyperlink{classsampler_a77fa63dc7419b53cbd85925e5cecb2e7}{convol\+\_\+wmy\+\_\+initial\+\_\+}}
+\begin{DoxyCompactList}\small\item\em Stores the convolution $w_{q} \star m_{y,q}$ at the initial time. \end{DoxyCompactList}\item 
+std\+::vector$<$ std\+::complex$<$ double $>$ $>$ \mbox{\hyperlink{classsampler_a79042932b98c0706271c4a50b45a2971}{convol\+\_\+jparmx\+\_\+initial\+\_\+}}
+\begin{DoxyCompactList}\small\item\em Stores the convolution $j_{\parallel,q} \star m_{x,q}$ at the initial time. \end{DoxyCompactList}\item 
+std\+::vector$<$ std\+::complex$<$ double $>$ $>$ \mbox{\hyperlink{classsampler_ae55df23b3f7747db426b94c16ee8b714}{convol\+\_\+jparmy\+\_\+initial\+\_\+}}
+\begin{DoxyCompactList}\small\item\em Stores the convolution $j_{\parallel,q} \star m_{y,q}$ at the initial time. \end{DoxyCompactList}\item 
+std\+::vector$<$ double $>$ \mbox{\hyperlink{classsampler_a0a5a33e95e34fe3111fa07ab4e7a7f0a}{chimxq\+\_\+}}
+\begin{DoxyCompactList}\small\item\em Stores the $\chi_{mx,q}$. \end{DoxyCompactList}\item 
+std\+::vector$<$ double $>$ \mbox{\hyperlink{classsampler_a64e7fa505409604ac3eb4e670a419e0b}{chimyq\+\_\+}}
+\begin{DoxyCompactList}\small\item\em Stores the $\chi_{my,q}$. \end{DoxyCompactList}\item 
+std\+::vector$<$ double $>$ \mbox{\hyperlink{classsampler_a3391baeb03bdd53708c381e2d09d6a0a}{chimparq\+\_\+}}
+\begin{DoxyCompactList}\small\item\em Stores the $\chi_{m\parallel,q}$. \end{DoxyCompactList}\item 
+std\+::vector$<$ double $>$ \mbox{\hyperlink{classsampler_af5480ea4933b1f6904deee8f64be0fe3}{chimperpq\+\_\+}}
+\begin{DoxyCompactList}\small\item\em Stores the $\chi_{m\perp,q}$. \end{DoxyCompactList}\item 
+std\+::vector$<$ double $>$ \mbox{\hyperlink{classsampler_a645272906d589474097d91aa26860cde}{chieq\+\_\+}}
+\begin{DoxyCompactList}\small\item\em Stores the $\chi_{e,q}$. \end{DoxyCompactList}\item 
+std\+::vector$<$ double $>$ \mbox{\hyperlink{classsampler_a86dc7d420500afc1824c33e21a79e617}{chiwq\+\_\+}}
+\begin{DoxyCompactList}\small\item\em Stores the $\chi_{w,q}$. \end{DoxyCompactList}\item 
+std\+::vector$<$ double $>$ \mbox{\hyperlink{classsampler_a7b0e1ab7dbdde411e75be0a5d06d0742}{chiteq\+\_\+}}
+\begin{DoxyCompactList}\small\item\em Stores the $\chi_{\theta,q}$. \end{DoxyCompactList}\item 
+std\+::vector$<$ double $>$ \mbox{\hyperlink{classsampler_a97988b59b48cc571b102ef79bf55856a}{chirq\+\_\+}}
+\begin{DoxyCompactList}\small\item\em Stores the $\chi_{\rho,q}$. \end{DoxyCompactList}\item 
+std\+::vector$<$ double $>$ \mbox{\hyperlink{classsampler_aef7c18f11ae458aa20b6418ae83f86e1}{chijparq\+\_\+}}
+\begin{DoxyCompactList}\small\item\em Stores the $\chi_{jL,q}$. \end{DoxyCompactList}\item 
+std\+::vector$<$ double $>$ \mbox{\hyperlink{classsampler_ace03a1e2813db3260fe535f1e385d1d4}{chijperpq\+\_\+}}
+\begin{DoxyCompactList}\small\item\em Stores the $\chi_{jT,q}$. \end{DoxyCompactList}\item 
+std\+::vector$<$ double $>$ \mbox{\hyperlink{classsampler_ae4fb962251398d70cedb23f367e615c7}{chilq\+\_\+}}
+\begin{DoxyCompactList}\small\item\em Stores the $\chi_{l,q}$. \end{DoxyCompactList}\item 
+std\+::vector$<$ std\+::complex$<$ double $>$ $>$ \mbox{\hyperlink{classsampler_a97788a76494a86641eed71330a9b3c64}{SCFq\+\_\+xy\+\_\+}}
+\begin{DoxyCompactList}\small\item\em Stores the $\langle m_{x,q}^* m_{y,q} \rangle$ static correlation. \end{DoxyCompactList}\item 
+std\+::vector$<$ std\+::complex$<$ double $>$ $>$ \mbox{\hyperlink{classsampler_aa06ea55ae81ee45082609cca08fd3078}{SCFq\+\_\+xw\+\_\+}}
+\begin{DoxyCompactList}\small\item\em Stores the $\langle m_{x,q}^* w_{q} \rangle$ static correlation. \end{DoxyCompactList}\item 
+std\+::vector$<$ std\+::complex$<$ double $>$ $>$ \mbox{\hyperlink{classsampler_ab35e3e88226c9157ec7df763b3f96b44}{SCFq\+\_\+xe\+\_\+}}
+\begin{DoxyCompactList}\small\item\em Stores the $\langle m_{x,q}^* e_{q} \rangle$ static correlation. \end{DoxyCompactList}\item 
+std\+::vector$<$ std\+::complex$<$ double $>$ $>$ \mbox{\hyperlink{classsampler_a25ae2e2f61ebb11d6593eda32a176870}{SCFq\+\_\+yw\+\_\+}}
+\begin{DoxyCompactList}\small\item\em Stores the $\langle m_{y,q}^* w_{q} \rangle$ static correlation. \end{DoxyCompactList}\item 
+std\+::vector$<$ std\+::complex$<$ double $>$ $>$ \mbox{\hyperlink{classsampler_ae3fb1f54797c42922a4839f3b0776a8e}{SCFq\+\_\+ye\+\_\+}}
+\begin{DoxyCompactList}\small\item\em Stores the $\langle m_{y,q}^* e_{q} \rangle$ static correlation. \end{DoxyCompactList}\item 
+std\+::vector$<$ std\+::complex$<$ double $>$ $>$ \mbox{\hyperlink{classsampler_a20ff76746ffa045d8616369163b14b11}{SCFq\+\_\+we\+\_\+}}
+\begin{DoxyCompactList}\small\item\em Stores the $\langle w_{q}^* e_{q} \rangle$ static correlation. \end{DoxyCompactList}\item 
+std\+::vector$<$ std\+::complex$<$ double $>$ $>$ \mbox{\hyperlink{classsampler_a4b8004e6428d298983c99afc1c46348a}{SCFq\+\_\+mparmperp\+\_\+}}
+\begin{DoxyCompactList}\small\item\em Stores the $\langle m_{\parallel,q}^* m_{\perp,q} \rangle$ static correlation. \end{DoxyCompactList}\item 
+std\+::vector$<$ std\+::complex$<$ double $>$ $>$ \mbox{\hyperlink{classsampler_a4b86e1da9bdbc46d0fab10fb457f0fbf}{SCFq\+\_\+re\+\_\+}}
+\begin{DoxyCompactList}\small\item\em Stores the $\langle r_{q}^* e_{q} \rangle$ static correlation. \end{DoxyCompactList}\item 
+std\+::vector$<$ double $>$ \mbox{\hyperlink{classsampler_a26eb6a6a786b118661b323571dc258d4}{SCF\+\_\+\+Spin\+\_\+}}
+\begin{DoxyCompactList}\small\item\em Stores the static spin correlation function. \end{DoxyCompactList}\item 
+std\+::vector$<$ double $>$ \mbox{\hyperlink{classsampler_a5ce627306eb6dc01bdd51a6a917a9504}{SCF\+\_\+\+Spin\+\_\+par\+\_\+}}
+\begin{DoxyCompactList}\small\item\em Stores the static spin correlation function. \end{DoxyCompactList}\item 
+std\+::vector$<$ double $>$ \mbox{\hyperlink{classsampler_a2ebaa096003c1b84197803a329710c72}{SCF\+\_\+\+Spin\+\_\+perp\+\_\+}}
+\begin{DoxyCompactList}\small\item\em Stores the static spin correlation function. \end{DoxyCompactList}\item 
+std\+::vector$<$ double $>$ \mbox{\hyperlink{classsampler_ae7da09b2dd4e5a4c304ea0385ab2b205}{SCF\+\_\+anglediff\+\_\+}}
+\begin{DoxyCompactList}\small\item\em Stores the static angle difference correlation function. \end{DoxyCompactList}\item 
+std\+::vector$<$ double $>$ \mbox{\hyperlink{classsampler_a851270aff98ee55d7cb0648d8677b003}{SCF\+\_\+\+W\+\_\+}}
+\begin{DoxyCompactList}\small\item\em Stores the static spin momentum correlation function. \end{DoxyCompactList}\item 
+std\+::vector$<$ double $>$ \mbox{\hyperlink{classsampler_a6552656d06305d39ee7066eb09c0604d}{SCF\+\_\+\+P\+\_\+}}
+\begin{DoxyCompactList}\small\item\em Stores the static linear momentum correlation function. \end{DoxyCompactList}\item 
+std\+::vector$<$ double $>$ \mbox{\hyperlink{classsampler_a66933eda2e1c5b5b647bfc31b699db65}{SCF\+\_\+g\+\_\+}}
+\begin{DoxyCompactList}\small\item\em Stores the pair distribution function. \end{DoxyCompactList}\item 
+std\+::vector$<$ double $>$ \mbox{\hyperlink{classsampler_a1b4c841779464a4c4290a95eff0d2961}{SCF\+\_\+\+E\+\_\+}}
+\begin{DoxyCompactList}\small\item\em Stores the static total energy correlation function. \end{DoxyCompactList}\item 
+std\+::vector$<$ double $>$ \mbox{\hyperlink{classsampler_a859c7292cf02ddf5fe643c7af93dc8c7}{SCF\+\_\+\+Ekin\+\_\+}}
+\begin{DoxyCompactList}\small\item\em Stores the static kinetic energy correlation function. \end{DoxyCompactList}\item 
+std\+::vector$<$ double $>$ \mbox{\hyperlink{classsampler_adcf071fd8d890b74ab656d042eaea54f}{SCF\+\_\+\+Eint\+\_\+}}
+\begin{DoxyCompactList}\small\item\em Stores the static interaction energy correlation function. \end{DoxyCompactList}\item 
+std\+::vector$<$ double $>$ \mbox{\hyperlink{classsampler_ad67c3c6fa2a1836ff8cd6cb7a68fa501}{ACF\+\_\+\+Spin\+\_\+}}
+\begin{DoxyCompactList}\small\item\em Stores the spin autocorrelation function. \end{DoxyCompactList}\item 
+std\+::vector$<$ double $>$ \mbox{\hyperlink{classsampler_af83f06e58c50279ef023e205c88887f0}{ACF\+\_\+anglediff\+\_\+}}
+\begin{DoxyCompactList}\small\item\em Stores the angle difference autocorrelation function. \end{DoxyCompactList}\item 
+std\+::vector$<$ double $>$ \mbox{\hyperlink{classsampler_a50299b4aa1bbac9c33a33ba38994191c}{ACF\+\_\+q0\+\_\+\+M\+\_\+}}
+\begin{DoxyCompactList}\small\item\em Stores the magnetization autocorrelation function (q=0 limit) \end{DoxyCompactList}\item 
+std\+::vector$<$ double $>$ \mbox{\hyperlink{classsampler_aed40e11ce94cec240e0c5e708a6f9e72}{ACF\+\_\+q0\+\_\+abs\+M\+\_\+}}
+\begin{DoxyCompactList}\small\item\em Stores the autocorrelation function of the absolute magnetization (q=0 limit), basically the limit q=0 for mparq. \end{DoxyCompactList}\item 
+std\+::vector$<$ double $>$ \mbox{\hyperlink{classsampler_a3f64af908309c0176ab0598728c85549}{ACF\+\_\+\+Sx\+\_\+}}
+\begin{DoxyCompactList}\small\item\em Stores the spin autocorrelation function in x direction. \end{DoxyCompactList}\item 
+std\+::vector$<$ double $>$ \mbox{\hyperlink{classsampler_a3abcc88fbb56f6397fa898459e68a090}{ACF\+\_\+\+Sy\+\_\+}}
+\begin{DoxyCompactList}\small\item\em Stores the spin autocorrelation function in y direction. \end{DoxyCompactList}\item 
+std\+::vector$<$ double $>$ \mbox{\hyperlink{classsampler_ad3366907da3ae0cc213ef71ad3c8f973}{ACF\+\_\+\+W\+\_\+}}
+\begin{DoxyCompactList}\small\item\em Stores the omega autocorrelation function in y direction. \end{DoxyCompactList}\item 
+std\+::vector$<$ double $>$ \mbox{\hyperlink{classsampler_acaccfeb491d54d8afab3d860b316c9bd}{ACF\+\_\+\+E\+\_\+}}
+\begin{DoxyCompactList}\small\item\em Stores the energy autocorrelation function in y direction. \end{DoxyCompactList}\item 
+std\+::vector$<$ double $>$ \mbox{\hyperlink{classsampler_a25ff4a55d676e6c762ee13b7c7d3c7ce}{ACF\+\_\+\+Eint\+\_\+}}
+\begin{DoxyCompactList}\small\item\em Stores the interaction energy autocorrelation function in y direction. \end{DoxyCompactList}\item 
+std\+::vector$<$ double $>$ \mbox{\hyperlink{classsampler_a569bc6a981d555ad275ab279fcc6d78d}{ACF\+\_\+\+Ekin\+\_\+}}
+\begin{DoxyCompactList}\small\item\em Stores the kinetic energy autocorrelation function in y direction. \end{DoxyCompactList}\item 
+std\+::vector$<$ double $>$ \mbox{\hyperlink{classsampler_af2a2a8b7aa3eeeba2078d1470fb1eabf}{ACF\+\_\+\+P\+\_\+}}
+\begin{DoxyCompactList}\small\item\em Stores the momentum autocorrelation function in y direction. \end{DoxyCompactList}\item 
+std\+::vector$<$ double $>$ \mbox{\hyperlink{classsampler_abff67161c65b01585316c61910177301}{ACF\+\_\+\+Ppar\+\_\+}}
+\begin{DoxyCompactList}\small\item\em Stores the momentum autocorrelation function parallel to the magnetization. \end{DoxyCompactList}\item 
+std\+::vector$<$ double $>$ \mbox{\hyperlink{classsampler_a029249d995d0751dc35738616a8b58ef}{ACF\+\_\+\+Pperp\+\_\+}}
+\begin{DoxyCompactList}\small\item\em Stores the spin autocorrelation function perpendicular to the magnetization. \end{DoxyCompactList}\item 
+std\+::vector$<$ double $>$ \mbox{\hyperlink{classsampler_acff7dd37dd121cf8410f53a057de2a18}{ACF\+\_\+\+MSD\+\_\+}}
+\begin{DoxyCompactList}\small\item\em Stores the positional mean squared displacement. \end{DoxyCompactList}\item 
+std\+::vector$<$ double $>$ \mbox{\hyperlink{classsampler_ab0c67327779a01158975e082719e8ed8}{ACF\+\_\+ang\+\_\+\+MSD\+\_\+}}
+\begin{DoxyCompactList}\small\item\em Stores the angular mean squared displacement. \end{DoxyCompactList}\item 
+std\+::vector$<$ double $>$ \mbox{\hyperlink{classsampler_a84875fee6d287f1beb7c938742b185db}{MSD\+\_\+aux\+\_\+}}
+\begin{DoxyCompactList}\small\item\em Auxiliary MSD storage. Stores all distances and angles (depending on group type) that the particles have travelled. \end{DoxyCompactList}\item 
+std\+::vector$<$ std\+::complex$<$ double $>$ $>$ \mbox{\hyperlink{classsampler_a504640b5b626290f315727358b9203c0}{gxx\+\_\+}}
+\begin{DoxyCompactList}\small\item\em Stores the $C_{xx}(q,t) = g_{x,x,q}(t) = \langle m_{x,q}^*m_{x,q}(t)\rangle$ (time correlation function) \end{DoxyCompactList}\item 
+std\+::vector$<$ std\+::complex$<$ double $>$ $>$ \mbox{\hyperlink{classsampler_a91b52e2093c19345d483c2e35cff20b9}{gxy\+\_\+}}
+\begin{DoxyCompactList}\small\item\em Stores the $C_{xy}(q,t) = g_{x,y,q}(t) = \langle m_{x,q}^*m_{y,q}(t)\rangle$ (time correlation function) \end{DoxyCompactList}\item 
+std\+::vector$<$ std\+::complex$<$ double $>$ $>$ \mbox{\hyperlink{classsampler_ab8f3e57b8124b10e85fcd8c092afc647}{gxw\+\_\+}}
+\begin{DoxyCompactList}\small\item\em Stores the $C_{xw}(q,t) = g_{x,w,q}(t) = \langle m_{x,q}^*w_{q}(t)\rangle$ (time correlation function) \end{DoxyCompactList}\item 
+std\+::vector$<$ std\+::complex$<$ double $>$ $>$ \mbox{\hyperlink{classsampler_a55e8a1b7002c09b9e4d9298ace4aa72a}{gxe\+\_\+}}
+\begin{DoxyCompactList}\small\item\em Stores the $C_{we}(q,t) = g_{x,e,q}(t) = \langle m_{x,q}^*e_{q}(t)\rangle$ (time correlation function) \end{DoxyCompactList}\item 
+std\+::vector$<$ std\+::complex$<$ double $>$ $>$ \mbox{\hyperlink{classsampler_a2503b2dcef719850c0f0f20c7987ae60}{gyy\+\_\+}}
+\begin{DoxyCompactList}\small\item\em Stores the $C_{yy}(q,t) = g_{y,y,q}(t) = \langle m_{y,q}^*m_{y,q}(t)\rangle$ (time correlation function) \end{DoxyCompactList}\item 
+std\+::vector$<$ std\+::complex$<$ double $>$ $>$ \mbox{\hyperlink{classsampler_a0c81f96da7addba0fbc9a4e10e01d40c}{gyw\+\_\+}}
+\begin{DoxyCompactList}\small\item\em Stores the $C_{yw}(q,t) = g_{y,w,q}(t) = \langle m_{y,q}^*w_{q}(t)\rangle$ (time correlation function) \end{DoxyCompactList}\item 
+std\+::vector$<$ std\+::complex$<$ double $>$ $>$ \mbox{\hyperlink{classsampler_a77bb37f5deaac37e819bf1920d73b89d}{gye\+\_\+}}
+\begin{DoxyCompactList}\small\item\em Stores the $C_{ye}(q,t) = g_{y,e,q}(t) = \langle m_{y,q}^*e_{q}(t)\rangle$ (time correlation function) \end{DoxyCompactList}\item 
+std\+::vector$<$ std\+::complex$<$ double $>$ $>$ \mbox{\hyperlink{classsampler_af4be59eb01296497a48ef8844f87ce75}{gww\+\_\+}}
+\begin{DoxyCompactList}\small\item\em Stores the $C_{ww}(q,t) = g_{w,w,q}(t) = \langle w_{q}^*w_{q}(t)\rangle$ (time correlation function) \end{DoxyCompactList}\item 
+std\+::vector$<$ std\+::complex$<$ double $>$ $>$ \mbox{\hyperlink{classsampler_a75dd9aab6ca5e825bad9525b9b2227ab}{gwe\+\_\+}}
+\begin{DoxyCompactList}\small\item\em Stores the $C_{we}(q,t) = g_{w,e,q}(t) = \langle w_{q}^*e_{q}(t)\rangle$ (time correlation function) \end{DoxyCompactList}\item 
+std\+::vector$<$ std\+::complex$<$ double $>$ $>$ \mbox{\hyperlink{classsampler_aa4eab19af38e2fa4983eceeb8f8b45a9}{gee\+\_\+}}
+\begin{DoxyCompactList}\small\item\em Stores the $C_{ee}(q,t) = g_{e,e,q}(t) = \langle e_{q}^*e_{q}(t)\rangle$ (time correlation function) \end{DoxyCompactList}\item 
+std\+::vector$<$ std\+::complex$<$ double $>$ $>$ \mbox{\hyperlink{classsampler_a9123442ff545ff36569f1011040cb8ea}{gmparmpar\+\_\+}}
+\begin{DoxyCompactList}\small\item\em Stores the $C_{m\parallel,m\parallel}(q,t) = g_{m\parallel,m\parallel,q}(t) = \langle m_{\parallel,q}^*m_{\parallel,q}(t)\rangle$ (time correlation function) \end{DoxyCompactList}\item 
+std\+::vector$<$ std\+::complex$<$ double $>$ $>$ \mbox{\hyperlink{classsampler_a7fc0c6adc02dcaca123f1b5ca5927986}{gmperpmperp\+\_\+}}
+\begin{DoxyCompactList}\small\item\em Stores the $C_{m\perp, m\perp}(q,t) = g_{m\perp,m\perp,q}(t) = \langle m_{\perp,q}^*m_{\perp,q}(t)\rangle$ (time correlation function) \end{DoxyCompactList}\item 
+std\+::vector$<$ std\+::complex$<$ double $>$ $>$ \mbox{\hyperlink{classsampler_a9d48225579dc89a6aff3b6ef62d00f27}{gmparmperp\+\_\+}}
+\begin{DoxyCompactList}\small\item\em Stores the $C_{m\parallel, m\perp}(q,t) = g_{m\parallel,m\perp,q}(t) = \langle m_{\perp,q}^*m_{\parallel,q}(t)\rangle$ (time correlation function) \end{DoxyCompactList}\item 
+std\+::vector$<$ std\+::complex$<$ double $>$ $>$ \mbox{\hyperlink{classsampler_a1da405a97d61172e9e071f59ae4992f0}{gre\+\_\+}}
+\begin{DoxyCompactList}\small\item\em Stores the $C_{\rho e}(q,t) = g_{r,e,q}(t) = \langle \rho_{q}^*e_{q}(t)\rangle$ (time correlation function) \end{DoxyCompactList}\item 
+std\+::vector$<$ std\+::complex$<$ double $>$ $>$ \mbox{\hyperlink{classsampler_a910a282f11574dd77da37e4226071a70}{grr\+\_\+}}
+\begin{DoxyCompactList}\small\item\em Stores the $C_{\rho \rho}(q,t) = g_{r,r,q}(t) = \langle \rho_{q}^*\rho_{q}(t)\rangle$ (time correlation function, intermediate scattering function) \end{DoxyCompactList}\item 
+std\+::vector$<$ std\+::complex$<$ double $>$ $>$ \mbox{\hyperlink{classsampler_a5d367a82b2267fa4210791c4a577a12d}{gjparjpar\+\_\+}}
+\begin{DoxyCompactList}\small\item\em Stores the $C_{jL,jL}(q,t) = g_{j\parallel,j\parallel,q}(t) = \langle j_{L,q}^*j_{L,q}(t)\rangle$ (time correlation function) \end{DoxyCompactList}\item 
+std\+::vector$<$ std\+::complex$<$ double $>$ $>$ \mbox{\hyperlink{classsampler_a42ab6dec5a7cc49613a278941425f5a4}{gjperpjperp\+\_\+}}
+\begin{DoxyCompactList}\small\item\em Stores the $C_{jT,jT}(q,t) = g_{j\perp,j\perp,q}(t) = \langle j_{T,q}^*j_{T,q}(t)\rangle$ (time correlation function) \end{DoxyCompactList}\item 
+std\+::vector$<$ std\+::complex$<$ double $>$ $>$ \mbox{\hyperlink{classsampler_ae17d7054ac3f0e0f48a3eec87f6f56d8}{gll\+\_\+}}
+\begin{DoxyCompactList}\small\item\em Stores the $C_{ll}(q,t) = g_{l,l,q}(t) = \langle l_{q}^*l_{q}(t)\rangle$ (time correlation function) \end{DoxyCompactList}\item 
+std\+::vector$<$ std\+::complex$<$ double $>$ $>$ \mbox{\hyperlink{classsampler_ad1fd75f4819874f885046cf85b9f084f}{gtt\+\_\+}}
+\begin{DoxyCompactList}\small\item\em Stores the $C_{\theta\theta}(q,t) = g_{\theta,\theta,q}(t) = \langle \theta_{q}^*\theta_{q}(t)\rangle$ (time correlation function) \end{DoxyCompactList}\item 
+std\+::vector$<$ double $>$ \mbox{\hyperlink{classsampler_acc94501a396846e96d6761e61d9a4e9c}{Trans\+Coeff\+\_\+\+J1\+\_\+}}
+\begin{DoxyCompactList}\small\item\em Transport Coefficient\+: $\langle J(r_{ij})\rangle$ (see old notes, not included in thesis) \end{DoxyCompactList}\item 
+std\+::vector$<$ double $>$ \mbox{\hyperlink{classsampler_a1072e441c213e4e7f235bc819e68fedd}{Trans\+Coeff\+\_\+\+J1\+\_\+cos1\+\_\+}}
+\begin{DoxyCompactList}\small\item\em Transport Coefficient\+: $\langle J(r_{ij}) cos(te_{ij})\rangle$ (see old notes, not included in thesis) \end{DoxyCompactList}\item 
+std\+::vector$<$ double $>$ \mbox{\hyperlink{classsampler_ae550e902c4305edc6d6ae6d47ac75717}{Trans\+Coeff\+\_\+\+J1\+\_\+cos2\+\_\+}}
+\begin{DoxyCompactList}\small\item\em Transport Coefficient\+: $\langle J(r_{ij}) cos^2(te_{ij})\rangle$ (see old notes, not included in thesis) \end{DoxyCompactList}\item 
+std\+::vector$<$ double $>$ \mbox{\hyperlink{classsampler_af04ecbd7d1c5725466602e82da3db39e}{Trans\+Coeff\+\_\+\+J1\+\_\+cos2\+\_\+r2\+\_\+}}
+\begin{DoxyCompactList}\small\item\em Transport Coefficient\+: $\langle J(r_{ij}) cos^2(te_{ij}) r_{ij}^2\rangle$ (see old notes, not included in thesis) \end{DoxyCompactList}\item 
+std\+::vector$<$ double $>$ \mbox{\hyperlink{classsampler_a52b1046b15eaba88c09f94d5aeb61267}{Trans\+Coeff\+\_\+\+J1\+\_\+cos1\+\_\+r2\+\_\+}}
+\begin{DoxyCompactList}\small\item\em Transport Coefficient\+: $\langle J(r_{ij}) cos(te_{ij}) r_{ij}^2\rangle$ (see old notes, not included in thesis) \end{DoxyCompactList}\item 
+std\+::vector$<$ double $>$ \mbox{\hyperlink{classsampler_a5325eba19bc64bb7d391771d8a1fc09d}{Trans\+Coeff\+\_\+\+J1\+\_\+sin1\+\_\+te\+\_\+}}
+\begin{DoxyCompactList}\small\item\em Transport Coefficient\+: $\langle J(r_{ij}) sin(te_{ij}) te_{ij}\rangle$ (see old notes, not included in thesis) \end{DoxyCompactList}\item 
+std\+::vector$<$ double $>$ \mbox{\hyperlink{classsampler_af44b8621b08241b689a9372e9974fd43}{Trans\+Coeff\+\_\+\+Up\+\_\+}}
+\begin{DoxyCompactList}\small\item\em Transport Coefficient\+: $\langle {\cal U}\textnormal{\textquotesingle}(r_{ij})\rangle$ (see old notes, not included in thesis) \end{DoxyCompactList}\item 
+std\+::vector$<$ double $>$ \mbox{\hyperlink{classsampler_a60167031f8d9dd5cf778e6819161ef68}{Trans\+Coeff\+\_\+\+Up\+\_\+rinv\+\_\+}}
+\begin{DoxyCompactList}\small\item\em Transport Coefficient\+: $\langle {\cal U}\textnormal{\textquotesingle}(r_{ij}) r_{ij}^{-1}\rangle$ (see old notes, not included in thesis) \end{DoxyCompactList}\item 
+std\+::vector$<$ double $>$ \mbox{\hyperlink{classsampler_a779088d02e62d55f79689b1c088b4ce2}{Trans\+Coeff\+\_\+\+Upp\+\_\+}}
+\begin{DoxyCompactList}\small\item\em Transport Coefficient\+: $\langle {\cal U}\textnormal{\textquotesingle}\textnormal{\textquotesingle}(r_{ij})\rangle$ (see old notes, not included in thesis) \end{DoxyCompactList}\item 
+std\+::vector$<$ double $>$ \mbox{\hyperlink{classsampler_a882c9e5cf5e29862023f2cf05bb45528}{Trans\+Coeff\+\_\+\+Up\+\_\+cos1\+\_\+}}
+\begin{DoxyCompactList}\small\item\em Transport Coefficient\+: $\langle {\cal U}\textnormal{\textquotesingle}(r_{ij}) cos(te_{ij})\rangle$ (see old notes, not included in thesis) \end{DoxyCompactList}\item 
+std\+::vector$<$ double $>$ \mbox{\hyperlink{classsampler_a0f6ee18b26f465d662db5ed44f72f38e}{Trans\+Coeff\+\_\+\+Up\+\_\+rinv\+\_\+cos1\+\_\+}}
+\begin{DoxyCompactList}\small\item\em Transport Coefficient\+: $\langle {\cal U}\textnormal{\textquotesingle}(r_{ij}) r_{ij}^{-1} cos(te_{ij})\rangle$ (see old notes, not included in thesis) \end{DoxyCompactList}\item 
+std\+::vector$<$ double $>$ \mbox{\hyperlink{classsampler_a04b461a370395e8766550823d898ea73}{Trans\+Coeff\+\_\+\+Upp\+\_\+cos1\+\_\+}}
+\begin{DoxyCompactList}\small\item\em Transport Coefficient\+: $\langle {\cal U}\textnormal{\textquotesingle}\textnormal{\textquotesingle}(r_{ij}) cos(te_{ij})\rangle$ (see old notes, not included in thesis) \end{DoxyCompactList}\item 
+std\+::vector$<$ double $>$ \mbox{\hyperlink{classsampler_a543e8ac23d18ee664f41e99c134196b1}{Trans\+Coeff\+\_\+cos1\+\_\+}}
+\begin{DoxyCompactList}\small\item\em Transport Coefficient\+: $\langle cos(te_{ij})\rangle$ (see old notes, not included in thesis) \end{DoxyCompactList}\item 
+std\+::vector$<$ double $>$ \mbox{\hyperlink{classsampler_a04daf1e89127123fc43373f16bfbaa12}{Trans\+Coeff\+\_\+\+Up\+\_\+rinv\+\_\+te2\+\_\+}}
+\begin{DoxyCompactList}\small\item\em Transport Coefficient\+: $\langle {\cal U}\textnormal{\textquotesingle}(r_{ij}) r_{ij}^{-1} te_{ij}^2\rangle$ (see old notes, not included in thesis) \end{DoxyCompactList}\item 
+std\+::vector$<$ double $>$ \mbox{\hyperlink{classsampler_ad6baaa4e9467c64ede0d6ee1bcad1b26}{Trans\+Coeff\+\_\+\+Upp\+\_\+te2\+\_\+}}
+\begin{DoxyCompactList}\small\item\em Transport Coefficient\+: $\langle {\cal U}\textnormal{\textquotesingle}\textnormal{\textquotesingle}(r_{ij}) te_{ij}^2\rangle$ (see old notes, not included in thesis) \end{DoxyCompactList}\item 
+std\+::vector$<$ double $>$ \mbox{\hyperlink{classsampler_a208888d9f733048d6af567c77889a531}{Trans\+Coeff\+\_\+times\+\_\+}}
+\begin{DoxyCompactList}\small\item\em Stores times used in calculation of transport coefficients. \end{DoxyCompactList}\item 
+std\+::vector$<$ \mbox{\hyperlink{classtopology_1_1_vector2d}{topology\+::\+Vector2d}} $>$ \mbox{\hyperlink{classsampler_aee73e05008380a3616173dee90d89c98}{tau\+\_\+}}
+\begin{DoxyCompactList}\small\item\em Stores momentum flux tau, which is the q to 0 limit of \$\textbackslash{}tau\textquotesingle{}\+\_\+q\$ in eq. (1.\+31b). Required for ZM transport Coefficients. (see old notes, not included in thesis) \end{DoxyCompactList}\item 
+std\+::vector$<$ \mbox{\hyperlink{classtopology_1_1_vector2d}{topology\+::\+Vector2d}} $>$ \mbox{\hyperlink{classsampler_a603fa86fe19c99e9e44805fbf686e8b9}{je\+\_\+}}
+\begin{DoxyCompactList}\small\item\em Stores energy flux je, which is the q to 0 limit of \$\textbackslash{}j\textquotesingle{}\texorpdfstring{$^\wedge$}{\string^}e\+\_\+q\$ in eq. (1.\+31a). Required for ZM transport Coefficients. (see old notes, not included in thesis) \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classtopology_1_1_vector2d}{topology\+::\+Vector2d}} \mbox{\hyperlink{classsampler_a936fecf07c0d76f6a81324d7f28ebe95}{tau\+\_\+initial\+\_\+}}
+\begin{DoxyCompactList}\small\item\em Stores initial momentum flux tau (see old notes, not included in thesis) \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classtopology_1_1_vector2d}{topology\+::\+Vector2d}} \mbox{\hyperlink{classsampler_acb7468c873b78dec611fe52017e73d46}{je\+\_\+initial\+\_\+}}
+\begin{DoxyCompactList}\small\item\em Stores initial energy flux tau (see old notes, not included in thesis) \end{DoxyCompactList}\item 
+std\+::vector$<$ double $>$ \mbox{\hyperlink{classsampler_a891184b1e0f3c6e075b69cd53a05c297}{kappa\+\_\+\+Trans\+Coeff\+\_\+}}
+\begin{DoxyCompactList}\small\item\em Stores kappa transport coefficient, see Bissinger notes (sec. 1.\+2.\+7), (see old notes, not included in thesis) \end{DoxyCompactList}\item 
+std\+::vector$<$ double $>$ \mbox{\hyperlink{classsampler_a49949ca07ce5ef77a31a27253833fc40}{Gamma\+\_\+\+Trans\+Coeff\+\_\+}}
+\begin{DoxyCompactList}\small\item\em Stores Gamma transport coefficient, see Bissinger notes (sec. 1.\+2.\+7), (see old notes, not included in thesis) \end{DoxyCompactList}\item 
+std\+::vector$<$ double $>$ \mbox{\hyperlink{classsampler_a13b7e5065bdec23e20b68f0bd13cad6e}{kappa\+\_\+\+Trans\+Coeff\+\_\+new\+\_\+}}
+\begin{DoxyCompactList}\small\item\em Stores different kappa transport coefficient, see Bissinger notes (sec. 1.\+2.\+7), (see old notes, not included in thesis) \end{DoxyCompactList}\item 
+std\+::vector$<$ double $>$ \mbox{\hyperlink{classsampler_a6dda307cfa0f5d391ae5084ce0d0f244}{Gamma\+\_\+\+Trans\+Coeff\+\_\+new\+\_\+}}
+\begin{DoxyCompactList}\small\item\em Stores different Gamma transport coefficient, see Bissinger notes (sec. 1.\+2.\+7), (see old notes, not included in thesis) \end{DoxyCompactList}\item 
+std\+::vector$<$ std\+::complex$<$ double $>$ $>$ \mbox{\hyperlink{classsampler_a54314aa6f6d70ab8aaa654b64ca47b96}{K\+\_\+convol\+\_\+wmx\+\_\+}}
+\begin{DoxyCompactList}\small\item\em Stores the memory kernel of the convolution $w_q \star m_{x,q}$ with itself. \end{DoxyCompactList}\item 
+std\+::vector$<$ std\+::complex$<$ double $>$ $>$ \mbox{\hyperlink{classsampler_a2e70747896ccc5e76c81dd18b468a080}{K\+\_\+convol\+\_\+wmy\+\_\+}}
+\begin{DoxyCompactList}\small\item\em Stores the memory kernel of the convolution $w_q \star m_{y,q}$ with itself. \end{DoxyCompactList}\item 
+std\+::vector$<$ std\+::complex$<$ double $>$ $>$ \mbox{\hyperlink{classsampler_a9ac663ea3865ac484f9a9ffc0447bd8c}{K\+\_\+convol\+\_\+jmx\+\_\+}}
+\begin{DoxyCompactList}\small\item\em Stores the memory kernel of the convolution $j_{L,q} \star m_{x,q}$ with itself. \end{DoxyCompactList}\item 
+std\+::vector$<$ std\+::complex$<$ double $>$ $>$ \mbox{\hyperlink{classsampler_a406c48243f57b8c03761397b64abd18b}{K\+\_\+convol\+\_\+jmy\+\_\+}}
+\begin{DoxyCompactList}\small\item\em Stores the memory kernel of the convolution $j_{L,q} \star m_{y,q}$ with itself. \end{DoxyCompactList}\item 
+std\+::vector$<$ std\+::complex$<$ double $>$ $>$ \mbox{\hyperlink{classsampler_ae60897984748f02dbed22e80138dbf0a}{K\+\_\+convol\+\_\+wmx\+\_\+jmy\+\_\+}}
+\begin{DoxyCompactList}\small\item\em Stores the memory kernel of the convolution $w_q \star m_{x,q}$ with $j_{L,q} \star m_{y,q}$. \end{DoxyCompactList}\item 
+std\+::vector$<$ std\+::complex$<$ double $>$ $>$ \mbox{\hyperlink{classsampler_a8b6af90077289711f1aabe29389206e0}{K\+\_\+convol\+\_\+wmy\+\_\+jmx\+\_\+}}
+\begin{DoxyCompactList}\small\item\em Stores the memory kernel of the convolution $w_q \star mxy$ with $j_{L,q} \star m_{x,q}$. \end{DoxyCompactList}\item 
+std\+::vector$<$ std\+::complex$<$ double $>$ $>$ \mbox{\hyperlink{classsampler_a75dfaa34d2f2b2bd63091348031fd877}{K\+\_\+wmx\+\_\+}}
+\begin{DoxyCompactList}\small\item\em Stores the memory kernel of the quadratic form $w_q m_{x,q}$ with itself. \end{DoxyCompactList}\item 
+std\+::vector$<$ std\+::complex$<$ double $>$ $>$ \mbox{\hyperlink{classsampler_a465cc85f1776f8f9b2e60e1791960514}{K\+\_\+wmy\+\_\+}}
+\begin{DoxyCompactList}\small\item\em Stores the memory kernel of the quadratic form $w_q m_{y,q}$ with itself. \end{DoxyCompactList}\item 
+std\+::vector$<$ std\+::complex$<$ double $>$ $>$ \mbox{\hyperlink{classsampler_aa81560eff64a4fb7b62ed4b54bbac90d}{K\+\_\+jmx\+\_\+}}
+\begin{DoxyCompactList}\small\item\em Stores the memory kernel of the quadratic form $jqpar m_{x,q}$ with itself. \end{DoxyCompactList}\item 
+std\+::vector$<$ std\+::complex$<$ double $>$ $>$ \mbox{\hyperlink{classsampler_a8af9363ba6b61c5f3509c50f62fb9d88}{K\+\_\+jmy\+\_\+}}
+\begin{DoxyCompactList}\small\item\em Stores the memory kernel of the quadratic form $jqpar m_{y,q}$ with itself. \end{DoxyCompactList}\item 
+std\+::vector$<$ std\+::complex$<$ double $>$ $>$ \mbox{\hyperlink{classsampler_a9bc1e15f2bcea1274a789888d60e0427}{K\+\_\+wmx\+\_\+jmy\+\_\+}}
+\begin{DoxyCompactList}\small\item\em Stores the memory kernel of the quadratic form $w_q \star m_{x,q}$ with the quadratic form $j_{L,q} m_{y,q}$. \end{DoxyCompactList}\item 
+std\+::vector$<$ std\+::complex$<$ double $>$ $>$ \mbox{\hyperlink{classsampler_a9fe18d2da77e19ca1d5226b0651309ca}{K\+\_\+wmy\+\_\+jmx\+\_\+}}
+\begin{DoxyCompactList}\small\item\em Stores the memory kernel of the quadratic form $w_q \star mxy$ with the quadratic form $j_{L,q} m_{x,q}$. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classsampler_a6376dccb32112ee2dd232a23f0824a74}{store\+\_\+static\+\_\+}} = 0
+\begin{DoxyCompactList}\small\item\em Decides whether or not static quantities are calculated. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classsampler_aba7d6e15745d06eaac4a839c4b0dea51}{store\+\_\+vortices\+\_\+}} = 0
+\begin{DoxyCompactList}\small\item\em Decides whether or not vortices\+\_\+ is calculated. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classsampler_a9aa018152741403bcf1d0977a325ed19}{store\+\_\+mxq\+\_\+}} = 0
+\begin{DoxyCompactList}\small\item\em Decides whether or not $m_{x,q}$ is calculated. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classsampler_a33670a88dd7b7fdc8e0d48e16a4cbb8e}{store\+\_\+myq\+\_\+}} = 0
+\begin{DoxyCompactList}\small\item\em Decides whether or not $m_{y,q}$ is calculated. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classsampler_a797bc95ef57846a49e1ded213d72aa75}{store\+\_\+eq\+\_\+}} = 0
+\begin{DoxyCompactList}\small\item\em Decides whether or not $e_q$ is calculated. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classsampler_afed6f7a60eb25931d6a9ca9866257ed1}{store\+\_\+wq\+\_\+}} = 0
+\begin{DoxyCompactList}\small\item\em Decides whether or not $w_q$ is calculated. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classsampler_ae1731db6b72fea3e61bb68c9c3596a34}{store\+\_\+rq\+\_\+}} = 0
+\begin{DoxyCompactList}\small\item\em Decides whether or not $\rho_q$ is calculated. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classsampler_a578f249613f387900ae330765ada6407}{store\+\_\+jparq\+\_\+}} = 0
+\begin{DoxyCompactList}\small\item\em Decides whether or not $j_{L,q}$ is calculated. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classsampler_a56a92dc6729df7723f28427a6d1f63fa}{store\+\_\+jperpq\+\_\+}} = 0
+\begin{DoxyCompactList}\small\item\em Decides whether or not $j_{T,q}$ is calculated. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classsampler_add986b085398b6203ae7836d903d5b7f}{store\+\_\+lq\+\_\+}} = 0
+\begin{DoxyCompactList}\small\item\em Decides whether or not $l_q$ is calculated. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classsampler_a36571d840054bf6369ac19de4426f14c}{store\+\_\+teq\+\_\+}} = 0
+\begin{DoxyCompactList}\small\item\em Decides whether or not $\theta_q$ is calculated. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classsampler_a8fa1e6b03d01e5a9b49e21c7d8e713e2}{store\+\_\+\+SCF\+\_\+}} = 0
+\begin{DoxyCompactList}\small\item\em Decides whether or not the static correlation functions are calculated. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classsampler_a0864709a4ef11d45dbff0c5734c53aa4}{store\+\_\+\+TCF\+\_\+}} = 0
+\begin{DoxyCompactList}\small\item\em Decides whether or not the time correlation functions (autocorrelations and so forth) are calculated. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classsampler_aa6a167fa42b37c36d7cf0f3363ad80f3}{refresh\+\_\+q\+\_\+}} = 0
+\begin{DoxyCompactList}\small\item\em Decides whether or not to choose new random q values for each sampling. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classsampler_ac1d6c3e94e227dc922e68480ddb1b19b}{store\+\_\+\+Trans\+Coeff\+\_\+}} = 0
+\begin{DoxyCompactList}\small\item\em Decides whether or not the transport coefficients are calculated. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classsampler_a5f67ee394fee3a4131fc300764bf54d3}{store\+\_\+\+Memory\+Kernels\+\_\+}} = 0
+\begin{DoxyCompactList}\small\item\em Decides whether or not the memory kernels (MCT) are calculated. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classsampler_a5326c68a7fe18e4492476b786c2f4c05}{print\+\_\+snapshots\+\_\+}} = 0
+\begin{DoxyCompactList}\small\item\em Decides whether trajectories should be sampled. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Stores and handles all data sampling performed during a run or in a later diagnostic. 
+
+Has a wide variety of quantities that may be of physical interest during the run. Can compute these quantities when called upon and stores them in vecotrs. Most of these vectors can get time averaged at the end of the run.
+
+All results are printed in matlab-\/readable form and can be further processed with matlab code.
+
+TODO\+: Alternate output than matlab, ideally binary or CSV.
+
+\begin{DoxyDate}{Date}
+Created on 2020-\/01-\/20
+\end{DoxyDate}
+\begin{DoxyAuthor}{Author}
+Thomas Bissinger 
+\end{DoxyAuthor}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classsampler_aa1bbeea976b4e825adc47279b9b352a2}\label{classsampler_aa1bbeea976b4e825adc47279b9b352a2} 
+\index{sampler@{sampler}!sampler@{sampler}}
+\index{sampler@{sampler}!sampler@{sampler}}
+\doxysubsubsection{\texorpdfstring{sampler()}{sampler()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily sampler\+::sampler (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Empty constructor. 
+
+\Hypertarget{classsampler_ade7b5b63f4c0f22150df32321994586b}\label{classsampler_ade7b5b63f4c0f22150df32321994586b} 
+\index{sampler@{sampler}!sampler@{sampler}}
+\index{sampler@{sampler}!sampler@{sampler}}
+\doxysubsubsection{\texorpdfstring{sampler()}{sampler()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily sampler\+::sampler (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classparameters}{parameters}}}]{par }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Constructor. Assigns par\+\_\+ to par. 
+
+\Hypertarget{classsampler_a4a8e4c05b80ab3547f403f9aa35772bc}\label{classsampler_a4a8e4c05b80ab3547f403f9aa35772bc} 
+\index{sampler@{sampler}!sampler@{sampler}}
+\index{sampler@{sampler}!sampler@{sampler}}
+\doxysubsubsection{\texorpdfstring{sampler()}{sampler()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily sampler\+::sampler (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classparameters}{parameters}}}]{par,  }\item[{std\+::vector$<$ \mbox{\hyperlink{classtopology_1_1_vector2d}{topology\+::\+Vector2d}} $>$}]{qvals }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Constructor. Assigns par\+\_\+ to par and qvals\+\_\+ to qvals. 
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classsampler_a191a27283279b0180718828d1cdaba6f}\label{classsampler_a191a27283279b0180718828d1cdaba6f} 
+\index{sampler@{sampler}!all\_switches\_off@{all\_switches\_off}}
+\index{all\_switches\_off@{all\_switches\_off}!sampler@{sampler}}
+\doxysubsubsection{\texorpdfstring{all\_switches\_off()}{all\_switches\_off()}}
+{\footnotesize\ttfamily void sampler\+::all\+\_\+switches\+\_\+off (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Turns all switches off. 
+
+\Hypertarget{classsampler_a874293c54a88be45095de5a3bc90d54a}\label{classsampler_a874293c54a88be45095de5a3bc90d54a} 
+\index{sampler@{sampler}!all\_switches\_on@{all\_switches\_on}}
+\index{all\_switches\_on@{all\_switches\_on}!sampler@{sampler}}
+\doxysubsubsection{\texorpdfstring{all\_switches\_on()}{all\_switches\_on()}}
+{\footnotesize\ttfamily void sampler\+::all\+\_\+switches\+\_\+on (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Turns all switches on. 
+
+\Hypertarget{classsampler_a10df72744327c486d3368eba20c9921c}\label{classsampler_a10df72744327c486d3368eba20c9921c} 
+\index{sampler@{sampler}!average@{average}}
+\index{average@{average}!sampler@{sampler}}
+\doxysubsubsection{\texorpdfstring{average()}{average()}}
+{\footnotesize\ttfamily void sampler\+::average (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+appends averages to the last entry of each nonempty sampling vector 
+
+\Hypertarget{classsampler_a115d3f2d721ee28c3bd3fa7152284b33}\label{classsampler_a115d3f2d721ee28c3bd3fa7152284b33} 
+\index{sampler@{sampler}!bin\_qvals\_to\_q@{bin\_qvals\_to\_q}}
+\index{bin\_qvals\_to\_q@{bin\_qvals\_to\_q}!sampler@{sampler}}
+\doxysubsubsection{\texorpdfstring{bin\_qvals\_to\_q()}{bin\_qvals\_to\_q()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily std\+::vector$<$ double $>$ sampler\+::bin\+\_\+qvals\+\_\+to\+\_\+q (\begin{DoxyParamCaption}\item[{std\+::vector$<$ double $>$}]{vals }\end{DoxyParamCaption}) const}
+
+
+
+Sorts the qvals at which correlations were computed into a bin (double input) 
+
+\Hypertarget{classsampler_afcd41c2f4dc623f43c90e6f18c5c8fd3}\label{classsampler_afcd41c2f4dc623f43c90e6f18c5c8fd3} 
+\index{sampler@{sampler}!bin\_qvals\_to\_q@{bin\_qvals\_to\_q}}
+\index{bin\_qvals\_to\_q@{bin\_qvals\_to\_q}!sampler@{sampler}}
+\doxysubsubsection{\texorpdfstring{bin\_qvals\_to\_q()}{bin\_qvals\_to\_q()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily std\+::vector$<$ std\+::complex$<$ double $>$ $>$ sampler\+::bin\+\_\+qvals\+\_\+to\+\_\+q (\begin{DoxyParamCaption}\item[{std\+::vector$<$ std\+::complex$<$ double $>$ $>$}]{vals }\end{DoxyParamCaption}) const}
+
+
+
+Sorts the qvals at which correlations were computed into a bin (complex input) 
+
+\Hypertarget{classsampler_a873aace4fd391e8d28a9bd62e3c51671}\label{classsampler_a873aace4fd391e8d28a9bd62e3c51671} 
+\index{sampler@{sampler}!check\_on\_fly\_sampling@{check\_on\_fly\_sampling}}
+\index{check\_on\_fly\_sampling@{check\_on\_fly\_sampling}!sampler@{sampler}}
+\doxysubsubsection{\texorpdfstring{check\_on\_fly\_sampling()}{check\_on\_fly\_sampling()}}
+{\footnotesize\ttfamily void sampler\+::check\+\_\+on\+\_\+fly\+\_\+sampling (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Turns all switches off if on\+\_\+fly\+\_\+sampling is off. 
+
+\Hypertarget{classsampler_af81becd8c4f841612ae10c3ff9ac14ee}\label{classsampler_af81becd8c4f841612ae10c3ff9ac14ee} 
+\index{sampler@{sampler}!get\_last\_temperature@{get\_last\_temperature}}
+\index{get\_last\_temperature@{get\_last\_temperature}!sampler@{sampler}}
+\doxysubsubsection{\texorpdfstring{get\_last\_temperature()}{get\_last\_temperature()}}
+{\footnotesize\ttfamily double sampler\+::get\+\_\+last\+\_\+temperature (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Returns last temperature that was calculated. Careful, no check if calcultaion was performed. 
+
+\Hypertarget{classsampler_afd13722acfa25d78403b71afbd151565}\label{classsampler_afd13722acfa25d78403b71afbd151565} 
+\index{sampler@{sampler}!get\_qvals@{get\_qvals}}
+\index{get\_qvals@{get\_qvals}!sampler@{sampler}}
+\doxysubsubsection{\texorpdfstring{get\_qvals()}{get\_qvals()}}
+{\footnotesize\ttfamily std\+::vector$<$ \mbox{\hyperlink{classtopology_1_1_vector2d}{topology\+::\+Vector2d}} $>$ sampler\+::get\+\_\+qvals (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classsampler_a874a381d14cef9684eea34495b8818e6}\label{classsampler_a874a381d14cef9684eea34495b8818e6} 
+\index{sampler@{sampler}!get\_switches@{get\_switches}}
+\index{get\_switches@{get\_switches}!sampler@{sampler}}
+\doxysubsubsection{\texorpdfstring{get\_switches()}{get\_switches()}}
+{\footnotesize\ttfamily std\+::vector$<$ bool $>$ sampler\+::get\+\_\+switches (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Returns vector of sample switches. Is for checking. 
+
+\Hypertarget{classsampler_a9407ede6f388b4f5c0d6a7782fbb59e3}\label{classsampler_a9407ede6f388b4f5c0d6a7782fbb59e3} 
+\index{sampler@{sampler}!print\_averages\_matlab@{print\_averages\_matlab}}
+\index{print\_averages\_matlab@{print\_averages\_matlab}!sampler@{sampler}}
+\doxysubsubsection{\texorpdfstring{print\_averages\_matlab()}{print\_averages\_matlab()}}
+{\footnotesize\ttfamily void sampler\+::print\+\_\+averages\+\_\+matlab (\begin{DoxyParamCaption}\item[{std\+::ofstream \&}]{outfile }\end{DoxyParamCaption})}
+
+
+
+Prints averages in a format that can be directly read in from matlab. 
+
+\Hypertarget{classsampler_a76d501041c8615678b0a4af85413ee18}\label{classsampler_a76d501041c8615678b0a4af85413ee18} 
+\index{sampler@{sampler}!print\_matlab@{print\_matlab}}
+\index{print\_matlab@{print\_matlab}!sampler@{sampler}}
+\doxysubsubsection{\texorpdfstring{print\_matlab()}{print\_matlab()}}
+{\footnotesize\ttfamily void sampler\+::print\+\_\+matlab (\begin{DoxyParamCaption}\item[{std\+::ofstream \&}]{outfile }\end{DoxyParamCaption})}
+
+
+
+Prints in a format that can be directly read in from matlab. 
+
+\Hypertarget{classsampler_a639df19947fddc57758b447da2b2927f}\label{classsampler_a639df19947fddc57758b447da2b2927f} 
+\index{sampler@{sampler}!print\_snapshots@{print\_snapshots}}
+\index{print\_snapshots@{print\_snapshots}!sampler@{sampler}}
+\doxysubsubsection{\texorpdfstring{print\_snapshots()}{print\_snapshots()}}
+{\footnotesize\ttfamily bool sampler\+::print\+\_\+snapshots (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classsampler_a11c1bd34c323e5e330ddaf7973b0fe61}\label{classsampler_a11c1bd34c323e5e330ddaf7973b0fe61} 
+\index{sampler@{sampler}!print\_snapshots\_off@{print\_snapshots\_off}}
+\index{print\_snapshots\_off@{print\_snapshots\_off}!sampler@{sampler}}
+\doxysubsubsection{\texorpdfstring{print\_snapshots\_off()}{print\_snapshots\_off()}}
+{\footnotesize\ttfamily void sampler\+::print\+\_\+snapshots\+\_\+off (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Turns print\+\_\+snaphshots\+\_\+ switch off. 
+
+\Hypertarget{classsampler_a84f84775c16c484f488632bc750d8b51}\label{classsampler_a84f84775c16c484f488632bc750d8b51} 
+\index{sampler@{sampler}!print\_snapshots\_on@{print\_snapshots\_on}}
+\index{print\_snapshots\_on@{print\_snapshots\_on}!sampler@{sampler}}
+\doxysubsubsection{\texorpdfstring{print\_snapshots\_on()}{print\_snapshots\_on()}}
+{\footnotesize\ttfamily void sampler\+::print\+\_\+snapshots\+\_\+on (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Turns print\+\_\+snaphshots\+\_\+ switch on. 
+
+\Hypertarget{classsampler_a43d77ee4c689b9e78c8d7a80a96a9c1f}\label{classsampler_a43d77ee4c689b9e78c8d7a80a96a9c1f} 
+\index{sampler@{sampler}!refresh\_qvals@{refresh\_qvals}}
+\index{refresh\_qvals@{refresh\_qvals}!sampler@{sampler}}
+\doxysubsubsection{\texorpdfstring{refresh\_qvals()}{refresh\_qvals()}}
+{\footnotesize\ttfamily void sampler\+::refresh\+\_\+qvals (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classtopology_1_1_vector2d}{topology\+::\+Vector2d}} \&}]{boxsize }\end{DoxyParamCaption})}
+
+
+
+Chooses new values for q (not recommended, relic of old implementation of qbin) 
+
+\Hypertarget{classsampler_ac01cec04619fa58a6c0abdb32bb3d3f8}\label{classsampler_ac01cec04619fa58a6c0abdb32bb3d3f8} 
+\index{sampler@{sampler}!sample@{sample}}
+\index{sample@{sample}!sampler@{sampler}}
+\doxysubsubsection{\texorpdfstring{sample()}{sample()}}
+{\footnotesize\ttfamily void sampler\+::sample (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classgroup}{group}} \&}]{G,  }\item[{const \mbox{\hyperlink{classgroup}{group}} \&}]{G\+\_\+new,  }\item[{double}]{t }\end{DoxyParamCaption})}
+
+
+
+Samples all static properties and dynamic properties according to switches. 
+
+\Hypertarget{classsampler_abdc8d87c40ad62687c64255626b12d28}\label{classsampler_abdc8d87c40ad62687c64255626b12d28} 
+\index{sampler@{sampler}!sample\_MSD@{sample\_MSD}}
+\index{sample\_MSD@{sample\_MSD}!sampler@{sampler}}
+\doxysubsubsection{\texorpdfstring{sample\_MSD()}{sample\_MSD()}}
+{\footnotesize\ttfamily void sampler\+::sample\+\_\+\+MSD (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ double $>$ \&}]{MSD }\end{DoxyParamCaption})}
+
+
+
+Samples MSD. 
+
+\Hypertarget{classsampler_a3972c3a46fde8d0884c0bcd08687e5b0}\label{classsampler_a3972c3a46fde8d0884c0bcd08687e5b0} 
+\index{sampler@{sampler}!sample\_snapshots@{sample\_snapshots}}
+\index{sample\_snapshots@{sample\_snapshots}!sampler@{sampler}}
+\doxysubsubsection{\texorpdfstring{sample\_snapshots()}{sample\_snapshots()}}
+{\footnotesize\ttfamily void sampler\+::sample\+\_\+snapshots (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classgroup}{group}} \&}]{G,  }\item[{const double}]{t,  }\item[{std\+::string}]{snapfile\+\_\+name,  }\item[{std\+::ofstream \&}]{outfile }\end{DoxyParamCaption})}
+
+
+
+Samples (i.\+e. stores) a snapshot to a file. 
+
+\Hypertarget{classsampler_aa846410b088cc9cf90071f1210cae78c}\label{classsampler_aa846410b088cc9cf90071f1210cae78c} 
+\index{sampler@{sampler}!sample\_static@{sample\_static}}
+\index{sample\_static@{sample\_static}!sampler@{sampler}}
+\doxysubsubsection{\texorpdfstring{sample\_static()}{sample\_static()}}
+{\footnotesize\ttfamily void sampler\+::sample\+\_\+static (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classgroup}{group}} \&}]{G,  }\item[{double}]{t }\end{DoxyParamCaption})}
+
+
+
+Samples all static properties that have an activated sample switch. 
+
+\Hypertarget{classsampler_a03e1035aaafccf4f0ff6fd93348a25a4}\label{classsampler_a03e1035aaafccf4f0ff6fd93348a25a4} 
+\index{sampler@{sampler}!sample\_TCF@{sample\_TCF}}
+\index{sample\_TCF@{sample\_TCF}!sampler@{sampler}}
+\doxysubsubsection{\texorpdfstring{sample\_TCF()}{sample\_TCF()}}
+{\footnotesize\ttfamily void sampler\+::sample\+\_\+\+TCF (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classgroup}{group}} \&}]{G\+\_\+initial,  }\item[{const \mbox{\hyperlink{classgroup}{group}} \&}]{G\+\_\+new,  }\item[{const double}]{t }\end{DoxyParamCaption})}
+
+
+
+Samples all time correlation functions that have an activated sample switch. 
+
+\Hypertarget{classsampler_a6dcbe1d08774a4a3603ada0346552f26}\label{classsampler_a6dcbe1d08774a4a3603ada0346552f26} 
+\index{sampler@{sampler}!set\_parameters@{set\_parameters}}
+\index{set\_parameters@{set\_parameters}!sampler@{sampler}}
+\doxysubsubsection{\texorpdfstring{set\_parameters()}{set\_parameters()}}
+{\footnotesize\ttfamily void sampler\+::set\+\_\+parameters (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classparameters}{parameters}}}]{par }\end{DoxyParamCaption})}
+
+
+
+Sets parameter member variable. 
+
+\Hypertarget{classsampler_a1af9bdcbbb5e532f75a4d29b8d7e1762}\label{classsampler_a1af9bdcbbb5e532f75a4d29b8d7e1762} 
+\index{sampler@{sampler}!set\_qvals@{set\_qvals}}
+\index{set\_qvals@{set\_qvals}!sampler@{sampler}}
+\doxysubsubsection{\texorpdfstring{set\_qvals()}{set\_qvals()}}
+{\footnotesize\ttfamily void sampler\+::set\+\_\+qvals (\begin{DoxyParamCaption}\item[{std\+::vector$<$ \mbox{\hyperlink{classtopology_1_1_vector2d}{topology\+::\+Vector2d}} $>$}]{qvals }\end{DoxyParamCaption})}
+
+
+
+Sets qvals (redundant) 
+
+\Hypertarget{classsampler_a706da605c056e6b9497393fa1a749748}\label{classsampler_a706da605c056e6b9497393fa1a749748} 
+\index{sampler@{sampler}!switches\_from\_file@{switches\_from\_file}}
+\index{switches\_from\_file@{switches\_from\_file}!sampler@{sampler}}
+\doxysubsubsection{\texorpdfstring{switches\_from\_file()}{switches\_from\_file()}}
+{\footnotesize\ttfamily void sampler\+::switches\+\_\+from\+\_\+file (\begin{DoxyParamCaption}\item[{std\+::ifstream \&}]{infile,  }\item[{std\+::ofstream \&}]{stdoutfile }\end{DoxyParamCaption})}
+
+
+
+Reads switches from file. 
+
+\Hypertarget{classsampler_a318d8fb6fc264eea38ea8efeddaabca2}\label{classsampler_a318d8fb6fc264eea38ea8efeddaabca2} 
+\index{sampler@{sampler}!switches\_from\_vector@{switches\_from\_vector}}
+\index{switches\_from\_vector@{switches\_from\_vector}!sampler@{sampler}}
+\doxysubsubsection{\texorpdfstring{switches\_from\_vector()}{switches\_from\_vector()}}
+{\footnotesize\ttfamily void sampler\+::switches\+\_\+from\+\_\+vector (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ bool $>$ \&}]{boolvec }\end{DoxyParamCaption})}
+
+
+
+Reads switches from vector. 
+
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{classsampler_ad33f9a6d97e7638940c7ba39bd779d17}\label{classsampler_ad33f9a6d97e7638940c7ba39bd779d17} 
+\index{sampler@{sampler}!abs\_vortices\_@{abs\_vortices\_}}
+\index{abs\_vortices\_@{abs\_vortices\_}!sampler@{sampler}}
+\doxysubsubsection{\texorpdfstring{abs\_vortices\_}{abs\_vortices\_}}
+{\footnotesize\ttfamily std\+::vector$<$double$>$ sampler\+::abs\+\_\+vortices\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Stores total vortex density. 
+
+\Hypertarget{classsampler_a284a97e75d51467e5598b2ac82f9f359}\label{classsampler_a284a97e75d51467e5598b2ac82f9f359} 
+\index{sampler@{sampler}!absM\_@{absM\_}}
+\index{absM\_@{absM\_}!sampler@{sampler}}
+\doxysubsubsection{\texorpdfstring{absM\_}{absM\_}}
+{\footnotesize\ttfamily std\+::vector$<$double$>$ sampler\+::abs\+M\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Stores absolute magnetizations. 
+
+\Hypertarget{classsampler_ab0c67327779a01158975e082719e8ed8}\label{classsampler_ab0c67327779a01158975e082719e8ed8} 
+\index{sampler@{sampler}!ACF\_ang\_MSD\_@{ACF\_ang\_MSD\_}}
+\index{ACF\_ang\_MSD\_@{ACF\_ang\_MSD\_}!sampler@{sampler}}
+\doxysubsubsection{\texorpdfstring{ACF\_ang\_MSD\_}{ACF\_ang\_MSD\_}}
+{\footnotesize\ttfamily std\+::vector$<$double$>$ sampler\+::\+ACF\+\_\+ang\+\_\+\+MSD\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Stores the angular mean squared displacement. 
+
+\Hypertarget{classsampler_af83f06e58c50279ef023e205c88887f0}\label{classsampler_af83f06e58c50279ef023e205c88887f0} 
+\index{sampler@{sampler}!ACF\_anglediff\_@{ACF\_anglediff\_}}
+\index{ACF\_anglediff\_@{ACF\_anglediff\_}!sampler@{sampler}}
+\doxysubsubsection{\texorpdfstring{ACF\_anglediff\_}{ACF\_anglediff\_}}
+{\footnotesize\ttfamily std\+::vector$<$double$>$ sampler\+::\+ACF\+\_\+anglediff\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Stores the angle difference autocorrelation function. 
+
+\Hypertarget{classsampler_acaccfeb491d54d8afab3d860b316c9bd}\label{classsampler_acaccfeb491d54d8afab3d860b316c9bd} 
+\index{sampler@{sampler}!ACF\_E\_@{ACF\_E\_}}
+\index{ACF\_E\_@{ACF\_E\_}!sampler@{sampler}}
+\doxysubsubsection{\texorpdfstring{ACF\_E\_}{ACF\_E\_}}
+{\footnotesize\ttfamily std\+::vector$<$double$>$ sampler\+::\+ACF\+\_\+\+E\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Stores the energy autocorrelation function in y direction. 
+
+\Hypertarget{classsampler_a25ff4a55d676e6c762ee13b7c7d3c7ce}\label{classsampler_a25ff4a55d676e6c762ee13b7c7d3c7ce} 
+\index{sampler@{sampler}!ACF\_Eint\_@{ACF\_Eint\_}}
+\index{ACF\_Eint\_@{ACF\_Eint\_}!sampler@{sampler}}
+\doxysubsubsection{\texorpdfstring{ACF\_Eint\_}{ACF\_Eint\_}}
+{\footnotesize\ttfamily std\+::vector$<$double$>$ sampler\+::\+ACF\+\_\+\+Eint\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Stores the interaction energy autocorrelation function in y direction. 
+
+\Hypertarget{classsampler_a569bc6a981d555ad275ab279fcc6d78d}\label{classsampler_a569bc6a981d555ad275ab279fcc6d78d} 
+\index{sampler@{sampler}!ACF\_Ekin\_@{ACF\_Ekin\_}}
+\index{ACF\_Ekin\_@{ACF\_Ekin\_}!sampler@{sampler}}
+\doxysubsubsection{\texorpdfstring{ACF\_Ekin\_}{ACF\_Ekin\_}}
+{\footnotesize\ttfamily std\+::vector$<$double$>$ sampler\+::\+ACF\+\_\+\+Ekin\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Stores the kinetic energy autocorrelation function in y direction. 
+
+\Hypertarget{classsampler_acff7dd37dd121cf8410f53a057de2a18}\label{classsampler_acff7dd37dd121cf8410f53a057de2a18} 
+\index{sampler@{sampler}!ACF\_MSD\_@{ACF\_MSD\_}}
+\index{ACF\_MSD\_@{ACF\_MSD\_}!sampler@{sampler}}
+\doxysubsubsection{\texorpdfstring{ACF\_MSD\_}{ACF\_MSD\_}}
+{\footnotesize\ttfamily std\+::vector$<$double$>$ sampler\+::\+ACF\+\_\+\+MSD\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Stores the positional mean squared displacement. 
+
+\Hypertarget{classsampler_af2a2a8b7aa3eeeba2078d1470fb1eabf}\label{classsampler_af2a2a8b7aa3eeeba2078d1470fb1eabf} 
+\index{sampler@{sampler}!ACF\_P\_@{ACF\_P\_}}
+\index{ACF\_P\_@{ACF\_P\_}!sampler@{sampler}}
+\doxysubsubsection{\texorpdfstring{ACF\_P\_}{ACF\_P\_}}
+{\footnotesize\ttfamily std\+::vector$<$double$>$ sampler\+::\+ACF\+\_\+\+P\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Stores the momentum autocorrelation function in y direction. 
+
+\Hypertarget{classsampler_abff67161c65b01585316c61910177301}\label{classsampler_abff67161c65b01585316c61910177301} 
+\index{sampler@{sampler}!ACF\_Ppar\_@{ACF\_Ppar\_}}
+\index{ACF\_Ppar\_@{ACF\_Ppar\_}!sampler@{sampler}}
+\doxysubsubsection{\texorpdfstring{ACF\_Ppar\_}{ACF\_Ppar\_}}
+{\footnotesize\ttfamily std\+::vector$<$double$>$ sampler\+::\+ACF\+\_\+\+Ppar\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Stores the momentum autocorrelation function parallel to the magnetization. 
+
+\Hypertarget{classsampler_a029249d995d0751dc35738616a8b58ef}\label{classsampler_a029249d995d0751dc35738616a8b58ef} 
+\index{sampler@{sampler}!ACF\_Pperp\_@{ACF\_Pperp\_}}
+\index{ACF\_Pperp\_@{ACF\_Pperp\_}!sampler@{sampler}}
+\doxysubsubsection{\texorpdfstring{ACF\_Pperp\_}{ACF\_Pperp\_}}
+{\footnotesize\ttfamily std\+::vector$<$double$>$ sampler\+::\+ACF\+\_\+\+Pperp\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Stores the spin autocorrelation function perpendicular to the magnetization. 
+
+\Hypertarget{classsampler_aed40e11ce94cec240e0c5e708a6f9e72}\label{classsampler_aed40e11ce94cec240e0c5e708a6f9e72} 
+\index{sampler@{sampler}!ACF\_q0\_absM\_@{ACF\_q0\_absM\_}}
+\index{ACF\_q0\_absM\_@{ACF\_q0\_absM\_}!sampler@{sampler}}
+\doxysubsubsection{\texorpdfstring{ACF\_q0\_absM\_}{ACF\_q0\_absM\_}}
+{\footnotesize\ttfamily std\+::vector$<$double$>$ sampler\+::\+ACF\+\_\+q0\+\_\+abs\+M\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Stores the autocorrelation function of the absolute magnetization (q=0 limit), basically the limit q=0 for mparq. 
+
+\Hypertarget{classsampler_a50299b4aa1bbac9c33a33ba38994191c}\label{classsampler_a50299b4aa1bbac9c33a33ba38994191c} 
+\index{sampler@{sampler}!ACF\_q0\_M\_@{ACF\_q0\_M\_}}
+\index{ACF\_q0\_M\_@{ACF\_q0\_M\_}!sampler@{sampler}}
+\doxysubsubsection{\texorpdfstring{ACF\_q0\_M\_}{ACF\_q0\_M\_}}
+{\footnotesize\ttfamily std\+::vector$<$double$>$ sampler\+::\+ACF\+\_\+q0\+\_\+\+M\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Stores the magnetization autocorrelation function (q=0 limit) 
+
+\Hypertarget{classsampler_ad67c3c6fa2a1836ff8cd6cb7a68fa501}\label{classsampler_ad67c3c6fa2a1836ff8cd6cb7a68fa501} 
+\index{sampler@{sampler}!ACF\_Spin\_@{ACF\_Spin\_}}
+\index{ACF\_Spin\_@{ACF\_Spin\_}!sampler@{sampler}}
+\doxysubsubsection{\texorpdfstring{ACF\_Spin\_}{ACF\_Spin\_}}
+{\footnotesize\ttfamily std\+::vector$<$double$>$ sampler\+::\+ACF\+\_\+\+Spin\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Stores the spin autocorrelation function. 
+
+\Hypertarget{classsampler_a3f64af908309c0176ab0598728c85549}\label{classsampler_a3f64af908309c0176ab0598728c85549} 
+\index{sampler@{sampler}!ACF\_Sx\_@{ACF\_Sx\_}}
+\index{ACF\_Sx\_@{ACF\_Sx\_}!sampler@{sampler}}
+\doxysubsubsection{\texorpdfstring{ACF\_Sx\_}{ACF\_Sx\_}}
+{\footnotesize\ttfamily std\+::vector$<$double$>$ sampler\+::\+ACF\+\_\+\+Sx\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Stores the spin autocorrelation function in x direction. 
+
+\Hypertarget{classsampler_a3abcc88fbb56f6397fa898459e68a090}\label{classsampler_a3abcc88fbb56f6397fa898459e68a090} 
+\index{sampler@{sampler}!ACF\_Sy\_@{ACF\_Sy\_}}
+\index{ACF\_Sy\_@{ACF\_Sy\_}!sampler@{sampler}}
+\doxysubsubsection{\texorpdfstring{ACF\_Sy\_}{ACF\_Sy\_}}
+{\footnotesize\ttfamily std\+::vector$<$double$>$ sampler\+::\+ACF\+\_\+\+Sy\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Stores the spin autocorrelation function in y direction. 
+
+\Hypertarget{classsampler_ad3366907da3ae0cc213ef71ad3c8f973}\label{classsampler_ad3366907da3ae0cc213ef71ad3c8f973} 
+\index{sampler@{sampler}!ACF\_W\_@{ACF\_W\_}}
+\index{ACF\_W\_@{ACF\_W\_}!sampler@{sampler}}
+\doxysubsubsection{\texorpdfstring{ACF\_W\_}{ACF\_W\_}}
+{\footnotesize\ttfamily std\+::vector$<$double$>$ sampler\+::\+ACF\+\_\+\+W\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Stores the omega autocorrelation function in y direction. 
+
+\Hypertarget{classsampler_afa9905cd14c18b1b06a01ecc495c57b6}\label{classsampler_afa9905cd14c18b1b06a01ecc495c57b6} 
+\index{sampler@{sampler}!averaging\_times\_@{averaging\_times\_}}
+\index{averaging\_times\_@{averaging\_times\_}!sampler@{sampler}}
+\doxysubsubsection{\texorpdfstring{averaging\_times\_}{averaging\_times\_}}
+{\footnotesize\ttfamily std\+::vector$<$double$>$ sampler\+::averaging\+\_\+times\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Stores sampling times (for averaging) 
+
+\Hypertarget{classsampler_a645272906d589474097d91aa26860cde}\label{classsampler_a645272906d589474097d91aa26860cde} 
+\index{sampler@{sampler}!chieq\_@{chieq\_}}
+\index{chieq\_@{chieq\_}!sampler@{sampler}}
+\doxysubsubsection{\texorpdfstring{chieq\_}{chieq\_}}
+{\footnotesize\ttfamily std\+::vector$<$double$>$ sampler\+::chieq\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Stores the $\chi_{e,q}$. 
+
+\Hypertarget{classsampler_aef7c18f11ae458aa20b6418ae83f86e1}\label{classsampler_aef7c18f11ae458aa20b6418ae83f86e1} 
+\index{sampler@{sampler}!chijparq\_@{chijparq\_}}
+\index{chijparq\_@{chijparq\_}!sampler@{sampler}}
+\doxysubsubsection{\texorpdfstring{chijparq\_}{chijparq\_}}
+{\footnotesize\ttfamily std\+::vector$<$double$>$ sampler\+::chijparq\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Stores the $\chi_{jL,q}$. 
+
+\Hypertarget{classsampler_ace03a1e2813db3260fe535f1e385d1d4}\label{classsampler_ace03a1e2813db3260fe535f1e385d1d4} 
+\index{sampler@{sampler}!chijperpq\_@{chijperpq\_}}
+\index{chijperpq\_@{chijperpq\_}!sampler@{sampler}}
+\doxysubsubsection{\texorpdfstring{chijperpq\_}{chijperpq\_}}
+{\footnotesize\ttfamily std\+::vector$<$double$>$ sampler\+::chijperpq\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Stores the $\chi_{jT,q}$. 
+
+\Hypertarget{classsampler_ae4fb962251398d70cedb23f367e615c7}\label{classsampler_ae4fb962251398d70cedb23f367e615c7} 
+\index{sampler@{sampler}!chilq\_@{chilq\_}}
+\index{chilq\_@{chilq\_}!sampler@{sampler}}
+\doxysubsubsection{\texorpdfstring{chilq\_}{chilq\_}}
+{\footnotesize\ttfamily std\+::vector$<$double$>$ sampler\+::chilq\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Stores the $\chi_{l,q}$. 
+
+\Hypertarget{classsampler_a3391baeb03bdd53708c381e2d09d6a0a}\label{classsampler_a3391baeb03bdd53708c381e2d09d6a0a} 
+\index{sampler@{sampler}!chimparq\_@{chimparq\_}}
+\index{chimparq\_@{chimparq\_}!sampler@{sampler}}
+\doxysubsubsection{\texorpdfstring{chimparq\_}{chimparq\_}}
+{\footnotesize\ttfamily std\+::vector$<$double$>$ sampler\+::chimparq\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Stores the $\chi_{m\parallel,q}$. 
+
+\Hypertarget{classsampler_af5480ea4933b1f6904deee8f64be0fe3}\label{classsampler_af5480ea4933b1f6904deee8f64be0fe3} 
+\index{sampler@{sampler}!chimperpq\_@{chimperpq\_}}
+\index{chimperpq\_@{chimperpq\_}!sampler@{sampler}}
+\doxysubsubsection{\texorpdfstring{chimperpq\_}{chimperpq\_}}
+{\footnotesize\ttfamily std\+::vector$<$double$>$ sampler\+::chimperpq\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Stores the $\chi_{m\perp,q}$. 
+
+\Hypertarget{classsampler_a0a5a33e95e34fe3111fa07ab4e7a7f0a}\label{classsampler_a0a5a33e95e34fe3111fa07ab4e7a7f0a} 
+\index{sampler@{sampler}!chimxq\_@{chimxq\_}}
+\index{chimxq\_@{chimxq\_}!sampler@{sampler}}
+\doxysubsubsection{\texorpdfstring{chimxq\_}{chimxq\_}}
+{\footnotesize\ttfamily std\+::vector$<$double$>$ sampler\+::chimxq\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Stores the $\chi_{mx,q}$. 
+
+\Hypertarget{classsampler_a64e7fa505409604ac3eb4e670a419e0b}\label{classsampler_a64e7fa505409604ac3eb4e670a419e0b} 
+\index{sampler@{sampler}!chimyq\_@{chimyq\_}}
+\index{chimyq\_@{chimyq\_}!sampler@{sampler}}
+\doxysubsubsection{\texorpdfstring{chimyq\_}{chimyq\_}}
+{\footnotesize\ttfamily std\+::vector$<$double$>$ sampler\+::chimyq\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Stores the $\chi_{my,q}$. 
+
+\Hypertarget{classsampler_a97988b59b48cc571b102ef79bf55856a}\label{classsampler_a97988b59b48cc571b102ef79bf55856a} 
+\index{sampler@{sampler}!chirq\_@{chirq\_}}
+\index{chirq\_@{chirq\_}!sampler@{sampler}}
+\doxysubsubsection{\texorpdfstring{chirq\_}{chirq\_}}
+{\footnotesize\ttfamily std\+::vector$<$double$>$ sampler\+::chirq\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Stores the $\chi_{\rho,q}$. 
+
+\Hypertarget{classsampler_a7b0e1ab7dbdde411e75be0a5d06d0742}\label{classsampler_a7b0e1ab7dbdde411e75be0a5d06d0742} 
+\index{sampler@{sampler}!chiteq\_@{chiteq\_}}
+\index{chiteq\_@{chiteq\_}!sampler@{sampler}}
+\doxysubsubsection{\texorpdfstring{chiteq\_}{chiteq\_}}
+{\footnotesize\ttfamily std\+::vector$<$double$>$ sampler\+::chiteq\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Stores the $\chi_{\theta,q}$. 
+
+\Hypertarget{classsampler_a86dc7d420500afc1824c33e21a79e617}\label{classsampler_a86dc7d420500afc1824c33e21a79e617} 
+\index{sampler@{sampler}!chiwq\_@{chiwq\_}}
+\index{chiwq\_@{chiwq\_}!sampler@{sampler}}
+\doxysubsubsection{\texorpdfstring{chiwq\_}{chiwq\_}}
+{\footnotesize\ttfamily std\+::vector$<$double$>$ sampler\+::chiwq\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Stores the $\chi_{w,q}$. 
+
+\Hypertarget{classsampler_a07da41942c9c2f75aa9281b2fe25de26}\label{classsampler_a07da41942c9c2f75aa9281b2fe25de26} 
+\index{sampler@{sampler}!convol\_jparmx\_cur\_@{convol\_jparmx\_cur\_}}
+\index{convol\_jparmx\_cur\_@{convol\_jparmx\_cur\_}!sampler@{sampler}}
+\doxysubsubsection{\texorpdfstring{convol\_jparmx\_cur\_}{convol\_jparmx\_cur\_}}
+{\footnotesize\ttfamily std\+::vector$<$std\+::complex$<$double$>$ $>$ sampler\+::convol\+\_\+jparmx\+\_\+cur\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Stores the convolution $j_{L,q} \star m_{x,q}$. 
+
+\Hypertarget{classsampler_a79042932b98c0706271c4a50b45a2971}\label{classsampler_a79042932b98c0706271c4a50b45a2971} 
+\index{sampler@{sampler}!convol\_jparmx\_initial\_@{convol\_jparmx\_initial\_}}
+\index{convol\_jparmx\_initial\_@{convol\_jparmx\_initial\_}!sampler@{sampler}}
+\doxysubsubsection{\texorpdfstring{convol\_jparmx\_initial\_}{convol\_jparmx\_initial\_}}
+{\footnotesize\ttfamily std\+::vector$<$std\+::complex$<$double$>$ $>$ sampler\+::convol\+\_\+jparmx\+\_\+initial\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Stores the convolution $j_{\parallel,q} \star m_{x,q}$ at the initial time. 
+
+\Hypertarget{classsampler_a343f9cb9655701fab33b1c2bd26851af}\label{classsampler_a343f9cb9655701fab33b1c2bd26851af} 
+\index{sampler@{sampler}!convol\_jparmy\_cur\_@{convol\_jparmy\_cur\_}}
+\index{convol\_jparmy\_cur\_@{convol\_jparmy\_cur\_}!sampler@{sampler}}
+\doxysubsubsection{\texorpdfstring{convol\_jparmy\_cur\_}{convol\_jparmy\_cur\_}}
+{\footnotesize\ttfamily std\+::vector$<$std\+::complex$<$double$>$ $>$ sampler\+::convol\+\_\+jparmy\+\_\+cur\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Stores the convolution $j_{L,q} \star m_{y,q}$. 
+
+\Hypertarget{classsampler_ae55df23b3f7747db426b94c16ee8b714}\label{classsampler_ae55df23b3f7747db426b94c16ee8b714} 
+\index{sampler@{sampler}!convol\_jparmy\_initial\_@{convol\_jparmy\_initial\_}}
+\index{convol\_jparmy\_initial\_@{convol\_jparmy\_initial\_}!sampler@{sampler}}
+\doxysubsubsection{\texorpdfstring{convol\_jparmy\_initial\_}{convol\_jparmy\_initial\_}}
+{\footnotesize\ttfamily std\+::vector$<$std\+::complex$<$double$>$ $>$ sampler\+::convol\+\_\+jparmy\+\_\+initial\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Stores the convolution $j_{\parallel,q} \star m_{y,q}$ at the initial time. 
+
+\Hypertarget{classsampler_ae8b422198079c0bf3f30f65208f3ac3a}\label{classsampler_ae8b422198079c0bf3f30f65208f3ac3a} 
+\index{sampler@{sampler}!convol\_wmx\_cur\_@{convol\_wmx\_cur\_}}
+\index{convol\_wmx\_cur\_@{convol\_wmx\_cur\_}!sampler@{sampler}}
+\doxysubsubsection{\texorpdfstring{convol\_wmx\_cur\_}{convol\_wmx\_cur\_}}
+{\footnotesize\ttfamily std\+::vector$<$std\+::complex$<$double$>$ $>$ sampler\+::convol\+\_\+wmx\+\_\+cur\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Stores the convolution $w_{q} \star m_{x,q}$. 
+
+\Hypertarget{classsampler_acd7185f1c045ccce284a527b6d5123e9}\label{classsampler_acd7185f1c045ccce284a527b6d5123e9} 
+\index{sampler@{sampler}!convol\_wmx\_initial\_@{convol\_wmx\_initial\_}}
+\index{convol\_wmx\_initial\_@{convol\_wmx\_initial\_}!sampler@{sampler}}
+\doxysubsubsection{\texorpdfstring{convol\_wmx\_initial\_}{convol\_wmx\_initial\_}}
+{\footnotesize\ttfamily std\+::vector$<$std\+::complex$<$double$>$ $>$ sampler\+::convol\+\_\+wmx\+\_\+initial\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Stores the convolution $w_{q} \star m_{x,q}$ at the initial time. 
+
+\Hypertarget{classsampler_a358e7000017234583011f4e417cb36ed}\label{classsampler_a358e7000017234583011f4e417cb36ed} 
+\index{sampler@{sampler}!convol\_wmy\_cur\_@{convol\_wmy\_cur\_}}
+\index{convol\_wmy\_cur\_@{convol\_wmy\_cur\_}!sampler@{sampler}}
+\doxysubsubsection{\texorpdfstring{convol\_wmy\_cur\_}{convol\_wmy\_cur\_}}
+{\footnotesize\ttfamily std\+::vector$<$std\+::complex$<$double$>$ $>$ sampler\+::convol\+\_\+wmy\+\_\+cur\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Stores the convolution $w_{q} \star m_{y,q}$. 
+
+\Hypertarget{classsampler_a77fa63dc7419b53cbd85925e5cecb2e7}\label{classsampler_a77fa63dc7419b53cbd85925e5cecb2e7} 
+\index{sampler@{sampler}!convol\_wmy\_initial\_@{convol\_wmy\_initial\_}}
+\index{convol\_wmy\_initial\_@{convol\_wmy\_initial\_}!sampler@{sampler}}
+\doxysubsubsection{\texorpdfstring{convol\_wmy\_initial\_}{convol\_wmy\_initial\_}}
+{\footnotesize\ttfamily std\+::vector$<$std\+::complex$<$double$>$ $>$ sampler\+::convol\+\_\+wmy\+\_\+initial\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Stores the convolution $w_{q} \star m_{y,q}$ at the initial time. 
+
+\Hypertarget{classsampler_ad26b1151f9a5379d6efc599c86459064}\label{classsampler_ad26b1151f9a5379d6efc599c86459064} 
+\index{sampler@{sampler}!coordination\_number\_@{coordination\_number\_}}
+\index{coordination\_number\_@{coordination\_number\_}!sampler@{sampler}}
+\doxysubsubsection{\texorpdfstring{coordination\_number\_}{coordination\_number\_}}
+{\footnotesize\ttfamily std\+::vector$<$double$>$ sampler\+::coordination\+\_\+number\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Coordination number in mobile model (avg. number of neighbors in interaction radius) 
+
+\Hypertarget{classsampler_a2b23521ad5ca63184118c96a3e486729}\label{classsampler_a2b23521ad5ca63184118c96a3e486729} 
+\index{sampler@{sampler}!eq\_@{eq\_}}
+\index{eq\_@{eq\_}!sampler@{sampler}}
+\doxysubsubsection{\texorpdfstring{eq\_}{eq\_}}
+{\footnotesize\ttfamily std\+::vector$<$std\+::complex$<$double$>$ $>$ sampler\+::eq\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Stores the $e_{q}$ (energy field fluctuation) 
+
+\Hypertarget{classsampler_a98dec99fb63106ddbef08aab1743dfdc}\label{classsampler_a98dec99fb63106ddbef08aab1743dfdc} 
+\index{sampler@{sampler}!eq\_cur\_@{eq\_cur\_}}
+\index{eq\_cur\_@{eq\_cur\_}!sampler@{sampler}}
+\doxysubsubsection{\texorpdfstring{eq\_cur\_}{eq\_cur\_}}
+{\footnotesize\ttfamily std\+::vector$<$std\+::complex$<$double$>$ $>$ sampler\+::eq\+\_\+cur\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Stores the $e_{q}$ at the current time (avoids repeated computation, which is costly) 
+
+\Hypertarget{classsampler_a3cae2f9d73a32abd8dd466dbeb7bcbdd}\label{classsampler_a3cae2f9d73a32abd8dd466dbeb7bcbdd} 
+\index{sampler@{sampler}!eq\_initial\_@{eq\_initial\_}}
+\index{eq\_initial\_@{eq\_initial\_}!sampler@{sampler}}
+\doxysubsubsection{\texorpdfstring{eq\_initial\_}{eq\_initial\_}}
+{\footnotesize\ttfamily std\+::vector$<$std\+::complex$<$double$>$ $>$ sampler\+::eq\+\_\+initial\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Stores the $e_{q}$ at the initial time (avoids repeated computation, only usable if q is not refreshed) 
+
+\Hypertarget{classsampler_a49949ca07ce5ef77a31a27253833fc40}\label{classsampler_a49949ca07ce5ef77a31a27253833fc40} 
+\index{sampler@{sampler}!Gamma\_TransCoeff\_@{Gamma\_TransCoeff\_}}
+\index{Gamma\_TransCoeff\_@{Gamma\_TransCoeff\_}!sampler@{sampler}}
+\doxysubsubsection{\texorpdfstring{Gamma\_TransCoeff\_}{Gamma\_TransCoeff\_}}
+{\footnotesize\ttfamily std\+::vector$<$double$>$ sampler\+::\+Gamma\+\_\+\+Trans\+Coeff\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Stores Gamma transport coefficient, see Bissinger notes (sec. 1.\+2.\+7), (see old notes, not included in thesis) 
+
+\Hypertarget{classsampler_a6dda307cfa0f5d391ae5084ce0d0f244}\label{classsampler_a6dda307cfa0f5d391ae5084ce0d0f244} 
+\index{sampler@{sampler}!Gamma\_TransCoeff\_new\_@{Gamma\_TransCoeff\_new\_}}
+\index{Gamma\_TransCoeff\_new\_@{Gamma\_TransCoeff\_new\_}!sampler@{sampler}}
+\doxysubsubsection{\texorpdfstring{Gamma\_TransCoeff\_new\_}{Gamma\_TransCoeff\_new\_}}
+{\footnotesize\ttfamily std\+::vector$<$double$>$ sampler\+::\+Gamma\+\_\+\+Trans\+Coeff\+\_\+new\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Stores different Gamma transport coefficient, see Bissinger notes (sec. 1.\+2.\+7), (see old notes, not included in thesis) 
+
+\Hypertarget{classsampler_aa4eab19af38e2fa4983eceeb8f8b45a9}\label{classsampler_aa4eab19af38e2fa4983eceeb8f8b45a9} 
+\index{sampler@{sampler}!gee\_@{gee\_}}
+\index{gee\_@{gee\_}!sampler@{sampler}}
+\doxysubsubsection{\texorpdfstring{gee\_}{gee\_}}
+{\footnotesize\ttfamily std\+::vector$<$std\+::complex$<$double$>$ $>$ sampler\+::gee\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Stores the $C_{ee}(q,t) = g_{e,e,q}(t) = \langle e_{q}^*e_{q}(t)\rangle$ (time correlation function) 
+
+\Hypertarget{classsampler_a5d367a82b2267fa4210791c4a577a12d}\label{classsampler_a5d367a82b2267fa4210791c4a577a12d} 
+\index{sampler@{sampler}!gjparjpar\_@{gjparjpar\_}}
+\index{gjparjpar\_@{gjparjpar\_}!sampler@{sampler}}
+\doxysubsubsection{\texorpdfstring{gjparjpar\_}{gjparjpar\_}}
+{\footnotesize\ttfamily std\+::vector$<$std\+::complex$<$double$>$ $>$ sampler\+::gjparjpar\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Stores the $C_{jL,jL}(q,t) = g_{j\parallel,j\parallel,q}(t) = \langle j_{L,q}^*j_{L,q}(t)\rangle$ (time correlation function) 
+
+\Hypertarget{classsampler_a42ab6dec5a7cc49613a278941425f5a4}\label{classsampler_a42ab6dec5a7cc49613a278941425f5a4} 
+\index{sampler@{sampler}!gjperpjperp\_@{gjperpjperp\_}}
+\index{gjperpjperp\_@{gjperpjperp\_}!sampler@{sampler}}
+\doxysubsubsection{\texorpdfstring{gjperpjperp\_}{gjperpjperp\_}}
+{\footnotesize\ttfamily std\+::vector$<$std\+::complex$<$double$>$ $>$ sampler\+::gjperpjperp\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Stores the $C_{jT,jT}(q,t) = g_{j\perp,j\perp,q}(t) = \langle j_{T,q}^*j_{T,q}(t)\rangle$ (time correlation function) 
+
+\Hypertarget{classsampler_ae17d7054ac3f0e0f48a3eec87f6f56d8}\label{classsampler_ae17d7054ac3f0e0f48a3eec87f6f56d8} 
+\index{sampler@{sampler}!gll\_@{gll\_}}
+\index{gll\_@{gll\_}!sampler@{sampler}}
+\doxysubsubsection{\texorpdfstring{gll\_}{gll\_}}
+{\footnotesize\ttfamily std\+::vector$<$std\+::complex$<$double$>$ $>$ sampler\+::gll\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Stores the $C_{ll}(q,t) = g_{l,l,q}(t) = \langle l_{q}^*l_{q}(t)\rangle$ (time correlation function) 
+
+\Hypertarget{classsampler_a9123442ff545ff36569f1011040cb8ea}\label{classsampler_a9123442ff545ff36569f1011040cb8ea} 
+\index{sampler@{sampler}!gmparmpar\_@{gmparmpar\_}}
+\index{gmparmpar\_@{gmparmpar\_}!sampler@{sampler}}
+\doxysubsubsection{\texorpdfstring{gmparmpar\_}{gmparmpar\_}}
+{\footnotesize\ttfamily std\+::vector$<$std\+::complex$<$double$>$ $>$ sampler\+::gmparmpar\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Stores the $C_{m\parallel,m\parallel}(q,t) = g_{m\parallel,m\parallel,q}(t) = \langle m_{\parallel,q}^*m_{\parallel,q}(t)\rangle$ (time correlation function) 
+
+\Hypertarget{classsampler_a9d48225579dc89a6aff3b6ef62d00f27}\label{classsampler_a9d48225579dc89a6aff3b6ef62d00f27} 
+\index{sampler@{sampler}!gmparmperp\_@{gmparmperp\_}}
+\index{gmparmperp\_@{gmparmperp\_}!sampler@{sampler}}
+\doxysubsubsection{\texorpdfstring{gmparmperp\_}{gmparmperp\_}}
+{\footnotesize\ttfamily std\+::vector$<$std\+::complex$<$double$>$ $>$ sampler\+::gmparmperp\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Stores the $C_{m\parallel, m\perp}(q,t) = g_{m\parallel,m\perp,q}(t) = \langle m_{\perp,q}^*m_{\parallel,q}(t)\rangle$ (time correlation function) 
+
+\Hypertarget{classsampler_a7fc0c6adc02dcaca123f1b5ca5927986}\label{classsampler_a7fc0c6adc02dcaca123f1b5ca5927986} 
+\index{sampler@{sampler}!gmperpmperp\_@{gmperpmperp\_}}
+\index{gmperpmperp\_@{gmperpmperp\_}!sampler@{sampler}}
+\doxysubsubsection{\texorpdfstring{gmperpmperp\_}{gmperpmperp\_}}
+{\footnotesize\ttfamily std\+::vector$<$std\+::complex$<$double$>$ $>$ sampler\+::gmperpmperp\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Stores the $C_{m\perp, m\perp}(q,t) = g_{m\perp,m\perp,q}(t) = \langle m_{\perp,q}^*m_{\perp,q}(t)\rangle$ (time correlation function) 
+
+\Hypertarget{classsampler_a1da405a97d61172e9e071f59ae4992f0}\label{classsampler_a1da405a97d61172e9e071f59ae4992f0} 
+\index{sampler@{sampler}!gre\_@{gre\_}}
+\index{gre\_@{gre\_}!sampler@{sampler}}
+\doxysubsubsection{\texorpdfstring{gre\_}{gre\_}}
+{\footnotesize\ttfamily std\+::vector$<$std\+::complex$<$double$>$ $>$ sampler\+::gre\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Stores the $C_{\rho e}(q,t) = g_{r,e,q}(t) = \langle \rho_{q}^*e_{q}(t)\rangle$ (time correlation function) 
+
+\Hypertarget{classsampler_a910a282f11574dd77da37e4226071a70}\label{classsampler_a910a282f11574dd77da37e4226071a70} 
+\index{sampler@{sampler}!grr\_@{grr\_}}
+\index{grr\_@{grr\_}!sampler@{sampler}}
+\doxysubsubsection{\texorpdfstring{grr\_}{grr\_}}
+{\footnotesize\ttfamily std\+::vector$<$std\+::complex$<$double$>$ $>$ sampler\+::grr\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Stores the $C_{\rho \rho}(q,t) = g_{r,r,q}(t) = \langle \rho_{q}^*\rho_{q}(t)\rangle$ (time correlation function, intermediate scattering function) 
+
+\Hypertarget{classsampler_ad1fd75f4819874f885046cf85b9f084f}\label{classsampler_ad1fd75f4819874f885046cf85b9f084f} 
+\index{sampler@{sampler}!gtt\_@{gtt\_}}
+\index{gtt\_@{gtt\_}!sampler@{sampler}}
+\doxysubsubsection{\texorpdfstring{gtt\_}{gtt\_}}
+{\footnotesize\ttfamily std\+::vector$<$std\+::complex$<$double$>$ $>$ sampler\+::gtt\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Stores the $C_{\theta\theta}(q,t) = g_{\theta,\theta,q}(t) = \langle \theta_{q}^*\theta_{q}(t)\rangle$ (time correlation function) 
+
+\Hypertarget{classsampler_a75dd9aab6ca5e825bad9525b9b2227ab}\label{classsampler_a75dd9aab6ca5e825bad9525b9b2227ab} 
+\index{sampler@{sampler}!gwe\_@{gwe\_}}
+\index{gwe\_@{gwe\_}!sampler@{sampler}}
+\doxysubsubsection{\texorpdfstring{gwe\_}{gwe\_}}
+{\footnotesize\ttfamily std\+::vector$<$std\+::complex$<$double$>$ $>$ sampler\+::gwe\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Stores the $C_{we}(q,t) = g_{w,e,q}(t) = \langle w_{q}^*e_{q}(t)\rangle$ (time correlation function) 
+
+\Hypertarget{classsampler_af4be59eb01296497a48ef8844f87ce75}\label{classsampler_af4be59eb01296497a48ef8844f87ce75} 
+\index{sampler@{sampler}!gww\_@{gww\_}}
+\index{gww\_@{gww\_}!sampler@{sampler}}
+\doxysubsubsection{\texorpdfstring{gww\_}{gww\_}}
+{\footnotesize\ttfamily std\+::vector$<$std\+::complex$<$double$>$ $>$ sampler\+::gww\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Stores the $C_{ww}(q,t) = g_{w,w,q}(t) = \langle w_{q}^*w_{q}(t)\rangle$ (time correlation function) 
+
+\Hypertarget{classsampler_a55e8a1b7002c09b9e4d9298ace4aa72a}\label{classsampler_a55e8a1b7002c09b9e4d9298ace4aa72a} 
+\index{sampler@{sampler}!gxe\_@{gxe\_}}
+\index{gxe\_@{gxe\_}!sampler@{sampler}}
+\doxysubsubsection{\texorpdfstring{gxe\_}{gxe\_}}
+{\footnotesize\ttfamily std\+::vector$<$std\+::complex$<$double$>$ $>$ sampler\+::gxe\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Stores the $C_{we}(q,t) = g_{x,e,q}(t) = \langle m_{x,q}^*e_{q}(t)\rangle$ (time correlation function) 
+
+\Hypertarget{classsampler_ab8f3e57b8124b10e85fcd8c092afc647}\label{classsampler_ab8f3e57b8124b10e85fcd8c092afc647} 
+\index{sampler@{sampler}!gxw\_@{gxw\_}}
+\index{gxw\_@{gxw\_}!sampler@{sampler}}
+\doxysubsubsection{\texorpdfstring{gxw\_}{gxw\_}}
+{\footnotesize\ttfamily std\+::vector$<$std\+::complex$<$double$>$ $>$ sampler\+::gxw\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Stores the $C_{xw}(q,t) = g_{x,w,q}(t) = \langle m_{x,q}^*w_{q}(t)\rangle$ (time correlation function) 
+
+\Hypertarget{classsampler_a504640b5b626290f315727358b9203c0}\label{classsampler_a504640b5b626290f315727358b9203c0} 
+\index{sampler@{sampler}!gxx\_@{gxx\_}}
+\index{gxx\_@{gxx\_}!sampler@{sampler}}
+\doxysubsubsection{\texorpdfstring{gxx\_}{gxx\_}}
+{\footnotesize\ttfamily std\+::vector$<$std\+::complex$<$double$>$ $>$ sampler\+::gxx\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Stores the $C_{xx}(q,t) = g_{x,x,q}(t) = \langle m_{x,q}^*m_{x,q}(t)\rangle$ (time correlation function) 
+
+\Hypertarget{classsampler_a91b52e2093c19345d483c2e35cff20b9}\label{classsampler_a91b52e2093c19345d483c2e35cff20b9} 
+\index{sampler@{sampler}!gxy\_@{gxy\_}}
+\index{gxy\_@{gxy\_}!sampler@{sampler}}
+\doxysubsubsection{\texorpdfstring{gxy\_}{gxy\_}}
+{\footnotesize\ttfamily std\+::vector$<$std\+::complex$<$double$>$ $>$ sampler\+::gxy\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Stores the $C_{xy}(q,t) = g_{x,y,q}(t) = \langle m_{x,q}^*m_{y,q}(t)\rangle$ (time correlation function) 
+
+\Hypertarget{classsampler_a77bb37f5deaac37e819bf1920d73b89d}\label{classsampler_a77bb37f5deaac37e819bf1920d73b89d} 
+\index{sampler@{sampler}!gye\_@{gye\_}}
+\index{gye\_@{gye\_}!sampler@{sampler}}
+\doxysubsubsection{\texorpdfstring{gye\_}{gye\_}}
+{\footnotesize\ttfamily std\+::vector$<$std\+::complex$<$double$>$ $>$ sampler\+::gye\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Stores the $C_{ye}(q,t) = g_{y,e,q}(t) = \langle m_{y,q}^*e_{q}(t)\rangle$ (time correlation function) 
+
+\Hypertarget{classsampler_a0c81f96da7addba0fbc9a4e10e01d40c}\label{classsampler_a0c81f96da7addba0fbc9a4e10e01d40c} 
+\index{sampler@{sampler}!gyw\_@{gyw\_}}
+\index{gyw\_@{gyw\_}!sampler@{sampler}}
+\doxysubsubsection{\texorpdfstring{gyw\_}{gyw\_}}
+{\footnotesize\ttfamily std\+::vector$<$std\+::complex$<$double$>$ $>$ sampler\+::gyw\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Stores the $C_{yw}(q,t) = g_{y,w,q}(t) = \langle m_{y,q}^*w_{q}(t)\rangle$ (time correlation function) 
+
+\Hypertarget{classsampler_a2503b2dcef719850c0f0f20c7987ae60}\label{classsampler_a2503b2dcef719850c0f0f20c7987ae60} 
+\index{sampler@{sampler}!gyy\_@{gyy\_}}
+\index{gyy\_@{gyy\_}!sampler@{sampler}}
+\doxysubsubsection{\texorpdfstring{gyy\_}{gyy\_}}
+{\footnotesize\ttfamily std\+::vector$<$std\+::complex$<$double$>$ $>$ sampler\+::gyy\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Stores the $C_{yy}(q,t) = g_{y,y,q}(t) = \langle m_{y,q}^*m_{y,q}(t)\rangle$ (time correlation function) 
+
+\Hypertarget{classsampler_a42b3aac7edbeb3d610061c789f65350f}\label{classsampler_a42b3aac7edbeb3d610061c789f65350f} 
+\index{sampler@{sampler}!H\_@{H\_}}
+\index{H\_@{H\_}!sampler@{sampler}}
+\doxysubsubsection{\texorpdfstring{H\_}{H\_}}
+{\footnotesize\ttfamily std\+::vector$<$double$>$ sampler\+::\+H\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Stores energies. 
+
+\Hypertarget{classsampler_aec5e3e24f8e61691b1f173c627369e91}\label{classsampler_aec5e3e24f8e61691b1f173c627369e91} 
+\index{sampler@{sampler}!H\_2\_@{H\_2\_}}
+\index{H\_2\_@{H\_2\_}!sampler@{sampler}}
+\doxysubsubsection{\texorpdfstring{H\_2\_}{H\_2\_}}
+{\footnotesize\ttfamily std\+::vector$<$double$>$ sampler\+::\+H\+\_\+2\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Stores individual energies squared (\texorpdfstring{$<$}{<}e\+\_\+i\texorpdfstring{$^\wedge$}{\string^}2\texorpdfstring{$>$}{>}) 
+
+\Hypertarget{classsampler_a5b4cf79f6a1acdf9f43d082f9608140e}\label{classsampler_a5b4cf79f6a1acdf9f43d082f9608140e} 
+\index{sampler@{sampler}!H\_x\_@{H\_x\_}}
+\index{H\_x\_@{H\_x\_}!sampler@{sampler}}
+\doxysubsubsection{\texorpdfstring{H\_x\_}{H\_x\_}}
+{\footnotesize\ttfamily std\+::vector$<$double$>$ sampler\+::\+H\+\_\+x\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+H\+\_\+x as defined for the derivation of the helicity Upsilon. 
+
+\Hypertarget{classsampler_a6a2f7ea5c8a51277e3800b2436776d75}\label{classsampler_a6a2f7ea5c8a51277e3800b2436776d75} 
+\index{sampler@{sampler}!H\_y\_@{H\_y\_}}
+\index{H\_y\_@{H\_y\_}!sampler@{sampler}}
+\doxysubsubsection{\texorpdfstring{H\_y\_}{H\_y\_}}
+{\footnotesize\ttfamily std\+::vector$<$double$>$ sampler\+::\+H\+\_\+y\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+H\+\_\+y as defined for the derivation of the helicity Upsilon. 
+
+\Hypertarget{classsampler_a611165c9a3fe2b17e99144872418dffb}\label{classsampler_a611165c9a3fe2b17e99144872418dffb} 
+\index{sampler@{sampler}!Hint\_2\_@{Hint\_2\_}}
+\index{Hint\_2\_@{Hint\_2\_}!sampler@{sampler}}
+\doxysubsubsection{\texorpdfstring{Hint\_2\_}{Hint\_2\_}}
+{\footnotesize\ttfamily std\+::vector$<$double$>$ sampler\+::\+Hint\+\_\+2\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Stores individual interaction energies squared. 
+
+\Hypertarget{classsampler_ad6d51d29e8f1a652b32201b5dbd6ce74}\label{classsampler_ad6d51d29e8f1a652b32201b5dbd6ce74} 
+\index{sampler@{sampler}!Hkin\_2\_@{Hkin\_2\_}}
+\index{Hkin\_2\_@{Hkin\_2\_}!sampler@{sampler}}
+\doxysubsubsection{\texorpdfstring{Hkin\_2\_}{Hkin\_2\_}}
+{\footnotesize\ttfamily std\+::vector$<$double$>$ sampler\+::\+Hkin\+\_\+2\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Stores individual kinetic energies squared. 
+
+\Hypertarget{classsampler_a2bb68f8e5428fdaa8af7d6b6d292e85a}\label{classsampler_a2bb68f8e5428fdaa8af7d6b6d292e85a} 
+\index{sampler@{sampler}!I\_x\_@{I\_x\_}}
+\index{I\_x\_@{I\_x\_}!sampler@{sampler}}
+\doxysubsubsection{\texorpdfstring{I\_x\_}{I\_x\_}}
+{\footnotesize\ttfamily std\+::vector$<$double$>$ sampler\+::\+I\+\_\+x\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+I\+\_\+x as defined for the derivation of the helicity Upsilon. 
+
+\Hypertarget{classsampler_a9597ef1b2d4bf65ea45d634c83cbeba6}\label{classsampler_a9597ef1b2d4bf65ea45d634c83cbeba6} 
+\index{sampler@{sampler}!I\_x\_2\_@{I\_x\_2\_}}
+\index{I\_x\_2\_@{I\_x\_2\_}!sampler@{sampler}}
+\doxysubsubsection{\texorpdfstring{I\_x\_2\_}{I\_x\_2\_}}
+{\footnotesize\ttfamily std\+::vector$<$double$>$ sampler\+::\+I\+\_\+x\+\_\+2\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+I\+\_\+x\texorpdfstring{$^\wedge$}{\string^}2 as defined for the derivation of the helicity Upsilon. 
+
+\Hypertarget{classsampler_abd5e87ac547885b3958e524af18cf028}\label{classsampler_abd5e87ac547885b3958e524af18cf028} 
+\index{sampler@{sampler}!I\_y\_@{I\_y\_}}
+\index{I\_y\_@{I\_y\_}!sampler@{sampler}}
+\doxysubsubsection{\texorpdfstring{I\_y\_}{I\_y\_}}
+{\footnotesize\ttfamily std\+::vector$<$double$>$ sampler\+::\+I\+\_\+y\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+I\+\_\+y as defined for the derivation of the helicity Upsilon. 
+
+\Hypertarget{classsampler_a009571b9a71586424fae8c6a8e8ea547}\label{classsampler_a009571b9a71586424fae8c6a8e8ea547} 
+\index{sampler@{sampler}!I\_y\_2\_@{I\_y\_2\_}}
+\index{I\_y\_2\_@{I\_y\_2\_}!sampler@{sampler}}
+\doxysubsubsection{\texorpdfstring{I\_y\_2\_}{I\_y\_2\_}}
+{\footnotesize\ttfamily std\+::vector$<$double$>$ sampler\+::\+I\+\_\+y\+\_\+2\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+I\+\_\+y\texorpdfstring{$^\wedge$}{\string^}2 as defined for the derivation of the helicity Upsilon. 
+
+\Hypertarget{classsampler_a603fa86fe19c99e9e44805fbf686e8b9}\label{classsampler_a603fa86fe19c99e9e44805fbf686e8b9} 
+\index{sampler@{sampler}!je\_@{je\_}}
+\index{je\_@{je\_}!sampler@{sampler}}
+\doxysubsubsection{\texorpdfstring{je\_}{je\_}}
+{\footnotesize\ttfamily std\+::vector$<$\mbox{\hyperlink{classtopology_1_1_vector2d}{topology\+::\+Vector2d}}$>$ sampler\+::je\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Stores energy flux je, which is the q to 0 limit of \$\textbackslash{}j\textquotesingle{}\texorpdfstring{$^\wedge$}{\string^}e\+\_\+q\$ in eq. (1.\+31a). Required for ZM transport Coefficients. (see old notes, not included in thesis) 
+
+\Hypertarget{classsampler_acb7468c873b78dec611fe52017e73d46}\label{classsampler_acb7468c873b78dec611fe52017e73d46} 
+\index{sampler@{sampler}!je\_initial\_@{je\_initial\_}}
+\index{je\_initial\_@{je\_initial\_}!sampler@{sampler}}
+\doxysubsubsection{\texorpdfstring{je\_initial\_}{je\_initial\_}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classtopology_1_1_vector2d}{topology\+::\+Vector2d}} sampler\+::je\+\_\+initial\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Stores initial energy flux tau (see old notes, not included in thesis) 
+
+\Hypertarget{classsampler_a71bd99e9c98b17f4e786895c07a66efe}\label{classsampler_a71bd99e9c98b17f4e786895c07a66efe} 
+\index{sampler@{sampler}!jparq\_@{jparq\_}}
+\index{jparq\_@{jparq\_}!sampler@{sampler}}
+\doxysubsubsection{\texorpdfstring{jparq\_}{jparq\_}}
+{\footnotesize\ttfamily std\+::vector$<$std\+::complex$<$double$>$ $>$ sampler\+::jparq\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Stores the $j_{\parallel,q}$ (parallel momentum field fluctuation) 
+
+\Hypertarget{classsampler_a00d0867ec5b5c15b1d00dce7e4cceaa4}\label{classsampler_a00d0867ec5b5c15b1d00dce7e4cceaa4} 
+\index{sampler@{sampler}!jparq\_cur\_@{jparq\_cur\_}}
+\index{jparq\_cur\_@{jparq\_cur\_}!sampler@{sampler}}
+\doxysubsubsection{\texorpdfstring{jparq\_cur\_}{jparq\_cur\_}}
+{\footnotesize\ttfamily std\+::vector$<$std\+::complex$<$double$>$ $>$ sampler\+::jparq\+\_\+cur\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Stores the $j_{\parallel,q}$ at the current time. 
+
+\Hypertarget{classsampler_a58765341382c0f23800489b2109a6162}\label{classsampler_a58765341382c0f23800489b2109a6162} 
+\index{sampler@{sampler}!jparq\_initial\_@{jparq\_initial\_}}
+\index{jparq\_initial\_@{jparq\_initial\_}!sampler@{sampler}}
+\doxysubsubsection{\texorpdfstring{jparq\_initial\_}{jparq\_initial\_}}
+{\footnotesize\ttfamily std\+::vector$<$std\+::complex$<$double$>$ $>$ sampler\+::jparq\+\_\+initial\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Stores the $j_{\parallel,q}$ at the initial time (avoids repeated computation, only usable if q is not refreshed) 
+
+\Hypertarget{classsampler_a8e883419a607509daa7b19b72d747eba}\label{classsampler_a8e883419a607509daa7b19b72d747eba} 
+\index{sampler@{sampler}!jperpq\_@{jperpq\_}}
+\index{jperpq\_@{jperpq\_}!sampler@{sampler}}
+\doxysubsubsection{\texorpdfstring{jperpq\_}{jperpq\_}}
+{\footnotesize\ttfamily std\+::vector$<$std\+::complex$<$double$>$ $>$ sampler\+::jperpq\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Stores the $j_{\perp,q}$ (perpendicular momentum field fluctuation) 
+
+\Hypertarget{classsampler_a6f0c528c7add0af870d08d53682bc42b}\label{classsampler_a6f0c528c7add0af870d08d53682bc42b} 
+\index{sampler@{sampler}!jperpq\_cur\_@{jperpq\_cur\_}}
+\index{jperpq\_cur\_@{jperpq\_cur\_}!sampler@{sampler}}
+\doxysubsubsection{\texorpdfstring{jperpq\_cur\_}{jperpq\_cur\_}}
+{\footnotesize\ttfamily std\+::vector$<$std\+::complex$<$double$>$ $>$ sampler\+::jperpq\+\_\+cur\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Stores the $j_{\perp,q}$ at the current time. 
+
+\Hypertarget{classsampler_acd263065e80b7adaeaa2ce6036603785}\label{classsampler_acd263065e80b7adaeaa2ce6036603785} 
+\index{sampler@{sampler}!jperpq\_initial\_@{jperpq\_initial\_}}
+\index{jperpq\_initial\_@{jperpq\_initial\_}!sampler@{sampler}}
+\doxysubsubsection{\texorpdfstring{jperpq\_initial\_}{jperpq\_initial\_}}
+{\footnotesize\ttfamily std\+::vector$<$std\+::complex$<$double$>$ $>$ sampler\+::jperpq\+\_\+initial\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Stores the $j_{\perp,q}$ at the initial time (avoids repeated computation, only usable if q is not refreshed) 
+
+\Hypertarget{classsampler_a9ac663ea3865ac484f9a9ffc0447bd8c}\label{classsampler_a9ac663ea3865ac484f9a9ffc0447bd8c} 
+\index{sampler@{sampler}!K\_convol\_jmx\_@{K\_convol\_jmx\_}}
+\index{K\_convol\_jmx\_@{K\_convol\_jmx\_}!sampler@{sampler}}
+\doxysubsubsection{\texorpdfstring{K\_convol\_jmx\_}{K\_convol\_jmx\_}}
+{\footnotesize\ttfamily std\+::vector$<$std\+::complex$<$double$>$ $>$ sampler\+::\+K\+\_\+convol\+\_\+jmx\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Stores the memory kernel of the convolution $j_{L,q} \star m_{x,q}$ with itself. 
+
+\Hypertarget{classsampler_a406c48243f57b8c03761397b64abd18b}\label{classsampler_a406c48243f57b8c03761397b64abd18b} 
+\index{sampler@{sampler}!K\_convol\_jmy\_@{K\_convol\_jmy\_}}
+\index{K\_convol\_jmy\_@{K\_convol\_jmy\_}!sampler@{sampler}}
+\doxysubsubsection{\texorpdfstring{K\_convol\_jmy\_}{K\_convol\_jmy\_}}
+{\footnotesize\ttfamily std\+::vector$<$std\+::complex$<$double$>$ $>$ sampler\+::\+K\+\_\+convol\+\_\+jmy\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Stores the memory kernel of the convolution $j_{L,q} \star m_{y,q}$ with itself. 
+
+\Hypertarget{classsampler_a54314aa6f6d70ab8aaa654b64ca47b96}\label{classsampler_a54314aa6f6d70ab8aaa654b64ca47b96} 
+\index{sampler@{sampler}!K\_convol\_wmx\_@{K\_convol\_wmx\_}}
+\index{K\_convol\_wmx\_@{K\_convol\_wmx\_}!sampler@{sampler}}
+\doxysubsubsection{\texorpdfstring{K\_convol\_wmx\_}{K\_convol\_wmx\_}}
+{\footnotesize\ttfamily std\+::vector$<$std\+::complex$<$double$>$ $>$ sampler\+::\+K\+\_\+convol\+\_\+wmx\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Stores the memory kernel of the convolution $w_q \star m_{x,q}$ with itself. 
+
+\Hypertarget{classsampler_ae60897984748f02dbed22e80138dbf0a}\label{classsampler_ae60897984748f02dbed22e80138dbf0a} 
+\index{sampler@{sampler}!K\_convol\_wmx\_jmy\_@{K\_convol\_wmx\_jmy\_}}
+\index{K\_convol\_wmx\_jmy\_@{K\_convol\_wmx\_jmy\_}!sampler@{sampler}}
+\doxysubsubsection{\texorpdfstring{K\_convol\_wmx\_jmy\_}{K\_convol\_wmx\_jmy\_}}
+{\footnotesize\ttfamily std\+::vector$<$std\+::complex$<$double$>$ $>$ sampler\+::\+K\+\_\+convol\+\_\+wmx\+\_\+jmy\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Stores the memory kernel of the convolution $w_q \star m_{x,q}$ with $j_{L,q} \star m_{y,q}$. 
+
+\Hypertarget{classsampler_a2e70747896ccc5e76c81dd18b468a080}\label{classsampler_a2e70747896ccc5e76c81dd18b468a080} 
+\index{sampler@{sampler}!K\_convol\_wmy\_@{K\_convol\_wmy\_}}
+\index{K\_convol\_wmy\_@{K\_convol\_wmy\_}!sampler@{sampler}}
+\doxysubsubsection{\texorpdfstring{K\_convol\_wmy\_}{K\_convol\_wmy\_}}
+{\footnotesize\ttfamily std\+::vector$<$std\+::complex$<$double$>$ $>$ sampler\+::\+K\+\_\+convol\+\_\+wmy\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Stores the memory kernel of the convolution $w_q \star m_{y,q}$ with itself. 
+
+\Hypertarget{classsampler_a8b6af90077289711f1aabe29389206e0}\label{classsampler_a8b6af90077289711f1aabe29389206e0} 
+\index{sampler@{sampler}!K\_convol\_wmy\_jmx\_@{K\_convol\_wmy\_jmx\_}}
+\index{K\_convol\_wmy\_jmx\_@{K\_convol\_wmy\_jmx\_}!sampler@{sampler}}
+\doxysubsubsection{\texorpdfstring{K\_convol\_wmy\_jmx\_}{K\_convol\_wmy\_jmx\_}}
+{\footnotesize\ttfamily std\+::vector$<$std\+::complex$<$double$>$ $>$ sampler\+::\+K\+\_\+convol\+\_\+wmy\+\_\+jmx\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Stores the memory kernel of the convolution $w_q \star mxy$ with $j_{L,q} \star m_{x,q}$. 
+
+\Hypertarget{classsampler_aa81560eff64a4fb7b62ed4b54bbac90d}\label{classsampler_aa81560eff64a4fb7b62ed4b54bbac90d} 
+\index{sampler@{sampler}!K\_jmx\_@{K\_jmx\_}}
+\index{K\_jmx\_@{K\_jmx\_}!sampler@{sampler}}
+\doxysubsubsection{\texorpdfstring{K\_jmx\_}{K\_jmx\_}}
+{\footnotesize\ttfamily std\+::vector$<$std\+::complex$<$double$>$ $>$ sampler\+::\+K\+\_\+jmx\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Stores the memory kernel of the quadratic form $jqpar m_{x,q}$ with itself. 
+
+\Hypertarget{classsampler_a8af9363ba6b61c5f3509c50f62fb9d88}\label{classsampler_a8af9363ba6b61c5f3509c50f62fb9d88} 
+\index{sampler@{sampler}!K\_jmy\_@{K\_jmy\_}}
+\index{K\_jmy\_@{K\_jmy\_}!sampler@{sampler}}
+\doxysubsubsection{\texorpdfstring{K\_jmy\_}{K\_jmy\_}}
+{\footnotesize\ttfamily std\+::vector$<$std\+::complex$<$double$>$ $>$ sampler\+::\+K\+\_\+jmy\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Stores the memory kernel of the quadratic form $jqpar m_{y,q}$ with itself. 
+
+\Hypertarget{classsampler_a75dfaa34d2f2b2bd63091348031fd877}\label{classsampler_a75dfaa34d2f2b2bd63091348031fd877} 
+\index{sampler@{sampler}!K\_wmx\_@{K\_wmx\_}}
+\index{K\_wmx\_@{K\_wmx\_}!sampler@{sampler}}
+\doxysubsubsection{\texorpdfstring{K\_wmx\_}{K\_wmx\_}}
+{\footnotesize\ttfamily std\+::vector$<$std\+::complex$<$double$>$ $>$ sampler\+::\+K\+\_\+wmx\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Stores the memory kernel of the quadratic form $w_q m_{x,q}$ with itself. 
+
+\Hypertarget{classsampler_a9bc1e15f2bcea1274a789888d60e0427}\label{classsampler_a9bc1e15f2bcea1274a789888d60e0427} 
+\index{sampler@{sampler}!K\_wmx\_jmy\_@{K\_wmx\_jmy\_}}
+\index{K\_wmx\_jmy\_@{K\_wmx\_jmy\_}!sampler@{sampler}}
+\doxysubsubsection{\texorpdfstring{K\_wmx\_jmy\_}{K\_wmx\_jmy\_}}
+{\footnotesize\ttfamily std\+::vector$<$std\+::complex$<$double$>$ $>$ sampler\+::\+K\+\_\+wmx\+\_\+jmy\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Stores the memory kernel of the quadratic form $w_q \star m_{x,q}$ with the quadratic form $j_{L,q} m_{y,q}$. 
+
+\Hypertarget{classsampler_a465cc85f1776f8f9b2e60e1791960514}\label{classsampler_a465cc85f1776f8f9b2e60e1791960514} 
+\index{sampler@{sampler}!K\_wmy\_@{K\_wmy\_}}
+\index{K\_wmy\_@{K\_wmy\_}!sampler@{sampler}}
+\doxysubsubsection{\texorpdfstring{K\_wmy\_}{K\_wmy\_}}
+{\footnotesize\ttfamily std\+::vector$<$std\+::complex$<$double$>$ $>$ sampler\+::\+K\+\_\+wmy\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Stores the memory kernel of the quadratic form $w_q m_{y,q}$ with itself. 
+
+\Hypertarget{classsampler_a9fe18d2da77e19ca1d5226b0651309ca}\label{classsampler_a9fe18d2da77e19ca1d5226b0651309ca} 
+\index{sampler@{sampler}!K\_wmy\_jmx\_@{K\_wmy\_jmx\_}}
+\index{K\_wmy\_jmx\_@{K\_wmy\_jmx\_}!sampler@{sampler}}
+\doxysubsubsection{\texorpdfstring{K\_wmy\_jmx\_}{K\_wmy\_jmx\_}}
+{\footnotesize\ttfamily std\+::vector$<$std\+::complex$<$double$>$ $>$ sampler\+::\+K\+\_\+wmy\+\_\+jmx\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Stores the memory kernel of the quadratic form $w_q \star mxy$ with the quadratic form $j_{L,q} m_{x,q}$. 
+
+\Hypertarget{classsampler_a891184b1e0f3c6e075b69cd53a05c297}\label{classsampler_a891184b1e0f3c6e075b69cd53a05c297} 
+\index{sampler@{sampler}!kappa\_TransCoeff\_@{kappa\_TransCoeff\_}}
+\index{kappa\_TransCoeff\_@{kappa\_TransCoeff\_}!sampler@{sampler}}
+\doxysubsubsection{\texorpdfstring{kappa\_TransCoeff\_}{kappa\_TransCoeff\_}}
+{\footnotesize\ttfamily std\+::vector$<$double$>$ sampler\+::kappa\+\_\+\+Trans\+Coeff\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Stores kappa transport coefficient, see Bissinger notes (sec. 1.\+2.\+7), (see old notes, not included in thesis) 
+
+\Hypertarget{classsampler_a13b7e5065bdec23e20b68f0bd13cad6e}\label{classsampler_a13b7e5065bdec23e20b68f0bd13cad6e} 
+\index{sampler@{sampler}!kappa\_TransCoeff\_new\_@{kappa\_TransCoeff\_new\_}}
+\index{kappa\_TransCoeff\_new\_@{kappa\_TransCoeff\_new\_}!sampler@{sampler}}
+\doxysubsubsection{\texorpdfstring{kappa\_TransCoeff\_new\_}{kappa\_TransCoeff\_new\_}}
+{\footnotesize\ttfamily std\+::vector$<$double$>$ sampler\+::kappa\+\_\+\+Trans\+Coeff\+\_\+new\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Stores different kappa transport coefficient, see Bissinger notes (sec. 1.\+2.\+7), (see old notes, not included in thesis) 
+
+\Hypertarget{classsampler_ade84f6012fb0406596576d4aea79b4c5}\label{classsampler_ade84f6012fb0406596576d4aea79b4c5} 
+\index{sampler@{sampler}!lq\_@{lq\_}}
+\index{lq\_@{lq\_}!sampler@{sampler}}
+\doxysubsubsection{\texorpdfstring{lq\_}{lq\_}}
+{\footnotesize\ttfamily std\+::vector$<$std\+::complex$<$double$>$ $>$ sampler\+::lq\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Stores the $l_{q}$ (spatial angular momentum field fluctuation) 
+
+\Hypertarget{classsampler_afca551ad1bf33d84ab2cbfe4215fd440}\label{classsampler_afca551ad1bf33d84ab2cbfe4215fd440} 
+\index{sampler@{sampler}!lq\_cur\_@{lq\_cur\_}}
+\index{lq\_cur\_@{lq\_cur\_}!sampler@{sampler}}
+\doxysubsubsection{\texorpdfstring{lq\_cur\_}{lq\_cur\_}}
+{\footnotesize\ttfamily std\+::vector$<$std\+::complex$<$double$>$ $>$ sampler\+::lq\+\_\+cur\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Stores the $l_{q}$ at the current time. 
+
+\Hypertarget{classsampler_a0ffa69d6f5efeaa507bf19bc5231a053}\label{classsampler_a0ffa69d6f5efeaa507bf19bc5231a053} 
+\index{sampler@{sampler}!lq\_initial\_@{lq\_initial\_}}
+\index{lq\_initial\_@{lq\_initial\_}!sampler@{sampler}}
+\doxysubsubsection{\texorpdfstring{lq\_initial\_}{lq\_initial\_}}
+{\footnotesize\ttfamily std\+::vector$<$std\+::complex$<$double$>$ $>$ sampler\+::lq\+\_\+initial\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Stores the $l_{q}$ at the initial time (avoids repeated computation, only usable if q is not refreshed) 
+
+\Hypertarget{classsampler_aa0424ef9226bec3550f58c9235ded20a}\label{classsampler_aa0424ef9226bec3550f58c9235ded20a} 
+\index{sampler@{sampler}!M\_@{M\_}}
+\index{M\_@{M\_}!sampler@{sampler}}
+\doxysubsubsection{\texorpdfstring{M\_}{M\_}}
+{\footnotesize\ttfamily std\+::vector$<$\mbox{\hyperlink{classtopology_1_1_vector2d}{topology\+::\+Vector2d}}$>$ sampler\+::\+M\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Stores magnetizations. 
+
+\Hypertarget{classsampler_acba577c2fca72a6a8fb38469f24d67cc}\label{classsampler_acba577c2fca72a6a8fb38469f24d67cc} 
+\index{sampler@{sampler}!M\_2\_@{M\_2\_}}
+\index{M\_2\_@{M\_2\_}!sampler@{sampler}}
+\doxysubsubsection{\texorpdfstring{M\_2\_}{M\_2\_}}
+{\footnotesize\ttfamily std\+::vector$<$double$>$ sampler\+::\+M\+\_\+2\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Stores magnetizations squared. 
+
+\Hypertarget{classsampler_ac0f64bebaee4a327f970c58b54e04b74}\label{classsampler_ac0f64bebaee4a327f970c58b54e04b74} 
+\index{sampler@{sampler}!M\_4\_@{M\_4\_}}
+\index{M\_4\_@{M\_4\_}!sampler@{sampler}}
+\doxysubsubsection{\texorpdfstring{M\_4\_}{M\_4\_}}
+{\footnotesize\ttfamily std\+::vector$<$double$>$ sampler\+::\+M\+\_\+4\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Stores magnetizations to the fourth power. 
+
+\Hypertarget{classsampler_a1e28fc2aa596c9ef746aaacb2d296061}\label{classsampler_a1e28fc2aa596c9ef746aaacb2d296061} 
+\index{sampler@{sampler}!M\_angle\_@{M\_angle\_}}
+\index{M\_angle\_@{M\_angle\_}!sampler@{sampler}}
+\doxysubsubsection{\texorpdfstring{M\_angle\_}{M\_angle\_}}
+{\footnotesize\ttfamily std\+::vector$<$double$>$ sampler\+::\+M\+\_\+angle\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Stores angle of the magnetization (with respect to the spin x-\/axis) 
+
+\Hypertarget{classsampler_aec10d26cc2bd7c1fe9137a628d2e2dee}\label{classsampler_aec10d26cc2bd7c1fe9137a628d2e2dee} 
+\index{sampler@{sampler}!mparq\_@{mparq\_}}
+\index{mparq\_@{mparq\_}!sampler@{sampler}}
+\doxysubsubsection{\texorpdfstring{mparq\_}{mparq\_}}
+{\footnotesize\ttfamily std\+::vector$<$std\+::complex$<$double$>$ $>$ sampler\+::mparq\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Stores the $m_{\parallel,q}$ (spin field fluctuation parallel to spontaneous M) 
+
+\Hypertarget{classsampler_af7e2b9b50329ec5f10987906b8f6c381}\label{classsampler_af7e2b9b50329ec5f10987906b8f6c381} 
+\index{sampler@{sampler}!mparq\_cur\_@{mparq\_cur\_}}
+\index{mparq\_cur\_@{mparq\_cur\_}!sampler@{sampler}}
+\doxysubsubsection{\texorpdfstring{mparq\_cur\_}{mparq\_cur\_}}
+{\footnotesize\ttfamily std\+::vector$<$std\+::complex$<$double$>$ $>$ sampler\+::mparq\+\_\+cur\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Stores the $m_{\parallel,q}$ at the current time (avoids repeated computation, which is costly) 
+
+\Hypertarget{classsampler_af45316ab1bb53fc1b2f6430da7f82b62}\label{classsampler_af45316ab1bb53fc1b2f6430da7f82b62} 
+\index{sampler@{sampler}!mparq\_initial\_@{mparq\_initial\_}}
+\index{mparq\_initial\_@{mparq\_initial\_}!sampler@{sampler}}
+\doxysubsubsection{\texorpdfstring{mparq\_initial\_}{mparq\_initial\_}}
+{\footnotesize\ttfamily std\+::vector$<$std\+::complex$<$double$>$ $>$ sampler\+::mparq\+\_\+initial\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Stores the $m_{\parallel,q}$ at the initial time (avoids repeated computation, only usable if q is not refreshed) 
+
+\Hypertarget{classsampler_af09c4952bbf2d0c4375f5e240460314b}\label{classsampler_af09c4952bbf2d0c4375f5e240460314b} 
+\index{sampler@{sampler}!mperpq\_@{mperpq\_}}
+\index{mperpq\_@{mperpq\_}!sampler@{sampler}}
+\doxysubsubsection{\texorpdfstring{mperpq\_}{mperpq\_}}
+{\footnotesize\ttfamily std\+::vector$<$std\+::complex$<$double$>$ $>$ sampler\+::mperpq\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Stores the $m_{\perp,q}$ (spin field fluctuation perpendicular to spontaneous M) 
+
+\Hypertarget{classsampler_aebac5a0861b1844e92a055a159373add}\label{classsampler_aebac5a0861b1844e92a055a159373add} 
+\index{sampler@{sampler}!mperpq\_cur\_@{mperpq\_cur\_}}
+\index{mperpq\_cur\_@{mperpq\_cur\_}!sampler@{sampler}}
+\doxysubsubsection{\texorpdfstring{mperpq\_cur\_}{mperpq\_cur\_}}
+{\footnotesize\ttfamily std\+::vector$<$std\+::complex$<$double$>$ $>$ sampler\+::mperpq\+\_\+cur\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Stores the $m_{\perp,q}$ at the current time (avoids repeated computation, which is costly) 
+
+\Hypertarget{classsampler_a37360abe50090fe9470a4d45c3cdf8cc}\label{classsampler_a37360abe50090fe9470a4d45c3cdf8cc} 
+\index{sampler@{sampler}!mperpq\_initial\_@{mperpq\_initial\_}}
+\index{mperpq\_initial\_@{mperpq\_initial\_}!sampler@{sampler}}
+\doxysubsubsection{\texorpdfstring{mperpq\_initial\_}{mperpq\_initial\_}}
+{\footnotesize\ttfamily std\+::vector$<$std\+::complex$<$double$>$ $>$ sampler\+::mperpq\+\_\+initial\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Stores the $m_{\perp,q}$ at the initial time (avoids repeated computation, only usable if q is not refreshed) 
+
+\Hypertarget{classsampler_a84875fee6d287f1beb7c938742b185db}\label{classsampler_a84875fee6d287f1beb7c938742b185db} 
+\index{sampler@{sampler}!MSD\_aux\_@{MSD\_aux\_}}
+\index{MSD\_aux\_@{MSD\_aux\_}!sampler@{sampler}}
+\doxysubsubsection{\texorpdfstring{MSD\_aux\_}{MSD\_aux\_}}
+{\footnotesize\ttfamily std\+::vector$<$double$>$ sampler\+::\+MSD\+\_\+aux\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Auxiliary MSD storage. Stores all distances and angles (depending on group type) that the particles have travelled. 
+
+\Hypertarget{classsampler_a2b3ceb7dfb823274ffcc75a044c35e4d}\label{classsampler_a2b3ceb7dfb823274ffcc75a044c35e4d} 
+\index{sampler@{sampler}!mxq\_@{mxq\_}}
+\index{mxq\_@{mxq\_}!sampler@{sampler}}
+\doxysubsubsection{\texorpdfstring{mxq\_}{mxq\_}}
+{\footnotesize\ttfamily std\+::vector$<$std\+::complex$<$double$>$ $>$ sampler\+::mxq\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Stores the $m_{x,q}$ (x-\/spin field fluctuation) 
+
+\Hypertarget{classsampler_a97a9adfea8abf16c778560543304426d}\label{classsampler_a97a9adfea8abf16c778560543304426d} 
+\index{sampler@{sampler}!mxq\_cur\_@{mxq\_cur\_}}
+\index{mxq\_cur\_@{mxq\_cur\_}!sampler@{sampler}}
+\doxysubsubsection{\texorpdfstring{mxq\_cur\_}{mxq\_cur\_}}
+{\footnotesize\ttfamily std\+::vector$<$std\+::complex$<$double$>$ $>$ sampler\+::mxq\+\_\+cur\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Stores the $m_{x,q}$ at the current time (avoids repeated computation, which is costly) 
+
+\Hypertarget{classsampler_a6e7ddcabf07f1c574fe3790aa2bc1028}\label{classsampler_a6e7ddcabf07f1c574fe3790aa2bc1028} 
+\index{sampler@{sampler}!mxq\_initial\_@{mxq\_initial\_}}
+\index{mxq\_initial\_@{mxq\_initial\_}!sampler@{sampler}}
+\doxysubsubsection{\texorpdfstring{mxq\_initial\_}{mxq\_initial\_}}
+{\footnotesize\ttfamily std\+::vector$<$std\+::complex$<$double$>$ $>$ sampler\+::mxq\+\_\+initial\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Stores the $m_{x,q}$ at the initial time (avoids repeated computation, only usable if q is not refreshed) 
+
+\Hypertarget{classsampler_aee2ab8ab7f0abdd762a92f3bc98dea8d}\label{classsampler_aee2ab8ab7f0abdd762a92f3bc98dea8d} 
+\index{sampler@{sampler}!myq\_@{myq\_}}
+\index{myq\_@{myq\_}!sampler@{sampler}}
+\doxysubsubsection{\texorpdfstring{myq\_}{myq\_}}
+{\footnotesize\ttfamily std\+::vector$<$std\+::complex$<$double$>$ $>$ sampler\+::myq\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Stores the $m_{y,q}$ (y-\/spin field fluctuation) 
+
+\Hypertarget{classsampler_a87328f4ee3a92b7ca4d2c924f97c7134}\label{classsampler_a87328f4ee3a92b7ca4d2c924f97c7134} 
+\index{sampler@{sampler}!myq\_cur\_@{myq\_cur\_}}
+\index{myq\_cur\_@{myq\_cur\_}!sampler@{sampler}}
+\doxysubsubsection{\texorpdfstring{myq\_cur\_}{myq\_cur\_}}
+{\footnotesize\ttfamily std\+::vector$<$std\+::complex$<$double$>$ $>$ sampler\+::myq\+\_\+cur\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Stores the $m_{y,q}$ at the current time (avoids repeated computation, which is costly) 
+
+\Hypertarget{classsampler_a3e5db3d57c3580b8fd3aff8ee2dea164}\label{classsampler_a3e5db3d57c3580b8fd3aff8ee2dea164} 
+\index{sampler@{sampler}!myq\_initial\_@{myq\_initial\_}}
+\index{myq\_initial\_@{myq\_initial\_}!sampler@{sampler}}
+\doxysubsubsection{\texorpdfstring{myq\_initial\_}{myq\_initial\_}}
+{\footnotesize\ttfamily std\+::vector$<$std\+::complex$<$double$>$ $>$ sampler\+::myq\+\_\+initial\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Stores the $m_{y,q}$ at the initial time (avoids repeated computation, only usable if q is not refreshed) 
+
+\Hypertarget{classsampler_aecda51d087cf0d5b8c1ed441f0e3114b}\label{classsampler_aecda51d087cf0d5b8c1ed441f0e3114b} 
+\index{sampler@{sampler}!nsamp\_@{nsamp\_}}
+\index{nsamp\_@{nsamp\_}!sampler@{sampler}}
+\doxysubsubsection{\texorpdfstring{nsamp\_}{nsamp\_}}
+{\footnotesize\ttfamily int sampler\+::nsamp\+\_\+ = 0\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Number of samples (for time averages later on) 
+
+\Hypertarget{classsampler_af9bd5ebdf8cc9d5165abb6584ed6cb07}\label{classsampler_af9bd5ebdf8cc9d5165abb6584ed6cb07} 
+\index{sampler@{sampler}!nsnap\_@{nsnap\_}}
+\index{nsnap\_@{nsnap\_}!sampler@{sampler}}
+\doxysubsubsection{\texorpdfstring{nsnap\_}{nsnap\_}}
+{\footnotesize\ttfamily int sampler\+::nsnap\+\_\+ = 0\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Number of snapshots. 
+
+\Hypertarget{classsampler_a151708b9bc29e5d2d186b3de031a0624}\label{classsampler_a151708b9bc29e5d2d186b3de031a0624} 
+\index{sampler@{sampler}!NumberOfSwitches\_@{NumberOfSwitches\_}}
+\index{NumberOfSwitches\_@{NumberOfSwitches\_}!sampler@{sampler}}
+\doxysubsubsection{\texorpdfstring{NumberOfSwitches\_}{NumberOfSwitches\_}}
+{\footnotesize\ttfamily int sampler\+::\+Number\+Of\+Switches\+\_\+ = 15\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Total number of switches. Could be useful. 
+
+\Hypertarget{classsampler_ae6d2f848c6c2cab03c0554aca0a9861d}\label{classsampler_ae6d2f848c6c2cab03c0554aca0a9861d} 
+\index{sampler@{sampler}!P\_@{P\_}}
+\index{P\_@{P\_}!sampler@{sampler}}
+\doxysubsubsection{\texorpdfstring{P\_}{P\_}}
+{\footnotesize\ttfamily std\+::vector$<$\mbox{\hyperlink{classtopology_1_1_vector2d}{topology\+::\+Vector2d}}$>$ sampler\+::\+P\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Stores momentum components. 
+
+\Hypertarget{classsampler_a15f8ebce1699e8341846cbc6255daf75}\label{classsampler_a15f8ebce1699e8341846cbc6255daf75} 
+\index{sampler@{sampler}!P\_2\_@{P\_2\_}}
+\index{P\_2\_@{P\_2\_}!sampler@{sampler}}
+\doxysubsubsection{\texorpdfstring{P\_2\_}{P\_2\_}}
+{\footnotesize\ttfamily std\+::vector$<$double$>$ sampler\+::\+P\+\_\+2\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Stores momentum squared. 
+
+\Hypertarget{classsampler_aa723e3f58fe166838e3bf02a9e5d02f8}\label{classsampler_aa723e3f58fe166838e3bf02a9e5d02f8} 
+\index{sampler@{sampler}!P\_4\_@{P\_4\_}}
+\index{P\_4\_@{P\_4\_}!sampler@{sampler}}
+\doxysubsubsection{\texorpdfstring{P\_4\_}{P\_4\_}}
+{\footnotesize\ttfamily std\+::vector$<$double$>$ sampler\+::\+P\+\_\+4\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Stores momentum to the fourth power. 
+
+\Hypertarget{classsampler_aa007d18a034dc14e46dd840d1a665f09}\label{classsampler_aa007d18a034dc14e46dd840d1a665f09} 
+\index{sampler@{sampler}!par\_@{par\_}}
+\index{par\_@{par\_}!sampler@{sampler}}
+\doxysubsubsection{\texorpdfstring{par\_}{par\_}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classparameters}{parameters}} sampler\+::par\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Simulation parameters. 
+
+\Hypertarget{classsampler_a5326c68a7fe18e4492476b786c2f4c05}\label{classsampler_a5326c68a7fe18e4492476b786c2f4c05} 
+\index{sampler@{sampler}!print\_snapshots\_@{print\_snapshots\_}}
+\index{print\_snapshots\_@{print\_snapshots\_}!sampler@{sampler}}
+\doxysubsubsection{\texorpdfstring{print\_snapshots\_}{print\_snapshots\_}}
+{\footnotesize\ttfamily bool sampler\+::print\+\_\+snapshots\+\_\+ = 0\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Decides whether trajectories should be sampled. 
+
+\Hypertarget{classsampler_a21575c84076dfe052d51801e8e87dcd6}\label{classsampler_a21575c84076dfe052d51801e8e87dcd6} 
+\index{sampler@{sampler}!qvals\_@{qvals\_}}
+\index{qvals\_@{qvals\_}!sampler@{sampler}}
+\doxysubsubsection{\texorpdfstring{qvals\_}{qvals\_}}
+{\footnotesize\ttfamily std\+::vector$<$\mbox{\hyperlink{classtopology_1_1_vector2d}{topology\+::\+Vector2d}}$>$ sampler\+::qvals\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Values of q for evaluation of field fluctuations (changes over sampling process) 
+
+\Hypertarget{classsampler_aa6a167fa42b37c36d7cf0f3363ad80f3}\label{classsampler_aa6a167fa42b37c36d7cf0f3363ad80f3} 
+\index{sampler@{sampler}!refresh\_q\_@{refresh\_q\_}}
+\index{refresh\_q\_@{refresh\_q\_}!sampler@{sampler}}
+\doxysubsubsection{\texorpdfstring{refresh\_q\_}{refresh\_q\_}}
+{\footnotesize\ttfamily bool sampler\+::refresh\+\_\+q\+\_\+ = 0\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Decides whether or not to choose new random q values for each sampling. 
+
+\Hypertarget{classsampler_aa0a7775237b44a8c97394cf4b049ef3a}\label{classsampler_aa0a7775237b44a8c97394cf4b049ef3a} 
+\index{sampler@{sampler}!rq\_@{rq\_}}
+\index{rq\_@{rq\_}!sampler@{sampler}}
+\doxysubsubsection{\texorpdfstring{rq\_}{rq\_}}
+{\footnotesize\ttfamily std\+::vector$<$std\+::complex$<$double$>$ $>$ sampler\+::rq\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Stores the $\rho_{q}$ (density field fluctuation) 
+
+\Hypertarget{classsampler_a7a84bde2278495dac1b9bc5c0c3445b9}\label{classsampler_a7a84bde2278495dac1b9bc5c0c3445b9} 
+\index{sampler@{sampler}!rq\_cur\_@{rq\_cur\_}}
+\index{rq\_cur\_@{rq\_cur\_}!sampler@{sampler}}
+\doxysubsubsection{\texorpdfstring{rq\_cur\_}{rq\_cur\_}}
+{\footnotesize\ttfamily std\+::vector$<$std\+::complex$<$double$>$ $>$ sampler\+::rq\+\_\+cur\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Stores the $\rho_{q}$ at the current time. 
+
+\Hypertarget{classsampler_a16ffe546425372aeb1cf9d1f5252619b}\label{classsampler_a16ffe546425372aeb1cf9d1f5252619b} 
+\index{sampler@{sampler}!rq\_initial\_@{rq\_initial\_}}
+\index{rq\_initial\_@{rq\_initial\_}!sampler@{sampler}}
+\doxysubsubsection{\texorpdfstring{rq\_initial\_}{rq\_initial\_}}
+{\footnotesize\ttfamily std\+::vector$<$std\+::complex$<$double$>$ $>$ sampler\+::rq\+\_\+initial\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Stores the $\rho_{q}$ at the initial time (avoids repeated computation, only usable if q is not refreshed) 
+
+\Hypertarget{classsampler_ae7da09b2dd4e5a4c304ea0385ab2b205}\label{classsampler_ae7da09b2dd4e5a4c304ea0385ab2b205} 
+\index{sampler@{sampler}!SCF\_anglediff\_@{SCF\_anglediff\_}}
+\index{SCF\_anglediff\_@{SCF\_anglediff\_}!sampler@{sampler}}
+\doxysubsubsection{\texorpdfstring{SCF\_anglediff\_}{SCF\_anglediff\_}}
+{\footnotesize\ttfamily std\+::vector$<$double$>$ sampler\+::\+SCF\+\_\+anglediff\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Stores the static angle difference correlation function. 
+
+\Hypertarget{classsampler_a1b4c841779464a4c4290a95eff0d2961}\label{classsampler_a1b4c841779464a4c4290a95eff0d2961} 
+\index{sampler@{sampler}!SCF\_E\_@{SCF\_E\_}}
+\index{SCF\_E\_@{SCF\_E\_}!sampler@{sampler}}
+\doxysubsubsection{\texorpdfstring{SCF\_E\_}{SCF\_E\_}}
+{\footnotesize\ttfamily std\+::vector$<$double$>$ sampler\+::\+SCF\+\_\+\+E\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Stores the static total energy correlation function. 
+
+\Hypertarget{classsampler_adcf071fd8d890b74ab656d042eaea54f}\label{classsampler_adcf071fd8d890b74ab656d042eaea54f} 
+\index{sampler@{sampler}!SCF\_Eint\_@{SCF\_Eint\_}}
+\index{SCF\_Eint\_@{SCF\_Eint\_}!sampler@{sampler}}
+\doxysubsubsection{\texorpdfstring{SCF\_Eint\_}{SCF\_Eint\_}}
+{\footnotesize\ttfamily std\+::vector$<$double$>$ sampler\+::\+SCF\+\_\+\+Eint\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Stores the static interaction energy correlation function. 
+
+\Hypertarget{classsampler_a859c7292cf02ddf5fe643c7af93dc8c7}\label{classsampler_a859c7292cf02ddf5fe643c7af93dc8c7} 
+\index{sampler@{sampler}!SCF\_Ekin\_@{SCF\_Ekin\_}}
+\index{SCF\_Ekin\_@{SCF\_Ekin\_}!sampler@{sampler}}
+\doxysubsubsection{\texorpdfstring{SCF\_Ekin\_}{SCF\_Ekin\_}}
+{\footnotesize\ttfamily std\+::vector$<$double$>$ sampler\+::\+SCF\+\_\+\+Ekin\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Stores the static kinetic energy correlation function. 
+
+\Hypertarget{classsampler_a66933eda2e1c5b5b647bfc31b699db65}\label{classsampler_a66933eda2e1c5b5b647bfc31b699db65} 
+\index{sampler@{sampler}!SCF\_g\_@{SCF\_g\_}}
+\index{SCF\_g\_@{SCF\_g\_}!sampler@{sampler}}
+\doxysubsubsection{\texorpdfstring{SCF\_g\_}{SCF\_g\_}}
+{\footnotesize\ttfamily std\+::vector$<$double$>$ sampler\+::\+SCF\+\_\+g\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Stores the pair distribution function. 
+
+\Hypertarget{classsampler_a6552656d06305d39ee7066eb09c0604d}\label{classsampler_a6552656d06305d39ee7066eb09c0604d} 
+\index{sampler@{sampler}!SCF\_P\_@{SCF\_P\_}}
+\index{SCF\_P\_@{SCF\_P\_}!sampler@{sampler}}
+\doxysubsubsection{\texorpdfstring{SCF\_P\_}{SCF\_P\_}}
+{\footnotesize\ttfamily std\+::vector$<$double$>$ sampler\+::\+SCF\+\_\+\+P\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Stores the static linear momentum correlation function. 
+
+\Hypertarget{classsampler_a26eb6a6a786b118661b323571dc258d4}\label{classsampler_a26eb6a6a786b118661b323571dc258d4} 
+\index{sampler@{sampler}!SCF\_Spin\_@{SCF\_Spin\_}}
+\index{SCF\_Spin\_@{SCF\_Spin\_}!sampler@{sampler}}
+\doxysubsubsection{\texorpdfstring{SCF\_Spin\_}{SCF\_Spin\_}}
+{\footnotesize\ttfamily std\+::vector$<$double$>$ sampler\+::\+SCF\+\_\+\+Spin\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Stores the static spin correlation function. 
+
+\Hypertarget{classsampler_a5ce627306eb6dc01bdd51a6a917a9504}\label{classsampler_a5ce627306eb6dc01bdd51a6a917a9504} 
+\index{sampler@{sampler}!SCF\_Spin\_par\_@{SCF\_Spin\_par\_}}
+\index{SCF\_Spin\_par\_@{SCF\_Spin\_par\_}!sampler@{sampler}}
+\doxysubsubsection{\texorpdfstring{SCF\_Spin\_par\_}{SCF\_Spin\_par\_}}
+{\footnotesize\ttfamily std\+::vector$<$double$>$ sampler\+::\+SCF\+\_\+\+Spin\+\_\+par\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Stores the static spin correlation function. 
+
+\Hypertarget{classsampler_a2ebaa096003c1b84197803a329710c72}\label{classsampler_a2ebaa096003c1b84197803a329710c72} 
+\index{sampler@{sampler}!SCF\_Spin\_perp\_@{SCF\_Spin\_perp\_}}
+\index{SCF\_Spin\_perp\_@{SCF\_Spin\_perp\_}!sampler@{sampler}}
+\doxysubsubsection{\texorpdfstring{SCF\_Spin\_perp\_}{SCF\_Spin\_perp\_}}
+{\footnotesize\ttfamily std\+::vector$<$double$>$ sampler\+::\+SCF\+\_\+\+Spin\+\_\+perp\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Stores the static spin correlation function. 
+
+\Hypertarget{classsampler_a851270aff98ee55d7cb0648d8677b003}\label{classsampler_a851270aff98ee55d7cb0648d8677b003} 
+\index{sampler@{sampler}!SCF\_W\_@{SCF\_W\_}}
+\index{SCF\_W\_@{SCF\_W\_}!sampler@{sampler}}
+\doxysubsubsection{\texorpdfstring{SCF\_W\_}{SCF\_W\_}}
+{\footnotesize\ttfamily std\+::vector$<$double$>$ sampler\+::\+SCF\+\_\+\+W\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Stores the static spin momentum correlation function. 
+
+\Hypertarget{classsampler_a4b8004e6428d298983c99afc1c46348a}\label{classsampler_a4b8004e6428d298983c99afc1c46348a} 
+\index{sampler@{sampler}!SCFq\_mparmperp\_@{SCFq\_mparmperp\_}}
+\index{SCFq\_mparmperp\_@{SCFq\_mparmperp\_}!sampler@{sampler}}
+\doxysubsubsection{\texorpdfstring{SCFq\_mparmperp\_}{SCFq\_mparmperp\_}}
+{\footnotesize\ttfamily std\+::vector$<$std\+::complex$<$double$>$ $>$ sampler\+::\+SCFq\+\_\+mparmperp\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Stores the $\langle m_{\parallel,q}^* m_{\perp,q} \rangle$ static correlation. 
+
+\Hypertarget{classsampler_a4b86e1da9bdbc46d0fab10fb457f0fbf}\label{classsampler_a4b86e1da9bdbc46d0fab10fb457f0fbf} 
+\index{sampler@{sampler}!SCFq\_re\_@{SCFq\_re\_}}
+\index{SCFq\_re\_@{SCFq\_re\_}!sampler@{sampler}}
+\doxysubsubsection{\texorpdfstring{SCFq\_re\_}{SCFq\_re\_}}
+{\footnotesize\ttfamily std\+::vector$<$std\+::complex$<$double$>$ $>$ sampler\+::\+SCFq\+\_\+re\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Stores the $\langle r_{q}^* e_{q} \rangle$ static correlation. 
+
+\Hypertarget{classsampler_a20ff76746ffa045d8616369163b14b11}\label{classsampler_a20ff76746ffa045d8616369163b14b11} 
+\index{sampler@{sampler}!SCFq\_we\_@{SCFq\_we\_}}
+\index{SCFq\_we\_@{SCFq\_we\_}!sampler@{sampler}}
+\doxysubsubsection{\texorpdfstring{SCFq\_we\_}{SCFq\_we\_}}
+{\footnotesize\ttfamily std\+::vector$<$std\+::complex$<$double$>$ $>$ sampler\+::\+SCFq\+\_\+we\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Stores the $\langle w_{q}^* e_{q} \rangle$ static correlation. 
+
+\Hypertarget{classsampler_ab35e3e88226c9157ec7df763b3f96b44}\label{classsampler_ab35e3e88226c9157ec7df763b3f96b44} 
+\index{sampler@{sampler}!SCFq\_xe\_@{SCFq\_xe\_}}
+\index{SCFq\_xe\_@{SCFq\_xe\_}!sampler@{sampler}}
+\doxysubsubsection{\texorpdfstring{SCFq\_xe\_}{SCFq\_xe\_}}
+{\footnotesize\ttfamily std\+::vector$<$std\+::complex$<$double$>$ $>$ sampler\+::\+SCFq\+\_\+xe\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Stores the $\langle m_{x,q}^* e_{q} \rangle$ static correlation. 
+
+\Hypertarget{classsampler_aa06ea55ae81ee45082609cca08fd3078}\label{classsampler_aa06ea55ae81ee45082609cca08fd3078} 
+\index{sampler@{sampler}!SCFq\_xw\_@{SCFq\_xw\_}}
+\index{SCFq\_xw\_@{SCFq\_xw\_}!sampler@{sampler}}
+\doxysubsubsection{\texorpdfstring{SCFq\_xw\_}{SCFq\_xw\_}}
+{\footnotesize\ttfamily std\+::vector$<$std\+::complex$<$double$>$ $>$ sampler\+::\+SCFq\+\_\+xw\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Stores the $\langle m_{x,q}^* w_{q} \rangle$ static correlation. 
+
+\Hypertarget{classsampler_a97788a76494a86641eed71330a9b3c64}\label{classsampler_a97788a76494a86641eed71330a9b3c64} 
+\index{sampler@{sampler}!SCFq\_xy\_@{SCFq\_xy\_}}
+\index{SCFq\_xy\_@{SCFq\_xy\_}!sampler@{sampler}}
+\doxysubsubsection{\texorpdfstring{SCFq\_xy\_}{SCFq\_xy\_}}
+{\footnotesize\ttfamily std\+::vector$<$std\+::complex$<$double$>$ $>$ sampler\+::\+SCFq\+\_\+xy\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Stores the $\langle m_{x,q}^* m_{y,q} \rangle$ static correlation. 
+
+\Hypertarget{classsampler_ae3fb1f54797c42922a4839f3b0776a8e}\label{classsampler_ae3fb1f54797c42922a4839f3b0776a8e} 
+\index{sampler@{sampler}!SCFq\_ye\_@{SCFq\_ye\_}}
+\index{SCFq\_ye\_@{SCFq\_ye\_}!sampler@{sampler}}
+\doxysubsubsection{\texorpdfstring{SCFq\_ye\_}{SCFq\_ye\_}}
+{\footnotesize\ttfamily std\+::vector$<$std\+::complex$<$double$>$ $>$ sampler\+::\+SCFq\+\_\+ye\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Stores the $\langle m_{y,q}^* e_{q} \rangle$ static correlation. 
+
+\Hypertarget{classsampler_a25ae2e2f61ebb11d6593eda32a176870}\label{classsampler_a25ae2e2f61ebb11d6593eda32a176870} 
+\index{sampler@{sampler}!SCFq\_yw\_@{SCFq\_yw\_}}
+\index{SCFq\_yw\_@{SCFq\_yw\_}!sampler@{sampler}}
+\doxysubsubsection{\texorpdfstring{SCFq\_yw\_}{SCFq\_yw\_}}
+{\footnotesize\ttfamily std\+::vector$<$std\+::complex$<$double$>$ $>$ sampler\+::\+SCFq\+\_\+yw\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Stores the $\langle m_{y,q}^* w_{q} \rangle$ static correlation. 
+
+\Hypertarget{classsampler_aeda7d78138db64f954d76781b7ac2d3e}\label{classsampler_aeda7d78138db64f954d76781b7ac2d3e} 
+\index{sampler@{sampler}!signed\_vortices\_@{signed\_vortices\_}}
+\index{signed\_vortices\_@{signed\_vortices\_}!sampler@{sampler}}
+\doxysubsubsection{\texorpdfstring{signed\_vortices\_}{signed\_vortices\_}}
+{\footnotesize\ttfamily std\+::vector$<$double$>$ sampler\+::signed\+\_\+vortices\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Stores total signed vortex density (i.\+e. positive minus negative density). 
+
+\Hypertarget{classsampler_a797bc95ef57846a49e1ded213d72aa75}\label{classsampler_a797bc95ef57846a49e1ded213d72aa75} 
+\index{sampler@{sampler}!store\_eq\_@{store\_eq\_}}
+\index{store\_eq\_@{store\_eq\_}!sampler@{sampler}}
+\doxysubsubsection{\texorpdfstring{store\_eq\_}{store\_eq\_}}
+{\footnotesize\ttfamily bool sampler\+::store\+\_\+eq\+\_\+ = 0\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Decides whether or not $e_q$ is calculated. 
+
+\Hypertarget{classsampler_a578f249613f387900ae330765ada6407}\label{classsampler_a578f249613f387900ae330765ada6407} 
+\index{sampler@{sampler}!store\_jparq\_@{store\_jparq\_}}
+\index{store\_jparq\_@{store\_jparq\_}!sampler@{sampler}}
+\doxysubsubsection{\texorpdfstring{store\_jparq\_}{store\_jparq\_}}
+{\footnotesize\ttfamily bool sampler\+::store\+\_\+jparq\+\_\+ = 0\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Decides whether or not $j_{L,q}$ is calculated. 
+
+\Hypertarget{classsampler_a56a92dc6729df7723f28427a6d1f63fa}\label{classsampler_a56a92dc6729df7723f28427a6d1f63fa} 
+\index{sampler@{sampler}!store\_jperpq\_@{store\_jperpq\_}}
+\index{store\_jperpq\_@{store\_jperpq\_}!sampler@{sampler}}
+\doxysubsubsection{\texorpdfstring{store\_jperpq\_}{store\_jperpq\_}}
+{\footnotesize\ttfamily bool sampler\+::store\+\_\+jperpq\+\_\+ = 0\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Decides whether or not $j_{T,q}$ is calculated. 
+
+\Hypertarget{classsampler_add986b085398b6203ae7836d903d5b7f}\label{classsampler_add986b085398b6203ae7836d903d5b7f} 
+\index{sampler@{sampler}!store\_lq\_@{store\_lq\_}}
+\index{store\_lq\_@{store\_lq\_}!sampler@{sampler}}
+\doxysubsubsection{\texorpdfstring{store\_lq\_}{store\_lq\_}}
+{\footnotesize\ttfamily bool sampler\+::store\+\_\+lq\+\_\+ = 0\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Decides whether or not $l_q$ is calculated. 
+
+\Hypertarget{classsampler_a5f67ee394fee3a4131fc300764bf54d3}\label{classsampler_a5f67ee394fee3a4131fc300764bf54d3} 
+\index{sampler@{sampler}!store\_MemoryKernels\_@{store\_MemoryKernels\_}}
+\index{store\_MemoryKernels\_@{store\_MemoryKernels\_}!sampler@{sampler}}
+\doxysubsubsection{\texorpdfstring{store\_MemoryKernels\_}{store\_MemoryKernels\_}}
+{\footnotesize\ttfamily bool sampler\+::store\+\_\+\+Memory\+Kernels\+\_\+ = 0\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Decides whether or not the memory kernels (MCT) are calculated. 
+
+\Hypertarget{classsampler_a9aa018152741403bcf1d0977a325ed19}\label{classsampler_a9aa018152741403bcf1d0977a325ed19} 
+\index{sampler@{sampler}!store\_mxq\_@{store\_mxq\_}}
+\index{store\_mxq\_@{store\_mxq\_}!sampler@{sampler}}
+\doxysubsubsection{\texorpdfstring{store\_mxq\_}{store\_mxq\_}}
+{\footnotesize\ttfamily bool sampler\+::store\+\_\+mxq\+\_\+ = 0\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Decides whether or not $m_{x,q}$ is calculated. 
+
+\Hypertarget{classsampler_a33670a88dd7b7fdc8e0d48e16a4cbb8e}\label{classsampler_a33670a88dd7b7fdc8e0d48e16a4cbb8e} 
+\index{sampler@{sampler}!store\_myq\_@{store\_myq\_}}
+\index{store\_myq\_@{store\_myq\_}!sampler@{sampler}}
+\doxysubsubsection{\texorpdfstring{store\_myq\_}{store\_myq\_}}
+{\footnotesize\ttfamily bool sampler\+::store\+\_\+myq\+\_\+ = 0\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Decides whether or not $m_{y,q}$ is calculated. 
+
+\Hypertarget{classsampler_ae1731db6b72fea3e61bb68c9c3596a34}\label{classsampler_ae1731db6b72fea3e61bb68c9c3596a34} 
+\index{sampler@{sampler}!store\_rq\_@{store\_rq\_}}
+\index{store\_rq\_@{store\_rq\_}!sampler@{sampler}}
+\doxysubsubsection{\texorpdfstring{store\_rq\_}{store\_rq\_}}
+{\footnotesize\ttfamily bool sampler\+::store\+\_\+rq\+\_\+ = 0\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Decides whether or not $\rho_q$ is calculated. 
+
+\Hypertarget{classsampler_a8fa1e6b03d01e5a9b49e21c7d8e713e2}\label{classsampler_a8fa1e6b03d01e5a9b49e21c7d8e713e2} 
+\index{sampler@{sampler}!store\_SCF\_@{store\_SCF\_}}
+\index{store\_SCF\_@{store\_SCF\_}!sampler@{sampler}}
+\doxysubsubsection{\texorpdfstring{store\_SCF\_}{store\_SCF\_}}
+{\footnotesize\ttfamily bool sampler\+::store\+\_\+\+SCF\+\_\+ = 0\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Decides whether or not the static correlation functions are calculated. 
+
+\Hypertarget{classsampler_a6376dccb32112ee2dd232a23f0824a74}\label{classsampler_a6376dccb32112ee2dd232a23f0824a74} 
+\index{sampler@{sampler}!store\_static\_@{store\_static\_}}
+\index{store\_static\_@{store\_static\_}!sampler@{sampler}}
+\doxysubsubsection{\texorpdfstring{store\_static\_}{store\_static\_}}
+{\footnotesize\ttfamily bool sampler\+::store\+\_\+static\+\_\+ = 0\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Decides whether or not static quantities are calculated. 
+
+\Hypertarget{classsampler_a0864709a4ef11d45dbff0c5734c53aa4}\label{classsampler_a0864709a4ef11d45dbff0c5734c53aa4} 
+\index{sampler@{sampler}!store\_TCF\_@{store\_TCF\_}}
+\index{store\_TCF\_@{store\_TCF\_}!sampler@{sampler}}
+\doxysubsubsection{\texorpdfstring{store\_TCF\_}{store\_TCF\_}}
+{\footnotesize\ttfamily bool sampler\+::store\+\_\+\+TCF\+\_\+ = 0\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Decides whether or not the time correlation functions (autocorrelations and so forth) are calculated. 
+
+\Hypertarget{classsampler_a36571d840054bf6369ac19de4426f14c}\label{classsampler_a36571d840054bf6369ac19de4426f14c} 
+\index{sampler@{sampler}!store\_teq\_@{store\_teq\_}}
+\index{store\_teq\_@{store\_teq\_}!sampler@{sampler}}
+\doxysubsubsection{\texorpdfstring{store\_teq\_}{store\_teq\_}}
+{\footnotesize\ttfamily bool sampler\+::store\+\_\+teq\+\_\+ = 0\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Decides whether or not $\theta_q$ is calculated. 
+
+\Hypertarget{classsampler_ac1d6c3e94e227dc922e68480ddb1b19b}\label{classsampler_ac1d6c3e94e227dc922e68480ddb1b19b} 
+\index{sampler@{sampler}!store\_TransCoeff\_@{store\_TransCoeff\_}}
+\index{store\_TransCoeff\_@{store\_TransCoeff\_}!sampler@{sampler}}
+\doxysubsubsection{\texorpdfstring{store\_TransCoeff\_}{store\_TransCoeff\_}}
+{\footnotesize\ttfamily bool sampler\+::store\+\_\+\+Trans\+Coeff\+\_\+ = 0\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Decides whether or not the transport coefficients are calculated. 
+
+\Hypertarget{classsampler_aba7d6e15745d06eaac4a839c4b0dea51}\label{classsampler_aba7d6e15745d06eaac4a839c4b0dea51} 
+\index{sampler@{sampler}!store\_vortices\_@{store\_vortices\_}}
+\index{store\_vortices\_@{store\_vortices\_}!sampler@{sampler}}
+\doxysubsubsection{\texorpdfstring{store\_vortices\_}{store\_vortices\_}}
+{\footnotesize\ttfamily bool sampler\+::store\+\_\+vortices\+\_\+ = 0\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Decides whether or not vortices\+\_\+ is calculated. 
+
+\Hypertarget{classsampler_afed6f7a60eb25931d6a9ca9866257ed1}\label{classsampler_afed6f7a60eb25931d6a9ca9866257ed1} 
+\index{sampler@{sampler}!store\_wq\_@{store\_wq\_}}
+\index{store\_wq\_@{store\_wq\_}!sampler@{sampler}}
+\doxysubsubsection{\texorpdfstring{store\_wq\_}{store\_wq\_}}
+{\footnotesize\ttfamily bool sampler\+::store\+\_\+wq\+\_\+ = 0\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Decides whether or not $w_q$ is calculated. 
+
+\Hypertarget{classsampler_aee73e05008380a3616173dee90d89c98}\label{classsampler_aee73e05008380a3616173dee90d89c98} 
+\index{sampler@{sampler}!tau\_@{tau\_}}
+\index{tau\_@{tau\_}!sampler@{sampler}}
+\doxysubsubsection{\texorpdfstring{tau\_}{tau\_}}
+{\footnotesize\ttfamily std\+::vector$<$\mbox{\hyperlink{classtopology_1_1_vector2d}{topology\+::\+Vector2d}}$>$ sampler\+::tau\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Stores momentum flux tau, which is the q to 0 limit of \$\textbackslash{}tau\textquotesingle{}\+\_\+q\$ in eq. (1.\+31b). Required for ZM transport Coefficients. (see old notes, not included in thesis) 
+
+\Hypertarget{classsampler_a936fecf07c0d76f6a81324d7f28ebe95}\label{classsampler_a936fecf07c0d76f6a81324d7f28ebe95} 
+\index{sampler@{sampler}!tau\_initial\_@{tau\_initial\_}}
+\index{tau\_initial\_@{tau\_initial\_}!sampler@{sampler}}
+\doxysubsubsection{\texorpdfstring{tau\_initial\_}{tau\_initial\_}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classtopology_1_1_vector2d}{topology\+::\+Vector2d}} sampler\+::tau\+\_\+initial\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Stores initial momentum flux tau (see old notes, not included in thesis) 
+
+\Hypertarget{classsampler_ac8b378df612210286630ad2a883d408a}\label{classsampler_ac8b378df612210286630ad2a883d408a} 
+\index{sampler@{sampler}!TCF\_times\_@{TCF\_times\_}}
+\index{TCF\_times\_@{TCF\_times\_}!sampler@{sampler}}
+\doxysubsubsection{\texorpdfstring{TCF\_times\_}{TCF\_times\_}}
+{\footnotesize\ttfamily std\+::vector$<$double$>$ sampler\+::\+TCF\+\_\+times\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Stores sampling times (for time correlation function) 
+
+\Hypertarget{classsampler_a60215fd2a7eaa4bea54615e7a25a7558}\label{classsampler_a60215fd2a7eaa4bea54615e7a25a7558} 
+\index{sampler@{sampler}!temperature\_@{temperature\_}}
+\index{temperature\_@{temperature\_}!sampler@{sampler}}
+\doxysubsubsection{\texorpdfstring{temperature\_}{temperature\_}}
+{\footnotesize\ttfamily std\+::vector$<$double$>$ sampler\+::temperature\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Stores temperature. 
+
+\Hypertarget{classsampler_aaedff39ce5f699d75083decbbf048a92}\label{classsampler_aaedff39ce5f699d75083decbbf048a92} 
+\index{sampler@{sampler}!temperature\_omega\_@{temperature\_omega\_}}
+\index{temperature\_omega\_@{temperature\_omega\_}!sampler@{sampler}}
+\doxysubsubsection{\texorpdfstring{temperature\_omega\_}{temperature\_omega\_}}
+{\footnotesize\ttfamily std\+::vector$<$double$>$ sampler\+::temperature\+\_\+omega\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Stores spin momentum temperature. 
+
+\Hypertarget{classsampler_a0f44fd6dbdf0b61bbf1ab0a03a69e7e0}\label{classsampler_a0f44fd6dbdf0b61bbf1ab0a03a69e7e0} 
+\index{sampler@{sampler}!temperature\_omega\_squared\_@{temperature\_omega\_squared\_}}
+\index{temperature\_omega\_squared\_@{temperature\_omega\_squared\_}!sampler@{sampler}}
+\doxysubsubsection{\texorpdfstring{temperature\_omega\_squared\_}{temperature\_omega\_squared\_}}
+{\footnotesize\ttfamily std\+::vector$<$double$>$ sampler\+::temperature\+\_\+omega\+\_\+squared\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Stores spin momentum temperature squared. 
+
+\Hypertarget{classsampler_a473b1e44bf89b238ad29a8d8c41d7482}\label{classsampler_a473b1e44bf89b238ad29a8d8c41d7482} 
+\index{sampler@{sampler}!temperature\_p\_@{temperature\_p\_}}
+\index{temperature\_p\_@{temperature\_p\_}!sampler@{sampler}}
+\doxysubsubsection{\texorpdfstring{temperature\_p\_}{temperature\_p\_}}
+{\footnotesize\ttfamily std\+::vector$<$double$>$ sampler\+::temperature\+\_\+p\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Stores linear momentum temperature. 
+
+\Hypertarget{classsampler_a8db91c2566736f53ebac582704c73079}\label{classsampler_a8db91c2566736f53ebac582704c73079} 
+\index{sampler@{sampler}!temperature\_p\_squared\_@{temperature\_p\_squared\_}}
+\index{temperature\_p\_squared\_@{temperature\_p\_squared\_}!sampler@{sampler}}
+\doxysubsubsection{\texorpdfstring{temperature\_p\_squared\_}{temperature\_p\_squared\_}}
+{\footnotesize\ttfamily std\+::vector$<$double$>$ sampler\+::temperature\+\_\+p\+\_\+squared\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Stores linear momentum temperature squared. 
+
+\Hypertarget{classsampler_af02b85e647212f86d1f05658c06ecc90}\label{classsampler_af02b85e647212f86d1f05658c06ecc90} 
+\index{sampler@{sampler}!temperature\_squared\_@{temperature\_squared\_}}
+\index{temperature\_squared\_@{temperature\_squared\_}!sampler@{sampler}}
+\doxysubsubsection{\texorpdfstring{temperature\_squared\_}{temperature\_squared\_}}
+{\footnotesize\ttfamily std\+::vector$<$double$>$ sampler\+::temperature\+\_\+squared\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Stores temperature squared. 
+
+\Hypertarget{classsampler_aa373b7529dcae63bb16a1c851a2faa09}\label{classsampler_aa373b7529dcae63bb16a1c851a2faa09} 
+\index{sampler@{sampler}!teq\_@{teq\_}}
+\index{teq\_@{teq\_}!sampler@{sampler}}
+\doxysubsubsection{\texorpdfstring{teq\_}{teq\_}}
+{\footnotesize\ttfamily std\+::vector$<$std\+::complex$<$double$>$ $>$ sampler\+::teq\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Stores the $\theta_{q}$ (theta field fluctuation) 
+
+\Hypertarget{classsampler_a4a17711e32c231200a601ca7a3d6e53e}\label{classsampler_a4a17711e32c231200a601ca7a3d6e53e} 
+\index{sampler@{sampler}!teq\_cur\_@{teq\_cur\_}}
+\index{teq\_cur\_@{teq\_cur\_}!sampler@{sampler}}
+\doxysubsubsection{\texorpdfstring{teq\_cur\_}{teq\_cur\_}}
+{\footnotesize\ttfamily std\+::vector$<$std\+::complex$<$double$>$ $>$ sampler\+::teq\+\_\+cur\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Stores the $\theta_{q}$ at the current time (avoids repeated computation, which is costly) 
+
+\Hypertarget{classsampler_a630136b731302c406efefd2ba633febf}\label{classsampler_a630136b731302c406efefd2ba633febf} 
+\index{sampler@{sampler}!teq\_initial\_@{teq\_initial\_}}
+\index{teq\_initial\_@{teq\_initial\_}!sampler@{sampler}}
+\doxysubsubsection{\texorpdfstring{teq\_initial\_}{teq\_initial\_}}
+{\footnotesize\ttfamily std\+::vector$<$std\+::complex$<$double$>$ $>$ sampler\+::teq\+\_\+initial\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Stores the $\theta_{q}$ at the initial time (avoids repeated computation, only usable if q is not refreshed) 
+
+\Hypertarget{classsampler_a22d78d07c99c7f044e459eee803b1866}\label{classsampler_a22d78d07c99c7f044e459eee803b1866} 
+\index{sampler@{sampler}!Theta\_@{Theta\_}}
+\index{Theta\_@{Theta\_}!sampler@{sampler}}
+\doxysubsubsection{\texorpdfstring{Theta\_}{Theta\_}}
+{\footnotesize\ttfamily std\+::vector$<$double$>$ sampler\+::\+Theta\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Stores mean theta (with respect to the spin x-\/axis) 
+
+\Hypertarget{classsampler_a23c18cd669d907b30bdfe241d671271e}\label{classsampler_a23c18cd669d907b30bdfe241d671271e} 
+\index{sampler@{sampler}!Theta\_2\_@{Theta\_2\_}}
+\index{Theta\_2\_@{Theta\_2\_}!sampler@{sampler}}
+\doxysubsubsection{\texorpdfstring{Theta\_2\_}{Theta\_2\_}}
+{\footnotesize\ttfamily std\+::vector$<$double$>$ sampler\+::\+Theta\+\_\+2\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Stores mean theta\texorpdfstring{$^\wedge$}{\string^}2 (with respect to the spin x-\/axis) 
+
+\Hypertarget{classsampler_a58a0e6021446a50ed3ae2d465c982787}\label{classsampler_a58a0e6021446a50ed3ae2d465c982787} 
+\index{sampler@{sampler}!Theta\_4\_@{Theta\_4\_}}
+\index{Theta\_4\_@{Theta\_4\_}!sampler@{sampler}}
+\doxysubsubsection{\texorpdfstring{Theta\_4\_}{Theta\_4\_}}
+{\footnotesize\ttfamily std\+::vector$<$double$>$ sampler\+::\+Theta\+\_\+4\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Stores mean theta\texorpdfstring{$^\wedge$}{\string^}4 (with respect to the spin x-\/axis) 
+
+\Hypertarget{classsampler_a07d79935c67a797d539e1154a78ffada}\label{classsampler_a07d79935c67a797d539e1154a78ffada} 
+\index{sampler@{sampler}!Theta\_rel\_to\_M\_@{Theta\_rel\_to\_M\_}}
+\index{Theta\_rel\_to\_M\_@{Theta\_rel\_to\_M\_}!sampler@{sampler}}
+\doxysubsubsection{\texorpdfstring{Theta\_rel\_to\_M\_}{Theta\_rel\_to\_M\_}}
+{\footnotesize\ttfamily std\+::vector$<$double$>$ sampler\+::\+Theta\+\_\+rel\+\_\+to\+\_\+\+M\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Stores mean theta relative to orientation of magnetization. 
+
+\Hypertarget{classsampler_af1aea83760c2e43b746d9b3c50f0c917}\label{classsampler_af1aea83760c2e43b746d9b3c50f0c917} 
+\index{sampler@{sampler}!Theta\_rel\_to\_M\_2\_@{Theta\_rel\_to\_M\_2\_}}
+\index{Theta\_rel\_to\_M\_2\_@{Theta\_rel\_to\_M\_2\_}!sampler@{sampler}}
+\doxysubsubsection{\texorpdfstring{Theta\_rel\_to\_M\_2\_}{Theta\_rel\_to\_M\_2\_}}
+{\footnotesize\ttfamily std\+::vector$<$double$>$ sampler\+::\+Theta\+\_\+rel\+\_\+to\+\_\+\+M\+\_\+2\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Stores mean theta\texorpdfstring{$^\wedge$}{\string^}2 relative to orientation of magnetization. 
+
+\Hypertarget{classsampler_a933784c7b6043b0b69fbe12b79f72924}\label{classsampler_a933784c7b6043b0b69fbe12b79f72924} 
+\index{sampler@{sampler}!Theta\_rel\_to\_M\_4\_@{Theta\_rel\_to\_M\_4\_}}
+\index{Theta\_rel\_to\_M\_4\_@{Theta\_rel\_to\_M\_4\_}!sampler@{sampler}}
+\doxysubsubsection{\texorpdfstring{Theta\_rel\_to\_M\_4\_}{Theta\_rel\_to\_M\_4\_}}
+{\footnotesize\ttfamily std\+::vector$<$double$>$ sampler\+::\+Theta\+\_\+rel\+\_\+to\+\_\+\+M\+\_\+4\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Stores mean theta\texorpdfstring{$^\wedge$}{\string^}2 relative to orientation of magnetization. 
+
+\Hypertarget{classsampler_a543e8ac23d18ee664f41e99c134196b1}\label{classsampler_a543e8ac23d18ee664f41e99c134196b1} 
+\index{sampler@{sampler}!TransCoeff\_cos1\_@{TransCoeff\_cos1\_}}
+\index{TransCoeff\_cos1\_@{TransCoeff\_cos1\_}!sampler@{sampler}}
+\doxysubsubsection{\texorpdfstring{TransCoeff\_cos1\_}{TransCoeff\_cos1\_}}
+{\footnotesize\ttfamily std\+::vector$<$double$>$ sampler\+::\+Trans\+Coeff\+\_\+cos1\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Transport Coefficient\+: $\langle cos(te_{ij})\rangle$ (see old notes, not included in thesis) 
+
+\Hypertarget{classsampler_acc94501a396846e96d6761e61d9a4e9c}\label{classsampler_acc94501a396846e96d6761e61d9a4e9c} 
+\index{sampler@{sampler}!TransCoeff\_J1\_@{TransCoeff\_J1\_}}
+\index{TransCoeff\_J1\_@{TransCoeff\_J1\_}!sampler@{sampler}}
+\doxysubsubsection{\texorpdfstring{TransCoeff\_J1\_}{TransCoeff\_J1\_}}
+{\footnotesize\ttfamily std\+::vector$<$double$>$ sampler\+::\+Trans\+Coeff\+\_\+\+J1\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Transport Coefficient\+: $\langle J(r_{ij})\rangle$ (see old notes, not included in thesis) 
+
+\Hypertarget{classsampler_a1072e441c213e4e7f235bc819e68fedd}\label{classsampler_a1072e441c213e4e7f235bc819e68fedd} 
+\index{sampler@{sampler}!TransCoeff\_J1\_cos1\_@{TransCoeff\_J1\_cos1\_}}
+\index{TransCoeff\_J1\_cos1\_@{TransCoeff\_J1\_cos1\_}!sampler@{sampler}}
+\doxysubsubsection{\texorpdfstring{TransCoeff\_J1\_cos1\_}{TransCoeff\_J1\_cos1\_}}
+{\footnotesize\ttfamily std\+::vector$<$double$>$ sampler\+::\+Trans\+Coeff\+\_\+\+J1\+\_\+cos1\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Transport Coefficient\+: $\langle J(r_{ij}) cos(te_{ij})\rangle$ (see old notes, not included in thesis) 
+
+\Hypertarget{classsampler_a52b1046b15eaba88c09f94d5aeb61267}\label{classsampler_a52b1046b15eaba88c09f94d5aeb61267} 
+\index{sampler@{sampler}!TransCoeff\_J1\_cos1\_r2\_@{TransCoeff\_J1\_cos1\_r2\_}}
+\index{TransCoeff\_J1\_cos1\_r2\_@{TransCoeff\_J1\_cos1\_r2\_}!sampler@{sampler}}
+\doxysubsubsection{\texorpdfstring{TransCoeff\_J1\_cos1\_r2\_}{TransCoeff\_J1\_cos1\_r2\_}}
+{\footnotesize\ttfamily std\+::vector$<$double$>$ sampler\+::\+Trans\+Coeff\+\_\+\+J1\+\_\+cos1\+\_\+r2\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Transport Coefficient\+: $\langle J(r_{ij}) cos(te_{ij}) r_{ij}^2\rangle$ (see old notes, not included in thesis) 
+
+\Hypertarget{classsampler_ae550e902c4305edc6d6ae6d47ac75717}\label{classsampler_ae550e902c4305edc6d6ae6d47ac75717} 
+\index{sampler@{sampler}!TransCoeff\_J1\_cos2\_@{TransCoeff\_J1\_cos2\_}}
+\index{TransCoeff\_J1\_cos2\_@{TransCoeff\_J1\_cos2\_}!sampler@{sampler}}
+\doxysubsubsection{\texorpdfstring{TransCoeff\_J1\_cos2\_}{TransCoeff\_J1\_cos2\_}}
+{\footnotesize\ttfamily std\+::vector$<$double$>$ sampler\+::\+Trans\+Coeff\+\_\+\+J1\+\_\+cos2\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Transport Coefficient\+: $\langle J(r_{ij}) cos^2(te_{ij})\rangle$ (see old notes, not included in thesis) 
+
+\Hypertarget{classsampler_af04ecbd7d1c5725466602e82da3db39e}\label{classsampler_af04ecbd7d1c5725466602e82da3db39e} 
+\index{sampler@{sampler}!TransCoeff\_J1\_cos2\_r2\_@{TransCoeff\_J1\_cos2\_r2\_}}
+\index{TransCoeff\_J1\_cos2\_r2\_@{TransCoeff\_J1\_cos2\_r2\_}!sampler@{sampler}}
+\doxysubsubsection{\texorpdfstring{TransCoeff\_J1\_cos2\_r2\_}{TransCoeff\_J1\_cos2\_r2\_}}
+{\footnotesize\ttfamily std\+::vector$<$double$>$ sampler\+::\+Trans\+Coeff\+\_\+\+J1\+\_\+cos2\+\_\+r2\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Transport Coefficient\+: $\langle J(r_{ij}) cos^2(te_{ij}) r_{ij}^2\rangle$ (see old notes, not included in thesis) 
+
+\Hypertarget{classsampler_a5325eba19bc64bb7d391771d8a1fc09d}\label{classsampler_a5325eba19bc64bb7d391771d8a1fc09d} 
+\index{sampler@{sampler}!TransCoeff\_J1\_sin1\_te\_@{TransCoeff\_J1\_sin1\_te\_}}
+\index{TransCoeff\_J1\_sin1\_te\_@{TransCoeff\_J1\_sin1\_te\_}!sampler@{sampler}}
+\doxysubsubsection{\texorpdfstring{TransCoeff\_J1\_sin1\_te\_}{TransCoeff\_J1\_sin1\_te\_}}
+{\footnotesize\ttfamily std\+::vector$<$double$>$ sampler\+::\+Trans\+Coeff\+\_\+\+J1\+\_\+sin1\+\_\+te\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Transport Coefficient\+: $\langle J(r_{ij}) sin(te_{ij}) te_{ij}\rangle$ (see old notes, not included in thesis) 
+
+\Hypertarget{classsampler_a208888d9f733048d6af567c77889a531}\label{classsampler_a208888d9f733048d6af567c77889a531} 
+\index{sampler@{sampler}!TransCoeff\_times\_@{TransCoeff\_times\_}}
+\index{TransCoeff\_times\_@{TransCoeff\_times\_}!sampler@{sampler}}
+\doxysubsubsection{\texorpdfstring{TransCoeff\_times\_}{TransCoeff\_times\_}}
+{\footnotesize\ttfamily std\+::vector$<$double$>$ sampler\+::\+Trans\+Coeff\+\_\+times\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Stores times used in calculation of transport coefficients. 
+
+\Hypertarget{classsampler_af44b8621b08241b689a9372e9974fd43}\label{classsampler_af44b8621b08241b689a9372e9974fd43} 
+\index{sampler@{sampler}!TransCoeff\_Up\_@{TransCoeff\_Up\_}}
+\index{TransCoeff\_Up\_@{TransCoeff\_Up\_}!sampler@{sampler}}
+\doxysubsubsection{\texorpdfstring{TransCoeff\_Up\_}{TransCoeff\_Up\_}}
+{\footnotesize\ttfamily std\+::vector$<$double$>$ sampler\+::\+Trans\+Coeff\+\_\+\+Up\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Transport Coefficient\+: $\langle {\cal U}\textnormal{\textquotesingle}(r_{ij})\rangle$ (see old notes, not included in thesis) 
+
+\Hypertarget{classsampler_a882c9e5cf5e29862023f2cf05bb45528}\label{classsampler_a882c9e5cf5e29862023f2cf05bb45528} 
+\index{sampler@{sampler}!TransCoeff\_Up\_cos1\_@{TransCoeff\_Up\_cos1\_}}
+\index{TransCoeff\_Up\_cos1\_@{TransCoeff\_Up\_cos1\_}!sampler@{sampler}}
+\doxysubsubsection{\texorpdfstring{TransCoeff\_Up\_cos1\_}{TransCoeff\_Up\_cos1\_}}
+{\footnotesize\ttfamily std\+::vector$<$double$>$ sampler\+::\+Trans\+Coeff\+\_\+\+Up\+\_\+cos1\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Transport Coefficient\+: $\langle {\cal U}\textnormal{\textquotesingle}(r_{ij}) cos(te_{ij})\rangle$ (see old notes, not included in thesis) 
+
+\Hypertarget{classsampler_a60167031f8d9dd5cf778e6819161ef68}\label{classsampler_a60167031f8d9dd5cf778e6819161ef68} 
+\index{sampler@{sampler}!TransCoeff\_Up\_rinv\_@{TransCoeff\_Up\_rinv\_}}
+\index{TransCoeff\_Up\_rinv\_@{TransCoeff\_Up\_rinv\_}!sampler@{sampler}}
+\doxysubsubsection{\texorpdfstring{TransCoeff\_Up\_rinv\_}{TransCoeff\_Up\_rinv\_}}
+{\footnotesize\ttfamily std\+::vector$<$double$>$ sampler\+::\+Trans\+Coeff\+\_\+\+Up\+\_\+rinv\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Transport Coefficient\+: $\langle {\cal U}\textnormal{\textquotesingle}(r_{ij}) r_{ij}^{-1}\rangle$ (see old notes, not included in thesis) 
+
+\Hypertarget{classsampler_a0f6ee18b26f465d662db5ed44f72f38e}\label{classsampler_a0f6ee18b26f465d662db5ed44f72f38e} 
+\index{sampler@{sampler}!TransCoeff\_Up\_rinv\_cos1\_@{TransCoeff\_Up\_rinv\_cos1\_}}
+\index{TransCoeff\_Up\_rinv\_cos1\_@{TransCoeff\_Up\_rinv\_cos1\_}!sampler@{sampler}}
+\doxysubsubsection{\texorpdfstring{TransCoeff\_Up\_rinv\_cos1\_}{TransCoeff\_Up\_rinv\_cos1\_}}
+{\footnotesize\ttfamily std\+::vector$<$double$>$ sampler\+::\+Trans\+Coeff\+\_\+\+Up\+\_\+rinv\+\_\+cos1\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Transport Coefficient\+: $\langle {\cal U}\textnormal{\textquotesingle}(r_{ij}) r_{ij}^{-1} cos(te_{ij})\rangle$ (see old notes, not included in thesis) 
+
+\Hypertarget{classsampler_a04daf1e89127123fc43373f16bfbaa12}\label{classsampler_a04daf1e89127123fc43373f16bfbaa12} 
+\index{sampler@{sampler}!TransCoeff\_Up\_rinv\_te2\_@{TransCoeff\_Up\_rinv\_te2\_}}
+\index{TransCoeff\_Up\_rinv\_te2\_@{TransCoeff\_Up\_rinv\_te2\_}!sampler@{sampler}}
+\doxysubsubsection{\texorpdfstring{TransCoeff\_Up\_rinv\_te2\_}{TransCoeff\_Up\_rinv\_te2\_}}
+{\footnotesize\ttfamily std\+::vector$<$double$>$ sampler\+::\+Trans\+Coeff\+\_\+\+Up\+\_\+rinv\+\_\+te2\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Transport Coefficient\+: $\langle {\cal U}\textnormal{\textquotesingle}(r_{ij}) r_{ij}^{-1} te_{ij}^2\rangle$ (see old notes, not included in thesis) 
+
+\Hypertarget{classsampler_a779088d02e62d55f79689b1c088b4ce2}\label{classsampler_a779088d02e62d55f79689b1c088b4ce2} 
+\index{sampler@{sampler}!TransCoeff\_Upp\_@{TransCoeff\_Upp\_}}
+\index{TransCoeff\_Upp\_@{TransCoeff\_Upp\_}!sampler@{sampler}}
+\doxysubsubsection{\texorpdfstring{TransCoeff\_Upp\_}{TransCoeff\_Upp\_}}
+{\footnotesize\ttfamily std\+::vector$<$double$>$ sampler\+::\+Trans\+Coeff\+\_\+\+Upp\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Transport Coefficient\+: $\langle {\cal U}\textnormal{\textquotesingle}\textnormal{\textquotesingle}(r_{ij})\rangle$ (see old notes, not included in thesis) 
+
+\Hypertarget{classsampler_a04b461a370395e8766550823d898ea73}\label{classsampler_a04b461a370395e8766550823d898ea73} 
+\index{sampler@{sampler}!TransCoeff\_Upp\_cos1\_@{TransCoeff\_Upp\_cos1\_}}
+\index{TransCoeff\_Upp\_cos1\_@{TransCoeff\_Upp\_cos1\_}!sampler@{sampler}}
+\doxysubsubsection{\texorpdfstring{TransCoeff\_Upp\_cos1\_}{TransCoeff\_Upp\_cos1\_}}
+{\footnotesize\ttfamily std\+::vector$<$double$>$ sampler\+::\+Trans\+Coeff\+\_\+\+Upp\+\_\+cos1\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Transport Coefficient\+: $\langle {\cal U}\textnormal{\textquotesingle}\textnormal{\textquotesingle}(r_{ij}) cos(te_{ij})\rangle$ (see old notes, not included in thesis) 
+
+\Hypertarget{classsampler_ad6baaa4e9467c64ede0d6ee1bcad1b26}\label{classsampler_ad6baaa4e9467c64ede0d6ee1bcad1b26} 
+\index{sampler@{sampler}!TransCoeff\_Upp\_te2\_@{TransCoeff\_Upp\_te2\_}}
+\index{TransCoeff\_Upp\_te2\_@{TransCoeff\_Upp\_te2\_}!sampler@{sampler}}
+\doxysubsubsection{\texorpdfstring{TransCoeff\_Upp\_te2\_}{TransCoeff\_Upp\_te2\_}}
+{\footnotesize\ttfamily std\+::vector$<$double$>$ sampler\+::\+Trans\+Coeff\+\_\+\+Upp\+\_\+te2\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Transport Coefficient\+: $\langle {\cal U}\textnormal{\textquotesingle}\textnormal{\textquotesingle}(r_{ij}) te_{ij}^2\rangle$ (see old notes, not included in thesis) 
+
+\Hypertarget{classsampler_abcf700f2d16f10dfa1e86f596bcddf42}\label{classsampler_abcf700f2d16f10dfa1e86f596bcddf42} 
+\index{sampler@{sampler}!Upsilon\_@{Upsilon\_}}
+\index{Upsilon\_@{Upsilon\_}!sampler@{sampler}}
+\doxysubsubsection{\texorpdfstring{Upsilon\_}{Upsilon\_}}
+{\footnotesize\ttfamily std\+::vector$<$double$>$ sampler\+::\+Upsilon\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Helicity Upsilon. 
+
+\Hypertarget{classsampler_a4892fdc232839a57b960e7f42753d76b}\label{classsampler_a4892fdc232839a57b960e7f42753d76b} 
+\index{sampler@{sampler}!W\_@{W\_}}
+\index{W\_@{W\_}!sampler@{sampler}}
+\doxysubsubsection{\texorpdfstring{W\_}{W\_}}
+{\footnotesize\ttfamily std\+::vector$<$double$>$ sampler\+::\+W\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Stores momenta. 
+
+\Hypertarget{classsampler_a42834720f7916672b9e658fb73df52e6}\label{classsampler_a42834720f7916672b9e658fb73df52e6} 
+\index{sampler@{sampler}!W\_2\_@{W\_2\_}}
+\index{W\_2\_@{W\_2\_}!sampler@{sampler}}
+\doxysubsubsection{\texorpdfstring{W\_2\_}{W\_2\_}}
+{\footnotesize\ttfamily std\+::vector$<$double$>$ sampler\+::\+W\+\_\+2\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Stores momenta squared. 
+
+\Hypertarget{classsampler_ab2f84280b5d387efb72394f72210b62e}\label{classsampler_ab2f84280b5d387efb72394f72210b62e} 
+\index{sampler@{sampler}!wq\_@{wq\_}}
+\index{wq\_@{wq\_}!sampler@{sampler}}
+\doxysubsubsection{\texorpdfstring{wq\_}{wq\_}}
+{\footnotesize\ttfamily std\+::vector$<$std\+::complex$<$double$>$ $>$ sampler\+::wq\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Stores the $w_{q}$ (omega field fluctuation) 
+
+\Hypertarget{classsampler_a54500f3c96bb4099d3f59e5f524f4707}\label{classsampler_a54500f3c96bb4099d3f59e5f524f4707} 
+\index{sampler@{sampler}!wq\_cur\_@{wq\_cur\_}}
+\index{wq\_cur\_@{wq\_cur\_}!sampler@{sampler}}
+\doxysubsubsection{\texorpdfstring{wq\_cur\_}{wq\_cur\_}}
+{\footnotesize\ttfamily std\+::vector$<$std\+::complex$<$double$>$ $>$ sampler\+::wq\+\_\+cur\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Stores the $w_{q}$ at the current time (avoids repeated computation, which is costly) 
+
+\Hypertarget{classsampler_abacde55f0468eef970a2974bf51a0f8f}\label{classsampler_abacde55f0468eef970a2974bf51a0f8f} 
+\index{sampler@{sampler}!wq\_initial\_@{wq\_initial\_}}
+\index{wq\_initial\_@{wq\_initial\_}!sampler@{sampler}}
+\doxysubsubsection{\texorpdfstring{wq\_initial\_}{wq\_initial\_}}
+{\footnotesize\ttfamily std\+::vector$<$std\+::complex$<$double$>$ $>$ sampler\+::wq\+\_\+initial\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Stores the $w_{q}$ at the initial time (avoids repeated computation, only usable if q is not refreshed) 
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{sampler_8h}{sampler.\+h}}\item 
+\mbox{\hyperlink{sampler_8cpp}{sampler.\+cpp}}\end{DoxyCompactItemize}

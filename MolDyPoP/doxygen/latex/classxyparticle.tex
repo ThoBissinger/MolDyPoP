@@ -1,0 +1,133 @@
+\doxysection{xyparticle Class Reference}
+\hypertarget{classxyparticle}{}\label{classxyparticle}\index{xyparticle@{xyparticle}}
+
+
+Defines XY particles with orientation theta\+\_\+ and (spin) angular momentum w\+\_\+. No vector class, no template. Easy peasy.  
+
+
+
+
+{\ttfamily \#include $<$xyparticle.\+h$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classxyparticle_a86da65af91852a4ab4d70e73275d378a}\label{classxyparticle_a86da65af91852a4ab4d70e73275d378a} 
+{\bfseries xyparticle} ()
+\begin{DoxyCompactList}\small\item\em Empty Constructor. \end{DoxyCompactList}\item 
+\Hypertarget{classxyparticle_adf13d95a0905e704d9168a99b5987dc9}\label{classxyparticle_adf13d95a0905e704d9168a99b5987dc9} 
+{\bfseries xyparticle} (const double theta, const double w)
+\begin{DoxyCompactList}\small\item\em Constructor from two doubles, theta and w. \end{DoxyCompactList}\item 
+\Hypertarget{classxyparticle_a46b3ad1947a370de62627ed7019d22d1}\label{classxyparticle_a46b3ad1947a370de62627ed7019d22d1} 
+{\bfseries xyparticle} (const \mbox{\hyperlink{classxyparticle}{xyparticle}} \&xypart)
+\begin{DoxyCompactList}\small\item\em Copy constructor. \end{DoxyCompactList}\item 
+\Hypertarget{classxyparticle_abec71a482349cb7afc1723adb885472f}\label{classxyparticle_abec71a482349cb7afc1723adb885472f} 
+void {\bfseries print} (std\+::ofstream \&outputfile) const
+\begin{DoxyCompactList}\small\item\em Print position, momentum, angle and angular momentum to output file. \end{DoxyCompactList}\item 
+\Hypertarget{classxyparticle_a65aeba99f5cb4159f53fb334fab27ab8}\label{classxyparticle_a65aeba99f5cb4159f53fb334fab27ab8} 
+void {\bfseries print\+\_\+theta} (std\+::ofstream \&outputfile) const
+\begin{DoxyCompactList}\small\item\em Print angle to output file. \end{DoxyCompactList}\item 
+\Hypertarget{classxyparticle_aeb53b89b34a42690f44c4a8a2cd5eb0d}\label{classxyparticle_aeb53b89b34a42690f44c4a8a2cd5eb0d} 
+void {\bfseries print\+\_\+w} (std\+::ofstream \&outputfile) const
+\begin{DoxyCompactList}\small\item\em Print angular momentum to output file. \end{DoxyCompactList}\item 
+\Hypertarget{classxyparticle_a2f38a60dac6538020fee706391c0c813}\label{classxyparticle_a2f38a60dac6538020fee706391c0c813} 
+void {\bfseries print} () const
+\begin{DoxyCompactList}\small\item\em Print position and impulse to std\+::out. \end{DoxyCompactList}\item 
+\Hypertarget{classxyparticle_a5b9356fa02dff476f861ede88ce3b89d}\label{classxyparticle_a5b9356fa02dff476f861ede88ce3b89d} 
+void {\bfseries print\+\_\+theta} () const
+\begin{DoxyCompactList}\small\item\em Print angle to std\+::out. \end{DoxyCompactList}\item 
+\Hypertarget{classxyparticle_a724a422f0ea37e77a4807bc2d41f3a54}\label{classxyparticle_a724a422f0ea37e77a4807bc2d41f3a54} 
+void {\bfseries print\+\_\+w} () const
+\begin{DoxyCompactList}\small\item\em Print angular momentum to std\+::out. \end{DoxyCompactList}\item 
+\Hypertarget{classxyparticle_a3c795e110efaaecf3145d306404e53f1}\label{classxyparticle_a3c795e110efaaecf3145d306404e53f1} 
+void {\bfseries print\+\_\+neighbors} () const
+\begin{DoxyCompactList}\small\item\em Print neighbor indices to std\+::out. \end{DoxyCompactList}\item 
+\Hypertarget{classxyparticle_a1d206a78e86cd5362c105faae139b9ef}\label{classxyparticle_a1d206a78e86cd5362c105faae139b9ef} 
+double {\bfseries get\+\_\+theta} () const
+\item 
+\Hypertarget{classxyparticle_a3a92c648afad2c9f342188d3706cdc50}\label{classxyparticle_a3a92c648afad2c9f342188d3706cdc50} 
+double {\bfseries get\+\_\+w} () const
+\begin{DoxyCompactList}\small\item\em Returns theta\+\_\+. \end{DoxyCompactList}\item 
+\Hypertarget{classxyparticle_a18846168b74d8c91d0804af2266b7a50}\label{classxyparticle_a18846168b74d8c91d0804af2266b7a50} 
+int {\bfseries get\+\_\+neighbor} (int i) const
+\begin{DoxyCompactList}\small\item\em Returns w\+\_\+. \end{DoxyCompactList}\item 
+\Hypertarget{classxyparticle_a328d212613fe87bf6963e879066553fc}\label{classxyparticle_a328d212613fe87bf6963e879066553fc} 
+std\+::vector$<$ int $>$ {\bfseries get\+\_\+neighbors} () const
+\item 
+\Hypertarget{classxyparticle_a838eb3d3e51b5fb5236d5cbce41568d9}\label{classxyparticle_a838eb3d3e51b5fb5236d5cbce41568d9} 
+void {\bfseries set\+\_\+theta} (double new\+\_\+theta)
+\begin{DoxyCompactList}\small\item\em Sets theta\+\_\+. \end{DoxyCompactList}\item 
+\Hypertarget{classxyparticle_ac1a05310863907e873e7921925019a13}\label{classxyparticle_ac1a05310863907e873e7921925019a13} 
+void {\bfseries set\+\_\+w} (double new\+\_\+w)
+\begin{DoxyCompactList}\small\item\em Sets w\+\_\+. \end{DoxyCompactList}\item 
+\Hypertarget{classxyparticle_a5449874400dd23ec499f2476b3b8a5ae}\label{classxyparticle_a5449874400dd23ec499f2476b3b8a5ae} 
+void {\bfseries set\+\_\+particle} (double new\+\_\+theta, double new\+\_\+w)
+\begin{DoxyCompactList}\small\item\em copies particle \end{DoxyCompactList}\item 
+\Hypertarget{classxyparticle_a80d51ca1e5d728bf9552a5c1a9b25d10}\label{classxyparticle_a80d51ca1e5d728bf9552a5c1a9b25d10} 
+void {\bfseries push\+\_\+neighbor} (int index)
+\begin{DoxyCompactList}\small\item\em Adds a neighbor with index i. \end{DoxyCompactList}\item 
+\Hypertarget{classxyparticle_aa13eff47afb9447abc6c6128442f1d61}\label{classxyparticle_aa13eff47afb9447abc6c6128442f1d61} 
+void {\bfseries set\+\_\+temperature} (double kT)
+\begin{DoxyCompactList}\small\item\em Sets w\+\_\+ with a value accurate to a Boltzmann distribution. \end{DoxyCompactList}\item 
+\Hypertarget{classxyparticle_ae23a080d9ba02ee48ae84db87ea9fff4}\label{classxyparticle_ae23a080d9ba02ee48ae84db87ea9fff4} 
+void {\bfseries set\+\_\+theta\+\_\+to\+\_\+interval} ()
+\begin{DoxyCompactList}\small\item\em Sets theta to be in the inveral (-\/pi, pi\mbox{]}. \end{DoxyCompactList}\item 
+\Hypertarget{classxyparticle_ad788ef012dfced06422ae59430b1d518}\label{classxyparticle_ad788ef012dfced06422ae59430b1d518} 
+void {\bfseries scale\+\_\+w} (double a)
+\begin{DoxyCompactList}\small\item\em Multiplies w\+\_\+ member variable by a (\texorpdfstring{$\ast$}{*}=) \end{DoxyCompactList}\item 
+\Hypertarget{classxyparticle_ac468bf5577b504f8b89f1a8204234ce0}\label{classxyparticle_ac468bf5577b504f8b89f1a8204234ce0} 
+void {\bfseries add\+\_\+to\+\_\+theta} (double theta)
+\begin{DoxyCompactList}\small\item\em Adds theta to theta\+\_\+ member variable (+=) \end{DoxyCompactList}\item 
+\Hypertarget{classxyparticle_a9de10d78960faedb32c6243128c9d78f}\label{classxyparticle_a9de10d78960faedb32c6243128c9d78f} 
+void {\bfseries add\+\_\+to\+\_\+w} (double w)
+\begin{DoxyCompactList}\small\item\em Adds w to w\+\_\+ member variable (+=) \end{DoxyCompactList}\item 
+\Hypertarget{classxyparticle_aeaf0c3272b05e261fa8373f30e1b3ae1}\label{classxyparticle_aeaf0c3272b05e261fa8373f30e1b3ae1} 
+void {\bfseries set\+\_\+neighbors\+\_\+squarelattice} (int index, int N, int sqrtN)
+\begin{DoxyCompactList}\small\item\em Sets the particle\textquotesingle{}s neighbors to those on a square lattice. \end{DoxyCompactList}\item 
+\Hypertarget{classxyparticle_aba1ef1373e23c3f62c9c8ad675b092e9}\label{classxyparticle_aba1ef1373e23c3f62c9c8ad675b092e9} 
+void {\bfseries set\+\_\+neighbors\+\_\+squarelattice\+\_\+half} (int index, int N, int sqrtN)
+\begin{DoxyCompactList}\small\item\em Sets the particle\textquotesingle{}s neighbors to those on a square lattice, only half the neighbors are computed (can be used to exploit symmetry) \end{DoxyCompactList}\item 
+\Hypertarget{classxyparticle_ab60190d75288b0ed2135a48284114ee1}\label{classxyparticle_ab60190d75288b0ed2135a48284114ee1} 
+void {\bfseries set\+\_\+neighbors\+\_\+trigonallattice} (int index, int N, int sqrtN)
+\begin{DoxyCompactList}\small\item\em Sets the particle\textquotesingle{}s neighbors to those on a trigonal lattice. \end{DoxyCompactList}\item 
+\Hypertarget{classxyparticle_a97037df0df0a4d8f65e0990e9d88bef1}\label{classxyparticle_a97037df0df0a4d8f65e0990e9d88bef1} 
+void {\bfseries set\+\_\+neighbors\+\_\+trigonallattice\+\_\+half} (int index, int N, int sqrtN)
+\begin{DoxyCompactList}\small\item\em Sets the particle\textquotesingle{}s neighbors to those on a trigonal lattice, only half the neighbors are computed (can be used to exploit symmetry) \end{DoxyCompactList}\item 
+\Hypertarget{classxyparticle_ac487e3835dc063c658faf3bcefc5b503}\label{classxyparticle_ac487e3835dc063c658faf3bcefc5b503} 
+void {\bfseries random\+\_\+xyparticle} (double kbT, double I)
+\begin{DoxyCompactList}\small\item\em Gives this particle random variable values according to Boltzmann statistics and an isotropic angle distribution. The inertia I has to be supplied to ensure the correct average. \end{DoxyCompactList}\item 
+\Hypertarget{classxyparticle_a22e3a1defdc9dd068da403177ad20f0d}\label{classxyparticle_a22e3a1defdc9dd068da403177ad20f0d} 
+\mbox{\hyperlink{classxyparticle}{xyparticle}} \& {\bfseries operator+=} (const \mbox{\hyperlink{classxyparticle}{xyparticle}} \&p)
+\begin{DoxyCompactList}\small\item\em Adding another particle (component-\/wise) \end{DoxyCompactList}\item 
+\Hypertarget{classxyparticle_a0d9a45c66d8079614640f7c5bb8de7eb}\label{classxyparticle_a0d9a45c66d8079614640f7c5bb8de7eb} 
+\mbox{\hyperlink{classxyparticle}{xyparticle}} \& {\bfseries operator\texorpdfstring{$\ast$}{*}=} (const double a)
+\begin{DoxyCompactList}\small\item\em Multyplying by scalar (component-\/wise) \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classxyparticle_a470adaf9d366c45da72585f7ed3610ac}\label{classxyparticle_a470adaf9d366c45da72585f7ed3610ac} 
+double {\bfseries theta\+\_\+}
+\begin{DoxyCompactList}\small\item\em angle theta associated to the particle \end{DoxyCompactList}\item 
+\Hypertarget{classxyparticle_a16352a4b966ee066fc3437d843111510}\label{classxyparticle_a16352a4b966ee066fc3437d843111510} 
+double {\bfseries w\+\_\+}
+\begin{DoxyCompactList}\small\item\em angular momentum omega associated to the particle \end{DoxyCompactList}\item 
+\Hypertarget{classxyparticle_a3cce08fa0f3d09dc22375c09ac0e3baa}\label{classxyparticle_a3cce08fa0f3d09dc22375c09ac0e3baa} 
+std\+::vector$<$ int $>$ {\bfseries neighbors\+\_\+}
+\begin{DoxyCompactList}\small\item\em vector of neighbors. For large groups, this is storage-\/intensive, yet it only has to be initialized once per group and contains information on the lattice structure \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Defines XY particles with orientation theta\+\_\+ and (spin) angular momentum w\+\_\+. No vector class, no template. Easy peasy. 
+
+\begin{DoxyAuthor}{Author}
+Thomas Bissinger
+\end{DoxyAuthor}
+\begin{DoxyNote}{Note}
+The template VEC can be filled with vector classes, some functions only work for \doxylink{classtopology_1_1_vector2d}{topology\+::\+Vector2d} vectors. 
+\end{DoxyNote}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+xyparticle.\+h\item 
+xyparticle.\+cpp\end{DoxyCompactItemize}

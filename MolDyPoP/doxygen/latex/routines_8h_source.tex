@@ -1,0 +1,53 @@
+\doxysection{routines.\+h}
+\hypertarget{routines_8h_source}{}\label{routines_8h_source}\mbox{\hyperlink{routines_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00020\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00021\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{sampler_8h}{sampler.h}}"{}}}
+\DoxyCodeLine{00022\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{inputoutput_8h}{inputoutput.h}}"{}}}
+\DoxyCodeLine{00023\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{integrator_8h}{integrator.h}}"{}}}
+\DoxyCodeLine{00024\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{computations_8h}{computations.h}}"{}}}
+\DoxyCodeLine{00025\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{topology_8h}{topology.h}}"{}}}
+\DoxyCodeLine{00026\ \textcolor{preprocessor}{\#include\ <iostream>}}
+\DoxyCodeLine{00027\ \textcolor{preprocessor}{\#include\ <fstream>}}
+\DoxyCodeLine{00028\ }
+\DoxyCodeLine{00029\ \textcolor{preprocessor}{\#include\ <chrono>}}
+\DoxyCodeLine{00030\ }
+\DoxyCodeLine{00031\ \textcolor{preprocessor}{\#ifndef\ ROUTINES\_H\_}}
+\DoxyCodeLine{00032\ \textcolor{preprocessor}{\#define\ ROUTINES\_H\_}}
+\DoxyCodeLine{00033\ }
+\DoxyCodeLine{00034\ }
+\DoxyCodeLine{00035\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespaceroutines}{routines}}\ \{}
+\DoxyCodeLine{00036\ }
+\DoxyCodeLine{00037\ \ \ \ \ \textcolor{comment}{//\ \ \ ===================================================================================================}}
+\DoxyCodeLine{00038\ \ \ \ \ \textcolor{comment}{//\ \ \ General\ routines}}
+\DoxyCodeLine{00039\ \ \ \ \ \textcolor{comment}{//\ \ \ ===================================================================================================}}
+\DoxyCodeLine{00059\ \textcolor{comment}{}\ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{namespaceroutines_a63e972d03fd84501a0665165b9581065}{integration}}(\mbox{\hyperlink{classparameters}{parameters}}\ par);}
+\DoxyCodeLine{00060\ }
+\DoxyCodeLine{00081\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{namespaceroutines_a71defa885d0c270b5292358b3e37cc94}{sampling}}(\mbox{\hyperlink{classparameters}{parameters}}\ par);}
+\DoxyCodeLine{00082\ }
+\DoxyCodeLine{00083\ }
+\DoxyCodeLine{00084\ \ \ \ \ \textcolor{comment}{//\ \ \ ===================================================================================================}}
+\DoxyCodeLine{00085\ \ \ \ \ \textcolor{comment}{//\ \ \ General\ routines}}
+\DoxyCodeLine{00086\ \ \ \ \ \textcolor{comment}{//\ \ \ ===================================================================================================}}
+\DoxyCodeLine{00127\ \textcolor{comment}{}\ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{namespaceroutines_a24e7d503ba8c679913305b3a91ba960e}{equilibrate}}(\mbox{\hyperlink{classgroup}{group}}\&\ G,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classparameters}{parameters}}\&\ par,\ \mbox{\hyperlink{classsampler}{sampler}}\&\ samp,}
+\DoxyCodeLine{00128\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\ Tmax,\ \textcolor{keywordtype}{double}\&\ t,}
+\DoxyCodeLine{00129\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::string\ breakcond,\ std::ofstream\&\ stdoutfile);}
+\DoxyCodeLine{00130\ }
+\DoxyCodeLine{00131\ }
+\DoxyCodeLine{00132\ \ \ \ \ \textcolor{comment}{//\ \ \ ===================================================================================================}}
+\DoxyCodeLine{00133\ \ \ \ \ \textcolor{comment}{//\ \ \ Routines\ for\ sampling}}
+\DoxyCodeLine{00134\ \ \ \ \ \textcolor{comment}{//\ \ \ ===================================================================================================}}
+\DoxyCodeLine{00135\ }
+\DoxyCodeLine{00165\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{namespaceroutines_a7f686895e93d83adb3395cd8a9c48dba}{integrate\_snapshots}}(\mbox{\hyperlink{classgroup}{group}}\&\ G,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classparameters}{parameters}}\&\ par,\ \mbox{\hyperlink{classsampler}{sampler}}\&\ samp,}
+\DoxyCodeLine{00166\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::ofstream\&\ stdoutfile);}
+\DoxyCodeLine{00167\ }
+\DoxyCodeLine{00168\ \ \ \ \ \textcolor{comment}{//\ \ \ ===================================================================================================}}
+\DoxyCodeLine{00169\ \ \ \ \ \textcolor{comment}{//\ \ \ Internal\ routines\ (input/output\ etc)}}
+\DoxyCodeLine{00170\ \ \ \ \ \textcolor{comment}{//\ \ \ ===================================================================================================}}
+\DoxyCodeLine{00172\ \textcolor{comment}{}\ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{namespaceroutines_ab1615a431f421f491da7990921eee452}{initprint}}(std::string\ routine\_name,\ std::ofstream\&\ outfile);}
+\DoxyCodeLine{00174\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{namespaceroutines_a4e88be0bc1546ce37586cf790c80af87}{terminateprint}}(std::string\ routine\_name,\ std::ofstream\&\ outfile);}
+\DoxyCodeLine{00175\ \};}
+\DoxyCodeLine{00176\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ ROUTINES\_H\_\ */}\textcolor{preprocessor}{}}
+
+\end{DoxyCode}

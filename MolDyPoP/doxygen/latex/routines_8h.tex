@@ -1,0 +1,46 @@
+\doxysection{routines.\+h File Reference}
+\hypertarget{routines_8h}{}\label{routines_8h}\index{routines.h@{routines.h}}
+
+
+Header-\/\+File to the namespace routines. The namespace contains simulation routines that manage setting up the simulation, running it and communicating the results.  
+
+
+{\ttfamily \#include $<$vector$>$}\newline
+{\ttfamily \#include \"{}sampler.\+h\"{}}\newline
+{\ttfamily \#include \"{}inputoutput.\+h\"{}}\newline
+{\ttfamily \#include \"{}integrator.\+h\"{}}\newline
+{\ttfamily \#include \"{}computations.\+h\"{}}\newline
+{\ttfamily \#include \"{}topology.\+h\"{}}\newline
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include $<$fstream$>$}\newline
+{\ttfamily \#include $<$chrono$>$}\newline
+\doxysubsubsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+namespace \mbox{\hyperlink{namespaceroutines}{routines}}
+\begin{DoxyCompactList}\small\item\em Different calculation routines with xygroups and mxygroups. Carries out simulation tasks. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{namespaceroutines_a63e972d03fd84501a0665165b9581065}{routines\+::integration}} (\mbox{\hyperlink{classparameters}{parameters}} par)
+\begin{DoxyCompactList}\small\item\em basic integration routine \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{namespaceroutines_a71defa885d0c270b5292358b3e37cc94}{routines\+::sampling}} (\mbox{\hyperlink{classparameters}{parameters}} par)
+\begin{DoxyCompactList}\small\item\em basic sampling routine (no integration performed) \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{namespaceroutines_a24e7d503ba8c679913305b3a91ba960e}{routines\+::equilibrate}} (\mbox{\hyperlink{classgroup}{group}} \&G, const \mbox{\hyperlink{classparameters}{parameters}} \&par, \mbox{\hyperlink{classsampler}{sampler}} \&samp, const double Tmax, double \&t, const std\+::string breakcond, std\+::ofstream \&stdoutfile)
+\begin{DoxyCompactList}\small\item\em equilibration routine \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{namespaceroutines_a7f686895e93d83adb3395cd8a9c48dba}{routines\+::integrate\+\_\+snapshots}} (\mbox{\hyperlink{classgroup}{group}} \&G, const \mbox{\hyperlink{classparameters}{parameters}} \&par, \mbox{\hyperlink{classsampler}{sampler}} \&samp, std\+::ofstream \&stdoutfile)
+\begin{DoxyCompactList}\small\item\em integration routine (the one that does the work) \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{namespaceroutines_ab1615a431f421f491da7990921eee452}{routines\+::initprint}} (std\+::string routine\+\_\+name, std\+::ofstream \&outfile)
+\begin{DoxyCompactList}\small\item\em Initial print of each routine. States the routine name. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{namespaceroutines_a4e88be0bc1546ce37586cf790c80af87}{routines\+::terminateprint}} (std\+::string routine\+\_\+name, std\+::ofstream \&outfile)
+\begin{DoxyCompactList}\small\item\em Terminal print of each routine. States the routine name. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Header-\/\+File to the namespace routines. The namespace contains simulation routines that manage setting up the simulation, running it and communicating the results. 
+
+These routines are called by the file \doxylink{main_8cpp}{main.\+cpp} and are the crucial building blocks of the simulation. ( \begin{DoxyDate}{Date}
+Created\+: 2019-\/12-\/11 
+
+Last Updated\+: 2023-\/08-\/06 
+\end{DoxyDate}

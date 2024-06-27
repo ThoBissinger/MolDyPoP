@@ -1,0 +1,370 @@
+\doxysection{computations.\+h File Reference}
+\hypertarget{computations_8h}{}\label{computations_8h}\index{computations.h@{computations.h}}
+
+
+Contains various computation methods that do not belong to a particular class.  
+
+
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include $<$vector$>$}\newline
+{\ttfamily \#include $<$complex$>$}\newline
+{\ttfamily \#include $<$math.\+h$>$}\newline
+{\ttfamily \#include $<$numeric$>$}\newline
+{\ttfamily \#include $<$algorithm$>$}\newline
+{\ttfamily \#include \"{}topology.\+h\"{}}\newline
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{computations_8h_ae71449b1cc6e6250b91f539153a7a0d3}{M\+\_\+\+PI}}~3.\+14159265358979323846
+\begin{DoxyCompactList}\small\item\em Manual introduction of M\+\_\+\+PI, signifying $\pi$ up to computer precision. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+double \mbox{\hyperlink{computations_8h_a89f0a0ce9ad1bab66ee9b0188b089a71}{mod}} (const double val, const double min, const double max)
+\begin{DoxyCompactList}\small\item\em Modulus function between min and max. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename T , typename A $>$ }\\T \mbox{\hyperlink{computations_8h_ad65d7fe7506a4850c5db2eb184fccd79}{vector\+\_\+mean}} (std\+::vector$<$ T, A $>$ v)
+\begin{DoxyCompactList}\small\item\em Calculates mean of vector. Template, instantiated with double, int and std\+::complex$<$double$>$ in \doxylink{computations_8cpp}{computations.\+cpp}. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename T , typename A $>$ }\\T \mbox{\hyperlink{computations_8h_a3cc11c4d161010d97c3898fe6de5ab0e}{row\+\_\+mean}} (std\+::vector$<$ T, A $>$ v, int M, int N, int i)
+\begin{DoxyCompactList}\small\item\em Calculates mean of row of matrix (vector is M matrix rows of length N together). Template, instantiated with double, int and std\+::complex$<$double$>$ in \doxylink{computations_8cpp}{computations.\+cpp}. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename T , typename A $>$ }\\T \mbox{\hyperlink{computations_8h_a536abf00bea1d4cc40f2fa5c8f33595e}{column\+\_\+mean}} (std\+::vector$<$ T, A $>$ v, int M, int N, int j)
+\begin{DoxyCompactList}\small\item\em Calculates mean of column of matrix (vector is M matrix rows of length N together). Template, instantiated with double, int and std\+::complex$<$double$>$ in \doxylink{computations_8cpp}{computations.\+cpp}. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename T , typename A $>$ }\\T \mbox{\hyperlink{computations_8h_a26d15b0abd865238da8b2766aaca400f}{selective\+\_\+vector\+\_\+mean}} (std\+::vector$<$ T, A $>$ yvals, std\+::vector$<$ double $>$ xvals, double xsep\+\_\+min)
+\begin{DoxyCompactList}\small\item\em Calculates mean of vector, but only for entries that are at least xsep\+\_\+min apart. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename T , typename A $>$ }\\T \mbox{\hyperlink{computations_8h_a80932326f47c4a6d470fc7906a9c9d6d}{selective\+\_\+row\+\_\+mean}} (std\+::vector$<$ T, A $>$ yvals, std\+::vector$<$ double $>$ xvals, double xsep\+\_\+min, int M, int N, int i)
+\begin{DoxyCompactList}\small\item\em Calculates row mean of vector, but only for entries that are at least xsep\+\_\+min apart. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename T , typename A $>$ }\\T \mbox{\hyperlink{computations_8h_a04b2acdd59d6bebef98156900a284fe8}{selective\+\_\+column\+\_\+mean}} (std\+::vector$<$ T, A $>$ yvals, std\+::vector$<$ double $>$ xvals, double xsep\+\_\+min, int M, int N, int j)
+\begin{DoxyCompactList}\small\item\em Calculates column mean of vector, but only for entries that are at least xsep\+\_\+min apart. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{computations_8h_ac23f83a9ed8d3a1d3415ccbf892b36c7}{vector\+\_\+variance}} (std\+::vector$<$ double $>$ v, double \&mean)
+\begin{DoxyCompactList}\small\item\em Calculates variance of vector, also stores mean. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename T , typename A $>$ }\\std\+::vector$<$ T, A $>$ \mbox{\hyperlink{computations_8h_a6a5517202db0c7ea6036fd4b2cd692d8}{vector\+\_\+scale}} (const std\+::vector$<$ T, A $>$ \&v, double a)
+\begin{DoxyCompactList}\small\item\em Scales vector by factor a. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename T , typename A $>$ }\\std\+::vector$<$ T, A $>$ \mbox{\hyperlink{computations_8h_a749d727a0caa0c3de43dae9d681c3ab1}{vector\+\_\+sum}} (const std\+::vector$<$ T, A $>$ \&v, const std\+::vector$<$ T, A $>$ \&w)
+\begin{DoxyCompactList}\small\item\em Adds two vectors v and w. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename T , typename A $>$ }\\T \mbox{\hyperlink{computations_8h_a28c308a9c9279e804cb4740cf6d577ba}{vector\+\_\+inpr}} (const std\+::vector$<$ T, A $>$ \&v, const std\+::vector$<$ T, A $>$ \&w)
+\begin{DoxyCompactList}\small\item\em Inner product of two vectors v and w. \end{DoxyCompactList}\item 
+std\+::complex$<$ double $>$ \mbox{\hyperlink{computations_8h_ae8ee132a1440c57eb0ac2847fb7ab573}{vector\+\_\+inpr}} (const std\+::vector$<$ std\+::complex$<$ double $>$ $>$ \&v, const std\+::vector$<$ std\+::complex$<$ double $>$ $>$ \&w)
+\begin{DoxyCompactList}\small\item\em Inner product of two complex vectors v and w, where the complex conjugate of the components of v is used. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename T , typename A $>$ }\\std\+::vector$<$ T, A $>$ \mbox{\hyperlink{computations_8h_a974188426d99853ca26f6137c0d3c455}{vector\+\_\+pw\+\_\+mult}} (const std\+::vector$<$ T, A $>$ \&v, const std\+::vector$<$ T, A $>$ \&w)
+\begin{DoxyCompactList}\small\item\em Pointwise multiplication of two vectors v and w. \end{DoxyCompactList}\item 
+std\+::vector$<$ std\+::complex$<$ double $>$ $>$ \mbox{\hyperlink{computations_8h_a46fb751900d9c96a525b5d247d569e34}{vector\+\_\+pw\+\_\+mult}} (const std\+::vector$<$ std\+::complex$<$ double $>$ $>$ \&v, const std\+::vector$<$ std\+::complex$<$ double $>$ $>$ \&w)
+\begin{DoxyCompactList}\small\item\em Pointwise multiplication of two complex vectors v and w, where the complex conjugate of the components of v is used. \end{DoxyCompactList}\item 
+std\+::vector$<$ std\+::complex$<$ double $>$ $>$ \mbox{\hyperlink{computations_8h_acbd242db903113d1b61b6152f97e436d}{vector\+\_\+pw\+\_\+mult}} (const std\+::vector$<$ std\+::complex$<$ double $>$ $>$ \&v\+\_\+1, const std\+::vector$<$ std\+::complex$<$ double $>$ $>$ \&v\+\_\+2, const std\+::vector$<$ std\+::complex$<$ double $>$ $>$ \&v\+\_\+3, const std\+::vector$<$ std\+::complex$<$ double $>$ $>$ \&v\+\_\+4)
+\begin{DoxyCompactList}\small\item\em Pointwise multiplication of four complex vectors v and w, where the complex conjugate of the components of v\+\_\+1 and v\+\_\+2 is used. \end{DoxyCompactList}\item 
+std\+::vector$<$ double $>$ \mbox{\hyperlink{computations_8h_a7feb2153e9a4162aa934de1cdc9dd643}{vector\+\_\+pw\+\_\+norm}} (const std\+::vector$<$ std\+::complex$<$ double $>$ $>$ \&v)
+\begin{DoxyCompactList}\small\item\em Pointwise norm value of a complex vector v, i.\+e. sum v\mbox{[}i\mbox{]}\texorpdfstring{$^\wedge$}{\string^}\texorpdfstring{$\ast$}{*} v\mbox{[}i\mbox{]}. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{computations_8h_a43f522462aa3cafdc730f694d359fbfb}{matr\+\_\+index}} (int M, int N, int i, int j)
+\begin{DoxyCompactList}\small\item\em Gives vector index if a vector of size $M \cdot N$ stands for an $M \times N$ matrix. \end{DoxyCompactList}\item 
+std\+::vector$<$ double $>$ \mbox{\hyperlink{computations_8h_a35ff1ed3ee230d7da8cd4596c3c82185}{log\+\_\+bin}} (double binmin, double binmax, double diffmin, int Nbins)
+\begin{DoxyCompactList}\small\item\em Makes logarithmic bin. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{computations_8h_ad7954e6a1b9ea073c7bc894dc5af85a9}{random\+\_\+int}} (int min, int max)
+\begin{DoxyCompactList}\small\item\em Random int between min and max. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{computations_8h_ae8857dcf75600277c0cbc79a687090ab}{random\+\_\+double}} (double min, double max)
+\begin{DoxyCompactList}\small\item\em Random double between min and max. min \texorpdfstring{$<$}{<} max is not required. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{computations_8h_a6fc97eefca41bb4b72e88c95f932c10b}{random\+\_\+double}} (double max)
+\begin{DoxyCompactList}\small\item\em Random double between 0 and max. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{computations_8h_afda23d435e9691292647f33f43d1e266}{random\+\_\+boltzmann\+\_\+double}} (double kbT)
+\begin{DoxyCompactList}\small\item\em Return random boltzmann-\/distributed double (Box-\/\+Muller method, commented out is a version using the polar method. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{computations_8h_ac2d5d6813a00a29ca76fca3d95c00bb9}{random\+\_\+angle}} ()
+\begin{DoxyCompactList}\small\item\em functions for random angle between -\/pi and pi. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{computations_8h_a1fd3c6a3ef85f4edad3a45af14f586a6}{random\+\_\+angle}} (double min, double max)
+\begin{DoxyCompactList}\small\item\em functions for random angle, designed such that only -\/pi\+:pi is allowed (automatical limits when values are not allowed) \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{computations_8h_a9130bf2c2986a16712d8ec6b8e703b0c}{random\+\_\+angle}} (double max)
+\begin{DoxyCompactList}\small\item\em Random angle between -\/max and max (or -\/max and 0 if max is negative.) \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Contains various computation methods that do not belong to a particular class. 
+
+Main functionalities\+: Provides the modulus function, provides code for averaging over data stored in a std\+::vector with some selection rules, handles treating std\+::vectors as representing matrices and performing column and row averages. Also has a few methods for computing random variables.
+
+\begin{DoxyAuthor}{Author}
+Thomas Bissinger
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+Created\+: mid-\/2017 
+
+Last Update\+: 23-\/08-\/02 
+\end{DoxyDate}
+
+
+\doxysubsection{Macro Definition Documentation}
+\Hypertarget{computations_8h_ae71449b1cc6e6250b91f539153a7a0d3}\label{computations_8h_ae71449b1cc6e6250b91f539153a7a0d3} 
+\index{computations.h@{computations.h}!M\_PI@{M\_PI}}
+\index{M\_PI@{M\_PI}!computations.h@{computations.h}}
+\doxysubsubsection{\texorpdfstring{M\_PI}{M\_PI}}
+{\footnotesize\ttfamily \#define M\+\_\+\+PI~3.\+14159265358979323846}
+
+
+
+Manual introduction of M\+\_\+\+PI, signifying $\pi$ up to computer precision. 
+
+Some (mostly windows) compilers have problems with the definition of M\+\_\+\+PI in math.\+h. For them, it is manually introduced here. 
+
+\doxysubsection{Function Documentation}
+\Hypertarget{computations_8h_a536abf00bea1d4cc40f2fa5c8f33595e}\label{computations_8h_a536abf00bea1d4cc40f2fa5c8f33595e} 
+\index{computations.h@{computations.h}!column\_mean@{column\_mean}}
+\index{column\_mean@{column\_mean}!computations.h@{computations.h}}
+\doxysubsubsection{\texorpdfstring{column\_mean()}{column\_mean()}}
+{\footnotesize\ttfamily template$<$typename T , typename A $>$ \\
+T column\+\_\+mean (\begin{DoxyParamCaption}\item[{std\+::vector$<$ T, A $>$}]{v,  }\item[{int}]{M,  }\item[{int}]{N,  }\item[{int}]{j }\end{DoxyParamCaption})}
+
+
+
+Calculates mean of column of matrix (vector is M matrix rows of length N together). Template, instantiated with double, int and std\+::complex$<$double$>$ in \doxylink{computations_8cpp}{computations.\+cpp}. 
+
+\Hypertarget{computations_8h_a35ff1ed3ee230d7da8cd4596c3c82185}\label{computations_8h_a35ff1ed3ee230d7da8cd4596c3c82185} 
+\index{computations.h@{computations.h}!log\_bin@{log\_bin}}
+\index{log\_bin@{log\_bin}!computations.h@{computations.h}}
+\doxysubsubsection{\texorpdfstring{log\_bin()}{log\_bin()}}
+{\footnotesize\ttfamily std\+::vector$<$ double $>$ log\+\_\+bin (\begin{DoxyParamCaption}\item[{double}]{binmin,  }\item[{double}]{binmax,  }\item[{double}]{diffmin,  }\item[{int}]{Nbins }\end{DoxyParamCaption})}
+
+
+
+Makes logarithmic bin. 
+
+\Hypertarget{computations_8h_a43f522462aa3cafdc730f694d359fbfb}\label{computations_8h_a43f522462aa3cafdc730f694d359fbfb} 
+\index{computations.h@{computations.h}!matr\_index@{matr\_index}}
+\index{matr\_index@{matr\_index}!computations.h@{computations.h}}
+\doxysubsubsection{\texorpdfstring{matr\_index()}{matr\_index()}}
+{\footnotesize\ttfamily int matr\+\_\+index (\begin{DoxyParamCaption}\item[{int}]{M,  }\item[{int}]{N,  }\item[{int}]{i,  }\item[{int}]{j }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Gives vector index if a vector of size $M \cdot N$ stands for an $M \times N$ matrix. 
+
+In the current implementation, a matrix $\mathbf{A} \in \mathcal{R}^{M\times N}$ is related to a vector $\mathbf{a} \in \mathcal{R}^{M\cdot N}$ by identifying  \[
+    a_k = A_{ij}
+\] with the prescription $k(i,j) = i + N\cdot k$.
+
+Therefore, the value of M is not important. For completeness, it is taken as input (if anyone wishes to change the mapping between $k$ and $i,j$.
+
+Careful, numbering starts at 0, i.\+e. last index is actually $i = M-1$, $j = N-1$. \Hypertarget{computations_8h_a89f0a0ce9ad1bab66ee9b0188b089a71}\label{computations_8h_a89f0a0ce9ad1bab66ee9b0188b089a71} 
+\index{computations.h@{computations.h}!mod@{mod}}
+\index{mod@{mod}!computations.h@{computations.h}}
+\doxysubsubsection{\texorpdfstring{mod()}{mod()}}
+{\footnotesize\ttfamily double mod (\begin{DoxyParamCaption}\item[{const double}]{val,  }\item[{const double}]{min,  }\item[{const double}]{max }\end{DoxyParamCaption})}
+
+
+
+Modulus function between min and max. 
+
+\Hypertarget{computations_8h_ac2d5d6813a00a29ca76fca3d95c00bb9}\label{computations_8h_ac2d5d6813a00a29ca76fca3d95c00bb9} 
+\index{computations.h@{computations.h}!random\_angle@{random\_angle}}
+\index{random\_angle@{random\_angle}!computations.h@{computations.h}}
+\doxysubsubsection{\texorpdfstring{random\_angle()}{random\_angle()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily double random\+\_\+angle (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+functions for random angle between -\/pi and pi. 
+
+\Hypertarget{computations_8h_a9130bf2c2986a16712d8ec6b8e703b0c}\label{computations_8h_a9130bf2c2986a16712d8ec6b8e703b0c} 
+\index{computations.h@{computations.h}!random\_angle@{random\_angle}}
+\index{random\_angle@{random\_angle}!computations.h@{computations.h}}
+\doxysubsubsection{\texorpdfstring{random\_angle()}{random\_angle()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily double random\+\_\+angle (\begin{DoxyParamCaption}\item[{double}]{max }\end{DoxyParamCaption})}
+
+
+
+Random angle between -\/max and max (or -\/max and 0 if max is negative.) 
+
+\Hypertarget{computations_8h_a1fd3c6a3ef85f4edad3a45af14f586a6}\label{computations_8h_a1fd3c6a3ef85f4edad3a45af14f586a6} 
+\index{computations.h@{computations.h}!random\_angle@{random\_angle}}
+\index{random\_angle@{random\_angle}!computations.h@{computations.h}}
+\doxysubsubsection{\texorpdfstring{random\_angle()}{random\_angle()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily double random\+\_\+angle (\begin{DoxyParamCaption}\item[{double}]{min,  }\item[{double}]{max }\end{DoxyParamCaption})}
+
+
+
+functions for random angle, designed such that only -\/pi\+:pi is allowed (automatical limits when values are not allowed) 
+
+\Hypertarget{computations_8h_afda23d435e9691292647f33f43d1e266}\label{computations_8h_afda23d435e9691292647f33f43d1e266} 
+\index{computations.h@{computations.h}!random\_boltzmann\_double@{random\_boltzmann\_double}}
+\index{random\_boltzmann\_double@{random\_boltzmann\_double}!computations.h@{computations.h}}
+\doxysubsubsection{\texorpdfstring{random\_boltzmann\_double()}{random\_boltzmann\_double()}}
+{\footnotesize\ttfamily double random\+\_\+boltzmann\+\_\+double (\begin{DoxyParamCaption}\item[{double}]{kbT }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Return random boltzmann-\/distributed double (Box-\/\+Muller method, commented out is a version using the polar method. 
+
+\Hypertarget{computations_8h_a6fc97eefca41bb4b72e88c95f932c10b}\label{computations_8h_a6fc97eefca41bb4b72e88c95f932c10b} 
+\index{computations.h@{computations.h}!random\_double@{random\_double}}
+\index{random\_double@{random\_double}!computations.h@{computations.h}}
+\doxysubsubsection{\texorpdfstring{random\_double()}{random\_double()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily double random\+\_\+double (\begin{DoxyParamCaption}\item[{double}]{max }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Random double between 0 and max. 
+
+\Hypertarget{computations_8h_ae8857dcf75600277c0cbc79a687090ab}\label{computations_8h_ae8857dcf75600277c0cbc79a687090ab} 
+\index{computations.h@{computations.h}!random\_double@{random\_double}}
+\index{random\_double@{random\_double}!computations.h@{computations.h}}
+\doxysubsubsection{\texorpdfstring{random\_double()}{random\_double()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily double random\+\_\+double (\begin{DoxyParamCaption}\item[{double}]{min,  }\item[{double}]{max }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Random double between min and max. min \texorpdfstring{$<$}{<} max is not required. 
+
+\Hypertarget{computations_8h_ad7954e6a1b9ea073c7bc894dc5af85a9}\label{computations_8h_ad7954e6a1b9ea073c7bc894dc5af85a9} 
+\index{computations.h@{computations.h}!random\_int@{random\_int}}
+\index{random\_int@{random\_int}!computations.h@{computations.h}}
+\doxysubsubsection{\texorpdfstring{random\_int()}{random\_int()}}
+{\footnotesize\ttfamily int random\+\_\+int (\begin{DoxyParamCaption}\item[{int}]{min,  }\item[{int}]{max }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Random int between min and max. 
+
+\Hypertarget{computations_8h_a3cc11c4d161010d97c3898fe6de5ab0e}\label{computations_8h_a3cc11c4d161010d97c3898fe6de5ab0e} 
+\index{computations.h@{computations.h}!row\_mean@{row\_mean}}
+\index{row\_mean@{row\_mean}!computations.h@{computations.h}}
+\doxysubsubsection{\texorpdfstring{row\_mean()}{row\_mean()}}
+{\footnotesize\ttfamily template$<$typename T , typename A $>$ \\
+T row\+\_\+mean (\begin{DoxyParamCaption}\item[{std\+::vector$<$ T, A $>$}]{v,  }\item[{int}]{M,  }\item[{int}]{N,  }\item[{int}]{i }\end{DoxyParamCaption})}
+
+
+
+Calculates mean of row of matrix (vector is M matrix rows of length N together). Template, instantiated with double, int and std\+::complex$<$double$>$ in \doxylink{computations_8cpp}{computations.\+cpp}. 
+
+\Hypertarget{computations_8h_a04b2acdd59d6bebef98156900a284fe8}\label{computations_8h_a04b2acdd59d6bebef98156900a284fe8} 
+\index{computations.h@{computations.h}!selective\_column\_mean@{selective\_column\_mean}}
+\index{selective\_column\_mean@{selective\_column\_mean}!computations.h@{computations.h}}
+\doxysubsubsection{\texorpdfstring{selective\_column\_mean()}{selective\_column\_mean()}}
+{\footnotesize\ttfamily template$<$typename T , typename A $>$ \\
+T selective\+\_\+column\+\_\+mean (\begin{DoxyParamCaption}\item[{std\+::vector$<$ T, A $>$}]{yvals,  }\item[{std\+::vector$<$ double $>$}]{xvals,  }\item[{double}]{xsep\+\_\+min,  }\item[{int}]{M,  }\item[{int}]{N,  }\item[{int}]{j }\end{DoxyParamCaption})}
+
+
+
+Calculates column mean of vector, but only for entries that are at least xsep\+\_\+min apart. 
+
+\Hypertarget{computations_8h_a80932326f47c4a6d470fc7906a9c9d6d}\label{computations_8h_a80932326f47c4a6d470fc7906a9c9d6d} 
+\index{computations.h@{computations.h}!selective\_row\_mean@{selective\_row\_mean}}
+\index{selective\_row\_mean@{selective\_row\_mean}!computations.h@{computations.h}}
+\doxysubsubsection{\texorpdfstring{selective\_row\_mean()}{selective\_row\_mean()}}
+{\footnotesize\ttfamily template$<$typename T , typename A $>$ \\
+T selective\+\_\+row\+\_\+mean (\begin{DoxyParamCaption}\item[{std\+::vector$<$ T, A $>$}]{yvals,  }\item[{std\+::vector$<$ double $>$}]{xvals,  }\item[{double}]{xsep\+\_\+min,  }\item[{int}]{M,  }\item[{int}]{N,  }\item[{int}]{i }\end{DoxyParamCaption})}
+
+
+
+Calculates row mean of vector, but only for entries that are at least xsep\+\_\+min apart. 
+
+\Hypertarget{computations_8h_a26d15b0abd865238da8b2766aaca400f}\label{computations_8h_a26d15b0abd865238da8b2766aaca400f} 
+\index{computations.h@{computations.h}!selective\_vector\_mean@{selective\_vector\_mean}}
+\index{selective\_vector\_mean@{selective\_vector\_mean}!computations.h@{computations.h}}
+\doxysubsubsection{\texorpdfstring{selective\_vector\_mean()}{selective\_vector\_mean()}}
+{\footnotesize\ttfamily template$<$typename T , typename A $>$ \\
+T selective\+\_\+vector\+\_\+mean (\begin{DoxyParamCaption}\item[{std\+::vector$<$ T, A $>$}]{yvals,  }\item[{std\+::vector$<$ double $>$}]{xvals,  }\item[{double}]{xsep\+\_\+min }\end{DoxyParamCaption})}
+
+
+
+Calculates mean of vector, but only for entries that are at least xsep\+\_\+min apart. 
+
+\Hypertarget{computations_8h_ae8ee132a1440c57eb0ac2847fb7ab573}\label{computations_8h_ae8ee132a1440c57eb0ac2847fb7ab573} 
+\index{computations.h@{computations.h}!vector\_inpr@{vector\_inpr}}
+\index{vector\_inpr@{vector\_inpr}!computations.h@{computations.h}}
+\doxysubsubsection{\texorpdfstring{vector\_inpr()}{vector\_inpr()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily std\+::complex$<$ double $>$ vector\+\_\+inpr (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ std\+::complex$<$ double $>$ $>$ \&}]{v,  }\item[{const std\+::vector$<$ std\+::complex$<$ double $>$ $>$ \&}]{w }\end{DoxyParamCaption})}
+
+
+
+Inner product of two complex vectors v and w, where the complex conjugate of the components of v is used. 
+
+\Hypertarget{computations_8h_a28c308a9c9279e804cb4740cf6d577ba}\label{computations_8h_a28c308a9c9279e804cb4740cf6d577ba} 
+\index{computations.h@{computations.h}!vector\_inpr@{vector\_inpr}}
+\index{vector\_inpr@{vector\_inpr}!computations.h@{computations.h}}
+\doxysubsubsection{\texorpdfstring{vector\_inpr()}{vector\_inpr()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename T , typename A $>$ \\
+T vector\+\_\+inpr (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ T, A $>$ \&}]{v,  }\item[{const std\+::vector$<$ T, A $>$ \&}]{w }\end{DoxyParamCaption})}
+
+
+
+Inner product of two vectors v and w. 
+
+\Hypertarget{computations_8h_ad65d7fe7506a4850c5db2eb184fccd79}\label{computations_8h_ad65d7fe7506a4850c5db2eb184fccd79} 
+\index{computations.h@{computations.h}!vector\_mean@{vector\_mean}}
+\index{vector\_mean@{vector\_mean}!computations.h@{computations.h}}
+\doxysubsubsection{\texorpdfstring{vector\_mean()}{vector\_mean()}}
+{\footnotesize\ttfamily template$<$typename T , typename A $>$ \\
+T vector\+\_\+mean (\begin{DoxyParamCaption}\item[{std\+::vector$<$ T, A $>$}]{v }\end{DoxyParamCaption})}
+
+
+
+Calculates mean of vector. Template, instantiated with double, int and std\+::complex$<$double$>$ in \doxylink{computations_8cpp}{computations.\+cpp}. 
+
+\Hypertarget{computations_8h_a46fb751900d9c96a525b5d247d569e34}\label{computations_8h_a46fb751900d9c96a525b5d247d569e34} 
+\index{computations.h@{computations.h}!vector\_pw\_mult@{vector\_pw\_mult}}
+\index{vector\_pw\_mult@{vector\_pw\_mult}!computations.h@{computations.h}}
+\doxysubsubsection{\texorpdfstring{vector\_pw\_mult()}{vector\_pw\_mult()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily std\+::vector$<$ std\+::complex$<$ double $>$ $>$ vector\+\_\+pw\+\_\+mult (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ std\+::complex$<$ double $>$ $>$ \&}]{v,  }\item[{const std\+::vector$<$ std\+::complex$<$ double $>$ $>$ \&}]{w }\end{DoxyParamCaption})}
+
+
+
+Pointwise multiplication of two complex vectors v and w, where the complex conjugate of the components of v is used. 
+
+\Hypertarget{computations_8h_acbd242db903113d1b61b6152f97e436d}\label{computations_8h_acbd242db903113d1b61b6152f97e436d} 
+\index{computations.h@{computations.h}!vector\_pw\_mult@{vector\_pw\_mult}}
+\index{vector\_pw\_mult@{vector\_pw\_mult}!computations.h@{computations.h}}
+\doxysubsubsection{\texorpdfstring{vector\_pw\_mult()}{vector\_pw\_mult()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily std\+::vector$<$ std\+::complex$<$ double $>$ $>$ vector\+\_\+pw\+\_\+mult (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ std\+::complex$<$ double $>$ $>$ \&}]{v\+\_\+1,  }\item[{const std\+::vector$<$ std\+::complex$<$ double $>$ $>$ \&}]{v\+\_\+2,  }\item[{const std\+::vector$<$ std\+::complex$<$ double $>$ $>$ \&}]{v\+\_\+3,  }\item[{const std\+::vector$<$ std\+::complex$<$ double $>$ $>$ \&}]{v\+\_\+4 }\end{DoxyParamCaption})}
+
+
+
+Pointwise multiplication of four complex vectors v and w, where the complex conjugate of the components of v\+\_\+1 and v\+\_\+2 is used. 
+
+\Hypertarget{computations_8h_a974188426d99853ca26f6137c0d3c455}\label{computations_8h_a974188426d99853ca26f6137c0d3c455} 
+\index{computations.h@{computations.h}!vector\_pw\_mult@{vector\_pw\_mult}}
+\index{vector\_pw\_mult@{vector\_pw\_mult}!computations.h@{computations.h}}
+\doxysubsubsection{\texorpdfstring{vector\_pw\_mult()}{vector\_pw\_mult()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily template$<$typename T , typename A $>$ \\
+std\+::vector$<$ T, A $>$ vector\+\_\+pw\+\_\+mult (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ T, A $>$ \&}]{v,  }\item[{const std\+::vector$<$ T, A $>$ \&}]{w }\end{DoxyParamCaption})}
+
+
+
+Pointwise multiplication of two vectors v and w. 
+
+\Hypertarget{computations_8h_a7feb2153e9a4162aa934de1cdc9dd643}\label{computations_8h_a7feb2153e9a4162aa934de1cdc9dd643} 
+\index{computations.h@{computations.h}!vector\_pw\_norm@{vector\_pw\_norm}}
+\index{vector\_pw\_norm@{vector\_pw\_norm}!computations.h@{computations.h}}
+\doxysubsubsection{\texorpdfstring{vector\_pw\_norm()}{vector\_pw\_norm()}}
+{\footnotesize\ttfamily std\+::vector$<$ double $>$ vector\+\_\+pw\+\_\+norm (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ std\+::complex$<$ double $>$ $>$ \&}]{v }\end{DoxyParamCaption})}
+
+
+
+Pointwise norm value of a complex vector v, i.\+e. sum v\mbox{[}i\mbox{]}\texorpdfstring{$^\wedge$}{\string^}\texorpdfstring{$\ast$}{*} v\mbox{[}i\mbox{]}. 
+
+\Hypertarget{computations_8h_a6a5517202db0c7ea6036fd4b2cd692d8}\label{computations_8h_a6a5517202db0c7ea6036fd4b2cd692d8} 
+\index{computations.h@{computations.h}!vector\_scale@{vector\_scale}}
+\index{vector\_scale@{vector\_scale}!computations.h@{computations.h}}
+\doxysubsubsection{\texorpdfstring{vector\_scale()}{vector\_scale()}}
+{\footnotesize\ttfamily template$<$typename T , typename A $>$ \\
+std\+::vector$<$ T, A $>$ vector\+\_\+scale (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ T, A $>$ \&}]{v,  }\item[{double}]{a }\end{DoxyParamCaption})}
+
+
+
+Scales vector by factor a. 
+
+\Hypertarget{computations_8h_a749d727a0caa0c3de43dae9d681c3ab1}\label{computations_8h_a749d727a0caa0c3de43dae9d681c3ab1} 
+\index{computations.h@{computations.h}!vector\_sum@{vector\_sum}}
+\index{vector\_sum@{vector\_sum}!computations.h@{computations.h}}
+\doxysubsubsection{\texorpdfstring{vector\_sum()}{vector\_sum()}}
+{\footnotesize\ttfamily template$<$typename T , typename A $>$ \\
+std\+::vector$<$ T, A $>$ vector\+\_\+sum (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ T, A $>$ \&}]{v,  }\item[{const std\+::vector$<$ T, A $>$ \&}]{w }\end{DoxyParamCaption})}
+
+
+
+Adds two vectors v and w. 
+
+\Hypertarget{computations_8h_ac23f83a9ed8d3a1d3415ccbf892b36c7}\label{computations_8h_ac23f83a9ed8d3a1d3415ccbf892b36c7} 
+\index{computations.h@{computations.h}!vector\_variance@{vector\_variance}}
+\index{vector\_variance@{vector\_variance}!computations.h@{computations.h}}
+\doxysubsubsection{\texorpdfstring{vector\_variance()}{vector\_variance()}}
+{\footnotesize\ttfamily double vector\+\_\+variance (\begin{DoxyParamCaption}\item[{std\+::vector$<$ double $>$}]{v,  }\item[{double \&}]{mean }\end{DoxyParamCaption})}
+
+
+
+Calculates variance of vector, also stores mean. 
+
+Does not make much sense to use templates here, since the variance of an int vector is not much use and the variance of std\+::complex would require complex conjugation. 

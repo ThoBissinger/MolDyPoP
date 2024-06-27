@@ -1,0 +1,465 @@
+\doxysection{mxygroup.\+h}
+\hypertarget{mxygroup_8h_source}{}\label{mxygroup_8h_source}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00002\ \textcolor{comment}{\ *\ mxygroup.h}}
+\DoxyCodeLine{00003\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00004\ \textcolor{comment}{\ *\ \(\backslash\)brief\ A\ group\ of\ MXY\ particles.\ Stores\ a\ vector\ of\ particles,\ the\ dimensions\ of\ the\ simulation\ box\ etc.}}
+\DoxyCodeLine{00005\ \textcolor{comment}{\ *\ Contains\ the\ main\ data\ to\ be\ manipulated\ in\ a\ simulation\ of\ the\ MXY\ model.}}
+\DoxyCodeLine{00006\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00007\ \textcolor{comment}{\ *\ Created\ on:\ 2020-\/02-\/29}}
+\DoxyCodeLine{00008\ \textcolor{comment}{\ *\ \ \ \ \ \ Author:\ Thomas\ Bissinger}}
+\DoxyCodeLine{00009\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#ifndef\ MXYGROUP\_H\_}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#define\ MXYGROUP\_H\_}}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{computations_8h}{computations.h}}"{}}}
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#include\ "{}topology.h"{}}}
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#include\ "{}partition.h"{}}}
+\DoxyCodeLine{00016\ \textcolor{preprocessor}{\#include\ "{}mxyparticle.h"{}}}
+\DoxyCodeLine{00017\ }
+\DoxyCodeLine{00018\ \textcolor{comment}{//\#include\ "{}inputoutput.h"{}}}
+\DoxyCodeLine{00019\ \textcolor{preprocessor}{\#include\ "{}parameters.h"{}}}
+\DoxyCodeLine{00020\ \textcolor{preprocessor}{\#include\ <fstream>}}
+\DoxyCodeLine{00021\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00022\ \textcolor{preprocessor}{\#include\ <algorithm>}}
+\DoxyCodeLine{00023\ \textcolor{preprocessor}{\#include\ <math.h>}}
+\DoxyCodeLine{00024\ \textcolor{preprocessor}{\#include\ <stdio.h>}}
+\DoxyCodeLine{00025\ \textcolor{preprocessor}{\#include\ <stdlib.h>}}
+\DoxyCodeLine{00026\ \textcolor{preprocessor}{\#include\ <complex>}}
+\DoxyCodeLine{00027\ }
+\DoxyCodeLine{00028\ \textcolor{preprocessor}{\#include\ "{}dumbdebug.h"{}}}
+\DoxyCodeLine{00029\ }
+\DoxyCodeLine{00030\ \textcolor{keyword}{using\ namespace\ }std::complex\_literals;}
+\DoxyCodeLine{00031\ \textcolor{comment}{//\ makes\ 1i\ the\ complex\ unit.}}
+\DoxyCodeLine{00032\ }
+\DoxyCodeLine{00033\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classmxygroup}{mxygroup}}\ \{}
+\DoxyCodeLine{00034\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00035\ \ \ \ \ \mbox{\hyperlink{classmxygroup}{mxygroup}}()\ \{\};}
+\DoxyCodeLine{00036\ \ \ \ \ \textcolor{comment}{//\ \ \ ===================================================================================================}}
+\DoxyCodeLine{00037\ \ \ \ \ \textcolor{comment}{//\ \ \ Constructor:}}
+\DoxyCodeLine{00038\ \ \ \ \ \textcolor{comment}{/*\ Creates\ a\ group\ of\ size\ N\ with\ interaction\ strength\ J.\ Nothing\ else,\ has\ to\ be\ initialized.}}
+\DoxyCodeLine{00039\ \textcolor{comment}{\ \ \ \ \ */}}
+\DoxyCodeLine{00040\ \ \ \ \ \mbox{\hyperlink{classmxygroup}{mxygroup}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ N,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classtopology_1_1_vector2d}{topology::Vector2d}}\ L,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\ J,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\ U,}
+\DoxyCodeLine{00041\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\ I,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\ m,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\ cutoff);\ }
+\DoxyCodeLine{00042\ \ \ \ \ \mbox{\hyperlink{classmxygroup}{mxygroup}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classparameters}{parameters}}\&\ par)\ :}
+\DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classmxygroup}{mxygroup}}(par.N(),\ \mbox{\hyperlink{classtopology_1_1_vector2d}{topology::Vector2d}}(par.L(),par.L()),par.J(),\ par.U(),\ par.I(),\ par.m(),\ par.cutoff())\ \{\};\ }
+\DoxyCodeLine{00044\ }
+\DoxyCodeLine{00045\ \ \ \ \ \mbox{\hyperlink{classmxygroup}{mxygroup}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ N);\ }
+\DoxyCodeLine{00046\ }
+\DoxyCodeLine{00047\ }
+\DoxyCodeLine{00049\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classmxygroup_a5dd6edbf427567f6f36cb4622d9c1fc3}{randomize\_particles}}(\textcolor{keywordtype}{double}\ kbT);}
+\DoxyCodeLine{00051\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classmxygroup_a8f7e1dab6b118e069e716606298ff610}{initialize}}(\textcolor{keywordtype}{double}\ kbT);}
+\DoxyCodeLine{00053\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classmxygroup_a0b46a3b19930a5e517d8a91482f0bba5}{mom\_to\_zero}}();}
+\DoxyCodeLine{00055\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classmxygroup_aee2ea3110c8e0508c2b86c09428e5b33}{r\_to\_squarelattice}}();}
+\DoxyCodeLine{00057\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classmxygroup_a904cb61ea441b125dcba7d1b70030f49}{r\_to\_trigonallattice}}();}
+\DoxyCodeLine{00059\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classmxygroup_a361ed4c3bdf81fb2ac7a298c73714a3d}{initialize\_zero}}();}
+\DoxyCodeLine{00061\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classmxygroup_aaf395ec5c6d37384cb9a4d6e690ef0d3}{fill\_partition}}();}
+\DoxyCodeLine{00062\ }
+\DoxyCodeLine{00064\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classmxygroup_a77eba124d217e940dabf5391971e10c5}{fill\_pos\_vec}}();}
+\DoxyCodeLine{00066\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classmxygroup_a321afb80f74550047e0e5dd222019935}{clear\_pos\_vec}}();}
+\DoxyCodeLine{00067\ }
+\DoxyCodeLine{00068\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classmxygroup_a41bbbb75b07a965048b027c884882e44}{read\_from\_snapshot}}(std::string\ snapshotname);\ }
+\DoxyCodeLine{00069\ }
+\DoxyCodeLine{00072\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classmxygroup_aac46b7273784639a7307a24ee5aef5d2}{scale\_from\_subgroup}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classmxygroup}{mxygroup}}\&\ G);}
+\DoxyCodeLine{00073\ }
+\DoxyCodeLine{00078\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classmxygroup_aac46b7273784639a7307a24ee5aef5d2}{scale\_from\_subgroup}}(std::string\ snapshotname);}
+\DoxyCodeLine{00079\ }
+\DoxyCodeLine{00080\ \textcolor{comment}{//\ \ //\ \ \ Printing\ functions}}
+\DoxyCodeLine{00081\ \textcolor{comment}{//\ \ void\ print(int\ i)\ const;}}
+\DoxyCodeLine{00082\ \textcolor{comment}{//\ \ void\ print()\ const;}}
+\DoxyCodeLine{00083\ \textcolor{comment}{//\ \ void\ print\_theta(std::ofstream\ \&outputfile)\ const;}}
+\DoxyCodeLine{00084\ \textcolor{comment}{//\ \ void\ print\_w(std::ofstream\ \&outputfile)\ const;}}
+\DoxyCodeLine{00085\ \textcolor{comment}{//}}
+\DoxyCodeLine{00086\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classmxygroup_a65563c922664cea7205d8fda0a815a39}{print\_group}}(std::ofstream\ \&outputfile)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00087\ \ \ \ \ \textcolor{keywordtype}{void}\ print\_r(std::ofstream\ \&outputfile)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00088\ \textcolor{comment}{//\ \ void\ print\_positions(std::ofstream\ \&outputfile)\ const;}}
+\DoxyCodeLine{00089\ }
+\DoxyCodeLine{00090\ \ \ \ \ \textcolor{comment}{//\ \ \ ===================================================================================================}}
+\DoxyCodeLine{00091\ \ \ \ \ \textcolor{comment}{//\ \ \ Neighbor\ calculations}}
+\DoxyCodeLine{00092\ \ \ \ \ \textcolor{comment}{//\ \ Calculate\ neighbor\ indices\ on\ square\ lattice.\ Returns\ 4-\/vector\ with\ up,\ right,\ down,\ left\ neighbors}}
+\DoxyCodeLine{00093\ \textcolor{comment}{//\ \ \ \ \ \ std::vector<int>\ \ neighbors\_squarelattice(int\ index)\ const;}}
+\DoxyCodeLine{00094\ \ \ \ \ \textcolor{comment}{//\ \ \ ===================================================================================================}}
+\DoxyCodeLine{00095\ \ \ \ \ \textcolor{comment}{//}}
+\DoxyCodeLine{00096\ }
+\DoxyCodeLine{00097\ \ \ \ \ \textcolor{comment}{//\ \ \ ===================================================================================================}}
+\DoxyCodeLine{00098\ \ \ \ \ \textcolor{comment}{//\ \ \ extracting\ information}}
+\DoxyCodeLine{00099\ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{int}\ get\_N()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classmxygroup_adb4de7f52fc48c74c81616d3e4481f9e}{N\_}};\ \};\ }
+\DoxyCodeLine{00100\ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classmxygroup_aae3d984f35bc4ef6ce4ae5627c4daa42}{size}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classmxygroup_adb4de7f52fc48c74c81616d3e4481f9e}{N\_}};\ \};\ }
+\DoxyCodeLine{00101\ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classmxygroup_ab3c378cc425f9d486cd294cc659de87c}{get\_sqrtN}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classmxygroup_a586b2208e46a68dd5c036e4e964fc5f6}{sqrtN\_}};\ \};\ }
+\DoxyCodeLine{00102\ \ \ \ \ \textcolor{keyword}{inline}\ \mbox{\hyperlink{classtopology_1_1_vector2d}{topology::Vector2d}}\ \mbox{\hyperlink{classmxygroup_a856a6bdde65ee7a3bd949dee062a34b0}{get\_L}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classmxygroup_a9250bb44e24ba44d6fda8de668ead546}{L\_}};\ \};\ }
+\DoxyCodeLine{00103\ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{classmxygroup_a82647d708ee9498ccc7041337d5a2cbe}{get\_boxsize}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ std::min(\mbox{\hyperlink{classmxygroup_a9250bb44e24ba44d6fda8de668ead546}{L\_}}[0],\mbox{\hyperlink{classmxygroup_a9250bb44e24ba44d6fda8de668ead546}{L\_}}[1]);\ \};\ }
+\DoxyCodeLine{00104\ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{classmxygroup_a29a858b2294ec413a856f52d1aa3c22b}{get\_density}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classmxygroup_adb4de7f52fc48c74c81616d3e4481f9e}{N\_}}\ /\ (\ \mbox{\hyperlink{classmxygroup_a9250bb44e24ba44d6fda8de668ead546}{L\_}}[0]\ *\ \mbox{\hyperlink{classmxygroup_a9250bb44e24ba44d6fda8de668ead546}{L\_}}[1]);\ \};\ }
+\DoxyCodeLine{00105\ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{classmxygroup_a1f7afaee08fc0bd137acb1514a667cba}{get\_I}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classmxygroup_abbc9d28a2434f3651374e06aa19a28c4}{I\_}};\ \};\ }
+\DoxyCodeLine{00106\ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{classmxygroup_a1375ebbc09ae326a5af4ef57c014fe3a}{get\_J}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classmxygroup_a8fcab68bcae10209bfd4e9bbed9397a3}{J\_}};\ \};\ }
+\DoxyCodeLine{00107\ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{classmxygroup_a4e6d82a2d044801b3a497d21253e161c}{get\_cutoff}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classmxygroup_a961366d4e45a8bd00cf9b8c5bd669f03}{cutoff\_}};\ \};\ }
+\DoxyCodeLine{00108\ \ \ \ \ \textcolor{keyword}{inline}\ std::vector<mxyparticle\ >\ \mbox{\hyperlink{classmxygroup_ac803e4284c83de4762c61d1bd216ff1e}{get\_particles}}()\textcolor{keyword}{\ const\ }\{\textcolor{keywordflow}{return}\ \mbox{\hyperlink{classmxygroup_ac6edad000d3ad64c1e800b86c9e46447}{particles\_}};\};\ }
+\DoxyCodeLine{00109\ \ \ \ \ \textcolor{keyword}{inline}\ \mbox{\hyperlink{classmxyparticle}{mxyparticle}}\ \mbox{\hyperlink{classmxygroup_ae2a35837c6311cd8308305d6a6d3b47a}{get\_particle}}(\textcolor{keywordtype}{int}\ i)\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classmxygroup_ac6edad000d3ad64c1e800b86c9e46447}{particles\_}}[i];\ \};\ }
+\DoxyCodeLine{00110\ }
+\DoxyCodeLine{00111\ }
+\DoxyCodeLine{00112\ \ \ \ \ std::vector<double>\ \mbox{\hyperlink{classmxygroup_a67839d0e752e3cdadbeda7b3cd49c50e}{get\_theta}}()\ \textcolor{keyword}{const};\ }
+\DoxyCodeLine{00113\ \ \ \ \ std::vector<double>\ \mbox{\hyperlink{classmxygroup_ada0f37c94dff61794a9121a928a18d9f}{get\_w}}()\ \textcolor{keyword}{const};\ }
+\DoxyCodeLine{00114\ \ \ \ \ std::vector<topology::Vector2d>\ \mbox{\hyperlink{classmxygroup_a128f28aae9dd42e4aef81a02aa107094}{get\_r}}()\ \textcolor{keyword}{const};\ }
+\DoxyCodeLine{00115\ \ \ \ \ std::vector<topology::Vector2d>\ \mbox{\hyperlink{classmxygroup_a9c1ca56bdb28539417b5f374fad52245}{get\_p}}()\ \textcolor{keyword}{const};\ }
+\DoxyCodeLine{00116\ }
+\DoxyCodeLine{00117\ \ \ \ \ std::vector<double>\ \mbox{\hyperlink{classmxygroup_a5e0a395c3a023e23de6c25ffb43a8d43}{get\_coord}}()\ \textcolor{keyword}{const};\ }
+\DoxyCodeLine{00118\ \ \ \ \ std::vector<double>\ \mbox{\hyperlink{classmxygroup_a225176bff876bb6900586826be45cd9c}{get\_mom}}()\ \textcolor{keyword}{const};\ }
+\DoxyCodeLine{00119\ }
+\DoxyCodeLine{00120\ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{classmxygroup_a67839d0e752e3cdadbeda7b3cd49c50e}{get\_theta}}(\textcolor{keywordtype}{int}\ i)\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classmxygroup_ac6edad000d3ad64c1e800b86c9e46447}{particles\_}}[i].get\_theta();\ \};}
+\DoxyCodeLine{00122\ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{classmxygroup_a560ba06d35d97a297375a5033c89e800}{get\_w}}(\textcolor{keywordtype}{int}\ i)\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classmxygroup_ac6edad000d3ad64c1e800b86c9e46447}{particles\_}}[i].get\_w();\ \};}
+\DoxyCodeLine{00124\ \ \ \ \ \textcolor{keyword}{inline}\ \mbox{\hyperlink{classtopology_1_1_vector2d}{topology::Vector2d}}\ \mbox{\hyperlink{classmxygroup_a96a120984b90d01a7974a2fa10366efd}{get\_r}}(\textcolor{keywordtype}{int}\ i)\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classmxygroup_ac6edad000d3ad64c1e800b86c9e46447}{particles\_}}[i].get\_r();\ \};}
+\DoxyCodeLine{00126\ \ \ \ \ \textcolor{keyword}{inline}\ \mbox{\hyperlink{classtopology_1_1_vector2d}{topology::Vector2d}}\ \mbox{\hyperlink{classmxygroup_a6330b72f96fc7830fcb95c84caac6a53}{get\_p}}(\textcolor{keywordtype}{int}\ i)\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classmxygroup_ac6edad000d3ad64c1e800b86c9e46447}{particles\_}}[i].get\_p();\ \};}
+\DoxyCodeLine{00128\ }
+\DoxyCodeLine{00129\ }
+\DoxyCodeLine{00130\ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{classmxygroup_a48949546a87da4b9d3b4f76e86bbd70e}{J\_pot}}(\textcolor{keywordtype}{double}\ dist)\textcolor{keyword}{\ const\ }\{\ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classmxygroup_a8fcab68bcae10209bfd4e9bbed9397a3}{J\_}}\ *\ std::pow(1\ -\/\ dist,\ 2);\ \};}
+\DoxyCodeLine{00132\ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{classmxygroup_a79582bc57378990228bfa490e3b3deb3}{U\_pot}}(\textcolor{keywordtype}{double}\ dist)\textcolor{keyword}{\ const\ }\{\ \ \textcolor{keywordflow}{return}\ 4\ *\ \mbox{\hyperlink{classmxygroup_a6520ca1166502530ebe88bb74abeb128}{U\_}}\ *\ std::pow(1\ -\/\ dist,\ 2);\ \};}
+\DoxyCodeLine{00134\ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{classmxygroup_ad165639c3f8bdd219b02b1ac151ef328}{J\_pot\_prime}}(\textcolor{keywordtype}{double}\ dist)\textcolor{keyword}{\ const\ }\{\ \ \textcolor{keywordflow}{return}\ 2\ *\ \mbox{\hyperlink{classmxygroup_a8fcab68bcae10209bfd4e9bbed9397a3}{J\_}}\ *\ (dist\ -\/\ 1);\ \};}
+\DoxyCodeLine{00136\ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{classmxygroup_abc1d127f090c2fb5b32551fb7dcb3530}{U\_pot\_prime}}(\textcolor{keywordtype}{double}\ dist)\textcolor{keyword}{\ const\ }\{\ \ \textcolor{keywordflow}{return}\ 8\ *\ \mbox{\hyperlink{classmxygroup_a6520ca1166502530ebe88bb74abeb128}{U\_}}\ *\ (dist\ -\/\ 1);\ \ \};}
+\DoxyCodeLine{00138\ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{classmxygroup_a70dfd3f957c4dd839cc403210dcb9fc2}{J\_pot\_primeprime}}(\textcolor{keywordtype}{double}\ dist)\textcolor{keyword}{\ const\ }\{\ \ \textcolor{keywordflow}{return}\ 2\ *\ \mbox{\hyperlink{classmxygroup_a8fcab68bcae10209bfd4e9bbed9397a3}{J\_}}\ ;\ \};}
+\DoxyCodeLine{00140\ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{classmxygroup_aad49a6efeb8349ef123e06308e6d1548}{U\_pot\_primeprime}}(\textcolor{keywordtype}{double}\ dist)\textcolor{keyword}{\ const\ }\{\ \ \textcolor{keywordflow}{return}\ 8\ *\ \mbox{\hyperlink{classmxygroup_a6520ca1166502530ebe88bb74abeb128}{U\_}}\ ;\ \ \};}
+\DoxyCodeLine{00143\ }
+\DoxyCodeLine{00155\ \ \ \ \ std::vector<int>\ \mbox{\hyperlink{classmxygroup_a67ed835d191990c39549e41020a73781}{get\_neighbors}}(\textcolor{keywordtype}{int}\ i,\ \textcolor{keyword}{const}\ std::vector<topology::Vector2d>\&\ positions,}
+\DoxyCodeLine{00156\ \ \ \ \ \ \ \ \ \ \ \ \ std::string\ cellselect,\ std::vector<double>\&\ distances\ )\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00157\ \ \ \ \ \textcolor{keyword}{inline}\ std::vector<int>\ \mbox{\hyperlink{classmxygroup_a43b5ddc31211e32d0ab78b4723155588}{get\_neighbors}}(\textcolor{keywordtype}{int}\ i,\ std::string\ cellselect,\ std::vector<double>\&\ distances)\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00158\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classmxygroup_a67ed835d191990c39549e41020a73781}{get\_neighbors}}(i,\mbox{\hyperlink{classmxygroup_a128f28aae9dd42e4aef81a02aa107094}{get\_r}}(),cellselect,distances);}
+\DoxyCodeLine{00159\ \ \ \ \ \}\ \ \ }
+\DoxyCodeLine{00161\ }
+\DoxyCodeLine{00162\ \textcolor{comment}{//\ \ std::vector<int>\ plaquette(int\ i)\ const;\ \ \ \ ///<\ Return\ the\ plaquette\ the\ particle\ i\ belongs\ to.}}
+\DoxyCodeLine{00163\ \textcolor{comment}{//\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ///<\ i\ is\ in\ the\ lower\ left\ corner.}}
+\DoxyCodeLine{00164\ \ \ \ \ \textcolor{comment}{//\ \ \ ===================================================================================================}}
+\DoxyCodeLine{00165\ }
+\DoxyCodeLine{00166\ \ \ \ \ \textcolor{comment}{//\ \ \ ===================================================================================================}}
+\DoxyCodeLine{00167\ \ \ \ \ \textcolor{comment}{//\ \ \ Calculating\ differences}}
+\DoxyCodeLine{00169\ \textcolor{comment}{}\ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{classmxygroup_afba4604b8f90d5b8e1fb93b8cbe7842f}{theta\_diff}}(\textcolor{keywordtype}{int}\ i,\ \textcolor{keywordtype}{int}\ j)\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classmxygroup_ac6edad000d3ad64c1e800b86c9e46447}{particles\_}}[j].get\_theta()\ -\/\ \mbox{\hyperlink{classmxygroup_ac6edad000d3ad64c1e800b86c9e46447}{particles\_}}[i].get\_theta();\ \};}
+\DoxyCodeLine{00171\ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{classmxygroup_a2d06149458c7b4a2da14ca757b260b2a}{periodic\_distance\_squared}}(\textcolor{keywordtype}{int}\ i,\ \textcolor{keywordtype}{int}\ j)\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00172\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{namespacetopology_a19d901a7c87cb202c6b44e2838978db6}{topology::periodic\_distance\_squared}}(\mbox{\hyperlink{classmxygroup_ac6edad000d3ad64c1e800b86c9e46447}{particles\_}}[i].\mbox{\hyperlink{classmxygroup_a128f28aae9dd42e4aef81a02aa107094}{get\_r}}(),\ \mbox{\hyperlink{classmxygroup_ac6edad000d3ad64c1e800b86c9e46447}{particles\_}}[j].\mbox{\hyperlink{classmxygroup_a128f28aae9dd42e4aef81a02aa107094}{get\_r}}(),\ \mbox{\hyperlink{classmxygroup_a9250bb44e24ba44d6fda8de668ead546}{L\_}});}
+\DoxyCodeLine{00173\ \ \ \ \ \};}
+\DoxyCodeLine{00175\ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{classmxygroup_a950a0b02a27b4e73d9b1047b2805bc85}{periodic\_distance}}(\textcolor{keywordtype}{int}\ i,\ \textcolor{keywordtype}{int}\ j)\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ std::sqrt(\mbox{\hyperlink{classmxygroup_a2d06149458c7b4a2da14ca757b260b2a}{periodic\_distance\_squared}}(i,j));\ \};}
+\DoxyCodeLine{00177\ \ \ \ \ \textcolor{keyword}{inline}\ \mbox{\hyperlink{classtopology_1_1_vector2d}{topology::Vector2d}}\ \mbox{\hyperlink{classmxygroup_a4ef08dd81788231a9903ec74da6eab20}{periodic\_distance\_vector}}(\textcolor{keywordtype}{int}\ i,\ \textcolor{keywordtype}{int}\ j)\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00178\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{namespacetopology_acb61cc88383472479100bdd9369b76d2}{topology::periodic\_distance\_vector}}(\mbox{\hyperlink{classmxygroup_ac6edad000d3ad64c1e800b86c9e46447}{particles\_}}[i].\mbox{\hyperlink{classmxygroup_a128f28aae9dd42e4aef81a02aa107094}{get\_r}}(),\ \mbox{\hyperlink{classmxygroup_ac6edad000d3ad64c1e800b86c9e46447}{particles\_}}[j].\mbox{\hyperlink{classmxygroup_a128f28aae9dd42e4aef81a02aa107094}{get\_r}}(),\ \mbox{\hyperlink{classmxygroup_a9250bb44e24ba44d6fda8de668ead546}{L\_}});}
+\DoxyCodeLine{00179\ \ \ \ \ \};}
+\DoxyCodeLine{00180\ }
+\DoxyCodeLine{00181\ \ \ \ \ \textcolor{comment}{//\ \ \ ===================================================================================================}}
+\DoxyCodeLine{00182\ \ \ \ \ \textcolor{comment}{//\ \ \ sets\ values\ for\ the\ xy\ particles.}}
+\DoxyCodeLine{00183\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classmxygroup_a734a8d4c283d51ef6d2bee0c91c7a00d}{set\_theta}}(\textcolor{keywordtype}{double}\ theta,\ \textcolor{keywordtype}{int}\ i)\ ;\ \ \ \ \ \ }
+\DoxyCodeLine{00184\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classmxygroup_adc17dd75e76e22c5df7c89b582c5c2f7}{set\_w}}(\textcolor{keywordtype}{double}\ w,\ \textcolor{keywordtype}{int}\ i)\ ;\ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00185\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classmxygroup_a8310bcb3fe58aa1c5b2965a0741ad805}{set\_r}}(\mbox{\hyperlink{classtopology_1_1_vector2d}{topology::Vector2d}}\ r,\ \textcolor{keywordtype}{int}\ i)\ ;\ \ \ \ }
+\DoxyCodeLine{00186\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classmxygroup_a22d5447f4bc9fdf0b3c60927ba5f2d46}{set\_p}}(\mbox{\hyperlink{classtopology_1_1_vector2d}{topology::Vector2d}}\ p,\ \textcolor{keywordtype}{int}\ i)\ ;\ \ \ \ }
+\DoxyCodeLine{00187\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classmxygroup_aa103fec8398ae2940dd46036cadb29a0}{set\_part\_i}}(\mbox{\hyperlink{classmxyparticle}{mxyparticle}}\ p,\ \textcolor{keywordtype}{int}\ i)\ ;\ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00188\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classmxygroup_a45467c59586390e6b5aa271a5c3b0121}{set\_all\_w}}(\textcolor{keywordtype}{double}\ w);\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00189\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classmxygroup_a67ecd57dd1ffc22251332808ae444d74}{set\_all\_p}}(\mbox{\hyperlink{classtopology_1_1_vector2d}{topology::Vector2d}}\ p);\ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00190\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classmxygroup_ae43e6fe2492062c9922efffdf813a6f2}{set\_all\_theta}}(\textcolor{keywordtype}{double}\ theta);\ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00191\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classmxygroup_ae73663e744a4cbcfdf8d8e6205155e1a}{set\_temperature}}(\textcolor{keywordtype}{double}\ kT,\ \textcolor{keywordtype}{int}\ i);\ \ \ \ \ \ }
+\DoxyCodeLine{00192\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classmxygroup_ae73663e744a4cbcfdf8d8e6205155e1a}{set\_temperature}}(\textcolor{keywordtype}{double}\ kT);\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00193\ }
+\DoxyCodeLine{00194\ \ \ \ \ \textcolor{keywordtype}{void}\ scale\_mom(\textcolor{keywordtype}{double}\ a);}
+\DoxyCodeLine{00195\ }
+\DoxyCodeLine{00196\ \ \ \ \ \textcolor{comment}{//\ add\ variables}}
+\DoxyCodeLine{00197\ \ \ \ \ \textcolor{keywordtype}{void}\ add\_to\_theta(\textcolor{keyword}{const}\ std::vector<double>\&\ theta,\ \textcolor{keywordtype}{double}\ factor\ =\ 1);}
+\DoxyCodeLine{00198\ \ \ \ \ \textcolor{keywordtype}{void}\ add\_to\_r(\textcolor{keyword}{const}\ std::vector<topology::Vector2d>\&\ r,\ \textcolor{keywordtype}{double}\ factor\ =\ 1);}
+\DoxyCodeLine{00199\ \ \ \ \ \textcolor{keywordtype}{void}\ add\_to\_r(\textcolor{keyword}{const}\ std::vector<double>\&\ r,\ \textcolor{keywordtype}{double}\ factor\ =\ 1);}
+\DoxyCodeLine{00200\ \ \ \ \ \textcolor{keywordtype}{void}\ add\_to\_coord(\textcolor{keyword}{const}\ std::vector<double>\&\ coord,\ \textcolor{keywordtype}{double}\ factor\ =\ 1);}
+\DoxyCodeLine{00201\ \ \ \ \ \textcolor{keywordtype}{void}\ add\_to\_coord\_inertialscaling(\textcolor{keyword}{const}\ std::vector<double>\&\ coord,\ \textcolor{keywordtype}{double}\ factor\ =\ 1);}
+\DoxyCodeLine{00202\ \ \ \ \ \textcolor{keywordtype}{void}\ add\_to\_w(\textcolor{keyword}{const}\ std::vector<double>\&\ w,\ \textcolor{keywordtype}{double}\ factor\ =\ 1);}
+\DoxyCodeLine{00203\ \ \ \ \ \textcolor{keywordtype}{void}\ add\_to\_p(\textcolor{keyword}{const}\ std::vector<topology::Vector2d>\&\ p,\ \textcolor{keywordtype}{double}\ factor\ =\ 1);}
+\DoxyCodeLine{00204\ \ \ \ \ \textcolor{keywordtype}{void}\ add\_to\_p(\textcolor{keyword}{const}\ std::vector<double>\&\ p,\ \textcolor{keywordtype}{double}\ factor\ =\ 1);}
+\DoxyCodeLine{00205\ \ \ \ \ \textcolor{keywordtype}{void}\ add\_to\_mom(\textcolor{keyword}{const}\ std::vector<double>\&\ mom,\ \textcolor{keywordtype}{double}\ factor\ =\ 1);}
+\DoxyCodeLine{00206\ \ \ \ \ \textcolor{comment}{//\ add\ random\ variables}}
+\DoxyCodeLine{00207\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classmxygroup_a5881618732ce2a7486b510e343340bf4}{add\_random\_angle}}(\textcolor{keywordtype}{double}\ angmax);\ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00208\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classmxygroup_ae2ab07c5073c3a595960f3d9fb02fb54}{add\_random\_displacement}}(\textcolor{keywordtype}{double}\ rmax);\ \ \ \ \ \ \ }
+\DoxyCodeLine{00209\ }
+\DoxyCodeLine{00210\ \ \ \ \ \textcolor{comment}{//\ \ ==========================================================================================}}
+\DoxyCodeLine{00211\ \ \ \ \ \textcolor{comment}{//\ \ boundary\ value\ handling}}
+\DoxyCodeLine{00212\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classmxygroup_a0327b74b3e0ad5c68a785eadb9a3be92}{set\_theta\_to\_interval}}();\ }
+\DoxyCodeLine{00213\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classmxygroup_aa9f2a1f314d92fe41a811a15a99562da}{set\_r\_to\_pbc}}();\ }
+\DoxyCodeLine{00214\ \ \ \ \ \textcolor{comment}{//\ \ ==========================================================================================}}
+\DoxyCodeLine{00215\ \ \ \ \ \textcolor{comment}{//\ \ set\ functions\ for\ initial\ averages\ concerning\ momentum,\ velocity\ and\ magnetization\ of\ the\ particles}}
+\DoxyCodeLine{00216\ \textcolor{comment}{//\ \ void\ set\_avg\_w(double\ avgw);}}
+\DoxyCodeLine{00217\ \textcolor{comment}{//\ \ void\ set\_avg\_M(double\ M,\ double\ precision);}}
+\DoxyCodeLine{00218\ \textcolor{comment}{//\ \ void\ randomize\_w(double\ initial\_w);\ ///<\ Randomize\ w\ that\ the\ avg\ w=0\ and\ w\string^2\ \string~\ 1\ (MHoefler,\ not\ used\ here).}}
+\DoxyCodeLine{00219\ }
+\DoxyCodeLine{00220\ \ \ \ \ \textcolor{comment}{//\ \ ==========================================================================================}}
+\DoxyCodeLine{00221\ \ \ \ \ \textcolor{comment}{//\ \ For\ the\ annealing\ procedure.}}
+\DoxyCodeLine{00222\ \textcolor{comment}{//\ \ void\ anneal\_w(double\ a\_factor,\ std::vector<double>\ wdata,\ int\ anneal\_step,}}
+\DoxyCodeLine{00223\ \textcolor{comment}{//\ \ \ \ \ \ \ \ \ \ double\ anneal\_threshold,\ bool\ annealing\_done);}}
+\DoxyCodeLine{00224\ \textcolor{comment}{//\ \ void\ anneal\_up(double\ a\_factor,\ std::vector<double>\ wdata,\ int\ anneal\_step,}}
+\DoxyCodeLine{00225\ \textcolor{comment}{//\ \ \ \ \ \ \ \ \ \ double\ anneal\_threshold,\ bool\ annealing\_done);}}
+\DoxyCodeLine{00226\ \textcolor{comment}{//\ \ void\ anneal\_down(double\ a\_factor,\ std::vector<double>\ wdata,}}
+\DoxyCodeLine{00227\ \textcolor{comment}{//\ \ \ \ \ \ \ \ \ \ int\ anneal\_step,\ double\ anneal\_threshold,\ bool\ annealing\_done);}}
+\DoxyCodeLine{00228\ \textcolor{comment}{//\ \ void\ anneal\_decider(std::vector<double>\ wdata,\ int\ anneal\_step,}}
+\DoxyCodeLine{00229\ \textcolor{comment}{//\ \ \ \ \ \ \ \ \ \ double\ anneal\_threshold,\ bool\ \&updown);}}
+\DoxyCodeLine{00230\ }
+\DoxyCodeLine{00231\ \ \ \ \ \textcolor{comment}{//\ \ ====================================}}
+\DoxyCodeLine{00232\ \ \ \ \ \textcolor{comment}{//\ \ Thermostatting.\ Will\ be\ managed\ by\ the\ integrator\ class\ from\ now\ on.}}
+\DoxyCodeLine{00233\ \ \ \ \ \textcolor{comment}{//\ void\ Berendsen\_thermostat(double\ T\_desired,\ double\ tau,\ double\ dt);\ ///<\ Implements\ the\ Berendsen\ thermostat.}}
+\DoxyCodeLine{00234\ }
+\DoxyCodeLine{00235\ \ \ \ \ \textcolor{comment}{//\ \ ====================================}}
+\DoxyCodeLine{00236\ \ \ \ \ \textcolor{comment}{//\ \ Phase\ space\ functions.}}
+\DoxyCodeLine{00237\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{classmxygroup_a8e5edd19cd4934747bcd32e31193da16}{sum\_w}}()\ \textcolor{keyword}{const};\ }
+\DoxyCodeLine{00238\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{classmxygroup_ab61707d92aafa40aefd964b5ff47a312}{sum\_w\_squared}}()\ \textcolor{keyword}{const}\ ;\ }
+\DoxyCodeLine{00239\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{classmxygroup_a4c51699d86717d8513bb4072496e1281}{sum\_w\_4}}()\ \textcolor{keyword}{const}\ ;\ }
+\DoxyCodeLine{00240\ }
+\DoxyCodeLine{00241\ \textcolor{comment}{//\ \ inline\ double\ sum\_w\_squared()\ const\ \{\ return\ std::pow(sum\_w(),2);\ \};\ ///<\ Omega\ squared,\ basically\ N\_<w\string^2>.\ Proportional\ to\ kinetic\ energy.\ Extensive.}}
+\DoxyCodeLine{00242\ \textcolor{comment}{//\ \ inline\ double\ sum\_w\_4()\ const\ \{\ return\ std::pow(sum\_w(),4);\ \};\ ///<\ Omega\ to\ the\ fourth\ power,\ basically\ N\_<w\string^4>.\ Proportional\ to\ kinetic\ energy.\ Extensive.}}
+\DoxyCodeLine{00243\ }
+\DoxyCodeLine{00244\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{classmxygroup_aa0cc4c7e5c505c12bc113e87db1f24b4}{sum\_theta}}()\ \textcolor{keyword}{const};\ }
+\DoxyCodeLine{00245\ }
+\DoxyCodeLine{00246\ \ \ \ \ \mbox{\hyperlink{classtopology_1_1_vector2d}{topology::Vector2d}}\ \mbox{\hyperlink{classmxygroup_a17058fb53ae7b9cb0991f9281feb2abb}{sum\_s}}()\ \textcolor{keyword}{const};\ }
+\DoxyCodeLine{00247\ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{double}\ sum\_s\_squared()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{namespacetopology_a657dfb7335d4dddbcc80cfa464b8f110}{topology::norm2}}(\mbox{\hyperlink{classmxygroup_a17058fb53ae7b9cb0991f9281feb2abb}{sum\_s}}());\ \};\ }
+\DoxyCodeLine{00248\ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{classmxygroup_a72e9407f9eea81a1f923f09722f6aca4}{sum\_s\_4}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ std::pow(sum\_s\_squared(),2);\ \};\ }
+\DoxyCodeLine{00249\ }
+\DoxyCodeLine{00250\ \ \ \ \ \mbox{\hyperlink{classtopology_1_1_vector2d}{topology::Vector2d}}\ \mbox{\hyperlink{classmxygroup_af8fe682203930e7a77220cd2bff5b6df}{sum\_p}}()\ \textcolor{keyword}{const};\ }
+\DoxyCodeLine{00251\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{classmxygroup_af90abf00bc0920eafb8da23888dcfd48}{sum\_p\_squared}}()\ \textcolor{keyword}{const}\ ;\ }
+\DoxyCodeLine{00252\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{classmxygroup_ad987f1daef7f81505b80926e142cf1bb}{sum\_p\_4}}()\ \textcolor{keyword}{const}\ ;\ }
+\DoxyCodeLine{00253\ }
+\DoxyCodeLine{00254\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{classmxygroup_a3e73c2ea833e83456643ce00509144fb}{sum\_e\_squared}}()\ \textcolor{keyword}{const}\ ;\ }
+\DoxyCodeLine{00255\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{classmxygroup_afd7d70e535d877103ba7d71ed1e05fb7}{sum\_ekin\_squared}}()\ \textcolor{keyword}{const}\ ;\ }
+\DoxyCodeLine{00256\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{classmxygroup_ac13b3151132647afccf03b8d5e6c5de7}{sum\_eint\_squared}}()\ \textcolor{keyword}{const}\ ;\ }
+\DoxyCodeLine{00257\ }
+\DoxyCodeLine{00258\ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{double}\ binder\_cumulant()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ 1\ -\/\ \mbox{\hyperlink{classmxygroup_adb4de7f52fc48c74c81616d3e4481f9e}{N\_}}\ *\ \mbox{\hyperlink{classmxygroup_a72e9407f9eea81a1f923f09722f6aca4}{sum\_s\_4}}()\ /\ (\ 3.0\ *\ std::pow(sum\_s\_squared(),\ 2.0)\ )\ ;\ \}\ ;\ }
+\DoxyCodeLine{00259\ }
+\DoxyCodeLine{00260\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{classmxygroup_ab4e2a2d11230d48e4854338f961e4fa5}{calc\_interaction\_energy}}()\ \textcolor{keyword}{const};\ }
+\DoxyCodeLine{00261\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{classmxygroup_ab4e2a2d11230d48e4854338f961e4fa5}{calc\_interaction\_energy}}(\textcolor{keywordtype}{int}\ i)\ \textcolor{keyword}{const};\ }
+\DoxyCodeLine{00262\ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{double}\ calc\_kinetic\_energy()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ .5\ *\ \mbox{\hyperlink{classmxygroup_ab61707d92aafa40aefd964b5ff47a312}{sum\_w\_squared}}()/\ \mbox{\hyperlink{classmxygroup_abbc9d28a2434f3651374e06aa19a28c4}{I\_}}\ +\ .5\ *\ \mbox{\hyperlink{classmxygroup_af90abf00bc0920eafb8da23888dcfd48}{sum\_p\_squared}}()/\ \mbox{\hyperlink{classmxygroup_ad7b329c76dc265e2e73d2550a498fc3e}{m\_}};\ \};\ }
+\DoxyCodeLine{00263\ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{classmxygroup_aed6b4b1aca6222b94183f1da1aa81531}{calc\_kinetic\_energy}}(\textcolor{keywordtype}{int}\ i)\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00264\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ .5\ *\ std::pow(\mbox{\hyperlink{classmxygroup_ac6edad000d3ad64c1e800b86c9e46447}{particles\_}}[i].\mbox{\hyperlink{classmxygroup_ada0f37c94dff61794a9121a928a18d9f}{get\_w}}(),2)/\ \mbox{\hyperlink{classmxygroup_abbc9d28a2434f3651374e06aa19a28c4}{I\_}}\ +\ .5\ *\ \mbox{\hyperlink{classmxygroup_ac6edad000d3ad64c1e800b86c9e46447}{particles\_}}[i].get\_p().norm2()/\ \mbox{\hyperlink{classmxygroup_ad7b329c76dc265e2e73d2550a498fc3e}{m\_}};\ \};}
+\DoxyCodeLine{00266\ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{classmxygroup_aa511f9065b9e6678f95dc72c23b9f274}{calc\_energy}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classmxygroup_ab4e2a2d11230d48e4854338f961e4fa5}{calc\_interaction\_energy}}()\ +\ calc\_kinetic\_energy();\ \};\ }
+\DoxyCodeLine{00267\ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{classmxygroup_a94acd63afaef1ead027acf6a3341c764}{calc\_energy}}(\textcolor{keywordtype}{int}\ i)\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ calc\_kinetic\_energy(i)\ +\ \mbox{\hyperlink{classmxygroup_ab4e2a2d11230d48e4854338f961e4fa5}{calc\_interaction\_energy}}(i);\ \};\ }
+\DoxyCodeLine{00268\ }
+\DoxyCodeLine{00269\ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{classmxygroup_a3ae636c2ebab6c50def68bce53db1370}{calc\_temperature}}()\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00270\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ (\ (\mbox{\hyperlink{classmxygroup_ab61707d92aafa40aefd964b5ff47a312}{sum\_w\_squared}}()-\/\ pow(\mbox{\hyperlink{classmxygroup_a8e5edd19cd4934747bcd32e31193da16}{sum\_w}}(),\ 2.0)\ /\ \mbox{\hyperlink{classmxygroup_adb4de7f52fc48c74c81616d3e4481f9e}{N\_}})/\ \mbox{\hyperlink{classmxygroup_abbc9d28a2434f3651374e06aa19a28c4}{I\_}}}
+\DoxyCodeLine{00271\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ +\ (\mbox{\hyperlink{classmxygroup_af90abf00bc0920eafb8da23888dcfd48}{sum\_p\_squared}}()\ -\/\ \mbox{\hyperlink{namespacetopology_a657dfb7335d4dddbcc80cfa464b8f110}{topology::norm2}}(\mbox{\hyperlink{classmxygroup_af8fe682203930e7a77220cd2bff5b6df}{sum\_p}}())/\ \mbox{\hyperlink{classmxygroup_adb4de7f52fc48c74c81616d3e4481f9e}{N\_}}\ )/\ \mbox{\hyperlink{classmxygroup_ad7b329c76dc265e2e73d2550a498fc3e}{m\_}})/(3\ *\ \mbox{\hyperlink{classmxygroup_adb4de7f52fc48c74c81616d3e4481f9e}{N\_}}\ -\/\ 3);\ \textcolor{comment}{//\ 3\ N\_\ -\/\ 3\ degrees\ of\ freedom}}
+\DoxyCodeLine{00272\ \textcolor{comment}{//\ \ \ \ \ \ return\ (2\ *\ calc\_kinetic\_energy()\ -\/\ pow(sum\_w(),\ 2.0)/(N\_\ *\ I\_)\ -\/\ topology::norm2(sum\_p())/(2\ *\ N\_\ *\ m\_))/(3\ *\ N\_);}}
+\DoxyCodeLine{00273\ \ \ \ \ \};\ }
+\DoxyCodeLine{00274\ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{classmxygroup_a8fe984a777bfe37e72efc1e67703869f}{calc\_temperature\_w}}()\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00275\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ (\mbox{\hyperlink{classmxygroup_ab61707d92aafa40aefd964b5ff47a312}{sum\_w\_squared}}()\ -\/\ pow(\mbox{\hyperlink{classmxygroup_a8e5edd19cd4934747bcd32e31193da16}{sum\_w}}(),\ 2.0)/(\mbox{\hyperlink{classmxygroup_adb4de7f52fc48c74c81616d3e4481f9e}{N\_}}\ *\ \mbox{\hyperlink{classmxygroup_abbc9d28a2434f3651374e06aa19a28c4}{I\_}})\ )/(\mbox{\hyperlink{classmxygroup_adb4de7f52fc48c74c81616d3e4481f9e}{N\_}});}
+\DoxyCodeLine{00276\ \ \ \ \ \};\ }
+\DoxyCodeLine{00277\ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{classmxygroup_a086c6fe5d9252297c559dd5aeffe26ac}{calc\_temperature\_p}}()\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00278\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ (\mbox{\hyperlink{classmxygroup_af90abf00bc0920eafb8da23888dcfd48}{sum\_p\_squared}}()\ -\/\ \mbox{\hyperlink{namespacetopology_a657dfb7335d4dddbcc80cfa464b8f110}{topology::norm2}}(\mbox{\hyperlink{classmxygroup_af8fe682203930e7a77220cd2bff5b6df}{sum\_p}}())/(2\ *\ \mbox{\hyperlink{classmxygroup_adb4de7f52fc48c74c81616d3e4481f9e}{N\_}}\ *\ \mbox{\hyperlink{classmxygroup_ad7b329c76dc265e2e73d2550a498fc3e}{m\_}}))/(2\ *\ \mbox{\hyperlink{classmxygroup_adb4de7f52fc48c74c81616d3e4481f9e}{N\_}});}
+\DoxyCodeLine{00279\ \ \ \ \ \};\ }
+\DoxyCodeLine{00280\ }
+\DoxyCodeLine{00281\ }
+\DoxyCodeLine{00282\ }
+\DoxyCodeLine{00283\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{classmxygroup_a5dbc8ee12a1d1b2c5d7acb6b7a9f32fd}{calc\_space\_angular\_mom}}()\ \textcolor{keyword}{const}\ ;}
+\DoxyCodeLine{00284\ }
+\DoxyCodeLine{00285\ }
+\DoxyCodeLine{00286\ }
+\DoxyCodeLine{00287\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{classmxygroup_abb8a27d9fa642063bd614f3b68fabf38}{calc\_neighbor\_mean}}(\textcolor{keywordtype}{double}\ te\_pow,\ \textcolor{keywordtype}{double}\ r\_pow,\ \textcolor{keywordtype}{double}\ cos\_pow,\ \textcolor{keywordtype}{double}\ sin\_pow,\ \textcolor{keywordtype}{double}\ J\_pow,\ \textcolor{keywordtype}{double}\ Up\_pow,\ \textcolor{keywordtype}{double}\ Upp\_pow)\ \textcolor{keyword}{const};\ }
+\DoxyCodeLine{00288\ \textcolor{comment}{//\ \ inline\ double\ sum\_magnetization\_squared()\ const\ \{\ return\ norm2(sum\_magnetization());\}\ ;\ ///<\ Magnetization.\ Basically\ N\_|<s>|.\ Extensive.}}
+\DoxyCodeLine{00289\ \textcolor{comment}{//\ \ Not\ implemented\ by\ Mathias.}}
+\DoxyCodeLine{00290\ \textcolor{comment}{//\ \ \ \ \ \ double\ binder\_cumulant()\ const;}}
+\DoxyCodeLine{00291\ }
+\DoxyCodeLine{00292\ \textcolor{comment}{//\ \ Hoefler\ functions.}}
+\DoxyCodeLine{00293\ \textcolor{comment}{//\ \ double\ ang\_MSD(xygroup\ \&initial)\ const;}}
+\DoxyCodeLine{00294\ \textcolor{comment}{//\ \ double\ ang\_MSD\_nonsat(const\ xygroup\ \&initial)\ const;}}
+\DoxyCodeLine{00295\ \textcolor{comment}{//\ \ double\ spin\_autocorrelation(const\ xygroup\ \&corr\_G)\ const;}}
+\DoxyCodeLine{00296\ }
+\DoxyCodeLine{00297\ }
+\DoxyCodeLine{00298\ \ \ \ \ \textcolor{comment}{//\ ======================================================================================================}}
+\DoxyCodeLine{00299\ \ \ \ \ \textcolor{comment}{//\ Susceptibilities\ and\ correlation\ functions}}
+\DoxyCodeLine{00300\ \ \ \ \ \textcolor{comment}{//\ ======================================================================================================}}
+\DoxyCodeLine{00301\ \ \ \ \ \textcolor{keyword}{inline}\ std::complex<double>\ calc\_eiqr(\textcolor{keyword}{const}\ \mbox{\hyperlink{classtopology_1_1_vector2d}{topology::Vector2d}}\ q,\ \textcolor{keywordtype}{int}\ i)\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00302\ \textcolor{comment}{//\ \ \ \ \ \ return\ std::exp(1i\ *\ topology::innerproduct(q,get\_r(i)));}}
+\DoxyCodeLine{00303\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ std::complex<double>(std::cos(\mbox{\hyperlink{namespacetopology_a9856d6a0e13d1f04ba8a934952bbaf06}{topology::innerproduct}}(q,\mbox{\hyperlink{classmxygroup_a128f28aae9dd42e4aef81a02aa107094}{get\_r}}(i))),}
+\DoxyCodeLine{00304\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::sin(\mbox{\hyperlink{namespacetopology_a9856d6a0e13d1f04ba8a934952bbaf06}{topology::innerproduct}}(q,\mbox{\hyperlink{classmxygroup_a128f28aae9dd42e4aef81a02aa107094}{get\_r}}(i))));}
+\DoxyCodeLine{00305\ \ \ \ \ \};\ }
+\DoxyCodeLine{00306\ \ \ \ \ std::complex<double>\ \mbox{\hyperlink{classmxygroup_ac93d57de7b6fd52575d8719afbcb5dfd}{calc\_mxq}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classtopology_1_1_vector2d}{topology::Vector2d}}\ q,\ \textcolor{keywordtype}{double}\ Mx\_0)\ \textcolor{keyword}{const};\ }
+\DoxyCodeLine{00307\ \ \ \ \ std::complex<double>\ \mbox{\hyperlink{classmxygroup_af0ade54b124cc2a1d38b2553b72185c2}{calc\_myq}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classtopology_1_1_vector2d}{topology::Vector2d}}\ q,\ \textcolor{keywordtype}{double}\ My\_0)\ \textcolor{keyword}{const};\ }
+\DoxyCodeLine{00308\ \ \ \ \ std::complex<double>\ \mbox{\hyperlink{classmxygroup_a25d4e56c8da325bdea0345692c1d39de}{calc\_wq}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classtopology_1_1_vector2d}{topology::Vector2d}}\ q,\ \textcolor{keywordtype}{double}\ W\_0)\ \textcolor{keyword}{const};\ }
+\DoxyCodeLine{00309\ \ \ \ \ std::complex<double>\ \mbox{\hyperlink{classmxygroup_a9cea269716f5971dbbf18febb2d77d80}{calc\_eq}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classtopology_1_1_vector2d}{topology::Vector2d}}\ q,\ \textcolor{keywordtype}{double}\ E\_0)\ \textcolor{keyword}{const};\ }
+\DoxyCodeLine{00310\ \ \ \ \ std::complex<double>\ \mbox{\hyperlink{classmxygroup_aacbd2d0ef898c060a0864aeb1b76271c}{calc\_teq}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classtopology_1_1_vector2d}{topology::Vector2d}}\ q,\ \textcolor{keywordtype}{double}\ Te\_0)\ \textcolor{keyword}{const};\ }
+\DoxyCodeLine{00311\ }
+\DoxyCodeLine{00312\ \ \ \ \ std::complex<double>\ \mbox{\hyperlink{classmxygroup_ac63483ef5a14eeb27e0f21fdfc5582b0}{calc\_rq}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classtopology_1_1_vector2d}{topology::Vector2d}}\ q)\ \textcolor{keyword}{const};\ }
+\DoxyCodeLine{00313\ \ \ \ \ std::vector<std::complex<double>\ >\ \mbox{\hyperlink{classmxygroup_a793481ede448b543e610a131bd878719}{calc\_jq}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classtopology_1_1_vector2d}{topology::Vector2d}}\ q,\ \mbox{\hyperlink{classtopology_1_1_vector2d}{topology::Vector2d}}\ J\_0)\ \textcolor{keyword}{const};\ }
+\DoxyCodeLine{00314\ \ \ \ \ std::complex<double>\ \mbox{\hyperlink{classmxygroup_a49d02174cc439362c73d106f7e610215}{calc\_jqpar}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classtopology_1_1_vector2d}{topology::Vector2d}}\ q,\ \mbox{\hyperlink{classtopology_1_1_vector2d}{topology::Vector2d}}\ J\_0)\ \textcolor{keyword}{const};\ }
+\DoxyCodeLine{00315\ \ \ \ \ std::complex<double>\ \mbox{\hyperlink{classmxygroup_a57cda389fac626a904a803d59ba347a1}{calc\_jqperp}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classtopology_1_1_vector2d}{topology::Vector2d}}\ q,\ \mbox{\hyperlink{classtopology_1_1_vector2d}{topology::Vector2d}}\ J\_0)\ \textcolor{keyword}{const};\ }
+\DoxyCodeLine{00316\ \ \ \ \ std::complex<double>\ \mbox{\hyperlink{classmxygroup_aabac1a49210345fffee7f54443258923}{calc\_lq}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classtopology_1_1_vector2d}{topology::Vector2d}}\ q,\ \textcolor{keywordtype}{double}\ L\_0)\ \textcolor{keyword}{const};\ }
+\DoxyCodeLine{00317\ }
+\DoxyCodeLine{00318\ }
+\DoxyCodeLine{00319\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{classmxygroup_a0abc10bc04a4af42029f19123a6476ad}{calc\_fieldfluct\_average}}(std::string\ fluctname,\ \mbox{\hyperlink{classtopology_1_1_vector2d}{topology::Vector2d}}\ q\ =\ 0)\ \textcolor{keyword}{const};\ }
+\DoxyCodeLine{00320\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{classmxygroup_a9c2542db33c452a31f2120ebe546e3cb}{calc\_one\_particle\_density}}(\textcolor{keywordtype}{int}\ index,\ std::string\ fluctname,\ \mbox{\hyperlink{classtopology_1_1_vector2d}{topology::Vector2d}}\ q\ =\ 0)\ \textcolor{keyword}{const};\ }
+\DoxyCodeLine{00321\ \ \ \ \ std::vector<std::complex<double>\ >\ \mbox{\hyperlink{classmxygroup_ac860f679cb3837311ec46fa79568049a}{calc\_fieldfluct}}(\textcolor{keyword}{const}\ std::vector<topology::Vector2d>\ qvals,\ std::string\ fluctname)\ \textcolor{keyword}{const};\ }
+\DoxyCodeLine{00322\ \ \ \ \ std::vector<std::complex<double>\ >\ \mbox{\hyperlink{classmxygroup_a91e3b08bcabe65289664676d64449b4c}{calc\_fieldfluct\_convolution}}(\textcolor{keyword}{const}\ std::vector<topology::Vector2d>\ qvals,\ std::string\ fluctname\_1,\ std::string\ fluctname\_2)\ \textcolor{keyword}{const};\ }
+\DoxyCodeLine{00323\ }
+\DoxyCodeLine{00324\ }
+\DoxyCodeLine{00325\ \ \ \ \ \mbox{\hyperlink{classtopology_1_1_vector2d}{topology::Vector2d}}\ \mbox{\hyperlink{classmxygroup_a5a91409108a2a096362c6ae85379f7ec}{calc\_tau}}()\ \textcolor{keyword}{const};\ }
+\DoxyCodeLine{00326\ \ \ \ \ \mbox{\hyperlink{classtopology_1_1_vector2d}{topology::Vector2d}}\ \mbox{\hyperlink{classmxygroup_a27b8e5545dd9f7d1ac2ebe79de387b20}{calc\_je}}()\ \textcolor{keyword}{const};\ }
+\DoxyCodeLine{00327\ }
+\DoxyCodeLine{00328\ \ \ \ \ \mbox{\hyperlink{classtopology_1_1_vector2d}{topology::Vector2d}}\ \mbox{\hyperlink{classmxygroup_a6774a09b33f8af2882f692fd05a7797b}{calc\_current}}(std::string\ currentname)\ \textcolor{keyword}{const};\ }
+\DoxyCodeLine{00329\ }
+\DoxyCodeLine{00330\ \ \ \ \ \textcolor{comment}{//\ \ \ ===================================================================================================}}
+\DoxyCodeLine{00331\ \ \ \ \ \textcolor{comment}{//\ \ \ Static\ correlation\ functions}}
+\DoxyCodeLine{00332\ }
+\DoxyCodeLine{00333\ \textcolor{comment}{//\ \ inline\ double\ calc\_chimxq(const\ topology::Vector2d\ q)\ const\ \{\ return\ std::norm(calc\_mxq(q));\}\ ;\ ///<\ returns\ chimxq}}
+\DoxyCodeLine{00334\ \textcolor{comment}{//\ \ inline\ double\ calc\_chimyq(const\ topology::Vector2d\ q)\ const\ \{\ return\ std::norm(calc\_myq(q));\}\ ;\ ///<\ returns\ chimyq}}
+\DoxyCodeLine{00335\ \textcolor{comment}{//\ \ inline\ double\ calc\_chimqalpha(const\ topology::Vector2d\ q,\ double\ alpha)\ const\ \{\ return\ std::norm(calc\_mqalpha(q,\ alpha));\}\ ;\ ///<\ returns\ chimalphaq}}
+\DoxyCodeLine{00336\ \textcolor{comment}{//\ \ inline\ double\ calc\_chiwq(const\ topology::Vector2d\ q)\ const\ \{\ return\ std::norm(calc\_wq(q));\}\ ;\ ///<\ returns\ chiwq}}
+\DoxyCodeLine{00337\ \textcolor{comment}{//\ \ inline\ double\ calc\_chieq(const\ topology::Vector2d\ q)\ const\ \{\ return\ std::norm(calc\_eq(q));\}\ ;\ ///<\ returns\ chieq}}
+\DoxyCodeLine{00338\ \textcolor{comment}{//\ \ inline\ double\ calc\_chiteq(const\ topology::Vector2d\ q)\ const\ \{\ return\ std::norm(calc\_teq(q));\}\ ;\ ///<\ returns\ chiteq}}
+\DoxyCodeLine{00339\ }
+\DoxyCodeLine{00340\ \textcolor{comment}{//\ \ std::vector<double>\ calc\_susceptibility(const\ std::vector<topology::Vector2d>\ qvals,\ std::string\ fluctname)\ const;\ ///<\ Calculates\ the\ susceptibility\ for\ the\ quantity\ specified\ in\ fluctname.}}
+\DoxyCodeLine{00341\ }
+\DoxyCodeLine{00342\ \ \ \ \ std::vector<double>\ \mbox{\hyperlink{classmxygroup_a0555627368c16401e1b7114f9d06024b}{calc\_SCF\_S\_individual}}(\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ index,\ \textcolor{keyword}{const}\ std::vector<double>\ rbin,\ std::vector<int>\&\ counts)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00346\ \textcolor{comment}{//\ \ std::vector<double>\ calc\_SCF\_S(\ const\ std::vector<double>\ rbin)\ const;}}
+\DoxyCodeLine{00347\ \textcolor{comment}{//\ \ \ \ \ \ \ \ \ \ \ \ \ \ ///<\ Calculates\ the\ static\ spin\ correlation\ function\ averaged\ over\ all\ indices.}}
+\DoxyCodeLine{00348\ \textcolor{comment}{//\ \ std::vector<double>\ calc\_SCF\_S(\ const\ std::vector<double>\ rbin,\ int\ number\_of\_points)\ const;}}
+\DoxyCodeLine{00349\ \textcolor{comment}{//\ \ \ \ \ \ \ \ \ \ \ \ \ \ ///<\ Calculates\ the\ static\ spin\ correlation\ function\ averaged\ over\ randomly\ chosen\ indices.}}
+\DoxyCodeLine{00350\ }
+\DoxyCodeLine{00351\ \ \ \ \ std::vector<double>\ \mbox{\hyperlink{classmxygroup_a09d9fd6b1a91c90b649d3fea3d2d81ff}{calc\_SCF\_g\_individual}}(\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ index,\ \textcolor{keyword}{const}\ std::vector<double>\ rbin)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00354\ \ \ \ \ std::vector<double>\ \mbox{\hyperlink{classmxygroup_a6f107b119f48a24aaa9e75d6e9e2d16b}{calc\_SCF\_g}}(\ \textcolor{keyword}{const}\ std::vector<double>\ rbin,\ \textcolor{keywordtype}{int}\ number\_of\_points)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00356\ }
+\DoxyCodeLine{00357\ \ \ \ \ std::vector<double>\ \mbox{\hyperlink{classmxygroup_a980acab98c22dc90ee7dbc2d7b1a1d4a}{calc\_SCF\_anglediff\_individual}}(\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ index,\ \textcolor{keyword}{const}\ std::vector<double>\ rbin,\ std::vector<int>\&\ counts)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00359\ \textcolor{comment}{//\ \ std::vector<double>\ calc\_SCF\_anglediff(\ const\ std::vector<double>\ rbin)\ const;}}
+\DoxyCodeLine{00360\ \textcolor{comment}{//\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ///<\ Calculates\ the\ static\ angle\ difference\ correlation\ function\ averaged\ over\ all\ indices.}}
+\DoxyCodeLine{00361\ \textcolor{comment}{//\ \ std::vector<double>\ calc\_SCF\_anglediff(\ const\ std::vector<double>\ rbin,\ int\ number\_of\_points)\ const;}}
+\DoxyCodeLine{00362\ \textcolor{comment}{//\ \ \ \ \ \ \ \ \ \ \ \ \ \ ///<\ Calculates\ the\ static\ angle\ difference\ correlation\ function\ averaged\ over\ randomly\ chosen\ indices.}}
+\DoxyCodeLine{00363\ }
+\DoxyCodeLine{00364\ \ \ \ \ std::vector<double>\ \mbox{\hyperlink{classmxygroup_a7e4ed39acaa930f1719f5519fa4ea829}{calc\_SCF\_E\_individual}}(\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ index,\ \textcolor{keyword}{const}\ std::vector<double>\ rbin,\ std::vector<int>\&\ counts)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00366\ }
+\DoxyCodeLine{00367\ \ \ \ \ std::vector<double>\ \mbox{\hyperlink{classmxygroup_acd0f2bb56c2d0549a3b61b38e7b8117d}{calc\_SCF\_Ekin\_individual}}(\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ index,\ \textcolor{keyword}{const}\ std::vector<double>\ rbin,\ std::vector<int>\&\ counts)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00369\ }
+\DoxyCodeLine{00370\ \ \ \ \ std::vector<double>\ \mbox{\hyperlink{classmxygroup_a8da47b6084fd1f5fe68cdeacba92ae46}{calc\_SCF\_Eint\_individual}}(\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ index,\ \textcolor{keyword}{const}\ std::vector<double>\ rbin,\ std::vector<int>\&\ counts)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00372\ }
+\DoxyCodeLine{00373\ \ \ \ \ std::vector<double>\ \mbox{\hyperlink{classmxygroup_a32f5f81f476b91dc8067acd2c9cf617a}{calc\_SCF\_P\_individual}}(\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ index,\ \textcolor{keyword}{const}\ std::vector<double>\ rbin,\ std::vector<int>\&\ counts)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00375\ }
+\DoxyCodeLine{00376\ \ \ \ \ std::vector<double>\ \mbox{\hyperlink{classmxygroup_a52f023dbd59189d4cec89afb7fb63e54}{calc\_SCF\_W\_individual}}(\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ index,\ \textcolor{keyword}{const}\ std::vector<double>\ rbin,\ std::vector<int>\&\ counts)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00378\ }
+\DoxyCodeLine{00379\ }
+\DoxyCodeLine{00380\ \ \ \ \ std::vector<double>\ \mbox{\hyperlink{classmxygroup_a5d3694072ff8538e3f052bce01a036ad}{calc\_SCF\_averaged}}(\ \textcolor{keyword}{const}\ std::vector<double>\ rbin,\ \textcolor{keywordtype}{int}\ number\_of\_points,\ \textcolor{keyword}{const}\ std::string\ name)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00382\ }
+\DoxyCodeLine{00383\ }
+\DoxyCodeLine{00384\ \textcolor{comment}{//\ \ double\ calc\_vorticity(int\ index)\ const;\ ///<\ Calculates\ vorticity\ along\ the\ plaquette\ at\ index.}}
+\DoxyCodeLine{00385\ \textcolor{comment}{//\ \ double\ calc\_vortexdensity\_unsigned()\ const;\ ///<\ Calculates\ the\ unsigned\ vortex\ density\ (i.e.\ number\ of\ vortices\ divided\ by\ box\ area).}}
+\DoxyCodeLine{00386\ \textcolor{comment}{//\ \ double\ calc\_vortexdensity\_signed()\ const;\ ///<\ Calculates\ the\ signed\ vortex\ density\ (i.e.\ number\ of\ positive\ vortices\ minus\ number\ of\ negative\ vortices\ divided\ by\ box\ area).}}
+\DoxyCodeLine{00387\ \textcolor{comment}{//\ \ void\ calc\_field\_fluct(const\ topology::Vector2d\ q,\ std::complex<double>\&\ mxq,}}
+\DoxyCodeLine{00388\ \textcolor{comment}{//\ \ \ \ \ \ \ \ \ \ std::complex<double>\&\ wq,\ std::complex<double>\&\ eq,\ std::complex<double>\&\ teq)\ const\ ;}}
+\DoxyCodeLine{00389\ \textcolor{comment}{//\ \ void\ calc\_field\_fluct(const\ std::vector<topology::Vector2d\ >\ q,\ std::vector<std::complex<double>\ >\&\ mxq,}}
+\DoxyCodeLine{00390\ \textcolor{comment}{//\ \ \ \ \ \ \ \ \ \ std::vector<std::complex<double>\ >\&\ wq,\ std::vector<std::complex<double>\ >\&\ eq,}}
+\DoxyCodeLine{00391\ \textcolor{comment}{//\ \ \ \ \ \ \ \ \ \ std::vector<std::complex<double>\ >\&\ teq)\ const\ ;}}
+\DoxyCodeLine{00392\ \textcolor{comment}{//}}
+\DoxyCodeLine{00393\ \textcolor{comment}{//\ \ void\ calc\_susceptibilities(const\ topology::Vector2d\ q,\ std::complex<double>\&\ chimxq,}}
+\DoxyCodeLine{00394\ \textcolor{comment}{//\ \ \ \ \ \ \ \ \ \ \ \ \ \ std::complex<double>\&\ chiwq,\ std::complex<double>\&\ chieq,\ std::complex<double>\&\ chiteq)\ const\ ;}}
+\DoxyCodeLine{00395\ \textcolor{comment}{//\ \ void\ calc\_susceptibilities(const\ std::vector<topology::Vector2d\ >\ q,\ std::vector<std::complex<double>\ >\&\ chimxq,}}
+\DoxyCodeLine{00396\ \textcolor{comment}{//\ \ \ \ \ \ \ \ \ \ std::vector<std::complex<double>\ >\&\ chiwq,\ std::vector<std::complex<double>\ >\&\ chieq,}}
+\DoxyCodeLine{00397\ \textcolor{comment}{//\ \ \ \ \ \ \ \ \ \ std::vector<std::complex<double>\ >\&\ chiteq)\ const\ ;}}
+\DoxyCodeLine{00398\ }
+\DoxyCodeLine{00399\ }
+\DoxyCodeLine{00400\ \ \ \ \ \textcolor{comment}{//\ \ \ ===================================================================================================}}
+\DoxyCodeLine{00401\ \ \ \ \ \textcolor{comment}{//\ \ \ Time\ correlation\ functions}}
+\DoxyCodeLine{00402\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{classmxygroup_a681094197ecf9bbdbe7395550ef814bb}{calc\_ACF\_S}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classmxygroup}{mxygroup}}\&\ G\_initial)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00404\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{classmxygroup_a635be6039e2723546c4b367c1e1b85ae}{calc\_ACF\_anglediff}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classmxygroup}{mxygroup}}\&\ G\_initial)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00406\ }
+\DoxyCodeLine{00407\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{classmxygroup_afae5fd03bc3d1139a9406cc2a82d5b01}{calc\_ACF\_sp}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classmxygroup}{mxygroup}}\&\ G\_initial,\ \textcolor{keyword}{const}\ std::string\ name)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00409\ }
+\DoxyCodeLine{00410\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{classmxygroup_a02afe3eec3973d99982939b17929d9b3}{calc\_ACF\_q0}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classmxygroup}{mxygroup}}\&\ G\_initial,\ \textcolor{keyword}{const}\ std::string\ name)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00412\ }
+\DoxyCodeLine{00413\ }
+\DoxyCodeLine{00414\ \ \ \ \ std::vector<std::complex<double>\ >\ \mbox{\hyperlink{classmxygroup_a1da1971bc5961808fd77cffd67f28643}{calc\_TCF}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classmxygroup}{mxygroup}}\&\ G\_initial,\ std::vector<topology::Vector2d>\ qvals,}
+\DoxyCodeLine{00415\ \ \ \ \ \ \ \ \ \ \ \ \ std::string\ fluctname\_initial,\ std::string\ fluctname\_current)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00417\ }
+\DoxyCodeLine{00418\ }
+\DoxyCodeLine{00419\ }
+\DoxyCodeLine{00420\ \ \ \ \ \textcolor{comment}{//\ \ \ ===================================================================================================}}
+\DoxyCodeLine{00421\ \ \ \ \ \textcolor{comment}{//\ \ \ adding\ and\ removing\ particles\ (no\ updates\ of\ the\ partition)}}
+\DoxyCodeLine{00422\ \ \ \ \ \textcolor{keywordtype}{void}\ add\_particle(\mbox{\hyperlink{classmxyparticle}{mxyparticle}}\ part);}
+\DoxyCodeLine{00423\ \ \ \ \ \textcolor{keywordtype}{void}\ remove\_particle(\textcolor{keywordtype}{int}\ index);}
+\DoxyCodeLine{00424\ }
+\DoxyCodeLine{00425\ \ \ \ \ \textcolor{comment}{//\ \ \ ===================================================================================================}}
+\DoxyCodeLine{00426\ }
+\DoxyCodeLine{00427\ \ \ \ \ \textcolor{comment}{//\ \ \ ===================================================================================================}}
+\DoxyCodeLine{00428\ \ \ \ \ \textcolor{comment}{//\ \ \ Streaming\ step.\ It\ streams\ particle.velocity\ *\ dt\ *\ vel,\ since\ the\ particle\ velocities\ are}}
+\DoxyCodeLine{00429\ \ \ \ \ \textcolor{comment}{//\ \ \ all\ normed.}}
+\DoxyCodeLine{00430\ \ \ \ \ \textcolor{comment}{//\ \ \ void\ stream(double\ dt);}}
+\DoxyCodeLine{00431\ \ \ \ \ \textcolor{comment}{//\ \ \ ===================================================================================================}}
+\DoxyCodeLine{00432\ }
+\DoxyCodeLine{00433\ \ \ \ \ \textcolor{comment}{//\ \ \ ===================================================================================================}}
+\DoxyCodeLine{00434\ \ \ \ \ \textcolor{comment}{//\ \ \ Collision\ step}}
+\DoxyCodeLine{00435\ \ \ \ \ \textcolor{comment}{//\ \ \ inline\ VEC\ neighborhood\_velocity(VEC\ r)\ \{\ return\ partition\_.av\_vel\_periodic\_box(r,\ cutoff\_,\ particles\_);\ \};}}
+\DoxyCodeLine{00436\ \ \ \ \ \textcolor{comment}{//\ \ \ inline\ VEC\ neighborhood\_velocity(particle<VEC>\&\ part)\ \{\ return\ neighborhood\_velocity(part.get\_pos());\ \};}}
+\DoxyCodeLine{00437\ \ \ \ \ \textcolor{comment}{//\ \ \ inline\ VEC\ neighborhood\_velocity(int\ i)\ \{\ return\ neighborhood\_velocity(particles\_[i].get\_r());\ \};}}
+\DoxyCodeLine{00438\ \ \ \ \ \textcolor{comment}{//\ \ \ inline\ VEC\ neighborhood\_velocity(VEC\ r,\ int\&\ neighbors)\ \{\ return\ partition\_.av\_vel\_periodic\_box(r,\ cutoff\_,\ neighbors,\ particles\_);\ \};}}
+\DoxyCodeLine{00439\ \ \ \ \ \textcolor{comment}{//\ \ \ inline\ VEC\ neighborhood\_velocity(particle<VEC>\&\ part,\ int\&\ neighbors)\ \{\ return\ neighborhood\_velocity(part.get\_pos(),\ neighbors);\ \};}}
+\DoxyCodeLine{00440\ \ \ \ \ \textcolor{comment}{//\ \ \ inline\ VEC\ neighborhood\_velocity(int\ i,\ int\&\ neighbors)\ \{\ return\ neighborhood\_velocity(particles\_[i].get\_r(),\ neighbors);\ \};}}
+\DoxyCodeLine{00441\ \ \ \ \ \textcolor{comment}{//\ \ \ ===================================================================================================}}
+\DoxyCodeLine{00442\ }
+\DoxyCodeLine{00443\ \ \ \ \ \textcolor{comment}{//\ \ \ ===================================================================================================}}
+\DoxyCodeLine{00444\ \ \ \ \ \textcolor{comment}{//\ Pointers\ to\ element}}
+\DoxyCodeLine{00445\ \ \ \ \ \mbox{\hyperlink{classmxyparticle}{mxyparticle}}\&\ \mbox{\hyperlink{classmxygroup_a9c8d308d645925ee813b03b719abfdb3}{operator[]}}(\textcolor{keywordtype}{int}\ index);\ }
+\DoxyCodeLine{00446\ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{classmxyparticle}{mxyparticle}}\&\ \mbox{\hyperlink{classmxygroup_a9c8d308d645925ee813b03b719abfdb3}{operator[]}}(\textcolor{keywordtype}{int}\ index)\ \textcolor{keyword}{const};\ }
+\DoxyCodeLine{00447\ }
+\DoxyCodeLine{00448\ \textcolor{comment}{//\ \ std::vector<topology::Vector2d>\ get\_lattice()\ const;\ ///<\ Returns\ the\ underlying\ lattice\ (defined\ by\ member\ variable).}}
+\DoxyCodeLine{00449\ }
+\DoxyCodeLine{00450\ \ \ \ \ \textcolor{comment}{//\ xygroup\ time\_derivative\_theta()\ const;\ ///<\ Returns\ positional\ time\ derivative\ (splitting\ useful\ for\ leapfrog)}}
+\DoxyCodeLine{00451\ \ \ \ \ \textcolor{comment}{//\ xygroup\ time\_derivative\_w()\ const;\ ///<\ Return\ momentum\ time\ derivative\ (splitting\ useful\ for\ leapfrog)}}
+\DoxyCodeLine{00452\ \ \ \ \ std::vector<double>\ \mbox{\hyperlink{classmxygroup_afe0e8ac6c94e1b4f243f680b544e0ace}{time\_derivative\_theta}}()\ \textcolor{keyword}{const};\ }
+\DoxyCodeLine{00453\ \ \ \ \ std::vector<double>\ \mbox{\hyperlink{classmxygroup_a5d88eef6c4e102f9ef0edf25cf4c5a7d}{time\_derivative\_w}}()\ \textcolor{keyword}{const};\ }
+\DoxyCodeLine{00454\ \ \ \ \ std::vector<double>\ \mbox{\hyperlink{classmxygroup_a663048f9055a29ee36779326b5d5b79c}{time\_derivative\_r}}()\ \textcolor{keyword}{const};\ }
+\DoxyCodeLine{00455\ \ \ \ \ std::vector<double>\ \mbox{\hyperlink{classmxygroup_a7d9ef39939daf3d759c29e281b2bdc92}{time\_derivative\_p}}()\ \textcolor{keyword}{const};\ }
+\DoxyCodeLine{00456\ }
+\DoxyCodeLine{00457\ \ \ \ \ std::vector<double>\ \mbox{\hyperlink{classmxygroup_a2136581baa0fb5b0dc5c4e4f7c5cac8d}{time\_derivative\_coord}}()\ \textcolor{keyword}{const};\ }
+\DoxyCodeLine{00458\ \ \ \ \ std::vector<double>\ \mbox{\hyperlink{classmxygroup_a5cbb51fd4ec851735a437c0b4eba09c7}{time\_derivative\_mom}}()\ \textcolor{keyword}{const};\ }
+\DoxyCodeLine{00459\ \ \ \ \ \mbox{\hyperlink{classmxygroup}{mxygroup}}\ \mbox{\hyperlink{classmxygroup_ad1a00467b3cc2145e3648fb73c235283}{time\_derivative}}()\ \textcolor{keyword}{const};\ }
+\DoxyCodeLine{00460\ }
+\DoxyCodeLine{00461\ \ \ \ \ std::vector<double>\ \mbox{\hyperlink{classmxygroup_a65dd43565f54a92ca3b96d2b752030ed}{coord\_diff}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classmxygroup}{mxygroup}}\&\ G)\ \textcolor{keyword}{const};\ }
+\DoxyCodeLine{00462\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classmxygroup_ad36dabbd7706219932fe87038028079c}{accumulative\_MSD}}(std::vector<double>\&\ MSD,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classmxygroup}{mxygroup}}\&\ last\_G)\ \textcolor{keyword}{const};\ }
+\DoxyCodeLine{00463\ }
+\DoxyCodeLine{00464\ \ \ \ \ \textcolor{keywordtype}{void}\ lf\_integrate(\textcolor{keywordtype}{double}\ dt);}
+\DoxyCodeLine{00465\ }
+\DoxyCodeLine{00466\ \ \ \ \ \mbox{\hyperlink{classmxygroup}{mxygroup}}\&\ \mbox{\hyperlink{classmxygroup_a904f9ebe985908faab0d9311f87c94a5}{operator+=}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classmxygroup}{mxygroup}}\&\ G);\ }
+\DoxyCodeLine{00467\ \ \ \ \ \mbox{\hyperlink{classmxygroup}{mxygroup}}\&\ \mbox{\hyperlink{classmxygroup_aec1779ea4873df7b8c2e94d544f7bc99}{operator*=}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\ a);\ }
+\DoxyCodeLine{00468\ \ \ \ \ \textcolor{comment}{//\ \ \ ===================================================================================================}}
+\DoxyCodeLine{00469\ \ \ \ \ \textcolor{comment}{//\ \ \ Analysis\ functions.}}
+\DoxyCodeLine{00470\ \ \ \ \ \textcolor{comment}{//\ \ \ Order\ parameter:\ Calculates\ Phi}}
+\DoxyCodeLine{00471\ \ \ \ \ \textcolor{comment}{//\ \ void\ order\_parameter(double\&\ Phi);}}
+\DoxyCodeLine{00472\ \ \ \ \ \textcolor{comment}{//\ \ \ Order\ parameter:\ Calculates\ Phi,\ Phi\ sqared\ and\ Phi\ to\ the\ fourth\ power}}
+\DoxyCodeLine{00473\ \ \ \ \ \textcolor{comment}{//\ \ \ \ \ \ void\ order\_parameter(double\&\ Phi,\ double\&\ Phi2,\ double\&\ Phi4);}}
+\DoxyCodeLine{00474\ \ \ \ \ \textcolor{comment}{//\ \ \ Cluster\ analysis}}
+\DoxyCodeLine{00475\ \ \ \ \ \textcolor{comment}{//\ \ \ \ \ \ inline\ void\ cluster\_analysis(std::vector<int>\&\ cluster\_sizes,\ std::vector<int>\&\ cluster\_NoP,\ const\ int\&\ rho\_min)}}
+\DoxyCodeLine{00476\ \ \ \ \ \textcolor{comment}{//\ \ \ \ \ \ \ \ \ \ \ \{\ partition\_.cluster\_analysis(cluster\_sizes,\ cluster\_NoP,\ rho\_min);\ \};}}
+\DoxyCodeLine{00477\ \ \ \ \ \textcolor{comment}{//\ \ \ ===================================================================================================}}
+\DoxyCodeLine{00478\ }
+\DoxyCodeLine{00479\ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00480\ }
+\DoxyCodeLine{00482\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classmxygroup_adb4de7f52fc48c74c81616d3e4481f9e}{N\_}};}
+\DoxyCodeLine{00484\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classmxygroup_a586b2208e46a68dd5c036e4e964fc5f6}{sqrtN\_}};}
+\DoxyCodeLine{00485\ }
+\DoxyCodeLine{00487\ \ \ \ \ \mbox{\hyperlink{classtopology_1_1_vector2d}{topology::Vector2d}}\ \mbox{\hyperlink{classmxygroup_a9250bb44e24ba44d6fda8de668ead546}{L\_}};}
+\DoxyCodeLine{00488\ }
+\DoxyCodeLine{00490\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{classmxygroup_abbc9d28a2434f3651374e06aa19a28c4}{I\_}};}
+\DoxyCodeLine{00492\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{classmxygroup_ad7b329c76dc265e2e73d2550a498fc3e}{m\_}};}
+\DoxyCodeLine{00493\ }
+\DoxyCodeLine{00495\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{classmxygroup_a8fcab68bcae10209bfd4e9bbed9397a3}{J\_}};}
+\DoxyCodeLine{00497\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{classmxygroup_a6520ca1166502530ebe88bb74abeb128}{U\_}};}
+\DoxyCodeLine{00499\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{classmxygroup_a961366d4e45a8bd00cf9b8c5bd669f03}{cutoff\_}};}
+\DoxyCodeLine{00500\ }
+\DoxyCodeLine{00502\ \ \ \ \ std::vector<mxyparticle>\ \mbox{\hyperlink{classmxygroup_ac6edad000d3ad64c1e800b86c9e46447}{particles\_}};}
+\DoxyCodeLine{00503\ }
+\DoxyCodeLine{00505\ \ \ \ \ \mbox{\hyperlink{classpartition}{partition}}\ \mbox{\hyperlink{classmxygroup_aa16786a8b5d8f9abb46c3f32f666383f}{partition\_}};}
+\DoxyCodeLine{00506\ }
+\DoxyCodeLine{00508\ \ \ \ \ std::string\ \mbox{\hyperlink{classmxygroup_afffe6cb02e39bf190f488b13d0135b67}{nb\_rule\_}};}
+\DoxyCodeLine{00510\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{classmxygroup_a0e8f0d1bcd53eefd734e890c873fa71d}{nb\_mult\_factor\_}};}
+\DoxyCodeLine{00511\ }
+\DoxyCodeLine{00515\ \ \ \ \ std::vector<topology::Vector2d>\ \mbox{\hyperlink{classmxygroup_a1a822b9a8c9b3acc992e5261aba7559b}{pos\_vec\_}};}
+\DoxyCodeLine{00516\ \};}
+\DoxyCodeLine{00517\ }
+\DoxyCodeLine{00519\ \textcolor{keyword}{inline}\ \mbox{\hyperlink{classmxygroup}{mxygroup}}\ operator+(\textcolor{keyword}{const}\ \mbox{\hyperlink{classmxygroup}{mxygroup}}\&\ G,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classmxygroup}{mxygroup}}\&\ G2)\{}
+\DoxyCodeLine{00520\ \ \ \ \ \textcolor{keywordflow}{return}\ \ \mbox{\hyperlink{classmxygroup}{mxygroup}}(G)\ +=\ G2;}
+\DoxyCodeLine{00521\ \};}
+\DoxyCodeLine{00522\ }
+\DoxyCodeLine{00523\ }
+\DoxyCodeLine{00525\ \textcolor{keyword}{inline}\ \mbox{\hyperlink{classmxygroup}{mxygroup}}\ operator*(\textcolor{keyword}{const}\ \mbox{\hyperlink{classmxygroup}{mxygroup}}\&\ G,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\ a)\{}
+\DoxyCodeLine{00526\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classmxygroup}{mxygroup}}(G)\ *=\ a;}
+\DoxyCodeLine{00527\ \};}
+\DoxyCodeLine{00528\ }
+\DoxyCodeLine{00530\ \textcolor{keyword}{inline}\ \mbox{\hyperlink{classmxygroup}{mxygroup}}\ operator*(\textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\ a,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classmxygroup}{mxygroup}}\&\ G)\{}
+\DoxyCodeLine{00531\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classmxygroup}{mxygroup}}(G)\ *=\ a;}
+\DoxyCodeLine{00532\ \};}
+\DoxyCodeLine{00533\ \textcolor{comment}{//mxygroup\ operator+(const\ mxygroup\&\ G,\ const\ mxygroup\&\ G2);}}
+\DoxyCodeLine{00534\ \textcolor{comment}{//}}
+\DoxyCodeLine{00535\ \textcolor{comment}{//mxygroup\ operator*(const\ mxygroup\&\ G,\ const\ double\ a);}}
+\DoxyCodeLine{00536\ \textcolor{comment}{//mxygroup\ operator*(const\ double\ a,\ const\ mxygroup\&\ G);}}
+\DoxyCodeLine{00537\ }
+\DoxyCodeLine{00538\ }
+\DoxyCodeLine{00539\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ MXYGROUP\_H\_\ */}\textcolor{preprocessor}{}}
+
+\end{DoxyCode}

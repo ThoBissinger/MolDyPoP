@@ -1,0 +1,622 @@
+\doxysection{xygroup Class Reference}
+\hypertarget{classxygroup}{}\label{classxygroup}\index{xygroup@{xygroup}}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classxygroup_a4213e38936e889d74f981ed5b6652a07}\label{classxygroup_a4213e38936e889d74f981ed5b6652a07} 
+{\bfseries xygroup} (const int N, const double J, const double I, const char lattice\+\_\+type)
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+\Hypertarget{classxygroup_adef27ed7e28385eae0d6f35e9f34c591}\label{classxygroup_adef27ed7e28385eae0d6f35e9f34c591} 
+{\bfseries xygroup} (const \mbox{\hyperlink{classparameters}{parameters}} par)
+\item 
+\mbox{\hyperlink{classxygroup_ad545016764b7eafcba2ff54158c581b3}{xygroup}} (const int N)
+\begin{DoxyCompactList}\small\item\em Constructor from values stored in parameters. \end{DoxyCompactList}\item 
+\Hypertarget{classxygroup_a49ec20ab6c9b82c0128525ea157d7435}\label{classxygroup_a49ec20ab6c9b82c0128525ea157d7435} 
+void {\bfseries randomize\+\_\+particles} (double kbT)
+\begin{DoxyCompactList}\small\item\em Sets particles to random values. \end{DoxyCompactList}\item 
+\Hypertarget{classxygroup_aacd53db40bc9851d46483c5c498027b2}\label{classxygroup_aacd53db40bc9851d46483c5c498027b2} 
+void {\bfseries initialize} (double kbT)
+\begin{DoxyCompactList}\small\item\em Initializes the group with random particle positions and fills the partition. \end{DoxyCompactList}\item 
+\Hypertarget{classxygroup_a8050ebdc2890f4303683d31e803309ee}\label{classxygroup_a8050ebdc2890f4303683d31e803309ee} 
+void {\bfseries set\+\_\+neighbors} ()
+\item 
+\Hypertarget{classxygroup_a67263b97ec68450f98cce2565280f20f}\label{classxygroup_a67263b97ec68450f98cce2565280f20f} 
+void {\bfseries set\+\_\+neighbors\+\_\+squarelattice\+\_\+half} ()
+\item 
+\Hypertarget{classxygroup_a25f858f27d2e681d009c5cd4fb7d835f}\label{classxygroup_a25f858f27d2e681d009c5cd4fb7d835f} 
+void {\bfseries set\+\_\+neighbors\+\_\+trigonallattice\+\_\+half} ()
+\item 
+\Hypertarget{classxygroup_a05019874ed2b943124ccf66edd686162}\label{classxygroup_a05019874ed2b943124ccf66edd686162} 
+void {\bfseries initialize\+\_\+zero} ()
+\begin{DoxyCompactList}\small\item\em Sets all particles to zero. \end{DoxyCompactList}\item 
+\Hypertarget{classxygroup_aba07f60a77cd7f793432d368a39abac9}\label{classxygroup_aba07f60a77cd7f793432d368a39abac9} 
+void {\bfseries mom\+\_\+to\+\_\+zero} ()
+\begin{DoxyCompactList}\small\item\em Sets momenta to zero by shifts. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classxygroup_a05e41476484ba7173cf67fdc262affa2}{fill\+\_\+partition}} ()
+\item 
+void \mbox{\hyperlink{classxygroup_a0940c9abce3327fe03115b0a4242873d}{set\+\_\+r\+\_\+to\+\_\+pbc}} ()
+\item 
+\Hypertarget{classxygroup_abfe39532e24fb7e2e6d0bd0a862c69b6}\label{classxygroup_abfe39532e24fb7e2e6d0bd0a862c69b6} 
+void {\bfseries read\+\_\+from\+\_\+snapshot} (std\+::string snapshotname)
+\begin{DoxyCompactList}\small\item\em Reads angles and momenta from file snapshotname. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classxygroup_a0b00ff5a03441b676ed3163b69a2f94d}{scale\+\_\+from\+\_\+subgroup}} (const \mbox{\hyperlink{classxygroup}{xygroup}} \&G)
+\item 
+void \mbox{\hyperlink{classxygroup_a9d8f50b953cbbdfde7882dcccb8d6478}{scale\+\_\+from\+\_\+subgroup}} (std\+::string snapshotname)
+\item 
+\Hypertarget{classxygroup_a61e6b010a9940202e5c179dbfc49ccd9}\label{classxygroup_a61e6b010a9940202e5c179dbfc49ccd9} 
+void {\bfseries print} (int i) const
+\item 
+\Hypertarget{classxygroup_aa82f85380ff86ae17e9c32b80e548e58}\label{classxygroup_aa82f85380ff86ae17e9c32b80e548e58} 
+void {\bfseries print} () const
+\item 
+\Hypertarget{classxygroup_a520ce78e94ebb4293a30cbcfcf5457ff}\label{classxygroup_a520ce78e94ebb4293a30cbcfcf5457ff} 
+void {\bfseries print\+\_\+theta} (std\+::ofstream \&outputfile) const
+\item 
+\Hypertarget{classxygroup_afb28159b48e23dcdfcaa3d7d37057bf8}\label{classxygroup_afb28159b48e23dcdfcaa3d7d37057bf8} 
+void {\bfseries print\+\_\+w} (std\+::ofstream \&outputfile) const
+\item 
+\Hypertarget{classxygroup_a88da5b7f9f6db83b9a0b7dd8b70a84b3}\label{classxygroup_a88da5b7f9f6db83b9a0b7dd8b70a84b3} 
+void {\bfseries print\+\_\+group} (std\+::ofstream \&outputfile) const
+\item 
+\Hypertarget{classxygroup_acdebe95395ea0c54a488b51dc7357708}\label{classxygroup_acdebe95395ea0c54a488b51dc7357708} 
+void {\bfseries print\+\_\+r} (std\+::ofstream \&outputfile) const
+\item 
+\Hypertarget{classxygroup_a5449da0cae10f22ee59f3198fc7d9d93}\label{classxygroup_a5449da0cae10f22ee59f3198fc7d9d93} 
+void {\bfseries print\+\_\+lattice\+\_\+xyz} () const
+\begin{DoxyCompactList}\small\item\em To check for the lattice structure, here is a print function for it. Unit spacing. \end{DoxyCompactList}\item 
+\Hypertarget{classxygroup_ac02a8d318309ca7f1eb63c0641cda425}\label{classxygroup_ac02a8d318309ca7f1eb63c0641cda425} 
+void {\bfseries print\+\_\+neighborhoods\+\_\+xyz} () const
+\begin{DoxyCompactList}\small\item\em To check for the neighborhood structure, here is a print function for it. Unit spacing. \end{DoxyCompactList}\item 
+\Hypertarget{classxygroup_a77f8672cc92b41ead5ba78e3c8726121}\label{classxygroup_a77f8672cc92b41ead5ba78e3c8726121} 
+int {\bfseries get\+\_\+N} () const
+\item 
+\Hypertarget{classxygroup_a0db93c471f66cff2e2e47976d6d4e869}\label{classxygroup_a0db93c471f66cff2e2e47976d6d4e869} 
+int {\bfseries size} () const
+\begin{DoxyCompactList}\small\item\em Returns number of particles. \end{DoxyCompactList}\item 
+\Hypertarget{classxygroup_a1b1536943bcfcd9102f5d470bebcb6b0}\label{classxygroup_a1b1536943bcfcd9102f5d470bebcb6b0} 
+int {\bfseries get\+\_\+sqrtN} () const
+\begin{DoxyCompactList}\small\item\em Same as get\+\_\+\+N() \end{DoxyCompactList}\item 
+\Hypertarget{classxygroup_a20007f4b297d291e84f4fbdae77f16f9}\label{classxygroup_a20007f4b297d291e84f4fbdae77f16f9} 
+double {\bfseries get\+\_\+I} () const
+\begin{DoxyCompactList}\small\item\em Returns sqrt of number of particles. \end{DoxyCompactList}\item 
+\Hypertarget{classxygroup_adefb2bba516acddc55ccae5a68779b9c}\label{classxygroup_adefb2bba516acddc55ccae5a68779b9c} 
+double {\bfseries get\+\_\+J} () const
+\begin{DoxyCompactList}\small\item\em Returns I\+\_\+. \end{DoxyCompactList}\item 
+\Hypertarget{classxygroup_a00f2d28f9cc6b794f8a2a0504d7fee75}\label{classxygroup_a00f2d28f9cc6b794f8a2a0504d7fee75} 
+\mbox{\hyperlink{classtopology_1_1_vector2d}{topology\+::\+Vector2d}} {\bfseries get\+\_\+boxsize} () const
+\begin{DoxyCompactList}\small\item\em Returns J\+\_\+. \end{DoxyCompactList}\item 
+\Hypertarget{classxygroup_ae170310d0d22a5369ce5d56d795ef2d5}\label{classxygroup_ae170310d0d22a5369ce5d56d795ef2d5} 
+\mbox{\hyperlink{classtopology_1_1_vector2d}{topology\+::\+Vector2d}} {\bfseries get\+\_\+L} () const
+\begin{DoxyCompactList}\small\item\em Returns simulation box size. \end{DoxyCompactList}\item 
+\Hypertarget{classxygroup_a86641047d32c2748d3ac588caeb940ad}\label{classxygroup_a86641047d32c2748d3ac588caeb940ad} 
+double {\bfseries get\+\_\+volume} () const
+\begin{DoxyCompactList}\small\item\em Returns simulation box size (same as get\+\_\+boxsize) \end{DoxyCompactList}\item 
+\Hypertarget{classxygroup_aa3a2c2045bddfbcd51ce5c0d4d9d699c}\label{classxygroup_aa3a2c2045bddfbcd51ce5c0d4d9d699c} 
+double {\bfseries get\+\_\+density} () const
+\begin{DoxyCompactList}\small\item\em Returns volume. \end{DoxyCompactList}\item 
+\Hypertarget{classxygroup_a565bdf618ad93682be5d48892b7c5d29}\label{classxygroup_a565bdf618ad93682be5d48892b7c5d29} 
+std\+::vector$<$ \mbox{\hyperlink{classxyparticle}{xyparticle}} $>$ {\bfseries get\+\_\+particles} () const
+\begin{DoxyCompactList}\small\item\em Returns volume. \end{DoxyCompactList}\item 
+\Hypertarget{classxygroup_aa3e7b63dc587dada6f819089257bd90e}\label{classxygroup_aa3e7b63dc587dada6f819089257bd90e} 
+\mbox{\hyperlink{classxyparticle}{xyparticle}} {\bfseries get\+\_\+particle} (int i) const
+\begin{DoxyCompactList}\small\item\em Returns vector of particles. \end{DoxyCompactList}\item 
+\Hypertarget{classxygroup_a2dbc385867f42eb166ac64d1750ab676}\label{classxygroup_a2dbc385867f42eb166ac64d1750ab676} 
+std\+::vector$<$ \mbox{\hyperlink{classtopology_1_1_vector2d}{topology\+::\+Vector2d}} $>$ {\bfseries get\+\_\+positions} () const
+\begin{DoxyCompactList}\small\item\em Returns particle at index i. \end{DoxyCompactList}\item 
+\Hypertarget{classxygroup_a7014ec995dde95b451b41ee440c0ea0c}\label{classxygroup_a7014ec995dde95b451b41ee440c0ea0c} 
+\mbox{\hyperlink{classtopology_1_1_vector2d}{topology\+::\+Vector2d}} {\bfseries get\+\_\+position} (int i) const
+\begin{DoxyCompactList}\small\item\em Returns vector of particle positions. \end{DoxyCompactList}\item 
+std\+::vector$<$ double $>$ \mbox{\hyperlink{classxygroup_a52604af13762abc7e838335f7de413a4}{get\+\_\+theta}} () const
+\begin{DoxyCompactList}\small\item\em Returns position of ith particle. \end{DoxyCompactList}\item 
+\Hypertarget{classxygroup_a39f362375fe6ace1377e8121ceed7c7e}\label{classxygroup_a39f362375fe6ace1377e8121ceed7c7e} 
+std\+::vector$<$ double $>$ {\bfseries get\+\_\+w} () const
+\begin{DoxyCompactList}\small\item\em Returns vector of spin momenta. \end{DoxyCompactList}\item 
+\Hypertarget{classxygroup_a24d462cc7bee58877b7190f3485a357b}\label{classxygroup_a24d462cc7bee58877b7190f3485a357b} 
+double {\bfseries get\+\_\+theta} (int i) const
+\item 
+\Hypertarget{classxygroup_a93e517c04d9f185c309636f1392f86d6}\label{classxygroup_a93e517c04d9f185c309636f1392f86d6} 
+double {\bfseries get\+\_\+w} (int i) const
+\begin{DoxyCompactList}\small\item\em Returns spin momentum of particle i. \end{DoxyCompactList}\item 
+\Hypertarget{classxygroup_afea8360359ac268cfd563b75de905307}\label{classxygroup_afea8360359ac268cfd563b75de905307} 
+std\+::vector$<$ double $>$ {\bfseries get\+\_\+coord} () const
+\begin{DoxyCompactList}\small\item\em Returns spin momentum of particle i. \end{DoxyCompactList}\item 
+\Hypertarget{classxygroup_a5642a4347a06d39f040821383a58401a}\label{classxygroup_a5642a4347a06d39f040821383a58401a} 
+std\+::vector$<$ double $>$ {\bfseries get\+\_\+mom} () const
+\begin{DoxyCompactList}\small\item\em Returns coordinate (here\+: theta) vector. \end{DoxyCompactList}\item 
+\Hypertarget{classxygroup_a8fab006045d49cff78f218eb6dffc3da}\label{classxygroup_a8fab006045d49cff78f218eb6dffc3da} 
+std\+::vector$<$ int $>$ {\bfseries get\+\_\+neighbors} (int i) const
+\begin{DoxyCompactList}\small\item\em Returns momentum vector. \end{DoxyCompactList}\item 
+\Hypertarget{classxygroup_a0acaf9953eaac75fc5a6adc59bddc48f}\label{classxygroup_a0acaf9953eaac75fc5a6adc59bddc48f} 
+std\+::vector$<$ int $>$ {\bfseries get\+\_\+neighbors\+\_\+full} (int i) const
+\item 
+\Hypertarget{classxygroup_a6f42137644c0ee44c58098fa44f6bca6}\label{classxygroup_a6f42137644c0ee44c58098fa44f6bca6} 
+bool {\bfseries is\+\_\+neighbor} (int i, int j) const
+\begin{DoxyCompactList}\small\item\em Checks whether two particles at i and j are neighbors. Reduced neighborhood (i.\+e. top left). \end{DoxyCompactList}\item 
+\Hypertarget{classxygroup_ad0f25a0109001f68e81179d804a8ab7a}\label{classxygroup_ad0f25a0109001f68e81179d804a8ab7a} 
+bool {\bfseries is\+\_\+neighbor\+\_\+full} (int i, int j) const
+\begin{DoxyCompactList}\small\item\em Checks whether two particles at i and j are neighbors. Full neighborhood (i.\+e. everything). \end{DoxyCompactList}\item 
+std\+::vector$<$ int $>$ \mbox{\hyperlink{classxygroup_a10f65d4f97b705c9c76eaf02992ef666}{plaquette}} (int i) const
+\item 
+\Hypertarget{classxygroup_a53aee07a0e74e9197ef01a26ffaba05e}\label{classxygroup_a53aee07a0e74e9197ef01a26ffaba05e} 
+double {\bfseries theta\+\_\+diff} (int i, int j) const
+\begin{DoxyCompactList}\small\item\em Difference in angles of two different particles. \$\textbackslash{}theta\+\_\+\{ij\}\$ in Bore paper. \end{DoxyCompactList}\item 
+\Hypertarget{classxygroup_a1f3e82f716917c197ad257c5a52a0c7b}\label{classxygroup_a1f3e82f716917c197ad257c5a52a0c7b} 
+double {\bfseries periodic\+\_\+distance\+\_\+squared} (int i, int j) const
+\begin{DoxyCompactList}\small\item\em Returns squared distance between particle i and j considering periodic boundaries. Squared function faster to calculate. \end{DoxyCompactList}\item 
+\Hypertarget{classxygroup_af274bdb3f5fa2c48ee9fa0140ac260ed}\label{classxygroup_af274bdb3f5fa2c48ee9fa0140ac260ed} 
+double {\bfseries periodic\+\_\+distance} (int i, int j) const
+\begin{DoxyCompactList}\small\item\em Returns distance between particle i and j considering periodic boundaries. Taking sqrt takes more time than returning the squared quantity by dist\+\_\+periodic\+\_\+squared. \end{DoxyCompactList}\item 
+\Hypertarget{classxygroup_a57ba2d4553bf10531c5ce3ce8379e38a}\label{classxygroup_a57ba2d4553bf10531c5ce3ce8379e38a} 
+\mbox{\hyperlink{classtopology_1_1_vector2d}{topology\+::\+Vector2d}} {\bfseries periodic\+\_\+distance\+\_\+vector} (int i, int j) const
+\begin{DoxyCompactList}\small\item\em Returns distance vector between particle i and j considering periodic boundaries. \end{DoxyCompactList}\item 
+\Hypertarget{classxygroup_a8004261005028035ee24ab32d45af218}\label{classxygroup_a8004261005028035ee24ab32d45af218} 
+void {\bfseries set\+\_\+theta} (double theta, int i)
+\item 
+\Hypertarget{classxygroup_a236d6f87ccefaae2287cab9bce0862c3}\label{classxygroup_a236d6f87ccefaae2287cab9bce0862c3} 
+void {\bfseries set\+\_\+w} (double w, int i)
+\item 
+\Hypertarget{classxygroup_aa37f804bbbba63262a157d1206f7b527}\label{classxygroup_aa37f804bbbba63262a157d1206f7b527} 
+void {\bfseries set\+\_\+part\+\_\+i} (\mbox{\hyperlink{classxyparticle}{xyparticle}} p, int i)
+\item 
+\Hypertarget{classxygroup_a032a165ae1e33ec6f8bc263f9b0c6e2c}\label{classxygroup_a032a165ae1e33ec6f8bc263f9b0c6e2c} 
+void {\bfseries set\+\_\+all\+\_\+w} (double w)
+\item 
+\Hypertarget{classxygroup_ab7a794e318864b0f052b173ea1f40f11}\label{classxygroup_ab7a794e318864b0f052b173ea1f40f11} 
+void {\bfseries set\+\_\+all\+\_\+theta} (double theta)
+\item 
+\Hypertarget{classxygroup_a5f05ce599a0748a6d0eae61994532d9d}\label{classxygroup_a5f05ce599a0748a6d0eae61994532d9d} 
+void {\bfseries set\+\_\+temperature} (double kT, int i)
+\item 
+\Hypertarget{classxygroup_a25fad8d42437452aeec31a7758b00e31}\label{classxygroup_a25fad8d42437452aeec31a7758b00e31} 
+void {\bfseries set\+\_\+temperature} (double kT)
+\item 
+\Hypertarget{classxygroup_a075c9b8a2d1e0ea256dacc39e3a9512d}\label{classxygroup_a075c9b8a2d1e0ea256dacc39e3a9512d} 
+void {\bfseries scale\+\_\+mom} (double a)
+\begin{DoxyCompactList}\small\item\em Scales momentum coordinates (needed in various algorithms) \end{DoxyCompactList}\item 
+\Hypertarget{classxygroup_a3552d9794b206636340c542202b00480}\label{classxygroup_a3552d9794b206636340c542202b00480} 
+void {\bfseries add\+\_\+to\+\_\+theta} (std\+::vector$<$ double $>$ theta, const double factor=1)
+\begin{DoxyCompactList}\small\item\em Adds the values stored in vector theta to each particle\textquotesingle{}s theta\+\_\+. \end{DoxyCompactList}\item 
+\Hypertarget{classxygroup_aa198423e7b64420bbea4e0ef311cdc41}\label{classxygroup_aa198423e7b64420bbea4e0ef311cdc41} 
+void {\bfseries add\+\_\+to\+\_\+coord} (std\+::vector$<$ double $>$ coord, const double factor=1)
+\item 
+void \mbox{\hyperlink{classxygroup_a59e14cb69cadb9a2e35e655253c0d258}{add\+\_\+to\+\_\+coord\+\_\+inertialscaling}} (std\+::vector$<$ double $>$ coord, const double factor=1)
+\begin{DoxyCompactList}\small\item\em Same as add\+\_\+to\+\_\+theta. Redundant here, but makes sense with the more general framework of mobile particles. \end{DoxyCompactList}\item 
+\Hypertarget{classxygroup_a5aeb3980c4397690fc3418475906c86d}\label{classxygroup_a5aeb3980c4397690fc3418475906c86d} 
+void {\bfseries add\+\_\+to\+\_\+w} (std\+::vector$<$ double $>$ w, const double factor=1)
+\begin{DoxyCompactList}\small\item\em Adds the values stored in vector w to each particle\textquotesingle{}s w\+\_\+. \end{DoxyCompactList}\item 
+\Hypertarget{classxygroup_ad7e8aae0e7b0a499238cb7358ef39c96}\label{classxygroup_ad7e8aae0e7b0a499238cb7358ef39c96} 
+void {\bfseries add\+\_\+to\+\_\+mom} (std\+::vector$<$ double $>$ mom, const double factor=1)
+\item 
+void \mbox{\hyperlink{classxygroup_a25c9708cf6dd08f6845a530bbe8525fa}{add\+\_\+random\+\_\+angle}} (double angmax)
+\begin{DoxyCompactList}\small\item\em Same as add\+\_\+to\+\_\+w. Redundant here, but makes sense with the more general framework of mobile particles. \end{DoxyCompactList}\item 
+\Hypertarget{classxygroup_a2485d7c04d6282e85c41ffd2497e0007}\label{classxygroup_a2485d7c04d6282e85c41ffd2497e0007} 
+void {\bfseries set\+\_\+theta\+\_\+to\+\_\+interval} ()
+\item 
+\Hypertarget{classxygroup_ac6f1744c0747377e5c7c1d5dc63a7dd4}\label{classxygroup_ac6f1744c0747377e5c7c1d5dc63a7dd4} 
+void {\bfseries set\+\_\+avg\+\_\+w} (double avgw)
+\item 
+\Hypertarget{classxygroup_a2f03189cacbdc3996bcd938328aba8c0}\label{classxygroup_a2f03189cacbdc3996bcd938328aba8c0} 
+void {\bfseries set\+\_\+avg\+\_\+M} (double M, double precision)
+\item 
+\Hypertarget{classxygroup_ad9d42940d1697eb082d258896bafbda6}\label{classxygroup_ad9d42940d1697eb082d258896bafbda6} 
+void {\bfseries randomize\+\_\+w} (double initial\+\_\+w)
+\begin{DoxyCompactList}\small\item\em Randomize w that the avg w=0 and w\texorpdfstring{$^\wedge$}{\string^}2 \texorpdfstring{$\sim$}{\string~} 1 (MHoefler, not used here). \end{DoxyCompactList}\item 
+\Hypertarget{classxygroup_aeae6914faa63f1756291daf1205cb343}\label{classxygroup_aeae6914faa63f1756291daf1205cb343} 
+void {\bfseries anneal\+\_\+w} (double a\+\_\+factor, std\+::vector$<$ double $>$ wdata, int anneal\+\_\+step, double anneal\+\_\+threshold, bool annealing\+\_\+done)
+\item 
+\Hypertarget{classxygroup_af86562260dacd5df41fa99dc3cca82a0}\label{classxygroup_af86562260dacd5df41fa99dc3cca82a0} 
+void {\bfseries anneal\+\_\+up} (double a\+\_\+factor, std\+::vector$<$ double $>$ wdata, int anneal\+\_\+step, double anneal\+\_\+threshold, bool annealing\+\_\+done)
+\item 
+\Hypertarget{classxygroup_a2f2782d0fb02d6fa579947bcddce4adc}\label{classxygroup_a2f2782d0fb02d6fa579947bcddce4adc} 
+void {\bfseries anneal\+\_\+down} (double a\+\_\+factor, std\+::vector$<$ double $>$ wdata, int anneal\+\_\+step, double anneal\+\_\+threshold, bool annealing\+\_\+done)
+\item 
+\Hypertarget{classxygroup_a2801e5b362d91376c489f528b53db4bd}\label{classxygroup_a2801e5b362d91376c489f528b53db4bd} 
+void {\bfseries anneal\+\_\+decider} (std\+::vector$<$ double $>$ wdata, int anneal\+\_\+step, double anneal\+\_\+threshold, bool \&updown)
+\item 
+\Hypertarget{classxygroup_a7143821a6f1743604a9be96db3c9241f}\label{classxygroup_a7143821a6f1743604a9be96db3c9241f} 
+double {\bfseries sum\+\_\+w} () const
+\begin{DoxyCompactList}\small\item\em Returns sum over omega, basically N\+\_\+$<$w$>$. Extensive. \end{DoxyCompactList}\item 
+\Hypertarget{classxygroup_ac55b1d6c7ad1f6cbf05d66de7a3948e3}\label{classxygroup_ac55b1d6c7ad1f6cbf05d66de7a3948e3} 
+double {\bfseries sum\+\_\+w\+\_\+squared} () const
+\begin{DoxyCompactList}\small\item\em Omega squared, basically N\+\_\+\texorpdfstring{$<$}{<}w\texorpdfstring{$^\wedge$}{\string^}2\texorpdfstring{$>$}{>}. Proportional to kinetic energy. Extensive. \end{DoxyCompactList}\item 
+\Hypertarget{classxygroup_a80ef62423427512c828bb77730c71ccc}\label{classxygroup_a80ef62423427512c828bb77730c71ccc} 
+double {\bfseries sum\+\_\+w\+\_\+4} () const
+\begin{DoxyCompactList}\small\item\em Omega to the fourth power, basically N\+\_\+\texorpdfstring{$<$}{<}w\texorpdfstring{$^\wedge$}{\string^}4\texorpdfstring{$>$}{>}. Proportional to kinetic energy. Extensive. \end{DoxyCompactList}\item 
+\Hypertarget{classxygroup_a98022b92cac509fe138dd7264ed0b151}\label{classxygroup_a98022b92cac509fe138dd7264ed0b151} 
+double {\bfseries sum\+\_\+theta} () const
+\begin{DoxyCompactList}\small\item\em Returns sum over all theta, basically N\+\_\+$<$theta$>$. Extensive. Probably pointless. \end{DoxyCompactList}\item 
+\Hypertarget{classxygroup_aba32242da6da2371cfc75fe24d86000e}\label{classxygroup_aba32242da6da2371cfc75fe24d86000e} 
+\mbox{\hyperlink{classtopology_1_1_vector2d}{topology\+::\+Vector2d}} {\bfseries sum\+\_\+s} () const
+\begin{DoxyCompactList}\small\item\em Magnetization. Basically N\+\_\+\sout{. Extensive. }\end{DoxyCompactList}\item 
+\Hypertarget{classxygroup_a809af2f562d2d467c4656d126378b47e}\label{classxygroup_a809af2f562d2d467c4656d126378b47e} 
+double {\bfseries sum\+\_\+s\+\_\+squared} () const
+\item 
+\Hypertarget{classxygroup_ab2f787db00f633f282287746693c6fd2}\label{classxygroup_ab2f787db00f633f282287746693c6fd2} 
+double {\bfseries sum\+\_\+s\+\_\+4} () const
+\begin{DoxyCompactList}\small\item\em Magnetization squared. Basically N\+\_\+\texorpdfstring{$<$}{<}s\texorpdfstring{$^\wedge$}{\string^}2\texorpdfstring{$>$}{>}. Extensive. \end{DoxyCompactList}\item 
+\Hypertarget{classxygroup_ae3b81c86f693633c5f681a49023de601}\label{classxygroup_ae3b81c86f693633c5f681a49023de601} 
+double {\bfseries binder\+\_\+cumulant} () const
+\begin{DoxyCompactList}\small\item\em Magnetization to the fourth power. Basically N\+\_\+\texorpdfstring{$<$}{<}s\texorpdfstring{$^\wedge$}{\string^}4\texorpdfstring{$>$}{>}. Extensive. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{classxygroup_a569038cf67108268d1a09598eee58dcf}{sum\+\_\+e\+\_\+squared}} () const
+\begin{DoxyCompactList}\small\item\em Binder cumulant. 1 -\/ \texorpdfstring{$<$}{<}s\texorpdfstring{$^\wedge$}{\string^}4\texorpdfstring{$>$}{>} / (3 \texorpdfstring{$<$}{<}s\texorpdfstring{$^\wedge$}{\string^}2\texorpdfstring{$>$}{>}). Intensive. \end{DoxyCompactList}\item 
+\Hypertarget{classxygroup_a5903da1475557cd3fdc7c41520acdce5}\label{classxygroup_a5903da1475557cd3fdc7c41520acdce5} 
+double {\bfseries sum\+\_\+ekin\+\_\+squared} () const
+\begin{DoxyCompactList}\small\item\em Kinetic energy squared, basically N\+\_\+\texorpdfstring{$<$}{<}e\+\_\+\{i,kin\}\texorpdfstring{$^\wedge$}{\string^}2\texorpdfstring{$>$}{>}. Extensive. \end{DoxyCompactList}\item 
+\Hypertarget{classxygroup_aaaf83d8bb00eceb4e8dd28e886442f9a}\label{classxygroup_aaaf83d8bb00eceb4e8dd28e886442f9a} 
+double {\bfseries sum\+\_\+eint\+\_\+squared} () const
+\begin{DoxyCompactList}\small\item\em Interaction energy squared, basically N\+\_\+\texorpdfstring{$<$}{<}e\+\_\+\{i,int\}\texorpdfstring{$^\wedge$}{\string^}2\texorpdfstring{$>$}{>}. Extensive. \end{DoxyCompactList}\item 
+\Hypertarget{classxygroup_a511ada1c800ebf1a288131a2b399a2d7}\label{classxygroup_a511ada1c800ebf1a288131a2b399a2d7} 
+double {\bfseries calc\+\_\+interaction\+\_\+energy} () const
+\begin{DoxyCompactList}\small\item\em System interaction energy. Attention! Makes use of the fact that we only have half the neighborhood! Extensive. \end{DoxyCompactList}\item 
+\Hypertarget{classxygroup_adef8d1ba022fdaed827c2f1f61f284d8}\label{classxygroup_adef8d1ba022fdaed827c2f1f61f284d8} 
+double {\bfseries calc\+\_\+interaction\+\_\+energy} (int i) const
+\begin{DoxyCompactList}\small\item\em Individual particle interaction energy. Attention! Uses the full neighborhood! Extensive. \end{DoxyCompactList}\item 
+\Hypertarget{classxygroup_a04c7f4659a94bad868962dc67e809ee3}\label{classxygroup_a04c7f4659a94bad868962dc67e809ee3} 
+double {\bfseries calc\+\_\+kinetic\+\_\+energy} () const
+\item 
+\Hypertarget{classxygroup_a3e747341d78be4fdf3ca439cccad4138}\label{classxygroup_a3e747341d78be4fdf3ca439cccad4138} 
+double {\bfseries calc\+\_\+kinetic\+\_\+energy} (int i) const
+\begin{DoxyCompactList}\small\item\em Returns system kinetic energy. Extensive. \end{DoxyCompactList}\item 
+\Hypertarget{classxygroup_a0490b3cd5d7b0071142c7c7599925a49}\label{classxygroup_a0490b3cd5d7b0071142c7c7599925a49} 
+double {\bfseries calc\+\_\+energy} () const
+\begin{DoxyCompactList}\small\item\em Returns individual kinetic energy. \end{DoxyCompactList}\item 
+\Hypertarget{classxygroup_a66af25907eab856d2dc3510a3a737e7e}\label{classxygroup_a66af25907eab856d2dc3510a3a737e7e} 
+double {\bfseries calc\+\_\+energy} (int i) const
+\begin{DoxyCompactList}\small\item\em Returns system energy. Extensive. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{classxygroup_a6aff10f16a6771391c6c689500264d7b}{calc\+\_\+force}} (int j, int k) const
+\begin{DoxyCompactList}\small\item\em Energy of particle i. \end{DoxyCompactList}\item 
+\Hypertarget{classxygroup_a721319b693a06c5f26d299cf1e031fd4}\label{classxygroup_a721319b693a06c5f26d299cf1e031fd4} 
+double {\bfseries calc\+\_\+temperature} () const
+\item 
+\Hypertarget{classxygroup_aa45aa477e3e293f26781e10d5011dc5a}\label{classxygroup_aa45aa477e3e293f26781e10d5011dc5a} 
+std\+::complex$<$ double $>$ {\bfseries calc\+\_\+eiqr} (const \mbox{\hyperlink{classtopology_1_1_vector2d}{topology\+::\+Vector2d}} q, int i) const
+\begin{DoxyCompactList}\small\item\em Returns temperature. Careful, this function returns \texorpdfstring{$<$}{<}w\texorpdfstring{$^\wedge$}{\string^}2\texorpdfstring{$>$}{>}-\/$<$w$>$\texorpdfstring{$^\wedge$}{\string^}2, not \texorpdfstring{$<$}{<}w\texorpdfstring{$^\wedge$}{\string^}2\texorpdfstring{$>$}{>}. Intensive. \end{DoxyCompactList}\item 
+std\+::complex$<$ double $>$ \mbox{\hyperlink{classxygroup_ac8185ef3677d0b0254aa883b112fb41b}{calc\+\_\+mxq}} (const \mbox{\hyperlink{classtopology_1_1_vector2d}{topology\+::\+Vector2d}} q, double Mx\+\_\+0) const
+\begin{DoxyCompactList}\small\item\em Calculates e\texorpdfstring{$^\wedge$}{\string^}(i q r\+\_\+i) for particle i. \end{DoxyCompactList}\item 
+\Hypertarget{classxygroup_ae1ed32efaf43c6ff0b2e06333e7a01ab}\label{classxygroup_ae1ed32efaf43c6ff0b2e06333e7a01ab} 
+std\+::complex$<$ double $>$ {\bfseries calc\+\_\+myq} (const \mbox{\hyperlink{classtopology_1_1_vector2d}{topology\+::\+Vector2d}} q, double My\+\_\+0) const
+\begin{DoxyCompactList}\small\item\em Calculates \$m\textquotesingle{}\+\_\+\{y,q\}\$ (see Bissinger notes) \end{DoxyCompactList}\item 
+\Hypertarget{classxygroup_a0d72496bbd322e28b865866a7874be3a}\label{classxygroup_a0d72496bbd322e28b865866a7874be3a} 
+std\+::complex$<$ double $>$ {\bfseries calc\+\_\+wq} (const \mbox{\hyperlink{classtopology_1_1_vector2d}{topology\+::\+Vector2d}} q, double W\+\_\+0) const
+\begin{DoxyCompactList}\small\item\em Calculates \$w\textquotesingle{}\+\_\+\{q\}\$ (see Bissinger notes) \end{DoxyCompactList}\item 
+\Hypertarget{classxygroup_aa470181d2908c5833dc229975f1d5326}\label{classxygroup_aa470181d2908c5833dc229975f1d5326} 
+std\+::complex$<$ double $>$ {\bfseries calc\+\_\+eq} (const \mbox{\hyperlink{classtopology_1_1_vector2d}{topology\+::\+Vector2d}} q, double E\+\_\+0) const
+\begin{DoxyCompactList}\small\item\em Calculates \$e\textquotesingle{}\+\_\+\{q\}\$ (see Bissinger notes) \end{DoxyCompactList}\item 
+\Hypertarget{classxygroup_aee477693f42da95636c17e13b1ff0314}\label{classxygroup_aee477693f42da95636c17e13b1ff0314} 
+std\+::complex$<$ double $>$ {\bfseries calc\+\_\+teq} (const \mbox{\hyperlink{classtopology_1_1_vector2d}{topology\+::\+Vector2d}} q, double Te\+\_\+0) const
+\begin{DoxyCompactList}\small\item\em Calculates \$\textbackslash{}theta\textquotesingle{}\+\_\+\{q\}\$ (see Bissinger notes) \end{DoxyCompactList}\item 
+\Hypertarget{classxygroup_a7fd0e9410925018d43188c0a5c4f3985}\label{classxygroup_a7fd0e9410925018d43188c0a5c4f3985} 
+std\+::complex$<$ double $>$ {\bfseries calc\+\_\+rq} (const \mbox{\hyperlink{classtopology_1_1_vector2d}{topology\+::\+Vector2d}} q) const
+\begin{DoxyCompactList}\small\item\em Calculates \$r\textquotesingle{}\+\_\+\{q\}\$ (see Bissinger notes. Only really makes sense in the mobile model, but is an available quantity in the static model as well) \end{DoxyCompactList}\item 
+\Hypertarget{classxygroup_ad859457cc7995deeee65d64f51c34152}\label{classxygroup_ad859457cc7995deeee65d64f51c34152} 
+std\+::vector$<$ std\+::complex$<$ double $>$ $>$ {\bfseries calc\+\_\+fieldfluct} (const std\+::vector$<$ \mbox{\hyperlink{classtopology_1_1_vector2d}{topology\+::\+Vector2d}} $>$ qvals, std\+::string fluctname) const
+\begin{DoxyCompactList}\small\item\em Calculates the field fluctuation for the quantity specified in fluctname. fluctname = \{\"{}mxq\"{},\"{}myq\"{},\"{}wq\"{},\"{}eq\"{}\}. \end{DoxyCompactList}\item 
+\Hypertarget{classxygroup_a818ba3e9817c8222271c695fbff268c5}\label{classxygroup_a818ba3e9817c8222271c695fbff268c5} 
+\mbox{\hyperlink{classtopology_1_1_vector2d}{topology\+::\+Vector2d}} {\bfseries calc\+\_\+tau} () const
+\begin{DoxyCompactList}\small\item\em Calculates \$\textbackslash{}tau\textquotesingle{}\$, that is the q -\/\texorpdfstring{$>$}{>} 0 limit of \$\textbackslash{}tau\textquotesingle{}\+\_\+q\$ (see Bissinger notes) \end{DoxyCompactList}\item 
+\Hypertarget{classxygroup_a5fd7a2f5220a310fb334886ae8d5a630}\label{classxygroup_a5fd7a2f5220a310fb334886ae8d5a630} 
+\mbox{\hyperlink{classtopology_1_1_vector2d}{topology\+::\+Vector2d}} {\bfseries calc\+\_\+je} () const
+\begin{DoxyCompactList}\small\item\em Calculates \$j\textquotesingle{}\texorpdfstring{$^\wedge$}{\string^}e\$, that is the q -\/\texorpdfstring{$>$}{>} 0 limit of \$j\textquotesingle{}\texorpdfstring{$^\wedge$}{\string^}e\+\_\+q\$ (see Bissinger notes) \end{DoxyCompactList}\item 
+\Hypertarget{classxygroup_a9340bcd861cc53b36be2014f84b8b326}\label{classxygroup_a9340bcd861cc53b36be2014f84b8b326} 
+\mbox{\hyperlink{classtopology_1_1_vector2d}{topology\+::\+Vector2d}} {\bfseries calc\+\_\+current} (std\+::string currentname) const
+\begin{DoxyCompactList}\small\item\em Calculates the current for the quantity specified in currentname. currentname = \{\"{}tau\"{},\"{}je\"{}\}. \end{DoxyCompactList}\item 
+\Hypertarget{classxygroup_a6c3270258d5dec80365c656e4da812f3}\label{classxygroup_a6c3270258d5dec80365c656e4da812f3} 
+double {\bfseries calc\+\_\+current\+TCF\+\_\+tau} (const \mbox{\hyperlink{classxygroup}{xygroup}} \&G\+\_\+initial, const \mbox{\hyperlink{classparameters}{parameters}} \&par) const
+\begin{DoxyCompactList}\small\item\em Calculates the momentum current time correlation function (diagonal term) \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{classxygroup_a9659ef83c61e03df2e9d617b5dfa5cc5}{calc\+\_\+current\+TCF\+\_\+je}} (const \mbox{\hyperlink{classxygroup}{xygroup}} \&G\+\_\+initial, const \mbox{\hyperlink{classparameters}{parameters}} \&par) const
+\begin{DoxyCompactList}\small\item\em Calculates the energy current time correlation function (diagonal term) \end{DoxyCompactList}\item 
+std\+::vector$<$ double $>$ \mbox{\hyperlink{classxygroup_a65a55ce7893fb9d2251061bfa830a27d}{calc\+\_\+\+SCF\+\_\+\+S\+\_\+individual}} (const int index, const std\+::vector$<$ double $>$ rbin, const double av\+\_\+\+M\+\_\+squared) const
+\item 
+std\+::vector$<$ double $>$ \mbox{\hyperlink{classxygroup_a73e1d174017be10440b8368e7c3f49f2}{calc\+\_\+\+SCF\+\_\+S}} (const std\+::vector$<$ double $>$ rbin, const double av\+\_\+\+M\+\_\+squared) const
+\item 
+std\+::vector$<$ double $>$ \mbox{\hyperlink{classxygroup_a80b76b52d34dcada1325f4ba8f8e85c5}{calc\+\_\+\+SCF\+\_\+S}} (const std\+::vector$<$ double $>$ rbin, const double av\+\_\+\+M\+\_\+squared, int number\+\_\+of\+\_\+points) const
+\item 
+std\+::vector$<$ double $>$ \mbox{\hyperlink{classxygroup_a8527dd8744eb52356021ef57afa40820}{calc\+\_\+\+SCF\+\_\+anglediff\+\_\+individual}} (const int index, const std\+::vector$<$ double $>$ rbin, const double av\+\_\+theta\+\_\+squared) const
+\item 
+std\+::vector$<$ double $>$ \mbox{\hyperlink{classxygroup_a92a86ee6d22aa7f9ee23ffc0d03caecd}{calc\+\_\+\+SCF\+\_\+anglediff}} (const std\+::vector$<$ double $>$ rbin, const double av\+\_\+theta\+\_\+squared) const
+\item 
+std\+::vector$<$ double $>$ \mbox{\hyperlink{classxygroup_af7adfd7c0664f3d3d6ba2beff454b54e}{calc\+\_\+\+SCF\+\_\+anglediff}} (const std\+::vector$<$ double $>$ rbin, const double av\+\_\+theta\+\_\+squared, int number\+\_\+of\+\_\+points) const
+\item 
+std\+::vector$<$ double $>$ \mbox{\hyperlink{classxygroup_a5649480cd3a0fa0e538636229177a81b}{calc\+\_\+\+SCF\+\_\+\+S\+\_\+individual}} (const int index, const std\+::vector$<$ double $>$ rbin, std\+::vector$<$ int $>$ \&counts) const
+\item 
+std\+::vector$<$ double $>$ \mbox{\hyperlink{classxygroup_a4aaa6f14e872ba2f123c2d5e1a842dc1}{calc\+\_\+\+SCF\+\_\+g\+\_\+individual}} (const int index, const std\+::vector$<$ double $>$ rbin) const
+\item 
+\Hypertarget{classxygroup_affc2e00cd2bc70a336b6fa2d0b15e2ae}\label{classxygroup_affc2e00cd2bc70a336b6fa2d0b15e2ae} 
+std\+::vector$<$ double $>$ {\bfseries calc\+\_\+\+SCF\+\_\+anglediff\+\_\+individual} (const int index, const std\+::vector$<$ double $>$ rbin, std\+::vector$<$ int $>$ \&counts) const
+\begin{DoxyCompactList}\small\item\em Calculates the static angle difference correlation function for a specific index i. \end{DoxyCompactList}\item 
+\Hypertarget{classxygroup_a51eeaecbc23ecf7e5e27532bd13d7c85}\label{classxygroup_a51eeaecbc23ecf7e5e27532bd13d7c85} 
+std\+::vector$<$ double $>$ {\bfseries calc\+\_\+\+SCF\+\_\+\+E\+\_\+individual} (const int index, const std\+::vector$<$ double $>$ rbin, std\+::vector$<$ int $>$ \&counts) const
+\begin{DoxyCompactList}\small\item\em Calculates the static total energy correlation function for a specific index i. \end{DoxyCompactList}\item 
+\Hypertarget{classxygroup_a042aa4769e55407bdf10620504440d00}\label{classxygroup_a042aa4769e55407bdf10620504440d00} 
+std\+::vector$<$ double $>$ {\bfseries calc\+\_\+\+SCF\+\_\+\+W\+\_\+individual} (const int index, const std\+::vector$<$ double $>$ rbin, std\+::vector$<$ int $>$ \&counts) const
+\begin{DoxyCompactList}\small\item\em Calculates the static spin momentum correlation function for a specific index i. \end{DoxyCompactList}\item 
+\Hypertarget{classxygroup_a3ae0385aeb6da53fa9f10b45166032b7}\label{classxygroup_a3ae0385aeb6da53fa9f10b45166032b7} 
+std\+::vector$<$ double $>$ {\bfseries calc\+\_\+\+SCF\+\_\+averaged} (const std\+::vector$<$ double $>$ rbin, int number\+\_\+of\+\_\+points, const std\+::string name) const
+\begin{DoxyCompactList}\small\item\em Calculates the static correlation function specified by name averaged over randomly chosen indices. \end{DoxyCompactList}\item 
+\Hypertarget{classxygroup_a04637e5ceef9c0d2d33490deebf1eef6}\label{classxygroup_a04637e5ceef9c0d2d33490deebf1eef6} 
+double {\bfseries calc\+\_\+vorticity} (int index) const
+\begin{DoxyCompactList}\small\item\em Calculates vorticity along the plaquette at index. \end{DoxyCompactList}\item 
+\Hypertarget{classxygroup_a0baa00eb7e653c1e27efcb09afc63c8a}\label{classxygroup_a0baa00eb7e653c1e27efcb09afc63c8a} 
+double {\bfseries calc\+\_\+vortexdensity\+\_\+unsigned} () const
+\begin{DoxyCompactList}\small\item\em Calculates the unsigned vortex density (i.\+e. number of vortices divided by box area). \end{DoxyCompactList}\item 
+\Hypertarget{classxygroup_ae3dc7d1941c87885d1bf256e02d53a2b}\label{classxygroup_ae3dc7d1941c87885d1bf256e02d53a2b} 
+double {\bfseries calc\+\_\+vortexdensity\+\_\+signed} () const
+\begin{DoxyCompactList}\small\item\em Calculates the signed vortex density (i.\+e. number of positive vortices minus number of negative vortices divided by box area). \end{DoxyCompactList}\item 
+\Hypertarget{classxygroup_a03e4eeff236ecef1ab125b6241ef71ea}\label{classxygroup_a03e4eeff236ecef1ab125b6241ef71ea} 
+double {\bfseries calc\+\_\+\+ACF\+\_\+sp} (const \mbox{\hyperlink{classxygroup}{xygroup}} \&G\+\_\+initial, const std\+::string name) const
+\begin{DoxyCompactList}\small\item\em Calculates the single-\/particle autocorrelation-\/function for some quantity specified by name. \end{DoxyCompactList}\item 
+\Hypertarget{classxygroup_af5564496bfd70bfb6fdba0e680442ab4}\label{classxygroup_af5564496bfd70bfb6fdba0e680442ab4} 
+double {\bfseries calc\+\_\+\+ACF\+\_\+q0} (const \mbox{\hyperlink{classxygroup}{xygroup}} \&G\+\_\+initial, const std\+::string name) const
+\begin{DoxyCompactList}\small\item\em Calculates the (q=0)-\/autocorrelation-\/function for some quantity specified by name. \end{DoxyCompactList}\item 
+\Hypertarget{classxygroup_ae437bcd34e8bea933adffc087d6f96bc}\label{classxygroup_ae437bcd34e8bea933adffc087d6f96bc} 
+std\+::vector$<$ std\+::complex$<$ double $>$ $>$ {\bfseries calc\+\_\+\+TCF} (const \mbox{\hyperlink{classxygroup}{xygroup}} \&G\+\_\+initial, std\+::vector$<$ \mbox{\hyperlink{classtopology_1_1_vector2d}{topology\+::\+Vector2d}} $>$ qvals, std\+::string fluctname\+\_\+initial, std\+::string fluctname\+\_\+current) const
+\begin{DoxyCompactList}\small\item\em Calculates time-\/correlation function between two different groups. Fluctuation names must be specified. \end{DoxyCompactList}\item 
+\Hypertarget{classxygroup_ae0eb5c9b92c37a1d58dd9e884bad2275}\label{classxygroup_ae0eb5c9b92c37a1d58dd9e884bad2275} 
+void {\bfseries add\+\_\+particle} (\mbox{\hyperlink{classxyparticle}{xyparticle}} part)
+\item 
+\Hypertarget{classxygroup_a103b500cdd57841d4e6722806f1a80c2}\label{classxygroup_a103b500cdd57841d4e6722806f1a80c2} 
+void {\bfseries remove\+\_\+particle} (int index)
+\item 
+\Hypertarget{classxygroup_add46b0dd4e549dd41137e507a14241d2}\label{classxygroup_add46b0dd4e549dd41137e507a14241d2} 
+\mbox{\hyperlink{classxyparticle}{xyparticle}} \& {\bfseries operator\mbox{[}$\,$\mbox{]}} (int index)
+\begin{DoxyCompactList}\small\item\em Element access. \end{DoxyCompactList}\item 
+\Hypertarget{classxygroup_a6f8fb1ca883c7c151e941d634ba8dcf9}\label{classxygroup_a6f8fb1ca883c7c151e941d634ba8dcf9} 
+const \mbox{\hyperlink{classxyparticle}{xyparticle}} \& {\bfseries operator\mbox{[}$\,$\mbox{]}} (int index) const
+\begin{DoxyCompactList}\small\item\em const element access. \end{DoxyCompactList}\item 
+\Hypertarget{classxygroup_a49f2740b43f6da2bbc9286878a5e8629}\label{classxygroup_a49f2740b43f6da2bbc9286878a5e8629} 
+std\+::vector$<$ \mbox{\hyperlink{classtopology_1_1_vector2d}{topology\+::\+Vector2d}} $>$ {\bfseries get\+\_\+lattice} () const
+\begin{DoxyCompactList}\small\item\em Returns the underlying lattice (defined by member variable). \end{DoxyCompactList}\item 
+\Hypertarget{classxygroup_ae029e077c1d56156665940e987791066}\label{classxygroup_ae029e077c1d56156665940e987791066} 
+\mbox{\hyperlink{classtopology_1_1_vector2d}{topology\+::\+Vector2d}} {\bfseries get\+\_\+vec} (int index) const
+\begin{DoxyCompactList}\small\item\em Index-\/dependent position vector for spin at index, lattice defined by member variable. \end{DoxyCompactList}\item 
+\Hypertarget{classxygroup_a45fd048e4ede79b20537224a19eca40f}\label{classxygroup_a45fd048e4ede79b20537224a19eca40f} 
+\mbox{\hyperlink{classtopology_1_1_vector2d}{topology\+::\+Vector2d}} {\bfseries get\+\_\+vec\+\_\+squarelattice} (int index) const
+\begin{DoxyCompactList}\small\item\em Index-\/dependent position vector for spin at index, square lattice. \end{DoxyCompactList}\item 
+\Hypertarget{classxygroup_ad25e2ad039ce64d93cd5293894752111}\label{classxygroup_ad25e2ad039ce64d93cd5293894752111} 
+\mbox{\hyperlink{classtopology_1_1_vector2d}{topology\+::\+Vector2d}} {\bfseries get\+\_\+vec\+\_\+trigonallattice} (int index) const
+\begin{DoxyCompactList}\small\item\em Index-\/dependent position vector for spin at index, trigonal lattice. \end{DoxyCompactList}\item 
+\Hypertarget{classxygroup_aa502a42a2f8ac279101f4b42a71f63d2}\label{classxygroup_aa502a42a2f8ac279101f4b42a71f63d2} 
+std\+::vector$<$ double $>$ {\bfseries time\+\_\+derivative\+\_\+theta} () const
+\begin{DoxyCompactList}\small\item\em Returns positional time derivative (splitting useful for leapfrog) \end{DoxyCompactList}\item 
+\Hypertarget{classxygroup_a38e15c976ce24782f5d73be51ce95305}\label{classxygroup_a38e15c976ce24782f5d73be51ce95305} 
+std\+::vector$<$ double $>$ {\bfseries time\+\_\+derivative\+\_\+coord} () const
+\item 
+std\+::vector$<$ double $>$ \mbox{\hyperlink{classxygroup_ac811d27bc229be85bb8001afbc5d3b3c}{time\+\_\+derivative\+\_\+w}} () const
+\begin{DoxyCompactList}\small\item\em (it\textquotesingle{}s the same as the theta derivative in this case. Redundancy because syntax can be used unchanged for xy group and mobile xy group) \end{DoxyCompactList}\item 
+\Hypertarget{classxygroup_a27d953bf340c35d29cca116c6a21c88d}\label{classxygroup_a27d953bf340c35d29cca116c6a21c88d} 
+std\+::vector$<$ double $>$ {\bfseries time\+\_\+derivative\+\_\+mom} () const
+\item 
+\mbox{\hyperlink{classxygroup}{xygroup}} \mbox{\hyperlink{classxygroup_acb267074bf496656191c2938f4b64a03}{time\+\_\+derivative}} () const
+\begin{DoxyCompactList}\small\item\em (it\textquotesingle{}s the same as the omega derivative in this case. Redundancy because syntax can be used unchanged for xy group and mobile xy group) \end{DoxyCompactList}\item 
+\Hypertarget{classxygroup_ad1f1027740bb872c07f3979dbd8ac9a6}\label{classxygroup_ad1f1027740bb872c07f3979dbd8ac9a6} 
+std\+::vector$<$ double $>$ {\bfseries coord\+\_\+diff} (const \mbox{\hyperlink{classxygroup}{xygroup}} \&G) const
+\begin{DoxyCompactList}\small\item\em Returns coordinate difference between this group and another one, with proper care of boundaries. The N entries are angles. \end{DoxyCompactList}\item 
+\Hypertarget{classxygroup_ad4e7e5c1f370e4d9fecb668ead6a6533}\label{classxygroup_ad4e7e5c1f370e4d9fecb668ead6a6533} 
+void {\bfseries accumulative\+\_\+\+MSD} (std\+::vector$<$ double $>$ MSD, const \mbox{\hyperlink{classxygroup}{xygroup}} \&last\+\_\+G) const
+\begin{DoxyCompactList}\small\item\em Same as coord\+\_\+diff, but adding the difference to an MSD vector. \end{DoxyCompactList}\item 
+\Hypertarget{classxygroup_a989f391b203a606a0911e0ce60798848}\label{classxygroup_a989f391b203a606a0911e0ce60798848} 
+\mbox{\hyperlink{classxygroup}{xygroup}} \& {\bfseries operator+=} (const \mbox{\hyperlink{classxygroup}{xygroup}} \&G)
+\begin{DoxyCompactList}\small\item\em Adds particle entries (used for adding time derivatives and such). \end{DoxyCompactList}\item 
+\Hypertarget{classxygroup_a8414e7db6dfc9c8a4b5f0ed88e2c359d}\label{classxygroup_a8414e7db6dfc9c8a4b5f0ed88e2c359d} 
+\mbox{\hyperlink{classxygroup}{xygroup}} \& {\bfseries operator\texorpdfstring{$\ast$}{*}=} (const double a)
+\begin{DoxyCompactList}\small\item\em Multiplies particles by constant (used for adding time derivatives and such). \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classxygroup_af974b92fab5f90515355d416e1ae6a17}\label{classxygroup_af974b92fab5f90515355d416e1ae6a17} 
+int {\bfseries N\+\_\+}
+\begin{DoxyCompactList}\small\item\em Size of the group. \end{DoxyCompactList}\item 
+\Hypertarget{classxygroup_a601a2e0c42ff38937580f8719e1dbdb0}\label{classxygroup_a601a2e0c42ff38937580f8719e1dbdb0} 
+int {\bfseries sqrt\+N\+\_\+}
+\begin{DoxyCompactList}\small\item\em Square root of the group size (for neighbor calculations). \end{DoxyCompactList}\item 
+\Hypertarget{classxygroup_a6a67b764fa732ff93ed0915573f0c448}\label{classxygroup_a6a67b764fa732ff93ed0915573f0c448} 
+int {\bfseries Num\+Of\+Nei\+\_\+}
+\begin{DoxyCompactList}\small\item\em Number of neighbors (saves some storage access time) \end{DoxyCompactList}\item 
+\Hypertarget{classxygroup_ab22354c39f0b6cbecd4ba3cc49b943d4}\label{classxygroup_ab22354c39f0b6cbecd4ba3cc49b943d4} 
+double {\bfseries J\+\_\+}
+\begin{DoxyCompactList}\small\item\em Nearest neighbor interaction strength. \end{DoxyCompactList}\item 
+\Hypertarget{classxygroup_aa875825759df60ce3123c2ff819cfac5}\label{classxygroup_aa875825759df60ce3123c2ff819cfac5} 
+double {\bfseries I\+\_\+}
+\begin{DoxyCompactList}\small\item\em Spin inertia. \end{DoxyCompactList}\item 
+\Hypertarget{classxygroup_a457c127a42d5d5181dbc7357d9227002}\label{classxygroup_a457c127a42d5d5181dbc7357d9227002} 
+\mbox{\hyperlink{classtopology_1_1_vector2d}{topology\+::\+Vector2d}} {\bfseries boxsize\+\_\+}
+\begin{DoxyCompactList}\small\item\em Size of the box. \end{DoxyCompactList}\item 
+\Hypertarget{classxygroup_a7cb29b3b2cee1f791901c94234695d80}\label{classxygroup_a7cb29b3b2cee1f791901c94234695d80} 
+std\+::vector$<$ \mbox{\hyperlink{classxyparticle}{xyparticle}} $>$ {\bfseries particles\+\_\+}
+\begin{DoxyCompactList}\small\item\em particles in the group \end{DoxyCompactList}\item 
+\Hypertarget{classxygroup_a5230c27c4bb207fd85d4ff381d11a455}\label{classxygroup_a5230c27c4bb207fd85d4ff381d11a455} 
+std\+::vector$<$ \mbox{\hyperlink{classtopology_1_1_vector2d}{topology\+::\+Vector2d}} $>$ {\bfseries positions\+\_\+}
+\begin{DoxyCompactList}\small\item\em positions of particles in the group. Make computations with member functions easier, may be more storage intensive. \end{DoxyCompactList}\item 
+\Hypertarget{classxygroup_a90d05a0befed5e2be04999759892c089}\label{classxygroup_a90d05a0befed5e2be04999759892c089} 
+char {\bfseries lattice\+\_\+type\+\_\+}
+\begin{DoxyCompactList}\small\item\em lattice type. (type \textquotesingle{}s\textquotesingle{}\+: square, type \textquotesingle{}t\textquotesingle{}\+: trigonal) \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classxygroup_ad545016764b7eafcba2ff54158c581b3}\label{classxygroup_ad545016764b7eafcba2ff54158c581b3} 
+\index{xygroup@{xygroup}!xygroup@{xygroup}}
+\index{xygroup@{xygroup}!xygroup@{xygroup}}
+\doxysubsubsection{\texorpdfstring{xygroup()}{xygroup()}}
+{\footnotesize\ttfamily xygroup\+::xygroup (\begin{DoxyParamCaption}\item[{const int}]{N }\end{DoxyParamCaption})}
+
+
+
+Constructor from values stored in parameters. 
+
+Reduced constructor, useful for time derivative group. 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classxygroup_a25c9708cf6dd08f6845a530bbe8525fa}\label{classxygroup_a25c9708cf6dd08f6845a530bbe8525fa} 
+\index{xygroup@{xygroup}!add\_random\_angle@{add\_random\_angle}}
+\index{add\_random\_angle@{add\_random\_angle}!xygroup@{xygroup}}
+\doxysubsubsection{\texorpdfstring{add\_random\_angle()}{add\_random\_angle()}}
+{\footnotesize\ttfamily void xygroup\+::add\+\_\+random\+\_\+angle (\begin{DoxyParamCaption}\item[{double}]{angmax }\end{DoxyParamCaption})}
+
+
+
+Same as add\+\_\+to\+\_\+w. Redundant here, but makes sense with the more general framework of mobile particles. 
+
+Adds a uniformly distributed angle in (-\/angmax, angmax) to each particle\textquotesingle{}s theta\+\_\+. \Hypertarget{classxygroup_a59e14cb69cadb9a2e35e655253c0d258}\label{classxygroup_a59e14cb69cadb9a2e35e655253c0d258} 
+\index{xygroup@{xygroup}!add\_to\_coord\_inertialscaling@{add\_to\_coord\_inertialscaling}}
+\index{add\_to\_coord\_inertialscaling@{add\_to\_coord\_inertialscaling}!xygroup@{xygroup}}
+\doxysubsubsection{\texorpdfstring{add\_to\_coord\_inertialscaling()}{add\_to\_coord\_inertialscaling()}}
+{\footnotesize\ttfamily void xygroup\+::add\+\_\+to\+\_\+coord\+\_\+inertialscaling (\begin{DoxyParamCaption}\item[{std\+::vector$<$ double $>$}]{coord,  }\item[{const double}]{factor = {\ttfamily 1} }\end{DoxyParamCaption})}
+
+
+
+Same as add\+\_\+to\+\_\+theta. Redundant here, but makes sense with the more general framework of mobile particles. 
+
+Adds to coordinates, but scaled with inverse of inertia. Useful to facilitate acceleration computation in leapfrog. \Hypertarget{classxygroup_a9659ef83c61e03df2e9d617b5dfa5cc5}\label{classxygroup_a9659ef83c61e03df2e9d617b5dfa5cc5} 
+\index{xygroup@{xygroup}!calc\_currentTCF\_je@{calc\_currentTCF\_je}}
+\index{calc\_currentTCF\_je@{calc\_currentTCF\_je}!xygroup@{xygroup}}
+\doxysubsubsection{\texorpdfstring{calc\_currentTCF\_je()}{calc\_currentTCF\_je()}}
+{\footnotesize\ttfamily double xygroup\+::calc\+\_\+current\+TCF\+\_\+je (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classxygroup}{xygroup}} \&}]{G\+\_\+initial,  }\item[{const \mbox{\hyperlink{classparameters}{parameters}} \&}]{par }\end{DoxyParamCaption}) const}
+
+
+
+Calculates the energy current time correlation function (diagonal term) 
+
+Division by 4 due to (om\+\_\+k + om\+\_\+j) / 2I in every\Hypertarget{classxygroup_a6aff10f16a6771391c6c689500264d7b}\label{classxygroup_a6aff10f16a6771391c6c689500264d7b} 
+\index{xygroup@{xygroup}!calc\_force@{calc\_force}}
+\index{calc\_force@{calc\_force}!xygroup@{xygroup}}
+\doxysubsubsection{\texorpdfstring{calc\_force()}{calc\_force()}}
+{\footnotesize\ttfamily double xygroup\+::calc\+\_\+force (\begin{DoxyParamCaption}\item[{int}]{j,  }\item[{int}]{k }\end{DoxyParamCaption}) const}
+
+
+
+Energy of particle i. 
+
+Calculates the force particle j exerts on particle k. \Hypertarget{classxygroup_ac8185ef3677d0b0254aa883b112fb41b}\label{classxygroup_ac8185ef3677d0b0254aa883b112fb41b} 
+\index{xygroup@{xygroup}!calc\_mxq@{calc\_mxq}}
+\index{calc\_mxq@{calc\_mxq}!xygroup@{xygroup}}
+\doxysubsubsection{\texorpdfstring{calc\_mxq()}{calc\_mxq()}}
+{\footnotesize\ttfamily std\+::complex$<$ double $>$ xygroup\+::calc\+\_\+mxq (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classtopology_1_1_vector2d}{topology\+::\+Vector2d}}}]{q,  }\item[{double}]{Mx\+\_\+0 }\end{DoxyParamCaption}) const}
+
+
+
+Calculates e\texorpdfstring{$^\wedge$}{\string^}(i q r\+\_\+i) for particle i. 
+
+Calculates \$m\textquotesingle{}\+\_\+\{x,q\}\$ (see Bissinger notes) \Hypertarget{classxygroup_a92a86ee6d22aa7f9ee23ffc0d03caecd}\label{classxygroup_a92a86ee6d22aa7f9ee23ffc0d03caecd} 
+\index{xygroup@{xygroup}!calc\_SCF\_anglediff@{calc\_SCF\_anglediff}}
+\index{calc\_SCF\_anglediff@{calc\_SCF\_anglediff}!xygroup@{xygroup}}
+\doxysubsubsection{\texorpdfstring{calc\_SCF\_anglediff()}{calc\_SCF\_anglediff()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily std\+::vector$<$ double $>$ xygroup\+::calc\+\_\+\+SCF\+\_\+anglediff (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ double $>$}]{rbin,  }\item[{const double}]{av\+\_\+theta\+\_\+squared }\end{DoxyParamCaption}) const}
+
+Calculates the static angle difference correlation function averaged over all indices. Needs to be supplemented with the square of the average angle, av\+\_\+theta\+\_\+squared. \Hypertarget{classxygroup_af7adfd7c0664f3d3d6ba2beff454b54e}\label{classxygroup_af7adfd7c0664f3d3d6ba2beff454b54e} 
+\index{xygroup@{xygroup}!calc\_SCF\_anglediff@{calc\_SCF\_anglediff}}
+\index{calc\_SCF\_anglediff@{calc\_SCF\_anglediff}!xygroup@{xygroup}}
+\doxysubsubsection{\texorpdfstring{calc\_SCF\_anglediff()}{calc\_SCF\_anglediff()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily std\+::vector$<$ double $>$ xygroup\+::calc\+\_\+\+SCF\+\_\+anglediff (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ double $>$}]{rbin,  }\item[{const double}]{av\+\_\+theta\+\_\+squared,  }\item[{int}]{number\+\_\+of\+\_\+points }\end{DoxyParamCaption}) const}
+
+Calculates the static angle difference correlation function averaged over randomly chosen indices. Needs to be supplemented with the square of the average angle, av\+\_\+theta\+\_\+squared. \Hypertarget{classxygroup_a8527dd8744eb52356021ef57afa40820}\label{classxygroup_a8527dd8744eb52356021ef57afa40820} 
+\index{xygroup@{xygroup}!calc\_SCF\_anglediff\_individual@{calc\_SCF\_anglediff\_individual}}
+\index{calc\_SCF\_anglediff\_individual@{calc\_SCF\_anglediff\_individual}!xygroup@{xygroup}}
+\doxysubsubsection{\texorpdfstring{calc\_SCF\_anglediff\_individual()}{calc\_SCF\_anglediff\_individual()}}
+{\footnotesize\ttfamily std\+::vector$<$ double $>$ xygroup\+::calc\+\_\+\+SCF\+\_\+anglediff\+\_\+individual (\begin{DoxyParamCaption}\item[{const int}]{index,  }\item[{const std\+::vector$<$ double $>$}]{rbin,  }\item[{const double}]{av\+\_\+theta\+\_\+squared }\end{DoxyParamCaption}) const}
+
+Calculates the static angle difference correlation function for a specific index i. Needs to be supplemented with the square of the average angle, av\+\_\+theta\+\_\+squared. \Hypertarget{classxygroup_a4aaa6f14e872ba2f123c2d5e1a842dc1}\label{classxygroup_a4aaa6f14e872ba2f123c2d5e1a842dc1} 
+\index{xygroup@{xygroup}!calc\_SCF\_g\_individual@{calc\_SCF\_g\_individual}}
+\index{calc\_SCF\_g\_individual@{calc\_SCF\_g\_individual}!xygroup@{xygroup}}
+\doxysubsubsection{\texorpdfstring{calc\_SCF\_g\_individual()}{calc\_SCF\_g\_individual()}}
+{\footnotesize\ttfamily std\+::vector$<$ double $>$ xygroup\+::calc\+\_\+\+SCF\+\_\+g\+\_\+individual (\begin{DoxyParamCaption}\item[{const int}]{index,  }\item[{const std\+::vector$<$ double $>$}]{rbin }\end{DoxyParamCaption}) const}
+
+Calculates the pair distribution function g(r) for a specific particle at index, that is the average number of particles at separations r. Sorts into rbin. \Hypertarget{classxygroup_a73e1d174017be10440b8368e7c3f49f2}\label{classxygroup_a73e1d174017be10440b8368e7c3f49f2} 
+\index{xygroup@{xygroup}!calc\_SCF\_S@{calc\_SCF\_S}}
+\index{calc\_SCF\_S@{calc\_SCF\_S}!xygroup@{xygroup}}
+\doxysubsubsection{\texorpdfstring{calc\_SCF\_S()}{calc\_SCF\_S()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily std\+::vector$<$ double $>$ xygroup\+::calc\+\_\+\+SCF\+\_\+S (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ double $>$}]{rbin,  }\item[{const double}]{av\+\_\+\+M\+\_\+squared }\end{DoxyParamCaption}) const}
+
+Calculates the static spin correlation function averaged over all indices. Needs to be supplemented with the square of the average magnetization av\+\_\+\+M\+\_\+sqaured. \Hypertarget{classxygroup_a80b76b52d34dcada1325f4ba8f8e85c5}\label{classxygroup_a80b76b52d34dcada1325f4ba8f8e85c5} 
+\index{xygroup@{xygroup}!calc\_SCF\_S@{calc\_SCF\_S}}
+\index{calc\_SCF\_S@{calc\_SCF\_S}!xygroup@{xygroup}}
+\doxysubsubsection{\texorpdfstring{calc\_SCF\_S()}{calc\_SCF\_S()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily std\+::vector$<$ double $>$ xygroup\+::calc\+\_\+\+SCF\+\_\+S (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ double $>$}]{rbin,  }\item[{const double}]{av\+\_\+\+M\+\_\+squared,  }\item[{int}]{number\+\_\+of\+\_\+points }\end{DoxyParamCaption}) const}
+
+Calculates the static spin correlation function averaged over randomly chosen indices. Needs to be supplemented with the square of the average magnetization av\+\_\+\+M\+\_\+sqaured. \Hypertarget{classxygroup_a65a55ce7893fb9d2251061bfa830a27d}\label{classxygroup_a65a55ce7893fb9d2251061bfa830a27d} 
+\index{xygroup@{xygroup}!calc\_SCF\_S\_individual@{calc\_SCF\_S\_individual}}
+\index{calc\_SCF\_S\_individual@{calc\_SCF\_S\_individual}!xygroup@{xygroup}}
+\doxysubsubsection{\texorpdfstring{calc\_SCF\_S\_individual()}{calc\_SCF\_S\_individual()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily std\+::vector$<$ double $>$ xygroup\+::calc\+\_\+\+SCF\+\_\+\+S\+\_\+individual (\begin{DoxyParamCaption}\item[{const int}]{index,  }\item[{const std\+::vector$<$ double $>$}]{rbin,  }\item[{const double}]{av\+\_\+\+M\+\_\+squared }\end{DoxyParamCaption}) const}
+
+Calculates the static spin correlation function for a specific index i. Needs to be supplemented with the square of the average magnetization av\+\_\+\+M\+\_\+sqaured. \Hypertarget{classxygroup_a5649480cd3a0fa0e538636229177a81b}\label{classxygroup_a5649480cd3a0fa0e538636229177a81b} 
+\index{xygroup@{xygroup}!calc\_SCF\_S\_individual@{calc\_SCF\_S\_individual}}
+\index{calc\_SCF\_S\_individual@{calc\_SCF\_S\_individual}!xygroup@{xygroup}}
+\doxysubsubsection{\texorpdfstring{calc\_SCF\_S\_individual()}{calc\_SCF\_S\_individual()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily std\+::vector$<$ double $>$ xygroup\+::calc\+\_\+\+SCF\+\_\+\+S\+\_\+individual (\begin{DoxyParamCaption}\item[{const int}]{index,  }\item[{const std\+::vector$<$ double $>$}]{rbin,  }\item[{std\+::vector$<$ int $>$ \&}]{counts }\end{DoxyParamCaption}) const}
+
+Calculates the static spin correlation function for a specific particle at index, that is the product of spins between particle index and all other particles. Sorts into rbin. Needs to be provided with inout variable counts. \Hypertarget{classxygroup_a05e41476484ba7173cf67fdc262affa2}\label{classxygroup_a05e41476484ba7173cf67fdc262affa2} 
+\index{xygroup@{xygroup}!fill\_partition@{fill\_partition}}
+\index{fill\_partition@{fill\_partition}!xygroup@{xygroup}}
+\doxysubsubsection{\texorpdfstring{fill\_partition()}{fill\_partition()}}
+{\footnotesize\ttfamily void xygroup\+::fill\+\_\+partition (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Function for filling partition. Does nothing, because there is no partition required for xygroup. Still implemented to facilitate templating. \Hypertarget{classxygroup_a52604af13762abc7e838335f7de413a4}\label{classxygroup_a52604af13762abc7e838335f7de413a4} 
+\index{xygroup@{xygroup}!get\_theta@{get\_theta}}
+\index{get\_theta@{get\_theta}!xygroup@{xygroup}}
+\doxysubsubsection{\texorpdfstring{get\_theta()}{get\_theta()}}
+{\footnotesize\ttfamily std\+::vector$<$ double $>$ xygroup\+::get\+\_\+theta (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Returns position of ith particle. 
+
+Returns vector of spin angles \Hypertarget{classxygroup_a10f65d4f97b705c9c76eaf02992ef666}\label{classxygroup_a10f65d4f97b705c9c76eaf02992ef666} 
+\index{xygroup@{xygroup}!plaquette@{plaquette}}
+\index{plaquette@{plaquette}!xygroup@{xygroup}}
+\doxysubsubsection{\texorpdfstring{plaquette()}{plaquette()}}
+{\footnotesize\ttfamily std\+::vector$<$ int $>$ xygroup\+::plaquette (\begin{DoxyParamCaption}\item[{int}]{i }\end{DoxyParamCaption}) const}
+
+Return the plaquette the particle i belongs to. i is in the lower left corner. \Hypertarget{classxygroup_a0b00ff5a03441b676ed3163b69a2f94d}\label{classxygroup_a0b00ff5a03441b676ed3163b69a2f94d} 
+\index{xygroup@{xygroup}!scale\_from\_subgroup@{scale\_from\_subgroup}}
+\index{scale\_from\_subgroup@{scale\_from\_subgroup}!xygroup@{xygroup}}
+\doxysubsubsection{\texorpdfstring{scale\_from\_subgroup()}{scale\_from\_subgroup()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void xygroup\+::scale\+\_\+from\+\_\+subgroup (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classxygroup}{xygroup}} \&}]{G }\end{DoxyParamCaption})}
+
+Takes a subgroup (smaller group) and scales it up to the correct size of the group by copying. Subgroups must be smaller by powers of 4. Also, this-\/object must be initialized. \Hypertarget{classxygroup_a9d8f50b953cbbdfde7882dcccb8d6478}\label{classxygroup_a9d8f50b953cbbdfde7882dcccb8d6478} 
+\index{xygroup@{xygroup}!scale\_from\_subgroup@{scale\_from\_subgroup}}
+\index{scale\_from\_subgroup@{scale\_from\_subgroup}!xygroup@{xygroup}}
+\doxysubsubsection{\texorpdfstring{scale\_from\_subgroup()}{scale\_from\_subgroup()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void xygroup\+::scale\+\_\+from\+\_\+subgroup (\begin{DoxyParamCaption}\item[{std\+::string}]{snapshotname }\end{DoxyParamCaption})}
+
+Takes a subgroup (smaller group) and scales it up to the correct size of the group by copying. Subgroups must be smaller by powers of 4. Also, this-\/object must be initialized. Unlike the same function that takes a group as input, this function needs only a coordinate file. It is thus simpler to use. \Hypertarget{classxygroup_a0940c9abce3327fe03115b0a4242873d}\label{classxygroup_a0940c9abce3327fe03115b0a4242873d} 
+\index{xygroup@{xygroup}!set\_r\_to\_pbc@{set\_r\_to\_pbc}}
+\index{set\_r\_to\_pbc@{set\_r\_to\_pbc}!xygroup@{xygroup}}
+\doxysubsubsection{\texorpdfstring{set\_r\_to\_pbc()}{set\_r\_to\_pbc()}}
+{\footnotesize\ttfamily void xygroup\+::set\+\_\+r\+\_\+to\+\_\+pbc (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Function for updating positions to agree with periodic boundary conditions. Does nothing, since positions are fixed. For templating. \Hypertarget{classxygroup_a569038cf67108268d1a09598eee58dcf}\label{classxygroup_a569038cf67108268d1a09598eee58dcf} 
+\index{xygroup@{xygroup}!sum\_e\_squared@{sum\_e\_squared}}
+\index{sum\_e\_squared@{sum\_e\_squared}!xygroup@{xygroup}}
+\doxysubsubsection{\texorpdfstring{sum\_e\_squared()}{sum\_e\_squared()}}
+{\footnotesize\ttfamily double xygroup\+::sum\+\_\+e\+\_\+squared (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Binder cumulant. 1 -\/ \texorpdfstring{$<$}{<}s\texorpdfstring{$^\wedge$}{\string^}4\texorpdfstring{$>$}{>} / (3 \texorpdfstring{$<$}{<}s\texorpdfstring{$^\wedge$}{\string^}2\texorpdfstring{$>$}{>}). Intensive. 
+
+Total energy squared, basically N\+\_\+\texorpdfstring{$<$}{<}e\+\_\+i\texorpdfstring{$^\wedge$}{\string^}2\texorpdfstring{$>$}{>}. Extensive. \Hypertarget{classxygroup_acb267074bf496656191c2938f4b64a03}\label{classxygroup_acb267074bf496656191c2938f4b64a03} 
+\index{xygroup@{xygroup}!time\_derivative@{time\_derivative}}
+\index{time\_derivative@{time\_derivative}!xygroup@{xygroup}}
+\doxysubsubsection{\texorpdfstring{time\_derivative()}{time\_derivative()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classxygroup}{xygroup}} xygroup\+::time\+\_\+derivative (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+(it\textquotesingle{}s the same as the omega derivative in this case. Redundancy because syntax can be used unchanged for xy group and mobile xy group) 
+
+Returns momentum time derivative Returns time derivative of the entire group. \Hypertarget{classxygroup_ac811d27bc229be85bb8001afbc5d3b3c}\label{classxygroup_ac811d27bc229be85bb8001afbc5d3b3c} 
+\index{xygroup@{xygroup}!time\_derivative\_w@{time\_derivative\_w}}
+\index{time\_derivative\_w@{time\_derivative\_w}!xygroup@{xygroup}}
+\doxysubsubsection{\texorpdfstring{time\_derivative\_w()}{time\_derivative\_w()}}
+{\footnotesize\ttfamily std\+::vector$<$ double $>$ xygroup\+::time\+\_\+derivative\+\_\+w (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+(it\textquotesingle{}s the same as the theta derivative in this case. Redundancy because syntax can be used unchanged for xy group and mobile xy group) 
+
+Returns coordinate time derivative Return momentum time derivative (splitting useful for leapfrog) 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+xygroup.\+h\item 
+xygroup.\+cpp\end{DoxyCompactItemize}
